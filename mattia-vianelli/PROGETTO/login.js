@@ -16,7 +16,6 @@ function mostraSignin2() {
     document.getElementById("paginaSignin2").style.display = "flex"
 }
 
-
 document.addEventListener("DOMContentLoaded", function() {
 
 
@@ -78,7 +77,7 @@ let spuntaX = {
     
     /* [2.3] cambia le immagini della verifica della password (x o v) */
     function textPassword(userPasswordValue) {
-        if (verificaPassword()) {
+        if (verificaPassword(userPasswordValue)) {
             document.getElementById("img1").src = spuntaX.spunta
             document.getElementById("img2").src = spuntaX.spunta
             document.getElementById("img3").src = spuntaX.spunta
@@ -126,16 +125,20 @@ userEmail.addEventListener("input", textEmail)
     function textEmail() {
         const emailEntra =  document.getElementById('testo-email-non-valida-entra')
         const emailEsce =  document.getElementById('testo-email-non-valida-esce')
-        
+
         if (verificaEmail()) {
             userEmail.style.borderColor = 'grey'
-            emailEntra.style.display = "none"
-            
-            emailEsce.style.display = "block"
 
-            setTimeout(function() {
-                emailEsce.style.display = "none"
-            }, 1000)
+            if(emailEntra.style.display != "none") {
+                emailEntra.style.display = "none"
+                emailEsce.style.display = "block"
+                
+                setTimeout(function() {
+                    emailEsce.style.display = "none"
+                }, 400)
+            } else {
+                emailEntra.style.display = "none"
+            }
 
         } else {
             userEmail.style.borderColor = 'red'
@@ -167,6 +170,34 @@ userEmail.addEventListener("input", textEmail)
     }
     
     /* [4.2] attivazione <button> signin */
+    const inputSignin11 = document.getElementById("input-signin1-1")
+    const inputSignin12 = document.getElementById("input-signin1-2")
+    const mese = document.getElementById("mese")
+    const giorno = document.getElementById("giorno")
+    const anno = document.getElementById("anno")
+    const buttonAvanti = document.getElementById("button-avanti")
+
+    inputSignin11.addEventListener("input", mostraButtonAvanti)
+    inputSignin12.addEventListener("input", mostraButtonAvanti)
+    mese.addEventListener("change", mostraButtonAvanti)
+    giorno.addEventListener("change", mostraButtonAvanti)
+    anno.addEventListener("change", mostraButtonAvanti)
+
+    function mostraButtonAvanti() {
+        if (inputSignin11.value && inputSignin12.value && mese.value !== "Mese" && giorno.value !== "Giorno" && anno.value !== "Anno") {
+            if (buttonAvanti.disabled == true) {
+                buttonAvanti.disabled = false
+                buttonAvanti.setAttribute("class", "buttonAccediAvantiRegistrati")
+            }
+        } else {
+            if (buttonAvanti.disabled == false){
+                buttonAvanti.disabled = true
+                buttonAvanti.setAttribute("class", "button-disabled-effect")
+            } 
+        }    
+    }
+
+
     /* [4.3] attivazione <button> signin2 */
     const inputSignin21 = document.getElementById("input-signin2-1")
     const inputSignin22 = document.getElementById("input-signin2-2")
@@ -180,7 +211,8 @@ userEmail.addEventListener("input", textEmail)
     checkboxSignin.addEventListener("change", mostraButtonRegistrati)
 
     function mostraButtonRegistrati() {
-        if (verificaEmail() && inputSignin22.value && verificaPassword() && checkboxSignin.checked) {
+        const userPasswordValue = inputSignin23.value
+        if (verificaEmail() && inputSignin22.value && verificaPassword(userPasswordValue) && checkboxSignin.checked) {
             if (buttonRegistrati.disabled == true) {
                 buttonRegistrati.disabled = false
                 buttonRegistrati.setAttribute("class", "buttonAccediAvantiRegistrati")
@@ -233,13 +265,3 @@ userEmail.addEventListener("input", textEmail)
     }
 
 })
-
-
-
-/* 
-COSE DA FARE:
-- button "avanti" abilitato/disabilitato
-- chiedere: 
-    - CSS: come metto animazione quando scompare il testo dell'email? (nuovo ID con l'animazione quando scompare??)
-    PROVO A CREARE DUE <p> DIVERSI, UNO CHE COMPARE E L'ALTRO CHE SCOMPARE
-*/
