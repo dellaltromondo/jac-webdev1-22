@@ -35,27 +35,29 @@
 
             <label for="username">
                 <p class="pLoginRegistrazione">USERNAME O E-MAIL</p>
+                <input id="inputLogin1" type="text" name="username" placeholder="es. mariorossi@gmail.com">
             </label> 
-            <input class="inputLoginSignin" id="inputLogin1" type="text" name="username" placeholder="es. mariorossi@gmail.com">
+
             <label for="password">
                 <p class="pLoginRegistrazione">PASSWORD</p>
+                <input id="inputLogin2" type="password" name="password">
             </label> 
-            <input class="inputLoginSignin" id="inputLogin2" type="password" name="password">
+            
             <label class="labelCheckbox">
                 <input type="checkbox" id="checkboxRicordami">
                 <p>Ricordami</p>
             </label>
-            <button id="buttonAccedi" disabled>ACCEDI</button>
-            <a id="testoPasswordDimenticata" href="">Hai dimenticato la password?</a>
+
+            <button id="buttonAccedi" class="buttonAccediAvantiRegistrati" disabled>ACCEDI</button>
+
+            <a href="">Hai dimenticato la password?</a>
+
             <button type="button" id="buttonCreaAccount" onclick="mostraSignin()">CREA ACCOUNT</button>
         </section>
 
-<!--    ------------------------------    PAGINA REGISTRAZIONE    ------------------------------   -->
+<!--    ------------------------------    PAGINA REGISTRAZIONE 1    ------------------------------   -->
 
         <section id="paginaSignin">
-            <div id="divButtonBack">
-                <button id="buttonBack" onclick="mostraLogin()">INDIETRO</button>
-            </div>
             <img id="logo"  src="altreIcone/logoInstagram.svg">
             <h1>Crea il tuo account</h1>
 
@@ -83,11 +85,11 @@
 
             <label id="nome">
                 <p class="pLoginRegistrazione">NOME: </p> 
-                <input class="inputLoginSignin" type="text" placeholder="es. Mario">
+                <input id="input-signin1-1" type="text" placeholder="es. Mario">
             </label>
             <label id="cognome">
                 <p class="pLoginRegistrazione">COGNOME: </p>
-                <input class="inputLoginSignin" type="text" placeholder="es. Rossi">
+                <input id="input-signin1-2" type="text" placeholder="es. Rossi">
             </label>
             <label for="Mese">
                 <p class="pLoginRegistrazione">DATA DI NASCITA</p>
@@ -255,29 +257,47 @@
                     </select>
                 </div>
             </label>
+                   
+            <button class="buttonAccediAvantiRegistrati" id="buttonRegistrati" onclick="mostraSignin2()">AVANTI</button>
 
+            <p class="pLoginRegistrazione">Hai già un account? <a onclick="mostraLogin()">Accedi</a></p>
+        </section>
+
+<!--    ------------------------------    PAGINA REGISTRAZIONE 2    ------------------------------   -->
+        <section id="paginaSignin2">
+            <div id="divButtonBack">
+                <button id="buttonBack" onclick="mostraSignin()">INDIETRO</button>
+            </div>
+            <img id="logo"  src="altreIcone/logoInstagram.svg">
+            <h1>Crea il tuo account</h1>
+            
             <label>
                 <p class="pLoginRegistrazione">E-MAIL</p>
-                <input class="inputLoginSignin" type="text" placeholder="es. mariorossi@gmail.com">
+                <input id="input-signin2-1" type="text" placeholder="es. mariorossi@gmail.com">
+                <p id="testo-email-non-valida-entra">email non valida</p>
+                <p id="testo-email-non-valida-esce">email non valida</p>
+
             </label>
 
             <label>
                 <p class="pLoginRegistrazione">USERNAME</p>
-                <input class="inputLoginSignin" type="text">
+                <input id="input-signin2-2" type="text">
             </label>
 
             <label>
                 <p class="pLoginRegistrazione">PASSWORD</p>
-                <input class="inputLoginSignin" type="password">
+                <input id="input-new-password" type="password">
             </label>
+
+            <div id="div-caratteristiche-password">
+            </div>
                         
             <label class="labelCheckbox">
                 <input type="checkbox" id="checkboxTermini"> 
                 <p>Accetto i termini e condizioni</p>
             </label>
-                    
-            <button class="buttonAccediRegistrati" onclick="mostraLogin()">REGISTRATI</button>
-
+ 
+            <button id="button-registrati" onclick="mostraLogin()" disabled>REGISTRATI</button>
         </section>
     </body>
 </html>
