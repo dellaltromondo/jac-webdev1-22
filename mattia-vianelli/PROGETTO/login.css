@@ -386,6 +386,35 @@ a:visited {
     }
 }
 
+/* [14.4] pagina che va su quando il testo "email non valida" scompare */
+.blocco-su {
+    animation-name: torna-su;
+    animation-duration: 0.5s;
+}
+
+@keyframes torna-su {
+    from {
+        transform: translateY(0%);
+    }
+    to {
+        transform: translateY(-9.5%);
+    }
+}
+
+.blocco-giu {
+    animation-name: torna-giu;
+    animation-duration: 1s;
+}
+
+@keyframes torna-giu {
+    from {
+        transform: translateY(-10%);
+    }
+    to {
+        transform: translateY(0%);
+    }
+}
+
 /* -------------------------- [15] SCROLLBAR -------------------------- */
 ::-webkit-scrollbar {
     width: 0.5rem;
@@ -398,18 +427,6 @@ border-radius: 10rem;
 ::-webkit-scrollbar-track {
 background-color: var(--color-background);
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 @media screen and (orientation: portrait) {

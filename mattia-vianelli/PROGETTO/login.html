@@ -258,7 +258,7 @@
                 </div>
             </label>
                    
-            <button class="buttonAccediAvantiRegistrati" id="button-avanti" onclick="mostraSignin2()" disabled>AVANTI</button>
+            <button class="buttonAccediAvantiRegistrati" id="button-avanti" onclick="mostraSignin2()">AVANTI</button>
 
             <p class="pLoginRegistrazione">Hai già un account? <a onclick="mostraLogin()">Accedi</a></p>
         </section>
@@ -276,28 +276,29 @@
                 <input id="input-signin2-1" type="text" placeholder="es. mariorossi@gmail.com">
                 <p id="testo-email-non-valida-entra">email non valida</p>
                 <p id="testo-email-non-valida-esce">email non valida</p>
-
             </label>
 
-            <label>
-                <p class="pLoginRegistrazione">USERNAME</p>
-                <input id="input-signin2-2" type="text">
-            </label>
+            <div id="div-torna-su">
+                <label>
+                    <p class="pLoginRegistrazione">USERNAME</p>
+                    <input id="input-signin2-2" type="text">
+                </label>
 
-            <label>
-                <p class="pLoginRegistrazione">PASSWORD</p>
-                <input id="input-new-password" type="password">
-            </label>
+                <label>
+                    <p class="pLoginRegistrazione">PASSWORD</p>
+                    <input id="input-new-password" type="password">
+                </label>
 
-            <div id="div-caratteristiche-password">
+                <div id="div-caratteristiche-password">
+                </div>
+                            
+                <label class="labelCheckbox">
+                    <input type="checkbox" id="checkboxTermini"> 
+                    <p>Accetto i termini e condizioni</p>
+                </label>
+    
+                <button id="button-registrati" onclick="mostraLogin()" disabled>REGISTRATI</button>
             </div>
-                        
-            <label class="labelCheckbox">
-                <input type="checkbox" id="checkboxTermini"> 
-                <p>Accetto i termini e condizioni</p>
-            </label>
- 
-            <button id="button-registrati" onclick="mostraLogin()" disabled>REGISTRATI</button>
         </section>
     </body>
 </html>

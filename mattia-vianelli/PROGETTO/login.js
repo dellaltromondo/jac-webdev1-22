@@ -125,6 +125,7 @@ userEmail.addEventListener("input", textEmail)
     function textEmail() {
         const emailEntra =  document.getElementById('testo-email-non-valida-entra')
         const emailEsce =  document.getElementById('testo-email-non-valida-esce')
+        const divTornaSu = document.getElementById('div-torna-su')
 
         if (verificaEmail()) {
             userEmail.style.borderColor = 'grey'
@@ -132,10 +133,11 @@ userEmail.addEventListener("input", textEmail)
             if(emailEntra.style.display != "none") {
                 emailEntra.style.display = "none"
                 emailEsce.style.display = "block"
+                divTornaSu.setAttribute('class', 'blocco-su')
                 
                 setTimeout(function() {
                     emailEsce.style.display = "none"
-                }, 400)
+                }, 500)
             } else {
                 emailEntra.style.display = "none"
             }
@@ -143,6 +145,8 @@ userEmail.addEventListener("input", textEmail)
         } else {
             userEmail.style.borderColor = 'red'
             emailEntra.style.display = "block"
+            divTornaSu.setAttribute('class', 'blocco-giu')
+
         }
     }
 
