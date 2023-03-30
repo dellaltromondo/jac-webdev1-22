@@ -33,34 +33,23 @@ let spuntaX = {
 }
 
     /* [2.1] MOSTRA #div-caratteristiche-password */
+    const divPassword = document.getElementById("div-caratteristiche-password");
+    divPassword.style.opacity = "0"
+
     mostraCaratteristichePassword = (userPasswordValue) => {
-        const divPassword = document.getElementById("div-caratteristiche-password");
 
         if (userPasswordValue) {
+            divPassword.classList.add('visible')
+            setTimeout(function() {
+                divPassword.style.opacity = "1"
+            }, 300)
 
-            divPassword.innerHTML = `
-                <p>La tua password deve contenere:</p>
-                <div class="div-testi-password">
-                    <img class="spunta-x" id="img1">
-                    <p>8-15 caratteri</p>
-                </div>
-                <div class="div-testi-password">
-                    <img src="" class="spunta-x" id="img2">
-                    <p>Almeno 1 lettera minuscola</p>
-                </div>
-                <div class="div-testi-password">
-                    <img src="" class="spunta-x" id="img3">
-                    <p>Almeno 1 lettera maiuscola</p>
-                </div>
-                <div class="div-testi-password">
-                    <img src="" class="spunta-x" id="img4">
-                    <p>Almeno 1 numero</p>
-                </div>
-            `
-            divPassword.style.display = "block"
 
         } else {
-            divPassword.style.display = "none"
+            divPassword.style.opacity = "0"
+            setTimeout(function() {
+                divPassword.classList.remove('visible')
+            }, 300)
         }
     }
 
@@ -82,6 +71,8 @@ let spuntaX = {
             document.getElementById("img2").src = spuntaX.spunta
             document.getElementById("img3").src = spuntaX.spunta
             document.getElementById("img4").src = spuntaX.spunta
+            document.getElementById("div-caratteristiche-password").classList.remove('visible')
+
         } else {
             if (userPasswordValue.length < 8 || userPasswordValue.length > 15){
                 document.getElementById("img1").src = spuntaX.x
@@ -123,29 +114,14 @@ userEmail.addEventListener("input", textEmail)
 
     /* [3.2] comparsa/scomparsa testo "email non valida" + cambio colore del bordo */
     function textEmail() {
-        const emailEntra =  document.getElementById('testo-email-non-valida-entra')
-        const emailEsce =  document.getElementById('testo-email-non-valida-esce')
-        const divTornaSu = document.getElementById('div-torna-su')
+        const emailError =  document.getElementById('testo-email-non-valida')
 
         if (verificaEmail()) {
-            userEmail.style.borderColor = 'grey'
-
-            if(emailEntra.style.display != "none") {
-                emailEntra.style.display = "none"
-                emailEsce.style.display = "block"
-                divTornaSu.setAttribute('class', 'blocco-su')
-                
-                setTimeout(function() {
-                    emailEsce.style.display = "none"
-                }, 500)
-            } else {
-                emailEntra.style.display = "none"
-            }
+            emailError.classList.remove("visible")
 
         } else {
             userEmail.style.borderColor = 'red'
-            emailEntra.style.display = "block"
-            divTornaSu.setAttribute('class', 'blocco-giu')
+            emailError.classList.add('visible')
 
         }
     }

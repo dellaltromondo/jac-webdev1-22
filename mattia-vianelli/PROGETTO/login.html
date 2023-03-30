@@ -258,7 +258,7 @@
                 </div>
             </label>
                    
-            <button class="buttonAccediAvantiRegistrati" id="button-avanti" onclick="mostraSignin2()" disabled>AVANTI</button>
+            <button class="buttonAccediAvantiRegistrati" id="button-avanti" onclick="mostraSignin2()">AVANTI</button>
 
             <p class="pLoginRegistrazione">Hai già un account? <a onclick="mostraLogin()">Accedi</a></p>
         </section>
@@ -274,31 +274,45 @@
             <label>
                 <p class="pLoginRegistrazione">E-MAIL</p>
                 <input id="input-signin2-1" type="text" placeholder="es. mariorossi@gmail.com">
-                <p id="testo-email-non-valida-entra">email non valida</p>
-                <p id="testo-email-non-valida-esce">email non valida</p>
+                <p id="testo-email-non-valida" class="errore-email">email non valida</p>
             </label>
 
-            <div id="div-torna-su">
-                <label>
-                    <p class="pLoginRegistrazione">USERNAME</p>
-                    <input id="input-signin2-2" type="text">
-                </label>
+            <label>
+                <p class="pLoginRegistrazione">USERNAME</p>
+                <input id="input-signin2-2" type="text">
+            </label>
 
-                <label>
-                    <p class="pLoginRegistrazione">PASSWORD</p>
-                    <input id="input-new-password" type="password">
-                </label>
+            <label>
+                <p class="pLoginRegistrazione">PASSWORD</p>
+                <input id="input-new-password" type="password">
+            </label>
 
-                <div id="div-caratteristiche-password">
+            <div id="div-caratteristiche-password" class="check-password">
+                <p>La tua password deve contenere:</p>
+                <div class="div-testi-password">
+                    <img class="spunta-x" id="img1">
+                    <p>8-15 caratteri</p>
                 </div>
-                            
-                <label class="labelCheckbox">
-                    <input type="checkbox" id="checkboxTermini"> 
-                    <p>Accetto i termini e condizioni</p>
-                </label>
-    
-                <button id="button-registrati" onclick="mostraLogin()" disabled>REGISTRATI</button>
+                <div class="div-testi-password">
+                    <img src="" class="spunta-x" id="img2">
+                    <p>Almeno 1 lettera minuscola</p>
+                </div>
+                <div class="div-testi-password">
+                    <img src="" class="spunta-x" id="img3">
+                    <p>Almeno 1 lettera maiuscola</p>
+                </div>
+                <div class="div-testi-password">
+                    <img src="" class="spunta-x" id="img4">
+                    <p>Almeno 1 numero</p>
+                </div>
             </div>
+                        
+            <label class="labelCheckbox">
+                <input type="checkbox" id="checkboxTermini"> 
+                <p>Accetto i termini e condizioni</p>
+            </label>
+
+            <button id="button-registrati" onclick="mostraLogin()" disabled>REGISTRATI</button>
         </section>
     </body>
 </html>

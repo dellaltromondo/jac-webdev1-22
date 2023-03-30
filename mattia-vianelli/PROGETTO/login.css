@@ -58,28 +58,25 @@ body {
 }
 
 /* [2.2] <p> "email non valida */
-#testo-email-non-valida-entra {
+#testo-email-non-valida {
     color: red;
     font-weight: lighter;
     font-size: var(--most-size-text);
-    margin-top: var(--margin-bottom-text);
     margin-bottom: 0;
-    display: none;
-
-    animation-name: email-enter-effect;
-    animation-duration: 1s;
 }
-#testo-email-non-valida-esce {
-    color: red;
-    font-weight: lighter;
-    font-size: var(--most-size-text);
-    margin-top: var(--margin-bottom-text);
-    margin-bottom: 0;
-    display: none;
-
-    animation-name: email-exit-effect;
-    animation-duration: 0.5s;
+.errore-email {
+    transition: all .3s ease;
+    display: block;
+    opacity: 0;
+    margin-top: -10px;
+    height: 10px;
 }
+.errore-email.visible {
+    opacity: 1;
+    margin-top: 0px;
+    height: auto;
+}
+
 
 /* -------------------------- [3] LOGO -------------------------- */
 #logo {
@@ -304,28 +301,36 @@ a:visited {
 
 /* -------------------------- [13] BLOCCO PASSWORD -------------------------- */
 #div-caratteristiche-password {
-    display: none;
     background-color: var(--color-input-inside);
     width: var(--width-input-button);
     border-radius: 0.5rem;
-    margin-top: 1rem;
     padding: 0.5rem;
 }
-#div-caratteristiche-password>p {
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-    color: grey;
-    font-size: var(--most-size-text);
+.check-password {
+    transition: all .3s ease;
+    display: block;
+    margin-top: -148px;
+    z-index: -1;
 }
-.div-testi-password {
-    display: flex;
-    align-items: center;
+.check-password.visible {
+    margin-top: 10px;
+    height: auto;
 }
-.div-testi-password p {
-    margin: 0.3rem 0.7rem;
-    color: rgb(205, 204, 204);
-    font-size: 0.9rem;
-}
+    #div-caratteristiche-password>p {
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+        color: grey;
+        font-size: var(--most-size-text);
+    }
+    .div-testi-password {
+        display: flex;
+        align-items: center;
+    }
+    .div-testi-password p {
+        margin: 0.3rem 0.7rem;
+        color: rgb(205, 204, 204);
+        font-size: 0.9rem;
+    }
 
 /* -------------------------- [14] ANIMAZIONI -------------------------- */
 /* [14.1] logo che gira */
@@ -364,57 +369,6 @@ a:visited {
     }
 }
 
-/* [14.3] testo "email non valida" */
-@keyframes email-enter-effect {
-    from {
-        transform: translateX(-10%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0%);
-        opacity: 1;
-    }
-}
-@keyframes email-exit-effect {
-    from {
-        transform: translateX(0%);
-        opacity: 1;
-    }
-    to {
-        transform: translateX(-15%);
-        opacity: 0;
-    }
-}
-
-/* [14.4] pagina che va su quando il testo "email non valida" scompare */
-.blocco-su {
-    animation-name: torna-su;
-    animation-duration: 0.5s;
-}
-
-@keyframes torna-su {
-    from {
-        transform: translateY(0%);
-    }
-    to {
-        transform: translateY(-9.5%);
-    }
-}
-
-.blocco-giu {
-    animation-name: torna-giu;
-    animation-duration: 1s;
-}
-
-@keyframes torna-giu {
-    from {
-        transform: translateY(-10%);
-    }
-    to {
-        transform: translateY(0%);
-    }
-}
-
 /* -------------------------- [15] SCROLLBAR -------------------------- */
 ::-webkit-scrollbar {
     width: 0.5rem;
@@ -448,4 +402,7 @@ background-color: var(--color-background);
     }
 }
   
+
+
+
 
