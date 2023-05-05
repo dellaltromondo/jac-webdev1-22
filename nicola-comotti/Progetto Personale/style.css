@@ -95,6 +95,7 @@ a:active {
 
 article {
     padding-bottom: 0.5em;
+    width: 100%;
 }
 
 #login-article {
@@ -205,53 +206,116 @@ article {
 #closeText {
     display: inline-block;
     margin: 0 0 0 0.5em;
+    font-family: var(--font);
+    color: whitesmoke;
+    position: relative;
+    top: 0.1em;
 }
 
-h2.muscolo {
-    max-width: fit-content;
-    margin: 0.4em auto 0 auto;
-    padding: 0.3em 1em;
-    color: var(--white);
-    background-color: var(--grey);
-    border-top-right-radius: var(--b-radius);
-    border-top-left-radius: var(--b-radius);
-}
-
-.esercizio-database {
-    display: grid;
-    grid-template-columns: 30% 70%;
-    width: 80%;
-    border-radius: var(--b-radius);
-    background-color: rgba(0, 0, 128, 0.6);
-    padding: 1em;
-    margin: 0 auto 1em auto;
-}
-
-.nome-esercizio {
-    color: var(--white);
+#filters {
+    padding: 0;
     width: 100%;
-    margin: auto;
-    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.contenuto-esercizio {
-    display: grid;
-    grid-template-rows: 20% 70%;
+.filter {
+    width: 25%;
+    height: 3em;
+    border-radius: 0;
+    font-family: var(--font);
+    font-weight: bold;
 }
 
-.gif-esercizio {
-    width: 80%;
-    max-width: 200px;
-    border-radius: var(--b-radius);
-    margin: auto;
+#search-button {
+    height: 3em;
+    width: 10%;
+    font-family: var(--font);
+    font-weight: bold;
+    background-color: lightskyblue;
+    border: solid 1px grey;
 }
 
-.testo-esercizio {
-    display: inline-block;
-    width: 90%;
-    margin: auto;
-    color: var(--white);
-    padding: 0.5em;
+#exercises-list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-evenly;
+}
+
+.exercise {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    list-style-type: none;
+    border: solid 1px cornflowerblue;
+    border-radius: 20px;
+    margin: 0.5em;
+    padding: 1em 0.5em;
+    width: clamp(200px, 23%, 400px);
+    background-color: lightblue;
+}
+
+.exercise>h2 {
+    margin: 0;
+    padding-bottom: 0.3em;
+    font-size: larger;
+}
+
+.exercise>h3 {
+    margin: 0;
+    padding-bottom: 0.1em;
+    font-weight: normal;
+    font-size: medium;
+}
+
+.exe-button {
+    font-family: var(--font);
+    margin: 0.2em 0.5em;
+    min-width: 50%;
+}
+
+#popup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 85.5vh;
+    position: fixed;
+    bottom: 0;
+    z-index: -1;
+}
+
+.popup-title {
+    margin: 0;
+    padding: 0.3em;
+}
+
+#step-list {
+    text-align: left;
+    margin: 0 0 1em 0;
+}
+
+.exe-video {
+    max-width: -webkit-fill-available;
+    border-radius: 10px;
+    margin-bottom: 1em;
+}
+
+
+.popup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    width: 50vw;
+    background-color: darkgray;
+    box-shadow: 2px 2px 5px 0.1px rgb(100, 100, 100);
+    padding: 1em;
+    border-radius: 10px;
 }
 
 form {
