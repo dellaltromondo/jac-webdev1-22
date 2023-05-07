@@ -27,9 +27,17 @@ async function calcolaBMI() {
     const bmiTableKey = `${sesso}_${eta < 18 ? 'u18' : 'ad'}`;
     const { pesoMin: pesoMin, pesoMax: pesoMax } = tabellaBmi[bmiTableKey];
     const condizione = tabellaBmi[bmiTableKey].intervalli.find(({ min, max, label }) => bmi >= min && bmi < max).condizione;
+    const idImg = tabellaBmi[bmiTableKey].idImg;
 
     document.getElementById('bmi').innerText = bmi.toFixed(2);
     document.getElementById('condizione').innerText = condizione;
     document.getElementById('pesoMin').innerText = eval(pesoMin).toFixed(2);
     document.getElementById('pesoMax').innerText = eval(pesoMax).toFixed(2);
+    const bmiImgs = document.getElementsByClassName('bmi-img');
+    if (bmiImgs.length > 0) {
+        for (var i = 0; i < bmiImgs.length; i++) {
+            bmiImgs[i].style.display = 'none';
+        }
+    }
+    document.getElementById(idImg).style.display = 'inline-block';
 }
