@@ -6,15 +6,22 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 80%;
+    width: 70%;
  /* border: 1px solid red*/
   }
+
+  #h1DescriptionWebsite{
+    text-align:center; 
+    color: var(--light-color);
+  }
+
   #grid{
     /*border:1px solid blue;*/
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 30px;
+    text-align: center;
   }
 
   @media (max-width: 1400px){
@@ -29,22 +36,13 @@
     flex-direction: column;
     text-align: center;
     }
+    #h1DescriptionWebsite{
+      padding-bottom: 20px; 
+    }
   }
   .divGrid{
     align-self: center;
     max-height: 100%;
-  }
-  #gridOne{
-    
-  }
-  #gridTwo{
-    
-  }
-  #gridTree{
-
-  }
-  #gridFour{
-
   }
   img{
     border-radius:5px

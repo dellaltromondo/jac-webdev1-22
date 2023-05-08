@@ -29,9 +29,6 @@ function showHomeFromAboutUs(){
 }
 
 
-
-
-
 function checkInfos() {
   const dl = document.getElementById("dl");
   const dt = document.createElement("dt");
@@ -60,29 +57,17 @@ function checkInfos() {
   } else {
     cond = "The Terms of Service and the Privacy Policy must be approved to continue!";
   }
-  /*
-  const paymentParagraph = document.createElement("p");
-  const paymentText = document.createTextNode("Payment method: " + Cpagamento);
-  paymentParagraph.appendChild(paymentText);
-  dt.appendChild(paymentParagraph);
-  */
+
   const condizParagraph = document.createElement("p");
   const condizText = document.createTextNode(cond);
   condizParagraph.appendChild(condizText);
   dt.appendChild(condizParagraph);
 
-  document.getElementById('shopButton').disabled=true;
+  //document.getElementById('shopButton')/*.disabled=true*/;
 
-/*
-  const buttonX = document.createElement('buttonX')
-  dl.appendChild(buttonX)
-  buttonX.innerHTML= '<button onclick="">EDIT DETAILS</button>'
-  */
-
-  
   const buttonContinueWithPayment = document.createElement('buttonX')
   dl.appendChild(buttonContinueWithPayment)
-  buttonContinueWithPayment.innerHTML= '<button onClick="showPaymentMethods()" type="button">EDIT DETAILS</button>'
+  buttonContinueWithPayment.innerHTML= '<button id="showPaymentMethod" onClick="showPaymentMethods()" type="button">PAY</button>'
   
 }
 
