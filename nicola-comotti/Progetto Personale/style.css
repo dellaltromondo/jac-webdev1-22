@@ -8,8 +8,10 @@
     --white: #f5f5f5;
     --blue: rgb(0, 0, 128);
     --blue04: rgba(0, 0, 128, 0.4);
+    --blue08: rgba(0, 0, 128, 0.8);
     --grey: rgb(111, 111, 111);
     --transparent: rgb(0, 0, 0, 0);
+    --red: crimson;
     --border: 2px solid var(--white);
     --b-radius: 30px;
 }
@@ -162,15 +164,15 @@ article {
 
 @keyframes blink {
     0% {
-        box-shadow: 0 0 10px 10px red;
+        box-shadow: 0 0 10px 10px var(--red);
     }
 
     50% {
-        box-shadow: 0 0 10px 5px red;
+        box-shadow: 0 0 10px 5px var(--red);
     }
 
     100% {
-        box-shadow: 0 0 10px 10px red;
+        box-shadow: 0 0 10px 10px var(--red);
     }
 }
 
@@ -195,12 +197,12 @@ article {
     margin-left: -25vw;
     width: 50vw;
     height: fit-content;
-    box-shadow: 0px 0px 10px 5px crimson;
+    box-shadow: 0px 0px 10px 5px var(--red);
     animation: blink 0.5s linear infinite;
 }
 
 #closePopupButton {
-    background-color: crimson;
+    background-color: var(--red);
     border: none;
     border-radius: 10px;
     padding: 0.5em;
@@ -240,6 +242,7 @@ article {
     font-size: 1em;
     border-radius: var(--b-radius);
     padding-left: 1em;
+    margin-top: 0.5em;
 }
 
 .filter:active {
@@ -277,12 +280,13 @@ article {
     align-items: center;
     justify-content: space-evenly;
     list-style-type: none;
-    border: solid 1px cornflowerblue;
+    border: var(--border);
     border-radius: 20px;
     margin: 0.5em;
     padding: 1em 0.5em;
     width: clamp(200px, 23%, 400px);
-    background-color: lightblue;
+    background-color: var(--blue04);
+    color: var(--white);
 }
 
 .exercise>h2 {
@@ -302,17 +306,11 @@ article {
     font-family: var(--font);
     margin: 0.2em 0.5em;
     min-width: 50%;
-}
-
-#popup-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 85.5vh;
-    position: fixed;
-    bottom: 0;
-    z-index: -1;
+    background-color: var(--blue08);
+    color: var(--white);
+    border: var(--border);
+    border-radius: var(--b-radius);
+    padding-bottom: 0.2em;
 }
 
 .popup-title {
@@ -339,7 +337,6 @@ article {
     position: fixed;
     width: 50vw;
     background-color: darkgray;
-    box-shadow: 2px 2px 5px 0.1px rgb(100, 100, 100);
     padding: 1em;
     border-radius: 10px;
 }
@@ -361,7 +358,7 @@ form>label {
 
 select {
     font-family: var(--font);
-    background-color: rgba(0, 0, 128, 0.8);
+    background-color: var(--blue08);
     color: var(--white);
     border: 1px solid var(--white);
     border-radius: 10px;
@@ -375,7 +372,7 @@ option[value="none"] {
 
 input {
     font-family: var(--font);
-    background-color: rgba(0, 0, 128, 0.8);
+    background-color: var(--blue08);
     color: var(--white);
     border: 1px solid var(--white);
     border-radius: 10px;
