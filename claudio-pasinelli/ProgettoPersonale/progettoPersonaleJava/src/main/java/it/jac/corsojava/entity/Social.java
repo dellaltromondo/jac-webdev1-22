@@ -10,12 +10,13 @@ public class Social
 	private String media;
 	private String link;
 	private String img;
+	private boolean eliminata;
 	
 	private String utenteIns;
 	private String utenteMod;
 	private LocalDateTime dataIns;
 	private LocalDateTime dataMod;
-	
+
 	public long getIdSocial() {
 		return idSocial;
 	}
@@ -38,6 +39,10 @@ public class Social
 
 	public String getImg() {
 		return img;
+	}
+
+	public boolean isEliminata() {
+		return eliminata;
 	}
 
 	public String getUtenteIns() {
@@ -80,6 +85,10 @@ public class Social
 		this.img = img;
 	}
 
+	public void setEliminata(boolean eliminata) {
+		this.eliminata = eliminata;
+	}
+
 	public void setUtenteIns(String utenteIns) {
 		this.utenteIns = utenteIns;
 	}
@@ -114,6 +123,7 @@ public class Social
 				&& Objects.equals(media, other.media)
 				&& Objects.equals(link, other.link)
 				&& Objects.equals(img, other.img)
+				&& Objects.equals(eliminata, other.eliminata)
 				&& Objects.equals(utenteIns, other.utenteIns)
 				&& Objects.equals(utenteMod, other.utenteMod);
 	}
@@ -121,7 +131,8 @@ public class Social
 	@Override
 	public String toString() {
 		return "Social [idSocial=" + idSocial + ", idCompositore=" + idCompositore + ", dataTooltip=" + dataTooltip
-				+ ", media=" + media + ", link=" + link + ", img=" + img + ", utenteIns=" + utenteIns + ", utenteMod="
-				+ utenteMod + ", dataIns=" + dataIns + ", dataMod=" + dataMod + "]";
+				+ ", media=" + media + ", link=" + link + ", img=" + img + ", eliminata=" + eliminata + ", utenteIns="
+				+ utenteIns + ", utenteMod=" + utenteMod + ", dataIns=" + dataIns + ", dataMod=" + dataMod + "]";
 	}
+	
 }

@@ -5,6 +5,12 @@ function creaProfiloHtml()
     let immagineGiaPresente;             //bolean
     let titoloGiaPresente;               //bolean
     let descrizioneGiaPresente;          //bolean
+    let temaGiaPresente;                 //bolean
+
+    const sectionProfilo = document.getElementById("profiloCompositore");
+
+    const temaBianco = document.getElementById("bianco");  
+    const temaNero = document.getElementById("nero");
 
     const nomeArtista = document.getElementById("nomeArtista");
     const testo = document.getElementById("descrizione");
@@ -101,9 +107,36 @@ function creaProfiloHtml()
         return;
     }
 
+    //verifico le checkbox
+    else if (temaBianco.checked == false && temaNero.checked == false && sectionProfilo.style.backgroundColor != "rgb(255, 255, 255)" && sectionProfilo.style.backgroundColor != "rgb(68, 72, 87)")
+    {
+        testoMessaggio.scrollIntoView(
+            {
+                behavior: 'smooth',
+                block: 'end'
+            });
+
+        inviaBtn.style.display = "none";
+        annullaBtn.style.display = "none";
+        testoMessaggio.style.display = "block";
+        testoMessaggio.innerText = "Non hai scelto il tema del profilo!";
+        testoMessaggio.style.color = "red";
+
+        setTimeout(() =>
+        {
+            testoMessaggio.innerText = "";
+            inviaBtn.style.display = "inline";
+            testoMessaggio.style.display = "none";
+            document.getElementById("prezzo").value = '';
+        }, 3000);
+
+        return;
+    } 
+
     immagineGiaPresente = isImgSet();
     titoloGiaPresente = isNameSet();
     descrizioneGiaPresente = isTextSet();
+    // temaGiaPresente = isThemeSet();
 
     if(!immagineGiaPresente)
     {
@@ -131,6 +164,26 @@ function creaProfiloHtml()
         testoDescrizione.innerText = testo.value;
     }
 
+    if(document.getElementById("bianco").checked === true)
+    {
+        const figli = sectionProfilo.childNodes;
+        const descrizione = figli[3].childNodes;
+        let textDescrizione = descrizione[3].lastChild;
+        textDescrizione.parentNode.style.backgroundColor = "rgb(242, 242, 242)";
+        sectionProfilo.style.backgroundColor = "rgb(255, 255, 255)";
+        sectionProfilo.style.color = "rgb(0, 0, 0)";
+    }
+
+    else if(document.getElementById("nero").checked === true)
+    {
+        const figli = sectionProfilo.childNodes;
+        const descrizione = figli[3].childNodes;
+        let textDescrizione = descrizione[3].lastChild;
+        textDescrizione.parentNode.style.backgroundColor = "rgb(50, 54, 67)";
+        sectionProfilo.style.backgroundColor = "rgb(68, 72, 87)";
+        sectionProfilo.style.color = "rgb(255, 255, 255)";
+    }
+
     const profilo = document.getElementById("profiloCompositore");
     profilo.style.display = "grid";
     inviaBtn.style.display = "none";
@@ -142,10 +195,14 @@ function creaProfiloHtml()
     nomeArtista.value = "";
     testo.value = "";
     input.value = "";
+    document.getElementById('bianco').checked = false;
+    document.getElementById('nero').checked = false;
 }
 
-function creaProfiloFromCompositore(profiloAutore)
+async function creaProfiloFromCompositore(profiloAutore)
 {
+    const sectionProfilo = document.getElementById("profiloCompositore");
+
     const input = document.getElementById("imageProfileInput");
     const nomeArtista = document.getElementById("nomeArtista");
     const testo = document.getElementById("descrizione");
@@ -164,9 +221,29 @@ function creaProfiloFromCompositore(profiloAutore)
 
     const inviaBtn = document.getElementById("inviaProfilo");
     const annullaBtn = document.getElementById("annullaModifica");
-
+    
     const profili = document.getElementsByClassName("profilo");
     const profilo = profili[0];
+
+    if(profiloAutore.getTema() === "bianco")
+    {
+        const figli = profilo.childNodes;
+        const descrizione = figli[3].childNodes;
+        let textDescrizione = descrizione[3].lastChild;
+        textDescrizione.parentNode.style.backgroundColor = "rgb(242, 242, 242)";
+        profilo.style.backgroundColor = "rgb(255, 255, 255)";
+        profilo.style.color = "rgb(0, 0, 0)";
+    }
+
+    else if(profiloAutore.getTema() === "nero")
+    {
+        const figli = profilo.childNodes;
+        const descrizione = figli[3].childNodes;
+        let textDescrizione = descrizione[3].lastChild;
+        textDescrizione.parentNode.style.backgroundColor = "rgb(50, 54, 67)";
+        profilo.style.backgroundColor = "rgb(68, 72, 87)";
+        profilo.style.color = "rgb(255, 255, 255)";
+    }
     profilo.style.display = "grid";
     inviaBtn.style.display = "none";
     annullaBtn.style.display = "inline";
@@ -177,6 +254,8 @@ function creaProfiloFromCompositore(profiloAutore)
     nomeArtista.value = "";
     testo.value = "";
     input.value = "";
+
+    return;
 }
 
 function isImgSet()
@@ -226,6 +305,18 @@ function isTextSet()
     
     return false;
 }
+
+// function isThemeSet()
+// {
+//     const sectionProfilo = document.getElementById("profiloCompositore");
+
+//     if(sectionProfilo.style.backgroundColor === "rgb(255, 255, 255)" || sectionProfilo.style.backgroundColor === "rgb(68, 72, 87)")
+//     {
+//         return true;
+//     }
+    
+//     return false;
+// }
 
 function modificaProfilo()
 {

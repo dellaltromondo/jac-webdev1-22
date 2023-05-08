@@ -53,6 +53,13 @@
         <input type="file" id="imageProfileInput" accept="image/*">
         <label for="nomeArtista"><p>Nome artista: </p><input type="text" id="nomeArtista" name="nomeArtista"></label>
         <textarea name="descrizione" id="descrizione" cols="30" rows="10" placeholder="Descrivi chi sei e qual è il genere di musica che componi" required></textarea>
+        <p>Scegli il tema sfondo</p>
+        <section id="checkboxProfilo">
+          <label for="bianco">Bianco</label>
+          <input type="checkbox" name="checkboxProfilo" id="bianco" value="bianco" onclick="selectOnlyThis(this)">
+          <label for="nero">Nero</label>
+          <input type="checkbox" name="checkboxProfilo" id="nero" value="nero" onclick="selectOnlyThis(this)">
+        </section>
 
         <section>
             <button id="inviaProfilo" onclick="creaProfiloHtml()" type="button">Invia</button>
@@ -82,7 +89,10 @@
         <button onclick="deleteImage()" id="deleteImage">Elimina <img src="../img/cestino.png" alt=""></button>
         <form id="immaginiInput">
             <label for="imageInput"><p>Aggiungi un'immagine: </p></label><input type="file" id="imageInput" accept="image/*">
-            <button type="button" id="aggiungiImmagine" onclick="addImage()">Aggiungi</button>
+            <section>
+                <button type="button" id="aggiungiImmagine" onclick="addImage()">Aggiungi</button>
+                <button type="reset">Annulla</button>
+            </section>
             <p id="messaggioGalleria"></p>
         </form>
     </section>
@@ -110,7 +120,10 @@
                     <option value="Novembre">Novembre</option>
                     <option value="Dicembre">Dicembre</option>
                 </select>
-                <button type="button" id="btnCard" onclick="creaCartaJson()">Invia</button>
+                <section>
+                    <button type="button" id="btnCard" onclick="creaCartaJson()">Invia</button>
+                    <button type="reset">Annulla</button>
+                </section>
                 <p id="messaggioTraccia"></p>
             </form>
         </section>
@@ -152,7 +165,10 @@
                 <h1>Social media</h1>
                 <label for="nomeSocial">Nome social: <input type="text" id="nomeSocial"></label>
                 <label for="link">Link: <input type="url" id="link"></label>
-                <button type="button" onclick="creaSocialJson()" id="inviaSocial">Invia</button>
+                <section id="btnsFormSocial">
+                    <button type="button" onclick="creaSocialJson()" id="inviaSocial">Invia</button>
+                    <button type="reset" id="annullaCreazioneSocial">Annulla</button>
+                </section>
                 <p id="messaggioFetch"></p>
             </form>
             <section id="listaSocial">
@@ -274,6 +290,17 @@
             {
                 logOutFinestra.style.opacity = "0";
             }, 200);
+        }
+
+        function selectOnlyThis(id)
+        {
+            let myCheckbox = document.getElementsByName("checkboxProfilo");
+            Array.prototype.forEach.call(myCheckbox,function(el)
+            {
+                el.checked = false;
+            });
+
+            id.checked = true;
         }
     </script>
 </body>

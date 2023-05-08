@@ -236,7 +236,7 @@ function creaCartaJson()
     }
 }
 
-function creaCartaHTML(carta)
+async function creaCartaHTML(carta)
 {
     let userIsCompositore = false;
     if(window.location.pathname === "/html/editorCompositori.html")
@@ -333,13 +333,13 @@ function creaCartaHTML(carta)
     card.style.animation = "fadeIn 1.2s";
     card.style.animationIterationCount = "1";
     
-    if(!arrayCarte.length==0)
+    arrayCarte.push(carta);
+    idCarta++;
+    
+    if(arrayCarte.length != 0)
     {
         tracksContainer.style.display = "block";
     }
-
-    arrayCarte.push(carta);
-    idCarta++;
 
     if(userIsCompositore)
     {
