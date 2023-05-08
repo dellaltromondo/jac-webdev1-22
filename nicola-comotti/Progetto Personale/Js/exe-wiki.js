@@ -30,22 +30,29 @@ async function fetchExercises() {
         const exeJson = await response.json();
         console.log(exeJson);
         document.getElementById('exercises-list').replaceChildren();
+        const addedExercises = {};
         exeJson.forEach(exercise => {
-            buildExercise(exercise);
+            buildExercise(exercise, addedExercises);
         });
     } catch (error) {
         console.error(error);
     }
 }
 
-function buildExercise(exercise) {
+
+function buildExercise(exercise, addedExercises) {
     const exeElement = document.createElement('li');
     exeElement.setAttribute('class', 'exercise');
     const exeID = exercise.id;
     exeElement.setAttribute('id', exeID);
-    document.getElementById('exercises-list').appendChild(exeElement);
 
     const exeName = exercise.exercise_name;
+    if (addedExercises[exeName]) {
+        console.log(`${exeName} already added to list`);
+        return;
+    }
+    addedExercises[exeName] = true;
+
     const nameElement = document.createElement('h2');
     nameElement.innerText = exeName;
     nameElement.setAttribute('class', 'exe-name');
@@ -92,6 +99,8 @@ function buildExercise(exercise) {
     videoButton.setAttribute('class', 'exe-button');
     videoButton.setAttribute('onclick', 'openPopup(this.parentNode.id, "video")');
     exeElement.appendChild(videoButton);
+
+    document.getElementById('exercises-list').appendChild(exeElement);
 }
 
 async function fetchExerciseData(exeID) {
