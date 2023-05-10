@@ -40,4 +40,5 @@ async function calcolaBMI() {
         }
     }
     document.getElementById(idImg).style.display = 'inline-block';
+    document.getElementById('bmi').focus();
 }
