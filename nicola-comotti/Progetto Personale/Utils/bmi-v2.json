@@ -1,5 +1,6 @@
 {
   "maschio_u18": {
+    "idImg": "bmi-m-u18",
     "pesoMin": "18.5 * ((altezza / 100) ** 2)",
     "pesoMax": "25 * ((altezza / 100) ** 2)",
     "intervalli": [
@@ -41,6 +42,7 @@
     ]
   },
   "femmina_u18": {
+    "idImg": "bmi-f-u18",
     "pesoMin": "17 * ((altezza / 100) ** 2)",
     "pesoMax": "23 * ((altezza / 100) ** 2)",
     "intervalli": [
@@ -82,6 +84,7 @@
     ]
   },
   "maschio_ad": {
+    "idImg": "bmi-m-ad",
     "pesoMin": "18.5 * ((altezza / 100) ** 2)",
     "pesoMax": "25 * ((altezza / 100) ** 2)",
     "intervalli": [
@@ -123,6 +126,7 @@
     ]
   },
   "femmina_ad": {
+    "idImg": "bmi-f-ad",
     "pesoMin": "18.5 * ((altezza / 100) ** 2)",
     "pesoMax": "25 * ((altezza / 100) ** 2)",
     "intervalli": [

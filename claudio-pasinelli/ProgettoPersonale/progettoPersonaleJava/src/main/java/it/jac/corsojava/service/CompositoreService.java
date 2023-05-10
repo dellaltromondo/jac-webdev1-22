@@ -39,7 +39,7 @@ public class CompositoreService
 		return result;
 	}
 	
-	public Compositore create(long idUser, String nomeArtista, String descrizione, String urlPic)
+	public Compositore create(long idUser, String nomeArtista, String descrizione, String urlPic, String tema)
 	{
 		UserService userDao = UserService.getInstance();
 		
@@ -53,6 +53,7 @@ public class CompositoreService
 		Objects.requireNonNull(nomeArtista);
 		Objects.requireNonNull(descrizione);
 		Objects.requireNonNull(urlPic);
+		Objects.requireNonNull(tema);
 		
 		Compositore entity = new Compositore();
 		
@@ -60,6 +61,7 @@ public class CompositoreService
 		entity.setNomeArtista(nomeArtista);
 		entity.setDescrizione(descrizione);
 		entity.setUrlPic(urlPic);
+		entity.setTema(tema);
 		entity.setUtenteIns("admin");
 		entity.setDataIns(LocalDateTime.now());
 		
@@ -70,11 +72,11 @@ public class CompositoreService
 		return entity;
 	}
 
-	public Compositore update(long idCompositore, String nomeArtista, String descrizione, String urlPic)
+	public Compositore update(long idCompositore, String nomeArtista, String descrizione, String urlPic, String tema)
 	{
 		log.debug("Modifica compositore");
-		log.trace("nome artista [{}], descrizione [{}], url pic [{}]",
-				nomeArtista, descrizione, urlPic);
+		log.trace("nome artista [{}], descrizione [{}], url pic [{}], tema [{}]",
+				nomeArtista, descrizione, urlPic, tema);
 		
 		Compositore entity = this.dao.findById(idCompositore);
 		
@@ -86,6 +88,7 @@ public class CompositoreService
 		entity.setNomeArtista(nomeArtista);
 		entity.setDescrizione(descrizione);
 		entity.setUrlPic(urlPic);
+		entity.setTema(tema);
 		entity.setUtenteIns("admin");
 		entity.setDataIns(LocalDateTime.now());
 

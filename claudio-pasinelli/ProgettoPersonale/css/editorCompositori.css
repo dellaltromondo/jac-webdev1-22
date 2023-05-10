@@ -621,6 +621,15 @@ footer#piePagina
     /* grid-column: 2/8; */
 }
 
+#btnsFormSocial
+{
+    display: flex;
+}
+
+#inviaSocial
+{
+    margin-right: 5px;
+}
 /*GALLERIA DI IMMAGINI*/
 
 section#galleriaImmagini

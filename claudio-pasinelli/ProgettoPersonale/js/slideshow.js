@@ -214,7 +214,7 @@ function addImage()
     input.value = "";
 }
 
-function addImageObj(foto)
+async function addImageObj(foto)
 {
     images.push(foto);
     arrayFoto.push(foto);

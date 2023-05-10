@@ -23,20 +23,3 @@ function toggleMenu() {
 function logout() {
     window.location.href = "login-page.html";
 }
-
-/* 
-? Funzione che DOVREBBE fare la fetch degli esercizi dalla mia API in Eclipse
-
-async function fetchEsercizi() {
-    const response = await fetch("http://localhost:8080/esercizioAPI/listaesercizi");
-    const jsonResponse = await response.json();
-    console.log(jsonResponse);
-
-    jsonResponse.products.forEach(product => {
-        const elemento = document.createElement('li');
-        document.getElementById('prodotti').appendChild(elemento);
-        elemento.innerHTML = product;
-    });
-}
-*/
-
