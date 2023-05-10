@@ -55,6 +55,7 @@ header>button {
     border: none;
     position: fixed;
     top: 1.4em;
+    cursor: pointer;
 }
 
 header>button:active {
@@ -231,6 +232,7 @@ article {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 0.5em;
 }
 
 .filter {
@@ -242,7 +244,6 @@ article {
     font-size: 1em;
     border-radius: var(--b-radius);
     padding-left: 1em;
-    margin-top: 0.5em;
 }
 
 .filter:active {
