@@ -1,5 +1,4 @@
 /*  [1] CAMBIO PAGINE */
-
 function mostraLogin() {
     document.getElementById("paginaLogin").style.display = "flex"
     document.getElementById("paginaSignin").style.display = "none"
@@ -15,7 +14,6 @@ function mostraSignin2() {
     document.getElementById("paginaSignin").style.display = "none"
     document.getElementById("paginaSignin2").style.display = "flex"
 }
-
 document.addEventListener("DOMContentLoaded", function() {
 
 
@@ -28,23 +26,21 @@ userPassword.addEventListener("input", () => {
 })
 
 let spuntaX = {
-    spunta: 'altreIcone/spunta-verde.png',
-    x: 'altreIcone/x-rosso.png'
+    spunta: '../altreIcone/spunta-verde.png',
+    x: '../altreIcone/x-rosso.png'
 }
 
     /* [2.1] MOSTRA #div-caratteristiche-password */
     const divPassword = document.getElementById("div-caratteristiche-password");
     divPassword.style.opacity = "0"
 
-    mostraCaratteristichePassword = (userPasswordValue) => {
-
-        if (userPasswordValue) {
+    function mostraCaratteristichePassword(userPasswordValue) {
+        if (userPasswordValue && !textPassword(userPassword)) {
             divPassword.classList.add('visible')
             setTimeout(function() {
                 divPassword.style.opacity = "1"
             }, 300)
-
-
+            
         } else {
             divPassword.style.opacity = "0"
             setTimeout(function() {
@@ -71,8 +67,7 @@ let spuntaX = {
             document.getElementById("img2").src = spuntaX.spunta
             document.getElementById("img3").src = spuntaX.spunta
             document.getElementById("img4").src = spuntaX.spunta
-            document.getElementById("div-caratteristiche-password").classList.remove('visible')
-
+            return true
         } else {
             if (userPasswordValue.length < 8 || userPasswordValue.length > 15){
                 document.getElementById("img1").src = spuntaX.x
@@ -94,6 +89,7 @@ let spuntaX = {
             } else {
                 document.getElementById("img4").src = spuntaX.spunta
             }
+            return false
         }
     }
 
@@ -244,4 +240,5 @@ userEmail.addEventListener("input", textEmail)
         })
     }
 
+    
 })
