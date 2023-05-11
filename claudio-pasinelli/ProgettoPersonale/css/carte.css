@@ -34,7 +34,7 @@ form#formCard select#mese
     width: fit-content;
 }
 
-form#formCard button#btn-card
+form#formCard button#btnCard
 {
     width: fit-content;
 }
@@ -49,6 +49,7 @@ form#formCard button#btn-card
     background-position: top center;
     background-repeat: no-repeat;
     background-size: cover;
+    min-width: fit-content;
 }
 
 #tracksContainer p
@@ -83,6 +84,11 @@ form#formCard button#btn-card
     width: 100%;
     height: fit-content;
     margin: auto;
+}
+
+#titoloTracce
+{
+    text-align: center;
 }
 
 .card
@@ -176,6 +182,28 @@ form#formCard button#btn-card
     transform-origin: top center;
 }
 
+.elimina
+{
+    background-color: var(--colore-mezzo-chiaro);
+    border-radius: var(--border-radius-default);
+    border-width: 0px;
+    cursor: pointer;
+}
+
+.cestinoCard
+{
+    height: 20px;
+    width: auto;
+    transition: all 0.2s ease-in-out;
+}
+
+.cestinoCard:hover, .cestinoSocial:hover
+{
+    -ms-transform: scale(1.25) rotate(5deg);
+    -webkit-transform: scale(1.25) rotate(5deg);
+    transform: scale(1.25) rotate(5deg);
+}
+
 /*  */
 .title
 {
@@ -249,9 +277,11 @@ form#formCard button#btn-card
     margin-top: auto;
     border: solid var(--colore-oro);
     border-width: 3px 0px 0px 0px;
+    border-radius: var(--border-radius-default);
+    padding: 5px;
 }
 
-button#btn-card
+button#btnCard
 {
     margin: 5px 0px;
 }

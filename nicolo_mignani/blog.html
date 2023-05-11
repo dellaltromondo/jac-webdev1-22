@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+
+<html>
+     
+     <head>
+
+      <link rel="stylesheet" href="blog.css">
+
+      </head>
+
+        <body>
+
+           <header>
+
+              <h1>VIAGGIA CON NOI</h1>
+
+                    <div class="home">
+                    
+                        <a href="Progetto_Nicolo_Mignani.html">HOME</a>
+
+                    </div>
+
+                    <div class="blog">
+
+                        <a href="blog.html">BLOG</a>
+
+                    </div>
+                    <div class="contatti">
+
+                      <a href="contatti.html">CONTATTI</a>
+
+                    </div>
+
+                    <div class="prenota">
+
+                        <a href="Prenota.html">PRENOTA</a>
+
+                    </div>
+
+          </header>
+
+    <main>
+
+      <h3>QUOI PUOI TROVARE LE ESPERIENZA CHE I NOSTRI UTENTI HANNO FATTO IN ALCUNE DELLE<br>
+        METE PREFERITE DALLA NOSTRA UTENZA</h3>
+
+      <hr>
+
+      <image></image>
+      <section class="thailandia">
+      <h3>Benvenuti in Thailandia: scopriamo insieme la terra del sorriso</h3>
+
+      <p>La Thailandia è una meta turistica sempre più popolare tra i viaggiatori di tutto il mondo, 
+        grazie alla sua ricca cultura,alla sua cucina deliziosa <br>
+        e alla bellezza dei suoi paesaggi naturali.
+        In questo articolo, vi porterò alla scoperta della mia esperienza in questo paese meraviglioso.</p>
+
+      <hr>
+
+      <h3>Bangkok: la città del caos e della spiritualità</h3>
+
+      <image></image>
+      <p>Il mio viaggio in Thailandia è iniziato a Bangkok, la capitale del paese. 
+        La città è caotica, rumorosa e affollata, ma allo stesso tempo ricca di cultura e spiritualità.<br>
+         Ho visitato i templi più famosi, come il Wat Pho con il grande Buddha reclinato, 
+         e ho passeggiato per il mercato galleggiante di Damnoen Saduak.<br> Ho anche sperimentato la vita notturna di Bangkok, 
+         visitando i famosi bar e locali notturni della città.</p>
+
+        </section>
+
+
+
+
+    </main>
+
+
+
+    <footer>
+        <p>©️ Copyright 2023 | Nomadi Moderni di Viaggigiovani.it S.r.l.
+          Via Milano 17, 38122, Trento
+          Nr registro, Partita IVA e CF: 02092650221 - Socio Unico - Cap. Sociale: 10.000€
+          Licenza PAT nr 52 del 12/02/2009 - Polizza RC nr 1/75910/319/100972789 di UnipolSai Assicurazioni S.p.A</p>
+          
+          
+        
+        <section class="recensioni">
+          <button class="bsi" onclick="plusDivs(-1)"><</button>
+        
+          <p class="recensione">ho trovato questo sito a caso e adesso uso solo questo per i miei viaggi</p>
+          <p class="recensione">viaggi spettacolari per prezzi convenienti</p>
+          <p class="recensione">sito molto utile se si vogliono fare delle vacanze organizzate bene</p>
+          <p class="recensione">sono davvero stupito di questo sito ha una varietaa di destinazioni pazzesche</p>
+
+
+          <button class="bdx" onclick="plusDivs(1)">></button>
+
+       </section>
+
+      </footer>
+
+      <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+        
+        function plusDivs(n) {
+          showDivs(slideIndex += n);
+        }
+        
+        function showDivs(n) {
+          var i;
+          var x = document.getElementsByClassName("recensione");
+          if (n > x.length) {slideIndex = 1}
+          if (n < 1) {slideIndex = x.length}
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+          }
+          x[slideIndex-1].style.display = "block";  
+        }
+        </script>
+
+      
+   </body>
+</html>

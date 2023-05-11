@@ -1,0 +1,55 @@
+Scarface
+Pulp Fiction
+Kill Bill
+Sharknado
+la casa
+l'esorcista
+rambo
+fast and furious
+indiana jones
+ritorno al futuro
+
+
+To make a button in JavaScript that shows something and hides something else, you can use the addEventListener method to attach a click event listener to the button, and then use the style.display property to show or hide the elements.
+
+Here's an example code snippet that demonstrates how to achieve this:
+
+html
+Copy
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Button Example</title>
+</head>
+<body>
+	<button id="myButton">Click me</button>
+	<div id="showMe">This is the element that will be shown</div>
+	<div id="hideMe">This is the element that will be hidden</div>
+
+	<script>
+		// Get references to the button and the elements to show/hide
+		const myButton = document.getElementById('myButton');
+		const showMe = document.getElementById('showMe');
+		const hideMe = document.getElementById('hideMe');
+
+		// Add a click event listener to the button
+		myButton.addEventListener('click', function() {
+			// Toggle the display of the elements
+			if (showMe.style.display === 'none') {
+				showMe.style.display = 'block';
+				hideMe.style.display = 'none';
+			} else {
+				showMe.style.display = 'none';
+				hideMe.style.display = 'block';
+			}
+		});
+	</script>
+</body>
+</html>
+In this example, when the button is clicked, the if statement checks the display property of the showMe element. If it is currently set to none, it sets it to block to show it, and sets the hideMe element to none to hide it. If the display property of showMe is not none, it sets it to none to hide it, and sets the hideMe element to block to show it.
+
+
+
+window.onload = function() {
+  // your code here
+}

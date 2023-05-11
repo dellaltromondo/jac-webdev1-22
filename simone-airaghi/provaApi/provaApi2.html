@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>API Forecast</title>
+</head>
+<body>
+	<button onclick="getForecast()">Get Forecast</button>
+	<div id="results"></div>
+	<script src="script.js"></script>
+</body>
+</html>
+<script>
+   function getForecast() {
+	const options = {
+		method: 'GET',
+	};
+	fetch(`https://api.open-meteo.com/v1/forecast?latitude=45.70&longitude=9.67&hourly=temperature_2m,relativehumidity_2m,precipitation`, options)
+		.then(response => response.json())
+		.then(response => {
+			// Visualizza i risultati sulla pagina
+			const results = document.getElementById('results');
+			results.innerHTML = JSON.stringify(response);
+		})
+		.catch(err => console.error(err));
+}
+
+
+</script>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+</head>
+
+<body>
+    <form>
+        <label>username: <input type="text" id="username"></label>
+        <label>password: <input type="password" id="password"></label>
+        <button type="button" onclick="provalogin()">login</button>
+    </form>
+    <h1>lista prodotti</h1>
+    <ul id="prodotti">
+
+    </ul>
+    <script type="module">
+        const response = await fetch("http://localhost:8080/esercizioAPI/api");
+        const jsonrespons = await response.json();
+        console.log(jsonrespons);
+        jsonrespons.products.forEach(products => {
+            const elemento = document.createElement("li");
+            document.getElementById("prodotti").appendChild(elemento);
+            elemento.innerText = products;
+        });
+
+
+    </script>
+    <script>
+        async function provalogin() {
+            const username = document.getElementById["username"].value;
+            const password = document.getElementById["password"].value;
+            const requestobject = { "username": username, "password": password }
+            const response = await fetch("http://localhost:8080/esercizioAPI/login", {
+                method: "POST",
+                body: JSON.stringify(requestobject)
+            });
+            if (await loginresponse.json() == true) {
+                console.log("ti sei loggatto correttamente")
+            } else {
+                console.log("credenziali errate")
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ereditarietà</title>
+</head>
+<body>
+    
+
+    <script src="Messaggio.js" ></script>
+
+    <script>
+        const sender = new User("dann", "daniele", "simic");
+        const receiver = new User("lucl", "luca", "ripa");
+        const c = new Chat();
+        const m = new Messaggio( "10", sender, receiver, Date());
+        c.sendMessagge(m)
+        console.log(m);
+        
+    </script>
+</body>
+</html>

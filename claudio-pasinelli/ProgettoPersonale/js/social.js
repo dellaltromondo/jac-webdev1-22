@@ -1,633 +1,585 @@
-// FARE I CONTROLLI DI DUPLICATI!!!!!!!
-
 let idSocial = 1;
-let arraySocial = [];
 
-function creaSocialJson()
+let arraySocial = [];
+let arrayMedia =
+[
+    "youtube",
+    "deezer",
+    "youtube music",
+    "spotify",
+    "apple music",
+    "soundcloud",
+    "amazon music",
+    "itunes",
+    "tidal",
+    "facebook",
+    "twitter",
+    "instagram",
+    "linkedin",
+    "tiktok",
+    "snapchat",
+]
+
+class Social
 {
+    idSocial;
+    idCompositore;
+    dataTooltip;
+    media;
+    link;
+    img;
+    eliminata;
+
+    constructor(idSocial, idCompositore, dataTooltip, media, link, img, eliminata)
+    {
+        this.idSocial = idSocial;
+        this.idCompositore = idCompositore;
+        this.dataTooltip = dataTooltip;
+        this.media = media;
+        this.link = link;
+        this.img = img;
+        this.eliminata = eliminata;
+    }
+
+    getIdSocial()
+    {
+        return this.idSocial;
+    }
+
+    getIdCompositore()
+    {
+        return this.idCompositore;
+    }
+
+    getMedia()
+    {
+        return this.media;
+    }
+
+    getLink()
+    {
+        return this.link;
+    }
+
+    getImg()
+    {
+        return this.img;
+    }
+
+    getDataTooltip()
+    {
+        return this.dataTooltip;
+    }
+
+    isEliminata()
+    {
+        return this.eliminata;
+    }
+
+    setEliminata(eliminata)
+    {
+        this.eliminata = eliminata;
+    }
+}
+
+async function trovaMaxIdSocial()
+{
+    const idCompositore = localStorage.getItem("idCompositore");
+    const getSocials = await fetch("http://localhost:8080/progettoPersonaleJava/api/v1/socials/" + idCompositore + "/compositori");
+    const getSocialsJson = await getSocials.json();
+
+    let maxId = 1;
+
+    for(socialCompositore of getSocialsJson)
+    {
+        if(socialCompositore.idSocial > maxId)
+        {
+            maxId = socialCompositore.idSocial;
+        }
+    }
+
+    if(maxId != 1)
+    {
+        idSocial = maxId + 1;
+    }
+}
+
+async function creaSocialJson()
+{
+    const inviaBtn = document.getElementById("inviaSocial");
+    const annullaBtn = document.getElementById("annullaCreazioneSocial");
+    let testoMessaggio = document.getElementById("messaggioFetch");
+
     if (document.getElementById("nomeSocial").value === "")
     {
-        alert("Non hai inserito il nome del social!");
+        testoMessaggio.scrollIntoView(
+            {
+                behavior: 'smooth',
+                block: 'end'
+            });
+
+        inviaBtn.style.display = "none";
+        annullaBtn.style.display = "none";
+        testoMessaggio.style.display = "block";
+        testoMessaggio.innerText = "Non hai inserito il nome del social!";
+        testoMessaggio.style.color = "red";
+
+        setTimeout(() =>
+        {
+            testoMessaggio.innerText = "";
+            testoMessaggio.style.display = "none";
+            inviaBtn.style.display = "flex";
+            annullaBtn.style.display = "flex";
+            document.getElementById('link').value = "";
+        }, 2500);
+
         return;
     }
 
     else if (document.getElementById("link").value === "")
     {
-        alert("Non hai inserito il link del social!");
+        testoMessaggio.scrollIntoView(
+            {
+                behavior: 'smooth',
+                block: 'end'
+            });
+
+        inviaBtn.style.display = "none";
+        annullaBtn.style.display = "none";
+        testoMessaggio.style.display = "block";
+        testoMessaggio.innerText = "Non hai inserito il link del social!";
+        testoMessaggio.style.color = "red";
+
+        setTimeout(() =>
+        {   
+            testoMessaggio.innerText = "";
+            testoMessaggio.style.display = "none";
+            inviaBtn.style.display = "flex";
+            annullaBtn.style.display = "flex";
+            document.getElementById('link').value = "";
+        }, 2500);
+
         return;
     }
 
-    else if(
-        similarity(document.getElementById("nomeSocial").value,"youtube") < 0.8 
-        && similarity(document.getElementById("nomeSocial").value,"deezer") < 0.8 
-        && similarity(document.getElementById("nomeSocial").value,"youtube music") < 0.8 
-        && similarity(document.getElementById("nomeSocial").value,"spotify") < 0.8 
-        && similarity(document.getElementById("nomeSocial").value,"apple music") < 0.8 
-        && similarity(document.getElementById("nomeSocial").value,"soundcloud") < 0.8
-        && similarity(document.getElementById("nomeSocial").value,"amazon music") < 0.8 
-        && similarity(document.getElementById("nomeSocial").value,"itunes") < 0.8 
-        && similarity(document.getElementById("nomeSocial").value,"tidal") < 0.8 
-        && similarity(document.getElementById("nomeSocial").value,"facebook") < 0.8 
-        && similarity(document.getElementById("nomeSocial").value,"twitter") < 0.8 
-        && similarity(document.getElementById("nomeSocial").value,"instagram") < 0.8
-        && similarity(document.getElementById("nomeSocial").value,"linkedin") < 0.8
-    )
+    let c = 1;
+
+    for(socialMedia of arrayMedia)
     {
-        alert("Ci dispiace, ma non conosciamo il sito!");
-        document.getElementById('nomeSocial').value = '';
+        if(similarity(document.getElementById("nomeSocial").value, socialMedia) >= 0.8)
+        {
+            break;
+        }
+        
+        c++;
+
+        if(c === arrayMedia.length)
+        {
+            testoMessaggio.scrollIntoView(
+                {
+                    behavior: 'smooth',
+                    block: 'end'
+                });
+                
+            inviaBtn.style.display = "none";
+            annullaBtn.style.display = "none";
+            testoMessaggio.style.display = "block";
+            testoMessaggio.innerText = "Ci dispiace tanto, ma non conosciamo il sito!";
+            testoMessaggio.style.color = "red";
+    
+            setTimeout(() =>
+            {
+                testoMessaggio.innerText = "";
+                testoMessaggio.style.display = "none";
+                inviaBtn.style.display = "flex";
+                annullaBtn.style.display = "flex";
+                document.getElementById('link').value = "";
+            }, 2500);
+    
+            document.getElementById('nomeSocial').value = '';
+    
+            return;
+        }
+    }
+
+    if(!isURLValid(document.getElementById("link").value))
+    {
+        inviaBtn.style.display = "none";
+        annullaBtn.style.display = "none";
+        testoMessaggio.style.display = "block";
+        testoMessaggio.innerText = "Il link inserito non è valido!";
+        testoMessaggio.style.color = "red";
+
+        setTimeout(() =>
+        {
+            testoMessaggio.innerText = "";
+            testoMessaggio.style.display = "none";
+            inviaBtn.style.display = "flex";
+            annullaBtn.style.display = "flex";
+            document.getElementById('link').value = "";
+        }, 2500);
+
+        document.getElementById('link').value = '';
         return;
+    }
+
+    const risultatoFetch = await isLinkValid(document.getElementById("link").value);
+
+    if(!risultatoFetch)
+    {
+        inviaBtn.style.display = "none";
+        annullaBtn.style.display = "none";
+        testoMessaggio.innerText = "Il sito è non raggiungibile!";
+        testoMessaggio.style.color = "red";
+
+        setTimeout(() =>
+        {
+            testoMessaggio.innerText = "";
+            testoMessaggio.style.display = "none";
+            inviaBtn.style.display = "flex";
+            annullaBtn.style.display = "flex";
+            document.getElementById('link').value = "";
+
+        }, 2500);
+
+        return;
+    }
+
+    else if(risultatoFetch)
+    {
+        inviaBtn.style.display = "none";
+        
+        annullaBtn.style.display = "none";
+        testoMessaggio.innerText = "Il sito è raggiungibile!";
+        testoMessaggio.style.color = "lightgreen";
+
+        setTimeout(() =>
+        {
+            testoMessaggio.innerText = "";
+            testoMessaggio.style.display = "none";
+            inviaBtn.style.display = "flex";
+            annullaBtn.style.display = "flex";
+        }, 2500);
+    }
+
+    let media;
+    let mediaLowerCase;
+    let dataTooltip;
+    let link;
+    let img;
+    
+    for(mediaSocial of arrayMedia)
+    {
+        if(similarity(document.getElementById("nomeSocial").value, mediaSocial) >= 0.8)
+        {
+            if(mediaSocial === "soundcloud")
+            {
+                media = "SoundCloud";
+                mediaLowerCase = mediaSocial;
+                break;
+            }
+
+            else if(mediaSocial === "itunes")
+            {
+                media = "iTunes";
+                mediaLowerCase = mediaSocial;
+                break;
+            }
+
+            else if(mediaSocial === "tiktok")
+            {
+                media = "TikTok";
+                mediaLowerCase = mediaSocial;
+                break;
+            }
+            
+            mediaLowerCase = mediaSocial;
+            media = everyLetterUpperCase(mediaSocial);
+            break;
+        }
+    }
+
+    dataTooltip = media + ", link: " + document.getElementById("link").value;
+    link = document.getElementById("link").value;
+    img = "../iconeSocial/" + mediaLowerCase + ".png";
+    const idCompositore = localStorage.getItem("idCompositore");
+
+    const social = new Social(idSocial, idCompositore, dataTooltip, media, link, img, false);
+
+    creaSocial(social);
+}
+
+async function creaSocial(social)
+{
+    let userIsCompositore = false;
+
+    if(window.location.pathname === "/html/editorCompositori.html")
+    {
+        userIsCompositore = true;
+    }
+
+    let soundcloud;
+    let itunes;
+    let tiktok;
+
+    if(social.getMedia() === "SoundCloud")
+    {
+        soundcloud = true;
+    }
+
+    else if(social.getMedia() === "iTunes")
+    {
+        soundcloud = true;
+    }
+
+    else if(social.getMedia() === "TikTok")
+    {
+        tiktok = true;
+    }
+    
+    if(userIsCompositore)
+    {
+        oggetti = document.forms["social"].getElementsByTagName("input");
+    }
+
+    const listaSocial = document.getElementById("listaSocial");
+
+    listaSocial.style.marginTop = "1.5rem";
+
+    const figureSocial = document.createElement("figure");
+
+    if(social.getIdSocial() > idSocial)
+    {
+        figureSocial.setAttribute("id","social" + social.getIdSocial());
     }
     
     else
     {
-        if(similarity(document.getElementById("nomeSocial").value,"youtube") >= 0.8)
-        {
-            social =
-            {
-                id: idSocial,
-                dataTooltip: 'Youtube, link: ' + document.getElementById("link").value,
-                media: 'youtube',
-                link: 'Youtube',
-                img: '../iconeSocial/youtube.png',
-            }
-
-            arraySocial.push(social);
-        }
-    
-        else if(similarity(document.getElementById("nomeSocial").value,"deezer") >= 0.8)
-        {
-            social =
-            {
-                id: idSocial,
-                dataTooltip: 'Deezer, link: ' + document.getElementById("link").value,
-                media: 'deezer',
-                link: 'Deezer',
-                img: '../iconeSocial/deezer.png',
-            }
-
-            arraySocial.push(social);
-        }
-    
-        else if(similarity(document.getElementById("nomeSocial").value,"soundcloud") >= 0.8)
-        {
-            social =
-            {
-                id: idSocial,
-                dataTooltip: 'SoundCloud, link: ' + document.getElementById("link").value,
-                media: 'soundcloud',
-                link: 'SoundCloud',
-                img: '../iconeSocial/soundcloud.png',
-            }
-
-            arraySocial.push(social);
-        }
-    
-        else if(similarity(document.getElementById("nomeSocial").value,"spotify") >= 0.8)
-        {
-            social =
-            {
-                id: idSocial,
-                dataTooltip: 'Spotify, link: ' + document.getElementById("link").value,
-                media: 'spotify',
-                link: 'Spotify',
-                img: '../iconeSocial/spotify.png',
-            }
-
-            arraySocial.push(social);
-        }
-    
-        else if(similarity(document.getElementById("nomeSocial").value,"youtube music") >= 0.8)
-        {
-            social =
-            {
-                id: idSocial,
-                dataTooltip: 'Youtube Music, link: ' + document.getElementById("link").value,
-                media: 'youtube music',
-                link: 'Youtube Music',
-                img: '../iconeSocial/youtube_music.png',
-            }
-
-            arraySocial.push(social);
-        }
-    
-        else if(similarity(document.getElementById("nomeSocial").value,"apple music") >= 0.8)
-        {
-            social =
-            {
-                id: idSocial,
-                dataTooltip: 'Apple Music, link: ' + document.getElementById("link").value,
-                media: 'apple music',
-                link: 'Apple Music',
-                img: '../iconeSocial/apple_music.png',
-            }
-
-            arraySocial.push(social);
-        }
-    
-        else if(similarity(document.getElementById("nomeSocial").value,"amazon music") >= 0.8)
-        {
-            social =
-            {
-                id: idSocial,
-                dataTooltip: 'Amazon Music, link: ' + document.getElementById("link").value,
-                media: 'amazon music',
-                link: 'Amazon Music',
-                img: '../iconeSocial/amazon_music.png',
-            }
-
-            arraySocial.push(social);
-        }
-    
-        else if(similarity(document.getElementById("nomeSocial").value,"itunes") >= 0.8)
-        {
-            social =
-            {
-                id: idSocial,
-                dataTooltip: 'iTunes, link: ' + document.getElementById("link").value,
-                media: 'itunes',
-                link: 'iTunes',
-                img: '../iconeSocial/itunes.png',
-            }
-
-            arraySocial.push(social);
-        }
-    
-        else if(similarity(document.getElementById("nomeSocial").value,"tidal") >= 0.8)
-        {
-            social =
-            {
-                id: idSocial,
-                dataTooltip: 'Tidal, link: ' + document.getElementById("link").value,
-                media: 'tidal',
-                link: 'Tidal',
-                img: '../iconeSocial/tidal.png',
-            }
-
-            arraySocial.push(social);
-        }
-    
-        else if(similarity(document.getElementById("nomeSocial").value,"facebook") >= 0.8)
-        {
-            social =
-            {
-                id: idSocial,
-                dataTooltip: 'Facebook, link: ' + document.getElementById("link").value,
-                media: 'facebook',
-                link: 'Facebook',
-                img: '../iconeSocial/facebook.png',
-            }
-
-            arraySocial.push(social);
-        }
-    
-        else if(similarity(document.getElementById("nomeSocial").value,"twitter") >= 0.8)
-        {
-            social =
-            {
-                id: idSocial,
-                dataTooltip: 'Twitter, link: ' + document.getElementById("link").value,
-                media: 'twitter',
-                link: 'Twitter',
-                img: '../iconeSocial/twitter.png',
-            }
-
-            arraySocial.push(social);
-        }
-    
-        else if(similarity(document.getElementById("nomeSocial").value,"instagram") >= 0.8)
-        {
-            social =
-            {
-                id: idSocial,
-                dataTooltip: 'Instagram, link: ' + document.getElementById("link").value,
-                media: 'instagram',
-                link: 'Instagram',
-                img: '../iconeSocial/instagram.png',
-            }
-
-            arraySocial.push(social);
-        }
-    
-        else if(similarity(document.getElementById("nomeSocial").value,"linkedin") >= 0.8)
-        {
-            social =
-            {
-                id: idSocial,
-                dataTooltip: 'Linkedin, link: ' + document.getElementById("link").value,
-                media: 'linkedin',
-                link: 'Linkedin',
-                img: '../iconeSocial/linkedin.png',
-            }
-
-            arraySocial.push(social);
-        }
-
-        idSocial++;
-
-        creaSocial(social);
+        figureSocial.setAttribute("id","social" + idSocial);
     }
-}
 
-/*async*/ function creaSocial(social)
-{
-    let youtube;
-    let deezer;
-    let soundcloud;
-    let spotify;
-    let youtubeMusic;
-    let appleMusic;
-    let amazonMusic;
-    let itunes;
-    let tidal;
-    let facebook;
-    let twitter;
-    let instagram;
-    let linkedin;
-
-    //array di oggetti che contiene i social
-    const oggetti = document.forms["social"].getElementsByTagName("input");
-    const listaSocial = document.getElementById("listaSocial");
-    // nuovoLinkSocial.setAttribute('id','social'+idTraccia);
-    // nuovoLinkSocial.setAttribute('class','elementoTraccia zoom tip');
-
-    const figureSocial = document.createElement("figure");
-    figureSocial.setAttribute("id","social"+idSocial);
+    figureSocial.setAttribute("class","social");
     // figureSocial.setAttribute('class','canzone');
     listaSocial.appendChild(figureSocial);
 
-    if(social.media === "youtube")
+    for(mediaSocial of arrayMedia)
     {
-        figureSocial.setAttribute('data-tooltip', social.dataTooltip);
-        figureSocial.setAttribute('class', 'socialContainer');
-        youtube = true;
-    }
-
-    else if(social.media === "deezer")
-    {
-        figureSocial.setAttribute('data-tooltip', social.dataTooltip);
-        figureSocial.setAttribute('class', 'socialContainer');
-        deezer = true;
-    }
-
-    else if(social.media === "soundcloud")
-    {
-        figureSocial.setAttribute('data-tooltip', social.dataTooltip);
-        figureSocial.setAttribute('class', 'socialContainer');
-        soundcloud = true;
-    }
-
-    else if(social.media === "spotify")
-    {
-        figureSocial.setAttribute('data-tooltip', social.dataTooltip);
-        figureSocial.setAttribute('class', 'socialContainer');
-        spotify = true;
-    }
-
-    else if(social.media === "youtube music")
-    {
-        figureSocial.setAttribute('data-tooltip', social.dataTooltip);
-        figureSocial.setAttribute('class', 'socialContainer');
-        youtubeMusic = true;
-    }
-
-    else if(social.media === "apple music")
-    {
-        figureSocial.setAttribute('data-tooltip', social.dataTooltip);
-        figureSocial.setAttribute('class', 'socialContainer');
-        appleMusic = true;
-    }
-
-    else if(social.media === "amazon music")
-    {
-        figureSocial.setAttribute('data-tooltip', social.dataTooltip);
-        figureSocial.setAttribute('class', 'socialContainer');
-        amazonMusic = true;
-    }
-
-    else if(social.media === "itunes")
-    {
-        figureSocial.setAttribute('data-tooltip', social.dataTooltip);
-        figureSocial.setAttribute('class', 'socialContainer');
-        itunes = true;
-    }
-
-    else if(social.media === "tidal")
-    {
-        figureSocial.setAttribute('data-tooltip', social.dataTooltip);
-        figureSocial.setAttribute('class', 'socialContainer');
-        tidal = true;
-    }
-
-    else if(social.media === "facebook")
-    {
-        figureSocial.setAttribute('data-tooltip', social.dataTooltip);
-        figureSocial.setAttribute('class', 'socialContainer');
-        facebook = true;
-    }
-
-    else if(social.media === "twitter")
-    {
-        figureSocial.setAttribute('data-tooltip', social.dataTooltip);
-        figureSocial.setAttribute('class', 'socialContainer');
-        twitter = true;
-    }
-
-    else if(social.media === "instagram")
-    {
-        figureSocial.setAttribute('data-tooltip', social.dataTooltip);
-        figureSocial.setAttribute('class', 'socialContainer');
-        instagram = true;
-    }
-
-    else if(social.media === "linkedin")
-    {
-        figureSocial.setAttribute('data-tooltip', social.dataTooltip);
-        figureSocial.setAttribute('class', 'socialContainer');
-        linkedin = true;
-    }
-
-    for (let i = 0; i < oggetti.length; i++)
-    {
-        let linkImmagine = document.createElement("a");
-        let immagine = document.createElement("img");
-        let figcaption = document.createElement("figcaption");
-        let linkTesto = document.createElement("a");
+        if(social.getMedia() === everyLetterUpperCase(mediaSocial) && !soundcloud && !itunes)
+        {
+            figureSocial.setAttribute('data-tooltip', social.getDataTooltip());
+            figureSocial.setAttribute('class', 'socialContainer');
+            break;
+        }
         
-        if(oggetti[i].id === "nomeSocial")
+        else if (soundcloud || itunes || tiktok)
         {
-            if(youtube)
-            {
-                immagine.setAttribute("src", social.img);
-                immagine.setAttribute("alt","Logo di Youtube");
-                immagine.setAttribute("class","zoom");
-                
-                if(oggetti[i+1].id === "link")
-                {
-                    linkImmagine.setAttribute("href",oggetti[i+1].value);
-                    linkImmagine.setAttribute("target","_blank");
-                    linkImmagine.appendChild(immagine);
-                }
-                figureSocial.appendChild(linkImmagine);
-            }
-
-            else if(deezer)
-            {
-                immagine.setAttribute("src", social.img);
-                immagine.setAttribute("alt","Logo di Deezer");
-                immagine.setAttribute("class","zoom");
-                linkImmagine.appendChild(immagine);
-                
-                if(oggetti[i+1].id === "link")
-                {
-                    linkImmagine.setAttribute("href",oggetti[i+1].value);
-                    linkImmagine.setAttribute("target","_blank");
-                    linkImmagine.appendChild(immagine);
-                }
-                figureSocial.appendChild(linkImmagine);
-            }
-
-            else if(soundcloud)
-            {
-                immagine.setAttribute("src", social.img);
-                immagine.setAttribute("alt","Logo di SoundCloud");
-                immagine.setAttribute("class","zoom");
-                linkImmagine.appendChild(immagine);
-                
-                if(oggetti[i+1].id === "link")
-                {
-                    immagine.setAttribute("src", social.img);
-                    linkImmagine.setAttribute("target","_blank");
-                    linkImmagine.appendChild(immagine);
-                }
-                figureSocial.appendChild(linkImmagine);
-                soundcloud = true;
-            }
-
-            else if(spotify)
-            {
-                immagine.setAttribute("src", social.img);
-                immagine.setAttribute("alt","Logo di Spotify");
-                immagine.setAttribute("class","zoom");
-                linkImmagine.appendChild(immagine);
-                
-                if(oggetti[i+1].id === "link")
-                {
-                    linkImmagine.setAttribute("href",oggetti[i+1].value);
-                    linkImmagine.setAttribute("target","_blank");
-                    linkImmagine.appendChild(immagine);
-                }
-                figureSocial.appendChild(linkImmagine);
-            }
-
-            else if(youtubeMusic)
-            {
-                immagine.setAttribute("src", social.img);
-                immagine.setAttribute("alt","Logo di Youtube Music");
-                immagine.setAttribute("class","zoom");
-                linkImmagine.appendChild(immagine);
-                
-                if(oggetti[i+1].id === "link")
-                {
-                    linkImmagine.setAttribute("href",oggetti[i+1].value);
-                    linkImmagine.setAttribute("target","_blank");
-                    linkImmagine.appendChild(immagine);
-                }
-                figureSocial.appendChild(linkImmagine);
-            }
-
-            else if(appleMusic)
-            {
-                immagine.setAttribute("src", social.img);
-                immagine.setAttribute("alt","Logo di Apple Music");
-                immagine.setAttribute("class","zoom");
-                linkImmagine.appendChild(immagine);
-                
-                if(oggetti[i+1].id === "link")
-                {
-                    linkImmagine.setAttribute("href",oggetti[i+1].value);
-                    linkImmagine.setAttribute("target","_blank");
-                    linkImmagine.appendChild(immagine);
-                }
-                figureSocial.appendChild(linkImmagine);
-            }
-
-            else if(amazonMusic)
-            {
-                immagine.setAttribute("src", social.img);
-                immagine.setAttribute("alt","Logo di Amazon Music");
-                immagine.setAttribute("class","zoom");
-                linkImmagine.appendChild(immagine);
-                
-                if(oggetti[i+1].id === "link")
-                {
-                    linkImmagine.setAttribute("href",oggetti[i+1].value);
-                    linkImmagine.setAttribute("target","_blank");
-                    linkImmagine.appendChild(immagine);
-                }
-                figureSocial.appendChild(linkImmagine);
-            }
-
-            else if(itunes)
-            {
-                immagine.setAttribute("src", social.img);
-                immagine.setAttribute("alt","Logo di iTunes Store");
-                immagine.setAttribute("class","zoom");
-                linkImmagine.appendChild(immagine);
-                
-                if(oggetti[i+1].id === "link")
-                {
-                    linkImmagine.setAttribute("href",oggetti[i+1].value);
-                    linkImmagine.setAttribute("target","_blank");
-                    linkImmagine.appendChild(immagine);
-                }
-                figureSocial.appendChild(linkImmagine);
-            }
-
-            else if(tidal)
-            {
-                immagine.setAttribute("src", social.img);
-                immagine.setAttribute("alt","Logo di Tidal");
-                immagine.setAttribute("class","zoom");
-                linkImmagine.appendChild(immagine);
-                
-                if(oggetti[i+1].id === "link")
-                {
-                    linkImmagine.setAttribute("href",oggetti[i+1].value);
-                    linkImmagine.setAttribute("target","_blank");
-                    linkImmagine.appendChild(immagine);
-                }
-                figureSocial.appendChild(linkImmagine);
-            }
-
-            else if(facebook)
-            {
-                immagine.setAttribute("src", social.img);
-                immagine.setAttribute("alt","Logo di Facebook");
-                immagine.setAttribute("class","zoom");
-                linkImmagine.appendChild(immagine);
-                
-                if(oggetti[i+1].id === "link")
-                {
-                    linkImmagine.setAttribute("href",oggetti[i+1].value);
-                    linkImmagine.setAttribute("target","_blank");
-                    linkImmagine.appendChild(immagine);
-                }
-                figureSocial.appendChild(linkImmagine);
-            }
-
-            else if(twitter)
-            {
-                immagine.setAttribute("src", social.img);
-                immagine.setAttribute("alt","Logo di Twitter");
-                immagine.setAttribute("class","zoom");
-                linkImmagine.appendChild(immagine);
-                
-                if(oggetti[i+1].id === "link")
-                {
-                    linkImmagine.setAttribute("href",oggetti[i+1].value);
-                    linkImmagine.setAttribute("target","_blank");
-                    linkImmagine.appendChild(immagine);
-                }
-                figureSocial.appendChild(linkImmagine);
-            }
-
-            else if(instagram)
-            {
-                immagine.setAttribute("src", social.img);
-                immagine.setAttribute("alt","Logo di Instagram");
-                immagine.setAttribute("class","zoom");
-                linkImmagine.appendChild(immagine);
-                
-                if(oggetti[i+1].id === "link")
-                {
-                    linkImmagine.setAttribute("href",oggetti[i+1].value);
-                    linkImmagine.setAttribute("target","_blank");
-                    linkImmagine.appendChild(immagine);
-                }
-                figureSocial.appendChild(linkImmagine);
-            }
-
-            else if(linkedin)
-            {
-                immagine.setAttribute("src", social.img);
-                immagine.setAttribute("alt","Logo di Linkedin");
-                immagine.setAttribute("class","zoom");
-                linkImmagine.appendChild(immagine);
-                
-                if(oggetti[i+1].id === "link")
-                {
-                    linkImmagine.setAttribute("href",oggetti[i+1].value);
-                    linkImmagine.setAttribute("target","_blank");
-                    linkImmagine.appendChild(immagine);
-                }
-                figureSocial.appendChild(linkImmagine);
-            }
-        }
-        else if(oggetti[i].id === "link")
-        {
-            // if(await isLinkValid(oggetti[i]))
-            // {
-                // if(youtube)
-                //     linkTesto.innerText = "Youtube";
-                // else if(deezer)
-                //     linkTesto.innerText = "Deezer";
-                // else if(soundcloud)
-                //     linkTesto.innerText = "SoundCloud";
-                // else if(spotify)
-                //     linkTesto.innerText = "Spotify";
-                // else if(youtubeMusic)
-                //     linkTesto.innerText = "Youtube Music";
-                // else if(appleMusic)
-                //     linkTesto.innerText = "Apple Music";
-                // linkTesto.setAttribute("href",oggetti[i].value);
-                // figcaption.appendChild(linkTesto);
-                // figureSocial.appendChild(figcaption);
-            // }
-            // else
-            //     alert("La pagina da te inserita non è disponibile!");
-            linkTesto.innerText = social.link;
-            linkTesto.setAttribute("href",oggetti[i].value);
-            linkTesto.setAttribute("target","_blank");
-            figcaption.appendChild(linkTesto);
-            figureSocial.appendChild(figcaption);
+            figureSocial.setAttribute('data-tooltip', social.getDataTooltip());
+            figureSocial.setAttribute('class', 'socialContainer');
+            break;
         }
     }
+    
+    let sectionElimina;
+    let elimina;
+    let cestino;
+
+    if(userIsCompositore)
+    {
+        sectionElimina = document.createElement("section");
+        sectionElimina.setAttribute("class","eliminaSocial");
+        elimina = document.createElement("button");
+        cestino = document.createElement("img");
+    
+        elimina = document.createElement("button");
+        elimina.setAttribute("class","elimina");
+        elimina.setAttribute("onclick","eliminaSocial("+social.getIdSocial()+")");
+    
+        cestino = document.createElement("img");
+        cestino.setAttribute("src","../img/cestino.png");
+        cestino.setAttribute("class","cestinoSocial");
+        cestino.setAttribute("title","Elimina social");
+        elimina.appendChild(cestino);
+    
+        sectionElimina.appendChild(elimina);
+    
+        figureSocial.appendChild(sectionElimina);
+    }
+
+
+    const linkImmagine = document.createElement("a");
+    const immagine = document.createElement("img");
+    const figcaption = document.createElement("figcaption");
+    const linkTesto = document.createElement("a");
+
+    immagine.setAttribute("src", social.getImg());
+    immagine.setAttribute("alt","Logo di " + social.getMedia());
+    immagine.setAttribute("class","zoom");
+
+    linkImmagine.setAttribute("href", social.getLink());
+    linkImmagine.setAttribute("target","_blank");
+    linkImmagine.appendChild(immagine);
+
+    figureSocial.appendChild(linkImmagine);
+
+    linkTesto.innerText = social.getMedia(); 
+    linkTesto.setAttribute("href", social.getLink());
+    linkTesto.setAttribute("target", "_blank");
+    figcaption.appendChild(linkTesto);
+    figureSocial.appendChild(figcaption);
+    // }
+
     //resetto il valore del contenuto del form dopo che è stato utilizzato per creare il link social
-    document.getElementById('nomeSocial').value = '';
-    document.getElementById('link').value = '';
+
+    figureSocial.style.animation = "fadeIn 1.2s";
+    figureSocial.style.animationIterationCount = "1";
+
+    if(userIsCompositore)
+    {
+        document.getElementById('nomeSocial').value = '';
+        document.getElementById('link').value = '';
+    }
+
+    figureSocial.scrollIntoView(
+        {
+            behavior: 'smooth',
+            block: 'end'
+        });
+        
+    arraySocial.push(social);
+    idSocial++;
 
     if(arraySocial.length !== 0)
     {
         listaSocial.style.border = "solid rgb(255, 255, 255)";
-        listaSocial.style.borderWidth = "2px 0px 0px 0px";
+        listaSocial.style.borderWidth = "1px 0px 0px 0px";
     }
 }
 
-// async function isLinkValid(link)
-// {
-//     const linkResponse = await fetch(link);
-//     if(linkResponse.status==404)
-//         return false;
-//     return true; 
-// }
+async function isLinkValid(link)
+{
+    const inviaBtn = document.getElementById("inviaSocial");
+    const annullaBtn = document.getElementById("annullaCreazioneSocial");
+    let testoMessaggio = document.getElementById("messaggioFetch");
+
+    inviaBtn.style.display = "none";
+    annullaBtn.style.display = "none";
+    testoMessaggio.style.color = "white";
+    testoMessaggio.style.display = "block";
+    testoMessaggio.innerText = "Stiamo verificando se il sito è raggiungibile.";
+
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    try
+    {
+        const response = await fetch(link, { mode: 'no-cors' });
+        return true;
+    } 
+
+    catch (e)
+    {
+        return false;
+    }
+}
+
+function isURLValid(urlStr)
+{
+    let url;
+
+    try
+    {
+        url = new URL(urlStr);
+    }
+    
+    catch (error)
+    {
+        return false;
+    }
+
+    return true;
+}
+
+function eliminaSocial(id)
+{
+    let isSocialTrovato = false;
+    const listaSocial = document.getElementById("listaSocial");
+
+    for (const social of arraySocial)
+    {
+        if(social.getIdSocial() === parseInt(id))
+        {
+            const socialDaEliminare = document.getElementById("social"+id.toString());
+            social.setEliminata(true);
+    
+            socialDaEliminare.style.animation = "fadeOut 1.2s";
+            socialDaEliminare.style.animationIterationCount = "1";
+
+            setTimeout(() =>
+            {
+                socialDaEliminare.remove();
+
+                const socials = document.getElementsByClassName("socialContainer");
+                
+                if(socials.length == 0)
+                {
+                    listaSocial.style.border = "none";
+                    listaSocial.style.borderWidth = "0px 0px 0px 0px";
+                }
+            }, 1200);
+
+            isSocialTrovato = true;
+        }
+    }
+
+    if(!isSocialTrovato)
+    {
+        alert(`Il social "${id}" non è stato trovato!`);
+    }
+}
+
+function eliminaDefinitivamenteSocial(id)
+{
+    let isSocialTrovato = false;
+
+    for (const social of arraySocial)
+    {
+        if(social.getIdSocial() === parseInt(id))
+        {
+            const indice = arraySocial.indexOf(social);
+
+            arraySocial.splice(indice,1);
+            isSocialTrovato = true;
+        }
+    }
+
+    if(!isSocialTrovato)
+    {
+        alert(`La traccia "${id}" non è stata trovata!`);
+    }
+}
 
 function similarity(s1, s2)
 {
     let longer = s1;
     let shorter = s2;
+
     if (s1.length < s2.length)
     {
       longer = s2;
       shorter = s1;
     }
+
     let longerLength = longer.length;
+
     if (longerLength == 0)
-      return 1.0;
+    {
+        return 1.0;
+    }
+
     return (longerLength - editDistance(longer, shorter)) / parseFloat(longerLength);
 }
 
-  function editDistance(s1, s2)
-  {
+function editDistance(s1, s2)
+{
     s1 = s1.toLowerCase();
     s2 = s2.toLowerCase();
 
@@ -638,7 +590,10 @@ function similarity(s1, s2)
         for (let j = 0; j <= s2.length; j++)
         {
             if (i == 0)
-            costs[j] = j;
+            {
+                costs[j] = j;
+            }
+
             else
             {
                 if (j > 0)
@@ -653,7 +608,134 @@ function similarity(s1, s2)
             }
         }
         if (i > 0)
+        {
             costs[s2.length] = lastValue;
+        }
     }
+
     return costs[s2.length];
-  }
+}
+
+function everyLetterUpperCase(str)
+{
+    const arr = str.split(" ");
+
+    for (let i = 0; i < arr.length; i++)
+    {
+        arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
+    }
+
+    return str2 = arr.join(" ");
+}
+
+async function salvaSocial(getSocialsJson)
+{
+    let continua = false;
+
+    let idSocial;
+    let idCompositore;
+    let dataTooltip;
+    let img;
+    let link;
+    let media;
+    let eliminata;
+
+    if(arraySocial.length != 0)
+    {
+        for(social of arraySocial)
+        {
+            const body = JSON.stringify(social);
+            
+            if(social.isEliminata() === true)
+            {
+                await cancellaSocial(social, body);
+            }
+        }
+    }
+    
+    if(arraySocial.length != 0)
+    {
+        for(social of arraySocial)
+        {
+            const body = JSON.stringify(social);
+    
+            for(socialCompositore of getSocialsJson)
+            {
+                continua = false;
+                
+                idSocial = socialCompositore.idSocial;
+                idCompositore = socialCompositore.idCompositore;
+                dataTooltip = socialCompositore.dataTooltip;
+                img = socialCompositore.img;
+                link = socialCompositore.link;
+                media = socialCompositore.media;
+                eliminata = socialCompositore.eliminata
+
+                if(social.getIdSocial() === idSocial)
+                {
+                    if(social.getIdCompositore() === idCompositore)
+                    {
+                        if(social.getDataTooltip() === dataTooltip)
+                        {
+                            if(social.getImg() === img)
+                            {
+                                if(social.getLink() === link)
+                                {
+                                    if(social.getMedia() === media)
+                                    {
+                                        continua = true;
+                                        break;
+                                    }
+                                    continue;
+                                }
+                                continue;
+                            }
+                            continue;
+                        }
+                        continue;
+                    }
+                    continue;
+                }
+                continue;
+            }
+
+            if(!continua)
+            {
+                postaSocial(body);
+            }
+        }
+    }
+
+    return;
+}
+
+async function postaSocial(body)
+{
+    const postSocial = await fetch("http://localhost:8080/progettoPersonaleJava/api/v1/socials/" + localStorage.getItem("idCompositore"),
+    {
+        method: "POST",
+        headers:
+        {
+            "content-type":'application/json'
+        },
+        body: body
+    });
+}
+
+async function cancellaSocial(social, body)
+{
+    const idSocial = social.getIdSocial().toString();
+    eliminaDefinitivamenteSocial(idSocial);
+    
+    const cancellaSocial = await fetch("http://localhost:8080/progettoPersonaleJava/api/v1/socials/" + idSocial,
+    {
+        method: "DELETE",
+        headers:
+        {
+            "content-type":'application/json'
+        },
+        body: body
+    });
+
+    return true;
+}

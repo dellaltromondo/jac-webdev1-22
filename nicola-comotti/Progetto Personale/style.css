@@ -8,8 +8,10 @@
     --white: #f5f5f5;
     --blue: rgb(0, 0, 128);
     --blue04: rgba(0, 0, 128, 0.4);
+    --blue08: rgba(0, 0, 128, 0.8);
     --grey: rgb(111, 111, 111);
     --transparent: rgb(0, 0, 0, 0);
+    --red: crimson;
     --border: 2px solid var(--white);
     --b-radius: 30px;
 }
@@ -53,6 +55,7 @@ header>button {
     border: none;
     position: fixed;
     top: 1.4em;
+    cursor: pointer;
 }
 
 header>button:active {
@@ -95,6 +98,7 @@ a:active {
 
 article {
     padding-bottom: 0.5em;
+    width: 100%;
 }
 
 #login-article {
@@ -133,7 +137,7 @@ article {
 }
 
 #login-form>h2 {
-    font-size: 1.3 em;
+    font-size: 1.3em;
     cursor: context-menu;
 }
 
@@ -159,51 +163,182 @@ article {
     cursor: pointer;
 }
 
-h2.muscolo {
-    max-width: fit-content;
-    margin: 0.4em auto 0 auto;
-    padding: 0.3em 1em;
-    color: var(--white);
+@keyframes blink {
+    0% {
+        box-shadow: 0 0 10px 10px var(--red);
+    }
+
+    50% {
+        box-shadow: 0 0 10px 5px var(--red);
+    }
+
+    100% {
+        box-shadow: 0 0 10px 10px var(--red);
+    }
+}
+
+#popup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 85.5vh;
+    position: fixed;
+    bottom: 0;
+    z-index: -1;
+}
+
+#errorPopup {
+    z-index: 2000;
     background-color: var(--grey);
-    border-top-right-radius: var(--b-radius);
-    border-top-left-radius: var(--b-radius);
-}
-
-.esercizio-database {
-    display: grid;
-    grid-template-columns: 30% 70%;
-    width: 80%;
     border-radius: var(--b-radius);
-    background-color: rgba(0, 0, 128, 0.6);
-    padding: 1em;
-    margin: 0 auto 1em auto;
-}
-
-.nome-esercizio {
-    color: var(--white);
-    width: 100%;
-    margin: auto;
+    position: fixed;
+    top: 25vh;
+    left: 50vw;
+    margin-left: -25vw;
+    width: 50vw;
     height: fit-content;
+    box-shadow: 0px 0px 10px 5px var(--red);
+    animation: blink 0.5s linear infinite;
 }
 
-.contenuto-esercizio {
-    display: grid;
-    grid-template-rows: 20% 70%;
-}
-
-.gif-esercizio {
-    width: 80%;
-    max-width: 200px;
-    border-radius: var(--b-radius);
-    margin: auto;
-}
-
-.testo-esercizio {
-    display: inline-block;
-    width: 90%;
-    margin: auto;
-    color: var(--white);
+#closePopupButton {
+    background-color: var(--red);
+    border: none;
+    border-radius: 10px;
     padding: 0.5em;
+    box-shadow: 2px 2px 5px 0.1px black;
+    margin-bottom: 1em;
+}
+
+#closeImage {
+    width: 20px;
+    margin: 0;
+    vertical-align: middle;
+}
+
+#closeText {
+    display: inline-block;
+    margin: 0 0 0 0.5em;
+    font-family: var(--font);
+    color: whitesmoke;
+    position: relative;
+    top: 0.1em;
+}
+
+#filters {
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.5em 0.5em 0 0.5em;
+    column-gap: 0.5em;
+}
+
+.filter {
+    width: 25%;
+    min-width: fit-content;
+    height: 3em;
+    font-family: var(--font);
+    font-weight: bold;
+    font-size: 1em;
+    border: var(--border);
+    border-radius: var(--b-radius);
+    padding-left: 1em;
+}
+
+#search-button {
+    height: 3em;
+    width: 10%;
+    font-family: var(--font);
+    font-weight: bold;
+    font-size: 1em;
+    background-color: var(--blue);
+    color: var(--white);
+    border: var(--border);
+    cursor: pointer;
+    border-radius: var(--b-radius);
+}
+
+#search-button:hover {
+    background-color: var(--white);
+    color: var(--blue);
+}
+
+#exercises-list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-evenly;
+}
+
+.exercise {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    list-style-type: none;
+    border: var(--border);
+    border-radius: 20px;
+    margin: 0.5em;
+    padding: 1em 0.5em;
+    width: clamp(200px, 23%, 400px);
+    background-color: var(--blue04);
+    color: var(--white);
+}
+
+.exercise>h2 {
+    margin: 0;
+    padding-bottom: 0.3em;
+    font-size: larger;
+}
+
+.exercise>h3 {
+    margin: 0;
+    padding-bottom: 0.1em;
+    font-weight: normal;
+    font-size: medium;
+}
+
+.exe-button {
+    font-family: var(--font);
+    margin: 0.2em 0.5em;
+    min-width: 50%;
+    background-color: var(--blue08);
+    color: var(--white);
+    border: var(--border);
+    border-radius: var(--b-radius);
+    padding-bottom: 0.2em;
+    cursor: pointer;
+}
+
+.popup-title {
+    margin: 0;
+    padding: 0.3em;
+}
+
+#step-list {
+    text-align: left;
+    margin: 0 0 1em 0;
+}
+
+.exe-video {
+    max-width: -webkit-fill-available;
+    border-radius: 10px;
+    margin-bottom: 1em;
+}
+
+
+.popup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    width: 50vw;
+    background-color: darkgray;
+    padding: 1em;
+    border-radius: 10px;
 }
 
 form {
@@ -211,7 +346,7 @@ form {
     width: fit-content;
     padding: 0 3em;
     border: var(--border);
-    border-radius: 50px;
+    border-radius: var(--b-radius);
     background-color: var(--blue04);
     color: var(--white);
 }
@@ -223,7 +358,7 @@ form>label {
 
 select {
     font-family: var(--font);
-    background-color: rgba(0, 0, 128, 0.8);
+    background-color: var(--blue08);
     color: var(--white);
     border: 1px solid var(--white);
     border-radius: 10px;
@@ -237,7 +372,7 @@ option[value="none"] {
 
 input {
     font-family: var(--font);
-    background-color: rgba(0, 0, 128, 0.8);
+    background-color: var(--blue08);
     color: var(--white);
     border: 1px solid var(--white);
     border-radius: 10px;
@@ -312,7 +447,16 @@ input[type="number"] {
     top: 0.1em;
 }
 
-#result-bmi {
+/* #bmi-calculator {
+    display: none;
+} */
+
+section>h2 {
+    color: var(--white);
+}
+
+#result-bmi,
+#disclaimer {
     background-color: var(--blue04);
     border: var(--border);
     border-radius: var(--b-radius);
@@ -322,7 +466,6 @@ input[type="number"] {
 
 p {
     color: var(--white);
-
 }
 
 strong {
@@ -337,8 +480,10 @@ strong {
     border: var(--border);
 }
 
-#bmi-img {
-    width: 90%;
+.bmi-img {
+    width: 60%;
+    border-radius: var(--b-radius);
+    display: none;
 }
 
 #grid-contatti {
@@ -368,17 +513,6 @@ strong {
 .contatto>h3 {
     margin: 0.2em auto;
 }
-
-/*footer {
-    background-color: var(--blue);
-    color: var(--white);
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    padding: 1em 0;
-}*/
 
 /* DESKTOP */
 @media (min-width: 850px) {

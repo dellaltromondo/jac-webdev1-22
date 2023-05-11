@@ -1,0 +1,482 @@
+* {
+    background-color: black;
+
+}
+
+header {
+    position: sticky;
+}
+
+/* NAV */
+
+
+nav h1 {
+    color: red;
+    font-family: sans-serif;
+    display: inline-block;
+    font-size: xx-large;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 24px;
+    margin-left: 24px;
+
+}
+
+nav li a {
+    text-decoration: none;
+    font-family: Georgia, 'Times New Roman', Times, serif
+}
+
+nav li img {
+    width: 30px;
+    height: 25px;
+}
+
+nav li :after {
+
+    cursor: pointer;
+}
+
+
+
+#info {
+    color: white;
+
+}
+
+#info:hover {
+    color: yellow;
+}
+
+ol h1 {
+    margin-right: 50px;
+}
+
+/*-----------------------------*/
+section {
+    color: white;
+    background-color: red;
+
+    margin-top: 40px;
+}
+
+section ol {
+    background-color: red;
+}
+
+section ol li {
+    display: inline-block;
+    margin-right: 90px;
+    margin-left: 50px;
+
+    font-weight: bold;
+    font-size: xx-large;
+    font-style: oblique;
+    background-color: red;
+    margin-bottom: 40px;
+}
+
+section ol li img {
+    margin-right: 90px;
+    margin-left: 70px;
+    border-radius: 30px;
+    width: 100px;
+    background-color: red;
+    display: inline-block;
+    text-align: center;
+    padding: 10px 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+section ol li p {
+    background-color: red;
+}
+
+
+
+h2 {
+    text-align: center;
+    color: white;
+    margin-top: 0px;
+    font-family: monospace
+}
+
+h2 b {
+    color: blueviolet;
+    background-color: black;
+    text-align: center;
+}
+
+/*PRODOTTI----------------------------------*/
+#prodotti ol li {
+    margin-top: 50px;
+    background-color: black;
+    color: black;
+    margin-left: 20px;
+    margin-right: 20px;
+
+}
+
+#prodotti ol {
+    background-color: black;
+
+}
+
+#prodotti {
+    background-color: black;
+    display: inline-block;
+    margin-left: 0%;
+}
+
+#prodotti ol li img {
+    margin-right: 100px;
+    margin-left: 150px;
+    display: block;
+    margin-bottom: 20px;
+
+}
+
+#prodotti ol li button {
+    width: 230px;
+    margin-left: 100px;
+}
+
+#prodotti ol li button #bu {
+    margin-top: 80px;
+    display: block;
+
+}
+
+#prodotti ol li button p {
+    color: white;
+
+}
+
+#prodotti ol li button #bu p {
+    background-color: red;
+    margin-right: 100px;
+    margin-left: 150px;
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+
+#prodotti p:hover {
+    color: black;
+}
+
+/*PRODOTTI FINE----------------*/
+
+#codice {
+    background-color: white;
+    width: auto;
+
+    border-radius: 50px;
+
+}
+
+#codice h2 {
+    color: black;
+    background-color: white;
+    text-align: left;
+    padding: 30px;
+    border-radius: 10px;
+    margin-left: 100px;
+}
+
+#codice p {
+    color: black;
+    background-color: white;
+    font-family: monospace;
+    text-align: left;
+    padding: 15px;
+    border-radius: 10px;
+    margin-left: 170px;
+    padding-bottom: 30px;
+    font-size: x-large;
+
+}
+
+#codice img {
+    background-color: white;
+    width: 30px;
+    height: 30px;
+    margin-left: 350px;
+}
+
+#codice p input {
+
+    margin-left: 200px;
+    height: 40px;
+    width: 200px;
+    color: white;
+}
+
+#codice button {
+
+    display: inline-block;
+    margin-left: 70%;
+    margin-bottom: 50px;
+    color: red;
+    border-radius: 1cm;
+    text-size-adjust: 20px;
+    height: 50px;
+    width: 100px;
+    font-size: medium;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+div #contact {
+    background-color: black;
+    padding: 50px;
+    margin-top: 50px;
+}
+
+#contact {
+    background-color: black;
+}
+
+#contact img {
+
+    display: inline-block;
+    background-color: grey;
+    margin-left: 30px;
+}
+
+
+
+#bu {
+    background-color: red;
+    border-radius: 20px;
+}
+
+button #bu p {
+    background-color: red;
+
+}
+
+
+/*-----------SLIDER IMMAGINI-------------*/
+
+
+* {
+    box-sizing: border-box
+}
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 1000px;
+    height: 300px;
+    position: relative;
+    margin: auto;
+    border-radius: 10px;
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+
+}
+
+.mySlides img {
+    height: 300px;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+    background-color: red
+}
+
+/* Caption text */
+.testo {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+/* Number text (1/3 etc) */
+.numberTesto {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* The dots/bullets/indicators */
+.punto {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+/*-----------SLIDER IMMAGINI FINE-------------*/
+
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+
+.fa-youtube {
+    background: #bb0000;
+    color: white;
+}
+
+.fa-instagram {
+    background: #125688;
+    color: white;
+}
+
+
+footer #contact #copywright {
+    display: block;
+    margin-top: 10px;
+    color: red;
+}
+
+#contattaci {
+    margin-left: 70px;
+    margin-top: 60px;
+    background-color: black;
+    color: white;
+    margin-bottom: 0px;
+    height: 50px;
+    display: inline-block;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 46%;
+
+}
+
+#contact img {
+    margin-left: 10px;
+    background-color: white;
+}
+
+#contact h3 {
+    color: white;
+    background-color: black;
+    text-align: center;
+
+}
+
+#contact a {
+    margin-top: 50px;
+}
+
+#imagesfooter {
+
+    margin-left: 42%;
+}
+
+table {
+    background-color: black;
+    color: white;
+    width: 100%;
+    margin-top: 20px;
+
+}
+
+table td {
+    background-color: white;
+}
+
+table th {
+    background-color: white;
+}
+
+table tr {
+    background-color: white;
+    color: black;
+}
+
+h4 {
+    color: black;
+    background-color: red;
+    border-radius: 2cm;
+    margin-left: 20px;
+    font-size:
+        30px;
+    padding: 10px;
+}
+
+h4 strong {
+    background-color: red;
+    border-radius: 2cm;
+    padding: 10px;
+}
