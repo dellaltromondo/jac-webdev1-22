@@ -42,7 +42,7 @@
                     <label>
                         Sesso:
                         <select id="sesso">
-                            <option value="none" selected disabled>Seleziona sesso</option>
+                            <option value="none" selected disabled hidden>Seleziona sesso</option>
                             <option value="maschio">Maschio</option>
                             <option value="femmina">Femmina</option>
                         </select>
@@ -62,7 +62,7 @@
             </aside>
             <section class="column">
                 <section id="result-bmi">
-                    <p>Il tuo BMI è <strong id="bmi"></strong> Kg/m^2 ed è <strong id="condizione"></strong></p>
+                    <p>Il tuo BMI è <strong id="bmi" tabindex="-1"></strong> Kg/m^2 ed è <strong id="condizione"></strong></p>
                     <p>Il tuo peso forma secondo il BMI è compreso tra <strong id="pesoMin"> </strong> Kg e <strong
                             id="pesoMax"> </strong> Kg</p>
                 </section>

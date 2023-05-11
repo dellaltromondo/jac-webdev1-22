@@ -105,8 +105,7 @@ body {
   /* bottom container */
   .bottom-container {
     text-align: center;
-    background-color: #666;
-    border-radius: 0px 0px 4px 4px;
+    background-color: #04AA6D;    border-radius: 0px 0px 4px 4px;
   }
   
   /* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
