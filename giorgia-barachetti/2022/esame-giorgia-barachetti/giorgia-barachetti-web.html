@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--css-->
+        <link rel="stylesheet" href="css/general.css">
+        <!--js-->
+        <script src="./js/functions.js"></script>
+    </head>
+    <body>
+
+        <section id="container">
+            <header>
+                <h1>Pokédex</h1>
+                <div>
+                    <a>My Pokémons</a>
+                    <a>New Pokémon</a>
+                    <a>Info</a>
+                </div>
+            </header>
+            
+            <section id="sidebar">
+               <section id="link">
+                    
+                </section> 
+                <section>
+                    <form>
+                        <h1>Insert New</h1>
+                        <div>
+                            <label>Pokémon Name:</label>
+                            <input placeholder="e.g. Pikachu"/>
+                        </div>
+                        <div id="checkbox">
+                            <input type="checkbox">Captured</input>
+                            <label>Level: <input type="number" min="1" max="10"></label>
+                        </div>
+                        <div>
+                            <label>Image URL:</label>
+                            <input placeholder="Enter image URL"/>
+                        </div>
+                        <div>
+                            <label>Description:</label>
+                            <textarea placeholder="Enter description"></textarea>
+                        </div>
+                        <button type="button" onclick="newPokemon()">ENTER</button>
+                    </form>
+                </section>
+                
+               <section></section> 
+
+            </section>
+
+
+
+            
+            <section id="main">
+                <div id="output"></div>
+            </section>
+            
+        </section>
+
+    
+    
+
+
+    
+
+
+    </body>
+</html>

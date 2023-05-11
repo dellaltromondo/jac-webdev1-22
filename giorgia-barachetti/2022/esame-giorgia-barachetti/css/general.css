@@ -1,0 +1,110 @@
+/*
+header{
+    background-color: red;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    padding: 0
+}
+
+#sidebar{
+    background-color: lightgrey;
+    height: 100%; 
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    overflow-x: hidden; 
+    padding-top: 20px;
+  
+}
+*/
+#container {
+    display: grid;
+    grid-template-columns: 250px 1fr; 
+    grid-template-rows: auto; 
+    
+  }
+
+  header {
+    grid-column: 1 / -1; 
+    background-color: red;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  header>div>a{
+   padding:10px;
+   background-color: rgba(255,255,255, 0.55);
+   border-radius: 3px;
+   text-decoration: underline;
+  }
+  
+  
+  #sidebar {
+    background-color: #ffffff57;
+    padding: 20px;
+    height: 100%;
+    border: 1px solid lightgrey;
+    
+  }
+  
+  #main {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 1px 1px 1px 1px lightgrey;
+    border-radius: 5px;
+    justify-content: center;
+    border: 1px solid lightgrey;
+    margin:10px
+  }
+
+  #divCard{
+    display: flex; 
+    flex-direction: column;
+    box-shadow: 1px 1px 1px 1px lightgrey;
+    width: 200px;
+    border:1px solid grey;
+    border-radius: 5px;
+    text-align:center;
+    padding:10px;
+    margin:10px
+  }
+  #imgCard{
+    max-width:100%  
+  }
+
+  body{
+    background-color: white;
+    margin:0;
+  }
+
+  form{
+    display: grid;
+    padding: 5px;
+    width:100%
+  }
+  form div{
+    padding: 2px;
+    margin-top:5px;
+    width:100%
+
+  }
+  #checkbox{
+    display: flex;
+
+  }
+  #link{
+    display: flex;
+    flex-direction: column
+  }
+
+  #divLink{
+    border:1px solid grey;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 1px lightgrey;
+    text-align: center;
+  }
