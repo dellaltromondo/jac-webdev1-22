@@ -1,55 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
-
 <body>
-  <form action="">
-    <label for="">username: <input type="text" id="username"></label>
-    <label for="">password: <input type="password" id="password"></label>
-    <button type="button" onclick="provaLogin()">login</button>
-  </form>
-
-  <h1>Lista prodotti</h1>
+<div id="return">
+<form action="">
+  <label for="">username: <input type="text" id="username"></label>
+  <label for="">password: <input type="password" id="password"></label>
+  <button type="button" onclick="provaLogin(), toggle()">login</button>
+</form>
+<h1>Lista prodotti</h1>			
   <ul id="prodotti">
-
   </ul>
+    
+</div>
 
-  <script type="module">
+<div id="user" style="display: none;">
+<h2>Anagrafica Utente</h2>
+<button type="button" onclick="toggleHome()">logout</button>
+</div>
 
-    const response = await fetch("http://localhost:8080/esercizioAPI/api");
-    const jsonResponse = await response.json();
-    console.log(jsonResponse);
-    jsonResponse.products.forEach(product => {
-      const elemento = document.createElement("li");
-      document.getElementById("prodotti").appendChild(elemento);
-      elemento.innerText = product;
-    })
-
-  </script>
-
-  <script>
-    async function provaLogin() {
-      const username = document.getElementById("username").value;
-      const password = document.getElementById("password").value;
-      const requestObj = { "username": username, "password": password }
-      const loginResponse = await fetch("http://localhost:8080/esercizioAPI/login", {
-        method: "POST",
-        body: JSON.stringify(requestObj)
-      });
-      if (await loginResponse.json() == true) {
-        console.log("nome utente e pwd corretti");
-      } else {
-        console.log("credenziali errati");
-      }
-    }
-
-  </script>
+    <script type="module">
+       
+      const response = await fetch("http://localhost:8080/esercizioAPI/api");
+      const jsonResponse = await response.json();
+      console.log(jsonResponse);
+      jsonResponse.products.forEach(product=>{
+        const elemento = document.createElement("li");
+        document.getElementById("prodotti").appendChild(elemento);
+        elemento.innerText = product;
+      })
+      
+    </script>
+        
+    <script>
+  async function provaLogin(){
+          const username = document.getElementById("username").value;
+          const password = document.getElementById("password").value;
+          const requestObj = {"username" : username, "password": password }
+          const loginResponse = await fetch("http://localhost:8080/esercizioAPI/login",{
+            method:"POST",
+            body:JSON.stringify(requestObj)
+          });
+          if(loginResponse.status == 401){
+            console.log("credenziali errate");
+          }else{
+           const responseObj = await loginResponse.json();
+           console.log(responseObj.firstName);
+           console.log(responseObj.lastName);
+           console.log(responseObj.age);
+          }
+          
+          
+        }
+        
+        function toggle(){
+          const home = document.getElementById('return');
+          const users = document.getElementById('user');
+        
+          home.style.display = 'none';
+          users.style.display = 'block';
+        }
+        
+        function toggleHome(){
+          const home = document.getElementById('return');
+          const users = document.getElementById('user');
+        
+          home.style.display = 'block';
+          users.style.display = 'none';
+        }
+        </script>
 </body>
-
 </html>

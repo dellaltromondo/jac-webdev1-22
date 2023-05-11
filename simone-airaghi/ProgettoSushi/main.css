@@ -12,9 +12,8 @@ body {
 
 h1{
     text-align: center;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 50px;
-    
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    font-size: 70px;
     }
    
     
@@ -22,14 +21,14 @@ h1{
         border: 1px #ddd solido;
         border-radius: 4px;
         padding: 20px;
-        width:6rem;
+        width:80px;
+        height: 80px;
         border-radius: 30%;
-        margin:auto;
-        
-         
-        
+        justify-self: center;
         
     }
+
+
 
     .sidenav {
         height: 100%;
@@ -41,10 +40,12 @@ h1{
         right: 0;
         background-color: #111;
         overflow-x: hidden;
+        overflow-y: hidden;
         padding-top: 20px;
         padding-left: 10px;
         margin-top: 0px;
         list-style-type: none;
+
         
         
     }
@@ -53,12 +54,16 @@ h1{
 
     section {
         margin-left: 160px;
-        /* Same as the width of the sidenav */
         font-size: 28px;
-        /* Increased text to enable scrolling */
         padding: 0px 10px;
-        
-        
+        border-width: 3px;
+        border-color: black;
+        border-style: double;
+        display: grid;
+        grid-auto-rows: minmax(100px,auto);
+        grid-template-columns: repeat(3,1fr);
+        gap: 5px;
+        margin-top: 10px;
     }
 
     header {
@@ -67,6 +72,7 @@ h1{
         display: inline-block;
         width: calc(100% - 160px);
         padding-left: 160px;
+        
         
         
     }
@@ -99,39 +105,28 @@ h1{
         
     }
 
-    #nigiri {
-        border-width: 3px;
-        border-color: black;
-        border-style: double;
-        
+    
 
+    .title{
+        grid-column: 1 / 4;
+        grid-row: 1 / 2;
+        justify-self: center;
     }
 
-    #hosomaki {
-        border-width: 3px;
-        border-color: black;
-        border-style: double;
-        margin-top: 10px;
+    .price{
+        grid-column: 1 / 4;
+        grid-row: 2 / 3;
+        justify-self: center;
         
     }
 
-    #temaki {
-        border-width: 3px;
-        border-color: black;
-        border-style: double;
-        margin-top: 10px;
-        
-    }
+    
 
     #riepilogo {
         display: none;
     }
 
-    .img{
-        text-align: center;
-        display: block;
-        
-    }
+    
 
     #UlnavMenu2 {
         background-color: rgba(17, 17, 17, 0.922);
@@ -150,13 +145,6 @@ h1{
         
 
     }
-
-    h2 {
-        text-align: center;
-        font-size: 50px;
-        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    }
-    
 
     table {
         margin: 0 auto;
@@ -181,10 +169,12 @@ h1{
     }
 
    .sidenav button {
-    padding:2em;
+    padding:1em;
     margin: 1em;
     background-color: rgb(65, 65, 49);
     border-radius: 15%;
+    width: 100px;
+    height: 70px;
     
     
 

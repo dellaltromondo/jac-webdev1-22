@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+</head>
+<body>
+    <form>
+        <label>username <input type="text" id="username"></label>
+        <label>password <input type="password" id="password"></label>
+        <button type="button" onclick="provaLogin()">invia</button>
+    </form>
+    <h1>lista prodotti:</h1>
+<ul id="prodotti">
+
+</ul>
+
+    <script type= "module">
+     
+
+     const response = await fetch("http://localhost:8080/EsercizioAPI/api");
+        const jsonresponse = await response.json(); //il .json() serve per tradurre la stringa in un oggetto
+        console.log(jsonresponse);
+        jsonresponse.products.forEach(product => {
+            const elemento = document.createElement("li")
+            document.getElementById("prodotti").appendChild(elemento);
+            elemento.innerText = product;
+        });
+    </script>
+
+    <script>
+         async function provaLogin() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const requestObj = { "username:": username, "password: ": password}
+            const loginResponse = await fetch("http://localhost:8080/EsercizioAPI/login", {
+                method: "POST", //di base la fetch esegue un get quindi glielo devo specificare che è una post
+                body: JSON.stringify(requestObj)
+            });
+            if(loginResponse.status == 401) {
+                alert("credenziali errate");
+            } else {
+                const response = await loginResponse.json();
+                alert(response.age)
+                alert(response.lastName)
+                alert(response.firstName)
+            }
+
+            if(await loginResponse.json() == true) {
+                console.log("nome utente e password corretti")
+            } else {
+                console.log("nome utente e password non corretti")
+            }
+        }
+    </script>
+
+</body>
+</html>

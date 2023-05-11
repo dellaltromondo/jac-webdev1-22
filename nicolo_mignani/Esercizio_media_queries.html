@@ -4,6 +4,23 @@
     <head>
         <title>Media queries</title>
         <style>
+
+          :root{
+
+             --main-coloro: violet;
+            --main-border: 2rem solid var(--main-color);
+          }
+
+          @media (prefers-color-scheme: dark){
+            
+            :root{
+
+
+              --main-color: lightpink;
+            }
+
+
+            }
         
           .only-mobile{
               
@@ -19,7 +36,11 @@
         
         
           @media  (max-width: 960px) {
+              p{
 
+                color: var(--main-color);
+
+              }
             .only-mobile{
 
                 display: block; 
@@ -30,6 +51,24 @@
 
            }
         }
+
+        @media (prefers-color-scheme: dark){
+
+             body{
+
+                 background-color: grey;
+
+             }
+
+        }
+
+        nav button{
+          
+          border: 0.2rem solid var(--main-coloro);
+          border-color: var(--main-coloro);
+        }
+
+
         article{
 
       column-count: 3;

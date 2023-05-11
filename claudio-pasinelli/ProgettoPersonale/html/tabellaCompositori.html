@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabella Compositori</title>
+    <link rel="stylesheet" href="../css/tabelleCompositori.css">
+    <link rel="stylesheet" href="../css/editorCompositori.css">
+    <script src="../js/tabellaCompositori.js"></script>
+    <script src="../js/salvaDatiUtente.js"></script>
+    <script src="../js/caricaUtente.js"></script>
+</head>
+<body>
+    <section id="loaderWrapper">
+        <span class="loader"><span class="loaderInner"></span></span>
+    </section>
+    
+    <button class="tornaSu" onclick="scrollToTop()">&#11165;</button>
+
+    <section id="progress-container">
+        <section class="progress-bar" id="myBar"></section>
+    </section>
+
+    <nav id="navBar">
+        <section class="dropdown">
+            <button type="button" id="userNickname">Nome Cognome</button>
+            <section class="dropdownContent">
+                <button class="zoom" id="logOut" onclick="logOut()">Esci</button>
+            </section>
+          </section>
+    </nav>
+
+    <section id="titoloListaCompositori">
+        <h1 id="titoloLista">Tutti i nostri creator</h1>
+    </section>
+    <section id="profilo">
+    </section>
+
+    <footer id="piePagina">
+        <p>Tutti i diritti riservati, Claudio Pasinelli ©</p>
+    </footer>
+
+    <script>
+        window.addEventListener("load", (event) =>
+        {
+            eseguiCaricaDati();
+            let userNickname = document.getElementById("userNickname");
+
+            if(localStorage.getItem("NomeUser") === null || localStorage.getItem("CognomeUser") === null)
+            {
+                userNickname.innerText = "Impossibile caricare il nome dell'utente";
+            }
+
+            else if(localStorage.getItem("NomeUser") === "undefined" || localStorage.getItem("CognomeUser") === "undefined")
+            {
+                userNickname.innerText = "Impossibile caricare il nome dell'utente";
+            }
+
+            else
+            {
+                const nome = localStorage.getItem("NomeUser");
+                const cognome = localStorage.getItem("CognomeUser");
+                userNickname.innerText = nome + " " + cognome;
+            }
+        });
+
+        async function eseguiCaricaDati()
+        {
+            await creaTabellaCompositori();
+
+            const loader = document.getElementById("loaderWrapper");
+            loader.style.animation = "fadeOut 1.2s";
+            loader.style.animationIterationCount = "1";
+
+            const elencoCompositori = document.getElementById("profilo");
+
+            if(elencoCompositori.length < 1)
+            {
+                const titoloLista = document.getElementById("titoloLista");
+                titoloLista.innerText = "";
+
+                const footer = document.getElementById("piePagina");
+                footer.style.marginTop = "100vh";
+                footer.style.width = "100%";
+
+                const avviso = document.createElement("p");
+                avviso.innerText = "Siamo spiacenti, ma non siamo risuciti a trovare i nostri creator. Passa più tardi";
+                avviso.style.margin = "12.5% auto auto auto";
+                avviso.style.width = "100%";
+                avviso.style.display = "inline-block";
+                avviso.style.textAlign = "center";
+                avviso.style.fontSize = "3rem";
+                avviso.style.overflowWrap = "break-word";
+                avviso.style.position = "relatibve";
+
+                elencoCompositori.appendChild(avviso);
+            }
+            
+            setTimeout(() =>
+            {
+                loader.parentNode.removeChild(loader);
+            }, 1200);
+        }
+                    
+        let lastScrollTop;
+
+        navbar = document.getElementById("navBar");
+
+        window.onscroll = () =>
+        {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            const tornaSu = document.querySelector(".tornaSu");
+
+            document.getElementById("myBar").style.width = scrolled + "%";
+            
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if(scrollTop > lastScrollTop)
+            {
+                navbar.style.top='-200px';
+            }
+            
+            else
+            {
+                navbar.style.top='0';
+            }
+
+            //bottone tornaSu
+
+            if (scrolled > 50)
+            {
+                tornaSu.style.opacity = "1";
+                tornaSu.style.visibility = "visible";
+                tornaSu.style.transform = "translateY(0px)";
+            }
+
+            else
+            {
+                tornaSu.style.opacity = "0";
+                tornaSu.style.visibility = "hidden";
+                tornaSu.style.transform = "translateY(10px)";
+            }
+
+            lastScrollTop = scrollTop;
+        }
+
+        let tornaSu = document.querySelector(".tornaSu");
+        
+        function scrollToTop()
+        {
+            let rootElement = document.documentElement;
+
+            rootElement.scrollTo
+            (
+                {
+                    top: 0,
+                    behavior: "smooth"
+                }
+            );
+        }
+
+        function logOut()
+        {
+            const logOutFinestra = document.getElementById("messaggioLogout");
+            const logOut = document.getElementById("logOutPremuto");
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>

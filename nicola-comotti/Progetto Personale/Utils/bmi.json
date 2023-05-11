@@ -1,0 +1,148 @@
+{
+    "tabelle": [
+        {
+            "etaMin": "0",
+            "sesso": "maschio",
+            "pesoMax": "25 * ((altezza / 100) * (altezza / 100))",
+            "pesoMin": "18.5 * ((altezza / 100) * (altezza / 100))",
+            "condizioni": [
+                {
+                    "bmiMin": "0",
+                    "condizione": "Grave sottopeso"
+                },
+                {
+                    "bmiMin": "16.5",
+                    "condizione": "Sottopeso"
+                },
+                {
+                    "bmiMin": "18.5",
+                    "condizione": "Normopeso"
+                },
+                {
+                    "bmiMin": "25",
+                    "condizione": "Sovrappeso"
+                },
+                {
+                    "bmiMin": "30",
+                    "condizione": "Obeso di primo grado"
+                },
+                {
+                    "bmiMin": "35",
+                    "condizione": "Obeso di secondo grado"
+                },
+                {
+                    "bmiMin": "40",
+                    "condizione": "Obeso di terzo grado"
+                }
+            ]
+        },
+        {
+            "etaMin": "0",
+            "sesso": "femmina",
+            "pesoMax": "23 * ((altezza / 100) * (altezza / 100))",
+            "pesoMin": "17 * ((altezza / 100) * (altezza / 100))",
+            "condizioni": [
+                {
+                    "bmiMin": "0",
+                    "condizione": "Grave Sottopeso"
+                },
+                {
+                    "bmiMin": "16",
+                    "condizione": "Sottopeso"
+                },
+                {
+                    "bmiMin": "17",
+                    "condizione": "Normopeso"
+                },
+                {
+                    "bmiMin": "23",
+                    "condizione": "Sovrappeso"
+                },
+                {
+                    "bmiMin": "27",
+                    "condizione": "Obesa di primo grado"
+                },
+                {
+                    "bmiMin": "32",
+                    "condizione": "Obesa di secondo grado"
+                },
+                {
+                    "bmiMin": "37",
+                    "condizione": "Obesa di terzo grado"
+                }
+            ]
+        },
+        {
+            "etaMin": "18",
+            "sesso": "maschio",
+            "pesoMax": "25 * ((altezza / 100) * (altezza / 100))",
+            "pesoMin": "18.5 * ((altezza / 100) * (altezza / 100))",
+            "condizioni": [
+                {
+                    "bmiMin": "0",
+                    "condizione": "Grave Sottopeso"
+                },
+                {
+                    "bmiMin": "16",
+                    "condizione": "Sottopeso"
+                },
+                {
+                    "bmiMin": "18.5",
+                    "condizione": "Normopeso"
+                },
+                {
+                    "bmiMin": "25",
+                    "condizione": "Sovrappeso"
+                },
+                {
+                    "bmiMin": "30",
+                    "condizione": "Obeso di primo grado"
+                },
+                {
+                    "bmiMin": "35",
+                    "condizione": "Obeso di secondo grado"
+                },
+                {
+                    "bmiMin": "40",
+                    "condizione": "Obeso di terzo grado"
+                }
+            ]
+        },
+        {
+            "etaMin": "18",
+            "sesso": "femmina",
+            "pesoMax": "25 * ((altezza / 100) * (altezza / 100))",
+            "pesoMin": "18.5 * ((altezza / 100) * (altezza / 100))",
+            "condizioni": [
+                {
+                    "bmiMin": "0",
+                    "condizione": "Grave Sottopeso"
+                },
+                {
+                    "bmiMin": "16",
+                    "condizione": "Sottopeso"
+                },
+                {
+                    "bmiMin": "18.5",
+                    "condizione": "Normopeso"
+                },
+                {
+                    "bmiMin": "25",
+                    "condizione": "Sovrappeso"
+                },
+                {
+                    "bmiMin": "30",
+                    "condizione": "Obesa di primo grado"
+                },
+                {
+                    "bmiMin": "35",
+                    "condizione": "Obesa di secondo grado"
+                },
+                {
+                    "bmiMin": "40",
+                    "condizione": "Obesa di terzo grado"
+                }
+            ]
+        }
+    ]
+}

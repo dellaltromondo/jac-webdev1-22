@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
+body{
+    background-color: rgb(211, 211, 211);
+    font-family: 'Crimson Text', serif;
+}
+
+#aliExpress header i, #amazon header i, #barilla header i{
+    display: none;
+}
+
+#aliExpress, #amazon, #barilla{
+    display: none;
+}
+
+header h1{
+    text-align: center;
+    color: rgb(0, 51, 102);
+    padding-bottom: 0.3em;
+}
+
+#aliExpress header, #amazon header, #barilla header{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+i.fa-home {
+    color: rgb(0, 51, 102);
+}

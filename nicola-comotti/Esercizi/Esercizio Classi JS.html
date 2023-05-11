@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="it">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Esercizio Classi JS</title>
+    </head>
+
+    <body>
+        <p>Classe Message con attributi privati timestamp, sender e receiver e metodi getter + costruttore</p>
+        <p>Dalla classe Message devono derivare TextMessage, ImageMessage</p>
+        <p>Classe TextMessage con arrtibuto privato textContent e metodo getContent() + costruttore</p>
+        <p>Classe ImageMessage con arrtibuto privato srcImage e metodo getSrcImage() + costruttore</p>
+
+        <script>
+            class Message {
+                #timestamp;
+                #sender;
+                #receiver;
+
+                getTimestamp() {
+                    return this.#timestamp;
+                };
+                getSender() {
+                    return this.#sender;
+                };
+                getReceiver() {
+                    return this.#receiver;
+                };
+
+                constructor(timestamp, sender, receiver) {
+                    this.#timestamp = timestamp;
+                    this.#sender = sender;
+                    this.#receiver = receiver;
+                };
+            }
+
+            class TextMessage extends Message {
+                #textContent;
+
+                getContent() {
+                    return this.#textContent;
+                };
+
+                constructor(textContent, timestamp, sender, receiver) {
+                    super(timestamp, sender, receiver);
+                    this.#textContent = textContent;
+                }
+            }
+
+            class ImageMessage extends Message {
+                #srcImage;
+
+                getSrcImage() {
+                    return this.#srcImage;
+                };
+
+                constructor(srcImage, timestamp, sender, receiver) {
+                    super(timestamp, sender, receiver);
+                    this.#srcImage = srcImage;
+                }
+            }
+
+            const txt = new TextMessage('Ciao',new Date(),'+39 320 012 2069','+39 333 789 7490');
+            console.log(txt.getContent());
+            console.log(txt.getTimestamp());
+            console.log(txt.getSender());
+            console.log(txt.getReceiver());
+
+            const img = new ImageMessage('https://picsum.photos/800/500',new Date(),'+39 320 012 2069','+39 333 789 7490');
+            console.log(img.getSrcImage());
+            console.log(img.getTimestamp());
+            console.log(img.getSender());
+            console.log(img.getReceiver());
+        </script>
+    </body>
+
+</html>

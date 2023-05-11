@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            class Message{
+                #timestamp
+                #sender
+                #reciver
+
+                constructor(time, send, rec){
+                    this.#timestamp = time;
+                    this.sender = send;
+                    this.reciver = rec;
+                }
+
+                getTimestamp(){
+                    return this.#timestamp;
+                }
+                getSender(){
+                    return this.#sender;
+                }
+                getReciver(){
+                    return this.#reciver;
+                }
+            }
+
+
+            class TextMessage extends Message{
+                #textContent
+                
+                constructor(txtc){
+                    super();
+                    this.#textContent = txtc;
+                }
+
+                getContent(){
+                    return this.#textContent;
+                }
+            }
+
+            class ImgMessage extends Message{
+                #srcImage
+
+                constructor(src){
+                    super();
+                    this.#srcImage = src;
+                }
+
+                getSrcImage(){
+                    return this.#srcImage;
+                }
+            }
+
+            const messaggio = new TextMessage("STIGRACAZZI")
+            console.log(messaggio.getContent());
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

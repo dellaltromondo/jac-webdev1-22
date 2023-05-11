@@ -10,11 +10,15 @@
 
 <body>
 
-    <form action="">
+    <form action="" id="formAccesso">
         <label for="">Username: <input type="text" id="txtUsername"></label>
         <label for="">Password: <input type="password" id="txtPassword"></label>
         <button type="button" onclick="tryLogin()">Login</button>
     </form>
+
+    <div id="schedaUtente">
+
+    </div>
 
     <h1>Lista prodotti</h1>
     <ul id="prodotti">
@@ -40,17 +44,30 @@
             const username = document.getElementById("txtUsername").value;
             const password = document.getElementById("txtPassword").value;
 
-            const user  = {"username":username, "password":password};
+            const user = { "username": username, "password": password };
 
             const loginResponse = await fetch("http://localhost:8080/esercizio-api/login", {
-                method:"POST", 
-                body:JSON.stringify(user)
+                method: "POST",
+                body: JSON.stringify(user)
             });
 
-            if(await loginResponse.json()){
-                console.log("il login è andato a buon fine")
-            }else {
-                console.log("nome utente o password sbagliati")
+            if (loginResponse.status == 401) {
+                console.log("Credenziali errate");
+            } else {
+
+                var x = document.getElementById('formAccesso');
+                x.style.display = 'none';
+                
+                const responseObj = await loginResponse.json();
+
+                const newElementH2 = document.createElement('h2');
+                const txtNome = document.createTextNode(responseObj.firstName + " " + responseObj.lastName);
+
+                newElementH2.appendChild(txtNome);
+                document.getElementById("schedaUtente").appendChild(newElementH2);
+
+                console.log(responseObj.firstName);
+                console.log(responseObj.lastName);
             }
         }
     </script>

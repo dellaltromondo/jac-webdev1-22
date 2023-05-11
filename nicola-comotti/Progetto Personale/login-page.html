@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="it">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MyFitnessHub</title>
+        <link rel="icon" href="Utils/dumbell-favicon.png">
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body class="login-page" id="body-login-page">
+        <article id="login-article">
+            <header>
+                <img src="Utils/dumbell-favicon.png">
+                <h1>MyFitnessHub</h1>
+            </header>
+            <form autocomplete="off" id="login-form">
+                <h2>Login</h2>
+                <label>Username: <input type="text" id="username"></label>
+                <label>Password: <input type="password" id="password"></label>
+                <button type="button" id="login-button" onclick="login()">Login</button>
+            </form>
+        </article>
+        <div class="only-desktop" style="width: 50%;"></div>
+        <script src="./Js/login.js"></script>
+    </body>
+
+</html>

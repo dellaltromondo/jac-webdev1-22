@@ -1,136 +1,102 @@
 <!DOCTYPE html>
 <html lang="it">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- mettere il titolo del documento -->
-    <title>Editor per compositori</title>
+    <title>Pagina di iscrizione</title>
+    <link rel="stylesheet" href="../css/login.css">
     <link rel="stylesheet" href="../css/editorCompositori.css">
-    <script src="../js/traccia.js"></script>
-    <script src="../js/social.js"></script>
-    <script src="../js/slideshow.js"></script>
+    <script src="../js/login.js"></script>
 </head>
-
 <body>
-    <header>
-        <nav id="menu">
-            <a class="active zoom" href="#home">Home</a>
-            <a class="zoom" href="#about">About</a>
-            <a class="zoom" href="#contact" id="logout">Logout</a>
-        </nav>
-        <section class="progress-container">
-            <section class="progress-bar" id="myBar"></section>
-        </section>
-    </header>
+  <section id="loaderWrapper">
+    <span class="loader"><span class="loaderInner"></span></span>
+  </section>
 
-    <section id="side-nav">
-        <section id="linkSocial">
-            <h1>Inserisci il nome e il link dei tuoi social</h1>
-            <form id="social" name="social">
-                <label for="nomeSocial">Nome social: <input type="text" id="nomeSocial"></label>
-                <label for="link">Link: <input type="url" id="link"></label>
-                <button type="button" onclick="creaElementoSocial()">Invia</button>
-            </form>
-            <section id="listaSocial">
-            </section>
-        </section>
-    </section>
+    <section class="form">
+      <h2 class="glow" id="titoloLogin">Login</h2>
+      <form id="logIn">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
 
-    <article id="galleriaImmagini">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="cognome">Cognome</label>
+        <input type="text" id="cognome" name="cognome" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+
+        <p>Sei un compositore?</p>
+        <section id="checkboxCompositore">
+          <label for="compositore">Sì</label>
+          <input type="checkbox" name="checkboxCompositore" id="compositore" value="COMPOSITORE" onclick="selectOnlyThis(this)">
+          <label for="non_compositore">No</label>
+          <input type="checkbox" name="checkboxCompositore" id="non_compositore" value="NON_COMPOSITORE" onclick="selectOnlyThis(this)">
+        </section>
+
         <section>
-            <h1>Galleria di immagini</h1>
-            <section id="corpoGalleria">
-                <button onclick="prevImage()" id="prevImage">&#8592</button>
-                <section id="slideshow">
-                    <img id="currentImage" src="">
-                </section>
-                <button onclick="nextImage()" id="nextImage">&#8594</button>
-            </section>
-            <button onclick="deleteImage()" id="deleteImage">Elimina <img src="../img/cestino.png" alt=""></button>
-            <form id="immaginiInput">
-                <label for="imageInput">Aggiungi un'immagine: </label><input type="file" id="imageInput">
-                <button type="button" onclick="addImage()">Aggiungi</button>
-            </form>
+            <button id="inviaDati" onclick="inviaDatiForm()" type="button">Accedi</button>
+            <button type="reset" class="annulla" title="Cancella i dati">Annulla</button>
         </section>
-    </article>
 
-    <article id="formTracce">
-        <section id="formAggiunta">
-            <h1>Inserisci le tue tracce musicali</h1>
-            <form id="traccia" name="traccia">
-                <label for="nome">Nome: <input type="text" name="nome" id="nome" required></label>
-                <label for="prezzo">Prezzo: <input type="text" name="prezzo" id="prezzo" required></label>
-                <label for="mese">Mese:</label>
-                <select id="mese" name="mese">
-                    <option value="0"></option>
-                    <option value="Gennaio">Gennaio</option>
-                    <option value="Febbraio">Febbraio</option>
-                    <option value="Marzo">Marzo</option>
-                    <option value="Aprile">Aprile</option>
-                    <option value="Maggio">Maggio</option>
-                    <option value="Giugno">Giugno</option>
-                    <option value="Luglio">Luglio</option>
-                    <option value="Agosto">Agosto</option>
-                    <option value="Settembre">Settembre</option>
-                    <option value="Ottobre">Ottobre</option>
-                    <option value="Novembre">Novembre</option>
-                    <option value="Dicembre">Dicembre</option>
-                </select>
-                <button type="button" onclick="creaTraccia()">Invia</button>
-            </form>
+        <p id="messaggioForm"></p>
+
+      </form>
+
+      <section class="social-icons">
+          <p>O accedi con:</p>
+          <section>
+            <a href="#"><img src="../iconeSocial/facebook.png" alt="Facebook" title="Accedi con Facebook"></a>
+            <a href="#"><img src="../iconeSocial/twitter.png" alt="Twitter" title="Accedi con Twitter"></a>
+            <a href="#"><img src="../iconeSocial/google.png" alt="Google" title="Accedi con Google"></a>
         </section>
-        <section id="listaTraccePerMese">
-            <h1>Lista delle tracce</h1>
-            <ul id="listaTracce">
-                <p id="testoPerNoTracce">Qui troverai la lista di tutte le tue canzoni, ordinate per il mese in cui verranno suonate, non appena le inserirai dal modulo di compilazione.</p>
-                <ul id="lista1">
-                </ul>
-                <ul id="lista2">
-                </ul>
-                <ul id="lista3">
-                </ul>
-                <ul id="lista4">
-                </ul>
-                <ul id="lista5">
-                </ul>
-                <ul id="lista6">
-                </ul>
-                <ul id="lista7">
-                </ul>
-                <ul id="lista8">
-                </ul>
-                <ul id="lista9">
-                </ul>
-                <ul id="lista10">
-                </ul>
-                <ul id="lista11">
-                </ul>
-                <ul id="lista12">
-                </ul>
-            </ul>
-        </section>
-    </article>
+      </section>
+    </section>
+  </section>
 
-    <footer id="piePagina">
-        Footer
-    </footer>
+  <script>
 
-    <script>
-        window.onscroll = () => {
-            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (winScroll / height) * 100;
-            document.getElementById("myBar").style.width = scrolled + "%";
-        };
-    </script>
+    window.addEventListener("load", (event) =>
+    {
+      localStorage.clear();
+      const loader = document.getElementById("loaderWrapper");
+      loader.style.animation = "fadeOut 1.2s";
+      loader.style.animationIterationCountv = "1";
+
+      setTimeout(() =>
+      {
+          loader.parentNode.removeChild(loader);
+      }, 1200);
+    });
+
+    function onlyOne(checkbox)
+    {
+      let checkboxes = document.getElementsByClassName('checkbox')
+
+      checkboxes.forEach((item) =>
+      {
+          if (item !== checkbox)
+          {
+            item.checked = false;
+          }
+      })
+    }
+
+    function selectOnlyThis(id)
+    {
+      let myCheckbox = document.getElementsByName("checkboxCompositore");
+      Array.prototype.forEach.call(myCheckbox,function(el)
+      {
+        el.checked = false;
+      });
+
+      id.checked = true;
+    }
+
+  </script>
+
 </body>
-
 </html>
-<!--
-fare la parte della foto profilo
-fare la parte di quante persone si sono iscritte al gruppo musicale
-fare la parte di quante tracce sono state vendute
-fare il guadagno totale di ogni mese 
--->
