@@ -2,32 +2,32 @@
 
 
     addToCartButton.forEach(button => {
-    button.addEventListener("click", function () {
-        // Recupera i dati dall'elemento button
-        const name = this.dataset.name;
-        const price = this.dataset.price;
+        button.addEventListener("click", function () {
+            // Recupera i dati dall'elemento button
+            const name = this.dataset.name;
+            const price = this.dataset.price;
 
-        // Crea un oggetto per memorizzare i dati dell'articolo
-        const item = { name, price };
+            // Crea un oggetto per memorizzare i dati dell'articolo
+            const item = { name, price };
 
-        // Controlla se è già presente un carrello nella session storage
-        let cart = sessionStorage.getItem("cart");
-        if (cart) {
-            // Se è presente, lo converte in un oggetto JavaScript
-            cart = JSON.parse(cart);
-        } else {
-            // Se non è presente, crea un nuovo array
-            cart = [];
-        }
+            // Controlla se è già presente un carrello nella session storage
+            let cart = sessionStorage.getItem("cart");
+            if (cart) {
+                // Se è presente, lo converte in un oggetto JavaScript
+                cart = JSON.parse(cart);
+            } else {
+                // Se non è presente, crea un nuovo array
+                cart = [];
+            }
 
-        // Aggiunge l'articolo al carrello
-        cart.push(item);
+            // Aggiunge l'articolo al carrello
+            cart.push(item);
 
-        // Memorizza il carrello nella session storage
-        sessionStorage.setItem("cart", JSON.stringify(cart));
+            // Memorizza il carrello nella session storage
+            sessionStorage.setItem("cart", JSON.stringify(cart));
+        });
     });
-    });
-         let cart = sessionStorage.getItem("cart");              
+    let cart = sessionStorage.getItem("cart");
     if (cart) {
         // Se esiste, lo converte in un oggetto JavaScript
         cart = JSON.parse(cart);
@@ -43,6 +43,7 @@
 
     // Recupera la tabella del carrello dalla pagina
     const cartTable = document.querySelector("#cart-items");
+
 
 
 
@@ -62,7 +63,7 @@
         const removeButtonCell = document.createElement("td");
         const removeButton = document.createElement("button");
         removeButton.textContent = "Rimuovi";
-        removeButton.addEventListener("click", function() {
+        removeButton.addEventListener("click", function () {
             // Trova la posizione dell'articolo nel carrello
             const index = cart.indexOf(item);
 
@@ -98,9 +99,6 @@
         // Se non esiste, lo crea
         cart = [];
     }
-
-    // Rimuove l'ultimo prodotto dall'array del carrello
-    cart.pop();
 
     // Memorizza il carrello aggiornato nella session storage
     sessionStorage.setItem("cart", JSON.stringify(cart));

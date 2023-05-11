@@ -57,7 +57,16 @@ public class CompositoreRESTController
 					.build();
 		}
 		
-		Compositore result = CompositoreService.getInstance().create(idUser, compositoreNomeArtista, compositoreDescrizione, compositoreUrlPic);
+		String compositoreTema = compositore.getTema();
+		if (compositoreTema == null || compositoreTema.trim().length() == 0)
+		{
+			return Response.status(Status.BAD_REQUEST)
+					.entity("Il tema del profilo del compositore non è valorizzato")
+					.header("Content-Type", "text/plain")
+					.build();
+		}
+		
+		Compositore result = CompositoreService.getInstance().create(idUser, compositoreNomeArtista, compositoreDescrizione, compositoreUrlPic, compositoreTema);
 		
 		log.info("Compositore creato con successo");
 		
@@ -115,7 +124,7 @@ public class CompositoreRESTController
 	{
 		log.info("Modifico il compositore [id={}]", idCompositore);
 		
-		CompositoreService.getInstance().update(idCompositore, compositore.getNomeArtista(), compositore.getDescrizione(), compositore.getUrlPic());
+		CompositoreService.getInstance().update(idCompositore, compositore.getNomeArtista(), compositore.getDescrizione(), compositore.getUrlPic(), compositore.getTema());
 		
 		return Response.ok().build();
 	}
