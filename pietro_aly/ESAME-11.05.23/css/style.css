@@ -65,13 +65,13 @@
 .MENU2 {
   padding: 0.3in;
   border-radius: 0.2in;
-  width: calc(50% - 340px); 
+  width: calc(50% - 340px);
   background-color: darkgrey;
   margin-right: 20px;
   height: calc(89vh - 70px);
   overflow-y: auto;
+  float: left;
 }
-
 
 .MENU2 ul {
   margin: 0;
