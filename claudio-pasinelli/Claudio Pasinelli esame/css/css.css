@@ -240,6 +240,7 @@ input[type="text"]
     margin-top: auto;
     border-width: 3px 0px 0px 0px;
     padding: 5px;
+    word-break: break-all;
 }
 
 .description h2
