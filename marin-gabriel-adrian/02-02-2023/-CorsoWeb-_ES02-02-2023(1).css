@@ -1,0 +1,71 @@
+/*Tag*/
+p {
+    font-size: 15px;
+    color: red;
+}
+
+li{
+    display: inline-block;
+    background-color:indigo;
+    color:white;
+    margin:3px;
+}
+
+
+/*Classi*/
+.only-mobile {
+    display: none;
+}
+
+.only-desktop {
+    display: block;
+}
+
+.only-tablet {
+    display: none;
+}
+
+.colonne{
+    columns: auto;
+    columns: 3;
+}
+
+
+/*Media Queries*/
+@media (max-width:960px) {
+    .only-mobile {
+        display: none;
+    }
+
+    .only-desktop {
+        display: none;
+    }
+
+    .only-tablet {
+        display: block;
+    }
+
+    .colonne{
+        columns: auto;
+        columns: 2;
+    }
+}
+
+@media (max-width:600px) {
+    .only-mobile {
+        display: block;
+    }
+
+    .only-desktop {
+        display: none;
+    }
+
+    .only-tablet {
+        display: none;
+    }
+
+    .colonne{
+        columns: auto;
+        columns: 1;
+    }
+}

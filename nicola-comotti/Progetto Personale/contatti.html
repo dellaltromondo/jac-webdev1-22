@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="it">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MyFitnessHub</title>
+        <link rel="icon" href="Utils/dumbell-favicon.png">
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body class="contatti">
+        <header>
+            <button class="only-mobile" id="menuToggle" onclick="toggleMenu()">
+                <img src="Utils/white-burger-menu.png" alt="Menu">
+            </button>
+            <h1 id="titolo">MyFitnessHub</h1>
+            <button id="logoutButton" onclick="logout()">
+                <img src="Utils/white-logout.png">
+                <p class="only-desktop">Logout</p>
+            </button>
+            <nav class="only-desktop" id="menuDesktop">
+                <!--    <button class="link-button" onclick="loadPage('user-homepage')">Homepage</button>
+                <button class="link-button" onclick="loadPage('database-esercizi')">Database Esercizi</button>
+                <button class="link-button" onclick="loadPage('calcolatrici')">Calcolatrici</button>
+                <button class="link-button" onclick="loadPage('contatti')">Contatti</button> -->
+                <a href="user-homepage.html">Homepage</a>
+                <a href="exercise-wiki.html">Exercise Wiki</a>
+                <a href="calcolatrici.html">Calcolatrici</a>
+                <a href="contatti.html">Contatti</a>
+            </nav>
+            <nav class="only-mobile" id="menuMobile" style="display: none;">
+                <a href="user-homepage.html">Homepage</a>
+                <a href="exercise-wiki.html">Exercise Wiki</a>
+                <a href="calcolatrici.html">Calcolatrici</a>
+                <a href="contatti.html">Contatti</a>
+            </nav>
+        </header>
+        <article id="grid-contatti">
+            <section class="contatto">
+                <img src="Utils/instagram-icon.png">
+                <h2>Instagram</h2>
+                <h3>@MyFitnessHub</h3>
+            </section>
+            <section class="contatto">
+                <img src="Utils/facebook-icon.png">
+                <h2>Facebook</h2>
+                <h3>@MyFitnessHub</h3>
+            </section>
+            <section class="contatto">
+                <img src="Utils/whatsapp-icon.png">
+                <h2>WhatsApp</h2>
+                <h3>+39 123 456 7890</h3>
+            </section>
+            <section class="contatto">
+                <img src="Utils/telegram-icon.png">
+                <h2>Telegram</h2>
+                <h3>@my-fitness-hub</h3>
+            </section>
+            <section class="contatto">
+                <img src="Utils/tiktok-icon.png">
+                <h2>TikTok</h2>
+                <h3>@My_Fitness_Hub</h3>
+            </section>
+            <section class="contatto">
+                <img src="Utils/twitter-icon.png">
+                <h2>Twitter</h2>
+                <h3>@MyFitnessHub</h3>
+            </section>
+        </article>
+
+        <script src="./Js/main.js"></script>
+    </body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prove</title>
+</head>
+<body>
+    <li class="list-group-item"><button class="btn btn-primary burgerType" onclick="addToCart()" value="a"">ACQUISTA</button></li>
+    <li class="list-group-item"><button class="btn btn-primary burgerType" onclick="addToCart()" value="b"">ACQUISTA</button></li>
+    <li class="list-group-item"><button class="btn btn-primary burgerType" onclick="addToCart()" value="c"">ACQUISTA</button></li>
+    <li class="list-group-item"><button class="btn btn-primary burgerType" onclick="addToCart()" value="d"">ACQUISTA</button></li>
+    <li class="list-group-item"><button class="btn btn-primary burgerType" onclick="addToCart()" value="e"">ACQUISTA</button></li>
+    <li class="list-group-item"><button class="btn btn-primary burgerType" onclick="addToCart()" value="f"">ACQUISTA</button></li>
+
+    <script>
+        // vettore panini
+        const panini = document.getElementsByClassName("burgerType");
+        console.log(panini[0].value);
+
+        function addToCart(){
+            const panino = event.target.value;
+            console.log("Panino selezionato: " + panino);
+        }
+    </script>
+</body>
+</html>

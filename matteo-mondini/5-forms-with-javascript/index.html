@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Esempio di gestione delle form e modifica DOM</title>
+        <meta charset="UTF-8">
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <form>
+            <ul>
+                <li><label>Nome: <input type="text" id="inputNome"></label></li>
+                <li><label>Cognome: <input type="text" id="inputCognome"></label></li>
+                <li class="radiogroup">Sesso:
+                    <label>M<input type="radio" name="sesso" value="M"></label>
+                    <label>F<input type="radio" name="sesso" value="M"></label>
+                </li>
+            </ul>
+            <button type="button" onclick="aggiungiContatto()">Invia</button>
+        </form>
+        <ul id="schedeContatti">
+
+        </ul>
+
+        <script>
+            function aggiungiContatto() {
+                const schedaNuovoContatto = document.createElement("LI");
+                const rigaNome = document.createElement("P");
+                const rigaCognome = document.createElement("P");
+                const rigaSesso = document.createElement("P");
+
+                rigaNome.innerText = "Nome: " + document.getElementById("inputNome").value;
+                rigaCognome.innerText = "Cognome: " + document.getElementById("inputCognome").value;
+
+                const arrayDegliInputSesso = document.getElementsByName("sesso");
+                for (let inputSesso of arrayDegliInputSesso) {
+                    if (inputSesso.checked) {
+                        rigaSesso.innerText = "Sesso: " + inputSesso.value;
+                    }
+                }
+
+                schedaNuovoContatto.appendChild(rigaNome);
+                schedaNuovoContatto.appendChild(rigaCognome);
+                schedaNuovoContatto.appendChild(rigaSesso);
+
+                // La riga seguente, per il principio di sostituzione delle variabili, equivale a:
+                // const elencoSchede = document.getElementById("schedeContatti");
+                // elencoSchede.appendChild(schedaNuovoContatto);
+                document.getElementById("schedeContatti").appendChild(schedaNuovoContatto);
+            }
+
+            /*
+            TODO: miglioramenti possibili
+            - se la form ha qualche campo vuoto, avvisare l'utente e non aggiungere la scheda
+            - se l'aggiunta e' andata a buon fine: svuotare i campi di input
+            */
+        </script>
+    </body>
+</html>

@@ -1,0 +1,86 @@
+<html>
+<html lang="it">
+
+<head>
+   
+    <title>Client</title>
+
+</head>
+
+<body>
+    <form>
+        <label> Nome: <input type="text" placeholder="Nome" id="nome"> </label>
+
+        <label>Cognome:<input type="text" placeholder="Cognome" id="cognome"></label>
+
+        <label>Data di nascita:<input type="date" id="data"></label>
+
+        <div>
+            <div>sesso:</div> <label>m:<input name="sesso" type="radio" value="m"> </label>
+            <label>f:<input name="sesso" type="radio" value="f"> </label>
+        </div>
+
+        <label><input type="checkbox"> accetto le condizioni </label>
+        <button type="button" onclick="AddSection()"> invio</button>
+
+    </form>
+
+    <section>
+
+        <ul id="schede">
+
+        </ul>
+    </section>
+
+    <script>
+        
+        function AddSection() {
+
+        
+            const nuovoElScheda = document.createElement('li');
+
+            nuovoElScheda.appendChild(creaP('nome', "Nome"));
+
+            nuovoElScheda.appendChild(creaP('cognome',"Cognome"));
+
+            nuovoElScheda.appendChild(creaP('data', "Data di nascita"));
+
+            const nuovoPGender = document.createElement('p');
+            nuovoPGender.innerText = getSesso();
+            nuovoElScheda.appendChild(nuovoPGender);
+
+            const elementoSchede = document.getElementById('schede');
+            nuovoElScheda.setAttribute('class', 'scheda');
+            elementoSchede.appendChild(nuovoElScheda);
+            
+        function getSesso() 
+        {
+            const element = document.getElementsByName('sesso');
+
+            for (i = 0; i < element.length; i++) 
+            {
+                if (element[i].checked) 
+                {
+                    const sesso = "Sesso: " + element[i].value;
+                    return sesso;
+                }
+
+            }
+        }
+
+        function creaP(inputId, nomeStampa)
+        {
+            const elemento = document.getElementById(inputId).value;
+            const nuovoElemento = document.createElement('p');
+            nuovoElemento.innerText = nomeStampa + ": " + elemento;
+            return nuovoElemento;
+        }
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

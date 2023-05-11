@@ -1,0 +1,33 @@
+<html> 
+    <head>
+        <style> input
+        { 
+            display: block;
+        }
+        div input 
+        {
+         display: inline-block;
+        }
+        input[type="checkbox"]
+        {
+            display: inline-block;
+        }
+        </style>
+    </head>
+<body>
+    <form>
+
+       <label>nome:<input type="text" placeholder="Mario"></label> 
+       <label for="cognome">cognome: </label>
+       <input id="cognome"placeholder="Rossi"> <!--sono la stessa cosa nome e cognome-->
+       <label>data di nascita:<input type="date"></label> 
+       <div><div>sesso:</div><label>m:<input name="sesso" type="radio" value="m"></label>
+       <label>f:<input name="sesso" type="radio" value="f"></label></div>
+       <label>accetto le condizioni:<input type = "checkbox"></label>
+       <button>invio</button>
+    </form>
+    
+    <!---on click e in mezzo l'azione da eseguire-->
+</body>
+
+</html>

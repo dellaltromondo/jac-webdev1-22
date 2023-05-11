@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="esercizio.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+   <h1 id="titolo">Ciao</h1>
+   <input type="value" id="input">
+   <button onclick="cambiaTitolo ()"> cambia titolo</button>
+    
+  
+</body>
+<script>
+
+    function cambiaTitolo () {
+    const elementoTitolo = document.getElementById("titolo");
+    const input = document.getElementById('input').value;
+    elementoTitolo.innerText = elementoTitolo.innerText + input;
+    }
+    
+
+
+
+    </script>
+ 
+
+    </html>

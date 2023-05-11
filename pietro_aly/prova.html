@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>ESAME </title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css'  href='css/style.css'>
+    <script src='script/script.js'></script>
+</head>
+<body>
+
+<head>
+  <style>
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .menu {
+      grid-column: 1 / span 1;
+    }
+
+    .MENU2 {
+      padding: 10px;
+      border-radius: 5px;
+      background-color: darkgrey;
+    }
+
+    .image-container {
+      grid-column: 2 / span 1;
+    }
+
+    .card-container {
+      grid-column: 3 / span 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="grid-container">
+    <div class="menu">
+      <div class="MENU2">
+        <ul>
+          <li><a href="#Pikachu">Pikachu</a></li>
+          <li><a href="#Charmander">Charmander</a></li>
+          <li><a href="#MEW">NEW</a></li>
+          <li><a href="#Mewtwo">Mewtwo</a></li>
+        </ul>
+        <div class="grid-container"> 
+            <div class=" MENU2">
+                <li><a href="#Pikachu"> Pikachu</a></li>
+                <li><a href="#Charmander"> Charmander </a></li>
+                <li><a href="#MEW"> NEW</a></li>
+                <li><a href="#Mewtwo">Mewtwo</a></li>
+              </ul>
+              
+              <h2> insert new</h2>
+              <form>
+                <label for="nome">Inserisci il nome:</label>
+                <input type="text" placeholder="ES. Pikachu" id="nome">
+                <label><input type="radio" name="radio" value="yes"> Catturato</label>
+                <label for="lv">Inserisci il livello:</label>
+                <input type="number" placeholder="ES. 20" id="lv">
+                <label for="url">Inserisci il URL dell'immagine:</label>
+                <input type="text" placeholder="ES. URL" id="url">
+                <p>Aggiungi descrizione</p>
+                <textarea name="message" rows="10" cols="30" placeholder="Aggiungi descrizione" id="desc"></textarea>
+                <button type="button" onclick="salvaDati()">Invia</button>
+            </form>
+      </div>
+    </div>
+
+    <div class="image-container">
+      <img src="path_to_image1.jpg" alt="Image 1">
+      <img src="path_to_image2.jpg" alt="Image 2">
+    </div>
+
+    <div class="card-container">
+        <div class="image-container">
+            <div class="card" id="Mewtwo">
+              <img src="image/Mewtwo.png" alt="Mewtwo">
+              <h3>Titolo della card</h3>
+              <p>Mewtwo is a legendary Psychic Pokémon in Pokémon GO, weak against Bug, Ghost, and Dark moves</p>
+            </div>
+          <div class="card" id="Pikachu">
+            <img src="image/download.jpeg" alt="Pikachu">
+            <h3>Titolo della card</h3>
+            <p>Pikachu is a fictional species in the Pokémon media franchise, designed by Atsuko Nishida and Ken Sugimori. It first appeared in the 1996 Japanese video games Pokémon Red and Green created by Game Freak and Nintendo, which were released outside of Japan in 1998 as Pokémon Red and Blue.</p>
+          </div>
+    
+          <div id="Charmander" class="card">
+            <img src="image/download2.jpeg" alt="Charmander">
+            <h3>Titolo della card</h3>
+            <p>Charmander (Japanese: ヒトカゲ Hitokage) is a Fire-type Pokémon introduced in Generation I. It evolves into Charmeleon starting at level 16, which evolves into Charizard starting at level 36.Along with Bulbasaur and Squirtle, Charmander is one of the three starter Pokémon of Kanto available at the beginning of Pokémon Red, Green, Blue, FireRed, and LeafGreen.</p>
+          </div>
+    
+          <div class="card" id="MEW">
+            <img src="image/MEW.jpeg" alt="MEW">
+            <h3>Titolo della card</h3>
+            <p>Mew (ミュウ Myū?) è un Pokémon base della prima generazione di tipo Psico. Il suo numero identificativo Pokédex è 151, il che lo rende l'ultimo Pokémon di quella generazione. Nel contesto del franchise creato da Satoshi Tajiri, è un Pokémon misterioso, definito il "Pokémon Novaspecie"</p>
+          </div>
+    </div>
+  </div>
+
+  <script>
+    function salvaDati() {
+      var nome = document.getElementById("nome").value;
+      var urlImmagine = document.getElementById("url").value;
+      var descrizione = document.getElementById("desc").value;
+
+      var nuovoElemento = document.createElement("div");
+      nuovoElemento.className = "card";
+      nuovoElemento.innerHTML = `
+        <h3>${nome}</h3>
+        <img src="${urlImmagine}" alt="Immagine">
+        <p>${descrizione}</p>
+      `;
+
+      var colonnaDestra = document.querySelector(".card-container");
+      colonnaDestra.appendChild(nuovoElemento);
+    }
+  </script>
+</body>
+
+</html>

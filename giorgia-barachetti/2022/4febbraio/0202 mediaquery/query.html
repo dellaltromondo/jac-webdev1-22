@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>query</title>
+    <style>
+        /*definisco come deve essere*/
+        .only-mobile {
+            display : none;/*tutto qurllo che non è classe mobile non si vede,  toglie quel pezzo dalla pag*/
+        }
+        .only-desktop {
+            display : block;
+        }
+        /*cambio la definizione*/
+        @media (max-width: 960px){
+            .only-mobile {
+            display : block;
+            } 
+            .only-desktop {
+            display : none;
+        }
+        }
+
+        p{
+            font-size: 20px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1 class="only-mobile">ciao sei su mobile?
+        display none sovrascritto da display block
+    </h1>
+    <h1 class="only-desktop">ciao sei su desktop?</h1>
+    <p>ciao sono nel testo</p>
+</body>
+</html>

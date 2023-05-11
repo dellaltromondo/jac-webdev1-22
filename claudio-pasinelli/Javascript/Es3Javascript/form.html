@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esempio form</title>
+
+    <style>
+        form
+        {
+            margin-left: 1rem;
+        }
+
+        input
+        {
+            display: block;
+        }
+
+        div input
+        {
+            display: inline-block;
+        }
+        
+        input[type="checkbox"]
+        {
+            display: inline-block;
+        }
+
+        section#schede
+        {
+            margin-left: 1rem;
+        }
+    </style>
+
+</head>
+<body>
+    <h1 id="titolo">Esempio form</h1>
+    <form>
+        <label for="nome">Nome: <input type="text" name="nome" id="nome"></label>
+        <label for="cognome">Cognome: <input type="text" name="cognome" id="cognome"></label>
+        <label for="nascita">Data nascita: <input type="date" name="nascita" id="nascita"></label>
+        <div>
+            <div>Sesso:</div>
+            <label>Maschio<input type="radio" name="sesso" value="Maschio" id="maschio"></label>
+            <label>Femmina<input type="radio" name="sesso" value="Femmina" id="femmina"></label>
+        </div>
+        <label for="colore">Colore:<input type="range" name="colore" id="colore"></label>
+        <label for="condizioni"><input type="checkbox" name="condizioni" id="condizioni">Accetto le condizioni</label>
+        <label for="invia"><input type="button" value="Invia" onclick="creaCliente()"></label>
+    </form>
+    <section id="schede">
+
+    </section>
+    
+    <script>
+        // document.createElement('ul'); //crea un elemento e lo chiude
+        // appendChild();   // nomeVariabile.appendChild(nomeVariabileCreataConCreateElement)
+
+        function creaCliente()
+        {
+            // const nome=document.getElementById("nome").value;
+            // const cognome=document.getElementById("cognome").value;
+            // const nascita=document.getElementById("nascita").value;
+            // const sesso=document.getElementById("sesso").value;
+            // const colore=document.getElementById("colore").value;
+            // const condizioni=document.getElementById("condizioni").value;
+
+            // const clienti=
+            // [
+            //     {
+            //         nome:"Pippo",
+            //         cognome:"Baudo",
+            //         dataNascita:,
+            //         sesso:,
+            //     },
+            // ]
+
+            const nuovoElementoScheda=document.createElement("section");
+            nuovoElementoScheda.setAttribute('class','scheda'); //nuovoElementoScheda.setAttribute('id','scheda'+c);
+            const nuovoElementoSchede=document.getElementById("schede");
+            nuovoElementoSchede.appendChild(nuovoElementoScheda);
+
+            //nome
+            const nomeScheda=document.createElement("p");
+            nomeScheda.innerText=document.getElementById("nome").value;
+            nuovoElementoScheda.appendChild(nomeScheda);
+
+            //cognome
+            const cognomeScheda=document.createElement("p");
+            cognomeScheda.innerText=document.getElementById("cognome").value;
+            nuovoElementoScheda.appendChild(cognomeScheda);
+
+            //nascita
+            const nascitaScheda=document.createElement("p");
+            nascitaScheda.innerText=document.getElementById("nascita").value;
+            nuovoElementoScheda.appendChild(nascitaScheda);
+
+            //sesso
+            const sessoScheda=document.createElement("p");
+            sessoScheda.innerText=document.getElementById("sesso").value;
+            nuovoElementoScheda.appendChild(sessoScheda);
+
+            //colore
+            // const coloreScheda=document.createElement("p");
+            // coloreScheda.innerText=document.getElementById("colore").value;
+            // nuovoElementoSchede.appendChild(coloreScheda);
+        }
+    </script>
+</body>
+</html>

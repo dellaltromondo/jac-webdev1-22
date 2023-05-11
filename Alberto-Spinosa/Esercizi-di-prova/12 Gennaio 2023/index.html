@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1 id="titolo">&#129313;</h1>
+    <input type="text" id="txtTitolo">
+    <button onclick="cambiaTitolo()">Cambia Titolo</button>
+    
+
+    <script>
+        //Dichiarare un oggetto
+        const oggetto = { nome: 'Mario', Cognome: 'Rossi' };
+
+        //Dichiarare una funzione
+        function nomeFunzione (param1, param2) {
+            risultato = param1 + param2;
+            return risultato
+        }
+
+        a = nomeFunzione(5,5)   //oppure: console.log(nomeFunzione(5,5))
+        console.log(a);
+
+        //document.getElementById("");
+        //document.getElementsByTagName("");   restituisce un array di elementi.
+        
+        function cambiaTitolo(){
+            const elementoTitolo = document.getElementById("titolo");
+            const elementoTesto = document.getElementById("txtTitolo");
+            elementoTitolo.innerText = elementoTitolo.innerText + elementoTesto.value;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            input
+            {
+                display: block;
+            }
+
+            div input
+            {
+                display: inline-block;
+            }
+
+            input[type="checkbox"]
+            {
+                display: inline-block;
+            }
+        </style>
+        <title>Form</title>
+    </head>
+    <body>
+        <form>
+            <!--Modo 1 per collegare label e input-->
+            <label>
+                Nome:
+                <input type="text" placeholder="Nome">
+            </label>
+
+            <!--Modo 2 per collegare label e input-->
+            <label for="cognome">
+                Cognome:
+            </label>
+            <input  id="cognome" type="text" placeholder="Cognome">
+
+            <!--Date in input-->
+            <label>
+                Data di nascita:
+                <input type="date">
+            </label>
+
+            <!--Caselle selezionabili collegate-->
+            <div>
+                <div>
+                    Sesso:
+                </div>
+                <label>
+                    M:
+                    <input name="sesso" type="radio" value="M">
+                </label>
+    
+                <label>
+                    F:
+                    <input name="sesso" type="radio" value="F">
+                </label>
+            </div>
+            
+
+            <label>
+                accetto le condizioni<input type="checkbox">
+            </label>
+
+            <button type="button">Invio</button>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="it">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MyFitnessHub</title>
+        <link rel="icon" href="Utils/dumbell-favicon.png">
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body class="user-homepage">
+        <div id="popup-container">
+            <section id="errorPopup" style="display: none;"></section>
+        </div>
+        <header>
+            <button class="only-mobile" id="menuToggle" onclick="toggleMenu()">
+                <img src="Utils/white-burger-menu.png" alt="Menu">
+            </button>
+            <h1 id="titolo">MyFitnessHub</h1>
+            <button id="logoutButton" onclick="logout()">
+                <img src="Utils/white-logout.png">
+                <p class="only-desktop">Logout</p>
+            </button>
+            <nav class="only-desktop" id="menuDesktop">
+                <!--    <button class="link-button" onclick="loadPage('user-homepage')">Homepage</button>
+                <button class="link-button" onclick="loadPage('database-esercizi')">Database Esercizi</button>
+                <button class="link-button" onclick="loadPage('calcolatrici')">Calcolatrici</button>
+                <button class="link-button" onclick="loadPage('contatti')">Contatti</button> -->
+                <a href="user-homepage.html">Homepage</a>
+                <a href="exercise-wiki.html">Exercise Wiki</a>
+                <a href="calcolatrici.html">Calcolatrici</a>
+                <a href="contatti.html">Contatti</a>
+            </nav>
+            <nav class="only-mobile" id="menuMobile" style="display: none;">
+                <a href="user-homepage.html">Homepage</a>
+                <a href="exercise-wiki.html">Exercise Wiki</a>
+                <a href="calcolatrici.html">Calcolatrici</a>
+                <a href="contatti.html">Contatti</a>
+            </nav>
+        </header>
+        <article class="row">
+            <aside class="column">
+                <form autocomplete="off">
+                    <h2>NUOVO ESERCIZIO</h2>
+                    <label>
+                        Scheda di appartenenza:
+                        <select id="sceltaScheda">
+                            <option value="none" selected disabled>Seleziona scheda</option>
+                        </select>
+                    </label>
+                    <label>Nome esercizio: <input id="nome" type="text"></label>
+                    <label>Peso: <input id="peso" type="number" min="0"> Kg</label>
+                    <label>Serie: <input id="serie" type="number" min="0"></label>
+                    <label>Ripetizioni: <input id="rep" type="number" min="0"></label>
+                    <label>Recupero: <input id="rest" type="number" step="30" min="0"> Sec</label>
+                    <button type="button" id="addEs" onclick="addExe()">Aggiungi</button>
+                </form>
+            </aside>
+            <section class="column">
+                <h2>LE MIE SCHEDE</h2>
+                <ul id="listaSchede">
+                </ul>
+                <form autocomplete="off" id="form-add-scheda">
+                    <h2>AGGIUNGI SCHEDA</h2>
+                    <label>Nome scheda: <input type="text" id="nomeScheda"></label>
+                    <button type="button" id="buttonScheda" onclick="addScheda()">Crea Scheda</button>
+                </form>
+            </section>
+        </article>
+        <script src="./Js/main.js"></script>
+        <script src="./Js/popup.js"></script>
+        <script src="./Js/schede-esercizi.js"></script>
+    </body>
+
+</html>

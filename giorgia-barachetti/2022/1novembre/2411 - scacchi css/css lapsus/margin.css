@@ -1,0 +1,27 @@
+html{
+    box-sizing: border-box;
+    /**ont-size: 30px;**/
+}
+
+body{
+    margin: 0;
+    padding: 3rem;
+    border: 1rem solid lightcoral;
+    font-size: 30px;
+}
+
+p{
+    margin-top: 40px;
+    margin-bottom: 0;
+}
+
+#secondparagraph{
+    margin-top: 2em;    /*em è percentuale rispetto a dimensione testo (1em=16px)*/
+    font-size: 60px;
+}
+
+img{
+    margin:0.2rem;
+    padding: 8px ;
+    width: 200px;
+}

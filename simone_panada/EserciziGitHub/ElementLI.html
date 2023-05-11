@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <style>
+
+        </style>
+    </head>
+    <body>
+        
+        <title>Lista Anagrafica</title>
+        <h1>Lista Anagrafica</h1>
+        
+               <form>
+                <label>Nome:<input id="inpNome" type="text" placeholder="Nome"></label>
+                <label>Cognome:<input id="inpCognome" type="text" placeholder="Cognome"></label>
+               </form>
+          
+           <p>Clicca per salvare Utente</p>
+           <button onclick="CreaNuovaSezione()">invio</button>
+           
+        
+        <script>
+            function CreaNuovaSezione() 
+            {
+            const ul = document.getElementById("ul");
+            const li = document.createElement("li");
+            const riganome = document.createElement("p");
+            const rigacognome = document.createElement("p");
+            ul.appendChild(li);
+            li.appendChild(p);
+            li.appendChild(p2);
+            const nome = document.getElementById("inpNome");
+            const cognome = document.getElementById("inpCognome");
+            riganome.innerText = "Nome: " + nome.value;
+            rigacognome.innerText = "Cognome: " + cognome.value;
+            }
+        </script>
+
+        <ul id="ul">
+        </ul>
+    </body>
+</html>

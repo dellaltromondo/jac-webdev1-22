@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1 id="titolo">Ciao</h1>
+
+        <input id="tastoInput1" type="text"> <button onclick="saluta(nome1)">Saluta</button> <br><br>
+
+        <input id="tastoInput2" type="text"> <button onclick="saluta(nome2)">Saluta</button> <br><br>
+
+        <input id="tastoInput3" type="text"> <button onclick="saluta(nome3)">Saluta</button>
+
+        
+    </body>
+    <script>
+        const nome1 = document.getElementById("tastoInput1");
+
+        const nome2 = document.getElementById("tastoInput2");
+
+        const nome3 = document.getElementById("tastoInput3");
+
+        
+        function saluta(nomeInput) {
+            const elementoTitolo = document.getElementById("titolo");
+            elementoTitolo.innerText += " " + nomeInput.value;
+        }
+
+        /*con getElementsById ritorna un elemento singolo, quindi posso scrivere nome.value, se avessi usato getElementsByTagName 
+        avrei dovuto scrivere nome[0].value, in quanto ritorna un array di elementi singoli*/
+
+
+        // innerText e value fanno la stessa cosa, con gli input si usa value, con gli altri elementi si usa innerText
+
+    </script>
+</html>

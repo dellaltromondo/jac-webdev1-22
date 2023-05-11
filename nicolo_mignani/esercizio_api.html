@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+
+
+   <html>
+
+   <head>
+    <title>fetch</title>
+
+   </head>
+
+     <body>
+        
+        <img id="factImmagine">
+
+        <script type="module">
+
+
+       const response = await fetch("https://dog.ceo/api/breeds/image/random");
+       const data = await response.json();
+       const immagine = data.message;
+
+
+
+      document.getElementById("factImmagine").src = immagine;
+      
+
+      
+
+       </script>
+    
+    
+    
+    </body>
+

@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <title>queries</title>
+            <style>
+                .only-mobile,.only-tablet{
+                    display:none;
+                }
+                .only-desktop{
+                    display:block;
+                }
+                p{
+                    font-size: 20px;
+                    color:red;
+                }
+                @media(max-width: 960px){
+                    .only-mobile{
+                        display:block;
+                    }
+                    .only-desktop,.only-tablet{
+                        display:none;
+                    }
+                }
+                @media(max-width: 600px){
+                    .only-mobile{
+                        display:none;
+                    }
+                    .only-desktop,.only-tablet{
+                        display:block;
+                    }
+                }
+                article{
+                    column-count:1;
+                }
+                li{
+                    display:inline-block;
+                    background-color: rgba(15, 255, 199, 0.285);
+                    color:steelblue;
+                }
+                
+            </style>
+        </head>
+    <body> 
+        <header>
+            <nav>
+                <button class="only-mobile" onclick="mostramenu()">-</button>
+            <ul class="only-desktop" id="menuespanso">
+               <li>Voce 1</li> 
+               <li>Voce 1</li> 
+               <li>Voce 1</li> 
+               <li>Voce 1</li> 
+               <li>Voce 1</li> 
+               <li>Voce 1</li> 
+            </ul>
+        </header>
+        <h1 class="only-mobile">Ciao siamo su mobile</h1>
+        <h1 class="only-desktop">Ciao siamo su desktop</h1>
+        <h1 class="only-tablet">Ciao siamo su tablet</h1>
+        <p>
+            Ciao sono un testo
+        </p>
+        <article>
+            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+        </article>
+    </nav>
+    <script>
+        function mostramenu(){
+           const menuesp = document.getElementById("menuespanso");
+           if(menuesp.style.display=="none"){
+            menuesp.style.display ="block";}
+            else {menuesp.style.display ="none";}
+
+        }
+    </script>
+    </body>
+</html>

@@ -1,0 +1,337 @@
+        <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger House</title>
+    <link rel="icon" type="image/x-icon" href="../esame-ristorante/images/logo.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@400;700&family=Josefin+Sans:wght@500&display=swap" rel="stylesheet">
+    
+   
+</head>
+
+ 
+<body>
+   
+    <section id="navbar">
+        <div class="logo">
+            <img src="Images/logo.png" alt="">
+        </div>
+        <ul id="list">
+          
+            <li><a href="/" class="para-font">Home</a></li>
+            <li><a href="#food" class="para-font">I nostri prodotti</a></li>
+            <li><a href="#event-container" class="para-font">Chi siamo</a></li>
+            <li><a href="#burger-footer" class="para-font">Contattaci</a></li>
+
+            
+        </ul>
+        <div class="menu" onclick="myFunction()">
+            <div class="one" id="menu"></div>
+        </div>
+</script>
+    </section>
+
+    <section id="home">
+
+        <div class="divider">
+
+            <div class="home-left">
+                <h2 class="h-primary color-primary">È arrivato il momento di assagriar il panino più gustoso della tua vita!</h2>
+                
+            </div>
+            <img class="burger-home" src="Images/burger.png" alt="">
+        </div>
+    </section>
+
+    <section id="main" class="home-bottom">
+        <div class="bottom-container">
+
+            <div class="home-bottom-left">
+       
+            </div>
+            <div class="home-bottom-right">
+                <img src="Images/img1.jpg" alt="">
+                <img src="Images/img1.jpg" alt="">
+              
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="center-div" id="food">
+        
+        <h1 class="center color-primary center-heading">Prenota e assagia anche tu uno dei panini più buoni del mondo.</h1>
+        <p class="center para-font">Tramite cuochi selezionati e specializati che hanno studiato anni e anni , noi ti diamo la possibilità di avere un panino che ti farà ballare le tue papille gustative</p>
+        <h2  class="h-secondary center btn-heading">Panini</h2>
+        
+    
+        <div class="burger-container">
+            <div class="burger-item">
+                <img src="Images/burger2.png" alt="">
+                <h2 class="center color-primary burger-heading">Burger 1</h2>
+                <p class="center">Lorem ipsum dolor sit amet,<br> consectetur adipisicing elit. Repudiandae<br>
+                    architecto eos est tempore? Ipsa, totam.</p>
+                <button class="button" onclick="printMessage(1)">ORDINA</button>
+                <div id="snackbar">ORDINATO !</div>
+            </div>
+            <div class="burger-item">
+                <img src="Images/burger.png" alt="">
+                <h2 class="center color-primary burger-heading">Burger 2</h2>
+                <p class="center">Lorem ipsum dolor sit amet,<br> consectetur adipisicing elit. Repudiandae <br>
+                    architecto eos est tempore? Ipsa, totam.</p>
+                <button class="button" onclick="printMessage(2)">ORDINA</button>
+                <div id="snackbar">ORDINATO !</div>
+            </div>
+            <div class="burger-item">
+                <img src="Images/burger2.png" alt="">
+                <h2 class="center color-primary burger-heading">Burger 3</h2>
+                <p class="center">Lorem ipsum dolor sit amet,<br> consectetur adipisicing elit. Repudiandae <br>
+                    architecto eos est tempore? Ipsa, totam.</p>
+                <button class="button" onclick="printMessage(3)">ORDINA</button>
+                <div id="snackbar">ORDINATO !</div>
+            </div>
+        </div>
+        
+       
+        
+        <script>
+            var messages = ["", "", ""];
+            var counter1 = [0, 0, 0];
+        
+            function printMessage(panino) {
+                var messageelement = document.createElement("div");
+                messageelement.className = "message";
+                counter1[panino - 1]++;
+                var message = "Panino " + panino + " (" + counter1[panino - 1] + ")";
+        
+                
+                if (messages[panino - 1]) {
+                  
+                    messages[panino - 1].innerText = message;
+                } else {
+               
+                    messageelement.innerText = message;
+                    document.getElementById("message-container").appendChild(messageelement);
+                    messages[panino - 1] = messageelement;
+                }
+                var x = document.getElementById("snackbar");
+
+x.className = "show";
+setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+
+            }
+        </script>
+        
+            </div>
+           
+        </div>
+        <h2  class="h-secondary center btn-heading">stuzichini</h2>
+        <div class="burger-container">
+            <div class="burger-item">
+                <img id="myImg1" src="Images/menu-2.1.jpg" alt="">
+                <h2 class="center color-primary burger-heading">Burger 1</h2>
+                <p class="center">Lorem ipsum dolor sit amet,<br> consectetur adipisicing elit. Repudiandae<br> architecto eos est tempore? Ipsa, totam.</p>
+                <button class="button" onclick="printMessage2(1)">ORDINA</button>
+                <div id="snackbar">ORDINATO !</div>
+                
+              </div>
+              <div class="burger-item">
+                <img id="myImg2" src="Images/menu-1.1.jpg" alt="">
+                <h2 class="center color-primary burger-heading">Burger 2</h2>
+                <p class="center">Lorem ipsum dolor sit amet,<br> consectetur adipisicing elit. Repudiandae <br> architecto eos est tempore? Ipsa, totam.</p>
+                <button class="button" onclick="printMessage2(2)">ORDINA</button>
+                <div id="snackbar">ORDINATO !</div>
+              </div>
+              <div class="burger-item">
+                <img id="myImg3" src="Images/menu-2.4.jpeg" alt="">
+                <h2 class="center color-primary burger-heading">Burger 3</h2>
+                <p class="center">Lorem ipsum dolor sit amet,<br> consectetur adipisicing elit. Repudiandae <br> architecto eos est tempore? Ipsa, totam.</p>
+                <button class="button" onclick="printMessage2(3)">ORDINA</button>
+                <div id="snackbar">ORDINATO !</div>
+              </div>
+              
+              <script>
+                var listabev = ["", "", ""];
+                var counter2 = [0, 0, 0];
+              
+                function printMessage2(bevande) {
+                  var messageelement2 = document.createElement("div");
+                  messageelement2.className = "message";
+                  counter2[bevande - 1]++;
+                  var message = "Bevanda " + bevande + " (" + counter2[bevande - 1]+ ")";
+              
+                  // Check if a message for this bevanda already exists
+                  if (listabev[bevande - 1]) {
+                    // If it does, update the existing message
+                    listabev[bevande - 1].innerText = message;
+                  } else {
+                    // If it doesn't, create a new message element
+                    messageelement2.innerText = message;
+                    document.getElementById("message-container").appendChild(messageelement2);
+                    listabev[bevande - 1] = messageelement2;
+                  }
+                }
+                x.className = "show2";
+                setTimeout(function(){ x.className = x.className.replace("show2", ""); }, 3000);
+
+              </script>
+              
+              
+
+        </div>
+        <h2  class="h-secondary center btn-heading">bevande </h2>
+        <div class="burger-container">
+            <div class="burger-item">
+                <img id="myImg" src="Images/menu-3.3.jpg" alt="">
+                <h2 class="center color-primary burger-heading">Burger 1</h2>
+                <p class="center">Lorem ipsum dolor sit amet,<br> consectetur adipisicing elit. Repudiandae<br>
+                    architecto eos est tempore? Ipsa, totam.</p>
+                    <button class="button" onclick="printMessage3(1)" id="bev1"> ORDINA</button>
+                    <div id="snackbar">ORDINATO !</div>
+            </div>
+            <div class="burger-item">
+                <img id="myImg" src="Images/menu-3.1.jpg" alt="">
+                <h2 class="center color-primary burger-heading">Burger 2</h2>
+                <p class="center">Lorem ipsum dolor sit amet,<br> consectetur adipisicing elit. Repudiandae <br>
+                    architecto eos est tempore? Ipsa, totam.</p>
+                    <button class="button" onclick="printMessage3(2)" id="bev2"> ORDINA</button>
+                    <div id="snackbar">ORDINATO !</div>
+            </div>
+            <div class="burger-item">
+                <img id="myImg" src="Images/menu-3.4.jpg" alt="">
+                <h2 class="center color-primary burger-heading">Burger 3</h2>
+                <p class="center">Lorem ipsum dolor sit amet,<br> consectetur adipisicing elit. Repudiandae <br>
+                    architecto eos est tempore? Ipsa, totam.</p>
+                <button class="button" onclick="printMessage3(3)" id="bev3"> ORDINA</button>
+                <div id="snackbar">ORDINATO !</div>
+                <script>
+                    var listades = ["", "", ""];
+                    var counter = [0, 0, 0];
+                  
+                    function printMessage3(desser) {
+                      var messageelement3 = document.createElement("div");
+                      messageelement3.className = "message";
+                      counter[desser - 1]++;
+                      var message = "desser " + desser + " (" + counter[desser - 1] + ")";
+                  
+                      // Check if a message for this bevanda already exists
+                      if (listades[desser - 1]) {
+                        // If it does, update the existing message
+                        listades[desser - 1].innerText = message;
+                      } else {
+                        // If it doesn't, create a new message element
+                        messageelement3.innerText = message;
+                        document.getElementById("message-container").appendChild(messageelement3);
+                        listades[desser - 1] = messageelement3;
+                        
+                      }
+                      x.className = "show3";
+                setTimeout(function(){ x.className = x.className.replace("show3", ""); }, 3000);
+                      
+                    }
+                  </script>
+            </div>
+            
+        </div>
+        
+        <div id="message-container"></div>
+		<a href="pagamento.html" style="color:white" class="h-secondary center btn-heading">pagamento</a>
+   
+
+      
+    <section id="event-container">
+        <div class="event-item">
+            <div class="event-content">
+
+                <h2 class="para-font color-primary"></h2>
+                <h2 class="normal-hading color-primary">EVENTO</h2>
+                <p class="event-para para-font">EVENTOEVENTOEVENTOEVENTOEVENTOEVENTOEVENTOEVENTOEVENTOEVENTOEVENTOEVENTO</p>
+            </div>
+            <img src="Images/eventBurger.jpg" alt="">
+        </div>
+    </section>
+
+    <section id="burger-footer">
+        <div class="footer-bg">
+       
+            <div class="review-form">
+              <h3>Lascia una recensione</h3>
+              <form id="reviewForm">
+                <div class="form-group">
+                  <label for="name">Nome:</label>
+                  <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                  <label for="review">Recensione:</label>
+                  <textarea id="review" name="review" rows="4" cols="50" required></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="rating">Valutazione:</label>
+                  <div class="rating">
+                    <input type="radio" id="star5" name="rating" value="5">
+                    <label for="star5"></label>
+                    <input type="radio" id="star4" name="rating" value="4">
+                    <label for="star4"></label>
+                    <input type="radio" id="star3" name="rating" value="3">
+                    <label for="star3"></label>
+                    <input type="radio" id="star2" name="rating" value="2">
+                    <label for="star2"></label>
+                    <input type="radio" id="star1" name="rating" value="1">
+                    <label for="star1"></label>
+                  </div>
+                </div>
+                <button type="submit">Invia recensione</button>
+              </form>
+            </div>
+            
+            <div class="review-results">
+              <h3>Risultati della recensione</h3>
+              <div id="results"></div>
+         
+            </div>
+            
+
+            <script>
+        document.getElementById("reviewForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+  var name = document.getElementById("name").value;
+  var review = document.getElementById("review").value;
+  var rating = document.querySelector('input[name="rating"]:checked').value;
+
+  var resultsDiv = document.getElementById("results");
+  var resultText = document.createElement("p");
+  resultText.innerHTML = "Nome: " + name + "<br>Valutazione: " + rating;
+  resultsDiv.appendChild(resultText);
+  
+  document.getElementById("reviewForm").reset();
+});
+    </script>            
+    </section>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("list");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+    </script>
+
+    </section>
+    
+    <footer class=" center para-font"> &copy; Geeks Help 2021-22. </footer>
+
+</body>
+
+
+
+
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <ul id="products"> </ul>
+    <script type="module">
+        const response = await fetch("http://localhost:8080/exercise-api/api");
+        const products = await response.json; //prende la risposta (cioe l'insieme di dati/prodotti) e la mette nella response
+        console.log(products);
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="it">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Nuovi Clienti</title>
+        <style>
+            #schede {
+                background-color: aquamarine;
+                border: 2px solid darkcyan;
+                width: max-content;
+                margin: 1rem;
+            }
+
+            .scheda {
+                margin: 1rem;
+                border: 2px solid darkgreen;
+                background-color: limegreen;
+                padding: 0.5rem;
+            }
+        </style>
+    </head>
+
+    <body>
+        <form>
+            <button type="button" onclick="aggiungiScheda()">Aggiungi</button>
+        </form>
+        <section id="schede">
+        </section>
+    </body>
+    <script>
+        function aggiungiScheda() {
+            const nuovaScheda = document.createElement('section');
+            nuovaScheda.innerText = "Ciao, sono un nuovo cliente";
+            const sectionSchede = document.getElementById('schede');
+            sectionSchede.appendChild(nuovaScheda);
+            nuovaScheda.setAttribute('class', 'scheda');
+        }
+
+    </script>
+
+</html>

@@ -3,25 +3,22 @@
 
     <head>
 
-        <h1 id="Titolo"></h1> 
-
+        <h1 id="Titolo">ciao</h1> 
+      <button onclick="SovrascriviTitolo()">Cambia Titolo</button>
     </head>
 
       <body>
 
- 
-         
-         
          <script>
           
+          function SovrascriviTitolo(){
+             const ElementoTitolo= document.getElementById("Titolo");//restituisce l'id
+              // doument.getElementsByName();// restituisce nome 
+              //document.getElementsByClassName(); //restituisce classe
           
-     const ElementoTitolo= document.getElementById("Titolo");//restituisce l'id
-       // doument.getElementsByName();// restituisce nome 
-        //document.getElementsByClassName(); //restituisce classe
+              ElementoTitolo.innerText="ciao mondo";
           
-          ElementoTitolo.innerText="ciao mondo";
-          
-  
+          }
           
           </script>
 

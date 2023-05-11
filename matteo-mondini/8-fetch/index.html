@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fetch</title>
+  </head>
+
+  <body>
+    <section id="factSection"></section>
+    <script type="module">
+      /* 
+      * questo e' il codice senza await, vecchio modo di fare le cose
+      * ma ancora utile in certi casi
+      * 
+
+      const factPromise = fetch("https://catfact.ninja/fact");
+      let factOfTheDay = "";
+      factPromise.then(
+        (response) => {
+            const dataPromise = response.json();
+            dataPromise.then(
+                (value) => factOfTheDay = value
+            )
+        }
+      );
+      */
+
+      // Codice nuovo con await
+      const response = await fetch("https://catfact.ninja/fact");
+      const data = await response.json();
+      
+      const factOfTheDay = data.fact;
+
+      document.getElementById("factSection").innerText = factOfTheDay;
+      </script>
+  </body>
+</html>

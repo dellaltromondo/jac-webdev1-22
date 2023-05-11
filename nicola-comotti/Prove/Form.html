@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="it">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Form Lista della Spesa</title>
+        <style>
+            input {
+                display: block;
+            }
+
+            div input {
+                display: inline-block;
+            }
+
+            input[type="checkbox"] {
+                display: inline-block;
+            }
+        </style>
+    </head>
+
+    <body>
+        <form>
+            <label>Nome: <input type="text" placeholder="Mario"></label>
+            <label for="cognome">Cognome: </label><input id="cognome" type="text">
+            <label>Data di Nascita: <input type="date"></label>
+            <div>
+                <div>Sesso: </div><label>M: <input name="sesso" type="radio" value="M"></label>
+                <label>F: <input name="sesso" type="radio" value="F"></label>
+            </div>
+            <label><input type="checkbox">Accetto le condizioni</label>
+            <button>Invio</button>
+        </form>
+    </body>
+
+</html>

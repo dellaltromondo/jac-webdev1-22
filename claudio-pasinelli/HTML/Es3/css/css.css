@@ -1,0 +1,41 @@
+/* *
+{
+    box-sizing: border-box;
+}
+*/
+body
+{
+    padding-bottom: 20rem;
+} 
+
+p
+{
+    color: red;
+    width: 20%;
+    height: 20%;
+    display: inline;
+}
+img
+{
+    margin-right: 2rem;
+    float: right;
+    width: 50%;
+    vertical-align: top;
+}
+strong
+{
+    display: inline-block;
+    width: 5rem;
+    height: 3rem;
+    vertical-align: top;
+}
+ul
+{
+    list-style-type: disc;
+}
+ol li
+{
+    display: inline-block;
+    background-color: blueviolet;
+    width: 2rem;
+}

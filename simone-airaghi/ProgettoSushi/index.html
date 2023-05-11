@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sushi</title>
+    <link rel="stylesheet" href="main.css" />
+    <script src="oggettoSushi.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+      integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <div id="riepilogo">
+        <h1>Sushi da Simo</h1>
+        <nav id="navmenu2">
+          <ul id="UlnavMenu2">
+            <li><button type="button" onclick="toggleHome()">Home</button></li>
+            <li><button>Invia l'ordine</button></li>
+          </ul>
+        </nav>
+        <div>
+        <table id="tab">
+          <tr>
+            <th class="a">Descrizione</th>
+            <th class="a">Prezzo cad.(€)</th>
+          </tr>
+        </table>
+      </div>
+        <div id="divPrice"></div>
+        <hr>
+      
+    </div>
+
+    <div id="home">
+      <header>
+        <h1>Sushi da Simo</h1>
+        <nav id="navmenu">
+          <ul id="UlnavMenu">
+            <li><button>Home</button></li>
+            <li>
+              <form>
+                <label
+                  >Tavolo:<input type="number" style="width: 40px"
+                /></label>
+              </form>
+            </li>
+            <li>
+              <button type="button" onclick="toggle()">Riepilogo ordine</button>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <nav>
+        <ul class="sidenav">
+          <li><button id="button1">Nigiri</button></li>
+          <li><button id="button2">Hosomaki</button></li>
+          <li><button id="button3">Temaki</button></li>
+          <li><button id="button4">Dolci</button></li>
+          <li><button id="button5">Bibite</button></li>
+          <li><button id="button6">Dessert</button></li>
+        </ul>
+      </nav>
+
+      <section>
+        <h2 class="title">Nigiri</h2>
+        <p class="price">5€/pz</p>
+
+        <img
+          src="images/NighiriSalmon.png"
+          onclick="addToCart(menu[0])"
+        />
+        <img
+          src="images/NighiriTonno.png"
+          onclick="incrementoSushi('Nighiri Tonno'), creaRiga(indice)"
+        />
+        <img
+          src="images/Nigiri-gambero-cotto-600x600.png"
+          onclick="incrementoSushi('Nighiri gambero'), creaRiga(indice)"
+        />
+        <img
+          src="images/NighiriAnguilla.png"
+          onclick="incrementoSushi('Nighiri Anguilla'), creaRiga(indice)"
+        />
+        <img
+          src="images/NigiriCalamaro.png"
+          onclick="incrementoSushi('Nighiri Calamaro'), creaRiga(indice)"
+        />
+        <img
+          src="images/nigirifugu.png"
+          onclick="incrementoSushi('Nighiri Fugu'), creaRiga(indice)"
+        />
+      </section>
+
+      <section>
+        <h2 class="title">Hosomaki</h2>
+        <p class="price">3€/pz</p>
+
+        <img
+          src="images/hosomaki-tonno.png"
+          onclick="incrementoSushi('Hosomaki Salmon'), creaRiga(indice)"
+        />
+        <img src="images/Hosomaki-salmone.png" />
+        <img src="images/HOSOMAKI-AVOCADO.png" />
+        <img src="images/hosomaki-tonno.png" />
+        <img src="images/Hosomaki-salmone.png" />
+        <img src="images/HOSOMAKI-AVOCADO.png" />
+      </section>
+
+      <section>
+        <h2 class="title">Temaki</h2>
+        <p class="price">7€/pz</p>
+
+        <img src="images/temaki-salmone.png" />
+        <img src="images/temaki-tonno.png" />
+        <img src="images/TemakiGambero.png" />
+        <img src="images/temaki-salmone.png" />
+        <img src="images/temaki-tonno.png" />
+        <img src="images/TemakiGambero.png" />
+      </section>
+
+      <section>
+        <h2 class="title">Temaki</h2>
+        <p class="price">7€/pz</p>
+
+        <img src="images/temaki-salmone.png" />
+        <img src="images/temaki-tonno.png" />
+        <img src="images/TemakiGambero.png" />
+      </section>
+
+      <section>
+        <h2 class="title">Temaki</h2>
+        <p class="price">7€/pz</p>
+
+        <img src="images/temaki-salmone.png" />
+        <img src="images/temaki-tonno.png" />
+        <img src="images/TemakiGambero.png" />
+      </section>
+    </div>
+  </body>
+  
+  <script>
+    const button1 = document.getElementById("button1");
+    const button2 = document.getElementById("button2");
+    const button3 = document.getElementById("button3");
+
+    button1.addEventListener("click", function () {
+      window.scroll({
+        top: 50,
+        left: 0,
+        behavior: "smooth",
+      });
+    });
+
+    button2.addEventListener("click", function () {
+      window.scroll({
+        top: 500,
+        left: 0,
+        behavior: "smooth",
+      });
+    });
+
+    button3.addEventListener("click", function () {
+      window.scroll({
+        top: 800,
+        left: 0,
+        behavior: "smooth",
+      });
+    });
+
+    function toggle() {
+     /* const tab = document.getElementById("tab");
+      const intTab = document
+        .getElementById("tab")
+        .getElementsByTagName("tr")[0]
+        .cloneNode(true);
+
+      tab.innerHTML = "";
+      tab.appendChild(intTab);
+
+      for (let i = 0; i < ordine.length; i++) {
+        if (ordine[i].qta > 0) {
+          creaRiga(i);
+        }
+      }*/
+      const home = document.getElementById("home");
+      const divRiepilogo = document.getElementById("riepilogo");
+
+      home.style.display = "none";
+      divRiepilogo.style.display = "block";
+
+     // controllo = true;
+    }
+
+    function toggleHome() {
+      const home = document.getElementById("home");
+      const divRiepilogo = document.getElementById("riepilogo");
+
+      home.style.display = "block";
+      divRiepilogo.style.display = "none";
+    }
+
+    /*function creaRiga(indice) {
+      const table = document.getElementById("tab");
+      const riga = document.createElement("tr");
+      const qta = document.createElement("td");
+      const nome = document.createElement("td");
+      const prezzo = document.createElement("td");
+      const elimina = document.createElement("td");
+      qta.innerText = ordine[indice].qta;
+      nome.innerText = ordine[indice].nome;
+      prezzo.innerText = ordine[indice].prezzo;
+      elimina.className = "fas fa-trash-alt";
+      elimina.addEventListener("click", function () {
+        rimuoviRiga(this);
+      }); // associa la funzione di eliminazione all'evento click dell'elemento "Elimina"
+
+      riga.appendChild(qta);
+      riga.appendChild(prezzo);
+      riga.appendChild(nome);
+      riga.appendChild(elimina);
+      table.appendChild(riga);
+    }
+
+    function incrementoSushi(nome) {
+      const indice = menu.findIndex((el) => el.nome == nome);
+
+      if (indice < 0) {
+        ordine.push({ nome: nome, qta: 1 });
+      } else {
+        ordine[indice].qta++;
+      }
+    }
+
+    function rimuoviRiga(elemento) {
+      const riga = elemento.closest("tr"); // ottiene la riga che contiene l'elemento
+      const indice = riga.rowIndex - 1; // calcola l'indice dell'oggetto nell'array, tenendo conto dell'header della tabella
+      ordine[indice].qta--; // rimuove l'oggetto dall'array
+      riga.parentNode.removeChild(riga); // rimuove la riga dalla tabella
+    }*/
+
+    const ordine = []
+    function addToCart(product) {
+      const cart = document.querySelector("#tab");
+
+      const cartItem = document.createElement("tr");
+      //creo la section del carrello che sarà visualizzata nel cart
+      cartItem.innerHTML = `
+        
+          <td>${product.nome}</td>
+          <td>${product.prezzo} €</td>
+        
+      `;
+
+      cart.appendChild(cartItem);
+      alert("Product added in the cart");
+      ordine.push(cartItem);
+      console.log(ordine);
+
+      sumOfCart();
+    }
+
+    function sumOfCart() {
+    const priceDiv = document.querySelector('#divPrice')
+    if (ordine.length > 0) {
+      let sum = 0;
+      for (const product of ordine) {
+        sum += parseFloat(product.querySelector('td:nth-child(2)').textContent.replace(' €', ''));
+      }
+      console.log(sum.toFixed(2));
+      return priceDiv.innerHTML= `TOTAL PRICE: € ${sum.toFixed(2)}`
+      /*<br>
+      <button id="buttonContinueWithPayment" onClick="showFormToPay()">CONTINUE WITH PAYMENT</button>*/
+    }
+    return 0;
+  }
+
+
+    /* 1 METTERE NEL MIO ARRAY UN OGGETTO PER OGNI SUSHI
+     *  2 RICHIAMARE LA FUNZIONE INCREMENTO SUSHI IN OGNI IMMAGINE, PASSANDO AD OGNUNA LA GIUSTA POSIZIONE NELL'ARRAY /EDIT: PASSARE NON LA POSIZIONE MA IL NOME DEL SUSHI
+     *  3 SISTEMARE BOOLEAN E FAR SI CHE SI AGGIORNI LA TAGBELLA AD OGNI SWITCH TRA HOME E RIEPILOGO FACENDO SI CHE SI ELIMINI E CHE RIPARTA IL CICLO.
+     */
+  </script>
+</html>

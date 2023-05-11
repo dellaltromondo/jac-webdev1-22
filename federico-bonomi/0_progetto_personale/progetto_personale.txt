@@ -1,0 +1,50 @@
+Come farlo
+1.	Decidere l’ambito
+2.	Analisi dei requisiti (casi d’uso, funzionalità e entità)
+3.	Progettazione (ipotesi di classi variabili e funzionalità)
+4.	Realizzazione
+
+
+Requisiti
+•	File separati (1 html, 1 css, 1 java script almeno)
+•	Almeno 1 form di inserimento
+•	Lista di “oggetti”
+•	Responsive (media queries)
+•	Ampio uso di css
+•	Pagina strutturata semanticamente
+•	Css variables
+•	Classi js
+
+
+Progetto forum:
+    L'utente può inserire una domanda per chiedere qualcosa e gli altri utenti possano rispondere.
+    Quando hai un dubbio che vuoi risolvere chiedendo ad altri
+
+    Funzionalità:
+        1)L'utente può inserire una domanda per chiedere qualcosa 
+            1.1)Quando viene inserita una domanda viene chiesto anche il nome utente che comparirà al di sopra della stessa.
+            1.2)Quando viene inserito una domanda deve venire stampata a lato la data e l'ora dell'inserimento.
+        2)Gli altri utenti possano rispondere.
+        3)Poter nascondere le risposte di una specifica domanda.
+        4)Poter eliminare una domanda (quando una domanda viene cancellata vengono cancellate anche le risposte alla domanda).
+        5)Poter cercare una domanda inserendo il Titolo
+            5.1)Quando inserisci il titolo completo scompaiono tutte le domande tranne quella col titolo cercato
+            5.2)Puoi inserire una parola chiave e cercare tutte le domande che nel titolo la contengono
+        
+
+    Entità:
+        Domanda
+        Risposta
+        Utente
+
+    Caratteristiche entita:
+
+        Domanda:
+            Nome utente
+            Titolo
+            corpo
+
+        Risposta:
+            Nome utente
+            Corpo
+            Domanda collegata

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esempio classe</title>
+</head>
+<body>
+    
+    <script>
+        class Message
+        {
+            #timeStamp;
+            #sender;
+            #receiver;
+
+            constructor(receiver, sender, timeStamp)
+            {
+                this.#sender = sender;
+                this.#receiver = receiver;
+                this.#timeStamp = new Date();
+            }
+
+            getTimeStamp()
+            {
+                return this.#timeStamp;
+            }
+
+            // get timeStamp()
+            // {
+            //     return this.#timeStamp;
+            // }
+
+            getSender()
+            {
+                return this.#sender;
+            }
+
+            getReceiver()
+            {
+                return this.#receiver;
+            }
+        }
+
+        class TextMessage extends Message
+        {
+            #textContent;
+
+            constructor(receiver, sender, timeStamp, textContent)
+            {   
+                super(receiver, sender, timeStamp);
+                this.#textContent = textContent;
+            }
+
+            getTextContent()
+            {
+                return this.#textContent;
+            }
+        }
+
+        class ImgMessage extends Message
+        {
+            #srcImage;
+            
+            constructor(receiver, sender, timeStamp, srcImage)
+            {   
+                super(receiver, sender, timeStamp);
+                this.#srcImage = srcImage;
+            }
+
+            getSrcImage()
+            {
+                return this.#srcImage;
+            }
+        }
+        
+        class AudioMessage extends Message
+        {
+            #audio;
+
+            constructor(receiver, sender, timeStamp, audio)
+            {   
+                super(receiver, sender, timeStamp);
+                this.#audio = audio;
+            }
+
+            getAudio()
+            {
+                return this.#audio;
+            }
+        }
+        
+        class VideoMessage extends Message
+        {
+            #urlVideo;
+
+            constructor(receiver, sender, timeStamp, urlVideo)
+            {   
+                super(receiver, sender, timeStamp);
+                this.#urlVideo = urlVideo;
+            }
+
+            getUrlVideo()
+            {
+                return this.#urlVideo;
+            }
+        }
+
+        const testo = new TextMessage("Claudio", "Luca", "Ciap anche a te", new Date());
+        console.log(testo);
+        // console.log(testo.getTextContent());
+
+        const immagine = new ImgMessage("Claudio", "Luca", "urlImmagine", new Date());
+        console.log(immagine);
+
+        const audio = new AudioMessage("Claudio", "Luca", "urlAudio", new Date());
+        console.log(audio);
+
+        const video = new VideoMessage("Claudio", "Luca", "urlVideo", new Date());
+        console.log(video);
+    </script>
+
+</body>
+</html>

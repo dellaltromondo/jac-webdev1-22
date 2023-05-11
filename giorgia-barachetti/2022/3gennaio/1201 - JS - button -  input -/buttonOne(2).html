@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <tytle> sovrascrivi titolo con input </tytle>
+
+        <body>
+            <h1 id="header"> TITLE </h1>    
+            <input id="inp">
+            <button onclick="sovrascriviInput()"> new header </button>
+
+        </body>
+
+        <script>
+            function sovrascriviInput(){
+                const titolo = document.getElementById("header");
+                const input = document.getElementById("inp");
+                titolo.innerText = input.value;
+            }
+
+        </script>
+    </head>
+</html>

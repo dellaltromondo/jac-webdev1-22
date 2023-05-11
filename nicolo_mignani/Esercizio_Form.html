@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+   <body>
+
+
+
+
+    <form>
+
+     
+    <lable for="nome">Nome:</lable>
+     <input type="text" id="nome" placeholder="mario">
+
+     <lable for="cognome">Cognome:</lable>
+     <input type="text" id="cognome">
+     
+   
+    <button onclick="AggiungiScheda()" type="button" >invio</button>
+   
+
+</form>
+<script>
+     
+    function RestitiusciTesto(){
+          const Nome= document.getElementById("nome");
+          const Cognome= document.getElementById("cognome")
+          if(Nome.value=="" && Cognome.value==""){
+           
+            return "";
+
+          }else{
+            
+            return Nome.value+" "+Cognome.value;
+
+          }
+         }
+         
+         function AggiungiScheda(){
+             const nuovoElemento= document.createElement("section");
+             nuovoElemento.innerText=RestitiusciTesto();
+             const ElementoSchede = document.getElementById("scheda");
+             ElementoSchede.appendChild(nuovoElemento);
+             nuovoElemento.setAttribute('id','scheda1');
+          
+          }
+
+  
+
+
+</script>
+    <section id="scheda">
+
+
+
+
+
+    </section>
+</body>
+
+</html>

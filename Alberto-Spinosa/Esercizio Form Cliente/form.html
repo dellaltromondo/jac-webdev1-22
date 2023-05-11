@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista della spesa</title>
+
+    <style>
+        /* > selezione il filgio diretto 
+        input{
+            display: block;
+            margin-bottom: 15px;
+        }
+        */
+        input{
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        div input {
+            display: inline-block;
+        }
+
+        input[type="checkbox"]{
+            display: inline-block;
+        }
+
+    </style>
+
+</head>
+<body>
+    <form action="">
+        <!-- label collegata alla txt tramite l'attributo for -->
+        <!-- input TextBox -->
+        <label for="txtNome">nome:</label>
+        <input type="text" id="txtNome" placeholder="Ex. Mario">
+        <label for="txtCognome">cognome:</label>
+        <input type="text" id="txtCognome" placeholder="Ex. Rossi">
+
+        <!-- input date type -->
+        <label for="dtpData">data di nascita:</label>
+        <input type="date" id="dtpData">
+
+        <!-- Radio button -->
+        <div>
+            <div>sesso:</div>
+            <label for="radioSessoM">M</label>
+            <input type="radio" name="sesso" id="radioSessoM" value="Maschio">
+            <label for="radioSessoF">F</label>
+            <input type="radio" name="sesso" id="radioSessoF" value="Femmina">
+        </div>
+
+        <label for="checkSesso"> <input type="checkbox" id="checkSesso" name="checkbox" value="T">accetto le condizioni</label>
+        <button type="button" onclick="aggiungiScheda()">INVIO</button>
+        <script src="script.js"></script>
+
+    </form>
+
+    <section id="schede">
+
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!--   
+    LEZIONE 26 GENNAIO
+
+    1. creare elementi li
+    2. recuperare nome e cognome
+    3. creare elementi p
+    4. appendere p a li
+    5. appendere li a ul
+    6. scrivere nome e cognome nei p
+-->
+<html>
+    <head>
+        <title>le form</title>
+        <style>
+            input {
+                display: block;
+            }
+
+            div input {
+                display: inline-block;
+            }
+
+            input[type="checkbox"] {
+                display: inline-block;
+            }
+            li {
+                background-color: yellow;
+                margin-top: 1rem;
+            }
+        </style>
+    </head>
+    <body>
+        <form>
+            <label>nome: <input type="text" placeholder="Mario"></label>
+            <label for="cognome">cognome: </label>  <input id="cognome" type="text" placeholder="Rossi">
+            <label>data di nascita: <input type="date"></label>
+            <div>
+                <div>sesso: </div>
+                <label>m: <input name="sesso" type="radio" value="M" id="male"></label>
+                <label>f: <input name="sesso" type="radio" value="F" id="female"></label>
+            </div>
+            <div>
+                <label><input type="checkbox"> accetto le condizioni</label>
+            </div>
+            <button type="button" onclick="aggiungiUtente()">invio</button>
+        </form>
+
+        <section>
+            <p>ELENCO UTENTI:</p>
+            <ul id="schede">
+            </ul>
+        </section>
+
+        <script>
+            let contatore = 0;
+            function aggiungiUtente() {
+                
+                contatore++
+                const aggiuntaUtente = document.getElementsByTagName('input')
+                
+                /* creo li */
+                const elenco = document.createElement("li")
+                const elementoElenco = document.getElementById("schede")
+                elementoElenco.appendChild(elenco)
+                
+                /* creo p di "UTENTE" */
+                const titolo = document.createElement("p")
+                titolo.innerText = 'UTENTE ' + contatore
+                elenco.appendChild(titolo)
+
+                /* creo p del nome */
+                const nome = document.createElement("p")
+                nome.innerText = "nome: " + aggiuntaUtente[0].value
+                elenco.appendChild(nome)
+                
+                /* creo p del cognome */
+                const cognome = document.createElement("p")
+                cognome.innerText = "cognome: " + aggiuntaUtente[1].value
+                elenco.appendChild(cognome)
+                
+                /* creo p della data */
+                const data = document.createElement("p")
+                data.innerText = "data di nascita: " + aggiuntaUtente[2].value
+                elenco.appendChild(data)
+
+                /* creo p del sesso */
+                const maschio = document.getElementById("male")
+                const femmina = document.getElementById("female")
+                let sesso = ''
+
+                if (maschio.checked) {
+                    sesso = 'maschio'
+                } else if(femmina.checked) {
+                    sesso = 'femmina'
+                }
+
+                const genere = document.createElement("p")
+                genere.innerText = "sesso: " + sesso
+                elenco.appendChild(genere)
+
+            }    
+        </script>
+    </body>
+</html>

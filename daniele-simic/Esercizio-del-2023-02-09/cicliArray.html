@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    
+    <script>
+        const lista = ['primo', 'secondo', 'terzo'];
+        const primoEl = lista[0];
+        for(i = 0; i<lista.length; i++){
+            const elementoCorrente = lista[i];
+            console.log(elementoCorrente);
+        }
+        for(let i in lista){   //questa è una semplificazione del ciclo for
+            const elementoCorrente = lista[i]; //in questo modo estraggo l'indice
+            console.log(elementoCorrente);
+        } 
+
+        /*il forEach invece è un metodo dell'array o della mappa che vogliamo ciclare. difatto quando noi 
+        vogliamo ciclare un array scriveremmo: "<nome array>.forEach(funzione)". se io creassi una funzione la
+        potrei utilizzare come variabile per il mio for each. al for each posso passare delle funzioni anonime:
+        arrow function, funzioni standard che utilizzo solo per una volta nel mio codice. Il forEach si occupa
+        di solamente un argomento, quindi nella parentesi tonda posso mettere solamente un argomento. 
+        il forEach, che esiste solo per mappe ed array, è ordinato a sua volta. il .map crea una mappa convertita da un array
+        .filter come dice filtra l'array, .every si assicura che tutti abbiano lo stesso valore, .sort invece ordina 
+        seguendo un ordine da me scelto. se volessi un array senza duplicati userei "set". 
+        */
+
+        for(let elementoCorrente of lista) { //questo è direttamente "primo", "secondo", "terzo"
+            console.log(elementoCorrente);
+        }
+        //----------------------------------------------------------------------------------------
+        //un altro modo per ciclare gli elementi di un array è tramite la programmazione funzionale
+
+        function stampaOggetto(elementoCorrente){ //elemento corrente viene passato alla funzione come argomento 
+            console.log(elementoCorrente)
+        }
+
+        lista.forEach(stampaOggetto());
+        //----------------------------------------------------------------------------------------
+        lista.forEach(function(el){console.log(el);}); 
+        //questa è una funzione anonima dato che nasce e muore all'interno di lista.forEach
+
+        //----------------------------------------------------------------------------------------
+
+        lista.forEach(el => console.log(el)); //questa è la funzione freccia stessa identica cosa della 
+        //lista forEach con le funzioni. non a caso le funzioni freccia sono function anonime dunque non riutilizzabili
+        
+        //-------------------------------------------------------------------------------------------
+
+        //cosi si scrive un arrow function se ho piu parametri e istruzioni
+        (primoNumero, secondoNumero) => {     
+            const somma = primoNumero + secondoNumero;
+            return somma
+        }
+
+        //si può scrivere anche così se ho solo un parametro e piu istruzioni:
+        numero => {
+            const arrotondato = math.round(numero)
+            return numero;
+        }
+
+        //oppure così se ho un istruzione e un parametro:
+        numero => numero +10;
+
+        
+        const oggetto = { //in javascript gli oggetti non hanno indici numerici
+            
+            nome : "pippo",
+            cognome : "rossi",
+            eta : "42",
+            indirizzo : { //posso avere anche un oggetto all'interno di un oggetto
+                via : "",
+                citta : "",
+                cap : "",
+            },
+            //posso anche mettere le funzioni
+        } //per gli oggetti non è garantito che vada in ordine
+
+        console.log(oggetto['nome']);
+
+        oggetto['sesso'] = "m";
+        
+        const mappa = new Map();
+        mappa.set("prossi", "paolorossi@gmail.com");
+        mappa.set("s.manzoni", "saramanzo2000.sm@gmail.com");
+
+        mappa.get("prossi");
+        //questa funzione mi restituirà tutta la mappa
+        mappa.get("s.manzoni")
+        //ricorda che il primo parametro è la chiave che poi ti restituisce tutta la mappa
+
+        const giocatori = [
+        "Kevin Durant",
+        "LeBron James",
+        "Jayson Tatum",
+        "Nikola Jokic",
+        "Kawhi Leonard",
+      ];
+
+        console.log("### Mappe");
+      let puntiPerGiocatore = new Map();
+      puntiPerGiocatore.set("Kevin Durant", 25321);
+      puntiPerGiocatore.set("LeBron James", 38923);
+      puntiPerGiocatore.set("Jayson Tatum", 12903);
+      puntiPerGiocatore.set("Nikola Jokic", 16342);
+      puntiPerGiocatore.set("Kawhi Leonard", 21045);
+
+      puntiPerGiocatore.forEach(
+        /* Il forEach per le mappe passa due parametri alla funzione, valore e chiave */
+        (giocatore /*chiave*/ ,punti /*valore*/ ) =>
+          console.log(giocatore + " ha fatto " + punti + " punti in carriera")
+      );
+
+      // Altri usi delle funzioni freccia
+      console.log("Solo i giocatori con piu' di ventimila punti");
+      const piuDiVentimila = giocatori.filter(giocatore => puntiPerGiocatore.get(giocatore) > 20000);
+      console.log(piuDiVentimila);
+
+      console.log("Estraggo il cognome di ogni giocatore");
+      const soloCognomi = giocatori.map(giocatore => giocatore.substring(giocatore.indexOf(" ") + 1));
+      console.log(soloCognomi);
+    </script>
+
+
+</body>
+</html>

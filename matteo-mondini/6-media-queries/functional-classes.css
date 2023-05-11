@@ -1,0 +1,38 @@
+.only-mobile,
+.only-tablet {
+  display: none;
+}
+.only-desktop {
+  display: block;
+}
+.hide-on-desktop {
+  display: none;
+}
+
+/* TABLET */
+@media (max-width: 960px) {
+  .only-tablet {
+    display: block;
+  }
+  .only-desktop,
+  .only-mobile {
+    display: none;
+  }
+  .hide-on-desktop {
+    display: block;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .only-mobile {
+    display: block;
+  }
+  .only-desktop,
+  .only-tablet {
+    display: none;
+  }
+  .hide-on-desktop {
+    display: block;
+  }
+}

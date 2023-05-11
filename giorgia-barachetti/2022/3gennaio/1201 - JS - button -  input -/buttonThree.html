@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title> JS BUTTON </title>
+
+            <body>
+                <h1 id="titolo"> CAIO </h1>
+                <input id="primo-input">
+                <button onclick="aggiungiNome()">  NOME  </button>
+
+                <input id="secondo-input">
+                <button onclick="aggiungiSoprannome()"> SOPRANNOME </button>
+
+                <input id="terzo-input">
+                <button onclick="aggiungiCognome()"> COGNOME </button>
+            </body>
+
+            <script>
+                function aggiungiNome(){
+                    // la nuova const è specificata nel documento con l'id primotitolo 
+                    const titolo = document.getElementById("titolo");
+                    const input = document.getElementById("primo-input");
+                    //con l'imput al posto di mettere innerText metto value
+                    titolo.innerText = titolo.innerText + " " + input.value;
+                }
+
+            </script>
+
+             <script>
+                function aggiungiSoprannome(){
+                    // la nuova const è specificata nel documento con l'id primotitolo 
+                    const titolo = document.getElementById("titolo");
+                    const input = document.getElementById("secondo-input");
+                    //con l'imput al posto di mettere innerText metto value
+                    titolo.innerText = titolo.innerText + " " + input.value;
+                }
+
+            </script>
+
+             <script>
+                function aggiungiCognome(){
+                    // la nuova const è specificata nel documento con l'id primotitolo 
+                    const titolo = document.getElementById("titolo");
+                    const input = document.getElementById("terzo-input");
+                    //con l'imput al posto di mettere innerText metto value
+                    titolo.innerText = titolo.innerText + " " + input.value;
+                }
+
+            </script>
+            
+    </head>
+</html>

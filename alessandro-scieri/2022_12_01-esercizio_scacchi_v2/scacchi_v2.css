@@ -2,8 +2,10 @@ nav {
     padding: 15px;
     text-align: right;
     background-color: yellow;
-    display: inline-block;
     /*width: 100%;*/
+}
+nav ol li{
+    display: inline-block;
 }
 body{
     background-color: beige;
@@ -15,6 +17,7 @@ article {
 }
 section {
     margin: 30px 40px;
+    /*margin-bottom: 30px;*/
 }
 h1{
     color: darkgoldenrod;
@@ -26,6 +29,7 @@ header img{
 }
 img {
     max-width: 50%;
+    /*float: left;*/
 }
 header p {
     margin: 10px 20px;

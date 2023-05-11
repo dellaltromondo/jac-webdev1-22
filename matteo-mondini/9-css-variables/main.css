@@ -1,0 +1,52 @@
+:root {
+  --main-color: violet; 
+  --main-border: 2rem solid var(--main-color);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --main-color: lightpink;
+  }
+}
+
+body {
+    padding: 2em;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: grey;
+  }
+}
+
+p {
+  font-size: 20px;
+  color: red;
+  border: var(--main-border);
+}
+
+article {
+  column-count: 3;
+  column-gap: 3em;
+}
+
+/* TABLET */
+@media (max-width: 960px) {
+  p {
+    color: var(--main-color);
+  }
+  article {
+    column-count: 2;
+  }
+}
+
+
+/* MOBILE */
+@media (max-width: 600px) {
+  p {
+    color: pink;
+  }
+  article {
+    column-count: 1;
+  }
+}

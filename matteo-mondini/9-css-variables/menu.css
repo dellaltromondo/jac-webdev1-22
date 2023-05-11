@@ -1,0 +1,24 @@
+nav ul {
+    padding-left: 0;
+}
+
+nav button {
+  border: var(--main-border);
+}
+
+nav li {
+  display: inline-block;
+  background-color: var(--main-color);
+  color: white;
+  padding: 0.2em 0.4em;
+  margin-bottom: 0.2em;
+}
+
+/* 
+MOBILE e TABLET
+*/
+@media (max-width: 960px) {
+  nav li {
+    display: block;
+  }
+}

@@ -1,0 +1,14 @@
+<html> 
+    <body>
+        <h1 id = "titolo">Ciao</h1>
+        <button onclick="CambiaTitolo()">Saluta</button>
+        <input id ="input1">
+    </body>
+    <script>
+        function CambiaTitolo(){
+            const elementoTitolo = document.getElementById("titolo");
+            let nome = document.getElementById("input1").value;
+            elementoTitolo.innerText = "Ciao " +  nome;
+        }
+    </script>
+</html>

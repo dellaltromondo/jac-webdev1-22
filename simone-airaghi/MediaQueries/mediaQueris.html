@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media-Queries</title>
+
+    <Style>
+        .only-mobile {
+
+            display: none;
+        }
+
+        .only-desktop {
+
+            display: block;
+        }
+
+        .only-tablet {
+            display: none;
+        }
+
+        p{
+            columns: auto;
+            columns: 3;
+        }
+
+        li{
+            display: inline-block
+
+        }
+
+        @media (max-width : 960px){
+            .only-mobile{
+                display: none ;
+            }
+
+            .only-desktop{
+                display: none;
+            }
+            .only-tablet{
+                display: block;
+
+            }
+            p{
+                columns: 2;
+            }
+
+            
+        }
+
+        @media (max-width : 600px){
+            .only-mobile{
+                display: block;
+            }
+
+            .only-desktop{
+                display: none;
+            }
+
+            .only-tablet{
+                display:none;
+            }
+            p{
+                columns: 1;
+            }
+        }
+    </Style>
+</head>
+<body>
+    <header>
+    <nav>
+        <button class="only-mobile"  onclick="mostraMenu()">M</button>
+        <ul class="only-desktop" id="espandi-menu">
+            <li>lista1</li>
+            <li>lista2 </li>
+            <li>lista3</li>
+            <li>lista4</li>
+            <li>lista6</li>
+        </ul>
+    </nav>
+    </header>
+    <h1 class="only-mobile"> Ciao, siamo su mobile </h1>
+    <h1 class="only-desktop">Ciao, siamo su desktop</h1>
+    <h1 class="only-tablet">Ciao, siamo su tablet</h1>
+<article>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus sequi accusantium sint, earum unde vitae accusam
+        us recusandae dignissimos omnis sit maxime expedita quia corporis qui praesentium voluptate iste quas nemo Lorem ipsum dolor
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat porro labore, repellendus facilis dignissimos nulla repellat commodi magni, pariatur, perspiciatis nemo delectus harum! Animi itaque tempore corrupti ab, reiciendis est!
+         it amet consectetur adipisicing elit. Illo fugiat, autem deleniti quis hic 
+        ex quibusdam fugit velit sint maxime totam minima atque id nihil dolor corporis odit officiis iure.Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus sequi accusantium sint, earum unde vitae accusam
+        us recusandae dignissimos omnis sit maxime expedita quia corporis qui praesentium voluptate iste quas nemo Lorem ipsum dolor
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat porro labore, repellendus facilis dignissimos nulla repellat commodi magni, pariatur, perspiciatis nemo delectus harum! Animi itaque tempore corrupti ab, reiciendis est!
+         it amet consectetur adipisicing elit. Illo fugiat, autem deleniti quis hic 
+        ex quibusdam fugit velit sint maxime totam minima atque id nihil dolor corporis odit officiis iure.Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus sequi accusantium sint, earum unde vitae accusam
+        us recusandae dignissimos omnis sit maxime expedita quia corporis qui praesentium voluptate iste quas nemo Lorem ipsum dolor
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat porro labore, repellendus facilis dignissimos nulla repellat commodi magni, pariatur, perspiciatis nemo delectus harum! Animi itaque tempore corrupti ab, reiciendis est!
+         it amet consectetur adipisicing elit. Illo fugiat, autem deleniti quis hic 
+        ex quibusdam fugit velit sint maxime totam minima atque id nihil dolor corporis odit officiis iure.Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus sequi accusantium sint, earum unde vitae accusam
+        us recusandae dignissimos omnis sit maxime expedita quia corporis qui praesentium voluptate iste quas nemo Lorem ipsum dolor
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat porro labore, repellendus facilis dignissimos nulla repellat commodi magni, pariatur, perspiciatis nemo delectus harum! Animi itaque tempore corrupti ab, reiciendis est!
+         it amet consectetur adipisicing elit. Illo fugiat, autem deleniti quis hic 
+        ex quibusdam fugit velit sint maxime totam minima atque id nihil dolor corporis odit officiis iure.</p>
+
+</article>
+
+<script>
+    function mostraMenu(){
+      const espandi = document.getElementById('espandi-menu');
+     if (espandi.style.display == "none"){
+        espandi.style.display = "block";
+     } else{
+        espandi.style.display = "none";
+     }
+     
+
+    }
+
+</script>
+</body>
+</html>

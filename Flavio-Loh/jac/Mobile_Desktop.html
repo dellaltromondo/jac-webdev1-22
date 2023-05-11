@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title id="Title">Progetto personale </title>
+
+    <style>
+        /* mobile */
+        @media (max-width: 960px) {
+            .only-mobile {
+                display: block;
+            }
+
+            .only-desktop {
+                display: none;
+            }
+        }
+
+        /* pc */
+        @media (min-width: 960px) {
+            .only-mobile {
+                display: none;
+            }
+
+            .only-desktop {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+    <header>
+        <nav>
+        <button class="only-mobile" onclick="showMenu()">m</button>
+        <ul class="only-desktop" id="expanded-menu">
+            <li> voce menu 1</li>
+            <li> voce menu 2</li>
+            <li> voce menu 3</li>
+            <li> voce menu 4</li>
+
+
+
+        </ul>
+
+
+    </nav>
+    </header>
+    <h1 class="only-mobile"> salve sono su mobile</h1>
+    <h1 class="only-desktop"> salve sono su desktop</h1>
+    <p>piacere</p>
+
+
+    <script>
+        function showMenu(){
+           const expMenuElement =  document.getElementById('expanded-menu');
+          
+           if(expMenuElement.display != "block") {
+                expMenuElement.style.display = "block";
+            }else{
+                expMenuElement.style.display = "none";
+            }
+        }
+
+    </script>
+</body>
+
+
+
+
+
+
+</html>

@@ -1,0 +1,23 @@
+
+
+
+#MainTitle{
+    font-size: 55px;
+    color: chocolate;
+    padding: 30px;
+}
+
+#Pedone{
+    font-size: 55px;
+    color: blue;
+}
+
+nav{
+    text-align: right;
+    font-size: 30px;
+    background-color: tomato;
+}
+
+img{
+    size:3500px;
+}

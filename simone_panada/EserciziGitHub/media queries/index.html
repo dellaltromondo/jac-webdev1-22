@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Media queries</title>
+        <style>
+            /*MOBILE*/
+            @media (max-width:960px) 
+            {
+                .only-mobile
+                {
+                    display: block;
+                }
+                .only-desktop 
+                {
+                    display: none;
+                }
+                article
+                {
+                    column-count: 1;
+                }
+                li 
+                {
+                    display: block;
+                    background-color: blueviolet;
+                    color: white;
+                    padding: 10px;
+                    margin-bottom: 5px;
+                }
+            }   
+            p 
+            {
+             font-size: 20px;
+             color: red;
+            }  
+            /*Desktop*/
+            @media (min-width:961px) 
+            {
+                .only-mobile 
+                    {
+                        display: none;
+                    } 
+                .only-desktop 
+                    {
+                        display:block;
+                    }
+                    article
+                    {
+                        column-count: 3;
+                    }
+            }
+            /*MENU*/
+            li 
+            {
+                display: inline-block;
+                background-color: blueviolet;
+                color: white;
+            }
+           
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <button class="only-mobile" onclick="toggleMenu()">M</button>
+                <ul class="only-desktop" id="expanded_menu">
+                    <li>Menu1</li>
+                    <li>Menu2</li>
+                    <li>Menudgvgfhvyfgiyh3</li>
+                    <li>Menu4</li>
+                    <li>Menu5</li>
+                </ul>
+            </nav>
+        </header>
+       <h1 class="only-mobile">Ciao, sei da telefono?</h1>
+       <h1 class="only-desktop">Ciao, hai un computer?</h1>
+       <p>Ciao, sono un testo.</p>
+
+       <article>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dignissim a nunc a sodales. Vivamus et finibus elit. Donec bibendum, nisl at finibus maximus, enim diam elementum mi, ac vehicula justo quam et nibh. Nunc condimentum nisi leo, ut lacinia elit hendrerit eget. Duis nec sollicitudin urna. Aenean quis tristique lectus. Integer neque odio, euismod vitae massa id, mattis viverra sapien. In id lectus sodales, fringilla orci et, ullamcorper sapien.
+
+        Sed tincidunt elementum magna, imperdiet bibendum ipsum mollis sit amet. Quisque sollicitudin non diam eu tincidunt. Integer id dapibus metus, a imperdiet massa. Sed eu volutpat leo. Duis viverra imperdiet mauris, non finibus quam blandit id. Cras et mi vitae tellus euismod malesuada. Curabitur efficitur hendrerit accumsan.
+
+        Aliquam sed sapien porttitor, aliquam lorem at, tincidunt nunc. In dignissim at nibh at mattis. Sed maximus nisl at urna consequat auctor. Duis eget dolor est. Mauris molestie fermentum magna nec semper. Donec tempor accumsan dignissim. Nulla id cursus sem. Phasellus posuere dictum est, vitae maximus dui efficitur ac. Phasellus sed magna sem. Donec cursus placerat leo at rutrum. Ut in egestas libero. Vestibulum massa eros, feugiat eu mattis at, porta non sem. Proin ac eros eget est sollicitudin efficitur eu sed libero. Nulla iaculis nulla in interdum pellentesque.
+
+        Aliquam erat volutpat. Nam non sem et lectus aliquet volutpat. Vestibulum ultricies ex sed consequat ultrices. Pellentesque sit amet luctus nunc, a finibus ante. Proin aliquam placerat leo, vel varius justo porttitor ac. Quisque eu pharetra ante. Sed faucibus enim in dolor commodo, ultricies posuere orci viverra. Duis felis enim, ultricies eu nulla tincidunt, tristique vestibulum tellus. Proin porta diam at est commodo, sit amet feugiat arcu euismod.
+
+        Vestibulum sit amet dapibus sem. Sed finibus sem sit amet bibendum venenatis. Duis eu imperdiet mi, eu fringilla sem. Duis vehicula elementum elit ut condimentum. Donec quis porta ligula. Etiam congue quam quis hendrerit ultrices. Vestibulum ac lorem ac leo mollis viverra a ac erat.
+       </article>
+    </body>
+    <script>
+        function toggleMenu() 
+        {
+           const expMenuElement = document.getElementById("expanded_menu");
+           
+           if (expMenuElement.style.display == "none") 
+           {
+           expMenuElement.style.display = "block";
+           } else 
+           {
+             expMenuElement.style.display = "none";
+           }
+        }
+    </script>
+</html>

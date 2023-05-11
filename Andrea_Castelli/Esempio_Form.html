@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>Esempio Form</title>
+
+        <style>
+            input /*Seleziono TUTTI gli input*/
+            {
+                display: block;
+            }
+
+            div input /*Seleziono TUTTI gli input FIGLI di div*/
+            {
+                display: inline-block;
+            }
+
+            input[type="checkbox"] /*Seleziono TUTTI gli input di tipo checkbox*/
+            {
+                display: inline-block;
+            }
+        </style>
+
+
+        <script>
+            function creaSection()
+            {
+                const nuovoElScheda=document.createElement("section");
+                /*nuovoElScheda.innerText="Ciao sono un nuovo elemento";*/
+                let testo=document.getElementById("frase");
+                nuovoElScheda.innerText=testo.value;
+
+
+                const elementoSchede=document.getElementById("scheda");
+                elementoSchede.appendChild(nuovoElScheda);
+                nuovoElScheda.setAttribute("class", "scheda");
+            }
+        </script>
+    </head>
+
+    <body>
+        <form>
+            <label>Nome: <input type="text" name="nome" placeholder="Mario"></label>
+            <br>
+            <label>Cognome:<input type="text" name="cognome" placeholder="Rossi"></label>
+            <br>
+            <label>Età:<input type="number" name="eta" min="0"></label>
+            <br>
+            <label>E-Mail:<input type="email" name="email" placeholder="mariorossi@outlook.com"></label>
+            <br>
+            <label>Data nascita:<input type="date" name="dataNascita"></label>
+            <br>
+            <div>Sesso:<label>M <input type="radio" name="sesso" value="M"> F<input type="radio" name="sesso" value="F"></label></div>
+            <br>
+            <label>Accetto le condizioni di servizio: <input type="checkbox"></label>
+            <br><br><br>
+            <lable><input type="text" id="frase" placeholder="Scrivi qualcosa..."></lable>
+            <input type="button" name="button" value="Invia" onclick="creaSection()">
+        </form>
+
+        <section id="scheda">
+            
+        </section>
+    </body>
+</html>

@@ -1,0 +1,107 @@
+<DOCTYPE HTML>
+    <html>
+        <head>
+            <title>Esercitazione JavaScript</title>
+        </head>
+
+        <body>
+            <script>
+                function perMille(num)
+                {
+                    return num*1000;
+                }
+
+                let num=5;
+                console.log(perMille);
+
+
+
+                function NomeCognome(n, c)
+                {
+                    let nc=n+" "+c;
+                    return nc;
+                }
+
+                let n="Martina";
+                let c="Martinelli";
+                console.log(NomeCognome);
+
+
+
+                function annoNascita(a)
+                {
+                    let eta=2022-a;
+
+                    if(eta<18)
+                    {
+                        return "young";
+                    }
+
+                    if(eta>65)
+                    {
+                        return "old";
+                    }
+
+                    else
+                    {
+                        return "adult";
+                    }
+                }
+
+                let a=2003;
+                console.log(annoNascita);
+
+
+
+                function trovaMinorenni(v)
+                {
+                    let m=[];
+                    let j=0;
+
+                    for(let i=0; i<v.length; i++)
+                    {
+                        let eta=2022-v[i];
+
+                        if(eta<18)
+                        {
+                           m[j]=v[i];
+                           j++; //Invece di j, si sarebbe potuto usare il metodo push()
+                        }
+                    }
+
+                    return m;
+                }
+
+                let v=[2002, 2004, 2006, 1998, 1994, 1992, 2007];
+                console.log(trovaMinorenni);
+
+
+
+                let p1={Nome:"Mario", Cognome:"Rossi", Età:26};
+                let p2={Nome: "Mirco", Cognome:"Savoldelli", Età:12};
+                let p3={Nome:"Paola", Cognome:"Verdona", Età:17};
+
+                let ar=[p1, p2, p3];
+                function trovaPersoneMinorenni(ar)
+                {
+                    let m=[];
+                    let j=0;
+
+                    for(let i=0; i<ar.length; i++)
+                    {
+                        if(ar[i].Età<18)
+                        {
+                            m[j]=ar[i];
+                            j++;
+                        }
+                    }
+
+                    return m;
+                }
+
+                console.log(trovaPersoneMinorenni);
+
+            </script>
+        </body>
+    </html>
+</DOCTYPE>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //dichiarazione array
+        const lista = ['primo', 'secondo', 'terzo'];
+        const primoEl = lista[0];
+        //per fare qualcosa all'interno dell'array si usa il ciclo for 
+        for (let i = 0; i < lista.length; i++) {
+            const elementoCorrente = lista[i];
+            console.log(elementoCorrente);
+        }
+        //così stampo tutti gli elementi dell'array
+
+        //il ciclo for in cicla sugli indici dell'array 
+
+        for (let i in lista) {
+            const elementoCorrente = lista[i];
+            console.log(elementoCorrente);
+        }
+
+        //stampa con for of 
+
+        for (let elementoCorrente of lista) {
+            console.log(elementoCorrente)
+        }
+
+        //dichiarazione oggetto
+
+        const nomeOggetto = {
+            nome: 'paolo',        //le chiavi sono sempre stringhe (nome, cognome eta) mentre per i valori lo decidiamo noi
+            cognome: 'rossi',
+            eta: 42
+
+        }
+
+        //  nomeOggetto[nome]
+        //  nomeOggetto.nome   //due modi per richiamare una caratteritica dell'oggetto
+
+        //per aggiungere o modificare caratteristiche di un oggetto...
+
+        nomeOggetto.sesso = 'M';
+
+        console.log(nomeOggetto);
+
+        //mappe: le mappe sono una classe di js 
+
+        const mappa = new Map(); //creo l'istanza della classe js Mappa
+        mappa.set("p.rossi", "paolo.rossi@gmail.com");
+        mappa.set("s.manzoni", "saramanzoni@gmail.com");
+
+        console.log(mappa.get("p.rossi"));
+        console.log(mappa.get("s.manzoni"));
+
+        // METODO for each: gli array hanno anche un metodo forEach, esso accetta una funzione come parametro
+        lista.forEach(stampaArray);
+        function stampaArray(elementoCorrente) {       //questa funzione è equivalente al for of 
+            console.log(elementoCorrente)
+
+        }
+
+        //secondo modo per scrivere il metodo for each 
+
+        lista.forEach(function (elementoCorrente) {      //la funzione è anonima non avendo un nome
+            console.log(elementoCorrente);
+        });
+
+        //altro modo ancora per stampare con funzione freccia 
+
+        lista.forEach(elementoCorrente => console.log(elementoCorrente)); //le funzioi feccia sono anonime quindi solitamente non si riutilizzano 
+
+        //si possono stampare anche le mappe con le funzioni freccia 
+        mappa.forEach((valore, chiave) => console.log("il valore di " + chiave + " è " + valore));
+        
+    //posso scrivere in maniera ordinata in questo modo:(`il valore di ${chiave} è ${valore}`)
+
+        
+        // funzioni freccia 
+
+       /* (primoNumero,secondoNumero) => {
+            const somma= primoNumero + secondoNumero;
+            return somma;
+        }
+      
+        //quando vi è solo un parametro posso togliere le parentesi 
+
+        numero => {
+            const arrotondaNumero = Math.round (nuemro);
+            return arrotondaNumero;
+        }
+        
+        //posso togliere persino il return e le graffe quando ce solo una istruzione 
+
+        numero =>  numero +10;
+           
+        */
+
+        
+
+
+
+        
+        
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

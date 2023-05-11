@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <title>JavaScript</title>
+    </head>
+    <body>
+        <h1 id="titolo"></h1>
+        <button onclick="sovrasciviTitolo()">Cambia titolo</button>
+
+        <h1 id="titolo2">Ciao</h1>
+         <input id="aggiunta"/>
+         <button onclick="aggiungiTitolo()">aggiungi titolo</button>
+    </body>
+    <script>
+        function sovrasciviTitolo()
+        {
+            const elementiTitolo=document.getElementById("titolo");
+            elementiTitolo.innerText="Ciao Mondo";
+        }
+
+        function aggiungiTitolo()
+        {
+            const elementiTitolo=document.getElementById("titolo2");
+            const aggiuntaTitolo=document.getElementById("aggiunta");
+            elementiTitolo.innerText=elementiTitolo.innerText+aggiuntaTitolo.value;
+        }
+    </script>
+</html>

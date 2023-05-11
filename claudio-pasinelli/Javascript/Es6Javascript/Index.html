@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fetch</title>
+  </head>
+
+  <body>
+    <section id="factSection"></section>
+    <script type="module">
+      /*
+      const factPromise = fetch("https://catfact.ninja/fact");
+      let factOfTheDay = "";
+      factPromise.then(
+        (response) => {
+            const dataPromise = response.json();
+            dataPromise.then(
+                (value) => factOfTheDay = value
+            )
+        }
+      );
+      */
+
+    //   const response = await fetch("https://catfact.ninja/fact");
+    //   const data = await response.json();
+    //   const factOfTheDay = data.fact;
+        const response = await fetch("https://api.genderize.io?name=claudio");
+        const data = await response.json();
+
+        const nome = data.name;
+        const gender = data.gender;
+        const probability = data.probability;
+        const count = data.count;
+
+        document.getElementById("factSection").innerText = nome+" "+gender+" "+probability+" "+count;
+      </script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
