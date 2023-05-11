@@ -1,0 +1,52 @@
+#image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+    border: 2px solid #333;
+}
+  
+
+#image-container img {
+    max-width: 100%;
+    max-height: 100%;
+}
+  
+#text-container {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+  
+      
+/* Stile per il testo "Attendi il caricamento" */
+#loading-text {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+}
+
+
+#imageBack{
+    height: 30px;
+    width: 30px;
+  }
+  
+  a {
+    display: inline-block; /* rende l'elemento un blocco inline con altezza e larghezza minime */
+    border: 1px solid black; /* aggiunge un bordo nero di 1 pixel */
+    padding: 10px; /* aggiunge uno spazio interno di 10 pixel intorno al testo */
+    text-align: center; /* centra il testo orizzontalmente */
+    text-decoration: none; /* rimuove la sottolineatura del link */
+  }
+  
+  a img {
+    vertical-align: middle; /* centra l'immagine verticalmente */
+    margin-right: 10px; /* aggiunge uno spazio di 10 pixel a destra dell'immagine */
+  }
+  

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<html>
+
+
+
+   <head> <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>sito</title>
+
+
+     <link rel="stylesheet" href="italia.css">
+        
+   </head>
+
+
+   <body>
+      
+      <header>
+
+         <h1>VIAGGIA CON NOI</h1>
+           
+            <div class="home">
+             
+                <a href="Progetto_Nicolo_Mignani.html">HOME</a>
+
+            </div>
+
+           <div class="blog">
+
+                <a href="blog.html">BLOG</a>
+
+            </div>
+            <div class="contatti">
+
+              <a href="contatti.html">CONTATTI</a>
+
+          </div>
+           
+            <div class="prenota">
+
+                 <a href="Prenota.html">PRENOTA</a>
+
+            </div>
+
+      </header>
+
+
+
+      <main>
+
+
+        <section class="verde">
+
+            <h3>LOMBARDIA</h3>
+            <div></div>
+
+            <P>La Lombardia è una regione nel nord Italia con una cultura e un'architettura ricca di storia e arte. 
+            Con città iconiche come Milano, famosa per la moda e il design, e il Lago di Como, con le sue pittoresche città sulle rive, 
+            la Lombardia offre una vasta gamma di attrazioni turistiche per tutti i gusti. 
+            Gli amanti dell'arte possono visitare il Castello Sforzesco a Milano o
+            ammirare le opere d'arte in uno dei numerosi musei della regione.
+            La regione è anche famosa per la sua cucina, con piatti tradizionali come l'ossobuco alla milanese e la polenta taragna.
+            La Lombardia è un luogo ideale per i viaggiatori che desiderano esplorare la bellezza del nord Italia e immergersi nella cultura italiana.</P>
+
+        </section>
+
+
+
+        <section class="bianco">
+            
+            <h3>PIEMONTE</h3>
+
+            <div></div>
+
+            <p>Il Piemonte è una regione nel nord-ovest dell'Italia con una bellezza naturale mozzafiato e 
+            una gastronomia famosa in tutto il mondo. La regione è caratterizzata dalle montagne delle Alpi 
+            e dai suoi splendidi paesaggi collinari, tra cui la famosa zona del Barolo, con le sue viti e i suoi produttori di vino rinomati. 
+            Il Piemonte è anche la patria di importanti città culturali, come Torino, la capitale regionale, 
+            con i suoi monumenti storici e musei, tra cui il celebre Museo Egizio. 
+            Gli appassionati di cibo non potranno resistere ai piatti tradizionali del Piemonte, come il vitello tonnato, 
+            i tajarin alle nocciole e i baci di dama, accompagnati da alcuni dei migliori vini italiani. 
+            l Piemonte è una meta perfetta per i viaggiatori che desiderano scoprire una regione autentica dell'Italia, 
+            apprezzare la bellezza naturale e gustare cibo e vino di alta qualità.</p>
+
+
+
+        </section>
+
+
+        <section class="rosso">
+
+            <h3>FRIULI VENEZIA GIULIA</h3>
+
+            <div></div>
+
+            <p>Il Friuli Venezia Giulia è una regione situata nel nord-est dell'Italia, 
+            ai confini con Austria e Slovenia. Questa regione è famosa per la sua bellezza naturale unica, 
+            che include l'ampia pianura della Laguna di Grado e Marano, le Alpi Giulie, il Parco Naturale delle Dolomiti Friulane 
+            e la Riserva Naturale della Foce dell'Isonzo. Oltre alla sua bellezza naturale, 
+            la regione offre anche una ricca storia culturale, con città affascinanti come Trieste, Gorizia e Udine, 
+            che presentano architetture di epoche diverse, dal periodo romano al barocco e all'art nouveau. 
+            Il Friuli Venezia Giulia è anche rinomato per la sua cucina, che combina sapori tradizionali dell'Italia, 
+            Austria e Slovenia, come il prosciutto di San Daniele, i formaggi di montagna, le trota affumicata e il vino bianco Tocai Friulano. 
+            Il Friuli Venezia Giulia è una meta ideale per i viaggiatori in cerca di bellezza naturale, storia e gastronomia.</p>
+
+
+        </section>
+
+
+      </main>
+
+
+      <footer>
+        
+        <p>©️ Copyright 2023 | Nomadi Moderni di Viaggigiovani.it S.r.l.
+            Via Milano 17, 38122, Trento
+            Nr registro, Partita IVA e CF: 02092650221 - Socio Unico - Cap. Sociale: 10.000€
+            Licenza PAT nr 52 del 12/02/2009 - Polizza RC nr 1/75910/319/100972789 di UnipolSai Assicurazioni S.p.A</p>
+            
+            
+          
+          <section class="recensioni">
+            <button class="bsi" onclick="plusDivs(-1)"><</button>
+          
+            <p class="recensione">ho trovato questo sito a caso e adesso uso solo questo per i miei viaggi</p>
+            <p class="recensione">viaggi spettacolari per prezzi convenienti</p>
+            <p class="recensione">sito molto utile se si vogliono fare delle vacanze organizzate bene</p>
+            <p class="recensione">sono davvero stupito di questo sito ha una varietaa di destinazioni pazzesche</p>
+
+
+            <button class="bdx" onclick="plusDivs(1)">></button>
+
+         </section>
+
+          </footer>
+
+         <script>
+          var slideIndex = 1;
+          showDivs(slideIndex);
+          
+          function plusDivs(n) {
+            showDivs(slideIndex += n);
+          }
+          
+          function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("recensione");
+            if (n > x.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = x.length}
+            for (i = 0; i < x.length; i++) {
+              x[i].style.display = "none";  
+            }
+            x[slideIndex-1].style.display = "block";  
+          }
+          </script>
+          
+
+
+   </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

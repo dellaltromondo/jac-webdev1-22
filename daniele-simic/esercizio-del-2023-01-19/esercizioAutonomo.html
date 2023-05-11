@@ -31,13 +31,13 @@
     <script>
         function aggiungiScheda() {
         const nuovoElemento = document.createElement("section");
+        const elementoSchede = document.getElementById("scheda");
         const input = document.getElementsByTagName('input');
         nuovoElemento.innerText = 'utente:   ' + "  nome: " + input[0].value +
           "    cognome " + input[1].value +
           "    data di nascita " + input[2].value + 
           "    sesso: " + input[3].value+
           "    consenso: " + input[5].value;
-        const elementoSchede = document.getElementById("scheda");
         elementoSchede.appendChild(nuovoElemento);
         nuovoElemento.setAttribute('class', 'scheda');
     }

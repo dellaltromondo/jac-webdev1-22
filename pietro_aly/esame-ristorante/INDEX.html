@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+        <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -7,15 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Burger House</title>
     <link rel="icon" type="image/x-icon" href="../esame-ristorante/images/logo.png">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@400;700&family=Josefin+Sans:wght@500&display=swap"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@400;700&family=Josefin+Sans:wght@500&display=swap" rel="stylesheet">
+    
+   
 </head>
 
-
+ 
 <body>
    
     <section id="navbar">
@@ -28,6 +28,8 @@
             <li><a href="#food" class="para-font">I nostri prodotti</a></li>
             <li><a href="#event-container" class="para-font">Chi siamo</a></li>
             <li><a href="#burger-footer" class="para-font">Contattaci</a></li>
+
+            
         </ul>
         <div class="menu" onclick="myFunction()">
             <div class="one" id="menu"></div>
@@ -76,21 +78,24 @@
                 <h2 class="center color-primary burger-heading">Burger 1</h2>
                 <p class="center">Lorem ipsum dolor sit amet,<br> consectetur adipisicing elit. Repudiandae<br>
                     architecto eos est tempore? Ipsa, totam.</p>
-                <button class="button" onclick="printMessage(1)">Panino 1</button>
+                <button class="button" onclick="printMessage(1)">ORDINA</button>
+                <div id="snackbar">ORDINATO !</div>
             </div>
             <div class="burger-item">
                 <img src="Images/burger.png" alt="">
                 <h2 class="center color-primary burger-heading">Burger 2</h2>
                 <p class="center">Lorem ipsum dolor sit amet,<br> consectetur adipisicing elit. Repudiandae <br>
                     architecto eos est tempore? Ipsa, totam.</p>
-                <button class="button" onclick="printMessage(2)">Panino 2</button>
+                <button class="button" onclick="printMessage(2)">ORDINA</button>
+                <div id="snackbar">ORDINATO !</div>
             </div>
             <div class="burger-item">
                 <img src="Images/burger2.png" alt="">
                 <h2 class="center color-primary burger-heading">Burger 3</h2>
                 <p class="center">Lorem ipsum dolor sit amet,<br> consectetur adipisicing elit. Repudiandae <br>
                     architecto eos est tempore? Ipsa, totam.</p>
-                <button class="button" onclick="printMessage(3)">Panino 3</button>
+                <button class="button" onclick="printMessage(3)">ORDINA</button>
+                <div id="snackbar">ORDINATO !</div>
             </div>
         </div>
         
@@ -116,6 +121,11 @@
                     document.getElementById("message-container").appendChild(messageelement);
                     messages[panino - 1] = messageelement;
                 }
+                var x = document.getElementById("snackbar");
+
+x.className = "show";
+setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+
             }
         </script>
         
@@ -125,22 +135,26 @@
         <h2  class="h-secondary center btn-heading">stuzichini</h2>
         <div class="burger-container">
             <div class="burger-item">
-                <img id="myImg1" src="Images/burger2.png" alt="">
+                <img id="myImg1" src="Images/menu-2.1.jpg" alt="">
                 <h2 class="center color-primary burger-heading">Burger 1</h2>
                 <p class="center">Lorem ipsum dolor sit amet,<br> consectetur adipisicing elit. Repudiandae<br> architecto eos est tempore? Ipsa, totam.</p>
-                <button class="button" onclick="printMessage2(1)">Bevanda 1</button>
+                <button class="button" onclick="printMessage2(1)">ORDINA</button>
+                <div id="snackbar">ORDINATO !</div>
+                
               </div>
               <div class="burger-item">
-                <img id="myImg2" src="Images/burger.png" alt="">
+                <img id="myImg2" src="Images/menu-1.1.jpg" alt="">
                 <h2 class="center color-primary burger-heading">Burger 2</h2>
                 <p class="center">Lorem ipsum dolor sit amet,<br> consectetur adipisicing elit. Repudiandae <br> architecto eos est tempore? Ipsa, totam.</p>
-                <button class="button" onclick="printMessage2(2)">Bevanda 2</button>
+                <button class="button" onclick="printMessage2(2)">ORDINA</button>
+                <div id="snackbar">ORDINATO !</div>
               </div>
               <div class="burger-item">
-                <img id="myImg3" src="Images/burger2.png" alt="">
+                <img id="myImg3" src="Images/menu-2.4.jpeg" alt="">
                 <h2 class="center color-primary burger-heading">Burger 3</h2>
                 <p class="center">Lorem ipsum dolor sit amet,<br> consectetur adipisicing elit. Repudiandae <br> architecto eos est tempore? Ipsa, totam.</p>
-                <button class="button" onclick="printMessage2(3)">Bevanda 3</button>
+                <button class="button" onclick="printMessage2(3)">ORDINA</button>
+                <div id="snackbar">ORDINATO !</div>
               </div>
               
               <script>
@@ -164,6 +178,9 @@
                     listabev[bevande - 1] = messageelement2;
                   }
                 }
+                x.className = "show2";
+                setTimeout(function(){ x.className = x.className.replace("show2", ""); }, 3000);
+
               </script>
               
               
@@ -172,26 +189,28 @@
         <h2  class="h-secondary center btn-heading">bevande </h2>
         <div class="burger-container">
             <div class="burger-item">
-                <img id="myImg" src="Images/burger2.png" alt="">
+                <img id="myImg" src="Images/menu-3.3.jpg" alt="">
                 <h2 class="center color-primary burger-heading">Burger 1</h2>
                 <p class="center">Lorem ipsum dolor sit amet,<br> consectetur adipisicing elit. Repudiandae<br>
                     architecto eos est tempore? Ipsa, totam.</p>
-                    <button class="button" onclick="printMessage3(1)" id="bev1"> 1</button>
+                    <button class="button" onclick="printMessage3(1)" id="bev1"> ORDINA</button>
+                    <div id="snackbar">ORDINATO !</div>
             </div>
             <div class="burger-item">
-                <img id="myImg" src="Images/burger.png" alt="">
+                <img id="myImg" src="Images/menu-3.1.jpg" alt="">
                 <h2 class="center color-primary burger-heading">Burger 2</h2>
                 <p class="center">Lorem ipsum dolor sit amet,<br> consectetur adipisicing elit. Repudiandae <br>
                     architecto eos est tempore? Ipsa, totam.</p>
-                    <button class="button" onclick="printMessage3(2)" id="bev2"> 2</button>
+                    <button class="button" onclick="printMessage3(2)" id="bev2"> ORDINA</button>
+                    <div id="snackbar">ORDINATO !</div>
             </div>
             <div class="burger-item">
-                <img id="myImg" src="Images/burger2.png" alt="">
+                <img id="myImg" src="Images/menu-3.4.jpg" alt="">
                 <h2 class="center color-primary burger-heading">Burger 3</h2>
                 <p class="center">Lorem ipsum dolor sit amet,<br> consectetur adipisicing elit. Repudiandae <br>
                     architecto eos est tempore? Ipsa, totam.</p>
-                
-                <button class="button" onclick="printMessage3(3)" id="bev3"> 3</button>
+                <button class="button" onclick="printMessage3(3)" id="bev3"> ORDINA</button>
+                <div id="snackbar">ORDINATO !</div>
                 <script>
                     var listades = ["", "", ""];
                     var counter = [0, 0, 0];
@@ -211,7 +230,11 @@
                         messageelement3.innerText = message;
                         document.getElementById("message-container").appendChild(messageelement3);
                         listades[desser - 1] = messageelement3;
+                        
                       }
+                      x.className = "show3";
+                setTimeout(function(){ x.className = x.className.replace("show3", ""); }, 3000);
+                      
                     }
                   </script>
             </div>
@@ -219,19 +242,17 @@
         </div>
         
         <div id="message-container"></div>
+		<a href="pagamento.html" style="color:white" class="h-secondary center btn-heading">pagamento</a>
+   
 
       
     <section id="event-container">
         <div class="event-item">
             <div class="event-content">
 
-                <h2 class="para-font color-primary">DISCOVER</h2>
-                <h2 class="normal-hading color-primary">UPCOMING EVENTS</h2>
-                <p class="event-para para-font">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe totam
-                    itaque
-                    voluptate facere deleniti laudantium sapiente aut nostrum doloribus iste hic placeat, numquam magni
-                    dolores, quaerat minus quae, repudiandae voluptates pousandae! Adipisci culpa magni cum, eaque nam
-                    error placeat magnam asperiores perferenvoluptate maiores fugit, dicta</p>
+                <h2 class="para-font color-primary"></h2>
+                <h2 class="normal-hading color-primary">EVENTO</h2>
+                <p class="event-para para-font">EVENTOEVENTOEVENTOEVENTOEVENTOEVENTOEVENTOEVENTOEVENTOEVENTOEVENTOEVENTO</p>
             </div>
             <img src="Images/eventBurger.jpg" alt="">
         </div>
@@ -239,34 +260,78 @@
 
     <section id="burger-footer">
         <div class="footer-bg">
-            <div class="left-footer">
-                <img src="Images/footerLogo.png" alt="">
-                <p class="color-white para-font">Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> Quas,
-                    optio. Lorem ipsum dolor sit amet, consectetur adipisicing <br> elit. Veniam, totam? Lorem, ipsum
-                    dolor sit amet consectetur <br> adipisicing elit. Ea, molestiae.br Lorem ipsum dolor sit amet,
-                    consectetur adipisicing elit. Totam, perspiciatis? </p>
+       
+            <div class="review-form">
+              <h3>Lascia una recensione</h3>
+              <form id="reviewForm">
+                <div class="form-group">
+                  <label for="name">Nome:</label>
+                  <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                  <label for="review">Recensione:</label>
+                  <textarea id="review" name="review" rows="4" cols="50" required></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="rating">Valutazione:</label>
+                  <div class="rating">
+                    <input type="radio" id="star5" name="rating" value="5">
+                    <label for="star5"></label>
+                    <input type="radio" id="star4" name="rating" value="4">
+                    <label for="star4"></label>
+                    <input type="radio" id="star3" name="rating" value="3">
+                    <label for="star3"></label>
+                    <input type="radio" id="star2" name="rating" value="2">
+                    <label for="star2"></label>
+                    <input type="radio" id="star1" name="rating" value="1">
+                    <label for="star1"></label>
+                  </div>
+                </div>
+                <button type="submit">Invia recensione</button>
+              </form>
             </div>
-            <div class="right-footer color-white para-font">
-                VPO: NEAR GOVT. SR. SEC. SCHOOL
-                KOTH KALAN (HISAR)
-                G-MAIL: contact.geekshelp@gmail.com
+            
+            <div class="review-results">
+              <h3>Risultati della recensione</h3>
+              <div id="results"></div>
+         
             </div>
-        </div>
+            
+
+            <script>
+        document.getElementById("reviewForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+  var name = document.getElementById("name").value;
+  var review = document.getElementById("review").value;
+  var rating = document.querySelector('input[name="rating"]:checked').value;
+
+  var resultsDiv = document.getElementById("results");
+  var resultText = document.createElement("p");
+  resultText.innerHTML = "Nome: " + name + "<br>Valutazione: " + rating;
+  resultsDiv.appendChild(resultText);
+  
+  document.getElementById("reviewForm").reset();
+});
+    </script>            
+    </section>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("list");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+    </script>
 
     </section>
-    <footer class=" center para-font"> &copy; Geeks Help 2021-22. ALL RIGHTS RESERVED</footer>
+    
+    <footer class=" center para-font"> &copy; Geeks Help 2021-22. </footer>
 
 </body>
 
-<script>
-    function myFunction() {
-        var x = document.getElementById("list");
-        if (x.style.display === "block") {
-            x.style.display = "none";
-        } else {
-            x.style.display = "block";
-        }
-    }
-</script>
+
+
 
 </html>

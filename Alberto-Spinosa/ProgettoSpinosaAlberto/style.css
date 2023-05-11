@@ -19,23 +19,25 @@ body {
     margin: 0px;
 }
 
-h1 {
-    margin-left: 16px;
-    font-size: 40px;
-    text-align: center;
-}
-
 
 
 
 /** ---NAVBAR--- **/
 
 nav {
-    overflow: hidden;
     text-align: right;
     font-size: 30px;
     padding: 1px;
     background-color: red;
+    position: fixed;
+    width: 100%;
+    /* Mette in primo piano la pagina */
+    z-index: 2;
+}
+
+nav h1 {
+    font-size: 40px;
+    text-align: left;
 }
 
 nav a {
@@ -76,15 +78,9 @@ nav ul li {
     border-radius: 30px;
     transition: .2s ease-in;
     z-index: 1;
+    margin: 10px;
 
 }
-
-/* .grid-item::before,
-.grid-item::after{
-    position: absolute;
-    content: " ";
-    z-index: -1;
-} */
 
 .grid-item:hover{
     background: lightgray;

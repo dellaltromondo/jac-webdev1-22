@@ -1,0 +1,22 @@
+/* TABLET */
+@media (max-width : 1096px){
+    #aliExpress header button, #amazon header button, #barilla header button{
+        width: 28em;
+    }
+    
+}
+
+/*Quando display diventa troppo piccolo, scompare il bottone e viene sostituito dall'icona del tasto home*/
+@media (max-width : 845px){
+    #aliExpress header button, #amazon header button, #barilla header button{
+        display: none;
+    }
+
+    #aliExpress header i, #amazon header i, #barilla header i{
+        display: block;
+        padding-bottom: 0.3em;
+    }
+    
+    
+    
+}

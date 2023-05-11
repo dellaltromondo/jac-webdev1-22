@@ -1,0 +1,141 @@
+*
+{
+    box-sizing: border-box;
+}
+
+/*VARIABILI*/
+
+:root
+{
+    --colore-scuro: rgb(50, 54, 67);
+    --colore-mezzo-scuro: rgb(68, 72, 87);
+    --colore-chiaro: rgb(255, 255, 255);
+    --colore-mezzo-chiaro: rgb(242, 242, 242);
+    --colore-oro: darkkhaki;
+    --colore-giallo:rgb(255, 202, 89);
+    --colore-azzurro: #00c6ff;
+    --colore-azzurro-scuro: #247ecd;
+    --grandezza-carta: 250px;
+    --border-radius-default: 5px;
+}
+
+/*VARIABILI*/
+
+body
+{
+    font-family: "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    margin: 0;
+    padding: 0;
+}
+
+/* LOADER */
+
+#loaderWrapper
+{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: var(--colore-scuro);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader
+{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    border: 4px solid var(--colore-chiaro);
+    animation: loader 2s infinite ease;
+}
+
+.loaderInner
+{
+    vertical-align: top;
+    display: inline-block;
+    width: 100%;
+    background-color: var(--colore-chiaro);
+    animation: loaderInner 2s infinite ease-in;
+}
+
+@keyframes loader
+{
+    0%
+    {
+        transform: rotate(0deg);
+    }
+    25%
+    {
+        transform: rotate(180deg);
+    }
+    50%
+    {
+        transform: rotate(180deg);
+    }
+    75%
+    {
+        transform: rotate(360deg);
+    }
+    100%
+    {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes loaderInner
+{
+    0%
+    {
+        height: 0%;
+    }
+    25%
+    {
+        height: 0%;
+    }
+    50%
+    {
+        height: 100%;
+    }
+    75%
+    { 
+        height: 100%
+    }
+    100%
+    {
+        height: 0%;
+    }
+}
+
+@keyframes fadeOut
+{
+    0%
+    {
+        opacity: 1;
+    }
+    100%
+    {
+        opacity: 0;
+     }
+}
+
+/* LOADER */
+
+.buttonVisitaProfilo
+{
+    width: fit-content;
+    place-self: center;
+    grid-column: 1/3;
+    width: fit-content;
+    justify-self: center;
+    margin: 0.5rem;
+}
+
+#titoloListaCompositori
+{
+    text-align: center;
+}

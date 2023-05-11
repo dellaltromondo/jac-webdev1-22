@@ -3,168 +3,19 @@
 
 <html>
      
-     <head>
-          <style>
+     <head> <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>sito</title>
 
+
+      <link rel="stylesheet" href="home.css">
           
-            body{
-              
-              margin: 0px;
-              background-color: white;
-  
-            }
-  
-            .fascia{
-           
-             
-              padding: 10px;
-              background-color: royalblue;
-              position: sticky;
-              top: 0px;
-   
-         }
-           
-         h1{
-             display: inline;
-             color:black;
-              
-            }
-        
-         a{
-  
-          text-decoration: none;
-          color: black;
-         
-         }
-    
-            
-        .home{
-          display: inline;
-          padding-left: 700px;
-        }  
-        
-        .home a:hover{
-  
-          color: orange;
-  
-         }
-
-        
-        
-        .info{
-  
-         display: inline;
-         padding-left: 50px;
-       
-        }
-        
-        .info a:hover{
-  
-           color: orange;
-
-         }
-       
-       
-        .contatti{
-  
-        display: inline;
-        padding-left: 50px;
-         
-        } 
-        
-        .contatti a:hover{
-  
-           color: orange;
-
-          }
-  
-       .prenota{
-          width: 150px;
-          height: 50px;
-          background-color: orange;
-          display: inline;
-          margin-left: 50px;
-          padding-bottom: 9px;
-          padding-top: 9px;
-          border-radius: 5px;
-      
-      } 
-  
-      .prenota a{
-          padding-right: 15px;
-          padding-left: 15px;
-          padding-top: 5;
-          color: black; 
-            
-      }
-      .immagine{
-
-      height: 500px;
-      background: url("giappone.png");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-      
-
-      }
-    
-
-
-      .corpo{
-        width: auto;
-        height: 1000px;
-        
-
-      }
-
-
-      .danimarca {
-        background: url(danimarca.jpg);
-        width: 25rem;
-        display: inline-block;
-        height: 30rem;
-        background-position-x: -25rem;
-        background-position-y: -18rem;
-        background-repeat: no-repeat;
-        margin-left: 200px;
-        margin-top: 30px;
-        
-
-      }
-
-      .america {
-        
-        background: url(america.jpg);
-        width: 25rem;
-        display: inline-block;
-        height: 30rem;
-        background-position-x: -140px;
-        background-position-y: -50px;
-        background-repeat: no-repeat;
-        margin-left: 300px;
-        
-      }
-
-     
-
-
-     
-       .italia {
-       
-        
-        
-        
-        
-      }
- 
-          
-          </style>
-
     </head>
 
        <body>
         
-        <div class="fascia">
+       <header>
            
            <h1>VIAGGIA CON NOI</h1>
            
@@ -174,14 +25,14 @@
 
             </div>
 
-           <div class="info">
+           <div class="blog">
 
-                <a href="">INFO AZIENDA</a>
+                <a href="blog.html">BLOG</a>
 
             </div>
             <div class="contatti">
 
-              <a href="">CONTATTI</a>
+              <a href="contatti.html">CONTATTI</a>
 
           </div>
            
@@ -191,36 +42,99 @@
 
             </div>
 
-        </div>
+        </header>
 
 
         <div class="immagine">
 
            
         </div>
-         <div class="corpo">
+        
+        <main>
          
-              <div class="danimarca">
+              <a href ="danimarca.html" class="danimarca">
 
-               <a href=""></a>
-            
-               </div>
-                
-               <div class="america">
+                <div class="riquadro">
 
-                <a href=""></a>
-             
+                     <p>DANIMARCA:STORIA E CULTURA</p>
+                      
                 </div>
+              </a>
+            
+               
+                
+               <a href="" class="america">
+
+                <div class="riquadro2">
+                 
+                  <p>AMERICA:STORIA E CULTURA</p>
+             
+                 </div>
+               </a>
 
                 
-               <div class="italia">
+               <a href="italia.html" class="italia">
+                 
+                 <div class="riquadro3">
 
-                <a href=""></a>
-      
-              </div>
+                 <p>ITALIA:STORIA E CULTURA</p>
+               
+                </div>
+               </a>
 
-         </div>
-       </body>
+               
+
+            
+              </main>
+    
+         <footer>
+           
+          
+
+          <p>©️ Copyright 2023 | Nomadi Moderni di Viaggigiovani.it S.r.l.
+            Via Milano 17, 38122, Trento
+            Nr registro, Partita IVA e CF: 02092650221 - Socio Unico - Cap. Sociale: 10.000€
+            Licenza PAT nr 52 del 12/02/2009 - Polizza RC nr 1/75910/319/100972789 di UnipolSai Assicurazioni S.p.A</p>
+            
+            
+          
+          <section class="recensioni">
+            <button class="bsi" onclick="plusDivs(-1)"><</button>
+          
+            <p class="recensione">ho trovato questo sito a caso e adesso uso solo questo per i miei viaggi</p>
+            <p class="recensione">viaggi spettacolari per prezzi convenienti</p>
+            <p class="recensione">sito molto utile se si vogliono fare delle vacanze organizzate bene</p>
+            <p class="recensione">sono davvero stupito di questo sito ha una varietaa di destinazioni pazzesche</p>
+
+
+            <button class="bdx" onclick="plusDivs(1)">></button>
+
+         </section>
+
+          </footer>
+
+         <script>
+          var slideIndex = 1;
+          showDivs(slideIndex);
+          
+          function plusDivs(n) {
+            showDivs(slideIndex += n);
+          }
+          
+          function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("recensione");
+            if (n > x.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = x.length}
+            for (i = 0; i < x.length; i++) {
+              x[i].style.display = "none";  
+            }
+            x[slideIndex-1].style.display = "block";  
+          }
+          </script>
+          
+       
+        </body>
 
 
 

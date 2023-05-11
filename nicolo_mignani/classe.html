@@ -1,0 +1,181 @@
+
+  <script>
+
+    class Message{
+
+        #id;
+        #timestamp;
+        #sender;
+        #reciver;
+
+        constructor(timestamp,sender,reciver){
+
+            this.#timestamp=timestamp;
+            this.#sender=sender;
+            this.#reciver=reciver
+        }
+          
+        getTimestamp(){
+
+            return this.#timestamp;
+
+        }
+
+        getSender(){
+
+           return this.#sender;
+
+        }
+        getReciver(){
+
+            return this.#reciver;
+
+        }
+
+
+
+
+    }
+
+    class TextMessage extends Message{
+
+        #textContent;
+
+        constructor(timestamp,sender,reciver,textContent){
+             
+            super(timestamp,sender,reciver)
+            this.#textContent=textContent;
+
+        }
+
+        getTextContent(){
+       
+            return this.#textContent;
+        }
+
+
+
+
+    }
+
+
+    class ImgMessage extends Message{
+
+          #srcImage;
+
+          constructor(timestamp,sender,reciver,srcImage){
+
+              super(timestamp,sender,reciver);
+              this.#srcImage=srcImage
+
+          }
+
+          getSrcImage(){
+
+            return this.#srcImage;
+          }
+
+
+    }
+
+    class User{
+
+       #id;
+       #viewName;
+       #name;
+       #surname;
+       #profilePicture="";
+       #status;
+
+       constructor(id,name,surname){
+
+        this.#id=id;
+        this.#name=name;
+        this.#surname=surname;
+        this.#viewName=name+" "+surname;
+       }
+
+       
+       changeProfilePicture(newProfilePicture){
+           
+        this.#profilePicture=newProfilePicture
+
+
+       }
+
+       changeStatus(newStatus){
+
+           this.#status= newStatus
+
+       }
+
+       changeViewName(newViewName){
+
+       
+        if(newViewName.length<5){
+
+
+            throw new Error("view name too short!!")
+        }
+        
+        this.#viewName= newViewName
+
+       }
+
+
+
+    }
+
+
+    class Chat{
+
+      #messageList;
+      #user;
+
+      constructor(user){
+
+
+        this.#user=user;
+      }
+
+      sendMessage(Message){
+
+
+
+      }
+
+    }
+
+    const mes= new Message(new Date(),"Mario","Luigi");
+    const txt = new TextMessage(mes.getTimestamp()+" "+mes.getSender()+" "+mes.getReciver()+" ciao ");
+
+    const me = new User(1,"Nicolo","Mignani");
+    console.log(me);
+    try{
+
+
+
+
+
+    }catch(e){
+
+    console.log("!!!ERROR!!!"+e.message);
+
+    }
+    const u = new User(2,"Mario","Rossi");
+    const m = new Message(new Date(),me,u);
+    console.log(m);
+
+
+    
+    const c = new Chat(u);
+    
+    c.sendMessage(m);
+    console.log(c);
+
+    
+   console.log(txt);
+   
+
+
+    </script>

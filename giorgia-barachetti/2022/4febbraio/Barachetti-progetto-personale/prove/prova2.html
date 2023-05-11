@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>La mia one page application di ecommerce</title>
+
+  <body>
+    <div id="AboutUsParagraph">
+      <button onclick="showHomeFromAboutUs()">HOME</button>
+
+      <div id="centerGrid">
+
+        <div id="grid">
+          
+          <div class="divGrid" id="gridOne">
+            <p>Welcome to our online saddle shop! The first italian saddle shop that uses Italian's products and sell all around the world.</p>
+          </div>
+          <div class="divGrid" id="gridTwo">
+            <img class="static" src="Screenshot (72).png">
+            <img class="active" src="https://media2.giphy.com/media/ByTh8UTOcOXL2/giphy.gif?cid=ecf05e47kyum55a6rljrhdwkapb48c115o3yz9do049m5090&ep=v1_gifs_related&rid=giphy.gif&ct=g">
+          </div>
+          <div class="divGrid" id="gridTree"><img src="john.jpeg" style="max-width:100%"></div>
+          <div class="divGrid" id="gridFour"> <p>We're a family-owned business that's been making high-quality saddles for over 50 years. Our story began when our founder, John Smith, started crafting saddles by hand in his small workshop. He had a passion for horses and wanted to create saddles that were not only comfortable for riders, but also provided the best support for their equine partners.</p></div>
+        
+        </div>
+        
+      </div>
+      
+          <!--
+
+            Over time, our reputation for making durable and comfortable saddles grew, and we expanded our business to include a larger workshop and more skilled craftspeople. Today, we have a team of expert saddle makers who use the latest technology and traditional techniques to create saddles that meet the needs of riders of all levels and disciplines.
+            
+            We take pride in the fact that our saddles are made in the USA and are built to last. Each saddle is crafted with precision and care, using only the finest materials. We work closely with our customers to ensure that their saddles fit perfectly and provide maximum comfort for both rider and horse.
+            
+            In addition to saddles, we also offer a range of accessories, such as stirrups, reins, and saddle pads. We're committed to providing our customers with everything they need to enjoy their riding experience to the fullest.
+            <hr id="hr">
+          -->  
+          </div>
+  </body>
+
+<style>
+
+.static {
+  position:absolute;
+  background: white;
+  max-height:49%;
+}
+.static:hover {
+  opacity:0;
+}
+
+  html{
+    background-color: black;
+  }
+  #AboutUsParagraph{
+    color:white;
+  }
+  #centerGrid{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+ /* border: 1px solid red*/
+  }
+  #grid{
+    /*border:1px solid blue;*/
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 25rem 25rem;
+    gap: 30px;
+  }
+
+  @media (max-width: 1400px){
+    #grid{
+    grid-template-rows: 10rem 20rem;
+    }
+  }
+  .divGrid{
+    align-self: center;
+    max-height: 100%;
+  }
+  #gridOne{
+    grid-column: 1/2;
+    grid-row:1/2;
+  }
+  #gridTwo{
+    grid-column: 2/3;
+    grid-row:1/2;
+  }
+  img{
+    border-radius:5px
+  }
+</style>
+
+
+</body>
+</html>

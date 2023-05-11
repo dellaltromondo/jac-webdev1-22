@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esempio chat</title>
+    <script src="index.js"></script>
+</head>
+<body>
+        
+    <script>
+        const user1 = new User(1, "Claudio", "Pasinelli");
+        console.log(user1);
+        const user2 = new User(2, "Luca", "Gabossi");
+
+        // const testo = new TextMessage(user1, user2, "Ciap anche a te", new Date());
+        // console.log(testo);
+        // console.log(user2);
+        try
+        {
+            user1.changeDisplayName("hegaga");
+        }
+        catch(e)
+        {
+            console.log("ERROR: " + e.message);
+        }
+        // user1.changedisplay("pippoAmaPippare");
+        user1.changeStatus("online");
+        // console.log(testo.getTextContent());
+
+        const immagine = new ImgMessage(user1, user2, "urlImmagine");
+        console.log(immagine);
+
+        const audio = new AudioMessage(user1, user2, "urlAudio");
+        console.log(audio);
+
+        const video = new VideoMessage(user1, user2, "urlVideo");
+        console.log(video);
+    </script>
+
+</body>
+</html>

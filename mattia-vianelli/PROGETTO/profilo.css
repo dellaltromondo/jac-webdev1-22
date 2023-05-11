@@ -1,0 +1,305 @@
+/* VARIABILI */
+/* [1] GENERALE */
+body {
+    margin: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-image: url("https://wallpapercave.com/wp/wp5230816.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    overflow-y: auto;
+}
+
+/* [2] MENU */
+#menu-principale {
+    position: fixed;
+    width: 4.6rem;
+    top: 0;
+    bottom: 0;
+    display: grid;
+    grid-template-rows: 1fr 1.6rem 1fr 1.6rem 1.6rem 1.6rem 1.6rem 1.6rem 1.6rem 1.6rem 1.6rem 1fr 1.6rem 1fr;
+    gap: 1.5rem;
+    background-color: rgb(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);    
+    border-right: 1px solid grey;
+}
+#menu-principale img:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+    /* [2.1] icona instagram */
+    #icona-insta {
+        grid-row: 2 / 3;
+        align-self: stretch;
+        justify-self: center;
+    }
+    #icona-insta:hover {
+        animation-name: App-logo-spin;
+        animation-duration: 2s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+    }
+    @keyframes App-logo-spin {
+        from {
+        transform: rotate(0deg);
+        }
+        to {
+        transform: rotate(360deg);
+        }
+    }
+
+    /* [2.2] altre icone */
+    #icona-home {
+        grid-row: 4 / 5;
+        align-self: stretch;
+        justify-self: center;            
+    }
+    #icona-cerca {
+        grid-row: 5 / 6;
+        align-self: stretch;
+        justify-self: center;
+    }
+    #icona-esplora {
+        grid-row: 6 / 7;
+        align-self: stretch;
+        justify-self: center;  
+    }
+    #icona-reels {
+        grid-row: 7 / 8;
+        align-self: stretch;
+        justify-self: center;  
+    }
+    #icona-messaggi {
+        grid-row: 8 / 9;
+        align-self: stretch;
+        justify-self: center;  
+    }
+    #icona-notifiche {
+        grid-row: 9 / 10;
+        align-self: stretch;
+        justify-self: center;  
+    }
+    #icona-crea {
+        grid-row: 10 / 11;
+        align-self: stretch;
+        justify-self: center;  
+    }
+    #icona-profilo {
+        grid-row: 11 / 12;
+        align-self: stretch;
+        justify-self: center;
+    }
+
+    /* [2.3] icona altro menu */
+    #icona-menu-altro {
+        grid-row: 13 / 14;
+        align-self: stretch;
+        justify-self: center;
+    }
+
+    /* [2.4] suggerimenti icone */
+    #suggerimenti-icone {
+        position: fixed;
+        left: 4rem;
+        background-color: white;
+        color: black;
+        padding: 0.5rem;
+        border-radius: 15%;
+        box-shadow: 0 0 1rem rgb(212, 212, 212);
+    }
+    
+    .animazione-suggerimenti-icone {
+        opacity: 1;
+        animation: pop-up 0.6s linear;
+    }
+    
+    @keyframes pop-up {
+        0%,
+        20%,
+        40%,
+        60%,
+        80%,
+        to {
+            -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        }
+        0% {
+            opacity: 0;
+            -webkit-transform: scale3d(0.3, 0.3, 0.3);
+            transform: scale3d(0.3, 0.3, 0.3);
+        }
+        20% {
+            -webkit-transform: scale3d(1.03, 1.03, 1.03);
+            transform: scale3d(1.03, 1.03, 1.03);
+        }
+        40% {
+            -webkit-transform: scale3d(0.9, 0.9, 0.9);
+            transform: scale3d(0.9, 0.9, 0.9);
+        }
+        60% {
+            opacity: 1;
+            -webkit-transform: scale3d(1.01, 1.01, 1.01);
+            transform: scale3d(1.01, 1.01, 1.01);
+        }
+        80% {
+            -webkit-transform: scale3d(0.97, 0.97, 0.97);
+            transform: scale3d(0.97, 0.97, 0.97);
+        }
+        to {
+            opacity: 1;
+            -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+        }
+    }
+
+/* [4] GRIGLIA */
+#grid {
+    display: grid;
+    grid-template-columns: 2rem 1fr 25% 25% 25% 1fr;
+    grid-template-rows: 0 auto 2rem auto 2rem;
+    gap: 1rem;
+}
+    /* [4.2] biografia */
+    #biografia {
+        grid-column: 3 / 6;
+        grid-row: 2 / 3;
+        background-color: rgb(255, 255, 255, 0.8);
+        backdrop-filter: blur(5px);
+        display: grid;
+        grid-template-columns: 28% 35% 1fr 16% 16% 1fr;
+        grid-template-rows: 4rem 0.5rem 1fr 1fr 1fr;
+        gap: 0.5rem;
+        border-radius: 10px;
+    }
+    .numeri-bio {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #f44479;
+        margin: 0;
+    }
+    .riga-rosa-bio {
+        background-color: #f44479;
+        height: 0.13rem;
+        border-radius: 1rem;
+        margin: 0 27% 0 27%;
+    }
+    .testi-bio {
+        display: inline;
+    }
+
+        /* [4.2.1] biografia sinistra */
+        #div-numero-follower {
+            grid-column: 1 / 2;
+            grid-row: 1 / 6;
+            padding: 0;
+            text-align: center;
+            align-self: center;
+        }
+
+        /* [4.2.2] biografia centrale */
+        #nome-grande {
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+            font-size: 3rem;
+        }
+        #foto-verificato {
+            vertical-align: middle;
+            height: 1.5rem;
+            margin-left: 1rem;
+        }
+        #nome-piccolo {
+            grid-column: 2 / 3;
+            grid-row: 2 / 3;
+            font-weight: bold;
+        }
+        #testo-biografia {
+            margin-top: 0.5rem;
+            grid-column: 2 / 3;
+            grid-row: 3 / 6;
+        }
+
+        /* [4.2.3] biografia destra */
+        #button-segui, #button-messaggio {
+            height: 2rem;
+            width: 85%;
+            align-self: center;
+            justify-self: center;
+            border: none;
+            border-radius: 0.5rem;
+        }
+        #button-segui {
+            grid-column: 4 / 5;
+            grid-row: 1 / 2;   
+            background-color: #f44479;
+            color: white;
+        }
+        #button-messaggio {
+            grid-column: 5 / 6;
+            grid-row: 1 / 2;
+            background-color: #ebeaea;
+        }
+        #button-segui:hover {
+            background-color: #d72c5f;
+            color: white;
+            cursor: pointer;
+        }
+        #button-messaggio:hover {
+            background-color: #c8c6c6;
+            color: white;
+            cursor: pointer;
+        }
+        #div-numero-post {
+            grid-column: 4 / 5;
+            grid-row: 2 / 5;
+            text-align: center;
+            align-self: center;
+        }
+        #div-numero-seguiti {
+            grid-column: 5 / 6;
+            grid-row: 2 / 5;
+            text-align: center;
+            align-self: center;
+        }
+    
+    /* [4.3] change page */
+    #change-page {
+        grid-column: 3 / 6;
+        grid-row: 3 / 4;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 45px;
+        border-top: 1.5px solid black;
+    }
+    #change-page div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 3px;
+        font-size: 0.8rem;
+    }
+    #change-page div img {
+        height: 1rem;
+    }
+
+    /* [4.4] post */
+    #div-post {
+        grid-column: 3 / 6;
+        grid-row: 4 / 5;
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem; 
+    }
+    .immagini-post {
+        width: calc((100% - 2rem) / 3);
+    }
+
+    /* [4.5] footer */
+    footer {
+        grid-column: 3 / 6;
+        grid-row: 5 / 6;
+        background-color: green; 
+    }

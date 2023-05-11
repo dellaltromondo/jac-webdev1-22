@@ -1,0 +1,10 @@
+#login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12em;
+}
+
+#login header {
+    margin-bottom: 2rem;
+}
