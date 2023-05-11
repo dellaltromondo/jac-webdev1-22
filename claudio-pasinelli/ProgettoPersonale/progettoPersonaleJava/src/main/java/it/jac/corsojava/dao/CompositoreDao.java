@@ -26,7 +26,7 @@ public class CompositoreDao extends Dao<Compositore>
 	@Override
 	protected void buildQueryFindById(StringBuilder sb)
 	{
-		sb.append("SELECT id_compositore, id_user, nome_artista, descrizione, url_pic, ");
+		sb.append("SELECT id_compositore, id_user, nome_artista, descrizione, url_pic, tema, ");
 		sb.append(" utente_ins, utente_mod, data_ins, data_mod");
 		sb.append(" FROM compositori");
 		sb.append(" WHERE id_compositore = ?");
@@ -35,7 +35,7 @@ public class CompositoreDao extends Dao<Compositore>
 	@Override
 	protected void buildQueryFindAll(StringBuilder sb)
 	{
-		sb.append("SELECT id_compositore, id_user, nome_artista, descrizione, url_pic, ");
+		sb.append("SELECT id_compositore, id_user, nome_artista, descrizione, url_pic, tema, ");
 		sb.append(" utente_ins, utente_mod, data_ins, data_mod");
 		sb.append(" FROM compositori");
 	}
@@ -44,10 +44,10 @@ public class CompositoreDao extends Dao<Compositore>
 	protected void buildQueryCreateEntity(StringBuilder sb)
 	{
 		sb.append(" INSERT INTO compositori");
-		sb.append(" (id_user, nome_artista, descrizione, url_pic, ");
+		sb.append(" (id_user, nome_artista, descrizione, url_pic, tema, ");
 		sb.append(" utente_ins, utente_mod, data_ins)");
 		sb.append(" VALUES");
-		sb.append(" (?, ?, ?, ?, ?, ?, ?)");
+		sb.append(" (?, ?, ?, ?, ?, ?, ?, ?)");
 	}
 	
 	@Override
@@ -57,7 +57,8 @@ public class CompositoreDao extends Dao<Compositore>
 		sb.append(" SET ");
 		sb.append(" nome_artista = ?,");
 		sb.append(" descrizione = ?,");
-		sb.append(" url_pic = ?");
+		sb.append(" url_pic = ?,");
+		sb.append(" tema = ?");
 		sb.append(" where id_compositore = ?");
 	}
 	
@@ -70,7 +71,7 @@ public class CompositoreDao extends Dao<Compositore>
 	
 	protected void buildQueryFindAllById(StringBuilder sb)
 	{
-		sb.append("SELECT id_compositore, id_user, nome_artista, descrizione, url_pic, ");
+		sb.append("SELECT id_compositore, id_user, nome_artista, descrizione, url_pic, tema, ");
 		sb.append(" utente_ins, utente_mod, data_ins, data_mod");
 		sb.append(" FROM compositori");
 		sb.append(" WHERE id_user = ?");
@@ -88,6 +89,7 @@ public class CompositoreDao extends Dao<Compositore>
 		result.setNomeArtista(rs.getString("nome_artista"));
 		result.setDescrizione(rs.getString("descrizione"));
 		result.setUrlPic(rs.getString("url_pic"));
+		result.setTema(rs.getString("tema"));
 		result.setUtenteIns(rs.getString("utente_ins"));
 		result.setUtenteMod(rs.getString("utente_mod"));
 		result.setDataIns(rs.getTimestamp("data_ins").toLocalDateTime());
@@ -172,6 +174,7 @@ public class CompositoreDao extends Dao<Compositore>
 		result.setNomeArtista(rs.getString("nome_artista"));
 		result.setDescrizione(rs.getString("descrizione"));
 		result.setUrlPic(rs.getString("url_pic"));
+		result.setTema(rs.getString("tema"));
 		result.setUtenteIns(rs.getString("utente_ins"));
 		result.setUtenteMod(rs.getString("utente_mod"));
 		result.setDataIns(rs.getTimestamp("data_ins").toLocalDateTime());
@@ -220,6 +223,7 @@ public class CompositoreDao extends Dao<Compositore>
 		pstm.setString(i++, compositore.getNomeArtista());
 		pstm.setString(i++, compositore.getDescrizione());
 		pstm.setString(i++, compositore.getUrlPic());
+		pstm.setString(i++, compositore.getTema());
 		pstm.setString(i++, compositore.getUtenteIns());
 		pstm.setString(i++, compositore.getUtenteMod());
 		pstm.setTimestamp(i++, Timestamp.valueOf(compositore.getDataIns()));
@@ -264,6 +268,7 @@ public class CompositoreDao extends Dao<Compositore>
 		pstm.setString(i++, compositore.getNomeArtista());
 		pstm.setString(i++, compositore.getDescrizione());
 		pstm.setString(i++, compositore.getUrlPic());
+		pstm.setString(i++, compositore.getTema());
 		
 		pstm.setLong(i, id);
 	}

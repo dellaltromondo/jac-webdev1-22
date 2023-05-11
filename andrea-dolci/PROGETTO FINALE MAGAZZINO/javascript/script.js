@@ -140,12 +140,15 @@ function deleteRow(idTrash, tableId){
         }
     }
 
-    for(let i = 0; i < arrayToDeleteFrom.length; i++){
-        if(arrayToDeleteFrom[i].id === parseInt(idTrash)){
-            arrayToDeleteFrom.splice(i, 1);
+    const rowToDelete = arrayToDeleteFrom.findIndex(e => e.id === parseInt(idTrash));
+    if(rowToDelete != -1)
+        arrayToDeleteFrom.splice(rowToDelete, 1);
+    // for(let i = 0; i < arrayToDeleteFrom.length; i++){
+    //     if(arrayToDeleteFrom[i].id === parseInt(idTrash)){
+    //         arrayToDeleteFrom.splice(i, 1);
             
-        }
-    }
+    //     }
+    // }
     toggle(idSection);
 
 }

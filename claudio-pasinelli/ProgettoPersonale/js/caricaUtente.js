@@ -107,8 +107,8 @@ async function caricaDatiProfilo()
         const compositore = await fetch("http://localhost:8080/progettoPersonaleJava/api/v1/compositori/" + idCompositore);
         const compositoreJson = await compositore.json();
         
-        const profiloAutore = new Compositore(compositoreJson.idCompositore, compositoreJson.idUser, compositoreJson.nomeArtista, compositoreJson.descrizione, compositoreJson.urlPic);
-        creaProfiloFromCompositore(profiloAutore);
+        const profiloAutore = new Compositore(compositoreJson.idUser, compositoreJson.nomeArtista, compositoreJson.descrizione, compositoreJson.urlPic, compositoreJson.tema);
+        await creaProfiloFromCompositore(profiloAutore);
     }
     catch(err)
     {
@@ -133,7 +133,7 @@ async function caricaDatiFoto()
             const eliminata = fotoCompositore.eliminata;
     
             const foto = new Foto(idFoto, idCompositore, urlFoto, eliminata);
-            addImageObj(foto);
+            await addImageObj(foto);
         }
     }
     catch(err)
@@ -154,7 +154,7 @@ async function caricaDatiCarte()
         for(let i = 0; i < getCarteJson.length; i++)
         {
             const carta = new Carta(getCarteJson[i].idCarta, getCarteJson[i].idCompositore, getCarteJson[i].titolo, getCarteJson[i].prezzo, getCarteJson[i].mese, getCarteJson[i].img, getCarteJson[i].eliminata)
-            creaCartaHTML(carta);
+            await creaCartaHTML(carta);
         }
     }
     catch(err)
@@ -184,7 +184,7 @@ async function caricaDatiSocial()
     
             const social = new Social(idSocial, idCompositore, dataTooltip, media, link, img, eliminata);
     
-            creaSocial(social);
+            await creaSocial(social);
         }
     }
     catch(err)

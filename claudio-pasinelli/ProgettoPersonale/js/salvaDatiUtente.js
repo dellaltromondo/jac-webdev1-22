@@ -5,20 +5,23 @@ class Compositore
     nomeArtista;
     descrizione;
     urlPic;
+    tema;
 
-    constructor(idCompositore, idUser, nomeArtista, descrizione, urlPic)
+    constructor(idUser, nomeArtista, descrizione, urlPic, tema)
     {
-        this.idCompositore = idCompositore;
+        // this.idCompositore = idCompositore;
         this.idUser = idUser;
         this.nomeArtista = nomeArtista;
         this.descrizione = descrizione;
         this.urlPic = urlPic;
+        this.tema = tema;
     }
 
     getIdCompositore()
     {
         return this.idCompositore;
     }
+
     getIdUser()
     {
         return this.idUser;
@@ -38,6 +41,11 @@ class Compositore
     {
         return this.urlPic;
     }
+
+    getTema()
+    {
+        return this.tema;
+    }
 }
 
 async function salvaDati()
@@ -45,12 +53,15 @@ async function salvaDati()
     let immagineGiaPresente;             //bolean
     let titoloGiaPresente;               //bolean
     let descrizioneGiaPresente;          //bolean
+    // let temaGiaPresente;                 //bolean
+    const sectionProfilo = document.getElementById("profiloCompositore");
 
     chiudiPopUp();
 
     const nomeArtista = document.getElementById("nomeArt").innerText;
     const descrizione = document.getElementById("testoDescrizione").innerText;
     const urlPic = document.getElementById("immagineProfilo").src;
+    let tema;
 
     immagineGiaPresente = isImgSet();
     titoloGiaPresente = isNameSet();
@@ -58,7 +69,17 @@ async function salvaDati()
 
     if(immagineGiaPresente && titoloGiaPresente && descrizioneGiaPresente && localStorage.getItem("idUser") != null)
     {
-        const profiloAutore = new Compositore(parseInt(localStorage.getItem("idCompositore")), parseInt(localStorage.getItem("idUser")), nomeArtista, descrizione, urlPic);
+        if(sectionProfilo.style.backgroundColor === "rgb(255, 255, 255)")
+        {
+            tema = "bianco";
+        }
+    
+        else if(sectionProfilo.style.backgroundColor === "rgb(68, 72, 87)")
+        {
+            tema = "nero";
+        }
+
+        const profiloAutore = new Compositore(parseInt(localStorage.getItem("idUser")), nomeArtista, descrizione, urlPic, tema);
 
         const body = JSON.stringify(profiloAutore);
 

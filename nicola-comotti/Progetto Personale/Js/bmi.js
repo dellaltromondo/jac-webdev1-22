@@ -1,4 +1,7 @@
-function calcolaBMI() {
+async function calcolaBMI() {
+
+    const tabellaBmi = await (await fetch ('Utils/bmi.json')).json()
+    console.log(tabellaBmi)
 
     const sesso = document.getElementById('sesso').value;
     const eta = document.getElementById('eta').value;
