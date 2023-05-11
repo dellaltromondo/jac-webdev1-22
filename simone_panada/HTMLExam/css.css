@@ -1,0 +1,127 @@
+body
+{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.Header 
+{
+    grid-area: header; 
+    float: top;
+    background-color: orangered;
+    display: inline;
+    color: white;
+}
+
+.navbar
+{
+    display: inline;
+    position: right;
+}
+
+#Title
+{
+    position:left;
+    margin-left: 10px;
+    width: fit-content;
+    font-size:50px;
+}
+
+.Menu 
+{
+    grid-area: menu;
+    float:left;
+    display: block;
+}
+
+.insertNewPokemon
+{
+    display: block;
+}
+
+label
+{
+    display:block;
+    padding-bottom: 5px;
+}
+
+.Box 
+{ 
+    grid-area: box; 
+    text-align: center;
+    margin: 5px;
+    border: 1px solid orangered;
+}
+
+.grid-container 
+{
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'menu box box box box box'
+    'menu box box box box box'
+    'menu box box box box box';
+  width: 100%;
+  height:100%;
+  background-color:whitesmoke
+}
+
+.grid-container > div
+{
+  font-size: 15px;
+}
+
+ul
+{
+    list-style-type:none;
+}
+
+#insertpokemon 
+{
+    background-color: orangered;
+    color: white;
+    height: 2rem;
+    width: 8rem;
+    margin-top: 10px;
+}
+
+
+form 
+{
+    display: block;
+}
+
+.listbutton
+{
+    width:10rem;
+    height:2rem;
+    margin:5px;
+    color:black;
+
+}
+
+#pokeDescription
+{
+    width: 85%;
+    height:10rem;
+}
+
+img
+{
+    width: 300px;
+    height: 250px;
+}
+
+#pokeList
+{
+    display: flex;
+    flex-flow: row wrap;
+}
+
+#pokeList>li
+{
+    padding:5px;
+    margin:10px;
+    border:1px solid gray;
+    width:300px;
+    height: 400px;
+}
