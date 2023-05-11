@@ -1,0 +1,109 @@
+#navbar {
+  background-color: red;
+  position: relative;
+}
+
+#navbar h1 {
+  position: absolute;
+  top: 5%;
+  left: 2%;
+  color: white;
+  margin: 0;
+  padding: 10px;
+  font-size: 2.5rem;
+}
+
+#navbar ul {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#navbar ul li {
+  list-style: none;
+}
+
+#navbar ul li a {
+  text-decoration: none;
+  font-size: 2rem;
+  color: black;
+  padding: 4px 18px;
+  border-radius: 15px;
+  margin: 0px 10px;
+  font-weight: bold;
+}
+
+#navbar ul li a:hover {
+  color: #a90f20;
+}
+
+.main {
+  display: flex;
+}
+
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 300px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  float: left;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.MENU2 {
+  padding: 10px;
+  border-radius: 5px;
+  width: 20%;
+  background-color: darkgrey;
+  margin-right: 20px;
+}
+
+.MENU2 ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.MENU2 ul li {
+  margin-bottom: 10px;
+}
+
+.MENU2 h2,
+.MENU2 p,
+.MENU2 form {
+  margin-bottom: 10px;
+}
+
+.MENU2 label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.MENU2 input[type="text"],
+.MENU2 input[type="number"],
+.MENU2 textarea {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.MENU2 input[type="radio"] {
+  margin-right: 5px;
+}
+.card-container {
+  margin-top: 20px; /* Aggiungi lo spazio desiderato */
+}

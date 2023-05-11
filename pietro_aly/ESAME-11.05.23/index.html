@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>ESAME </title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css'  href='css/style.css'>
+    <script src='script/script.js'></script>
+</head>
+<body>
+    
+    <section ID="navbar"> 
+        <h1>Pokédex</h1>
+        <ul id="menu1">
+            <li><a href="#"> MY POKEMON </a></li>
+            <li><a href="#"> NEW POKEMON</a></li>
+            <li><a href="#footer"> INFO</a></li>
+          </ul>
+          <ul>
+        </section>
+    </header> 
+    <div class=" MENU2">
+        <li><a href="#Pikachu"> Pikachu</a></li>
+        <li><a href="#Charmander"> Charmander </a></li>
+        <li><a href="#MEW"> NEW</a></li>
+        <li><a href="#Mewtwo">Mewtwo</a></li>
+      </ul>
+      
+      <h2> insert new</h2>
+      <form>
+        <label for="nome">Inserisci il nome:</label>
+        <input type="text" placeholder="ES. Pikachu" id="nome">
+        <label><input type="radio" name="radio" value="yes"> Catturato</label>
+        <label for="lv">Inserisci il livello:</label>
+        <input type="number" placeholder="ES. 20" id="lv">
+        <label for="url">Inserisci il URL dell'immagine:</label>
+        <input type="text" placeholder="ES. URL" id="url">
+        <p>Aggiungi descrizione</p>
+        <textarea name="message" rows="10" cols="30" placeholder="Aggiungi descrizione" id="desc"></textarea>
+        <button type="button" onclick="salvaDati()">Invia</button>
+    </form>
+    
+   
+    
+    </div>
+
+
+      <div class="image-container">
+        <div class="card" id="Mewtwo">
+          <img src="image/Mewtwo.png" alt="Mewtwo">
+          <h3>Titolo della card</h3>
+          <p>Mewtwo is a legendary Psychic Pokémon in Pokémon GO, weak against Bug, Ghost, and Dark moves</p>
+        </div>
+      <div class="card" id="Pikachu">
+        <img src="image/download.jpeg" alt="Pikachu">
+        <h3>Titolo della card</h3>
+        <p>Pikachu is a fictional species in the Pokémon media franchise, designed by Atsuko Nishida and Ken Sugimori. It first appeared in the 1996 Japanese video games Pokémon Red and Green created by Game Freak and Nintendo, which were released outside of Japan in 1998 as Pokémon Red and Blue.</p>
+      </div>
+
+      <div id="Charmander" class="card">
+        <img src="image/download2.jpeg" alt="Charmander">
+        <h3>Titolo della card</h3>
+        <p>Charmander (Japanese: ヒトカゲ Hitokage) is a Fire-type Pokémon introduced in Generation I. It evolves into Charmeleon starting at level 16, which evolves into Charizard starting at level 36.Along with Bulbasaur and Squirtle, Charmander is one of the three starter Pokémon of Kanto available at the beginning of Pokémon Red, Green, Blue, FireRed, and LeafGreen.</p>
+      </div>
+
+      <div class="card" id="MEW">
+        <img src="image/MEW.jpeg" alt="MEW">
+        <h3>Titolo della card</h3>
+        <p>Mew (ミュウ Myū?) è un Pokémon base della prima generazione di tipo Psico. Il suo numero identificativo Pokédex è 151, il che lo rende l'ultimo Pokémon di quella generazione. Nel contesto del franchise creato da Satoshi Tajiri, è un Pokémon misterioso, definito il "Pokémon Novaspecie"</p>
+      </div>
+   
+      
+</body>
+
+</html>
