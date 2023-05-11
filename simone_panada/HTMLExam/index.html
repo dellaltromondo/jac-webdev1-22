@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokèdex</title>
+    <link rel="stylesheet" href="./css.css">
+</head>
+<body>
+<div class="grid-container">
+        <div class="Header">
+            <h1 class="navbar" id="Title">Pokèdex</h1> 
+                <nav>
+                    <ul>
+                    <li class="navbar" id="newPokemon">New Pokèmon</li>
+                    <li class="navbar" style="visibility: hidden;">SPAN</li>
+                    <li class="navbar"><p style="display:inline"><a href="https://wiki.pokemoncentral.it/">Info</a></p></li>
+                    </ul>
+                </nav>
+        </div>
+        <div class="Menu">
+            <section id="Sidebar">
+                <ul id="">
+                    <li id="Pikachu"><button class="listbutton">Pikachu</button></li>
+                    <li id="Charmander"><button class="listbutton">Charmander</button></li>
+                    <li id="Venusaur"><button class="listbutton">Venusaur</button></li>
+                </ul>
+                <form id="insertNewPokemon">
+                    <h2>Insert New</h2>
+                    <label>Pokèmon Name:</label>
+                    <input placeholder="e.g. Pikachu" id="pokeName" type="text">
+                    <label></label><input id="capture" type="checkbox" value="yes">Captured</label>
+                    <label>Level: <input id="level" type="number" style="width:3rem"></label>
+                    <label>Image URL:</label>
+                    <input placeholder="enter image URL" id="pokeImg" type="url">
+                    <label>Description:</label>
+                    <input placeholder="Entre Description" id="pokeDescription" type="text">
+                    <button id="insertpokemon">Save</button>
+                </form>
+            </section>
+        </div>
+        <div class="Box">
+            <section>
+                <ul id="pokeList">
+                    <li>
+                        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png">
+                        <h3>Bulbasaur</h3>
+                        <p>Level 13</p>
+                        <p>It's a little frog-like creature with a plant on his back</p>
+                    </li>
+                    <li>
+                        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png">
+                        <h3>Charmander</h3>
+                        <p>Level 11</p>
+                        <p>It's a sort of little dinosaur with a flaming tail</p>
+                    </li>
+                    <li>
+                        <img src="https://media.pokemoncentral.it/wiki/thumb/5/5e/Artwork0025_RFVF.png/1200px-Artwork0025_RFVF.png">
+                        <h3>Pikachu</h3>
+                        <p>Level 50</p>
+                        <p>It's a yellow electric mouse</p>
+                    </li>
+                    <li>
+                        <img src="https://media.pokemoncentral.it/wiki/thumb/0/03/Artwork0059_RFVF.png/1200px-Artwork0059_RFVF.png">
+                        <h3>Arcanine</h3>
+                        <p>Level 50</p>
+                        <p>An enormous canine with fire breathing abilities!!</p>
+                    </li>
+                </ul>
+            </section>
+        </div>  
+</div>
+</body>
+<script rel="script" src="./script.js"></script>
+</html>
