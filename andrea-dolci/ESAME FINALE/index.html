@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Pokèdex</title>
+</head>
+<body onload="createStarter()">
+    <nav>
+        <ol>
+            <li id="first-li">Pokèdex</li>
+            <a href="#">My Pokèmons</a>
+            <a href="#">New Pokèmon</a>
+            <a href="#">Info</a>
+        </ol>
+    </nav>
+    <section id="main-section">
+        <aside>
+            <ul id="ulPokemon">
+                <button id="Pikachu" onclick="onClickPokemon('Pikachu')">Pikachu</button>
+                <button id="Charmander" onclick="onClickPokemon('Charmander')">Charmander</button>
+                <button id="Squirtle" onclick="onClickPokemon('Squirtle')">Squirtle</button>
+                <button id="Bulbasaur" onclick="onClickPokemon('Bulbasaur')">Bulbasaur</button>
+            </ul>
+
+            <form>
+                <h1>Insert new</h1>
+
+                <label for="name" id="label-name">Pokèmon name:</label>
+                <input type="text" id="name" placeholder="e.g. Pikachu">
+
+                <input type="checkbox" id="checkbox">
+                <label for="checkbox">Captured</label>
+
+                <section id="level-section">
+                    <label for="level">Level:</label>
+                    <input type="number" id="level">
+                </section>
+
+                <label for="url" id="label-name">Image URL:</label>
+                <input type="text" id="url" placeholder="Enter image URL">
+                
+                <label for="description" id="label-name">Description:</label>
+                <textarea id="description" placeholder="Enter description"></textarea>
+
+                <button onclick="createNew()">New</button>
+            </form>
+        </aside>
+        <article>
+            
+        </article>
+    </section>
+
+    <script src="./script.js"></script>
+</body>
+</html>

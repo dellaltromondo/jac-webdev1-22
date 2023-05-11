@@ -313,7 +313,7 @@ async function creaSocial(social)
 {
     let userIsCompositore = false;
 
-    if(window.location.pathname === "/html/editorCompositori.html")
+    if(localStorage.getItem("Compositore") === "VERO")
     {
         userIsCompositore = true;
     }

@@ -44,6 +44,7 @@
     <script>
         window.addEventListener("load", (event) =>
         {
+            eseguiCaricaDati();
             let userNickname = document.getElementById("userNickname");
 
             if(localStorage.getItem("NomeUser") === null || localStorage.getItem("CognomeUser") === null)
@@ -62,19 +63,17 @@
                 const cognome = localStorage.getItem("CognomeUser");
                 userNickname.innerText = nome + " " + cognome;
             }
+        });
+
+        async function eseguiCaricaDati()
+        {
+            await creaTabellaCompositori();
 
             const loader = document.getElementById("loaderWrapper");
             loader.style.animation = "fadeOut 1.2s";
-            loader.style.animationIterationCountv = "1";
-
-            setTimeout(() =>
-            {
-                loader.parentNode.removeChild(loader);
-            }, 1200);
+            loader.style.animationIterationCount = "1";
 
             const elencoCompositori = document.getElementById("profilo");
-            
-            creaTabellaCompositori();
 
             if(elencoCompositori.length < 1)
             {
@@ -97,7 +96,12 @@
 
                 elencoCompositori.appendChild(avviso);
             }
-        });
+            
+            setTimeout(() =>
+            {
+                loader.parentNode.removeChild(loader);
+            }, 1200);
+        }
                     
         let lastScrollTop;
 
