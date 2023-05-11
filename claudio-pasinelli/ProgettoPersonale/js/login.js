@@ -279,6 +279,7 @@ async function inviaDatiForm()
     {
         localStorage.setItem("Nome", nome);
         localStorage.setItem("Cognome", cognome);
+        localStorage.setItem("Compositore", "VERO");
         
         window.location.href = "editorCompositori.html";
     }
@@ -287,6 +288,7 @@ async function inviaDatiForm()
     {
         localStorage.setItem("NomeUser", nome);
         localStorage.setItem("CognomeUser", cognome);
+        localStorage.setItem("Compositore", "FALSO");
 
         window.location.href = "tabellaCompositori.html";
     }
