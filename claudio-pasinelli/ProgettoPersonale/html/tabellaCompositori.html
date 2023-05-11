@@ -32,7 +32,7 @@
     </nav>
 
     <section id="titoloListaCompositori">
-        <h1>Tutti i nostri creator</h1>
+        <h1 id="titoloLista">Tutti i nostri creator</h1>
     </section>
     <section id="profilo">
     </section>
@@ -44,9 +44,25 @@
     <script>
         window.addEventListener("load", (event) =>
         {
-            caricaUtente();
-            
-            localStorage.clear();
+            let userNickname = document.getElementById("userNickname");
+
+            if(localStorage.getItem("NomeUser") === null || localStorage.getItem("CognomeUser") === null)
+            {
+                userNickname.innerText = "Impossibile caricare il nome dell'utente";
+            }
+
+            else if(localStorage.getItem("NomeUser") === "undefined" || localStorage.getItem("CognomeUser") === "undefined")
+            {
+                userNickname.innerText = "Impossibile caricare il nome dell'utente";
+            }
+
+            else
+            {
+                const nome = localStorage.getItem("NomeUser");
+                const cognome = localStorage.getItem("CognomeUser");
+                userNickname.innerText = nome + " " + cognome;
+            }
+
             const loader = document.getElementById("loaderWrapper");
             loader.style.animation = "fadeOut 1.2s";
             loader.style.animationIterationCountv = "1";
@@ -55,8 +71,32 @@
             {
                 loader.parentNode.removeChild(loader);
             }, 1200);
+
+            const elencoCompositori = document.getElementById("profilo");
             
             creaTabellaCompositori();
+
+            if(elencoCompositori.length < 1)
+            {
+                const titoloLista = document.getElementById("titoloLista");
+                titoloLista.innerText = "";
+
+                const footer = document.getElementById("piePagina");
+                footer.style.marginTop = "100vh";
+                footer.style.width = "100%";
+
+                const avviso = document.createElement("p");
+                avviso.innerText = "Siamo spiacenti, ma non siamo risuciti a trovare i nostri creator. Passa più tardi";
+                avviso.style.margin = "12.5% auto auto auto";
+                avviso.style.width = "100%";
+                avviso.style.display = "inline-block";
+                avviso.style.textAlign = "center";
+                avviso.style.fontSize = "3rem";
+                avviso.style.overflowWrap = "break-word";
+                avviso.style.position = "relatibve";
+
+                elencoCompositori.appendChild(avviso);
+            }
         });
                     
         let lastScrollTop;
@@ -102,15 +142,6 @@
 
             lastScrollTop = scrollTop;
         }
-
-        const textarea = document.querySelector("textarea");
-
-        textarea.addEventListener("keyup", e =>
-        {
-            textarea.style.height = "63px";
-            let scrHeight = e.target.scrollHeight;
-            textarea.style.height = `${scrHeight}px`;
-        });
 
         let tornaSu = document.querySelector(".tornaSu");
         

@@ -30,18 +30,6 @@
 
 
               
-                const container2 = document.getElementById('text-container');
-        fetch('https://www.themealdb.com/api/json/v1/1/random.php')
-    .then(response => response.json())
-    .then(data => {
-        const meal = data.meals[0];
-        const mealName = meal.strMeal;
-        container2.innerHTML = `
-            <p>${mealName}</p>
-        `;
-    })
-    .catch(error => console.error(error));
-
         </script>
     
     </body>

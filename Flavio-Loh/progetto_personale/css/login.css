@@ -1,0 +1,57 @@
+
+/*css desktop */
+
+@media(min-width:961px){
+
+    .only-mobile {
+        display: none;
+    }
+
+    .only-desktop {
+        display: block;
+    }
+    body{
+       background-color: green; 
+    }
+    
+}
+
+
+
+
+
+
+/*css mobile */
+
+@media(max-width:960px){
+    .only-mobile {
+        display: block;
+    }
+
+    .only-desktop {
+        display: none;
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,46 +1,3 @@
-class Compositore
-{
-    idCompositore
-    idUser
-    nomeArtista;
-    descrizione;
-    urlPic;
-
-    constructor(idCompositore, idUser, nomeArtista, descrizione, urlPic)
-    {
-        this.idCompositore = idCompositore;
-        this.idUser = idUser;
-        this.nomeArtista = nomeArtista;
-        this.descrizione = descrizione;
-        this.urlPic = urlPic;
-    }
-
-    getIdCompositore()
-    {
-        return this.idCompositore;
-    }
-
-    getIdUser()
-    {
-        return this.idUser;
-    }
-
-    getNomeArtista()
-    {
-        return this.nomeArtista;
-    }
-
-    getDescrizione()
-    {
-        return this.descrizione;
-    }
-
-    getUrlPic()
-    {
-        return this.urlPic;
-    }
-}
-
 async function creaProfilo(profiloAutore)
 {
     const nomeArtista = profiloAutore.getNomeArtista();
@@ -52,7 +9,7 @@ async function creaProfilo(profiloAutore)
     listaCompositori.style.display = "contents";
 
     const profilo = document.createElement("section");
-    profilo.setAttribute("id", "profilo");
+    profilo.setAttribute("class", "profilo");
 
     const sectionImmagineProfilo = document.createElement("section");
     sectionImmagineProfilo.setAttribute("id", "sectionImmagineProfilo");
@@ -95,25 +52,65 @@ async function creaTabellaCompositori()
 {
     const compositori = await fetch("http://localhost:8080/progettoPersonaleJava/api/v1/compositori/");
     const responseJson = await compositori.json();
-
+    
     for(let i = 0; i < responseJson.length; i++)
     {
-        const profiloAutore = new Compositore(responseJson[i].idCompositore, responseJson[i].idUser, responseJson[i].nomeArtista, responseJson[i].descrizione, responseJson[i].urlPic)
+        const profiloAutore = new Compositore(responseJson[i].idUser, responseJson[i].nomeArtista, responseJson[i].descrizione, responseJson[i].urlPic, responseJson[i].tema)
         creaProfilo(profiloAutore);
     }
+    coloraProfilo(responseJson);
 }
 
 async function visitaProfilo(idUser)
 {
-    localStorage.clear();
     const userSpecifico = await fetch("http://localhost:8080/progettoPersonaleJava/api/v1/users/" + idUser.toString());
 
     const userSpecificoJson = await userSpecifico.json();
     const nome = userSpecificoJson.nome;
     const cognome = userSpecificoJson.cognome;
+
     localStorage.setItem("Nome", nome);
-    localStorage.setItem("Cognome", nome);
+    localStorage.setItem("Cognome", cognome);
     localStorage.setItem("idUser", idUser);
 
-    window.location.href = "editorCompositori.html";
+    window.location.href = "paginaCompositore.html";
+}
+
+function coloraProfilo(responseJson)
+{
+    const profili = document.getElementsByClassName("profilo");
+
+    for (let i = 0; i < profili.length; i++)
+    {
+        if(profili[i] != null && profili[i].style.display === "grid")
+        {
+            for (let j = 0; j < profili.length; j++)
+            {
+                if(responseJson[j].tema === "bianco")
+                {
+                    const figli = profili[i].childNodes;
+                    const descrizione = figli[1].childNodes;
+                    let textDescrizione = descrizione[1].lastChild;
+                    textDescrizione.parentNode.style.backgroundColor = "rgb(242, 242, 242)";
+                    // textDescrizione.style.backgroundColor = "rgb(255, 255, 255)";
+                    profili[i].style.backgroundColor = "rgb(255, 255, 255)";
+                    profili[i].style.color = "rgb(0, 0, 0)";
+                    i++
+                    continue;
+                }
+
+                else if(responseJson[j].tema === "nero")
+                {
+                    const figli = profili[i].childNodes;
+                    const descrizione = figli[1].childNodes;
+                    let textDescrizione = descrizione[1].lastChild;
+                    textDescrizione.parentNode.style.backgroundColor = "rgb(50, 54, 67)";
+                    profili[i].style.backgroundColor = "rgb(68, 72, 87)";
+                    profili[i].style.color = "rgb(255, 255, 255)";
+                    i++
+                    continue;
+                }
+            }
+        }
+    }
 }

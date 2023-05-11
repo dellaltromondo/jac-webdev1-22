@@ -1,15 +1,40 @@
+
+<!--
+
+    
+- sistemare la pagina principale, dividendo la pagina in più tabelle contenenti i vari prodotti.
+
+- sistemare il bottone di ricerca dei vari prodotti nella nav.
+
+- aggiungere un bottone api nella nav secondaria con il random fox.
+
+- sistemare il css della pagina principale.
+
+- cancellare le pagine che non facciano parte della pagina principale, tenere solo login, carrello e pagamento.
+
+- completare la pagina del pagamento, cercare se ci sono fake pay disponibili.
+
+- ottimizzare il carrello.
+
+
+-->
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <title>FoodSpring</title>
-    
-        <link rel="stylesheet" href="../progetto_personale/css/Style.css">
+        <link rel="stylesheet" type="text/css" href="../progetto_personale/css/nav.css">
+        <link rel="stylesheet" href="../progetto_personale/css/page.css">
         
 
 </head>
 
-<body class="Primary_body">
+<body class="normal_body">
     
     <nav id= "nav_primaria">    
 
@@ -19,142 +44,584 @@
             </h1>
         </a>
 
-        <a href="../progetto_personale/login/login.html">
-            <section class="login" >
-                <button>login</button>
-            </section>
-        </a>
-
-        <a href="../progetto_personale/login/login.html">
-            <section class="signUp" >
-                <button>sign up</button>
-            </section>
-        </a>
-
-        <a href="../progetto_personale/html/carrello.html">
-            <img id="mainImage" src="../progetto_personale/images/cestino_spesa.png">
-        </a>
-        
         </nav>
 
-        <nav id = "nav_secondaria" >
-            <section class="only-desktop">
-                <a href="../progetto_personale/html/Shake_proteici.html" class = "nav_secondaria_class"> 
-                    Shake Proteici
+    <nav id = "nav_secondaria" >
+        
+         
+                <input type="text" id="search" placeholder="Cerca prodotto...">
+                <a href="../progetto_personale/html/carrello.html">
+                    <img id="mainImage" src="../progetto_personale/images/cestino_spesa.png">
                 </a>
-
-                <a href="../progetto_personale/html/barrette.html" class = "nav_secondaria_class">
-                    Barrette 
-                </a>
-
-                <a href="../progetto_personale/html/snack.html" class = "nav_secondaria_class"> 
-                    Snack 
-                </a>
-
-                <a href="../progetto_personale/html/Integratori.html" class = "nav_secondaria_class"> 
-                    Integratori 
-                </a>
-
-                <a href="../progetto_personale/html/aminoacidi.html" class = "nav_secondaria_class"> 
-                    Aminoacidi 
-                </a>
-                <a href="../progetto_personale/html/Impasti.html" class = "nav_secondaria_class"> 
-                    Impasti & Preparati 
-                </a>
-
-                <a href="../progetto_personale/html/Creme.html" class = "nav_secondaria_class"> 
-                    Creme Spalmabili 
-                </a>
-
-                <a href="../progetto_personale/html/Muesli.html" class = "nav_secondaria_class">
-                    Muesli & Porridge 
-                </a>
-            </section>
-
-        <section class="only-mobile">
-            <button class="button-menu">menu</button>
-            <ul class="only-desktop" id="expanded-menu">
-
-                <li> 
-                    <a href="../progetto_personale/html/Shake_proteici.html" class = "nav_secondaria_class"> 
-                        Shake Proteici
-                    </a>
-                </li>
-
-                <li> 
-                    <a href="../progetto_personale/html/barrette.html" class = "nav_secondaria_class">
-                        Barrette 
-                    </a>
-                </li>
-
-                <li> 
-                    <a href="../progetto_personale/html/snack.html" class = "nav_secondaria_class"> 
-                        Snack 
-                    </a>        
-                </li>
-                <li> 
-                    <a href="../progetto_personale/html/Integratori.html" class = "nav_secondaria_class"> 
-                        Integratori 
-                    </a>
-                </li>
-
-                <li> 
-                    <a href="../progetto_personale/html/aminoacidi.html" class = "nav_secondaria_class"> 
-                        Aminoacidi 
-                    </a>
-                </li>
-
-                <li> 
-                    <a href="../progetto_personale/html/Impasti.html" class = "nav_secondaria_class"> 
-                        Impasti & Preparati 
-                    </a>
-                </li>
-                <li> 
-                    <a href="../progetto_personale/html/Creme.html" class = "nav_secondaria_class"> 
-                        Creme Spalmabili 
-                    </a>
-                </li>
-                <li> 
-                    <a href="../progetto_personale/html/Muesli.html" class = "nav_secondaria_class">
-                        Muesli & Porridge 
-                    </a>
-                </li>
+     
     
-            </ul>
-    
-        </section>
 
     </nav>
 
-    <h2 id="TitleText">
-        Come siamo nati 
-    </h2>
     
-    <img id="ImageText1" src="../progetto_personale/images/TextImage1.png">
 
-    <p class="StoryText">
+
+
+    <!--Shake-->
+    
+    <section id="Shake">
+  
+        <section id= "Border">
+
+            <img id="image1" src="../progetto_personale/images/shake1.png">
+                
+               
+    
+                    
+                    <h3>shake 1</h3>
+                    <p>Prezzo: $10</p> 
+                <section class="button" >
+                    <button class="add-to-cart" data-name="shake 1" data-price="10">Aggiungi al carrello</button>
+                </section>
+                
+        </section>
+    
+    
+    
+            
+        <section id= "Border2">
+    
+            <img id="image2" src="../progetto_personale/images/shake2.png">
+            
+                     
+          
+    
+                    
+                <h3>shake 2</h3>
+                <p>Prezzo: $10</p> 
+                 <section class="button" >
+                <button class="add-to-cart" data-name="shake 2" data-price="10">Aggiungi al carrello</button>
+            </section>
+                
+        </section>
+    
+    
+    
+        <section id= "Border3">
+    
+            <img id="image3"  src="../progetto_personale/images/shake3.png">
+                 
+            
+    
+                    
+                <h3>shake 3</h3>
+                <p>Prezzo: $10</p>
+                <section class="button" >
+                <button class="add-to-cart" data-name="shake 3" data-price="10">Aggiungi al carrello</button>
+            </section>
+        </section>
         
-        Tutto ha avuto inizio con la fondazione di egg nel 2013.
-         Il nostro obiettivo: portare l'alimentazione sportiva al livello successivo. 
-         Le nostre proteine in polvere con certificazione Bio hanno rivoluzionato il settore.
-          Utilizzando il latte da mandrie lasciate pascolare all'aperto 
-          abbiamo dato una scossa alle vecchie abitudini consolidate, 
-          stimolando gli appassionati di fitness a ripensare a loro volta le loro abitudini.
-    </p>
-
-      <img id="ImageText2" src="../progetto_personale/images/TextImage.png">
     
-    <p class="StoryText">
-        Ora è giunto il momento di fare un ulteriore passo in avanti. 
-        egg è diventata foodspring. Qualità assoluta. Sviluppo continuo.
-    </p>
+    
+    
+        <section id= "Border">
+    
+            <img id="image1" src="../progetto_personale/images/shake4.png">
+                
+     
+            
+                    
+                <h3>shake 4</h3>
+                <p>Prezzo: $10</p>
+                <section class="button" >
+    
+                <button class="add-to-cart" data-name="shake 4" data-price="10">Aggiungi al carrello</button>
+            </section>
+                
+        </section>
+    
+        <section id= "Border2">
+    
+            <img id="image2" src="../progetto_personale/images/shake5.png">
+            
+                     
+          
+                    
+                <h3>shake 5</h3>
+                <p>Prezzo: $10</p> 
+                 <section class="button" >
+    
+                <button class="add-to-cart" data-name="shake 5" data-price="10">Aggiungi al carrello</button>
+            </section>
+                
+        </section>
+    
+    
+        <section id= "Border3">
+    
+            <img id="image3"  src="../progetto_personale/images/shake6.png">
+            
+    
+                    
+                <h3>shake 6</h3>
+                <p>Prezzo: $10</p>
+                <section class="button" >
+                <button class="add-to-cart" data-name="shake 6" data-price="10">Aggiungi al carrello</button>
+            </section>
+        </section>
+    </section>  
+      
+    
+    <!--barrette-->
 
-    <script src="../progetto_personale/javascript/Menu.js"></script>
+    <section id="Barrette">
+
+        <section id= "Border">
+
+            <img id="image1" src="../progetto_personale/images/barrette1.png">
+                
+    
+            <section class="button" >
+    
+                    
+                <h3>barrette 1</h3>
+                <p>Prezzo: $10</p>
+                <button class="add-to-cart" data-name="barrette 1" data-price="10">Aggiungi al carrello</button>
+            </section>
+                
+        </section>
+    
+    
+    
+            
+        <section id= "Border2">
+    
+            <img id="image2" src="../progetto_personale/images/barrette2.png">
+            
+            <section class="button" >
+    
+                    
+                <h3>barrette 2</h3>
+                <p>Prezzo: $10</p>
+                <button class="add-to-cart" data-name="barrette 2" data-price="10">Aggiungi al carrello</button>
+            </section>
+                
+        </section>
+    
+    
+    
+        <section id= "Border3">
+    
+            <img id="image3"  src="../progetto_personale/images/barrette3.png">
+                
+            <section class="button">
+    
+                    
+                <h3>barrette 3</h3>
+                <p>Prezzo: $10</p>
+                <button class="add-to-cart" data-name="barrette 3" data-price="10">Aggiungi al carrello</button>
+            </section>
+        </section>
+        
+    
+    
+    
+        <section id= "Border">
+    
+            <img id="image1" src="../progetto_personale/images/barrette4.png">
+                
+            <section class="button" >
+    
+                    
+                <h3>barrette 4</h3>
+                <p>Prezzo: $10</p>
+                <button class="add-to-cart" data-name="barrette 4" data-price="10">Aggiungi al carrello</button>
+            </section>
+        </section>
+    
+        <section id= "Border2">
+    
+            <img id="image2" src="../progetto_personale/images/barrette5.png">
+            
+            <section class="button" >
+    
+                    
+                <h3>barrette 5</h3>
+                <p>Prezzo: $10</p>
+                <button class="add-to-cart" data-name="barrette 5" data-price="10">Aggiungi al carrello</button>
+            </section>
+        </section>
+    
+    </section>
+    
+        
+    <!--snack-->
+    
+    <section id= "snack">
+        
+        
+        <section id= "Border">
+    
+            <img id="image1" src="../progetto_personale/images/snack1.png">
+                
+    
+                
+    
+                    
+                    <h3>snack 1</h3>
+                    <p>Prezzo: $10</p>
+                    <section class="button" >
+                    <button class="add-to-cart" data-name="snack 1" data-price="10">Aggiungi al carrello</button>
+                </section>
+        </section>
+    
+    
+    
+            
+        <section id= "Border2">
+    
+            <img id="image2" src="../progetto_personale/images/snack2.png">
+            
+           
+    
+                    
+                <h3>snack 2</h3>
+                <p>Prezzo: $10</p>
+                 <section class="button" >
+                <button class="add-to-cart" data-name="snack 2" data-price="10">Aggiungi al carrello</button>
+            </section>
+        </section>
+    
+    
+    
+        <section id= "Border3">
+    
+            <img id="image3"  src="../progetto_personale/images/snack3.png">
+                
+           
+    
+                    
+                <h3>snack 3</h3>
+                <p>Prezzo: $10</p>
+                 <section class="button" >
+                <button class="add-to-cart" data-name="snack 3" data-price="10">Aggiungi al carrello</button>
+            </section>
+        </section>
+        
+    
+    
+    
+        <section id= "Border">
+    
+            <img id="image1" src="../progetto_personale/images/snack4.png">
+                
+    
+           
+                <h3>snack 4</h3>
+                <p>Prezzo: $10</p> 
+                <section class="button" >
+    
+                    
+                <button class="add-to-cart" data-name="snack 4" data-price="10">Aggiungi al carrello</button>
+            </section>
+                
+        </section>
+       
+    </section>
+    
+   
+    
+
+    <!--integratori-->
+
+    <section id="integratori">
+        
+        
+    <section id= "Border">
+
+        <img id="image1" src="../progetto_personale/images/Integratori1.png">
+            
+
+        
+
+                
+            <h3>integratori 1</h3>
+            <p>Prezzo: $10</p>
+            <section class="button" >
+            <button class="add-to-cart" data-name="integratori 1" data-price="10">Aggiungi al carrello</button>
+        </section>
+            
+    </section>
 
 
+
+        
+    <section id= "Border2">
+
+        <img id="image2" src="../progetto_personale/images/Integratori2.png">
+        
+       
+
+                
+            <h3>Integratori 2</h3>
+            <p>Prezzo: $10</p>
+            <section class="button" >
+            <button class="add-to-cart" data-name="Integratori 2" data-price="10">Aggiungi al carrello</button>
+        </section>
+            
+    </section>
+
+
+
+    <section id= "Border3">
+
+        <img id="image3"  src="../progetto_personale/images/Integratori3.png">
+            
+        
+
+                
+            <h3>Integratori 3</h3>
+            <p>Prezzo: $10</p>
+            <section class="button" >
+            <button class="add-to-cart" data-name="Integratori 3" data-price="10">Aggiungi al carrello</button>
+        </section>
+    </section>
+    </section>
+    
+
+    <!--aminoacidi-->
+    
+    <section id="aminoacidi">
+
+        
+    <section id= "Border">
+
+        <img id="image1" src="../progetto_personale/images/Aminoacidi1.png">
+            
+        
+
+                
+            <h3>Aminoacidi 1</h3>
+            <p>Prezzo: $10</p>
+            <section class="button" >
+            <button class="add-to-cart" data-name="Aminoacidi 1" data-price="10">Aggiungi al carrello</button>
+        </section>
+    </section>
+
+
+
+        
+    <section id= "Border2">
+
+        <img id="image2" src="../progetto_personale/images/Aminoacidi2.png">
+        
+       
+
+                
+            <h3>Aminoacidi 2</h3>
+            <p>Prezzo: $10</p>
+             <section class="button" >
+            <button class="add-to-cart" data-name="Aminoacidi 2" data-price="10">Aggiungi al carrello</button>
+        </section>
+            
+    </section>
+
+
+
+    <section id= "Border3">
+
+        <img id="image3"  src="../progetto_personale/images/Aminoacidi3.png">
+            
+            
+
+                
+                <h3>Aminoacidi 3</h3>
+                <p>Prezzo: $10</p>
+                <section class="button" >
+                <button class="add-to-cart" data-name="Aminoacidi 3" data-price="10">Aggiungi al carrello</button>
+            </section>
+    </section>
+    
+
+    </section>
+
+
+
+    <!--impasti-->
+
+    
+    <section id="impasti">
+        
+    <section id= "Border">
+
+        <img id="image1" src="../progetto_personale/images/Impasti1.png">
+            
+
+        
+
+                
+            <h3>Impasti 1</h3>
+            <p>Prezzo: $10</p>
+            <section class="button" >
+            <button class="add-to-cart" data-name="Impasti 1" data-price="10">Aggiungi al carrello</button>
+        </section>
+            
+    </section>
+
+
+
+        
+    <section id= "Border2">
+
+        <img id="image2" src="../progetto_personale/images/Impasti2.png">
+        
+        
+                
+            <h3>Impasti 2</h3>
+            <p>Prezzo: $10</p>
+            <section class="button" >
+
+            <button class="add-to-cart" data-name="Impasti 2" data-price="10">Aggiungi al carrello</button>
+        </section>
+    </section>
+
+
+
+    <section id= "Border3">
+
+        <img id="image3" src="../progetto_personale/images/Impasti3.png">
+            
+        
+
+                
+            <h3>Impasti 3</h3>
+            <p>Prezzo: $10</p>
+            <section class="button" >
+            <button class="add-to-cart" data-name="Impasti 3" data-price="10">Aggiungi al carrello</button>
+        </section>
+    </section>
+    </section>
+
+    
+    <!--creme-->
+    
+    <section id="creme">    
+        
+    <section id= "Border">
+
+        <img id="image1" src="../progetto_personale/images/Crema1.png">
+    
+            <h3>Creme 1</h3>
+            <p>Prezzo: $10</p>
+
+            <section class="button" >
+            <button class="add-to-cart" data-name="Creme 1" data-price="10">Aggiungi al carrello</button>
+        </section>
+    </section>
+
+
+
+        
+    <section id= "Border2">
+
+        <img id="image2" src="../progetto_personale/images/Crema2.png">
+        
+            <h3>Creme 2</h3>
+            <p>Prezzo: $10</p> 
+
+            <section class="button" >
+            <button class="add-to-cart" data-name="Creme 2" data-price="10">Aggiungi al carrello</button>
+        </section>
+            
+    </section>
+
+
+
+    <section id= "Border3">
+
+        <img id="image3"  src="../progetto_personale/images/Crema3.png">
+            
+            <h3>Creme 3</h3>
+            <p>Prezzo: $10</p>
+
+            <section class="button" >
+            <button class="add-to-cart" data-name="Creme 3" data-price="10">Aggiungi al carrello</button>
+        </section>
+    </section>
+    </section>
+   
+
+    <!--muesli-->
+    
+    <section id="muesli">
+
+    <section id= "Border">
+
+        <img id="image1" src="../progetto_personale/images/Muesli1.png">
+            
+       
+
+                
+            <h3>Muesli 1</h3>
+            <p>Prezzo: $10</p>
+             <section class="button" >
+            <button class="add-to-cart" data-name="Muesli 1" data-price="10">Aggiungi al carrello</button>
+        </section>
+            
+    </section>
+
+
+
+        
+    <section id= "Border2">
+
+        <img id="image2" src="../progetto_personale/images/Muesli2.png">
+        
+                
+       
+            <h3>Muesli 2</h3>
+            <p>Prezzo: $10</p> 
+            <section class="button" >
+
+                
+            <button class="add-to-cart" data-name="Muesli 2" data-price="10">Aggiungi al carrello</button>
+        </section>
+    </section>
+
+    
+    </section>
+
+
+
+
+
+    <!-- <script src="../progetto_personale/javascript/Menu.js"></script> -->
+
+    <script src="../progetto_personale/javascript/Function.js"></script>
+
+    <script src="../progetto_personale/javascript/search.js">
+    //     const section = document.getElementById("Border2");
+    //     const h3 = section.childNodes[1];
+    //     const h3Text = h3.textContent || h3.innerText;
+    //     console.log(h3Text);
+    // </script>
    
 </body>
 
 
 </html>
 
+
+
+
+
+
+
+
+
+<!-- 
+<section class="only-mobile">
+            
+    <button class="button-menu">search</button> 
+     <ul class="only-desktop" id="expanded-menu"> 
+    <input type="text" id="search" placeholder="Cerca prodotto..."> 
+
+    <a href="../progetto_personale/html/carrello.html">
+        <img id="mainImage" src="../progetto_personale/images/cestino_spesa.png">
+    </a>
+</section>  -->
