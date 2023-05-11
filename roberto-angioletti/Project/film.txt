@@ -53,3 +53,8 @@ In this example, when the button is clicked, the if statement checks the display
 window.onload = function() {
   // your code here
 }
+
+
+
+salvare le serie sullo storage browser
+local e session storage

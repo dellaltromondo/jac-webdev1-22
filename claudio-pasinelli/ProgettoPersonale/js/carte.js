@@ -239,7 +239,7 @@ function creaCartaJson()
 async function creaCartaHTML(carta)
 {
     let userIsCompositore = false;
-    if(window.location.pathname === "/html/editorCompositori.html")
+    if(localStorage.getItem("Compositore") === "VERO")
     {
         userIsCompositore = true;
     }
