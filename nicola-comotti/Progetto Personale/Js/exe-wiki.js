@@ -31,7 +31,7 @@ async function fetchExercises() {
         console.log(exeJson);
         document.getElementById('exercises-list').replaceChildren();
         const addedExercises = {};
-        if(exeJson.length === 0) {
+        if (exeJson.length === 0) {
             errorPopup('No results found. Please check your filters.')
         }
         exeJson.forEach(exercise => {
@@ -86,10 +86,12 @@ function buildExercise(exercise, addedExercises) {
     exeElement.appendChild(difficultyElement);
 
     const exeForce = exercise.Force;
-    const forceElement = document.createElement('h3');
-    forceElement.innerText = exeForce;
-    forceElement.setAttribute('class', 'exe-force');
-    exeElement.appendChild(forceElement);
+    if (exeForce != undefined) {
+        const forceElement = document.createElement('h3');
+        forceElement.innerText = exeForce;
+        forceElement.setAttribute('class', 'exe-force');
+        exeElement.appendChild(forceElement);
+    }
 
     const stepButton = document.createElement('button');
     stepButton.innerText = 'Steps';

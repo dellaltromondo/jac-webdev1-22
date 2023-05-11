@@ -228,26 +228,23 @@ article {
 
 #filters {
     padding: 0;
-    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 0.5em;
+    margin: 0.5em 0.5em 0 0.5em;
+    column-gap: 0.5em;
 }
 
 .filter {
     width: 25%;
+    min-width: fit-content;
     height: 3em;
-    border-radius: 0;
     font-family: var(--font);
     font-weight: bold;
     font-size: 1em;
+    border: var(--border);
     border-radius: var(--b-radius);
     padding-left: 1em;
-}
-
-.filter:active {
-    border: solid 1px var(--white);
 }
 
 #search-button {
@@ -258,13 +255,14 @@ article {
     font-size: 1em;
     background-color: var(--blue);
     color: var(--white);
-    border: solid 2px var(--grey);
+    border: var(--border);
     cursor: pointer;
     border-radius: var(--b-radius);
 }
 
 #search-button:hover {
-    background-color: var(--blue04);
+    background-color: var(--white);
+    color: var(--blue);
 }
 
 #exercises-list {
@@ -312,6 +310,7 @@ article {
     border: var(--border);
     border-radius: var(--b-radius);
     padding-bottom: 0.2em;
+    cursor: pointer;
 }
 
 .popup-title {

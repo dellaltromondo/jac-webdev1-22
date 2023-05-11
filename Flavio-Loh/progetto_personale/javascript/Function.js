@@ -35,12 +35,6 @@
         // Se non esiste, lo crea
         cart = [];
     }
-
-
-
-
-
-
     // Recupera la tabella del carrello dalla pagina
     const cartTable = document.querySelector("#cart-items");
 
