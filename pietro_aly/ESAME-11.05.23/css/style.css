@@ -65,10 +65,10 @@
 .MENU2 {
   padding: 0.3in;
   border-radius: 0.2in;
-  width: calc(100% - 340px); /* Adjust the value based on your layout */
+  width: calc(50% - 340px); 
   background-color: darkgrey;
   margin-right: 20px;
-  height: calc(100vh - 70px); /* Adjust the value based on your layout */
+  height: calc(89vh - 70px);
   overflow-y: auto;
 }
 
