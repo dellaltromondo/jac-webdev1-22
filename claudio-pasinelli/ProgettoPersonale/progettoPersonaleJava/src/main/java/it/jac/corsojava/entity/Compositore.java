@@ -9,6 +9,7 @@ public class Compositore
 	private String nomeArtista;
 	private String descrizione;
 	private String urlPic;
+	private String tema;
 	
 	private String utenteIns;
 	private String utenteMod;
@@ -87,6 +88,14 @@ public class Compositore
 		this.dataMod = dataMod;
 	}
 
+	public String getTema() {
+		return tema;
+	}
+
+	public void setTema(String tema) {
+		this.tema = tema;
+	}
+
 	@Override
 	public boolean equals(Object obj)
 	{
@@ -104,6 +113,7 @@ public class Compositore
 				&& Objects.equals(nomeArtista, other.nomeArtista)
 				&& Objects.equals(descrizione, other.descrizione)
 				&& Objects.equals(urlPic, other.urlPic)
+				&& Objects.equals(tema, other.tema)
 				&& Objects.equals(utenteIns, other.utenteIns)
 				&& Objects.equals(utenteMod, other.utenteMod);
 	}
@@ -111,7 +121,8 @@ public class Compositore
 	@Override
 	public String toString() {
 		return "Compositore [idCompositore=" + idCompositore + ", idUser=" + idUser + ", nomeArtista=" + nomeArtista
-				+ ", descrizione=" + descrizione + ", urlPic=" + urlPic + ", utenteIns=" + utenteIns + ", utenteMod="
-				+ utenteMod + ", dataIns=" + dataIns + ", dataMod=" + dataMod + "]";
+				+ ", descrizione=" + descrizione + ", urlPic=" + urlPic + ", tema=" + tema + ", utenteIns=" + utenteIns
+				+ ", utenteMod=" + utenteMod + ", dataIns=" + dataIns + ", dataMod=" + dataMod + "]";
 	}
+	
 }

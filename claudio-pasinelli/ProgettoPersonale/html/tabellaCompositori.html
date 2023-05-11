@@ -72,7 +72,7 @@
                 loader.parentNode.removeChild(loader);
             }, 1200);
 
-            const elencoCompositori = document.getElementById("titoloListaCompositori");
+            const elencoCompositori = document.getElementById("profilo");
             
             creaTabellaCompositori();
 
@@ -97,7 +97,6 @@
 
                 elencoCompositori.appendChild(avviso);
             }
-            
         });
                     
         let lastScrollTop;
@@ -143,15 +142,6 @@
 
             lastScrollTop = scrollTop;
         }
-
-        const textarea = document.querySelector("textarea");
-
-        textarea.addEventListener("keyup", e =>
-        {
-            textarea.style.height = "63px";
-            let scrHeight = e.target.scrollHeight;
-            textarea.style.height = `${scrHeight}px`;
-        });
 
         let tornaSu = document.querySelector(".tornaSu");
         

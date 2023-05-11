@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="it">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MyFitnessHub</title>
+        <link rel="icon" href="Utils/dumbell-favicon.png">
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body class="database-esercizi">
+        <header>
+            <button class="only-mobile" id="menuToggle" onclick="toggleMenu()">
+                <img src="Utils/white-burger-menu.png" alt="Menu">
+            </button>
+            <h1 id="titolo">MyFitnessHub</h1>
+            <button id="logoutButton" onclick="logout()">
+                <img src="Utils/white-logout.png">
+                <p class="only-desktop">Logout</p>
+            </button>
+            <nav class="only-desktop" id="menuDesktop">
+                <a href="user-homepage.html">Homepage</a>
+                <a href="exercise-wiki.html">Exercise Wiki</a>
+                <a href="calcolatrici.html">Calcolatrici</a>
+                <a href="contatti.html">Contatti</a>
+            </nav>
+            <nav class="only-mobile" id="menuMobile" style="display: none;">
+                <a href="user-homepage.html">Homepage</a>
+                <a href="exercise-wiki.html">Exercise Wiki</a>
+                <a href="calcolatrici.html">Calcolatrici</a>
+                <a href="contatti.html">Contatti</a>
+            </nav>
+        </header>
+
+        <aside id="filters">
+            <select class="filter" id="muscle-filter">
+                <option value="any" selected disabled hidden>Select muscle group</option>
+                <option value="any">Any</option>
+                <option value="Shoulders">Shoulders</option>
+                <option value="Triceps">Triceps</option>
+                <option value="Biceps">Biceps</option>
+                <option value="Forearms">Forearms</option>
+                <option value="Chest">Chest</option>
+                <option value="Traps">Traps</option>
+                <option value="Lats">Lats</option>
+                <option value="Mid back">Mid Back</option>
+                <option value="Lower back">Lower Back</option>
+                <option value="Abdominals">Abdominals</option>
+                <option value="Obliques">Obliques</option>
+                <option value="Glutes">Glutes</option>
+                <option value="Quads">Quads</option>
+                <option value="Hamstrings">Hamstrings</option>
+                <option value="Calves">Calves</option>
+            </select>
+            <select class="filter" id="category-filter">
+                <option value="any" selected disabled hidden>Select category</option>
+                <option value="any">Any</option>
+                <option value="Barbell">Barbell</option>
+                <option value="Dumbbells">Dumbbells</option>
+                <option value="Kettlebells">Kettlebells</option>
+                <option value="Stretches">Stretches</option>
+                <option value="Cables">Cables</option>
+                <option value="Band">Band</option>
+                <option value="Plate">Plate</option>
+                <option value="TRX">TRX</option>
+                <option value="Bodyweight">Bodyweight</option>
+                <option value="Yoga">Yoga</option>
+                <option value="Machine">Machine</option>
+            </select>
+            <select class="filter" id="difficulty-filter">
+                <option value="any" selected disabled hidden>Select difficulty</option>
+                <option value="any">Any</option>
+                <option value="Beginner">Beginner</option>
+                <option value="Intermediate">Intermediate</option>
+                <option value="Advanced">Advanced</option>
+            </select>
+            <select class="filter" id="force-filter">
+                <option value="any" selected disabled hidden>Select force type</option>
+                <option value="any">Any</option>
+                <option value="Pull">Pull</option>
+                <option value="Push">Push</option>
+                <option value="Hold">Hold</option>
+            </select>
+            <button id="search-button" onclick="fetchExercises()">Search</button>
+        </aside>
+        <article>
+            <ul id="exercises-list"></ul>
+            <div id="popup-container">
+                <section class="popup" id="steps-popup" style="display: none;"></section>
+                <section class="popup" id="video-popup" style="display: none;"></section>
+                <section class="popup" id="errorPopup" style="display: none;"></section>
+            </div>
+        </article>
+
+        <script src="./Js/main.js"></script>
+        <script src="./Js/popup.js"></script>
+        <script src="./Js/exe-wiki.js"></script>
+    </body>
+
+</html>

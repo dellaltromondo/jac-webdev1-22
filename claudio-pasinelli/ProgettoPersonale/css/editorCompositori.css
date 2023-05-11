@@ -322,7 +322,7 @@ input[type="url"]
     min-width: fit-content;
 }
 
-section#linkSocial section#listaSocial
+section#listaSocial
 {
     text-align: center;
     margin: auto;
@@ -331,9 +331,9 @@ section#linkSocial section#listaSocial
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
-section#linkSocial section#listaSocial section
+section#listaSocial section
 {
-    margin-bottom: 15%;
+    margin-bottom: 5px;
 }
 
 #listaSocial a
@@ -341,7 +341,7 @@ section#linkSocial section#listaSocial section
     color: var(--colore-oro);
 }
 
-section#linkSocial section#listaSocial img.zoom
+section#listaSocial img.zoom
 {
     display: block;
     margin-left: auto;
@@ -356,7 +356,7 @@ section#linkSocial section#listaSocial img.zoom
     transition: all 0.2s ease-in-out;
 }
 
-section#linkSocial section#listaSocial img.zoom:hover
+section#listaSocial img.zoom:hover
 {
     -ms-transform: scale(1.1) rotate(5deg);
     -webkit-transform: scale(1.1) rotate(5deg);
@@ -418,6 +418,23 @@ section#linkSocial section#listaSocial img.zoom:hover
     border: var(--arrow-size) solid transparent;
     border-top-color: var(--colore-arancio);
     transform-origin: top center;
+}
+
+.eliminaSocial
+{
+    text-align: right;
+}
+
+.eliminaSocial .elimina
+{
+    height: 20px;
+}
+
+.cestinoSocial
+{
+    height: 15px;
+    width: auto;
+    transition: all 0.2s ease-in-out;
 }
 
 /* SECTION SOCIAL  */
@@ -604,6 +621,15 @@ footer#piePagina
     /* grid-column: 2/8; */
 }
 
+#btnsFormSocial
+{
+    display: flex;
+}
+
+#inviaSocial
+{
+    margin-right: 5px;
+}
 /*GALLERIA DI IMMAGINI*/
 
 section#galleriaImmagini
@@ -922,12 +948,12 @@ p.socialContainerDescrizione
 
 @media (min-width: 100px) and (max-width: 768px)
 {
-    section#linkSocial section#listaSocial section
+    section#listaSocial section
     {
-        margin-bottom: 8%;
+        margin-bottom: 2.5px;
     }
 
-    section#linkSocial section#listaSocial img.zoom
+    section#listaSocial img.zoom
     {
         width: 3%;
     }
@@ -1024,12 +1050,12 @@ p.socialContainerDescrizione
         width: fit-content;
     }
 
-    section#linkSocial section#listaSocial section
+    section#listaSocial section
     {
-        margin-bottom: 15%;
+        margin-bottom: 5px;
     }
 
-    section#linkSocial section#listaSocial img.zoom
+    section#listaSocial img.zoom
     {
         width: 5%;
     }

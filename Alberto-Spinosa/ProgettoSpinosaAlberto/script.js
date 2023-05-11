@@ -1,46 +1,21 @@
-/*  
-    BTecno - Assistenza informatica | web | app
+//quantità -> cartItem o Product
 
-    INTERFACCIA FAST FOOD (mc like)
-
-    Funzioni: Aggiunta al carrello, Elimina dal carrello, filtro ricerca
-    (avanzato(?)) modifica del prodotto
-    (avanzato) Ricerca (Eliminando tutti i prodotti che non hanno all'interno del nome la parola selezionata)
-
-    Classe "ordine": Nome ordine, prezzo, array di ingredienti(?)
-
-    Carrello (sulla stessa pagina): Tabella con gli ordini visualizzati (filtro ordine?) con la possibilità di eliminarli
-    (guardare come eliminare un elemento da un array e aggiornare una tabella senza aggiornare la pagina html)
-*/
-
-/*
-
-/*
-    APPEND CHILD SCHEME:
-
-    TABLE
-        THEAD
-        TBODY
-            TR
-                TH
-                TD
-    
-    modifica degli ingredienti o dalla tabella carrello o prima dell'acquisto
-
-    prima dell'aggiunta al carrello: 
-        td ingredienti: hover per visualizzare la lista di ingredienti
-        button a fianco dell'ingrediente: cliccando ho viene tolto il testo o viene colorato di rosso (magari utilizzare l'alert per avvisare l'utente)
-
-    dopo l'aggiunta al carrello:
-        nella tabella poter selezionare un prodotto, creerà una nuova tabella (temporanea(?))
-
-*/
+class CartItem {
+    constructor(id, product) {
+        this.id = id;
+        this.product = product;
+    }
+}
 
 class Product {
     constructor(id, name, price,){
         this.id = id;
         this.name = name;
         this.price = price;
+    }
+
+    getDetails() {
+        return ""
     }
 }
 
@@ -49,6 +24,10 @@ class Burger extends Product {
         super(id, name, price);
         this.ingredients = ingredients;
     }
+
+    getDetails() {
+        return this.ingredients
+    }
 }
 
 class Drink extends Product {
@@ -56,15 +35,15 @@ class Drink extends Product {
         super(id, name, price)
         this.size = size;
     }
+
+    getDetails() {
+        return this.size
+    }
 }
 
-
-const Products = [];
-
+var cart = [];
 let counter = 1;
-
-const prova = new Drink(1, "nome", 2.50, "size");
-console.log(prova);
+let cartCounter = 1;
 
 function addBurgerToCart() {
 
@@ -103,10 +82,19 @@ function addBurgerToCart() {
     }
     
     counter++;
-    addBurgerToTable(burger);
-    Products.push(burger);
-    console.log(burger);
+    cart.push(burger);
+    addProductToTable(burger);
+    console.log(cart);
 
+}
+
+function removeBurgerFromCart(){
+    const selection = event.target.value;
+    console.log(selection);
+
+    cart.splice(parseInt(selection) - 1, 1)
+    
+    console.log(cart);
 }
 
 function addDrinkToCart(element) {
@@ -136,28 +124,40 @@ function addDrinkToCart(element) {
     }
 
     counter++;
-    console.log(selection)
-    addBurgerToTable(drink);
-    Products.push(drink);
-    console.log(drink);
+    cart.push(drink);
+    addProductToTable(drink);
+    console.log(cart);
 }
 
-function addBurgerToTable(product) {
+function removeDrinkFromCart() {
+
+}
+
+function addProductToTable(product) {
+
+    // APPEND CHILD SCHEME:
+
+    // TABLE
+    //     THEAD
+    //     TBODY
+    //         TR
+    //             TH
+    //                 ID
+    //             TD
+
+    const item = new CartItem(cartCounter++, product);
 
     const newElementTr = document.createElement('tr');
     const newElementTh = document.createElement('th');
 
     const newElementTd = document.createElement('td');
-    const txtBurger = document.createTextNode(product.name);
+    const txtBurger = document.createTextNode(item.product.name);
 
     const newElemntTdPrice = document.createElement('td');
-    const txtPrice = document.createTextNode(product.price);
+    const txtPrice = document.createTextNode(item.product.price);
 
-    const newElementTdIngr = document.createElement('td');
-    const txtIngr = document.createTextNode(product.ingredients);
-
-    const newElementTdSize = document.createElement('td');
-    const txtSize = document.createTextNode(product.size);
+    const newElementTdDetails = document.createElement('td');
+    const txtDetails = document.createTextNode(item.product.getDetails());
 
     const newElementTdAct = document.createElement('td');
     const newButtonDelete = document.createElement('button');
@@ -165,31 +165,27 @@ function addBurgerToTable(product) {
     const txtDelete = document.createTextNode("❌");
     const txtEdit = document.createTextNode("✏️");
         
-    const txt = document.createTextNode(product.id);
+    const txt = document.createTextNode(item.product.id);
 
     newElementTh.setAttribute('class', 'scope="row"');
+    newButtonDelete.setAttribute('onClick', 'removeBurgerFromCart()');
+    newButtonDelete.setAttribute('value', item.product.id);
 
-    console.log(txtIngr)
-    console.log(txtSize)
-
-    // Append nome panino
+    // Append id
     newElementTr.appendChild(newElementTh);
     newElementTh.appendChild(txt);
+
+    // Append Nome Prodotto
     newElementTr.appendChild(newElementTd);
     newElementTd.appendChild(txtBurger);
 
-    // Append prezzo
+    // Append Prezzo
     newElemntTdPrice.appendChild(txtPrice);
     newElementTr.appendChild(newElemntTdPrice);
 
-    //Append Ingredienti
-    if(txtIngr == "undefined"){
-        newElementTdSize.appendChild(txtSize);
-        newElementTr.appendChild(newElementTdSize);
-    }else {
-        newElementTdIngr.appendChild(txtIngr);
-        newElementTr.appendChild(newElementTdIngr);
-    }
+    //Append Dettagli
+    newElementTdDetails.appendChild(txtDetails);
+    newElementTr.appendChild(newElementTdDetails);
 
     //Append Actions
     newButtonDelete.appendChild(txtDelete);
@@ -202,6 +198,6 @@ function addBurgerToTable(product) {
 
 }
 
-function addDrinkToTable (product) {
-
+function removeProductFromTable(product) {
+    
 }

@@ -216,7 +216,8 @@
          
            .italia {
            
-            background: url(italia.jpg);
+            background:url(italia.jpg);
+            
             width: 25rem;
             display: inline-block;
             height: 30rem;
@@ -248,7 +249,7 @@
           }
           .riquadro3 p{
 
-
+            
             padding-top: 10px;
             font-weight: bolder;
           }

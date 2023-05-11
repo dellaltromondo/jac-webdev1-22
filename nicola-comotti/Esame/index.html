@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Esame Comotti Nicola ICT1</title>
+    </head>
+
+    <body>
+        <header>
+            <h1 id="titolo">Pokédex</h1>
+            <nav id="menu-link">
+                <a href="myPokemons.html">My Pokémons</a>
+                <a onclick="document.getElementById('nome').focus()">New Pokémon</a>
+                <a href="https://it.wikipedia.org/wiki/Pok%C3%A9mon">Info</a>
+            </nav>
+        </header>
+        <!--  3 pokémon pre-inseriti -->
+        <!-- Inserire Bulbasaur e Eevee -->
+        <aside>
+            <nav>
+                <ul id="menu-pokémon">
+                    <li>
+                        <button id="button-pikachu" onclick="document.getElementById('pikachu-card').focus()">Pikachu</button>
+                    </li>
+                    <li>
+                        <button id="button-charmender" onclick="document.getElementById('charmender-card').focus()">Charmender</button>
+                    </li>
+                    <li>
+                        <button id="button-squirtle" onclick="document.getElementById('squirtle-card').focus()">Squirtle</button>
+                    </li>
+                </ul>
+            </nav>
+            <h2 id="titolo-form">Insert new</h2>
+            <form>
+                <label for="nome">Pokémon Name:</label>
+                <input type="text" name="nome" id="nome" placeholder="e.g. Pikachu">
+                <label id="label-catturato" for="catturato"><input type="checkbox" name="catturato"
+                        id="catturato">Captured</label>
+                <label id="label-livello" for="livello">Level: <input type="number" name="livello" id="livello"></label>
+                <label for="url-img">Image URL: </label>
+                <input type="text" name="url-img" id="url-img" placeholder="Enter image URL">
+                <label for="descrizione">Description: </label>
+                <textarea name="descrizione" id="descrizione" rows="5" placeholder="Enter description"></textarea>
+                <button type="button" id="insert-button" onclick="newPokémon()">Insert</button>
+            </form>
+        </aside>
+        <article>
+            <ul id="lista-pokémon">
+                <li class="pokémon-card" id="pikachu-card" tabindex="0">
+                    <img class="pokémon-img" src="Images/pikachu.png">
+                    <h3 class="pokémon-name">Pikachu</h3>
+                    <p class="pokémon-description">Quando si arrabbia, libera subito l'energia accumulata nelle sacche
+                        sulle guance.</p>
+                </li>
+                <li class="pokémon-card" id="charmender-card" tabindex="0">
+                    <img class="pokémon-img" src="Images/charmender.png">
+                    <h3 class="pokémon-name">Charmender</h3>
+                    <p class="pokémon-description">Ama le cose calde. Si dice che quando piove gli esca vapore dalla
+                        punta della coda.</p>
+                </li>
+                <li class="pokémon-card" id="squirtle-card" tabindex="0">
+                    <img class="pokémon-img" src="Images/squirtle.png">
+                    <h3 class="pokémon-name">Squirtle</h3>
+                    <p class="pokémon-description">Quando ritrae il lungo collo dentro la corazza sputa un vigoroso
+                        getto d'acqua.</p>
+                </li>
+            </ul>
+        </article>
+
+        <footer>
+            Esame di Programmazione Web I - Comotti Nicola ICT1 - 11/05/2023
+        </footer>
+        <script src="app.js"></script>
+    </body>
+
+</html>

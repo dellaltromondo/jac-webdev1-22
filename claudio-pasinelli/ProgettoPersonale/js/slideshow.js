@@ -49,11 +49,6 @@ class Foto
     }
 }
 
-function setIdFotoGlobale(maxId)
-{
-    idFoto = maxId + 1;
-}
-
 async function trovaMaxIdFoto()
 {
     const idCompositore = localStorage.getItem("idCompositore");
@@ -72,7 +67,7 @@ async function trovaMaxIdFoto()
 
     if(maxId != 1)
     {
-        setIdFotoGlobale(maxId);
+        idFoto = maxId + 1;
     }
 }
 
@@ -82,10 +77,11 @@ function showImage(index)
     const currentImage = document.getElementById("currentImage");
     const precedente = document.getElementById("prevImage");
     const successivo = document.getElementById("nextImage");
+    let cancella;
 
-    if(localStorage.getItem("NomeUser") === null || localStorage.getItem("NomeUser") === "undefined")
+    if(window.location.pathname === "/html/editorCompositori.html")
     {
-        const cancella = document.getElementById("deleteImage");
+        cancella = document.getElementById("deleteImage");
         userIsCompositore = true;
     }
 
@@ -218,7 +214,7 @@ function addImage()
     input.value = "";
 }
 
-function addImageObj(foto)
+async function addImageObj(foto)
 {
     images.push(foto);
     arrayFoto.push(foto);

@@ -67,11 +67,6 @@ class Carta
     }
 }
 
-function setIdCartaGlobale(maxId)
-{
-    idCarta = maxId + 1;
-}
-
 async function trovaMaxIdCarta()
 {
     const idCompositore = localStorage.getItem("idCompositore");
@@ -90,7 +85,7 @@ async function trovaMaxIdCarta()
 
     if(maxId != 1)
     {
-        setIdCartaGlobale(maxId);
+        idCarta = maxId + 1;
     }
 }
 
@@ -231,8 +226,7 @@ function creaCartaJson()
                 tracksContainer.style.display = "block";
             }
 
-            creaCartaHTML(carta)
-            idCarta++    
+            creaCartaHTML(carta);
 
             document.getElementById('nome').value = '';
             document.getElementById('prezzo').value = '';
@@ -242,8 +236,14 @@ function creaCartaJson()
     }
 }
 
-function creaCartaHTML(carta)
+async function creaCartaHTML(carta)
 {
+    let userIsCompositore = false;
+    if(window.location.pathname === "/html/editorCompositori.html")
+    {
+        userIsCompositore = true;
+    }
+
     const imgBackground = document.createElement("section");
     imgBackground.setAttribute("class","imgBackground");
     imgBackground.style.backgroundImage = carta.getImg();
@@ -252,7 +252,18 @@ function creaCartaHTML(carta)
 
     const card = document.createElement("section");
     card.setAttribute("class","card");
-    card.setAttribute("id","carta"+carta.getIdCarta());
+
+    if(carta.getIdCarta() > idCarta)
+    {
+        card.setAttribute("id","carta" + carta.getIdCarta());
+    }
+    
+    else
+    {
+        card.setAttribute("id","carta" + idCarta);
+    }
+
+
     lista.appendChild(card);
 
     const title = document.createElement("section");
@@ -263,17 +274,23 @@ function creaCartaHTML(carta)
     mese.innerText = carta.mese;
     title.appendChild(mese);
 
-    let elimina = document.createElement("button");
-    elimina.setAttribute("class","elimina");
-    elimina.setAttribute("onclick","eliminaCarta("+carta.getIdCarta()+")");
+    let elimina;
+    let cestino;
 
-    const cestino = document.createElement("img");
-    cestino.setAttribute("src","../img/cestino.png");
-    cestino.setAttribute("class","cestinoCard");
-    cestino.setAttribute("title","Elimina la traccia");
-    elimina.appendChild(cestino);
-
-    title.appendChild(elimina);
+    if(userIsCompositore)
+    {
+        elimina = document.createElement("button");
+        elimina.setAttribute("class","elimina");
+        elimina.setAttribute("onclick","eliminaCarta("+carta.getIdCarta()+")");
+    
+        cestino = document.createElement("img");
+        cestino.setAttribute("src","../img/cestino.png");
+        cestino.setAttribute("class","cestinoCard");
+        cestino.setAttribute("title","Elimina la traccia");
+        elimina.appendChild(cestino);
+    
+        title.appendChild(elimina);
+    }
 
     const imgContainer = document.createElement("section");
     imgContainer.setAttribute("class","img-container");
@@ -301,7 +318,11 @@ function creaCartaHTML(carta)
     footer.appendChild(cost);
 
     card.setAttribute("data-tooltip",`${carta.getTitolo()} ${carta.getPrezzo()}€ | ${carta.getMese()}`);
-    document.getElementById('meseSort').value = '0';
+
+    if(userIsCompositore)
+    {
+        document.getElementById('meseSort').value = '0';
+    }
 
     card.scrollIntoView(
         {
@@ -312,16 +333,19 @@ function creaCartaHTML(carta)
     card.style.animation = "fadeIn 1.2s";
     card.style.animationIterationCount = "1";
     
-    if(arrayCarte.length==0)
+    arrayCarte.push(carta);
+    idCarta++;
+    
+    if(arrayCarte.length != 0)
     {
         tracksContainer.style.display = "block";
     }
 
-    arrayCarte.push(carta);
-    
-    sortMeseScelto();
-
-    const incasso = document.getElementById("incasso").innerText = incassoTotale();
+    if(userIsCompositore)
+    {
+        sortMeseScelto();
+        const incasso = document.getElementById("incasso").innerText = incassoTotale();
+    }
 
     sortListaCarte();
     coloraCarte();
@@ -337,7 +361,6 @@ function eliminaCarta(id)
         if(carta.getIdCarta() === parseInt(id))
         {
             const cartaDaEliminare = document.getElementById("carta"+id.toString());
-            const indice = arrayCarte.indexOf(carta);
             carta.setEliminata(true);
     
             cartaDaEliminare.style.animation = "fadeOut 1.2s";
@@ -345,7 +368,6 @@ function eliminaCarta(id)
 
             setTimeout(() =>
             {
-                // arrayCarte.splice(indice,1);
                 cartaDaEliminare.remove();
                 coloraCarte();
 
@@ -510,15 +532,18 @@ function coloraCarte()
     const carte = document.getElementsByClassName("card");
     let bianco = true;
     let titolo;
+    let footer;
 
     for (let i = 0; i<carte.length; i++)
     {
-        if(carte[i] != null && carte[i].style.display === "flex")
+        if(carte[i] != null && carte[i].style.display != "none")
         {
             if(bianco)
             {
                 titolo = carte[i].firstElementChild;
+                footer = carte[i].childNodes[2];
                 titolo.style.backgroundColor = "rgb(255, 255, 255)";
+                footer.style.backgroundColor = "rgb(242, 242, 242)";
                 carte[i].style.backgroundColor = "rgb(255, 255, 255)";
                 carte[i].style.color = "rgb(0, 0, 0)";
                 bianco = false;
@@ -526,7 +551,9 @@ function coloraCarte()
             else
             {
                 titolo = carte[i].firstElementChild;
+                footer = carte[i].childNodes[2];
                 titolo.style.backgroundColor = "rgb(68, 72, 87)";
+                footer.style.backgroundColor = "rgb(50, 54, 67)";
                 carte[i].style.backgroundColor = "rgb(68, 72, 87)";
                 carte[i].style.color = "rgb(255, 255, 255)";
                 bianco = true;

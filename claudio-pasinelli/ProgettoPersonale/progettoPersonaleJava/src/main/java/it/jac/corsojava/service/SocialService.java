@@ -39,7 +39,7 @@ public class SocialService
 		return result;
 	}
 	
-	public Social create(long idCompositore, String dataTooltip, String media, String link, String img)
+	public Social create(long idCompositore, String dataTooltip, String media, String link, String img, Boolean eliminata)
 	{
 		CompositoreService compositoreDao = CompositoreService.getInstance();
 		
@@ -54,6 +54,7 @@ public class SocialService
 		Objects.requireNonNull(media);
 		Objects.requireNonNull(link);
 		Objects.requireNonNull(img);
+		Objects.requireNonNull(eliminata);
 		
 		Social entity = new Social();
 		
@@ -62,6 +63,7 @@ public class SocialService
 		entity.setMedia(media);
 		entity.setLink(link);
 		entity.setImg(img);
+		entity.setEliminata(eliminata);
 		entity.setUtenteIns("admin");
 		entity.setDataIns(LocalDateTime.now());
 		
@@ -72,11 +74,11 @@ public class SocialService
 		return entity;
 	}
 
-	public Social update(long idSocial, String dataTooltip, String media, String link, String img)
+	public Social update(long idSocial, String dataTooltip, String media, String link, String img, Boolean eliminata)
 	{
 		log.debug("Modifica Social");
-		log.trace("dataTooltip [{}], media [{}], link [{}], img [{}]",
-				dataTooltip, media, link, img);
+		log.trace("dataTooltip [{}], media [{}], link [{}], img [{}], eliminata [{}]",
+				dataTooltip, media, link, img, eliminata);
 		
 		Social entity = this.dao.findById(idSocial);
 		
@@ -89,6 +91,7 @@ public class SocialService
 		entity.setMedia(media);
 		entity.setLink(link);
 		entity.setImg(img);
+		entity.setEliminata(eliminata);
 		entity.setUtenteIns("admin");
 		entity.setDataIns(LocalDateTime.now());
 

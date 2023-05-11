@@ -30,7 +30,7 @@
         <section class="dropdown">
             <button type="button" id="userNickname">Nome Cognome</button>
             <section class="dropdownContent">
-                <button class="zoom" id="logOut" onclick="logOut()">Esci</button>
+                <button class="zoom" id="logOut" onclick="logOut()">Torna indietro</button>
             </section>
           </section>
     </nav>
@@ -59,6 +59,9 @@
     </section>
 
     <section id="tracksContainer">
+        <section id="titoloTracce">
+            <h1>Tracce musicali</h1>
+        </section>
         <section id="lista"></section>
     </section>
 
@@ -73,24 +76,6 @@
         window.addEventListener("load", (event) =>
         {
             caricaUtente();
-            let userNickname = document.getElementById("userNickname");
-
-            if(localStorage.getItem("NomeUser") === null || localStorage.getItem("CognomeUser") === null)
-            {
-                userNickname.innerText = "Impossibile caricare il nome dell'utente";
-            }
-
-            else if(localStorage.getItem("NomeUser") === "undefined" || localStorage.getItem("CognomeUser") === "undefined")
-            {
-                userNickname.innerText = "Impossibile caricare il nome dell'utente";
-            }
-
-            else
-            {
-                const nome = localStorage.getItem("NomeUser");
-                const cognome = localStorage.getItem("CognomeUser");
-                userNickname.innerText = nome + " " + cognome;
-            }
 
             const loader = document.getElementById("loaderWrapper");
             loader.style.animation = "fadeOut 1.2s";
@@ -163,17 +148,7 @@
 
         function logOut()
         {
-            const logOutFinestra = document.getElementById("messaggioLogout");
-            logOutFinestra.style.display = "block";
-            logOutFinestra.style.animation = "fadeIn 0.5s";
-            logOutFinestra.style.animationIterationCount = "1";
-
-            const logOut = document.getElementById("logOutPremuto");
-
-            setTimeout(() =>
-            {
-                logOutFinestra.style.opacity = "1";
-            }, 500);
+            window.location.href = "tabellaCompositori.html";
         }
 
         function chiudiPopUp()
