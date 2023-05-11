@@ -1,25 +1,201 @@
-h1 
+body 
 {
-text-align: center;
-background-color: black;
-color: gold;
-
-
+  background-color: rgb(120, 255, 47);
+  margin: 0px;
 }
-body
+
+header
 {
-    background-color: rgb(120, 255, 47);
-    margin: 0%;
+  text-align: center;
+  background-color: black;
+  color: gold;
+  position: sticky;
+  z-index: 2;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 3.5fr 0.25fr 0.25fr ;
+  grid-column: 1/3;
+  align-items: center;
+  justify-content: center; 
+  position: relative;
 }
-nav{
-    text-align: center;
-    background-color: black;
-    margin: -2%;
+header h1 
+{
+  position: absolute; 
+  bottom: 20%;
+  left: 46%; 
+  transform: translateX(-50%); 
+}
 
-    
+.topnav 
+{
+  grid-column: 1/3;
+}
 
+/* Style the links inside the navigation bar */
+.topnav  a
+{
+  color: gold;
+  margin: 14px;
+  text-decoration: none;
+  font-size: 20px;
+  width: 100%;
+  position: relative;
+  text-decoration: none;
+}
+
+/* Cambia il colore dei link al passaggio del mouse */
+.topnav a:hover 
+{
+  background-color: red;
+  color: blue;
+}
+
+#Dude
+{
+  width: 50px;
+  height: 50px;
+  margin-top: 20px;
+  margin-left: 1rem;
+  border-radius: 50%;
+  float: right;
+  grid-column: 3/3;
+  z-index: 3;
+  
+}
+
+
+.login-container 
+{
+  position: absolute;
+  right:0;
+  display: none;
+  z-index: 1;
+  grid-column: 2/3;
+}
+
+.login-container.show
+{
+  display: flex;
+  flex-direction: column;
+}
+
+.Button-link, .Button-link :focus
+{
+  border: none;
+  background-color: transparent;
+  color: gold;
+  font-size: 20px;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: normal;
+  font-family: Times New Roman Bold Times New Roman;
+}
+
+.topnav .Button-link:hover 
+{
+  background-color: red;
+  color: blue;
+}
+
+#Tony
+{
+  display: none;
+  width:15rem;
+}
+#Tony-Z
+{
+  display: block;
+}
+
+
+#Beth
+{
+  display: none;
+  width: 15rem;
+}
+
+.image-container 
+{
+  position: relative;
+}
+
+
+
+.image-container .zoomed-image-container {
+  top: 0;
+  display: none;
+  background-color:transparent;
+  position: absolute;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.filmPiccolo
+{
+  display: block;
+}
+
+.filmGrosso
+{
+  display: none;
+}
+
+
+/* #MostraFilm
+{
+  background-color: red;
+  color: blue;
+}
+
+#MostraSerie
+{
+  background-color: red;
+  color: blue;
+} */
+
+
+/* Add an active class to highlight the current page */
+/*.topnav a.active {
+  background-color: #04AA6D;
+  color:white;
+}*/
+
+/* Hide the link that should open and close the topnav on small screens 
+  .topnav .icon {
+    display: none;
+  }*/
+  /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+  /* @media screen and (max-width: 600px) {
+    .topnav a:not(:first-child) {display: none;}
+    .topnav a.icon {
+      float: right;
+      display: block;
     }
-    nav a { 
-        color: red 
-    
+  } */
+  
+  /* La classe "responsive" viene aggiunta alla topnav con JavaScript quando l'utente fa clic sull'icona. 
+  Questa classe fa apparire bene la topnav su schermi piccoli (visualizza i link verticalmente invece che orizzontalmente) */
+  @media screen and (max-width: 600px) 
+{
+    .topnav.responsive 
+    {
+      position: relative;
     }
+
+  .topnav.responsive a.icon 
+  {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  
+  .topnav.responsive a 
+  {
+    float: none;
+   /*  display: block; */
+    text-align: left;
+  }
+}

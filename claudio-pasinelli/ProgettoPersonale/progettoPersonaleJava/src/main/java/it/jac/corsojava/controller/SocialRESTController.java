@@ -43,7 +43,7 @@ public class SocialRESTController
 		if (socialMedia == null || socialMedia.trim().length() == 0)
 		{
 			return Response.status(Status.BAD_REQUEST)
-					.entity("media social non valorizzata")
+					.entity("Media social non valorizzata")
 					.header("Content-Type", "text/plain")
 					.build();
 		}
@@ -66,7 +66,16 @@ public class SocialRESTController
 					.build();
 		}
 		
-		Social result = SocialService.getInstance().create(idCompositore, socialDataTooltip, socialMedia, socialLink, socialImg);
+		Boolean socialEliminata = social.isEliminata();
+		if (socialEliminata.equals(true))
+		{
+			return Response.status(Status.BAD_REQUEST)
+					.entity("Il social è stato creato quando invece dovrebbe essere eliminato")
+					.header("Content-Type", "text/plain")
+					.build();
+		}
+		
+		Social result = SocialService.getInstance().create(idCompositore, socialDataTooltip, socialMedia, socialLink, socialImg, socialEliminata);
 		
 		log.info("Social creato con successo");
 		
@@ -124,7 +133,7 @@ public class SocialRESTController
 	{
 		log.info("Modifico il Social [id={}]", idSocial);
 		
-		SocialService.getInstance().update(idSocial, social.getDataTooltip(), social.getMedia(), social.getLink(), social.getImg());
+		SocialService.getInstance().update(idSocial, social.getDataTooltip(), social.getMedia(), social.getLink(), social.getImg(), social.isEliminata());
 		
 		return Response.ok().build();
 	}

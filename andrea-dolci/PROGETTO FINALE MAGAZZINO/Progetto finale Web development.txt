@@ -40,33 +40,6 @@ PROGETTO GESTIONALE MAGAZZINO
 
 
 
-let tabelle=[]
 
-tabelle
-[
-	tabella1
-	1
-
-	tabella2
-	2
-
-	tabella3
-	3
-
-]
-
-tabelle.push(tabella);
-tabelle.push(idTabella);
-
-function eliminatabella(id)
-{    
-	if(tabelle.includes(id))    
-	{        
-		const tabelladaEliminare = document.getElementById("amazonTab");        
-		const indice = tabelle.indexOf(id);        
-		tabelle.splice(indice,1);        
-		tabelladaEliminare.remove();
-	}
-}
 
 	

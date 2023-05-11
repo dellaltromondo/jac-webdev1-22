@@ -1,6 +1,25 @@
+#play-btn {
+  padding: 12px 24px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  position: absolute;
+  top: 25px;
+  left: calc(50% - 75px);
+
+}
+
+
+
 body {
   overflow: hidden;
   background: #d7d7d7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 #tetris {
@@ -9,7 +28,6 @@ body {
   padding: 20px;
 }
 
-/* Impostiamo le dimensioni e lo stile del canvas dove si svolge il gioco */
 #canvas {
   width: 200px;
   height: 440px;
@@ -17,7 +35,6 @@ body {
   position: relative;
   color: #fff;
 }
-
 #canvas h1 {
   margin: 0;
   padding: 0;
@@ -25,26 +42,28 @@ body {
   font-size: 30px;
   padding-top: 200px;
 }
+.piece {
+  border: 1px solid white;
+  position: absolute;
+}
 
-/* Rimuoviamo la proprietà outline dal bottone start */
-#start {
+#start{
   animation: blink .7s steps(2, start) infinite;
   background: #E1FF5F;
   border-radius: 2px;
   color: #202020;
   cursor: pointer;
   font-size: 28px;
-  outline: none;
 }
 
-/* Impostiamo il colore rosso per l'effetto blink del bottone start */
-.red {
+@keyframes blink {
+  to {
+    outline: #E1FF5F solid 1px;
+  }
+}
+
+.red{
   color: #f00000;
-}
-
-.piece {
-  border: 1px solid white;
-  position: absolute;
 }
 
 .square {
@@ -53,37 +72,27 @@ body {
   height: 19px;
   border: 1px solid white;
 }
-
-/* Impostiamo lo stile di ogni tipo di pezzo */
 .type0 {
   background-color: #a000f0;
 }
-
 .type1 {
   background-color: #00f0f0;
 }
-
 .type2 {
   background-color: #f0a000;
 }
-
 .type3 {
   background-color: #0000f0;
 }
-
 .type4 {
   background-color: #00f000;
 }
-
 .type5 {
   background-color: #f00000;
 }
-
 .type6 {
   background-color: #f0f000;
 }
-
-/* Impostiamo le dimensioni e lo stile del div che contiene il prossimo pezzo */
 #next_shape {
   position: relative;
   background-color: #000;
@@ -91,8 +100,6 @@ body {
   width: 110px;
   height: 110px;
 }
-
-/* Impostiamo le dimensioni e lo stile del div che mostra le informazioni sul gioco */
 #info {
   background-color: #000;
   color: #fff;
@@ -102,50 +109,83 @@ body {
   padding: 10px;
 }
 
-button {
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 10px;
-  cursor: pointer;
+form {
+  width: 300px;
+  border: 1px solid #ccc;
+  padding: 20px;
   margin-top: 20px;
-  box-shadow: 0px 0px 5px black;
 }
 
-button:hover {
-  background-color: #3e8e41;
+label {
+  display: block;
+  margin-bottom: 10px;
 }
 
-#punteggi {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  /* il resto del codice rimane invariato */
-  }
-
-h1 {
-  text-align: center;
-  margin-top: 20px;
-  color: #4CAF50;
-}
-
-table {
+input[type="text"],
+input[type="number"] {
   width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-}
-
-td {
-  text-align: center;
   padding: 5px;
-  border-bottom: 1px solid black;
+  margin-bottom: 10px;
 }
 
-tr:nth-child(even) {
+button {
+  display: block;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: auto;
+  width: 120px;
+  height: 40px;
+}
+form {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+#tabellaDati {
+  margin-top: 450px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+#tabellaDati {
+  
+  border-collapse: collapse;
+}
+
+#tabellaDati td, #tabellaDati th {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+
+#tabellaDati th {
   background-color: #f2f2f2;
 }
 
-tr:hover {
-  background-color: #ddd;
+#tabellaDati th:first-child, #tabellaDati td:first-child {
+  padding-left: 20px;
 }
+
+#tabellaDati th:last-child, #tabellaDati td:last-child {
+  padding-right: 20px;
+}
+.container2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.image {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+

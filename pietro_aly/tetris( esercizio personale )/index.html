@@ -5,6 +5,14 @@
     <link rel="stylesheet" type="text/css" href="styles.css" />
   </head>
   <body>
+    <button id="play-btn">Play Music</button>
+    <audio id="music-player" src="miasong.mp3"></audio>
+      <div class="container2">
+        <img class="image" src="image1.png" onclick="changeBackgroundColor_green()">
+        <img class="image" src="image2.png" onclick="changeBackgroundColor_grey()">
+        <img class="image" src="image3.png" onclick="changeBackgroundColor_red()">
+        </div>
+      
     <div id="tetris">
       <div id="info">
         <div id="next_shape"></div>
@@ -16,42 +24,28 @@
         <p class="red">Press the Esc button to pause<span></span></p>
       </div>
       <div id="canvas"></div>
-      <button>share</button>
-      <!DOCTYPE html>
-<html>
-  <head>
-    <title>TABELLA PUNTEGGI</title>
-    <link rel="stylesheet" type="text/css" href="styles.css" />
-  </head>
-  <body>
-    <div id="punteggi">
-      <h1>PUNTEGGI GIOCHI</h1>
-      <table>
-        <tr>
+    </div>
+
+  
+    <form>
+        <legend>Inserisci i tuoi dati:</legend>
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required><br><br>
+        <label for="Score">Score:</label>
+        <input type="number" id="Score" name="Score" required><br><br>
+        <button type="button" onclick="aggiungiDati()">Aggiungi alla tabella</button>
+        <button type="button" onclick="saveTableAsTxt()" name="salva">Salva Punteggi</button>
+        <button type="button" onclick="caricadatitxt()" name="carica">Carica Punteggi</button>
+      </form>
+    </form>
+    <table id="tabellaDati">
+    
           <th>Nome</th>
-          <th>Punteggio</th>
-        </tr>
-        <tr>
-          <td>Mario Rossi</td>
-          <td>3500</td>
-        </tr>
-        <tr>
-          <td>Giovanni Bianchi</td>
-          <td>2800</td>
-        </tr>
-        <tr>
-          <td>Luca Verdi</td>
-          <td>4100</td>
-        </tr>
-        <tr>
-          <td>Simone Neri</td>
-          <td>2900</td>
-        </tr>
-      </table>
-    </div>
-  </body>
-</html>
-    </div>
+          <th>score</th>      
+    </table>
+    
+  
+    
     <script type="text/javascript" src="script.js"></script>
   </body>
 </html>

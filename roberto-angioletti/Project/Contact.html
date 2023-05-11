@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Moviewood is a way to track your tv time, film and tv series">
+    <meta name="author" content="Roberto Angioletti &#128526">
+    <meta name="Easter Egg" content="Your are non supposed to be here &#128536">  
+    <meta name="Easter Egg" content="Follow the White Rabbit &#128222 &#128007">
+    <meta property="og:image" content="favicon">
+    <meta property="og:description" content="Moviewood is a way to track your tv time, film and tv series">
+    <link rel="shortcut icon" href="Images/favicon.ico" type="image/x-icon">
+    <title>Moviewood</title>
+    <link rel="stylesheet" href="Cinema.css">
+    <script src="Cinema.js"></script>
+    <!-- 
+                  WELCOME TO MATRIX
+    ⡽⣯⢷⡻⣵⡳⣽⣾⡿⠹⣏⣺⢋⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣟⣾⡽⣟⣿⣞⣷⣻
+    ⡿⣝⣮⢳⣣⢿⡿⣾⣧⣶⣿⣽⣟⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣿⣟⣷⣻⣞⢷
+    ⣛⡞⣦⢳⣱⣮⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣞⡷⣯⣻
+    ⡳⣝⢦⠳⣼⡿⣿⣿⣿⡿⠛⠉⠉⠛⠛⠿⣿⣿⠿⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣽⡳⢷
+    ⡷⣫⢎⣳⣷⣿⣿⣿⠏⠀⠀⠀⠀⠀⠀⠀⠈⠁⠀⠀⠀⠉⠛⠿⣿⣿⣿⣿⣿⣿⣿⣷⡻⣏⣷⡻
+    ⢧⡻⡼⡸⢿⡿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢿⣿⣿⣿⣿⣿⣿⣻⣻⢤⣿⣻
+    ⢏⡷⣳⠭⣿⣷⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢺⣿⣿⣿⣿⣿⣯⢷⣭⡟⣮⣽
+    ⣻⡼⣣⢟⣽⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠂⠀⠐⠀⠀⠀⠀⡀⠀⢀⣿⣿⣿⣿⣿⣿⢯⡷⢾⣹⢷
+    ⢷⣫⢗⡻⡟⠻⣇⢐⣷⣤⣤⣄⣀⠀⠀⡄⠀⣀⠀⠀⠀⣀⠀⠀⢄⣻⣿⣿⣿⣿⣿⣻⡽⣏⣟
+    ⣳⢯⣏⢷⡟⢨⢿⣿⣿⣿⣿⣿⣿⣿⣷⢤⣾⣿⣿⣿⣿⣿⣿⣶⣶⣴⣿⣿⣿⠿⣿⡿⣽⡽
+    ⣭⢷⡺⣿⠠⡿⠈⠻⣿⣿⣿⣿⣿⣿⠟⡈⢿⣿⣿⣿⣿⣿⣿⣿⣿⡿⢻⣿⠿⠻⣿⣟⣷⣛
+    ⣾⢳⡝⣿⡄⠧⡀⠀⠀⠉⢙⠟⠛⠋⠀⠀⢺⡿⢿⣿⣿⣿⡿⡟⢋⡐⣼⠻⣿⡆⣿⣟⣾⣹⣞
+    ⣮⢻⡼⣝⣧⣀⠀⠀⠀⠀⠀⠐⡇⡀⢀⠀⣹⣷⡀⠈⠩⢠⡀⣔⣠⡼⣷⡦⠟⣡⣿⣟⡾⣵⢾
+    ⣼⣳⡝⣮⢳⣿⠀⠀⠀⠀⣠⡾⢥⣥⢼⣶⣦⣨⡷⠀⠆⡡⢞⡼⣙⢲⣿⣛⣻⣿⣿⣽⣻⡽⣯
+    ⣳⡟⣾⡝⣯⣿⠀⠀⠀⡠⠋⠀⠀⠐⣾⣿⣿⡛⢁⠣⢌⡱⣩⡶⡏⣼⣿⣿⣿⣿⣟⣾⢷⣻⣟
+    ⢯⣟⣷⣻⣗⣻⡆⠀⠀⠃⣴⣠⣤⣼⣽⣭⣤⣜⣷⣮⡐⢦⠳⣝⢴⣿⣿⣳⣯⣷⢿⣯⣟⣯
+    ⣿⣻⣞⡷⣯⣟⣧⡀⠀⠘⠁⢀⢀⣸⣍⣟⣻⡛⠟⣿⣱⢮⣟⣯⣾⣿⣳⢯⣷⣿⣻⡾⣯⣷
+    ⣾⣷⣯⣿⣽⣿⣿⣿⡆⠀⠀⠈⣾⣿⣿⣿⣿⢹⡞⣽⡞⣿⣿⢱⣿⢳⣯⡟⣾⡟⣷⣿⢻⣾
+    ⡷⣟⣾⣷⣿⣿⣿⣿⣿⣦⠀⠀⢠⠄⠀⣀⣄⣣⣝⣷⣿⡿⣧⣿⣿⣻⢾⡽⣯⣿⢿⡽⣿⣞
+    ⣽⣯⣿⣿⣿⣿⣿⣿⣿⣿⣷⣤⣼⣾⣿⣶⣿⣷⣿⣿⢿⣽⣷⣿⣿⣭⢿⡽⣿⣽⣿⣻⡷⣿
+    
+     -->
+</head>
+<body>
+    
+    
+    <header>
+        <h1>Moviewood</h1> 
+
+            <div class="login-container">
+                <input type="text" placeholder="Username" name="username">
+                <input type="text" placeholder="Password" name="psw">
+                <button type="submit">Login</button>
+            </div>
+        
+            <img id="Dude" src="Images/profilo.png"></img>
+    
+        <nav class="topnav" id="myTopnav">
+            <a href="Cinema.html">Film</a>
+            <a href="Cinema.html">Serie Tv</a>
+            <a href="Contact.html">Contact</a>
+            <a href="About.html">About</a>  
+        </nav>
+       
+    
+    
+    
+    </header>
+
+    <h1>please call 911</h1>
+</body>
+</html>

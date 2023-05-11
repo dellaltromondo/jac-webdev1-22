@@ -1,13 +1,17 @@
 class Subjects{
     
+
+    // I CANCELLETTI DANNO PROBLEMI NEL DB PERCHè NELLO STRINGIFY LI AGGIUNGE AL NOME SUL DB
     #nome_materia;
     #docente;
-    #voti = [] = new Voti;
+    #voti = [];
+    #colore;
 
-    constructor(mat, doc, vot = []){
+    constructor(mat, doc, vot = [], col){
         this.#nome_materia = mat;
         this.#docente = doc;
         this.#voti = [];
+        this.#colore = col;
     }
 
     getMateria(){
