@@ -63,12 +63,15 @@
 }
 
 .MENU2 {
-  padding: 10px;
-  border-radius: 5px;
-  width: 20%;
+  padding: 0.3in;
+  border-radius: 0.2in;
+  width: calc(100% - 340px); /* Adjust the value based on your layout */
   background-color: darkgrey;
   margin-right: 20px;
+  height: calc(100vh - 70px); /* Adjust the value based on your layout */
+  overflow-y: auto;
 }
+
 
 .MENU2 ul {
   margin: 0;
