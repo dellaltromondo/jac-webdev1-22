@@ -162,6 +162,16 @@ img
     display: none;
 }
 
+.compari
+{
+    display: block;
+}
+
+#newButton
+{
+    margin: 10px;
+}
+
 @media screen and (min-width: 479px)
 {
     ul {grid-template-columns: repeat(1, 1fr);};

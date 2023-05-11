@@ -29,6 +29,8 @@
     <article>
         <section id="sidebar">
 
+            <button type="button" onclick="seeForm()" class="insertPokemon" id="newButton">New</button>
+
             <div id="indice">
                  <a href="#Pikachu">
                     Pikachu
@@ -44,8 +46,9 @@
                 </a>
             </div>
 
-            <h2>Insert New</h2>
-            <form id="aggiungi">
+            
+            <form id="aggiungi" class="scompari">
+                <h2>Insert New</h2>
                 <label>
                     Pokemon name:
                 </label>
@@ -60,6 +63,7 @@
                 <textarea placeholder="Enter Description" id="descriptionPokemon" class="inputInserimento"></textarea>
                 <div>
                     <button type="button" onclick="inserisciPokemon()" class="insertPokemon">Add</button>
+                    <button type="button" onclick="hideForm()" class="insertPokemon">Hide</button>
                 </div>
             </form>
         </section>
