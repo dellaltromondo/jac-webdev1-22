@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="index.css">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Esame Mattia Vianelli</title>
+    </head>
+    <body>
+        <header>
+            <h1>Pokedex</h1>
+            <nav>
+                <a href="index.html">My Pokemons</a>
+                <a href="">New Pokemon</a>
+                <a href="info.html">Info</a>
+            </nav>
+        </header>
+        <div id="grid">
+            <form>
+                <section id="pokemon-list">
+                    <button type="button" onclick="selectPokemon('Pikachu')">Pikachu</button>
+                    <button type="button" onclick="selectPokemon('Charmender')">Charmender</button>
+                    <button type="button" onclick="selectPokemon('Squirtle')">Squirtle</button>
+                    <button type="button" onclick="selectPokemon('Bulbasaur')">Bulbasaur</button>
+                    <button id="view-all" type="button" onclick="selectPokemon('all')">view all</button>
+                </section>
+                <section id="pokemon-add">
+                    <h2>Insert New</h2>
+                    <label for="name">
+                        <p>Pokemon Name:</p>
+                        <input id="name" type="text" name="name" placeholder="e.g. Pikachu">
+                    </label> 
+                    <div>
+                        <input type="checkbox" name="captured">
+                        <p id="captured">Captured</p>
+                        <p id="level">Level:</p>
+                        <select name="level">
+                            <option value=""></option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </div>
+                    <label for="image">
+                        <p>Image URL:</p>
+                        <input id="image" type="text" name="image" placeholder="enter image URL">
+                    </label> 
+                    <label for="description">
+                        <p>Description:</p>
+                        <textarea id="description" type="text" name="description" placeholder="enter description"></textarea>
+                    </label> 
+                    <button type="button" onclick="addPokemon()">Insert</button>
+                </section>
+            </form>
+            <div id="pokemons-col">
+                <ul>
+                    <li class="pokemon" id="Pikachu">
+                        <img src="https://media.pokemoncentral.it/wiki/thumb/5/5e/Artwork0025_RFVF.png/1200px-Artwork0025_RFVF.png">
+                        <h3>Pikachu</h3>
+                        <p>testo lorem ipsum</p>
+                    </li>
+                    <li class="pokemon" id="Charmender">
+                        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png">
+                        <h3>Charmender</h3>
+                        <p>testo lorem ipsum</p>
+                    </li>
+                    <li class="pokemon" id="Squirtle">
+                        <img src="https://upload.wikimedia.org/wikipedia/it/e/e3/Squirtle.png">
+                        <h3>Squirtle</h3>
+                        <p>testo lorem ipsum</p>
+                    </li>
+                    <li class="pokemon" id="Bulbasaur">
+                        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png">
+                        <h3>Bulbasaur</h3>
+                        <p>testo lorem ipsum</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <script src="index.js"></script>
+    </body>
+</html>
