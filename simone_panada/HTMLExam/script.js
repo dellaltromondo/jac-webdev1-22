@@ -1,3 +1,5 @@
+const pokemonArray = [];
+
 function setNewPokemon(event) {
     event.preventDefault();
     const UL = document.getElementById("pokeList");
@@ -20,7 +22,7 @@ function setNewPokemon(event) {
     newName.innerText = pkmName.value;
     level.innerText = "Level " + levelInp.value;
     newP.innerText = pkmDescription.value;
-  
+    pokemonArray.push(newName);
     pkmName.value = '';
     pkmIMG.value = '';
     pkmDescription.value = '';
