@@ -1,0 +1,21 @@
+/*MOBILE*/
+@media (max-width : 670px){
+    
+    button{
+        width: 28em;
+    }
+
+    header h1, #aliExpress header i, #amazon header i, #barilla header i{
+        font-size: medium;
+    }
+    
+}
+
+/*MOBILE SMALLER, per ridurre le dimensioni del testo e del tasto home*/
+@media (max-width : 584px){
+    
+    header h1, #aliExpress header i, #amazon header i, #barilla header i{
+        font-size: small;
+    }
+    
+}

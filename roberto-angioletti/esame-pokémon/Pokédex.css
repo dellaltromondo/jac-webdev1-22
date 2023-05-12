@@ -1,0 +1,149 @@
+body
+{
+    background-color: #f1f1f1;
+    margin: 0px;
+}
+
+h1
+{
+    background-color: red;
+    color: white;
+    margin: 10px;
+}
+
+.Button-link
+{
+    background-color: gray;
+    color: white;
+    
+}
+
+header
+{
+  text-align: left;
+  background-color: red;
+  position: sticky;
+  z-index: 2;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 2fr ;
+  grid-column: 1/2;
+  align-items: center;
+  justify-content: right; 
+}
+
+
+#topnav
+{
+    
+    z-index: 2;
+    width: 100%;
+    height: 50px;
+    margin-top: 0px;
+    margin-left: 50%;
+    grid-column: 2/2;
+    justify-content: right;
+}
+
+
+#Pikachu
+{
+    width: 15rem;
+    margin-left: 15%;
+    border: 1px solid black;
+}
+#Charmander
+{
+    width: 15rem;
+    border: 1px solid black;
+}
+#Squirtle
+{
+    width: 15rem;
+    border: 1px solid black;
+}
+#Bulbasaur
+{
+    width: 15rem;
+    border: 1px solid black;
+}
+
+.sidenav 
+{
+    height: 100%; 
+    width: 160px; 
+    position: fixed; 
+    z-index: 1; 
+    top: 0; 
+    left: 0;
+    background-color: lightgrey;
+    overflow-x: hidden; 
+    padding-top: 5rem;
+}
+  
+  
+  .sidenav a 
+ {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    border: 1px solid black;
+ }
+  
+  
+  .sidenav a:hover 
+ {
+    color: yellow;
+ }
+  
+
+  .main 
+ {
+    margin-left: 160px; 
+    padding: 0px 10px;
+ }
+
+  .pokèmon-register
+ {
+    padding-top: 10px;
+ }
+  
+    .captured
+    {
+        padding-top: 10rem;
+    }
+
+    .description
+    {
+        height: 100px;
+    }
+
+  
+  @media screen and (max-height: 450px) 
+  {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+  @media screen and (max-width: 600px) 
+ {
+    .topnav.responsive 
+    {
+      position: relative;
+    }
+
+  .topnav.responsive a
+  {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  
+  .topnav.responsive a 
+  {
+    float: none;
+    text-align: left;
+  }
+ }

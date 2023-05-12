@@ -1,6 +1,15 @@
-  *{
-    background-color:#66ff99;
-   }
+body 
+{
+    background-image: url("./img/bluebg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; /* Imposta l'immagine di sfondo come fissata sulla finestra del browser */
+    max-width: 100%;
+    overflow-x: hidden;
+}
+  
+  
+  
 
 @media (max-width:960px) {
 
@@ -15,13 +24,11 @@
     }
 
     #TitleMobile {
-        text-align: center;   
-        background-color: #339933;                                                                                                                                                          
+        text-align: center;                                                                                                                                                            
     }
 
     #Instructions {
         text-align: center;
-        background-color:#1aff66;
     }
 
     form {
@@ -29,7 +36,6 @@
     }
 
     #RollIt {
-        background-color: #009933; 
         text-align: center;
     }
 
@@ -81,12 +87,10 @@
     #TitleDesktop
     {
         text-align: center;
-        background-color: #339933;
     }
 
     #Instructions 
     {
-        background-color:#1aff66;
         text-align: center;
     }
 
@@ -133,7 +137,14 @@
 
     #RollIt
     {
-        background-color: #009933;
+        height: 2rem;
+        width: 4rem;
+        border: 0px;
+    }
+
+    #RollIt:hover 
+    {
+        background-color: orangered;
     }
 
     input 

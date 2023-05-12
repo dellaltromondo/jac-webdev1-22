@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sushi</title>
     <link rel="stylesheet" href="main.css" />
+    <script src="oggettoSushi.js"></script>
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
@@ -16,7 +17,6 @@
 
   <body>
     <div id="riepilogo">
-      <body>
         <h1>Sushi da Simo</h1>
         <nav id="navmenu2">
           <ul id="UlnavMenu2">
@@ -24,21 +24,17 @@
             <li><button>Invia l'ordine</button></li>
           </ul>
         </nav>
+        <div>
         <table id="tab">
           <tr>
-            <th>Quantità</th>
-            <th>Prezzo cad.(€)</th>
-            <th>Descrizione</th>
-            <th>Elimina</th>
+            <th class="a">Descrizione</th>
+            <th class="a">Prezzo cad.(€)</th>
           </tr>
-
-          <!--
-                <tr>
-                    <th>TOTALE</th>
-                    <td id="tot"></td>
-                </tr>-->
         </table>
-      </body>
+      </div>
+        <div id="divPrice"></div>
+        <hr>
+      
     </div>
 
     <div id="home">
@@ -78,7 +74,7 @@
 
         <img
           src="images/NighiriSalmon.png"
-          onclick="incrementoSushi('Nighiri Salmon'), creaRiga(indice)"
+          onclick="addToCart(menu[0])"
         />
         <img
           src="images/NighiriTonno.png"
@@ -148,129 +144,147 @@
       </section>
     </div>
   </body>
-  <script src="oggettoSushi.js"></script>
+  
   <script>
+    const button1 = document.getElementById("button1");
+    const button2 = document.getElementById("button2");
+    const button3 = document.getElementById("button3");
 
-        const button1 = document.getElementById("button1");
-        const button2 = document.getElementById("button2");
-        const button3 = document.getElementById("button3");
+    button1.addEventListener("click", function () {
+      window.scroll({
+        top: 50,
+        left: 0,
+        behavior: "smooth",
+      });
+    });
 
-        button1.addEventListener("click", function () {
-            window.scroll({
-                top: 50,
-                left: 0,
-                behavior: "smooth"
-            });
-        });
+    button2.addEventListener("click", function () {
+      window.scroll({
+        top: 500,
+        left: 0,
+        behavior: "smooth",
+      });
+    });
 
-        button2.addEventListener("click", function () {
-            window.scroll({
-                top: 500,
-                left: 0,
-                behavior: "smooth"
-            });
-        });
+    button3.addEventListener("click", function () {
+      window.scroll({
+        top: 800,
+        left: 0,
+        behavior: "smooth",
+      });
+    });
 
-        button3.addEventListener("click", function () {
-            window.scroll({
-                top: 800,
-                left: 0,
-                behavior: "smooth"
-            });
-        });
+    function toggle() {
+     /* const tab = document.getElementById("tab");
+      const intTab = document
+        .getElementById("tab")
+        .getElementsByTagName("tr")[0]
+        .cloneNode(true);
 
+      tab.innerHTML = "";
+      tab.appendChild(intTab);
 
-        function toggle() {
-
-           const tab = document.getElementById('tab');
-           const intTab = document.getElementById('tab').getElementsByTagName('tr')[0].cloneNode(true);
-
-           tab.innerHTML='';
-           tab.appendChild(intTab);
-
-
-            for (let i = 0; i < ordine.length; i++) {
-
-                if (ordine [i].qta>0){
-
-                creaRiga(i);
-            }
-
-           }
-            const home = document.getElementById('home');
-            const divRiepilogo = document.getElementById('riepilogo');
-
-            home.style.display = 'none';
-            divRiepilogo.style.display = 'block';
-
-           controllo = true;
+      for (let i = 0; i < ordine.length; i++) {
+        if (ordine[i].qta > 0) {
+          creaRiga(i);
         }
+      }*/
+      const home = document.getElementById("home");
+      const divRiepilogo = document.getElementById("riepilogo");
 
-        function toggleHome() {
+      home.style.display = "none";
+      divRiepilogo.style.display = "block";
 
-            const home = document.getElementById('home');
-            const divRiepilogo = document.getElementById('riepilogo');
+     // controllo = true;
+    }
 
-            home.style.display = 'block';
-            divRiepilogo.style.display = 'none';
+    function toggleHome() {
+      const home = document.getElementById("home");
+      const divRiepilogo = document.getElementById("riepilogo");
 
-        }
+      home.style.display = "block";
+      divRiepilogo.style.display = "none";
+    }
 
+    /*function creaRiga(indice) {
+      const table = document.getElementById("tab");
+      const riga = document.createElement("tr");
+      const qta = document.createElement("td");
+      const nome = document.createElement("td");
+      const prezzo = document.createElement("td");
+      const elimina = document.createElement("td");
+      qta.innerText = ordine[indice].qta;
+      nome.innerText = ordine[indice].nome;
+      prezzo.innerText = ordine[indice].prezzo;
+      elimina.className = "fas fa-trash-alt";
+      elimina.addEventListener("click", function () {
+        rimuoviRiga(this);
+      }); // associa la funzione di eliminazione all'evento click dell'elemento "Elimina"
 
+      riga.appendChild(qta);
+      riga.appendChild(prezzo);
+      riga.appendChild(nome);
+      riga.appendChild(elimina);
+      table.appendChild(riga);
+    }
 
+    function incrementoSushi(nome) {
+      const indice = menu.findIndex((el) => el.nome == nome);
 
-        function creaRiga(indice) {
-            const table = document.getElementById("tab");
-            const riga = document.createElement("tr");
-            const qta = document.createElement("td");
-            const nome = document.createElement("td");
-            const prezzo = document.createElement("td");
-            const elimina = document.createElement("td");
-            qta.innerText = ordine [indice].qta;
-            nome.innerText = ordine [indice].nome;
-            prezzo.innerText = ordine [indice].prezzo;
-            elimina.className = "fas fa-trash-alt";
-            elimina.addEventListener("click", function() { rimuoviRiga(this); }); // associa la funzione di eliminazione all'evento click dell'elemento "Elimina"
+      if (indice < 0) {
+        ordine.push({ nome: nome, qta: 1 });
+      } else {
+        ordine[indice].qta++;
+      }
+    }
 
-            riga.appendChild(qta);
-            riga.appendChild(prezzo);
-            riga.appendChild(nome);
-            riga.appendChild(elimina);
-            table.appendChild(riga);
-
-
-
-        }
-
-        function incrementoSushi(nome){
-
-            const indice = menu.findIndex((el) => el.nome == nome);
-
-            if (indice < 0){
-                ordine.push({ nome: nome, qta : 1})
-
-            } else {
-                ordine[indice].qta++;
-            }
-
-        }
-
-
-
-        function rimuoviRiga(elemento) {
+    function rimuoviRiga(elemento) {
       const riga = elemento.closest("tr"); // ottiene la riga che contiene l'elemento
       const indice = riga.rowIndex - 1; // calcola l'indice dell'oggetto nell'array, tenendo conto dell'header della tabella
       ordine[indice].qta--; // rimuove l'oggetto dall'array
       riga.parentNode.removeChild(riga); // rimuove la riga dalla tabella
+    }*/
+
+    const ordine = []
+    function addToCart(product) {
+      const cart = document.querySelector("#tab");
+
+      const cartItem = document.createElement("tr");
+      //creo la section del carrello che sarà visualizzata nel cart
+      cartItem.innerHTML = `
+        
+          <td>${product.nome}</td>
+          <td>${product.prezzo} €</td>
+        
+      `;
+
+      cart.appendChild(cartItem);
+      alert("Product added in the cart");
+      ordine.push(cartItem);
+      console.log(ordine);
+
+      sumOfCart();
     }
 
-        function calcoloTotale(){
+    function sumOfCart() {
+    const priceDiv = document.querySelector('#divPrice')
+    if (ordine.length > 0) {
+      let sum = 0;
+      for (const product of ordine) {
+        sum += parseFloat(product.querySelector('td:nth-child(2)').textContent.replace(' €', ''));
+      }
+      console.log(sum.toFixed(2));
+      return priceDiv.innerHTML= `TOTAL PRICE: € ${sum.toFixed(2)}`
+      /*<br>
+      <button id="buttonContinueWithPayment" onClick="showFormToPay()">CONTINUE WITH PAYMENT</button>*/
+    }
+    return 0;
+  }
 
-        }
 
     /* 1 METTERE NEL MIO ARRAY UN OGGETTO PER OGNI SUSHI
-    *  2 RICHIAMARE LA FUNZIONE INCREMENTO SUSHI IN OGNI IMMAGINE, PASSANDO AD OGNUNA LA GIUSTA POSIZIONE NELL'ARRAY /EDIT: PASSARE NON LA POSIZIONE MA IL NOME DEL SUSHI
-    *  3 SISTEMARE BOOLEAN E FAR SI CHE SI AGGIORNI LA TAGBELLA AD OGNI SWITCH TRA HOME E RIEPILOGO FACENDO SI CHE SI ELIMINI E CHE RIPARTA IL CICLO.
-    */
+     *  2 RICHIAMARE LA FUNZIONE INCREMENTO SUSHI IN OGNI IMMAGINE, PASSANDO AD OGNUNA LA GIUSTA POSIZIONE NELL'ARRAY /EDIT: PASSARE NON LA POSIZIONE MA IL NOME DEL SUSHI
+     *  3 SISTEMARE BOOLEAN E FAR SI CHE SI AGGIORNI LA TAGBELLA AD OGNI SWITCH TRA HOME E RIEPILOGO FACENDO SI CHE SI ELIMINI E CHE RIPARTA IL CICLO.
+     */
   </script>
 </html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        <style>
+            #AboutUsParagraph{
+                display: none;
+            }
+             
+#stron{
+    background-color: pink;
+    color: var(--light-color)
+}
+        </style>
+
+
+        <header id="mainPage">
+            <a href="#AboutUsParagraph"><button type="button" class="headerOption" onclick="showAboutUs()">ABOUT US</button></a>
+                
+        </header>
+
+
+        <article>
+            <div id="AboutUsParagraph">
+                <button onclick="showHomeFromAboutUs()">gyufedsjbghbfahijb</button>
+                <p id="stron">Welcome to our online saddle shop! We're a family-owned business that's been making high-quality saddles for over 50 years.
+                    
+                    Our story began when our founder, John Smith, started crafting saddles by hand in his small workshop. He had a passion for horses and wanted to create saddles that were not only comfortable for riders, but also provided the best support for their equine partners.
+                    
+                    Over time, our reputation for making durable and comfortable saddles grew, and we expanded our business to include a larger workshop and more skilled craftspeople. Today, we have a team of expert saddle makers who use the latest technology and traditional techniques to create saddles that meet the needs of riders of all levels and disciplines.
+                    
+                    We take pride in the fact that our saddles are made in the USA and are built to last. Each saddle is crafted with precision and care, using only the finest materials. We work closely with our customers to ensure that their saddles fit perfectly and provide maximum comfort for both rider and horse.
+                    
+                    In addition to saddles, we also offer a range of accessories, such as stirrups, reins, and saddle pads. We're committed to providing our customers with everything they need to enjoy their riding experience to the fullest.</p>
+                <hr>
+            </div>
+        </article>
+
+
+        <script>
+            function showAboutUs(){
+            const site = document.getElementById('mainPage')
+            const sectionDescription = document.getElementById('AboutUsParagraph');
+            site.style.display ='none';
+            sectionDescription.style.display ='block';
+            }
+
+            function showHomeFromAboutUs(){
+            const site = document.getElementById('mainPage')
+            const sectionDescription = document.getElementById('AboutUsParagraph');
+            site.style.display ='block';
+            sectionDescription.style.display ='none';
+            }
+        </script>
+
+    </body>
+</html>

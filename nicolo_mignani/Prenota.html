@@ -172,13 +172,13 @@
       <span id="place-address"></span>
     </div>
 
-    <button onclick="AggiungiTabella()" type="button">INVIO</button>
+    <button onclick="AggiungiTabella()" type="button" id="invio">INVIO</button>
 
 
       <section id="liste">
 
       
-
+       
       </section>
 
   </main>
@@ -310,6 +310,28 @@
 
       window.initMap = initMap;
 
+      
+      let con=0;
+
+      function contatore(){
+         
+         con++
+  
+
+      }
+
+      const b = document.getElementById("invio");
+
+      b.addEventListener('click',function(){
+
+       contatore();
+       
+
+      })
+
+
+
+
        
       function AggiungiTabella(){ 
 
@@ -336,27 +358,33 @@
                 
                 alert("inserire una data che sia superiore a quella d'inizio");
                 return;
-               }
+              }
              
-                const email = document.getElementById("email");
+              const email = document.getElementById("email");
             
-             if(email.value==""){
+              if(email.value==""){
                
-               alert("inserire l'indirizzo email")
-               return;
-            }
+                alert("inserire l'indirizzo email")
+                return;
+              }
+         
              const tel = document.getElementById("telefono");
              if(tel.value==""){
                
-               alert("inserire numero di telefono")
+               alert("inserire il numero di telefono")
                return;
             }
+
             const m=document.getElementById("pac-input");
             if(m.value==""){
 
               alert("inserire la destinazione")
               return;
             }
+
+            
+
+
              const section= document.createElement("section");
              const p= document.createElement("p");
              const p2 = document.createElement("p");
@@ -365,6 +393,7 @@
              const p5 = document.createElement("p");
              const p6 = document.createElement("p");
              const p7 = document.createElement("p");
+             const bot = document.createElement("button");
 
              p.innerText= "Pacchetto: "+pacc.value;
              p2.innerText= "Compagnia aerea: "+ag.value;
@@ -373,7 +402,10 @@
              p5.innerText= "Email: "+email.value;
              p6.innerText= "Telefono: "+tel.value;
              p7.innerText= "Destinazione: "+m.value;
-           
+             bot.innerHTML= "Rimuovi";
+
+             bot.setAttribute("onclick","removeSection('lista" + con + "')");
+
              const sec= document.getElementById("liste");
          
             
@@ -385,11 +417,20 @@
              section.appendChild(p5);
              section.appendChild(p6);
              section.appendChild(p7);
-             section.setAttribute('id','lista1');
+             section.appendChild(bot);
+             section.setAttribute('id','lista' + con);
+             section.setAttribute('class','lista');
 
-            
+
+          
           
           }
+
+          function removeSection(idDaCancellare) {
+               const elem = document.getElementById(idDaCancellare);
+               elem.parentNode.removeChild(elem);
+                return false;
+           }
          
 
       </script>

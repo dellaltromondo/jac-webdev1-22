@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/editorCompositori.css">
+    <link rel="stylesheet" href="../css/carte.css">
+    <script src="../js/carte.js"></script>
+    <script src="../js/profiloCompositore.js"></script>
+    <script src="../js/salvaDatiUtente.js"></script>
+    <script src="../js/slideshow.js"></script>
+    <script src="../js/social.js"></script>
+    <script src="../js/caricaUtente.js"></script>
+    <script src="../js/tabellaCompositori.js"></script>
+    <title>Pagina compositore</title>
+</head>
+<body>
+    <section id="loaderWrapper">
+        <span class="loader"><span class="loaderInner"></span></span>
+    </section>    
+
+    <button class="tornaSu" onclick="scrollToTop()">&#11165;</button>
+
+    <section id="progress-container">
+        <section class="progress-bar" id="myBar"></section>
+    </section>
+
+    <nav id="navBar">
+        <section class="dropdown">
+            <button type="button" id="userNickname">Nome Cognome</button>
+            <section class="dropdownContent">
+                <button class="zoom" id="logOut" onclick="logOut()">Torna indietro</button>
+            </section>
+          </section>
+    </nav>
+    
+    <section id="formProfilo">
+        <h1>Profilo</h1>
+    </section>
+
+    <section class="profilo">
+        <section id="sectionImmagineProfilo">
+            <img id="immagineProfilo">
+        </section>
+        <section id="profiloDescrizione">
+            <h1 id="nomeArt"></h1>
+            <p id="testoDescrizione"></p>
+        </section>
+    </section>
+
+    <section id="galleriaImmagini">
+        <h1>Galleria di immagini</h1>
+        <section id="corpoGalleria">
+            <button onclick="prevImage()" id="prevImage">❮</button>
+            <img id="currentImage" src="">
+            <button onclick="nextImage()" id="nextImage">❯</button>
+        </section>
+    </section>
+
+    <section id="tracksContainer">
+        <section id="titoloTracce">
+            <h1>Tracce musicali</h1>
+        </section>
+        <section id="lista"></section>
+    </section>
+
+    <footer id="piePagina">
+        <h1>Social media</h1>
+            <section id="listaSocial">
+            </section>
+        </section>
+    </footer>
+
+    <script>
+        window.addEventListener("load", (event) =>
+        {
+            eseguiCaricaDati();
+        });
+
+        async function eseguiCaricaDati()
+        {
+            await caricaUtente();
+
+            const loader = document.getElementById("loaderWrapper");
+            loader.style.animation = "fadeOut 1.2s";
+            loader.style.animationIterationCount = "1";
+            
+            setTimeout(() =>
+            {
+                loader.parentNode.removeChild(loader);
+            }, 1200);
+        }
+
+        let lastScrollTop;
+
+        navbar = document.getElementById("navBar");
+
+        window.onscroll = () =>
+        {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            const tornaSu = document.querySelector(".tornaSu");
+
+            document.getElementById("myBar").style.width = scrolled + "%";
+            
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if(scrollTop > lastScrollTop)
+            {
+                navbar.style.top='-200px';
+            }
+            
+            else
+            {
+                navbar.style.top='0';
+            }
+
+            //bottone tornaSu
+
+            if (scrolled > 50)
+            {
+                tornaSu.style.opacity = "1";
+                tornaSu.style.visibility = "visible";
+                tornaSu.style.transform = "translateY(0px)";
+            }
+
+            else
+            {
+                tornaSu.style.opacity = "0";
+                tornaSu.style.visibility = "hidden";
+                tornaSu.style.transform = "translateY(10px)";
+            }
+
+            lastScrollTop = scrollTop;
+        }
+
+        let tornaSu = document.querySelector(".tornaSu");
+        
+        function scrollToTop()
+        {
+            let rootElement = document.documentElement;
+
+            rootElement.scrollTo
+            (
+                {
+                    top: 0,
+                    behavior: "smooth"
+                }
+            );
+        }
+
+        function logOut()
+        {
+            window.location.href = "tabellaCompositori.html";
+        }
+
+        function chiudiPopUp()
+        {
+            const logOutFinestra = document.getElementById("messaggioLogout");
+            logOutFinestra.style.display = "none";
+            logOutFinestra.style.animation = "fadeOut";
+            logOutFinestra.style.animationIterationCount = "1";
+
+            setTimeout(() =>
+            {
+                logOutFinestra.style.opacity = "0";
+            }, 200);
+        }
+    </script>
+    
+</body>
+</html>

@@ -10,7 +10,9 @@
     </head>
 
     <body class="user-homepage">
-        <div id="errorPopup" style="display: none;"></div>
+        <div id="popup-container">
+            <section id="errorPopup" style="display: none;"></section>
+        </div>
         <header>
             <button class="only-mobile" id="menuToggle" onclick="toggleMenu()">
                 <img src="Utils/white-burger-menu.png" alt="Menu">
@@ -26,13 +28,13 @@
                 <button class="link-button" onclick="loadPage('calcolatrici')">Calcolatrici</button>
                 <button class="link-button" onclick="loadPage('contatti')">Contatti</button> -->
                 <a href="user-homepage.html">Homepage</a>
-                <a href="database-esercizi.html">Database Esercizi</a>
+                <a href="exercise-wiki.html">Exercise Wiki</a>
                 <a href="calcolatrici.html">Calcolatrici</a>
                 <a href="contatti.html">Contatti</a>
             </nav>
             <nav class="only-mobile" id="menuMobile" style="display: none;">
                 <a href="user-homepage.html">Homepage</a>
-                <a href="database-esercizi.html">Database Esercizi</a>
+                <a href="exercise-wiki.html">Exercise Wiki</a>
                 <a href="calcolatrici.html">Calcolatrici</a>
                 <a href="contatti.html">Contatti</a>
             </nav>
@@ -66,7 +68,9 @@
                 </form>
             </section>
         </article>
-        <script src="app.js"></script>
+        <script src="./Js/main.js"></script>
+        <script src="./Js/popup.js"></script>
+        <script src="./Js/schede-esercizi.js"></script>
     </body>
 
 </html>
