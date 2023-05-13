@@ -30,6 +30,9 @@ body {
     font-size: 18px;
     margin: 10px;
 }
+#titolo_nav{
+    font-size: 32px;
+}
 /*//////////////////////FORM E COMPONENTI FORM////////////////////////*/
 #index_form {
     background-color: #ffffff;
