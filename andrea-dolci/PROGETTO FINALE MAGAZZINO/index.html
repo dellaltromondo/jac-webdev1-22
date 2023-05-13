@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="./css/form.css">
     
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
-    <script src="./javascript/script.js"></script>
 </head>
 <body>
     <section id="login">
@@ -37,6 +36,8 @@
             <h1>GESTIONALE ALIEXPRESS</h1> <button type="button" onclick="home('aliExpress')">TORNA ALLA SCHERMATA HOME</button>
             <i class="fas fa-home" onclick="home('aliExpress')">HOME</i>
         </header> 
+
+        <button id="newAliExpress">Nuovo</button>
         <article>
             <table id="aliExpressTab">
                 <tr>
@@ -50,18 +51,34 @@
                 </tr>
             </table>   
         </article>
-        <!-- <div class="container-form" id="aliExpressForm">
-            <label for="name">Prodotto</label>
-            <input id="name" type="text" />
-            <label for="name">Prodotto</label>
-            <input id="name" type="text" />
-            <label for="name">Prodotto</label>
-            <input id="name" type="text" />
-            <label for="name">Prodotto</label>
-            <input id="name" type="text" />
-            
-        </div> -->
-        
+
+        <div id="myModalAliExpress" class="modal">
+            <div class="modal-content">
+              <div class="modal-header">
+                <span class="modal-close">&times;</span>
+                <h1 id="h1AliExpress"></h1>
+              </div>
+              <div class="modal-body">
+                <form class="modal-form">
+                  <label for="productAliExpress">Prodotto:*</label>
+                  <input type="text" id="productAliExpress" name="product" required>
+                  
+                  <label for="quantityAliExpress">Quantità:*</label>
+                  <input type="number" id="quantityAliExpress" name="quantity" required>
+                  
+                  <label for="priceAliExpress">Prezzo unitario:*</label>
+                  <input type="number" id="priceAliExpress" name="price" step="0.01" required>
+                  
+                  <label for="descriptionAliExpress">Descrizione:*</label>
+                  <input type="text" id="descriptionAliExpress" name="description" required>
+                  
+                  <button type="button" id="insertButtonAliExpress" onclick="insertNew('aliExpress')">Inserisci</button>
+                  <button type="button" id="editButtonAliExpress" onclick="editRow()">Modifica</button>
+
+                </form>
+              </div>
+            </div>
+          </div>        
         
     </section>
 
@@ -73,6 +90,8 @@
         </header>
 
         <article>
+
+            <button id="newAmazon">Nuovo</button>
             <table id="amazonTab">
                 <tr>
                     <th>ID</th>
@@ -85,9 +104,33 @@
                 </tr>
             </table> 
         </article>
-        <div class="container-form" id="amazonForm">
 
-        </div>
+        <div id="myModalAmazon" class="modal">
+            <div class="modal-content">
+              <div class="modal-header">
+                <span class="modal-close">&times;</span>
+                <h1 id="h1Amazon"></h1>
+              </div>
+              <div class="modal-body">
+                <form class="modal-form">
+                  <label for="productAmazon">Prodotto:*</label>
+                  <input type="text" id="productAmazon" name="product" required>
+                  
+                  <label for="quantityAmazon">Quantità:*</label>
+                  <input type="number" id="quantityAmazon" name="quantity" required>
+                  
+                  <label for="priceAmazon">Prezzo unitario:*</label>
+                  <input type="number" id="priceAmazon" name="price" step="0.01" required>
+                  
+                  <label for="descriptionAmazon">Descrizione:*</label>
+                  <input type="text" id="descriptionAmazon" name="description" required>
+                   
+                  <button type="button" id="insertButtonAmazon" onclick="insertNew('amazon')">Inserisci</button>
+                  <button type="button" id="editButtonAmazon" onclick="editRow()">Modifica</button>
+                </form>
+              </div>
+            </div>
+          </div> 
         
     </section>
         
@@ -99,6 +142,8 @@
         </header>
 
         <article>
+
+            <button id="newBarilla">Nuovo</button>
             <table id="barillaTab">
                 <tr>
                     <th>ID</th>
@@ -111,11 +156,38 @@
                 </tr>
             </table>              
         </article>
-        <div class="container-form" id="barillaForm">
 
-        </div>
+        <div id="myModalBarilla" class="modal">
+            <div class="modal-content">
+              <div class="modal-header">
+                <span class="modal-close">&times;</span>
+                <h1 id="h1Barilla"></h1>
+              </div>
+              <div class="modal-body">
+                <form class="modal-form">
+                  <label for="productBarilla">Prodotto:*</label>
+                  <input type="text" id="productBarilla" name="product" required>
+                  
+                  <label for="quantityBarilla">Quantità:*</label>
+                  <input type="number" id="quantityBarilla" name="quantity" required>
+                  
+                  <label for="priceBarilla">Prezzo unitario:*</label>
+                  <input type="number" id="priceBarilla" name="price" step="0.01" required>
+                  
+                  <label for="descriptionBarilla">Descrizione:*</label>
+                  <input type="text" id="descriptionBarilla" name="description" required>
+                   
+                  <button type="button" id="insertButtonBarilla" onclick="insertNew('barilla')">Inserisci</button>
+                  <button type="button" id="editButtonBarilla" onclick="editRow()">Modifica</button>
+                </form>
+              </div>
+            </div>
+          </div> 
+        
         
     </section>
-    
+
+    <script src="./javascript/script.js"></script>
+
 </body>
 </html>
