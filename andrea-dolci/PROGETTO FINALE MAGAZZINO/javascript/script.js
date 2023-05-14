@@ -112,9 +112,9 @@ const arrayObjBarilla = [
 
 function toggle(idSection){
 
-    contAliExpress = 0;
-    contAmazon = 0;
-    contBarilla  = 0;
+    // contAliExpress = 0;
+    // contAmazon = 0;
+    // contBarilla  = 0;
 
     const sectionInvisible = document.getElementById(idSection);
     const sectionLogin = document.getElementById('login');
@@ -126,18 +126,21 @@ function toggle(idSection){
         case 'aliExpress': {
             arrayToIterate = arrayObjAliExpress;
             tableId = 'aliExpressTab';
+            orderAliExpress.style.display = 'none';
             break;
         }
 
         case 'amazon': {
             arrayToIterate = arrayObjAmazon;
             tableId = 'amazonTab';
+            orderAmazon.style.display = 'none';
             break;
         }
 
         case 'barilla': {
             arrayToIterate = arrayObjBarilla;
             tableId = 'barillaTab';
+            orderBarilla.style.display = 'none';
             break;
         }
     }
@@ -279,9 +282,6 @@ let tableIdParameter;
 let formParameter;
 
 function openEdit(idEdit, tableId){
-    idEditParameter = idEdit;
-    tableIdParameter = tableId;
-
     let arrayToEditFrom=[];
     let form;
 
@@ -317,10 +317,13 @@ function openEdit(idEdit, tableId){
         
     }
 
-    let product = arrayToEditFrom[idEdit].name;
-    let quantity = arrayToEditFrom[idEdit].quantity;
-    let price = arrayToEditFrom[idEdit].price;
-    let description = arrayToEditFrom[idEdit].description;
+    //devo usare index anzichè edit perchè senno quando faccio la ordina crea problemi con gli id, dunque vado a ricercare l'elemento che contiene l'id corrispondente a idEdit e uso quello
+    let index = arrayToEditFrom.findIndex(item => item.id === idEdit);
+
+    let product = arrayToEditFrom[index].name;
+    let quantity = arrayToEditFrom[index].quantity;
+    let price = arrayToEditFrom[index].price;
+    let description = arrayToEditFrom[index].description;
 
     //logica per aprire il form con dentro i dati
     switch(tableId){
@@ -348,6 +351,8 @@ function openEdit(idEdit, tableId){
         
     }
 
+    idEditParameter = index;
+    tableIdParameter = tableId;
     formParameter = form;
 }
 
@@ -355,7 +360,6 @@ function editRow(){
     let idEdit=idEditParameter;
     let tableId=tableIdParameter;
     let form = formParameter;
-
 
     if (!form.checkValidity()) {
         form.reportValidity();
@@ -519,8 +523,19 @@ function insertNew(id){
         return;
     }
 
-    //come id vado a recuperare l'id dell'ultimo elemento dell'array e lo incremento
-    let idNewItem = whereToAdd[whereToAdd.length -1].id;
+    //come id vado a recuperare l'id maggiore e lo incremento, non vado a prendere semplicemente l'ultimo id e lo incremento, come avevo fatto in precedenza, in quanto entra in conflitto con la orderby,
+    //se infatti io avessi dopo aver ordinato, un'array con id sequenziali 4, 0, 3, 2, facendo insertNew assegnerebbe al nuovo elemento un id pari a 3, creando un doppione
+    
+    let idNewItem = 0; 
+
+    whereToAdd.forEach(element => {
+        if (element.id > idNewItem) {
+            idNewItem = element.id;
+        }
+    });
+
+    // Alla fine del forEach, idNewItem conterrà l'id maggiore presente nell'array whereToAdd che andrò poi ad incrementare
+
     
 
     switch(id){
@@ -775,6 +790,230 @@ descriptionInputBarilla.addEventListener('invalid', () => {
 descriptionInputBarilla.addEventListener('input', () => {
   descriptionInputBarilla.setCustomValidity('');
 });
+
+
+
+function orderBy(array, orderByWhat, order) {
+    return array.sort((a, b) => {
+      let valueA, valueB;
+  
+      switch (orderByWhat) {
+        case 'name':{
+          valueA = a.name.toLowerCase();
+          valueB = b.name.toLowerCase();
+          break;
+        }
+        case 'quantity':{
+          valueA = a.quantity;
+          valueB = b.quantity;
+          break;
+        }
+        case 'price':{
+          valueA = a.price;
+          valueB = b.price;
+          break;
+        }
+        case 'date':{
+          valueA = a.date;
+          valueB = b.date;
+          break;
+        }
+      }
+  
+      if (valueA < valueB) {
+        return order === 'asc' ? -1 : 1;
+      }
+
+      if (valueA > valueB) {
+        return order === 'asc' ? 1 : -1;
+      }
+
+      return 0;
+    });
+
+    
+}
+
+function showOrderedArray(array, orderByWhat, order, idSection){
+    array = orderBy(array, orderByWhat, order);
+    toggle(idSection);
+}
+
+function toggleOrder(id) {
+    const orderBtn = document.getElementById(id);
+
+    //al primo click non funziona correttamente quindi metto display così che ti da il valore effettivo
+    //è strano perchè il toggle principale funziona normalmente senza questa variabile
+    const display = window.getComputedStyle(orderBtn).display;
+
+    if (display === 'none') {
+        orderBtn.style.display = 'block';
+    } else {
+        orderBtn.style.display = 'none';
+    }
+}
+
+//imposto gli onclick per le varie ordina, lo faccio direttamente da qui perchè almeno posso passargli l'array, cosa che non avrei potuto fare mettendo onclick in html
+
+/*-------------------------------------------------------------------------------------------------*/
+
+/* Ordina per (ALIEXPRESS) */
+//lo salvo cosi poi al click di un bottone rimetto il display del div a none (più user friendly)
+const orderAliExpress = document.getElementById('orderAliExpress');
+
+//nome
+document.getElementById('asc-nameAliExpress').addEventListener('click', () => {
+    showOrderedArray(arrayObjAliExpress, 'name', 'asc', 'aliExpress');
+    orderAliExpress.style.display = 'none';
+});
+document.getElementById('desc-nameAliExpress').addEventListener('click', () => {
+    showOrderedArray(arrayObjAliExpress, 'name', 'desc', 'aliExpress');
+    orderAliExpress.style.display = 'none';
+});
+
+
+//quantità
+document.getElementById('asc-quantityAliExpress').addEventListener('click', () => {
+    showOrderedArray(arrayObjAliExpress, 'quantity', 'asc', 'aliExpress');
+    orderAliExpress.style.display = 'none';
+});
+document.getElementById('desc-quantityAliExpress').addEventListener('click', () => {
+    showOrderedArray(arrayObjAliExpress, 'quantity', 'desc', 'aliExpress');
+    orderAliExpress.style.display = 'none';
+});
+
+
+//prezzo
+document.getElementById('asc-priceAliExpress').addEventListener('click', () => {
+    showOrderedArray(arrayObjAliExpress, 'price', 'asc', 'aliExpress');
+    orderAliExpress.style.display = 'none';
+});
+document.getElementById('desc-priceAliExpress').addEventListener('click', () => {
+    showOrderedArray(arrayObjAliExpress, 'price', 'desc', 'aliExpress');
+    orderAliExpress.style.display = 'none';
+});
+
+
+//data
+document.getElementById('asc-dateAliExpress').addEventListener('click', () => {
+    showOrderedArray(arrayObjAliExpress, 'date', 'asc', 'aliExpress');
+    orderAliExpress.style.display = 'none';
+});
+document.getElementById('desc-dateAliExpress').addEventListener('click', () => {
+    showOrderedArray(arrayObjAliExpress, 'date', 'desc', 'aliExpress');
+    orderAliExpress.style.display = 'none';
+});
+
+
+
+/*-------------------------------------------------------------------------------------------------*/
+
+
+
+/* Ordina per (AMAZON) */
+//lo salvo cosi poi al click di un bottone rimetto il display del div a none (più user friendly)
+const orderAmazon = document.getElementById('orderAmazon');
+
+//nome
+document.getElementById('asc-nameAmazon').addEventListener('click', () => {
+    showOrderedArray(arrayObjAmazon, 'name', 'asc', 'amazon');
+    orderAmazon.style.display = 'none';
+});
+document.getElementById('desc-nameAmazon').addEventListener('click', () => {
+    showOrderedArray(arrayObjAmazon, 'name', 'desc', 'amazon');
+    orderAmazon.style.display = 'none';
+});
+
+
+//quantità
+document.getElementById('asc-quantityAmazon').addEventListener('click', () => {
+    showOrderedArray(arrayObjAmazon, 'quantity', 'asc', 'amazon');
+    orderAmazon.style.display = 'none';
+});
+document.getElementById('desc-quantityAmazon').addEventListener('click', () => {
+    showOrderedArray(arrayObjAmazon, 'quantity', 'desc', 'amazon');
+    orderAmazon.style.display = 'none';
+});
+
+
+//prezzo
+document.getElementById('asc-priceAmazon').addEventListener('click', () => {
+    showOrderedArray(arrayObjAmazon, 'price', 'asc', 'amazon');
+    orderAmazon.style.display = 'none';
+});
+document.getElementById('desc-priceAmazon').addEventListener('click', () => {
+    showOrderedArray(arrayObjAmazon, 'price', 'desc', 'amazon');
+    orderAmazon.style.display = 'none';
+});
+
+
+//data
+document.getElementById('asc-dateAmazon').addEventListener('click', () => {
+    showOrderedArray(arrayObjAmazon, 'date', 'asc', 'amazon');
+    orderAmazon.style.display = 'none';
+});
+document.getElementById('desc-dateAmazon').addEventListener('click', () => {
+    showOrderedArray(arrayObjAmazon, 'date', 'desc', 'amazon');
+    orderAmazon.style.display = 'none';
+});
+
+
+
+/*-------------------------------------------------------------------------------------------------*/
+
+
+
+/* Ordina per (BARILLA) */
+//lo salvo cosi poi al click di un bottone rimetto il display del div a none (più user friendly)
+const orderBarilla = document.getElementById('orderBarilla');
+
+//nome
+document.getElementById('asc-nameBarilla').addEventListener('click', () => {
+    showOrderedArray(arrayObjBarilla, 'name', 'asc', 'barilla');
+    orderBarilla.style.display = 'none';
+});
+document.getElementById('desc-nameBarilla').addEventListener('click', () => {
+    showOrderedArray(arrayObjBarilla, 'name', 'desc', 'barilla');
+    orderBarilla.style.display = 'none';
+});
+
+
+//quantità
+document.getElementById('asc-quantityBarilla').addEventListener('click', () => {
+    showOrderedArray(arrayObjBarilla, 'quantity', 'asc', 'barilla');
+    orderBarilla.style.display = 'none';
+});
+document.getElementById('desc-quantityBarilla').addEventListener('click', () => {
+    showOrderedArray(arrayObjBarilla, 'quantity', 'desc', 'barilla');
+    orderBarilla.style.display = 'none';
+});
+
+
+//prezzo
+document.getElementById('asc-priceBarilla').addEventListener('click', () => {
+    showOrderedArray(arrayObjBarilla, 'price', 'asc', 'barilla');
+    orderBarilla.style.display = 'none';
+});
+document.getElementById('desc-priceBarilla').addEventListener('click', () => {
+    showOrderedArray(arrayObjBarilla, 'price', 'desc', 'barilla');
+    orderBarilla.style.display = 'none';
+});
+
+
+//data
+document.getElementById('asc-dateBarilla').addEventListener('click', () => {
+    showOrderedArray(arrayObjBarilla, 'date', 'asc', 'barilla');
+    orderBarilla.style.display = 'none';
+});
+document.getElementById('desc-dateBarilla').addEventListener('click', () => {
+    showOrderedArray(arrayObjBarilla, 'date', 'desc', 'barilla');
+    orderBarilla.style.display = 'none';
+});
+
+
+
+/*-------------------------------------------------------------------------------------------------*/
+
 
 // console.log(arrayObjAliExpress);
 // console.log(arrayObjAmazon);
