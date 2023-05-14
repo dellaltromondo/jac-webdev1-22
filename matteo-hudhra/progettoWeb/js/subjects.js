@@ -2,28 +2,28 @@ class Subjects{
     
 
     // I CANCELLETTI DANNO PROBLEMI NEL DB PERCHè NELLO STRINGIFY LI AGGIUNGE AL NOME SUL DB
-    #nome_materia;
-    #docente;
-    #voti = [];
-    #colore;
+    nomeMateria;
+    nomeDocente;
+    coloreMateria;
+    codUtente;
 
-    constructor(mat, doc, vot = [], col){
-        this.#nome_materia = mat;
-        this.#docente = doc;
-        this.#voti = [];
-        this.#colore = col;
+    constructor(mat, doc, col, cod = 1){
+        this.nomeMateria = mat;
+        this.nomeDocente = doc;
+        this.coloreMateria = col;
+        this.codUtente = cod;
     }
 
+    getColore(){
+        return this.coloreMateria;
+    }
     getMateria(){
-        return this.#nome_materia;
+        return this.nomeMateria;
     }
     getDocente(){
-        return this.#docente;
+        return this.nomeDocente;
     }
-    getVoti(){
-        return this.#voti;
-    }
-    mediaVoti(){
-        return;
+    getCodUtente(){
+        return this.codUtente;
     }
 }

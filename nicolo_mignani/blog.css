@@ -238,6 +238,12 @@
                  padding-left: 40px;
 
               }
+              img{
+
+               
+                width: 600px;
+           
+              }
 
               hr{
 
@@ -245,13 +251,7 @@
                 margin-left: 40px;
               }
               
-              img{
-
-                height: 250px;
-                 width: 550px;
-
-
-              }
+           
               .thailandia h3{
 
                 padding-left: 50px;
@@ -263,6 +263,11 @@
 
                 padding-left: 50px;
 
+
+              }
+              .thailandia img{
+
+                width: 600px;
 
               }
               

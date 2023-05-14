@@ -1,4 +1,4 @@
-button{
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');button{
     font-size: 1em;
     display: block;
     margin-bottom: 0.4em;
@@ -12,4 +12,27 @@ button{
 
 button:hover{
     background-color: rgba(156, 155, 155, 0.379);
+}
+
+#newAliExpress, #newAmazon, #newBarilla, 
+#insertButtonAliExpress, #insertButtonAmazon, #insertButtonBarilla,
+#editButtonAliExpress, #editButtonAmazon, #editButtonBarilla {
+    background-color: rgb(0, 51, 102);
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100px;
+}
+  
+#insertButtonAliExpress, #insertButtonAmazon, #insertButtonBarilla,
+#editButtonAliExpress, #editButtonAmazon, #editButtonBarilla {
+    display: none;
+}
+#newAliExpress:hover, #newAmazon:hover, #newBarilla:hover, 
+#insertButtonAliExpress:hover, #insertButtonAmazon:hover, #insertButtonBarilla:hover,
+#editButtonAliExpress:hover, #editButtonAmazon:hover, #editButtonBarilla:hover {
+    background-color: rgb(2, 60, 119);
 }

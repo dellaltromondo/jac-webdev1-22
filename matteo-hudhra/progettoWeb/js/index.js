@@ -1,14 +1,12 @@
 // Array delle materie
 var subjects = [];
 let colore = "";
-let voti = [];
 
 function getColore(id) {
 
     colore=document.getElementById(id).style.backgroundColor;
 }
 
-// Funzione per creare il contenitore di una materia
 function createSubjectContainer(subject) {
     // Creazione del contenitore
     var container = document.createElement("div");
@@ -61,9 +59,38 @@ form.addEventListener("submit", function(event) {
     // Lettura dei dati del form
     var subjectName = document.getElementById("subject-name").value;
     var teacherName = document.getElementById("teacher-name").value;
-    // Creazione dell'oggetto materia
-    const subject = new Subjects(subjectName,teacherName,voti, colore)
     
+    // Creazione dell'oggetto materia
+    const subject = new Subjects(subjectName,teacherName, colore)
+
+    //funzione fetch per collegarsi al server e salvare l'oggetto materia in caso di connessione riuscita
+    fetch('http://localhost:8080/mydiary/api/v1/materia/', {
+    method: 'POST',
+    headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(subject)
+})
+.then(response => {
+    if (!response.ok) {
+      throw new Error('Errore del server');
+    }
+    // Se la risposta è positiva, aggiungi la materia all'array e crea il contenitore
+    subjects.push(subject);
+    var container = createSubjectContainer(subject);
+    // Aggiunta del contenitore alla pagina
+    var subjectsContainer = document.getElementById("subjects-container");
+    subjectsContainer.appendChild(container);
+    // Reset del form
+    form.reset();
+  })
+  .catch(error => {
+    alert("Errore di comunicazione colserver");
+    console.error('There was a problem with the fetch operation:', error);
+  });
+
+
+
 
 /*var Subjects subjects = {
     name: subjectName,
@@ -72,16 +99,4 @@ form.addEventListener("submit", function(event) {
 };*/
 
 
-// Aggiunta della materia all'array
-subjects.push(subject);
-
-// Creazione del contenitore della materia
-var container = createSubjectContainer(subject);
-
-// Aggiunta del contenitore alla pagina
-var subjectsContainer = document.getElementById("subjects-container");
-subjectsContainer.appendChild(container);
-
-// Reset del form
-form.reset();
 });
