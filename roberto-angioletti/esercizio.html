@@ -1,0 +1,36 @@
+<DOCTYPE html>
+    <html>
+
+    <head>
+        <h1 id="title"></h1>
+        <button onclick="SovrascriviTitolo()">cambia titolo</button>
+        
+        <h2 id="Titolo2">ciao</h2>
+        <input id="inputTesto">
+        <button onclick="Saluto()">Saluta!</button>
+        
+    </head>
+
+    <body>
+
+        <script>
+
+            function SovrascriviTitolo() {
+
+                const ElementoTitolo = document.getElementById("title")
+
+                ElementoTitolo.innerText = "BOH";
+            }
+
+            function Saluto(){
+                const elementoSaluto= document.getElementById("inputTesto").value;
+                document.getElementById("Titolo2").innerHTML= elementoSaluto;
+
+              
+            }
+        </script>
+
+
+
+    </body>
+    <html>

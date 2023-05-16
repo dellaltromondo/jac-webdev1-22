@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Esempio su position</title>
+        <style>
+            section {
+                position: relative;
+            }
+            div {
+                display: inline-block;
+                background-color: brown;
+                width: 100px;
+                height: 100px;
+                margin: 10px;
+            }
+            #posizionata {
+                position: absolute;
+                left: 40px;
+                top: 10px;
+                background-color: rebeccapurple;
+            }
+        </style>
+    </head>
+
+<body>
+    <section>
+        <div></div>
+        <div></div>
+        <div></div>
+    </section>
+    <section>
+        <div></div>
+        <div id="posizionata"></div>
+        <div></div>
+    </section>
+</body>
+
+</html>

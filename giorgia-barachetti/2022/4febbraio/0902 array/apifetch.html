@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head>
+    <title>FETCH</title>
+</head>
+<body>
+    <section id="factSection"></section>
+    <script type="module">
+        /*
+        const factPromise = fetch("https://catfact.ninja/fact");
+        factPromise.then((value) => console.log(value));
+
+        const factPromise2 = fetch("https://catfact.ninja/fact");
+        factPromise2.then((response) => console.log(response)); //accetta una funzione quando valoreviene eseguita
+
+        const factPromise3 = fetch("https://catfact.ninja/fact");
+        factPromise3.then(
+            (response) => {
+                const dataPromise = response.json();
+                dataPromise.then(
+                    (value) => console.log(value))
+                }
+                );
+*/
+                const response = await fetch("https://catfact.ninja/fact");
+                const data = await response.json();
+                const factOfToday = data.fact;
+                
+                document.getElementById("factSection").innerText = factOfToday
+                
+    </script>
+</body>
+</html>

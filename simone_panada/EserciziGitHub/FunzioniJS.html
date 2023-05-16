@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>    
+</head>
+<body>
+    <script>
+        //Moltiplicare un numero per mille
+        
+        function moltiplicazionePerMille(x) {
+            let m = x * 1000;
+
+            return m;
+        }
+
+         //Dati nome e cognome, resituisce il nome completo
+         
+        //Dato un anno di nascita, restituisce "young" se <18, "old" se >65 altrimenti "adult"
+        
+        function categoriaEta(annoNascita)
+        { 
+            let eta = 2022 - annoNascita;
+
+            if (eta < 18)
+            {
+                return "young";
+            }
+            else if (eta>65) //NB: si possono concatenare else con altri else if
+            {
+                return "old";
+            } 
+            else
+            {
+                return "adult";
+            }
+        }
+            
+            let a = 17;
+            let b = 69; // :3
+            console.log(categoriaEta(a));
+            console.log(categoriaEta(b));
+
+            /* let etalegale = eta();
+            console.log("The user is " + etalegale); */
+        
+
+        //dato un array di date di nascita restituisce un array con tutti i <18
+
+        let date = [1999, 2009, 2000];
+        function filtraStudentiMinorenni(date) 
+        {
+            let nasciteMinorenni=[]; //crea array vuoto
+            
+            for(let i=0; i < date.lenght; i++)
+            {
+                if (categoriaEta(date[i]) = "young") 
+                {
+                    nasciteMinorenni.push(date[i]);
+                }                
+            }
+            return nasciteMinorenni;
+            
+        }
+        
+         
+        console.log(filtraStudentiMinorenni(date));
+        
+        
+
+       
+    </script>
+</body>
+</html>

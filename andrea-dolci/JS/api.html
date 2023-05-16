@@ -1,0 +1,41 @@
+<!-- API(Application Programming Interface) serve per fare una get con API
+   fetch(indirizzo url api)
+   una promise è una variabile in cui prima o poi arriva un valore 
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section id="factSection"></section>
+    <script type="module">
+        /*
+        const factPromise = fetch("https://catfact.ninja/fact");
+        let factOfTheDay = "";
+        //il then accetta una funzione che viene eseguita quando la risposta arriva 
+        factPromise.then(
+            (response) => {
+                const dataPromise = response.json();
+                dataPromise.then(
+                    (value) => factOfTheDay = value 
+                )
+            }
+        );
+        */
+
+
+        const response = await fetch("https://firefox.settings.services.mozilla.com/v1/buckets/monitor/collections/changes/records");
+        const data = await response.json();
+        //console.log(data);
+        const factOfTheDay = data.id;
+
+        document.getElementById('factSection').innerText = factOfTheDay;
+    </script>    
+</body>
+</html>

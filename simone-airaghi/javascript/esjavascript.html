@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Esempio Javascript</title>
+    </head>
+    <body>
+        <script>
+            //variabili stringa
+            let a = 5;
+            console.log('il valore di a è:' + a);
+           
+            let b = 'pippo';
+            console.log('il valore di b è :' + b);
+
+            b='pluto';
+            
+            //variabili array
+            let arraystudent = ["cognome","cognomedue","cognometre"];
+            console.log(arraystudent);
+            
+            //variabile oggetto
+            let studente={
+                nome: 'marco',
+                cognome:'marotta',
+                nascita:'03/06/2003',
+                classe:'ICT',
+                
+            }
+            console.log(studente);
+            //variabile funzione
+            function massimo (v1,v2){
+                if(v1>v2){
+                    return v1;
+                } else{
+                    return v2;
+                }
+            }
+            let x =massimo(3,42);
+            console.log(x);
+                                        // questi due console.log sono due modi diversi per
+                                        // scrivere la stessa cosa
+            console.log(massimo(2,8));
+
+            //if alternativo 
+            
+            function massimoalternativo (V1,V2){
+                return(V1>V2)
+                ? V1
+                : V2
+                
+            }
+            console.log(massimoalternativo(34,88));
+
+            function massimofraquattronumeri (n1,n2,n3,n4){
+                let m1 = massimo(n1,n2);
+                let m2 = massimo (n3,n4);
+                return massimo (m1,m2);
+    
+            }
+            console.log(massimofraquattronumeri(43,3,45,6))
+        </script>
+    </body>
+</html>

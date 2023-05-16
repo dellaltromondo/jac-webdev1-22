@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+                    let a= 5;
+                    console.log('Il valore di a è:'+ a);
+
+                    const b= 'pippo'
+                    console.log('b si chiama ' + b);
+
+                    let studenti=['Spinosa','Chigioni','Bonsignore']
+                    console.log(studenti);
+
+                    let studente={
+
+                        nome: 'andrea',
+                        cognome: 'ermellini',
+                        nascita: 2003,
+                        classe: 'ict'
+                    }
+                    console.log(studente)
+
+                    function massimo( v1, v2){
+                    
+                     if(v1>v2){
+                        return v1;
+                    } else {
+                        return v2;
+                    }
+
+                    let x=massimo(43, 54)
+                    console.log(massimo(43,54))
+                }
+                    function massimoFraQuattroNumeri(n1, n2, n3,n4){
+                        
+                    let a1=massimo(n1, n2);
+                    let a2=massimo(n3,n4);
+                   
+                    return massimo(a1,a2);
+                    }
+                 console.log(massimoFraQuattroNumeri(5,75,4,87))
+
+                    
+
+
+
+    </script>
+</body>
+</html>

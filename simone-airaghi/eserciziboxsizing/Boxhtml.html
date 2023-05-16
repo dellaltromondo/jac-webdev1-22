@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="it>"
+
+<head>
+   <title>il box model</title> 
+   <link rel="stylesheet" href="Boxcss.css">
+</head>
+
+<body>
+    <h1>IL BOX MODEL</h1>
+    
+    <header>
+        <nav>
+            <a href="https://www.html.it/pag/14223/il-box-model/">il box model</a>
+            <a href="https://www.html.it/pag/19463/box-sizing/">il box box-sizing</a>
+        </nav>
+        <img src="https://vpnoverview.com/wp-content/uploads/what-is-a-hacker-what-is-hacking-featured.png"> 
+    </header>
+
+     <article id="boxModel">
+         <h2>Come sono formate le scatole?</h2>
+         <p>Partendo dall'interno abbiamo:<br>
+            <br>
+            L'area del contenuto: è la zona in cui trova spazio il contenuto vero e proprio: testo, immagini,
+            video, etc. Le dimensioni orizzontali dell'area possono essere modificate con la proprietà width. 
+            Quelle verticali con height.<br>
+            <br>
+            Il padding: È uno spazio vuoto che può essere creato tra l'area del contenuto e il bordo dell'elemento.
+            Come si vede nella figura, se si imposta un colore di sfondo per un elemento, esso si estende dall'area
+            del contenuto alla zona di padding. (padding-"lato che voglio modificare")<br>
+            <br>
+            Il bordo: È una linea di dimensione, stile e colore variabile che circonda la zona del padding e l'area del contenuto. 
+            (ce ne sono tre: "border-style", "border-width", "border-color")<br>
+            <br>
+            Il margine: È uno spazio di dimensioni variabili che separa un dato elemento da quelli adiacenti.
+            (come per il padding ma anzichè "padding" scrivo "margin")</p>
+         <img src="https://static.html.it/app/uploads/2006/03/box-model.png">
+    </article>
+
+    <article id="boxSizing"> 
+        <h2>Regole di base del CSS box model</h2>
+        <p>Il box model è governato da una serie di regole di base concernenti la definizione di un box 
+            e il suo rapporto con gli altri elementi.<br>
+
+            <h3>Larghezza del box:</h3>
+            Bisogna distinguere tra tre concetti:<br>
+            <br>
+            -la larghezza dell'area del contenuto: nonchè l'quivalente di "width".<br>
+            <br>
+            -la larghezza complessiva: margine dx e sx + border dx e sx + padding dx e sx + area contenuto.<br>
+            <br>
+            -la larghezza dell'area visibile: border dx e sx + padding dx e sx + contenuto.</p>
+            <br>
+            <p>Quando in un sito voglio creare un box ed adattare la misura del box ad un determinato numero di pixel<br>
+            oppure ad una determinata unità di misura mi devo assicurare che alla fine del codice .css io specifichi<br>
+            che le misure fanno riferimento al box in totale altrimenti lui considera le misure solo del contenuto<br>
+            dunque alla fine del codice .css dell'elemento che sto modificando dovrò scrivere: "box-sizing: border-box"<br>
+            diversamente verrà considerato come se fosse un "content-box".</p>
+             <img src="https://api1.planflow.dev/wp-content/uploads/2021/09/Box-Sizing.png">
+
+    </article>
+
+
+    <footer>
+        <p> per tornare indietro schiaccia qui <a href="https://www.html.it/pag/19463/box-sizing/">(qui poi collegherai tutti i siti che creerai per esercitarti)</a></p>
+    </footer>
+</body>

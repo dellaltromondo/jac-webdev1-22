@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Javascript
+        </title>  
+    </head>
+    <body>
+        <script>
+         /*   let a = 5;
+            console.log("Il valore di a è " + a); 
+            const b = "pippo";
+            console.log(b);
+            let studenti = ["aa", "bb", "cc" , "dd"];
+            console.log(studenti);
+            let studente = {
+                nome : "aaaaa",
+                cognome : "bbbbb",
+                nascita : "121",
+                classe : "a",
+            }
+            console.log(studente);
+
+            function max(b1,b2){
+             return(b1 > b2) ? b1 : b2;
+            }
+            console.log(max(2,4))
+
+            function maxbetween4(n1,n2,n3,n4){
+                return(max(n1,n2) > max (n3,n4)) ? max(n1,n2) : max (n3,n4);
+            }
+            console.log(maxbetween4(5,223,342,444))*/
+
+            //funzione che moltiplica un numero per 1000
+            //funzione che dato nome cognome restituisce il nome completo
+            //dato che dato un anno di nascita restituisce young se età > 18 old se età <65 altrimenti adult
+            //funzione che dato un array di date di nascita restituisce un array con tutti i minorenni
+            //
+
+            function moltiplicazione(n1){
+                return(n1*1000)
+            }
+            console.log(moltiplicazione(34))
+
+
+
+            function nomeCompleto(s1, s2){
+                return("Nome completo :" + s1 + " " + s2)
+            }
+            console.log(nomeCompleto("Simone","Mecca"))
+
+
+
+            function età(data){
+               return( data>=2004? 'young' : data<=1957? 'old' : 'adult');
+            }
+            console.log(età(2004))
+
+            
+
+            function minorenni(dateIniziali){
+                let dateminorenni = []
+                dateIniziali.forEach(function(data) {
+                    if(data>2004)
+                        dateminorenni.push(data)
+                });
+               return(dateminorenni)
+            }
+            console.log(minorenni([2000,2003,2010,2001,1999,1998,2006,1993,2007]))
+
+
+
+            let persona1 = {
+                nome : "aa",
+                cognome : "bb",
+                eta : 2001
+            }
+
+            let persona2 = {
+                nome : "cc",
+                cognome : "dd",
+                eta : 2006
+            }
+
+            let persona3 = {
+                nome : "ee",
+                cognome : "ff",
+                eta : 1999
+            }
+            let persone = [persona1,persona2,persona3]
+            function personeminorenni(persone){
+                let personeminori = []
+                persone.forEach(function(persona) {
+                    if(persona.eta>2004)
+                        personeminori.push(persona)
+                });
+                return(personeminori)
+            }
+            console.log(personeminorenni(persone))
+        </script>
+    </body>
+</html>

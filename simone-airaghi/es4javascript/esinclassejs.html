@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Esercizio Javascript</title>
+    </head>
+    <body>
+        <script>
+        //moltiplicazione*1000
+        function moltiplicazione (v1) {
+        let risultato= v1*1000;
+        return risultato;
+    }
+    console.log (moltiplicazione(6));
+        //nome cognome 
+        function nomecognome (nome, cognome){
+            nome= 'Simone';
+            cognome= 'Airaghi';
+            let nomeintero = nome + cognome;
+            return nomeintero;
+        }
+        console.log(nomecognome())
+        //funzione data di nascita 
+        function dateNascita(anno){
+            if (2022 - anno < 18){
+                return 'young';
+            } else if (2022 - anno > 65){
+                return 'old';
+            }
+            else {
+                return 'adult';
+            }
+
+
+        }
+        console.log(dateNascita(2018))
+       
+        //Funzione array maggiorenni
+        function filtro(date) {
+            let risultato = [];
+            for(let k =0; k < date.length; k ++){
+                if(eta >= 18){
+                    risultato.push(date[k]);
+                }
+            }
+            return risultato;
+        
+            
+}
+ 
+       // console.log(filtro(risultato))
+
+
+        
+        </script>
+
+    </body>
+</html>

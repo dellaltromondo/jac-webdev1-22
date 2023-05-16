@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Media Queries</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <button class="only-mobile" onclick="mostraMenu()">M</button>
+            <ul class="only-desktop" id="espandi-menu">
+                <li>Voce Menu1</li>
+                <li>Voce Menu2</li>
+                <li>Voce Menu3</li>
+                <li>Voce Menu4</li>
+                <li>Voce Menu5</li>
+                <li>Voce Menu6</li>
+            </ul>
+        </nav>
+    </header>
+    <h1 class="only-mobile">Ciao, siamo su mobile?</h1>
+    <h1 class="only-desktop">Ciao, siamo su desktop?</h1>
+    <h1 class="only-tablet">Ciao, siamo su tablet?</h1>
+
+    <p id="paragrafino">Ciao sono del testo</p>
+
+    <article>
+        <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, similique! Rerum, soluta consequuntur
+            quis maxime officiis doloremque sed voluptatem, velit delectus ab saepe porro, numquam voluptatum provident
+            voluptas qui minima.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, soluta molestiae dicta voluptas ipsam
+            explicabo modi hic officia alias aliquam tenetur natus ipsum ad consequuntur laudantium laborum facilis
+            architecto eveniet!
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi, recusandae possimus. In officia, debitis
+            excepturi ab tenetur cumque deserunt nam minima dolorum, praesentium optio reiciendis corporis, facere ad
+            sed quas!
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos saepe quasi modi ex dignissimos laboriosam
+            adipisci voluptatum blanditiis quas neque, officiis consequatur sapiente veniam. Iusto enim mollitia
+            perferendis quas aspernatur?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla nemo voluptate dignissimos quas, labore sequi
+            doloremque officia. Exercitationem, provident nisi eius natus quia nobis non perferendis vero hic unde ipsa.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit natus, dignissimos earum iure nobis ad minima
+            consectetur velit optio eaque, asperiores provident perferendis. Dignissimos molestias, voluptate harum
+            illum fuga dolorum.
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, at nam quibusdam, itaque, deserunt facere
+            quidem eligendi accusamus quaerat ab aut odio consectetur accusantium quos repudiandae? Nulla officia hic
+            sequi.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque corporis nostrum quisquam reprehenderit
+            culpa error tempore at, maxime id vitae illum consectetur. Nulla dolore impedit cupiditate corrupti minima,
+            voluptas quod?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio esse nesciunt modi ipsa earum, maiores placeat
+            eligendi beatae soluta suscipit! Praesentium voluptate eos incidunt cumque eligendi corrupti, non
+            perspiciatis animi.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio necessitatibus deserunt architecto voluptas
+            laborum, nisi cupiditate consequuntur maiores fuga id unde adipisci commodi atque eaque recusandae numquam
+            velit enim sequi?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, praesentium ducimus animi repellat nisi
+            sunt, modi enim molestias veritatis nihil aspernatur incidunt beatae impedit ab soluta illo eum eaque hic?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid vitae, excepturi dolorem eum est cumque
+            quaerat nam illum id modi nostrum sapiente perspiciatis necessitatibus consequuntur ratione dolor sed
+            impedit doloremque.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat distinctio perferendis rerum eveniet. Earum
+            perferendis ex ipsam sit accusantium in quis incidunt, officiis dicta. Vitae suscipit quidem natus neque
+            fugiat!
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam vitae cupiditate voluptatibus non explicabo
+            molestiae repellat repellendus animi quibusdam esse? Quae, facere? Rerum, iusto unde rem possimus facere qui
+            quo!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora est aperiam deleniti pariatur in neque
+            mollitia similique, veritatis vel adipisci, enim magnam, nisi consequatur sapiente. Ex minima assumenda
+            impedit dicta.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem voluptatum perferendis ut tenetur voluptate
+            velit, ex voluptas pariatur magnam temporibus consequatur nam in sed? Ducimus laudantium magni animi
+            asperiores hic.
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio, iure nostrum qui commodi illum unde
+            doloremque quae maxime facere dicta velit doloribus. Nostrum laudantium doloremque ea itaque eaque, mollitia
+            a?
+            Libero dolor, molestias, vel velit id quo commodi eligendi incidunt consectetur quasi amet delectus dicta
+            quia exercitationem dolore rem excepturi voluptatem. Dolorum ipsum numquam officiis deserunt consequuntur
+            distinctio vero omnis.
+        </p>
+    </article>
+
+    <script>
+        function mostraMenu() {
+
+            const espandiElementoMenu = document.getElementById("espandi-menu");
+
+            // console.log(espandiElementoMenu); "stringa vuota"
+
+            if (espandiElementoMenu.style.display != "block")
+                espandiElementoMenu.style.display = "block";
+            else
+                espandiElementoMenu.style.display = "none";
+
+        }
+    </script>
+</body>
+
+</html>

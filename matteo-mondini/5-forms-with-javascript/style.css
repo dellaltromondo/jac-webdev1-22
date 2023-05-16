@@ -1,0 +1,42 @@
+html {
+    background-color: lightskyblue
+}
+
+label {
+    font-weight: bold;
+    min-width: 10rem;
+}
+
+.radiogroup {
+    font-weight: bold;
+}
+
+.radiogroup label {
+    /* resetta il font weight, senza questo anche "M" e "F" rimangono in grassetto */
+    font-weight: normal;
+}
+
+ul {
+    padding-left: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+form li {
+    margin: 0.5rem 0;
+}
+
+#schedeContatti li {
+    border-left: 0.5rem solid darkorchid;
+    background-color: violet;
+    color: darkorchid;
+
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+}
+
+#schedeContatti li p {
+    margin: 0 0.3rem;
+}

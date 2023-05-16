@@ -1,0 +1,101 @@
+<DOCTYPE html>
+
+    <html>
+
+    <head>
+        <title>Media queries</title>
+        <style>
+            @media (max-width:960px) {
+
+                /* tablet */
+                .only-mobile,
+                .only-tablet {
+                    display: block;
+
+                }
+
+                .only-desktop {
+                    display: none;
+                }
+
+                article {
+                    column-count: 1;
+                }
+            }
+
+            p {
+                font-size: 20px;
+                color: red;
+            }
+
+            @media (min-width:961px) {
+
+                .only-mobile,
+                .only-tablet {
+                    display: none;
+                }
+
+                .only-desktop {
+                    display: block;
+                }
+
+                article {
+                    column-count: 3;
+                }
+            }
+
+            article {
+                column-count: 3;
+            }
+
+            li {
+                display: block;
+                background-color: aqua;
+                color: white;
+                padding: 0.2cm, 0.4cm;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <nav>
+                <button class="only-mobile" onclick="toggleMenu()">M</button>
+                <ul class="only desktop" id="expanded-menu">
+                    <li>Menu1</li>
+                    <li>Menu2</li>
+                    <li>Menu3</li>
+                    <li>Menu4</li>
+                    <li>Menu5</li>
+                </ul>
+            </nav>
+        </header>
+        <h1 class="only-mobile"> Ciao,sei da telefono?</h1>
+        <h1 class="only-tablet"> Ciao,sei da tablet?</h1>
+        <h1 class="only-desktop"> Ciao,sei da computer?</h1>
+        <p>Ciao, sono colorato</p>
+        <article>
+            Giovanni Storti (Milano, 20 febbraio 1957) è un comico, attore e sceneggiatore italiano
+            componente del noto trio comico Aldo, Giovanni e Giacomo.
+            Grazie al sodalizio formato con Aldo Baglio e Giacomo Poretti nel 1991, Giovanni Storti fa parte di un trio
+            comico che
+            ha riscosso un considerevole successo in Italia a partire dagli anni novanta, sia sul grande schermo che in
+            ambito televisivo e teatrale.
+            Nel 1998 viene candidato ai David di Donatello come Miglior regista esordiente per il film Tre uomini e una
+            gamba,
+            vincendo nello stesso anno un Nastro d'argento speciale
+            e nel 2001 viene candidato come Miglior attore protagonista per il film Chiedimi se sono felice.
+        </article>
+        <script>
+            function toggleMenu() {
+                const expMenuElement = document.getElementById("expanded-menu");
+                if (expMenuElement.style.display == "none") {
+                    expMenuElement.style.display = "block";
+                } else {
+                    expMenuElement.style.display = "none";
+                }
+            }
+        </script>
+    </body>
+
+    </html>

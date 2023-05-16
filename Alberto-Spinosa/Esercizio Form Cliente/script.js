@@ -1,4 +1,5 @@
 //inserimento di una section all'interno della section schede nel documento HTML
+let i = 1;  //contatore schede clienti
 function aggiungiScheda() {
 
     //Controllo se le condizioni vengono accettate
@@ -12,17 +13,18 @@ function aggiungiScheda() {
         const maschio = document.getElementById("radioSessoM");
         const femmina = document.getElementById("radioSessoF");
 
+
         //Creo un nuovo elemento di tipo "section" e lo associamo alla costante "nuovoElemento"
         const nuovoElemento = document.createElement('section');
         //Recupero le proprieta della sezione schede
         const elementoSchede = document.getElementById('schede');
 
         //Tramite il metodo appendChild() aggiungiamo l'elemento "nuovoElemento" come figlio dell'elemento
-        //"elementoSchede", cos' facendo andiamo a creare una nuova section all'interno di quella già esistente
+        //"elementoSchede", così facendo andiamo a creare una nuova section all'interno di quella già esistente
         elementoSchede.appendChild(nuovoElemento);
         //Tramite il metodo setAttribute() impostiamo l'attributo "id"  con il valore di "schedaCliente"
         //(risulta comodo per la parte di css, in questo modo andiamo a modificare tutte le schede contemporaneamente)
-        nuovoElemento.setAttribute('id', 'schedaCliente');
+        nuovoElemento.setAttribute('id', 'schedaCliente' + i);
 
         //In queste righe creo un elemento "h2" in cui andrò ad inserire del testo, tutto ciò all'interno della sezione nuova
         const head = document.createElement("H2");
@@ -43,18 +45,17 @@ function aggiungiScheda() {
         const paragrafoData = document.createElement("P");
         const stringaData = document.createTextNode("Data di nascita: " + data.value);
         paragrafoData.appendChild(stringaData);
-        nuovoElemento.appendChild(paragrafoData);
+        nuovoElemento.appendChild(paragrafoData);        
+
+        const selectedRadioButton = document.querySelector('input[name="sesso"]:checked');
+        const sessoSelezionato = selectedRadioButton.value;
 
         const paragrafoSesso = document.createElement("P");
-        if (maschio.value == undefined) {
-            const stringaSesso = document.createTextNode("Sesso: " + femmina.value);
-            paragrafoSesso.appendChild(stringaSesso);
-            nuovoElemento.appendChild(paragrafoSesso);
-        } else {
-            const stringaSesso = document.createTextNode("Sesso: " + maschio.value);
-            paragrafoSesso.appendChild(stringaSesso);
-            nuovoElemento.appendChild(paragrafoSesso);
-        }
+        const stringaSesso = document.createTextNode("Sesso: " + sessoSelezionato);
+        paragrafoSesso.appendChild(stringaSesso);
+        nuovoElemento.appendChild(paragrafoSesso); 
+   
+        i++;
 
     } else {
         alert("Accetta le condizioni prima di continuare!");

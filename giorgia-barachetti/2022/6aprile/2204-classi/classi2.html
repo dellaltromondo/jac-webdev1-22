@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <body>
+            <script>
+                class Message{
+                    #id;
+                    #sender=User;
+                    #receiver=User;
+                    #timestamp=Date;
+
+                    constructor(sender, receiver, timestamp){
+                        this.#sender = sender;
+                        this.#receiver = receiver;
+                        this.#timestamp = new Date();
+                    }
+
+                    getTimestamp() {
+                        return this.#timestamp;
+                    }
+
+                    getSender() {
+                        return this.#sender;
+                    }
+
+                    getReceiver() {
+                        return this.#receiver;
+                    }
+                }
+
+                class Chat extends Message{
+                    #messagelist=Message;
+                    #user=User;
+
+                    constructor(sender, receiver, messagelist){
+                        super(sender, receiver)
+                        this.#messagelist= messagelist;
+                        this.#user = User;
+                    }
+
+                    getMessagelist() {
+                    return this.#messagelist;
+                    }
+                }
+
+                class User extends Message{
+                    //profile infos
+                    #id;
+                    #displayName;
+                    #name;
+                    //changeable diaplay infos
+                    #surname;
+                    #profilePic;
+                    #Status;
+
+                    constructor(id, name, surname){
+                        this.#id = id;
+                        this.#name = name;
+                        this.#surname = surname;
+                        this.displayName = name + ' ' + surname;
+                    }
+
+                    changeProfilePicture(newProfilePicture){
+                        this.#profilePic = newProfilePicture;
+                    }
+
+                    changeDisplayName(newDisplayName){
+                        if(newDisplayName.length < 5 ){
+                            throw new Error('nome troppo corto')
+                        }
+                        this.#displayName = newDisplayName;
+                    }
+
+
+                    getUser() {
+                    return `${this.#id}, ${this.#displayName}, ${this.#name}, ${this.#surname}, ${this.#profilePic}, ${this.#Status}`
+                    }
+
+                }
+
+                const newMessage = new Message('gio', 'tro')
+                console.log(`${newMessage.getTimestamp()}, \nsender: ${newMessage.getSender()}, \nreceiver: ${newMessage.getReceiver()}`);
+
+                const me = new User('1', 'giorgia', 'baracca');
+                console.log(me);
+                try{
+                    me.changeDisplayName('gay')
+                    console.log(me)
+                    me.changeDisplayName('yohannaravann')
+                    console.log(me)
+                } catch (e){
+                    console.log('ERRORE')
+                }
+                
+                
+
+
+            </script>
+        </body>
+    </head>
+</html>

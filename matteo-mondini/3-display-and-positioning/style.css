@@ -1,0 +1,109 @@
+body {
+  background-color: #fae5d0;
+  margin: 0;
+}
+
+h1 {
+  color: #ffaa00;
+  font-size: 3rem;
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  color: #995500;
+}
+
+a {
+  color: #990000;
+}
+
+/* SECTIONS */
+
+header {
+  margin: 0;
+}
+
+#header-image {
+  width: 100%;
+  height: auto;
+  border-top: 0.6rem solid #ffaa00;
+}
+
+article {
+  padding: 2rem;
+}
+
+article section {
+  clear: both;
+  min-height: 200px;
+}
+
+section img {
+  height: 130px;
+  float: left;
+  margin-right: 1rem;
+}
+
+footer {
+  padding: 2rem;
+  color: white;
+  background-color: #995500;
+}
+
+/* NAVIGATION */
+
+nav {
+  text-align: right;
+  background-color: #ffaa00;
+  padding: 0.6rem;
+  position: sticky;
+  top: 0px;
+}
+
+nav ol {
+  list-style-type: none;
+  margin: 0;
+}
+
+nav li {
+  display: inline-block;
+}
+
+nav a {
+  color: white;
+  padding: 0.2rem 0.5rem;
+}
+
+nav a:hover {
+  background-color: white;
+  color: #ffaa00;
+}
+
+/* CONTACTS */
+
+#contacts {
+    position: fixed;
+    bottom: 0;
+    right: 20px;
+    border-radius: 1rem 1rem 0 0;
+    background-color: #ffaa00;
+    color: white;
+    padding: 1rem 2rem;
+}
+
+#contacts img {
+    display: none;
+}
+
+#contacts:hover {
+    padding-bottom: 1rem;
+}
+
+#contacts:hover img {
+    display: block;
+    width: 2.5rem;
+    height: 3rem;
+    margin: auto;
+    float: none;
+}

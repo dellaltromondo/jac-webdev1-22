@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <h1 id="Titolo"></h1>   
+    </body>
+    <script>
+        // NB: DOM "Document Object Model" JS vede HTML come un insieme di oggetti, il DOM serve a dirmi come gestire gli elementi
+       
+        const elementoTitolo = document.getElementById ("Titolo");
+        
+        // Oppure document.getElementsByTagName (tag);
+        // Oppure document.getElementByClassName (...);
+        
+        elementoTitolo.innerText = "Hello World";
+    </script>
+</html>

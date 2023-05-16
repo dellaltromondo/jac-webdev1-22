@@ -1,0 +1,77 @@
+/*
+    !Non funziona se invertito, le regole verrebbo sovrascritte!
+*/
+
+.only-mobile, .only-tablet {
+    display: none;
+}
+
+.only-desktop {
+    display: block;
+}
+
+#paragrafino {
+    font-size: 20px;
+    color: red;
+}
+
+article{
+    column-count: 3;
+}
+
+li {
+    display: inline-block;
+    background-color: darkviolet;
+    color: white;
+}
+
+
+/* 
+    * TABLET
+*/
+@media(max-width: 960px) {
+    .only-tablet {
+        display: block;
+    }
+
+    .only-desktop, .only-mobile {
+        display: none;
+    }
+
+    #paragrafino {
+        color: pink;
+    }
+
+    article{
+        column-count: 2;
+    }
+}
+
+
+/* 
+    * MOBILE
+*/
+@media(max-width: 680px) {
+
+    .only-mobile {
+        display: block;
+    }
+
+    .only-desktop, .only-tablet {
+        display: none;
+    }
+
+    #paragrafino {
+        color: blue;
+    }
+
+    article {
+        column-count: 1;
+    }
+
+    li {
+        display: block;
+        padding: 0.4em 0.4em;
+        margin-bottom: 0.2em;
+    }
+}

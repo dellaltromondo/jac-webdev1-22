@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Previsioni meteo</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="container">
+		<h1>Previsioni meteo</h1>
+		<form>
+			<button type="submit" id="get-weather-btn">Visualizza previsioni meteo</button>
+		</form>
+		<div id="weather-container"></div>
+	</div>
+	<script src="script.js"></script>
+</body>
+</html>
+<style>
+    .container {
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 20px;
+	text-align: center;
+}
+
+h1 {
+	font-size: 2em;
+	margin-bottom: 20px;
+}
+
+form {
+	margin-bottom: 20px;
+}
+
+label {
+	display: block;
+	margin-bottom: 10px;
+}
+
+input[type="text"] {
+	padding: 5px;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+button[type="submit"] {
+	padding: 10px;
+	background-color: #007bff;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+button[type="submit"]:hover {
+	background-color: #0069d9;
+}
+
+#weather-container {
+	margin-top: 20px;
+	text-align: left;
+}
+
+</style>
+
+<script>
+const form = document.querySelector('form');
+const latitudeInput = "45.6982642";
+const longitudeInput = "9.6772698";
+const weatherContainer = document.getElementById('weather-container');
+const getWeatherBtn = document.getElementById('get-weather-btn');
+
+form.addEventListener('submit', (event) => {
+	event.preventDefault();
+	
+	
+	getWeatherBtn.disabled = true;
+	weatherContainer.innerHTML = 'Recupero delle informazioni meteo in corso...';
+	const options = {
+		method: 'GET',
+
+	};
+	fetch(`https://dark-sky.p.rapidapi.com/{45.6982642%7D},{9.6772698}?units=auto&lang=en&Key=745609d702msha289c7a6833536ap180117jsnf41a54ec8549`, options)
+		.then(response => response.json())
+		.then(response => {
+			weatherContainer.innerHTML = `
+				<p>Condizioni attuali: ${response.currently.summary}</p>
+				<p>Temperatura attuale: ${response.currently.temperature} °C</p>
+				<p>Probabilità di precipitazioni: ${response.currently.precipProbability * 100}%</p>
+				<p>Velocità del vento ${response.currently.windSpeed} km/h</p>
+			`;
+		})
+		.catch(err => {
+			console.error(err);
+			weatherContainer.innerHTML = 'Impossibile recuperare le informazioni meteo.';
+		})
+		.finally(() => {
+			getWeatherBtn.disabled = false;
+		});
+});
+
+</script>

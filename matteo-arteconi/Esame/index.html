@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Rubik:wght@700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" href="img/favicon.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Pokédex | Matteo Arteconi</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1>Pokédex</h1>
+            <a href="">My Pokémons</a>
+            <a href="">New Pokémon</a>
+            <a href="">Info</a>
+        </nav>
+    </header>
+
+    <div class="main">
+
+        <section class="sidebar">
+            <h1>Pokémon List</h1>
+            <ul class="pkmList">
+                <li class="list">Pikachu</li>
+                <li class="list">Charmander</li>
+                <li class="list">Squirtle</li>
+                <li class="list">Bulbasaur</li>
+            </ul>
+
+            <h1>Insert New</h1>
+            <form>
+                <label for="titolo">Pokémon Name:</label>
+                <input type="text" id="pkmName" name="titolo"><br>
+
+                <label for="titolo">Image URL:</label>
+                <input type="url" id="pkmUrl" name="titolo"><br>
+
+                <label for="descrizione">Descrizione:</label>
+                <textarea id="descrizione" name="descrizione"></textarea>
+
+                <button type="submit">Agiungi</button>
+            </form>
+
+        </section>
+
+        <section class="cards">
+            <div class="card">
+                <img src="img/pikachu.png" alt="Pikachu" class="cardImages">
+                <div class="nomeTesto">
+                    <h4><b>Pikachu</b></h4>
+                    <p>Alto una quarantina di centimetri e del peso di sei chili, Pikachu ha l'aspetto di un roditore,
+                        con
+                        un
+                        corpo arrotondato, zampe corte e una coda che ricorda il simbolo di un fulmine.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="img/charmander.png" alt="Charmander" class="cardImages">
+                <div class="nomeTesto">
+                    <h4><b>Charmander</b></h4>
+                    <p>Charmander ha l'aspetto di una piccola lucertola rossa. Sulla punta della coda gli brucia sempre
+                        una
+                        fiamma che è un indice del suo stato di salute e d'animo: se si affioca è debole, se ondeggia è
+                        divertito, mentre se brucia violentemente è infuriato.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="img/squirtle.png" alt="Squirtle" class="cardImages">
+                <div class="nomeTesto">
+                    <h4><b>Squirtle</b></h4>
+                    <p>Squirtle è un piccolo Pokémon bipede dalle sembianze di una tartaruga dal colore celeste, una sua
+                        caratteristica è il resistente guscio marrone sulla schiena, il quale inizia a solidificarsi
+                        subito
+                        dopo la nascita.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="img/bulbasaur.png" alt="Bulbasaur" class="cardImages">
+                <div class="nomeTesto">
+                    <h4><b>Bulbasaur</b></h4>
+                    <p>Bulbasaur è un Pokémon grazioso, nato con un grande seme sul dorso, che cresce costantemente con
+                        il
+                        suo corpo. Insieme a Squirtle e Charmander, Bulbasaur è uno dei tre Pokémon disponibili
+                        all'inizio
+                        di Pokémon Rosso e Blu. Si evolve in Ivysaur.</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+
+<footer>
+    <h3>Realizzato da Matteo Arteconi</h3>
+</footer>
+<script src="script.js"></script>
+
+</html>

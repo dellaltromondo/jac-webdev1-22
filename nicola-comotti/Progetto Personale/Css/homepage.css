@@ -1,0 +1,58 @@
+#form-esercizi { 
+    grid-template-columns: 1fr 1fr;
+}
+
+#listaSchede {
+    list-style-type: none;
+    margin: 2em 1em;
+    padding: 0;
+}
+
+.scheda {
+    border: var(--border);
+    border-radius: 50px;
+    background-color: var(--blue04);
+    color: var(--white);
+    padding: 2em;
+    margin: 0.5em;
+    position: relative;
+}
+
+.scheda>h2 {
+    margin: 0 0 1em 0;
+}
+
+.esercizio {
+    margin: 0.5em 0 0 0;
+    padding: 0.5em;
+    border: var(--border);
+    border-radius: var(--b-radius);
+    background-color: var(--blue04);
+    position: relative;
+}
+
+.esercizio>p {
+    display: inline-block;
+    margin: 0.5em 0 0 0;
+}
+
+.esercizio>h3 {
+    margin: 0;
+}
+
+.delete-button {
+    position: absolute;
+    right: -1.3em;
+    top: -0.75em;
+    padding: 0.4em;
+    background-color: var(--blue);
+    border-radius: 50px;
+    border: var(--border);
+}
+
+.delete-button>img {
+    height: 1.3em;
+    width: 1.3em;
+    position: relative;
+    top: 0.1em;
+}

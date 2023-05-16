@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="autonomo.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<form id="form">
+    <label> nome: <input name="nome" type="text" placeholder="mario"></label> 
+        
+        <label for="cognome">cognome:</label> <input name="cognome" id="cognome">
+       
+        <label>data di nascita: <input name="data" type="date"></label>
+        
+          <label class="sesso"><h2>sesso:</h2> M<input name="sesso" type="radio" value="m"></label>
+        <label class="sesso">F<input name="sesso" type="radio" value="f"></label>
+        
+        <label><input type="checkbox"> accetto le condizioni</label>
+       
+        <button onclick="aggiungiScheda()" type="button"> Aggiungi</button>
+</form>
+
+<section id="scheda">
+
+
+</section>
+
+    <script>
+        function aggiungiScheda() {
+        const nuovoElemento = document.createElement("section");
+        const elementoSchede = document.getElementById("scheda");
+        const input = document.getElementsByTagName('input');
+        nuovoElemento.innerText = 'utente:   ' + "  nome: " + input[0].value +
+          "    cognome " + input[1].value +
+          "    data di nascita " + input[2].value + 
+          "    sesso: " + input[3].value+
+          "    consenso: " + input[5].value;
+        elementoSchede.appendChild(nuovoElemento);
+        nuovoElemento.setAttribute('class', 'scheda');
+    }
+    
+    </script>
+
+
+</body>
+</html>

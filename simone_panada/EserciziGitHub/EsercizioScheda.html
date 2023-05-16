@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <section id="scheda1">
+            Ciao sono un nuovo elemento
+        </section>
+    </body>
+    <form>
+       <button onclick="">Crea un nuovo elemento</button>
+    </form>
+    <script>
+        const nuovoElScheda=document.createElement("section");
+        nuovoElScheda.innertext="Ciao sono un nuovo utente";
+        const elementoScheda=document.getElementById("Scheda");
+        elementoScheda.appendChild("nuovoElScheda");
+        nuovoElScheda.setAttribute("class","scheda1");
+    </script>
+</html>

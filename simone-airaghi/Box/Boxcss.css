@@ -1,0 +1,101 @@
+body, h1 {
+    background-color: bisque;
+    margin: 0;
+}
+
+h1 {
+    color:coral;
+    margin: 0.5em;
+    text-align: center;
+    font-size: 4rem;
+
+}
+
+h2 {
+    padding-left: 0.4em;
+    color:darkgoldenrod;
+    text-align: center;
+}
+
+h3 {
+    color:olive;
+}
+
+header {
+    background-color: chocolate;
+    padding-top: 1.7em;
+    
+}
+
+ header nav {
+    color: whitesmoke;
+    padding: 0.45em;
+    font-style: italic;
+    font-size: 1.5em;
+    background-color:chocolate;
+    text-align: right;
+}
+
+nav a {
+    background-color:brown;
+    padding: 0.5em;
+    color: whitesmoke;
+}
+
+header img {
+    margin: 0;
+    margin-top: 1em;
+    width: 100%;
+    max-height: 50%;
+
+}
+
+#boxModel {
+    font-size: 1.5em;
+    color:darkslategray;
+    margin: 15px 15px 15px 15px;
+    padding: 0.6em;
+    border-width: 3px;
+    border-color: black;
+    border-style: double;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#boxModel img {
+    display: block;
+    width: 35%;
+    margin: 0px auto;
+    text-align: center;
+}
+
+#boxSizing {
+    font-size: 1.5em;
+    color:darkslategray;
+    margin: 15px 15px 15px 15px;
+    padding: 0.6em;
+    border-width: 3px;
+    border-color: black;
+    border-style: double;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#boxSizing img {
+    display: block;
+    width: 50%;
+    margin: 0px auto;
+    text-align: center;
+}
+
+footer {
+    background-color: coral;
+    margin-bottom: 0;
+    padding-bottom: 1em;
+}
+
+footer p {
+    font-size: 0.9em;
+    font-style: oblique;
+    padding-top: 1em;
+    padding-left: 0.85rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

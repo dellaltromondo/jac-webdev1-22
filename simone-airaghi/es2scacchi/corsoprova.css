@@ -1,0 +1,13 @@
+.immaginipezzi{height: 300px;
+                weight: 350px;
+                
+}
+* { box-sizing: border-box;
+}
+body{
+    margin: 1rem;
+    padding: 3rem;
+    border: 1rem dashed black;
+    }
+
+html {background-color:rgb(255, 242, 242);}

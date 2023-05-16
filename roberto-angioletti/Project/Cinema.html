@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Moviewood is a way to track your tv time, film and tv series">
+    <meta name="author" content="Roberto Angioletti &#128526">
+    <meta property="og:image" content="favicon">
+    <meta property="og:description" content="Moviewood is a way to track your tv time, film and tv series">
+    <link rel="shortcut icon" href="Images/" type="image/x-icon">
+    <title>Moviewood</title>
+    <link rel="stylesheet" href="Cinema.css">
+    <script src="Cinema.js" defer></script>
+</head>
+
+<body>
+
+
+    <header>
+        <h1>Moviewood</h1>
+
+        <div class="login-container">
+            <input type="text" placeholder="Username" name="username">
+            <input type="text" placeholder="Password" name="psw">
+            <button type="submit">Login</button>
+        </div>
+
+
+        <img id="Dude" src="Images/profilo.png"></img>
+
+        <nav class="topnav" id="myTopnav">
+            <button class="Button-link" id="MostraFilm">Film</button>
+            <button class="Button-link" id="MostraSerie">Serie Tv</button>
+            <a href="Contact.html">Contact</a>
+            <a href="About.html">About</a>
+        </nav>
+
+
+
+
+    </header>
+
+
+
+    <div class="image-container">
+        <div class = "listaFilmPiccoli">
+        <img id="filmPiccolo1" class="filmPiccolo" src="Images/film/back-to-the-future-poster.jpg" ></img>
+        <button onclick="zoomaFilm(1)"></button>
+        <img id="filmPiccolo2" class="filmPiccolo" src="Images/film/constantine-movie-poster.jpg" ></img>
+        <button onclick="zoomaFilm(2)"></button>
+
+        <!-- <img id="filmGrosso1" class="filmGrosso" src="Images/film/scarface-poster.jpg"> -->
+        
+        <!-- <img id="Tony" src="Images/scarface-poster.jpg" alt="Image"></img> decommenta -->
+        <!-- <img id="serie1" src="Images/queens-gambit-poster.jpg" alt="Image"></img> -->
+        <!-- <img id="Beth" src="Images/queens-gambit-poster.jpg" alt="Image"></img> decommenta -->
+        </div>
+
+        <div class="zoomed-image-container">
+
+            <div class="zoomed-image">
+                <!-- <img id="Tony-Z" src="Images/film/scarface-poster.jpg"> -->
+                <img id="filmGrosso1" class="filmGrosso" src="Images/film/scarface-poster.jpg"></img>
+            </div>
+
+            <div class="zoomed-info">
+                <p>Direct by:</p>
+                <p>year:</p>
+                <p>country of production:</p>
+                <p>cast:</p>
+            </div>
+        
+        </div>
+    </div>
+</body>
+
+</html>

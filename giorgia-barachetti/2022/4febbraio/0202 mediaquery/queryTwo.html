@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>query</title>
+    <style>
+
+        /*TABLET/DESKTOP
+        definisco come deve essere*/
+        .only-mobile, .onlytablet {
+            display : none;/*tutto qurllo che non è classe mobile non si vede,  toglie quel pezzo dalla pag*/
+        .only-desktop {
+                display : block;
+            }
+        }
+        /*MOBILE
+        cambio la definizione*/
+        @media (max-width: 960px){
+            .only-mobile {
+                display : block;
+            } 
+            .only-desktop, .only-tablet {
+                display : none;
+            }
+            
+            
+            p{
+            font-size: 20px;
+            color: red;
+        }
+            
+            article {
+                column-count: 1;
+            }      
+        
+            li{
+                display: block;
+            }
+        }
+
+
+        li {
+            display: inline-block;
+            color: blue;
+            background-color: pink;
+            padding: 0.2em 0.4em;
+            margin-bottom: 0.2rem;
+        }
+        
+        p{
+            font-size: 20px;
+            color: red;
+        }
+
+        article {
+            column-count: 2;
+        }  
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <button class="only-mobile" onclick="toggleMenu()"> MENU </button>
+           <ul class="only-desktop" id="expandedMenu">
+            <li>voce 1</li>
+            <li>voce 2</li>
+            <li>voce 3</li>
+            <li>voce 4</li>
+            <li>voce 5</li>
+            <li>voce 6</li>
+            <li>voce 7</li>
+            <li>voce 8</li>
+            <li>voce 9</li>
+           </ul> 
+        </nav>
+    </header>
+
+
+    <h1 class="only-mobile">ciao sei su mobile?   display none sovrascritto da display block</h1>
+    <!--  <h1 class="only-tablet">ciao sei su tablet? -->
+    <h1 class="only-desktop">ciao sei su desktop?</h1>
+
+
+    <p>ciao sono nel testo</p>
+
+    <article>cioa ciao ciao ciao ciaoc ciao caio ciao ciao ciao caioc caio ciaoc caioic ciao caio caioc icoa ciao ciao ciao ciao ciao cicao cicao caioc caoicac ocaic cioa ciao ciao ciao ciaoc ciao caio ciao ciao ciao caioc caio ciaoc caioic ciao caio caioc icoa ciao ciao ciao ciao ciao cicao cicao caioc caoicac ocaic cioa ciao ciao ciao ciaoc ciao caio ciao ciao ciao caioc caio ciaoc caioic ciao caio caioc icoa ciao ciao ciao ciao ciao cicao cicao caioc caoicac ocaic cioa ciao ciao ciao ciaoc ciao caio ciao ciao ciao caioc caio ciaoc caioic ciao caio caioc icoa ciao ciao ciao ciao ciao cicao cicao caioc caoicac ocaic cioa ciao ciao ciao ciaoc ciao caio ciao ciao ciao caioc caio ciaoc caioic ciao caio caioc icoa ciao ciao ciao ciao ciao cicao cicao caioc caoicac ocaic cioa ciao ciao ciao ciaoc ciao caio ciao ciao ciao caioc caio ciaoc caioic ciao caio caioc icoa ciao ciao ciao ciao ciao cicao cicao caioc caoicac ocaic</article>
+   
+   
+    <script>
+    function toggleMenu(){      /*toggle=show/hide*/
+        const exMenElement = document.getElementById("expandedMenu");
+       /*servono per testare se la mia operazine va console.log(exMenElement.style.display)
+        /*NASCONDERE MENU*/
+        if (exMenElement.style.display !== "block"){
+           /* meglio testare la disuguaglianxzza tipoprima ma potevo anche scrivere
+             exMenElement.style.display == "none"*/
+            exMenElement.style.display = "block"; //accedo da js al css
+        }else{
+            exMenElement.style.display = "none"
+        }
+        //imposta il display block per il menu
+    }
+    
+    
+    
+    </script>
+</body>
+
+</html>

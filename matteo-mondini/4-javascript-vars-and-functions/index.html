@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Primi esercizi Javascript su funzioni</title>
+    </head>
+
+    <body>
+        <script>
+            function moltiplicaPer1000(n) {
+                return n * 1000;
+            }
+            console.log("Moltiplica 10 per 1000: " + moltiplicaPer1000(10));
+            console.log("Moltiplica 42 per 1000: " + moltiplicaPer1000(42));
+
+            function nomeCompleto(nome, cognome) {
+                return nome + " " + cognome;
+            }
+            console.log("Nome completo con nome: Mario e cognome Rossi: "
+                /* Sfrutto il fatto che posso andare a capo quando voglio */
+                + nomeCompleto("Mario", "Rossi")
+            );
+            console.log("Nome completo con nome: Giorgio e cognome Bianchi: "
+                + nomeCompleto("Giorgio", "Bianchi")
+            );
+
+            function categoriaEta(annoDiNascita) {
+                let eta = 2022 - annoDiNascita;
+                if (eta < 18) {
+                    return 'young';
+                } else if (eta > 65) {
+                    return 'old';
+                } else {
+                    return 'adult';
+                }
+
+                // Alternativa con operatore ternario (in questo caso POCO LEGGIBILE)
+                /*
+                return (eta < 18)
+                    ? 'young'
+                    : (eta > 65)
+                        ? 'old'
+                        : 'adult'
+                */
+            }
+            console.log("Categoria di eta di 1987: " + categoriaEta(1987));
+            console.log("Categoria di eta di 1912: " + categoriaEta(1912));
+            console.log("Categoria di eta di 2008: " + categoriaEta(2008));
+
+            let date = [100, 200, 300];
+            function filtraDateDiNascitaDiMaggiorenni(date) {
+                let risultato = [];
+                for (let k = 0; k < date.length; k++) {
+                    /* 
+                    // VERSIONE SEMPLICE
+                    if (eta >= 18) {
+                        risultato.push(date[k]);
+                    }
+                    */
+                    // VERSIONE CHE UTILIZZA METODO PRECEDENTE
+                    if (categoriaEta(date[k]) == 'young') {
+                        risultato.push(date[k]);
+                    }
+                }
+                return risultato;
+            }
+            console.log("Filtro per [1923, 2005, 2001, 1987, 2006]: ");
+            console.log(filtraDateDiNascitaDiMaggiorenni([1923, 2005, 2001, 1987, 2006]));
+            console.log("Filtro per [2012, 1930, 1266, 2022, 2023]: ");
+            console.log(filtraDateDiNascitaDiMaggiorenni([2012, 1930, 1266, 2022, 2023]));
+
+            function filtraMaggiorenni(date) {
+                let risultato = [];
+                for (let k = 0; k < date.length; k++) {
+                    if (categoriaEta(date[k].annoDiNascita) == 'young') {
+                        risultato.push(date[k]);
+                    }
+                }
+                return risultato;
+            }
+
+            let listaPersone = [
+                { nome: "Pippo", annoDiNascita: 1930 },
+                { nome: "Pluto", annoDiNascita: 1996 },
+                { nome: "Topolino", annoDiNascita: 2008 },
+                { nome: "Paperoga", annoDiNascita: 1942 },
+                { nome: "Paperino", annoDiNascita: 2010 },
+            ];
+
+            console.log(listaPersone[0].nome); // => "Pippo"
+            console.log(listaPersone[3].annoDiNascita) // => 1942
+
+            console.log("Filtro i maggiorenni di ", listaPersone);
+            console.log(filtraMaggiorenni(listaPersone));
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,33 @@
+imput, textarea, select {
+	display: block; 
+	margin : 3px;
+
+	
+}
+body{
+	background :rgb(68, 68, 164);
+	color : white;
+	margin: 0px; 
+} 
+  
+header{
+	background-color:#987654;
+	color: white
+}
+
+
+input,option,textarea,select, submit, button{
+	border-radius : 10px;
+	display: block;
+}
+
+div input{
+    display: inline-block;
+}
+input[type="checkbox"] {
+    display: inline-block;
+}
+button{
+    display: block;
+}
+

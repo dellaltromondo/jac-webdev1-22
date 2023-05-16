@@ -1,0 +1,44 @@
+
+* {
+  box-sizing: border-box;
+}
+
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  height: 4000px; 
+}
+
+.bottone{
+  border-radius: 12px;
+  
+}
+
+.image-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.image-container img {
+  display: block;
+  margin: 0 auto;
+}
+
+.image-container .image-description {
+  text-align: center;
+  font-style: italic;
+}
+
+.centered-text {
+  text-align: center;
+}
+
+.centered-text {
+  text-align: center;
+}
+
+
+
+

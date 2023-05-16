@@ -1,0 +1,70 @@
+<html>
+<script>
+    
+    function aggiungiScheda() {
+        const nuovoElemento = document.createElement("section");
+        nuovoElemento.innerText = "Ciao sono un nuovo elemento"
+        //come se creassi su html <section> Ciao sono un nuovo elemento </section>
+
+        const elementoSchede = document.getElementById("schede");
+        // con questo, le scede che crei le metterà nel posto dove ce l'id schede in html.
+        elementoSchede.appendChild(nuovoElemento);
+        //attacchi il nuovoElemento (section) all'id schede
+        nuovoElemento.setAttribute('id', "scheda1");
+    }
+
+</script>
+
+<head>
+    <style>
+        input {
+
+            display: block;
+        }
+
+        div input {
+            display: inline-block;
+        }
+
+        input[type="checkbox"] {
+            display: inline-block;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <form>
+        <label>NOME: <input type="text" placeholder="Mario"></label>
+        <label for="COGNOME"> COGNOME:</label>
+        <input id="COGNOME" type="text">
+        <!-- per collegare l'input alla scritta nome o cognome, questi due metodi. -->
+
+        <label>Data di nascita: <input type="date"></label>
+
+        <div>sesso:<br><label>m: <input name=sesso type="radio" value="m"></label>
+            <label>f: <input name=sesso type="radio" value="f"></label>
+        </div>
+
+        <!-- creare data con type date;
+         radio è un bottone rotondo
+         poi scelta del sesso, devono avere un nome uguale cosi da capire che appartengono allo stesso blocco,
+         cosi puoi selezionare unno e deselezionare l'altro -->
+        <label> <input type="checkbox">accetto le condizioni</label>
+        <button type="button" onclick="aggiungiScheda()"> invio </button>
+        <!-- button type button permette di non ricaricare la pagina ad ogni invio -->
+
+
+    </form>
+
+    <section id="schede">
+
+    </section>
+
+</body>
+
+
+
+
+</html>

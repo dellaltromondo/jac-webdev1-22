@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fetch</title>
+    </head>
+
+    <body>
+        <section id="factSection" style="font-size: 300%;"></section>
+        <script type="module">
+            /* const factPromise = fetch("https://catfact.ninja/fact");
+            factPromise.then((response) => response.json().then((value) => console.log(value.fact))); */
+
+            const response = await fetch("https://catfact.ninja/fact");
+            const data = await response.json();
+            const factOfTheDay = data.fact;
+
+            document.getElementById("factSection").innerText = factOfTheDay;
+        </script>
+    </body>
+
+</html>

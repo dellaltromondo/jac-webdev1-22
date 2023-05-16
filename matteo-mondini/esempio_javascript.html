@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Esempio Javascript</title>
+    </head>
+
+    <body>
+        <script>
+            // Variabile numerica
+            let a = 5;
+            console.log('Valore di a: ' + a /* commento inline*/);
+
+            /*
+            Commento
+            multiline            
+            */
+
+            // Variabile stringa
+            const b = 'pippo';
+            console.log('Valore di b: ' + b);
+
+            // La prossima riga fallisce perche' b e' CONST
+            // b = 'pluto'; 
+
+            // Variabile array
+            let studenti = [ "Agostini", "Anzani", "Bergamelli", "Claudi" ];
+            console.log(studenti);
+
+            // Variabile oggetto
+            let studente = {
+                nome: "Marco",
+                cognome: "Rossi",
+                nascita: 2003,
+                classe: "ICT"
+            }
+            console.log(studente);
+
+            // Funzioni
+            function massimo(v1, v2) {
+                if (v1 > v2) {
+                    return v1;
+                } else {
+                    return v2;
+                }
+            }
+
+            let x = massimo(3, 42);
+            console.log(x);
+
+            // If alternativo (operatore ternario)
+            function massimoAlternativo(v1, v2) {
+                let risultato = (v1 > v2)
+                    ? v1
+                    : v2
+
+                return risultato;
+            }
+
+            function massimoFraQuattroNumeri(n1, n2, n3, n4) {
+                let m1 = massimo(n1, n2);
+                let m2 = massimo(n3, n4);
+
+                return massimo(m1, m2);
+            }
+            console.log(massimoFraQuattroNumeri(42, 23, 57, 12));
+        </script>
+    </body>
+</html>

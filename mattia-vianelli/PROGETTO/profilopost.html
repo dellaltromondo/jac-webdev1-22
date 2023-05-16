@@ -1,0 +1,109 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="profilo.css">
+        <link rel="stylesheet" href="post.css">
+        <link rel="stylesheet" href="media-queries-pp.css">
+    </head>
+    <body>
+        <section id="pagina-profilo">
+
+            <div id="menu-principale">
+                <img src="iconeMenu/icons8-instagram.svg" id="icona-insta">
+                <img src="iconeMenu/icons8-home-page-50.png" id="icona-home" onmouseover="mostraTestoIcone(home)" onmouseout="nascondiTestoIcone()">
+                <img src="iconeMenu/icons8-ricerca.svg" id="icona-cerca" onmouseover="mostraTestoIcone(cerca)" onmouseout="nascondiTestoIcone()">
+                <img src="iconeMenu/icons8-compass-south-100.png" id="icona-esplora" onmouseover="mostraTestoIcone(esplora)" onmouseout="nascondiTestoIcone()">
+                <img src="iconeMenu/icons8-instagram-reels.svg" id="icona-reels" onmouseover="mostraTestoIcone(reels)" onmouseout="nascondiTestoIcone()">
+                <img src="iconeMenu/icons8-chat-96.png" id="icona-messaggi" onmouseover="mostraTestoIcone(messaggi)" onmouseout="nascondiTestoIcone()">
+                <img src="iconeMenu/icons8-cuori-96.png" id="icona-notifiche" onmouseover="mostraTestoIcone(notifiche)" onmouseout="nascondiTestoIcone()">
+                <img src="iconeMenu/icons8-somma-96.png" id="icona-crea" onmouseover="mostraTestoIcone(crea)" onmouseout="nascondiTestoIcone()">
+                <img src="iconeMenu/icons8-utente-uomo-cerchiato-96.png" id="icona-profilo" onmouseover="mostraTestoIcone(profilo)" onmouseout="nascondiTestoIcone()">
+                <img src="iconeMenu/icons8-menu.svg" id="icona-menu-altro" onmouseover="mostraTestoIcone(altro)" onmouseout="nascondiTestoIcone()">
+            </div>
+
+            <div id="grid">
+
+                <div id="biografia">
+                    <div id="div-numero-follower">
+                        <p class="numeri-bio">579 Mln</p>
+                        <div class="riga-rosa-bio"></div>
+                        <p class="testi-bio">follower</p>
+                    </div>
+
+                    <div id="nome-grande">cristiano<img src="altreIcone/icons8-verificato (1).svg" id="foto-verificato"></div>
+                    <div id="nome-piccolo">Cristiano Ronaldo</div>
+                    <div id="testo-biografia">Join my NFT journey on @Binance. Click the link below to get started.
+                        ter.li/CR7-on-Binance</div>
+
+                    <button id="button-segui">Segui</button>
+                    <button id="button-messaggio">Messaggio</button>
+
+                    <div id="div-numero-post">
+                        <p class="numeri-bio">6</p>
+                        <div class="riga-rosa-bio"></div>
+                        <p class="testi-bio">post</p>
+                    </div>
+                    
+                    <div id="div-numero-seguiti">
+                        <p class="numeri-bio">580</p>
+                        <div class="riga-rosa-bio"></div>
+                        <p class="testi-bio">seguiti</p>
+                    </div>
+                </div>
+
+                <div id="div-post">
+                    <img class="immagini-post" src="fotoPostProfilo/post1.webp" onclick="clickPost(post1)">
+                    <img class="immagini-post" src="fotoPostProfilo/post2.jpg" onclick="clickPost(post2)">
+                    <img class="immagini-post" src="fotoPostProfilo/post3.jpg" onclick="clickPost(post3)">
+                    <img class="immagini-post" src="fotoPostProfilo/post4.jpeg" onclick="clickPost(post4)">
+                    <img class="immagini-post" src="fotoPostProfilo/post5.jpg" onclick="clickPost(post5)">
+                    <img class="immagini-post" src="fotoPostProfilo/post6.jpg" onclick="clickPost(post6)">
+                </div>
+                
+            </div>
+        </section>
+    <!-- ******************** PAGINA POST ******************** -->
+        <section id="pagina-post">
+
+            <div id="background-post"></div>
+            <div id="colonna-post"></div>
+
+            <div id="div-immagine-post">
+                <img id="immagine-post" src=""/>
+            </div>
+
+            <img onclick="cambiaCuore()" class="icona-miPiace icone-post" id="icona-miPiace-nero" src="altreIcone/icons8-cuori-100 (1).png">
+            <img onclick="cambiaCuore()" class="icona-miPiace icone-post" id="icona-miPiace-rosa" src="altreIcone/icons8-cuori-100.png">
+
+            <img id="icona-commenta" class="icone-post" onclick="mostraAggiungiCommento()" src="altreIcone/icons8-commenti-100.png">
+
+            <img id="icona-condividi" class="icone-post" src="altreIcone/icons8-aereo-di-carta-100.png">
+            
+            <img onclick="cambiaSalva()" class="icona-salva icone-post" id="icona-salva-nero" src="altreIcone/icons8-aggiungi-100.png">
+            <img onclick="cambiaSalva()" class="icona-salva icone-post" id="icona-salva-rosa" src="altreIcone/icons8-aggiungi-100 (1).png">
+
+            <div id="div-piaceA">
+                <p class="piaceA"> Piace a </p>
+                <p class="piaceA bold" id="numero-miPiace-prima"></p>
+                <p class="piaceA bold" id="numero-miPiace-dopo"></p>
+                <p class="piaceA bold"> persone </p>
+            </div>
+
+            <div id="div-biografia-post">
+                <p class="p-biografia-post bold" id="nome-utente-post">cristiano</p>
+                <img id="icona-verificato-post" src="altreIcone/icons8-verificato (1).svg">
+                <p class="p-biografia-post" id="testo-biografia-post"></p>
+            </div>
+
+            <div id="div-crea-commento">
+                <img class="crea-commento" id="icona-emoticon" src="altreIcone/icons8-emoticon-96.png">
+                <input class="crea-commento" id="input-aggiungi-commento" onclick="nascondiBordo()" placeholder=" Aggiungi un commento...">
+                <button class="crea-commento" id="button-pubblica-commento" onclick="creaCommento()">Pubblica</button>
+            </div>
+
+            <ul id="lista-commenti"></ul>
+        </section>
+
+        <script src="profilo.js"></script>
+        <script src="post.js"></script>
+    </body>
+</html>

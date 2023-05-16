@@ -1,0 +1,73 @@
+* {
+    background-color: rgb(252, 220, 190);
+    margin: 0px;
+}
+
+#titolo {
+    color: rgba(79, 66, 55, 0.395);
+    font-size: 40px;
+    margin: 1%;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+#sottotitolo {
+    color: rgba(149, 79, 14, 0.409);
+    font-size: 40px;
+    margin: 1%;
+    clear: both;
+    
+}
+
+#paragrafi {
+    color: grey;
+    margin:1%;
+    font-size: 35px;
+    display: inline;
+}
+
+#immagine_principale {
+    width: 100%;
+    height: 400px;
+}
+
+
+#immagine_secondaria {
+    margin: 0.2rem;
+    padding: 0.5rem;
+    border: 0.5rem solid rgb(0, 0, 0);
+    box-sizing: border-box;
+    width: 200px;
+    float:left;
+}
+
+ul{
+    list-style-type: square ;
+    font-size: 25px;
+    color: grey;
+}
+
+#riquadro {
+    margin-left: 40%;
+    box-sizing: border-box;
+    border: 0.5rem solid rgb(176, 5, 5);
+    color: blueviolet;
+}
+
+nav a{
+    background-color: rgb(162, 72, 90);
+    color: blanchedalmond;
+    text-decoration-line: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+nav a:hover{
+    color: brown;
+    background-color: blanchedalmond;
+}
+
+#box-contatti{
+    position:fixed;
+    bottom: 10px;
+    right: 10px;
+}

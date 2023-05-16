@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function moltiplicatoreNumero(n1) {
+            n1 *= 1000;
+            return n1;
+        }
+        console.log(moltiplicatoreNumero(5));
+
+        function nomeCognome(nome, cognome) {
+            return nome + ' ' + cognome;
+        }
+        console.log(nomeCognome('Samuel', 'Chigioni'));
+
+        function youngOld(data) {
+            if (data < 2004) {
+                return 'young'
+            } else if (data > 1957) {
+                return 'old'
+            } else if (2004 < data < 1957) {
+                return 'adult'
+            }
+        }
+        console.log(youngOld(2003))
+
+
+
+        function dateMinoriArray(anni = []) {
+            //anni=[] predispone in input un array vuoto, dove i valori li metterai nel console.log alla fine, 
+            //tu hai messo 6 valori quidni ci saranno 6 posizioni, n1,n2,n3...
+            //nel for crei variabile i, che parte da 0 e aumenterà di 1 ogni ciclo,arrivando a 6 che sono i posti nell'array che hai messo.
+            //nell'if prendi i valori dell'anni con i che aumenta. anni.length è la lunghetta dell'array, 
+            //quindi 6 visto che i valori che hai dato sono 6.
+            var minorenni = []
+            for (var i = 0; i < anni.length; i++) {
+                if (anni[i] > 2004) {
+                    minorenni.push(anni[i]);
+                }
+                
+            }
+            return minorenni;
+        }
+            console.log(dateMinoriArray([2003, 2004, 2005, 2006, 2007, 2008]))
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="it">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Form Contatti</title>
+        <style>
+            form {
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: bold;
+                margin: 1rem;
+            }
+
+            button {
+                margin: 0 1rem;
+                border: 1px solid red;
+                border-radius: 10px;
+                padding: 0.2rem 1rem;
+                background-color: lightcoral;
+                font-weight: bold;
+            }
+
+            #schede {
+                background-color: aquamarine;
+                border: 2px solid darkcyan;
+                width: max-content;
+                margin: 1rem;
+                list-style-type: none;
+                padding: 0;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                font-weight: lighter;
+                margin: 1rem;
+            }
+
+            .scheda {
+                margin: 1rem;
+                border: 2px solid darkgreen;
+                background-color: limegreen;
+                padding: 0.5rem;
+            }
+
+            p {
+                font-family: Arial, Helvetica, sans-serif;
+                margin: 0.5rem;
+                text-align: center;
+            }
+        </style>
+    </head>
+
+    <body>
+        <form>
+            <label>Nome: <input id="nome" type="text"></label>
+            <label>Cognome: <input id="cognome" type="text"></label>
+            <button type="button" onclick="aggiungiScheda()">Aggiungi</button>
+        </form>
+        <ul id="schede">
+            <h1>Elenco Contatti</h1>
+        </ul>
+    </body>
+    <script>
+        function aggiungiScheda() {
+            const nuovaScheda = document.createElement('li');
+
+            const inputNome = document.getElementById('nome');
+            const nome = inputNome.value;
+            const inputCognome = document.getElementById('cognome');
+            const cognome = inputCognome.value;
+
+            const pNome = document.createElement('p');
+            pNome.innerText = nome;
+            const pCognome = document.createElement('p');
+            pCognome.innerText = cognome;
+
+            nuovaScheda.appendChild(pNome);
+            nuovaScheda.appendChild(pCognome);
+
+            const ulSchede = document.getElementById('schede');
+            ulSchede.appendChild(nuovaScheda);
+            nuovaScheda.setAttribute('class', 'scheda');
+
+            inputNome.value = '';
+            inputCognome.value = '';
+        }
+    </script>
+
+</html>

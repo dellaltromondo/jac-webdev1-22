@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <title>JAVASCRIPT EXE 1</title>
+    </head>
+    <body>
+            <script>
+                function moltiplicazione(n){
+                    return n * 1000;
+                }
+                console.log(moltiplicazione(21))
+                function nome(n, c){
+                    return n + " " + c;
+                }
+                console.log(nome("Pippo", "Baudo"))
+
+                function eta(x){
+                    if((2023 - x) < 18)
+                        return "young";
+                    else if(x > 65)
+                        return "old";
+                    else
+                        return "adult";
+                }
+                console.log(eta(1900))
+
+                let vet = [1990, 2022, 2020, 2015, 2002, 2000];
+                function array(vet){  
+                    let nVet = [];
+                    let p = 0;
+                    for(i = 0; i< vet.length; i++)
+                    {
+                        if( (2023 - vet[i]) < 18 )
+                        {
+                            nVet[p] = vet[i];
+                            p ++;
+                        }
+                    }
+                    return nVet;
+                }
+                console.log(array(vet))
+
+                let persone = [
+                    {nome: "Pippo", anno: 2002},
+                    {nome: "Ciccio", anno: 2015},
+                    {nome: "Piero", anno: 2020},
+                    {nome: "Andrea", anno: 2010},
+                    {nome: "Simone", anno: 2000}
+                ]
+                let p = 0;
+                function pers(pers){
+                    let vet = [];
+                    for(i = 0; i < pers.length; i++)
+                    {
+                        if(2023 - (pers[i].anno) < 18)
+                        {
+                            vet[p] = pers[i];
+                            p ++;
+                        }
+                    }
+                    return vet;
+                }
+                console.log(pers(persone))
+            </script>
+    </body>
+</html>

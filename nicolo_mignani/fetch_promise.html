@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+
+
+   <html>
+
+   <head>
+    <title>fetch</title>
+
+   </head>
+
+     <body>
+        <section id="factSection">
+
+
+
+            </section>
+     
+    
+    
+        <script type="module">
+
+           const factPromise = fetch("https://catfact.ninja/fact");
+           factPromise.then(
+            (response) =>{
+             const dataPromise = response.json();
+              dataPromise.then(
+               (value) => console.log(value)
+              )
+
+           }
+       );
+
+/*
+       const factPromise = fetch("https://catfact.ninja/fact");
+       let facOfTheDay=""
+           factPromise.then(
+            (response) =>{
+             const dataPromise = response.json();
+              dataPromise.then(
+               (value) => factOfTheDay = value
+              )
+
+           }
+       );
+       
+       */
+
+
+       const response = await fetch("https://catfact.ninja/fact");
+       const data = await response.json();
+       const factOfTheDay = data.fact;
+
+
+
+      document.getElementById("factSection").innerText = factOfTheDay;
+      
+
+      
+
+       </script>
+    
+    
+    
+    </body>
+
+
+
+
+
+
+
+
+
+   </html>

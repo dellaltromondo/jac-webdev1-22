@@ -1,0 +1,99 @@
+* {
+    background-color: red;
+}
+
+html{
+    border: 1rem dotted black;
+}
+header h1 {
+
+    font-family: Arial, Helvetica, sans-serif;
+    position:sticky;
+    top: 20px;
+    height: 3rem;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+nav ol {
+    
+    background-color: black;
+}
+nav ol li {
+    
+    display: inline-block;
+    background-color: black;
+}
+nav {
+    
+    background-color: black;
+    text-align: right;
+    line-height: 5rem;
+    font-size: x-large;
+
+ }
+ nav a{
+
+    background-color:black ;
+    color: red;
+    padding: 5px 10px;
+    font-family:cursive;
+    
+ }
+ nav a:hover{
+
+    color: yellow;
+ 
+}
+
+header img{
+
+    margin-top: 20px;
+    width: 100%;
+    height: 35rem;
+
+}
+ 
+#foto1, #foto2, #foto3 {
+
+    display: block;
+    padding: 15px;
+    
+ } 
+
+ footer p{
+
+    text-align: center;
+    background-color: orange;
+    color:black    
+
+}
+
+footer {
+
+    height: 6rem;
+    padding-top: 30px;
+    background-color: orange;
+    text-align: center;
+    margin-bottom:0px;
+}
+
+footer section{
+
+    width: 5rem;
+    height: 5rem;
+    background-color: black;
+    margin-left: 85%;
+    position: fixed;
+    bottom: 20px;
+}
+footer section div p{
+
+    color: aliceblue;
+    background-color: black;
+    text-align: center;
+    padding-top: 18px;
+}
+footer section div p:hover{
+    color: red;
+}
+
