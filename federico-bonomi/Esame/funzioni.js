@@ -52,6 +52,7 @@ function inserisciPokemon()
     document.getElementById('nomePokemon').value='';
     document.getElementById('imagePokemon').value='';
     document.getElementById('descriptionPokemon').value=''
+    hideForm();
 }
 
 function creaSezione(inputId, tipo)
@@ -60,4 +61,16 @@ function creaSezione(inputId, tipo)
     const nuovoElemento = document.createElement(tipo);
     nuovoElemento.innerText =elemento;
     return nuovoElemento;
+}
+
+function hideForm()
+{
+    const form=document.getElementById("aggiungi");
+    form.setAttribute("class", "scompari")
+}
+
+function seeForm()
+{
+    const form=document.getElementById("aggiungi");
+    form.setAttribute("class", "compari")
 }
