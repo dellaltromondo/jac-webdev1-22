@@ -1,0 +1,183 @@
+body
+{
+    margin: 0;
+    padding: 0;
+}
+
+#section1
+{
+    background-image: url("PizzaHome.jpeg");
+    background-size: cover;
+    width: 100%;
+    height: 590px;
+    padding: 0;
+    margin: 0;
+    margin-top: -40px;
+    box-shadow: 5px 10px;
+}
+#section1 h1
+{
+    font-size: 48px;
+    color: white;
+    padding-left: 25px;
+}
+#section1 h2
+{
+    font-size: 32px;
+    color: white;
+    padding-left: 25px;
+}
+#section1 p
+{
+    font-size: 24px;
+    color: white;
+    padding-left: 25px;
+}
+
+#tabOrari
+{
+    color: white;
+}
+    #tabOrari p
+{
+    padding-left: 35px;
+}
+#tabOrari ul
+{
+    font-size: 18px;
+    white-space: pre;
+    list-style: none;
+    margin: 0;
+}
+#tabOrari ul li
+{
+    margin: -15px 0;
+}
+
+#ombra
+{
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 835px 0px 90px -120px rgba(0, 0, 0, 0.91);
+}
+
+
+#trovaci
+{
+    background-color: white;
+    padding-top: -10px;
+    width: auto;
+    background-color: orange;
+    overflow: auto;
+}
+#intestazione1
+{
+    width: 50%;
+    float: right;
+    padding-right: 25px;
+    padding-top: 100px;
+}
+#galleria
+{
+    padding: 50px;
+}
+#salone
+{
+    width: 300px;
+    height: 300px;
+}
+#cucina
+{
+    width: 300px;
+    height: 300px;
+}
+
+
+#section2
+{
+    background-color: lightgray;
+    width: 100%;
+}
+#intestazione2
+{
+    width: 45%;
+    float: left;
+    padding-left: 25px;
+    padding-top: 100px;
+    padding-right: 50px;
+}
+#galleria2
+{
+    padding: 50px;
+    padding-left: 50px;
+}
+#forno
+{
+    width: 325px;
+    height: 250px;
+}
+#pasta
+{
+    width: 325px;
+    height: 250px;
+}
+
+
+#section3
+{
+    background-color:rgb(66, 66, 66);
+    width: 100%;
+    height: 660px;
+    padding-top: 1px;
+    padding-bottom: 20px;
+}
+#galleria3
+{
+    width: 740px;
+    height: 510px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+#pulsanteMenu
+{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+
+    background-color: black;
+    color: white;
+    border-color: orangered;
+    width: 200;
+    height: 50;
+    font-size: 18px;
+    font-weight: bold;
+}
+#section3 a
+{
+    text-decoration: none;
+}
+#section3 h2
+{
+    text-align: center;
+    color: white;
+}
+
+
+footer
+{
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    position: absolute;
+    width: 100%;
+}
+footer p
+{
+    text-align: center;
+    font-size: 24px;
+    color: white;
+}

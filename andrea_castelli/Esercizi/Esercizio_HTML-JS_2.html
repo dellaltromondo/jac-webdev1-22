@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>Esercizio HTML-JS</title>
+
+
+        <style>
+            ul
+            {
+                list-style-type: none;
+            }
+        </style>
+
+
+        <script>
+            function AcquisisciTesto()
+            {
+                const Nome=document.getElementById("nome");
+                const Cognome=document.getElementById("cognome");
+            
+                const li=document.createElement("li");
+                const pN=document.createElement("p");
+                const pC=document.createElement("p");
+
+                const ul=document.getElementById("tab");
+
+                pN.innerText=Nome.value;
+                pC.innerText=Cognome.value;
+    
+                ul.appendChild(li);
+                li.appendChild(pN);
+                li.appendChild(pC);
+                li.setAttribute("id", "scheda");
+            }
+        </script>
+    </head>
+
+    <body>
+        <form>
+                <p>Nome:<input type="text" id="nome" placeholder="Mario"></p>
+                <br>
+                <p>Cognome:<input type="text" id="cognome" placeholder="Rossi"></p>
+                <br>
+
+                <input type="button" name="button" value="Invia" onclick="AcquisisciTesto()">
+        </form>
+
+        <ul id="tab">
+
+        </ul>
+    </body>
+</html>

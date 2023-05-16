@@ -4,15 +4,14 @@
 
 
 :root{
-    --scuro: rgb(50, 54, 67);
-    --grigio-mezzo-scuro: rgb(68, 72, 87);
+    --scuro: black;
+    --grigio-mezzo-scuro: darkgrey;
     --padding-value: 5px;
-    --colore-chiaro: rgb(255, 255, 255);
-    --colore-chiaro: rgb(242, 242, 242);
-    --grigio-mezzo-scuro: rgb(223, 223, 223);
-    --red: rgb(255, 42, 0);
-    --border: 5px;
-    --carta: 250px;
+    --colore-chiaro: white;
+    --grigio-mezzo-scuro: grey;
+    --arancione:orange;
+    --border: 7px;
+    --carta: 230px;
 }
 
 nav{
@@ -149,7 +148,7 @@ input[type="text"]{
 
 #addPokemon{
     border-radius: var(--border);
-    background-color: var(--red);
+    background-color: var(--arancione);
     color: var(--colore-chiaro);
     padding: var(--padding-value);
     border: none;
