@@ -1,96 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>carrello</title>
-    
-    <link rel="stylesheet" type="text/css" href="../css/Style.css">
-   
+<title>carrello</title>
+<link rel="stylesheet" type="text/css" href="../css/carrello.css">
 </head>
-
 <body id="Body_Carrello">
-    <nav id= "nav_primaria">
+<nav id="nav_primaria">
+<a href="../ProgettoPersonale.html" id="Title">
+<h1>
+Foodspring
+</h1>
+</a>
+</nav>
+<nav id="nav_secondaria">
+<a href="../ProgettoPersonale.html">
+<img id="imageBack" src="../images/Freccia_sinistra.png"> Torna indietro
+</a>
+</nav>
+<section id="Carrello">
+<h2>Il tuo carrello</h2>
+<div id="cart-container">
+<div id="left-section">
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Quantità</th>
+<th>Prezzo</th>
+<th>Azione</th>
+</tr>
+</thead>
+<tbody id="cart-items">
+</tbody>
+</table>
+</div>
+<div id="right-section">
+<div id="total">
+<h3>Totale:</h3>
+<span id="cart-total"></span>
+</div>
+<button id="ButtonToPay" onclick="window.location.href='Pagamento.html'">
+Vai al pagamento
+</button>
+</div>
+</div>
+</section>
 
-        <a href="../ProgettoPersonale.html" id = "Title">
-            <h1 >
-                Foodspring
-            </h1>
-        </a>
-
-
-    </nav>
-
-    <nav id = "nav_secondaria" >
-        <a href="../html/Shake_proteici.html" class = "nav_secondaria_class"> 
-            Shake proteici
-        </a>
-
-        <a href="../html/barrette.html" class = "nav_secondaria_class">
-            barrette 
-        </a>
-
-        <a href="../html/snack.html" class = "nav_secondaria_class"> 
-            snack 
-        </a>
-
-        <a href="../html/Integratori.html" class = "nav_secondaria_class"> 
-            Integratori 
-        </a>
-
-        <a href="../html/aminoacidi.html" class = "nav_secondaria_class"> 
-            aminoacidi 
-        </a>
-        
-        <a href="../html/Impasti.html" class = "nav_secondaria_class"> 
-            Impasti & preparati 
-        </a>
-
-        <a href="../html/Creme.html" class = "nav_secondaria_class"> 
-            Creme spalmabili 
-        </a>
-
-        <a href="../html/Muesli.html" class = "nav_secondaria_class">
-            Muesli & porridge 
-        </a>
-
-
-
-    </nav>
-    
-
-
-   
-
-
-
-    <section id = "Carrello">
-        <h2>Il tuo carrello</h2> 
-       
-            <table>
-                <thead>
-                    <tr>
-                        
-                        <th>Nome</th>
-                        <th>Prezzo</th>
-                        <th>Azione</th>
-                        
-                    </tr>
-                </thead>
-
-                <tbody id="cart-items">
-                </tbody>
-
-            </table>
-            <button id="ButtonToPay" onclick="window.location.href='Pagamento.html'">
-                Vai al pagamento</button>
-         
-   </section>
-
-    <script src="../javascript/Function.js"></script>
-    <script src="../javascript/Menu.js"></script>
-
+<script src="../javascript/Function.js"></script>
 </body>
-
-
 </html>
-

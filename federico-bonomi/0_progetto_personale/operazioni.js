@@ -1,6 +1,103 @@
+class Domanda
+{
+    #id
+    #nomeUtente
+    #titolo
+    #titoloArray = new Array()
+    #domanda
+    #risposte = new Array()
+
+    constructor(id, nomeUtente, titolo, titoloArray, domanda, risposte)
+    {
+        this.#id=id;
+        this.#nomeUtente=nomeUtente;
+        this.#titolo=titolo;
+        this.#titoloArray=titoloArray;
+        this.#domanda=domanda;
+        this.#risposte=risposte;
+    }
+
+    getId()
+    {
+        return this.#id;
+    }
+
+    setId(id)
+    {
+        this.#id=id;
+    }
+
+    getNomeUtente()
+    {
+        return this.#nomeUtente;
+    }
+
+    setNomeUtente(nomeUtente)
+    {
+        this.#nomeUtente=nomeUtente;
+    }
+
+    getTitolo()
+    {
+        return this.#titolo;
+    }
+
+    setTitolo(titolo)
+    {
+        this.#titolo=titolo;
+    }
+
+    getTitoloArray()
+    {
+        return this.#titoloArray;
+    }
+
+    setTitoloArray(titoloArray)
+    {
+        this.#titoloArray=titoloArray;
+    }
+
+    getDomanda()
+    {
+        return this.#domanda;
+    }
+
+    setDomanda(domanda)
+    {
+        this.#domanda=domanda;
+    }
+
+    getRisposte()
+    {
+        return this.#risposte;
+    }
+
+    getRisposta(id)
+    {
+        return this.#risposte[id];
+    }
+
+    setRisposte(risposte)
+    {
+        this.#risposte=risposte;
+    }
+
+    aggiungiRispostaDomanda(risposta)
+    {
+        this.#risposte.push(risposta);
+    }
+
+    eliminaRispostaDomanda(id)
+    {
+        this.#risposte.splice(id, 1);
+    }
+}
+
+
 let indice=0;
 let indiceRisposta=0;
-let listaDomande=new Array();
+let listaDomande=[];
+
 
 function inserisciDomanda()
 {
@@ -24,16 +121,8 @@ function inserisciDomanda()
     let titoloArrayProvvisorio=new Array();
     titoloArrayProvvisorio=document.getElementById('titolo').value.toUpperCase().split(" ");
     //creo un oggetto con gli elementi della domanda
-    const elementoArray=
-    {
-        id: indice,
-        nomeUtente: document.getElementById('nomeUtenteDomanda').value,
-        titolo: document.getElementById('titolo').value.toUpperCase(),
-        //divido il titolo in un array di substringhe
-        titoloArray: titoloArrayProvvisorio,
-        domanda: document.getElementById('inputDomanda').value,
-        risposte : new Array()
-    }
+    const elementoArray=new Domanda(indice, document.getElementById('nomeUtenteDomanda').value, document.getElementById('titolo').value.toUpperCase(), titoloArrayProvvisorio, document.getElementById('inputDomanda').value, [])
+    
     listaDomande.push(elementoArray);
     
     
@@ -41,10 +130,9 @@ function inserisciDomanda()
     const nuovaDomanda = document.createElement('li');
 
     //creo il bottone per eliminare la domanda
-    const bottoneElimina=document.createElement("button");
+    const bottoneElimina=document.createElement("i");
     bottoneElimina.setAttribute("onclick",`eliminaDomanda("domanda${indice}","${indice}")`);
-    bottoneElimina.innerText="Elimina";
-    bottoneElimina.setAttribute("class","bottoneElimina");
+    bottoneElimina.setAttribute("class","fas fa-trash-alt");
     bottoneElimina.setAttribute("id", `"eliminaDomanda${indice}"`)
     nuovaDomanda.appendChild(bottoneElimina);
 
@@ -159,15 +247,15 @@ function aggiungiRisposta(parametro)
         risposta: document.getElementById(`inputRisposta${parametro}`).value
     }
 
-    listaDomande[`${parametro}`].risposte.push(oggettoRisposta);
+    listaDomande[`${parametro}`].aggiungiRispostaDomanda(oggettoRisposta);
 
+    console.log(listaDomande[`${parametro}`]);
     
     const nuovaRisposta = document.createElement('li');
     //bottone elimina
-    const bottoneElimina=document.createElement("button");
+    const bottoneElimina=document.createElement("i");
     bottoneElimina.setAttribute("onclick",`eliminaRisposta("risposta${indiceRisposta}", "${indiceRisposta}", "${parametro}")`);
-    bottoneElimina.innerText="Elimina";
-    bottoneElimina.setAttribute("class","bottoneElimina");
+    bottoneElimina.setAttribute("class","fas fa-trash-alt");
     nuovaRisposta.appendChild(bottoneElimina);
 
     const d=new Date();
@@ -232,7 +320,7 @@ function eliminaDomanda(id, indiceDomanda)
     document.getElementById(id).remove();
     for(let i=0;i<listaDomande.length;i++)
     {
-        if(listaDomande[i].id==indiceDomanda)
+        if(listaDomande[i].getId()==indiceDomanda)
         {
             listaDomande.splice(i,1);
             listaDomande.forEach(element=>{
@@ -250,13 +338,18 @@ function eliminaRisposta(id, indiceRispostaElimina, indiceDomanda)
 
     for(let i=0;i<listaDomande.length;i++)
     {
-        if(listaDomande[i].id==indiceDomanda)
+        if(listaDomande[i].getId()==indiceDomanda)
         {
-            for(let j=0;j<listaDomande[i].risposte.length;j++)
+            for(let j=0;j<listaDomande[i].getRisposte().length;j++)
             {
-                if(listaDomande[i].risposte[j].id==indiceRispostaElimina)
+                const id=listaDomande[i].getRisposta(j).id;
+                if(id==indiceRispostaElimina)
                 {
-                    listaDomande[i].risposte.splice(j,1);
+                    listaDomande[i].eliminaRispostaDomanda(j);
+
+                    listaDomande.forEach(element=>{
+                        console.log(element);
+                    })
                     return;
                 }
             }
@@ -270,62 +363,59 @@ function cercaDomanda()
     {
         alert("Inserici il parametro di ricerca");
     }
+    //cerca se la singola parola chiave cercata è presente in qualche titolo
     else if(document.getElementById("inputCerca").value.split(" ").length==1)
     {
         const input=document.getElementById("inputCerca").value.toUpperCase();
-        let uguale=false;
-        for(let i=1;i<=listaDomande.length;i++)
+
+        for(let i=0;i<listaDomande.length;i++)
         {
-            uguale=false;
-            listaDomande[i].titoloArray.array.forEach(element => {
+            const elemento=document.getElementById(`domanda${i}`);
+            elemento.setAttribute("class","scompari");
+        }
+
+        for(let i=0;i<listaDomande.length;i++)
+        {
+            listaDomande[i].getTitoloArray().forEach(element => {
                 if(element===input)
                 {
-                    uguale=true;
+                    const elemento=document.getElementById(`domanda${i}`);
+                    elemento.setAttribute("class","domanda");
                 }
             });
-            if(uguale==false)
-            {
-                const elemento=document.getElementById(`domanda${i}`);
-                elemento.setAttribute("class","scompari");
-            }
         }
     }
     else
     {
         let indiceArray=0;
         const input=document.getElementById("inputCerca").value.toUpperCase();
-        for(let i=1;i<=listaDomande.length;i++)
+        for(let i=0;i<listaDomande.length;i++)
         {
-            if(listaDomande[indiceArray]!=null)
+            const titolo=listaDomande[indiceArray].getTitolo();
+            if(titolo===input)
             {
-                if(listaDomande[indiceArray].titolo===input)
-                {
-                    console.log("sono uguali");
-                }
-                else
-                {
-                    const elemento=document.getElementById(`domanda${i}`);
-                    elemento.setAttribute("class","scompari");
-                }
+                
+            }
+            else
+            {
+                const elemento=document.getElementById(`domanda${i}`);
+                elemento.setAttribute("class","scompari");
             }
             
             indiceArray++;
         }
-        document.getElementById("inputCerca").value="";
     }
-    
+    document.getElementById("inputCerca").value="";
 }
 
 function mostraDomande()
 {
-    let indiceArray=0;
-    for(let i=1;i<=listaDomande.length;i++)
+    for(let i=0;i<listaDomande.length;i++)
+    {
+        if(document.getElementById(`domanda${i}`)!=null)
         {
-            if(listaDomande[indiceArray]!=null)
-            {
-                const elemento=document.getElementById(`domanda${i}`);
-                elemento.setAttribute("class","domanda");
-            }
-            indiceArray++;
+            const elemento=document.getElementById(`domanda${i}`);
+            elemento.setAttribute("class","domanda");
         }
+    }
 }

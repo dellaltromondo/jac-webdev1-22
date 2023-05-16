@@ -1,241 +1,102 @@
 <!DOCTYPE html>
 <html lang="it">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editor per compositori</title>
+    <title>Pagina di iscrizione</title>
+    <link rel="stylesheet" href="../css/login.css">
     <link rel="stylesheet" href="../css/editorCompositori.css">
-    <link rel="stylesheet" href="../css/carte.css">
-    <script src="../js/carte.js"></script>
-    <script src="../js/social.js"></script>
-    <script src="../js/slideshow.js"></script>
-    <script src="../js/profiloCompositore.js"></script>
+    <script src="../js/login.js"></script>
 </head>
-
 <body>
-    <section id="loaderWrapper">
-        <span class="loader"><span class="loaderInner"></span></span>
-    </section>
+  <section id="loaderWrapper">
+    <span class="loader"><span class="loaderInner"></span></span>
+  </section>
 
-    <button class="tornaSu">&#11165;</button>
-    <!-- <button class="tornaSu" data-tooltip="Torna sù">&#11165;</button> -->
+    <section class="form">
+      <h2 class="glow" id="titoloLogin">Login</h2>
+      <form id="logIn">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
 
-    <section id="progress-container">
-        <section class="progress-bar" id="myBar"></section>
-    </section>
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" required>
 
-    <nav id="navBar">
-        <section id="menu">
-            <a class="active zoom" href="#home">Home</a>
-            <a class="zoom" href="#about">About</a>
+        <label for="cognome">Cognome</label>
+        <input type="text" id="cognome" name="cognome" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+
+        <p>Sei un compositore?</p>
+        <section id="checkboxCompositore">
+          <label for="compositore">Sì</label>
+          <input type="checkbox" name="checkboxCompositore" id="compositore" value="COMPOSITORE" onclick="selectOnlyThis(this)">
+          <label for="non_compositore">No</label>
+          <input type="checkbox" name="checkboxCompositore" id="non_compositore" value="NON_COMPOSITORE" onclick="selectOnlyThis(this)">
         </section>
-
-        <section class="dropdown">
-            <button type="button" id="userNickname">Nome Cognome</button>
-            <section class="dropdownContent">
-                <a class="zoom" href="./login.html" id="logout">Esci</a>
-            </section>
-          </section>
-    </nav>
-
-    <form id="formProfilo">
-        <h1>Profilo</h1>
-        <input type="file" id="imageProfileInput" accept="image/*">
-        <label for="nomeArtista"><p>Nome artista: </p><input type="text" id="nomeArtista" name="nomeArtista"></label>
-        <textarea name="descrizione" id="descrizione" cols="30" rows="10" placeholder="Descrivi chi sei e qual è il genere di musica che componi" required></textarea>
 
         <section>
-            <button id="inviaProfilo" onclick="creaProfilo()" type="button">Invia</button>
-            <button id="annullaModifica" onclick="annullaModificaProfilo()" type="button">Annulla</button>
-            <p id="messaggioProfilo"></p>
+            <button id="inviaDati" onclick="inviaDatiForm()" type="button">Accedi</button>
+            <button type="reset" class="annulla" title="Cancella i dati">Annulla</button>
         </section>
-    </form>
 
-    <section id="profilo">
-        <section id="sectionImmagineProfilo">
-            <img id="immagineProfilo">
+        <p id="messaggioForm"></p>
+
+      </form>
+
+      <section class="social-icons">
+          <p>O accedi con:</p>
+          <section>
+            <a href="#"><img src="../iconeSocial/facebook.png" alt="Facebook" title="Accedi con Facebook"></a>
+            <a href="#"><img src="../iconeSocial/twitter.png" alt="Twitter" title="Accedi con Twitter"></a>
+            <a href="#"><img src="../iconeSocial/google.png" alt="Google" title="Accedi con Google"></a>
         </section>
-        <section id="profiloDescrizione">
-            <h1 id="nomeArt"></h1>
-            <p id="testoDescrizione"></p>
-        </section>
-        <button type="button" id="modificaProfilo" onclick="modificaProfilo()">Modifica</button>
+      </section>
     </section>
+  </section>
 
-    <section id="galleriaImmagini">
-        <h1>Galleria di immagini</h1>
-        <section id="corpoGalleria">
-            <button onclick="prevImage()" id="prevImage">❮</button>
-            <img id="currentImage" src="">
-            <button onclick="nextImage()" id="nextImage">❯</button>
-        </section>
-        <button onclick="deleteImage()" id="deleteImage">Elimina <img src="../img/cestino.png" alt=""></button>
-        <form id="immaginiInput">
-            <label for="imageInput"><p>Aggiungi un'immagine: </p></label><input type="file" id="imageInput" accept="image/*">
-            <button type="button" id="aggiungiImmagine" onclick="addImage()">Aggiungi</button>
-            <p id="messaggioGalleria"></p>
-        </form>
-    </section>
+  <script>
 
-    <section id="formTracce">
-        <section id="formAggiunta">
-            <h1>Inserisci le tue tracce musicali</h1>
-            <form id="formCard">
-                <input type="file" id="immagineCarta" accept="image/*">
-                <label for="nome"><p>Nome: </p><input type="text" name="nome" id="nome" required></label>
-                <label for="prezzo"><p>Prezzo: </p><input type="text" name="prezzo" id="prezzo" required></label>
-                <label for="mese">Mese:</label>
-                <select id="mese" name="mese">
-                    <option value="0">Anulla</option>
-                    <option value="Gennaio">Gennaio</option>
-                    <option value="Febbraio">Febbraio</option>
-                    <option value="Marzo">Marzo</option>
-                    <option value="Aprile">Aprile</option>
-                    <option value="Maggio">Maggio</option>
-                    <option value="Giugno">Giugno</option>
-                    <option value="Luglio">Luglio</option>
-                    <option value="Agosto">Agosto</option>
-                    <option value="Settembre">Settembre</option>
-                    <option value="Ottobre">Ottobre</option>
-                    <option value="Novembre">Novembre</option>
-                    <option value="Dicembre">Dicembre</option>
-                </select>
-                <button type="button" id="btnCard" onclick="creaCartaJson()">Invia</button>
-                <p id="messaggioTraccia"></p>
-            </form>
-        </section>
-    </section>
+    window.addEventListener("load", (event) =>
+    {
+      localStorage.clear();
+      const loader = document.getElementById("loaderWrapper");
+      loader.style.animation = "fadeOut 1.2s";
+      loader.style.animationIterationCountv = "1";
 
-    <section id="tracksContainer">
-        <section id="sortLista">
-            <section>
-                <h1>Cerca le tracce per mese</h1>
-                <p id="incasso"></p>
-                <label for="meseSort"><p>Mese:</p></label>
-                    <select id="meseSort" name="meseSort" onchange="sortMeseScelto()">
-                        <option value="0">Vedi tutte le tracce</option>
-                        <option value="Gennaio">Gennaio</option>
-                        <option value="Febbraio">Febbraio</option>
-                        <option value="Marzo">Marzo</option>
-                        <option value="Aprile">Aprile</option>
-                        <option value="Maggio">Maggio</option>
-                        <option value="Giugno">Giugno</option>
-                        <option value="Luglio">Luglio</option>
-                        <option value="Agosto">Agosto</option>
-                        <option value="Settembre">Settembre</option>
-                        <option value="Ottobre">Ottobre</option>
-                        <option value="Novembre">Novembre</option>
-                        <option value="Dicembre">Dicembre</option>
-                    </select>
-            </section>
-        </section>
-        <section id="lista"></section>
-    </section>
+      setTimeout(() =>
+      {
+          loader.parentNode.removeChild(loader);
+      }, 1200);
+    });
 
-    <footer id="piePagina">
-        <section id="linkSocial">
-            <form id="social" name="social">
-                <!-- <h1>Inserisci il nome e il link dei tuoi social</h1> -->
-                <h1>Social media</h1>
-                <label for="nomeSocial">Nome social: <input type="text" id="nomeSocial"></label>
-                <label for="link">Link: <input type="url" id="link"></label>
-                <button type="button" onclick="creaSocialJson()" id="inviaSocial">Invia</button>
-                <p id="messaggioFetch"></p>
-            </form>
-            <section id="listaSocial">
-            </section>
-        </section>
-    </footer>
+    function onlyOne(checkbox)
+    {
+      let checkboxes = document.getElementsByClassName('checkbox')
 
-    <script>
-        window.addEventListener("load", (event) =>
-        {
-            const loader = document.getElementById("loaderWrapper");
-            loader.style.animation = "fadeOut 1.2s";
-            loader.style.animationIterationCount = "1";
+      checkboxes.forEach((item) =>
+      {
+          if (item !== checkbox)
+          {
+            item.checked = false;
+          }
+      })
+    }
 
-            setTimeout(() =>
-            {
-                loader.parentNode.removeChild(loader);
-            }, 1200);
-        });
+    function selectOnlyThis(id)
+    {
+      let myCheckbox = document.getElementsByName("checkboxCompositore");
+      Array.prototype.forEach.call(myCheckbox,function(el)
+      {
+        el.checked = false;
+      });
 
-        let lastScrollTop;
+      id.checked = true;
+    }
 
-        navbar = document.getElementById("navBar");
+  </script>
 
-        window.onscroll = () =>
-        {
-            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (winScroll / height) * 100;
-            const tornaSu = document.querySelector(".tornaSu");
-
-            document.getElementById("myBar").style.width = scrolled + "%";
-            
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            
-            if(scrollTop > lastScrollTop)
-            {
-                navbar.style.top='-100px';
-            }
-            
-            else
-            {
-                navbar.style.top='0';
-            }
-
-            //bottone tornaSu
-
-            if (scrolled > 50)
-            {
-                tornaSu.style.opacity = "1";
-                tornaSu.style.visibility = "visible";
-                tornaSu.style.transform = "translateY(0px)";
-            }
-
-            else
-            {
-                tornaSu.style.opacity = "0";
-                tornaSu.style.visibility = "hidden";
-                tornaSu.style.transform = "translateY(10px)";
-            }
-
-            lastScrollTop = scrollTop;
-        }
-
-        const textarea = document.querySelector("textarea");
-
-        textarea.addEventListener("keyup", e =>
-        {
-            textarea.style.height = "63px";
-            let scrHeight = e.target.scrollHeight;
-            textarea.style.height = `${scrHeight}px`;
-        });
-
-        var tornaSu = document.querySelector(".tornaSu");
-        var rootElement = document.documentElement;
-
-        function scrollToTop()
-        {
-            rootElement.scrollTo
-            (
-                {
-                    top: 0,
-                    behavior: "smooth"
-                }
-            );
-        }
-        
-        tornaSu.addEventListener("click", scrollToTop);
-    </script>
 </body>
-
 </html>
-<!--
-fare la parte di quante persone si sono iscritte al gruppo musicale
-fare la parte di quante tracce sono state vendute
-sistemare dropdown per il logout
--->

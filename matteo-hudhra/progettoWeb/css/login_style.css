@@ -4,7 +4,7 @@ body {
     height: 100vh;
     font-family: Arial, sans-serif;
     /*background-color: #232f3e;    COLORE ORIGINALE DI SFONDO*/   
-    background-image: url("../background_login.png");
+    background-image: url("../img/background_login.png");
     background-size: cover;
     display: flex;
     align-items: center;

@@ -11,17 +11,29 @@
             select the amount of dices wanted. Then click "Roll it!" to get your nice random results!
              Have fun!</h2>
         <form>
-            <label>PLAYER NAME: <input id="inpName" type="text" placeholder="Player n.1"></label><br><br>
-            <label>Choose your dice flavour! Number of sides desired: <input id="inpDice" type="number"></label><br><br>
-            <label>Choose how many dices you want to roll: <input id="inpDicesNumber" type="number"></label><br><br>
-            <button id="RollIt">Roll it!</button>
+            <label>PLAYER NAME: <input id="inpName" type="text" placeholder="Player n.1" type="text"></label><br><br>
+            <label>Choose your dice flavour! Number of sides desired: <input id="inpDice" list="sidenumbers" name="sidenumber">
+                <datalist id="sidenumbers">
+                    <option value="4"></option>
+                    <option value="6"></option>
+                    <option value="8"></option>
+                    <option value="10"></option>
+                    <option value="12"></option>
+                    <option value="20"></option>
+                    <option value="100"></option>
+                </datalist>
+            </label><br><br>
+            <label>Choose how many dices you want to roll: <input id="inpDicesNumber" type="number" min="1" max="25"></label><br><br>
+            <button id="RollIt">Roll it!</button><br><br>
+            <form>
+                <label>Get only the rolls you want! <input id="selectPlayer" type="text" placeholder="Player Name"></label>
+                <button id="GetEmAll">Get The Rolls!</button>
+            </form>
         </form>
+        <button id="Refresh">Refresh</button>
         <div>
-            <p id="rolls">Rolls: </p>
-        
             <ul id="DiceRolls"></ul>
         </div>
-        
         <footer>Project created by Simone Panada. All copyrights are reserved (?).</footer>
         <script src="scripts.js"></script>
    </body>

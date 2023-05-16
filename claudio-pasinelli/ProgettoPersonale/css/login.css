@@ -144,8 +144,9 @@ body
     color: var(--colore-chiaro);
     padding: 10px 20px;
     width: 95vw;
-    min-height: fit-content;
-    height: 75vh;
+    /* min-height: fit-content; */
+    height: fit-content;
+    /* max-height: 75vh; */
     /* background-image: url(../img/sfondo-login.png);
     background-size: cover;
     background-position: center; */
@@ -236,4 +237,46 @@ button:hover
 .social-icons img:hover
 {
     transform: scale(1.1);
+}
+
+p
+{
+    margin: 5px 0px;
+}
+
+#checkboxCompositore
+{
+    display: flex;
+    flex-direction: row;
+}
+
+#checkboxCompositore input[type = "checkbox"]
+{
+    margin: 0px 5px;
+}
+
+#titoloLogin
+{
+    margin-top: 30px;
+}
+
+.glow
+{
+    color: #fff;
+    text-align: center;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+  
+ @-webkit-keyframes glow
+{
+    from
+    {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ffb641, 0 0 40px #ffb641, 0 0 50px #ffb641, 0 0 60px #ffb641, 0 0 70px #ffb641;
+    }
+    to
+    {
+        text-shadow: 0 0 20px #fff, 0 0 30px #f9ca05, 0 0 40px #f9ca05, 0 0 50px #f9ca05, 0 0 60px #f9ca05, 0 0 70px #f9ca05, 0 0 80px #f9ca05;
+    }
 }

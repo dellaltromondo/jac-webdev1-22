@@ -6,10 +6,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>MyFitnessHub</title>
         <link rel="icon" href="Utils/dumbell-favicon.png">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="Css/main.css">
+        <link rel="stylesheet" href="Css/form.css">
+        <link rel="stylesheet" href="Css/login.css">
     </head>
 
-    <body class="login-page" id="body-login-page">
+    <body id="body-login-page">
         <article id="login-article">
             <header>
                 <img src="Utils/dumbell-favicon.png">
@@ -17,13 +19,13 @@
             </header>
             <form autocomplete="off" id="login-form">
                 <h2>Login</h2>
-                <label>Username: <input type="text" id="username"></label>
-                <label>Password: <input type="password" id="password"></label>
+                <label for="username">Username: </label><input type="text" id="username" name="username" placeholder="admin">
+                <label for="password">Password: </label><input type="password" id="password" name="password" placeholder="segreto123">
                 <button type="button" id="login-button" onclick="login()">Login</button>
             </form>
         </article>
         <div class="only-desktop" style="width: 50%;"></div>
-        <script src="app.js"></script>
+        <script src="Js/login.js"></script>
     </body>
 
 </html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esame Web</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        nav {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: center;
+            background-color: red;
+
+        }
+
+        h1 {
+            margin: 10px;
+            color: white;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: right;
+        }
+
+        ul>li {
+            margin: 0 5px;
+            padding: 5px;
+            display: inline-block;
+            background-color: rgb(255, 255, 255, 0.6);
+            border-radius: 8px;
+        }
+
+        ul>li a {
+            color: white;
+            border-bottom: 1px solid white;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: minmax(200px, auto) 1fr;
+        }
+
+        #sidebar {
+            background-color: rgba(230, 230, 230, 0.82);
+            padding: 10px;
+        }
+
+        .bottoniPokemon {
+
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            background-color: white;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 3px 3px rgba(134, 134, 134, 0.5);
+            text-align: left;
+        }
+
+        #cards {
+
+            background-color: rgba(200, 200, 200, 0.82);
+        }
+
+        /* form {
+            display: none;
+        } */
+
+        label {
+
+            display: block;
+            margin-top: 8px;
+            margin-bottom: 4px;
+        }
+
+        input {
+
+            display: block;
+            margin: 5px 0;
+        }
+
+        textarea {
+            height: 50px;
+        }
+
+        #carica {
+            display: block;
+            width: 50%;
+            height: 40px;
+            background-color: red;
+            border-radius: 8px;
+        }
+
+        #container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            padding: 10px 20px;
+        }
+
+        article {
+            text-align: center;
+            margin: 5px;
+            position: relative;
+            justify-self: center;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+            transition: all 0.3s ease-in-out;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <h1>Pokédex</h1>
+        <ul>
+            <li>
+                <a>My Pokemons</a>
+            </li>
+            <li>
+                <a>New Pokemons</a>
+            </li>
+            <li>
+                <a>Info</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="sidebar">
+
+            <button class="bottoniPokemon">Pikachu</button>
+            <button class="bottoniPokemon">Charmender</button>
+            <button class="bottoniPokemon">Squirtle</button>
+            <button class="bottoniPokemon">Bulbasaur</button>
+
+            <form action="" method="get">
+                <h2>Insert New</h2>
+
+                <label for="name">Pokemon Name:</label>
+                <input type="text" id="name" placeholder="e.g. Pikachu">
+
+                <label for="captured">Captured</label>
+                <input type="checkbox" id="captured">
+
+                <label for="level">Level:</label>
+                <input type="number" maxlength="2" id="level"
+                    onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))">
+
+                <label for="immagine">Image URL:</label>
+                <input type="url" id="immagine" placeholder="Enter Image URL">
+
+                <label for="desc">Description:</label>
+                <textarea name="" id="desc" cols="30" rows="10" placeholder="Enter Description"></textarea>
+                <button id="carica" type="button" onclick="inserisciPokemon()">Carica</button>
+            </form>
+            
+        </section>
+        <section id="cards">
+            <div id="container">
+                <article>
+                    <img src="immagini/pikachu.png" alt="Pikachu">
+                    <h3>Pikachu</h3>
+                    <p>Pikachu (ピカチュウ, Pikachuu) is an Electric-type Pokémon which was introduced in Generation I.
+                        Pikachu is renowned for being the most well-known and recognizable Pokémon.</p>
+                </article>
+                <article>
+                    <img src="immagini/Charmander.png" alt="Charmender">
+                    <h3>Charmender</h3>
+                    <p>Charmander (ヒトカゲ, Hitokage) is a Fire-type Pokémon introduced in Generation I. It evolves into
+                        Charmeleon starting at level 16, which evolves into Charizard starting at level
+                        36. </p>
+                </article>
+                <article>
+                    <img src="immagini/squirtle.webp" alt="Squirtle">
+                    <h3>Squirtle</h3>
+                    <p>Squirtle (ゼニガメ, Zenigame) is a Water-type Pokémon introduced in Generation I. It evolves into
+                        Wartortle starting at level 16. It is one of the three First partner Pokémon that can be chosen
+                        in Kanto region.</p>
+                </article>
+                <article>
+                    <img src="immagini/Bulbasaur.png" alt="Bulbasaur">
+                    <h3>Bulbasaur</h3>
+                    <p>Bulbasaur (フシギダネ, Fushigidane) is a Grass/Poison-type Pokémon introduced in Generation I. It is
+                        one of the three First partner Pokémon that can be chosen in the Kanto region. </p>
+                </article>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
+<script>
+    class Pokemon {
+
+        #immagine;
+        #nome;
+        #descrizione;
+
+        constructor(immagine, nome, descrizione) {
+
+            this.#immagine = immagine;
+            this.#nome = nome;
+            this.#descrizione = descrizione;
+        }
+
+        getImagine() {
+            return this.#immagine;
+        }
+
+        getNome() {
+            return this.#nome;
+        }
+
+        getDescrizione() {
+            return this.#descrizione
+        }
+    }
+
+    let arrayPokemon = [];
+
+    function displayPokemon() {
+
+        arrayPokemon.forEach(element => {
+
+            element.style.display = "block"
+        });
+    }
+
+    function recuperaDaForm() {
+
+        const immagine = document.getElementById("immagine").value;
+        const descrizione = document.getElementById("desc").value;
+        const nome = document.getElementById("name").value;
+
+        const pokemon = new Pokemon(immagine, nome, descrizione);
+
+        return pokemon;
+    }
+
+    function inserisciPokemon() {
+
+        const pokemon = recuperaDaForm();
+
+        const imagePoke = pokemon.getImagine();
+        const namePoke = pokemon.getNome();
+        const descPoke = pokemon.getDescrizione();
+
+        const container = document.getElementById("container");
+
+        const article = document.createElement("article");
+
+        const immaginePokemon = document.createElement("img");
+        immaginePokemon.setAttribute("src", imagePoke);
+
+        const nomePokemon = document.createElement("h3");
+        const breveDesc = document.createElement("p");
+
+        // immaginePokemon.innerText = imagePoke;
+        nomePokemon.innerText = namePoke;
+        breveDesc.innerText = descPoke;
+
+        article.appendChild(immaginePokemon);
+        article.appendChild(nomePokemon);
+        article.appendChild(breveDesc);
+
+        arrayPokemon.push(article);
+
+        container.appendChild(article);
+
+        displayPokemon();
+    }
+
+    function nuovoPokemon() {
+
+        const form = document.getElementsByTagName("form");
+
+        if (form.style.display === 'none') {
+            form.style.display = 'block'
+        } else {
+            form.style.display = 'none'
+        }
+    }
+
+//     function btnClick(btn) {
+
+//     let btnText = btn.textContent || btn.innerText;
+// }
+
+//     function scrollToPokemon() {
+
+//         const bottoniPokemon = Array.from(document.getElementsByClassName("bottoniPokemon"));
+//         const h3 = Array.from(document.getElementsByTagName("h3"));
+
+//         bottoniPokemon.forEach(element => {
+
+            
+//         });
+//     }
+</script>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <script src="funzioni.js"></script>
+    <title>Pokedex</title>
+</head>
+<body>
+    <header>
+        <h1>Pokèdex</h1>
+        <nav id="headerNav">
+            <ul>
+                <li>
+                    <a>My Pokemon</a>
+                </li>
+                <li>
+                    <a>New Pokemon</a>
+                </li>
+                <li>
+                    <a>Info</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    <article>
+        <section id="sidebar">
+
+            <button type="button" onclick="seeForm()" class="insertPokemon" id="newButton">New</button>
+
+            <form id="aggiungi" class="scompari">
+                <h2>Insert New</h2>
+                <label>
+                    Pokemon name:
+                </label>
+                <input type="text" placeholder="e.g. Pikachu" id="nomePokemon" class="inputInserimento">
+                <label>
+                    Image URL:
+                </label>
+                <input type="text" placeholder="Enter image URL" id="imagePokemon" class="inputInserimento">
+                <label>
+                    Description:
+                </label>
+                <textarea placeholder="Enter Description" id="descriptionPokemon" class="inputInserimento"></textarea>
+                <div>
+                    <button type="button" onclick="inserisciPokemon()" class="insertPokemon">Add</button>
+                    <button type="button" onclick="hideForm()" class="insertPokemon">Hide</button>
+                </div>
+            </form>
+
+            <div id="indice">
+                 <a href="#Pikachu">
+                    Pikachu
+                </a>
+                <a href="#Charmender">
+                    Charmender
+                </a>
+                <a href="#Bulbasaur">
+                    Bulbasaur
+                </a>
+                <a href="#Squirtle">
+                    Squirtle
+                </a>
+            </div>
+
+        </section>
+        <section id="myPokemon">
+            <ul id="pokemon">
+
+                <li class="card">
+                    <a id="Pikachu"></a>
+                    <img src="https://www.notizie.it/wp-content/uploads/2016/11/Pikachu.png" alt="Pikachu">
+                    <div class="container">
+                        <strong>Pikachu</strong>
+                        <p>
+                            Solleva la coda per esaminare l'ambiente circostante. A volte la coda è colpita da un fulmine quando è in questa posizione.
+                        </p>
+                    </div>
+                </li>
+
+                <li class="card">
+                    <a id="Charmender"></a>
+                    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png" alt="Charmender">
+                    <div class="container">
+                        <strong>Charmender</strong>
+                        <p>
+                            La fiamma che Charmander ha sulla coda indica la sua forza vitale. Se è in forma, la fiamma è vivace.
+                        </p>
+                    </div>
+                </li>
+
+                <li class="card">
+                    <a id="Bulbasaur"></a>
+                    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png" alt="Bulbasaur">
+                    <div class="container">
+                        <strong>Bulbasaur</strong>
+                        <p>
+                            Un seme raro gli è stato piantato sulla schiena alla nascita. La pianta sboccia e cresce con lui.
+                        </p>
+                    </div>
+                </li>
+
+                <li class="card">
+                    <a id="Squirtle"></a>
+                    <img src="https://upload.wikimedia.org/wikipedia/it/e/e3/Squirtle.png" alt="Squirtle">
+                    <div class="container">
+                        <strong>Squirtle</strong>
+                        <p>
+                            Se si sente minacciato, ritira le zampe nel guscio e inizia a spruzzare acqua dalla bocca.
+                        </p>
+                    </div>
+                </li>
+
+            </ul>
+        </section>
+    </article>
+</body>
+</html>
