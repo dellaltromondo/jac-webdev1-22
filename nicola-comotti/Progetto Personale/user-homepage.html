@@ -6,12 +6,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>MyFitnessHub</title>
         <link rel="icon" href="Utils/dumbell-favicon.png">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="Css/main.css">
+        <link rel="stylesheet" href="Css/header.css">
+        <link rel="stylesheet" href="Css/form.css">
+        <link rel="stylesheet" href="Css/popup.css">
+        <link rel="stylesheet" href="Css/homepage.css">
     </head>
 
-    <body class="user-homepage">
+    <body>
         <div id="popup-container">
-            <section id="errorPopup" style="display: none;"></section>
+            <section class="popup" id="errorPopup"></section>
         </div>
         <header>
             <button class="only-mobile" id="menuToggle" onclick="toggleMenu()">
@@ -23,19 +27,15 @@
                 <p class="only-desktop">Logout</p>
             </button>
             <nav class="only-desktop" id="menuDesktop">
-                <!--    <button class="link-button" onclick="loadPage('user-homepage')">Homepage</button>
-                <button class="link-button" onclick="loadPage('database-esercizi')">Database Esercizi</button>
-                <button class="link-button" onclick="loadPage('calcolatrici')">Calcolatrici</button>
-                <button class="link-button" onclick="loadPage('contatti')">Contatti</button> -->
                 <a href="user-homepage.html">Homepage</a>
                 <a href="exercise-wiki.html">Exercise Wiki</a>
-                <a href="calcolatrici.html">Calcolatrici</a>
+                <a href="calcolatore-bmi.html">Calcolatore BMI</a>
                 <a href="contatti.html">Contatti</a>
             </nav>
             <nav class="only-mobile" id="menuMobile" style="display: none;">
                 <a href="user-homepage.html">Homepage</a>
                 <a href="exercise-wiki.html">Exercise Wiki</a>
-                <a href="calcolatrici.html">Calcolatrici</a>
+                <a href="calcolatore-bmi.html">Calcolatore BMI</a>
                 <a href="contatti.html">Contatti</a>
             </nav>
         </header>
@@ -57,8 +57,7 @@
             </aside>
             <section class="column">
                 <h2>LE MIE SCHEDE</h2>
-                <ul id="listaSchede">
-                </ul>
+                <ul id="listaSchede"></ul>
                 <form autocomplete="off" id="form-add-scheda">
                     <h2>AGGIUNGI SCHEDA</h2>
                     <label for="nomeScheda">Nome scheda: </label><input type="text" id="nomeScheda" name="nomeScheda">
@@ -66,9 +65,9 @@
                 </form>
             </section>
         </article>
-        <script src="./Js/main.js"></script>
-        <script src="./Js/popup.js"></script>
-        <script src="./Js/schede-esercizi.js"></script>
+        <script src="Js/main.js"></script>
+        <script src="Js/popup.js"></script>
+        <script src="Js/schede-esercizi.js"></script>
     </body>
 
 </html>

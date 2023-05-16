@@ -1,121 +1,322 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./img/favicon.jpg" type="image/x-icon">
     <title>@ 2023 InventoryGenius</title>
-    
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/mobile.css">
-    <link rel="stylesheet" href="./css/tablet.css">
-    <link rel="stylesheet" href="./css/table.css">
-    <link rel="stylesheet" href="./css/button.css">
-    <link rel="stylesheet" href="./css/login.css">
-    <link rel="stylesheet" href="./css/form.css">
-    
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
-    <script src="./javascript/script.js"></script>
-</head>
-<body>
+
+    <link rel="stylesheet" href="./css/styles.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+      integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
     <section id="login">
+      <header>
+        <h1>SELEZIONA UN MAGAZZINO</h1>
+      </header>
 
-        <header>
-            <h1>LOGIN PER ACCEDERE AL GESTIONALE</h1>
-        </header> 
-
-        <article>
-            <button type="button" onclick="toggle('aliExpress')">AliExpress</button>
-            <button type="button" onclick="toggle('amazon')">Amazon</button>
-            <button type="button" onclick="toggle('barilla')">Barilla</button> 
-        </article>
-
+      <article>
+        <button type="button" class="btnLogin" onclick="toggle('aliExpress')">
+          AliExpress
+        </button>
+        <button type="button" class="btnLogin" onclick="toggle('amazon')">
+          Amazon
+        </button>
+        <button type="button" class="btnLogin" onclick="toggle('barilla')">
+          Barilla
+        </button>
+      </article>
     </section>
 
     <section id="aliExpress">
-        <header>
-            <h1>GESTIONALE ALIEXPRESS</h1> <button type="button" onclick="home('aliExpress')">TORNA ALLA SCHERMATA HOME</button>
-            <i class="fas fa-home" onclick="home('aliExpress')">HOME</i>
-        </header> 
-        <article>
-            <table id="aliExpressTab">
-                <tr>
-                    <th>ID</th>
-                    <th>Prodotto</th>
-                    <th>Quantità</th>
-                    <th>Prezzo unitario (€)</th>
-                    <th>Descrizione</th>
-                    <th>Data</th>
-                    <th>Modifica/Elimina</th>
-                </tr>
-            </table>   
-        </article>
-        <!-- <div class="container-form" id="aliExpressForm">
-            <label for="name">Prodotto</label>
-            <input id="name" type="text" />
-            <label for="name">Prodotto</label>
-            <input id="name" type="text" />
-            <label for="name">Prodotto</label>
-            <input id="name" type="text" />
-            <label for="name">Prodotto</label>
-            <input id="name" type="text" />
-            
-        </div> -->
-        
-        
+      <header>
+        <h1>GESTIONALE ALIEXPRESS</h1>
+        <button type="button" onclick="home('aliExpress')">
+          TORNA ALLA SCHERMATA HOME
+        </button>
+        <i class="fas fa-home" onclick="home('aliExpress')">HOME</i>
+      </header>
+
+      <button id="newAliExpress">Nuovo</button>
+      <button id="btnOrderAliExpress" onclick="toggleOrder('orderAliExpress')">
+        Ordina per
+      </button>
+
+      <div id="orderAliExpress">
+        <button id="asc-nameAliExpress">Prodotto (A-Z)</button>
+        <button id="desc-nameAliExpress">Prodotto (Z-A)</button>
+        <button id="asc-quantityAliExpress">Quantità (minore-maggiore)</button>
+        <button id="desc-quantityAliExpress">Quantità (maggiore-minore)</button>
+        <button id="asc-priceAliExpress">Prezzo (minore-maggiore)</button>
+        <button id="desc-priceAliExpress">Prezzo (maggiore-minore)</button>
+        <button id="asc-dateAliExpress">Data (minore-maggiore)</button>
+        <button id="desc-dateAliExpress">Data (maggiore-minore)</button>
+      </div>
+
+      <article>
+        <table id="aliExpressTab">
+          <tr>
+            <th>ID</th>
+            <th>Prodotto</th>
+            <th>Quantità</th>
+            <th>Prezzo unitario (€)</th>
+            <th>Descrizione</th>
+            <th>Data di inserimento</th>
+            <th>Modifica/Elimina</th>
+          </tr>
+        </table>
+      </article>
+
+      <div id="myModalAliExpress" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="modal-close">&times;</span>
+            <h1 id="h1AliExpress"></h1>
+          </div>
+          <div class="modal-body">
+            <form class="modal-form">
+              <label for="productAliExpress">Prodotto:*</label>
+              <input
+                type="text"
+                id="productAliExpress"
+                name="product"
+                required
+              />
+
+              <label for="quantityAliExpress">Quantità:*</label>
+              <input
+                type="number"
+                id="quantityAliExpress"
+                name="quantity"
+                required
+              />
+
+              <label for="priceAliExpress">Prezzo unitario:*</label>
+              <input
+                type="number"
+                id="priceAliExpress"
+                name="price"
+                step="0.01"
+                required
+              />
+
+              <label for="descriptionAliExpress">Descrizione:*</label>
+              <input
+                type="text"
+                id="descriptionAliExpress"
+                name="description"
+                required
+              />
+
+              <button
+                type="button"
+                id="insertButtonAliExpress"
+                onclick="insertNew('aliExpress')"
+              >
+                Inserisci
+              </button>
+              <button
+                type="button"
+                id="editButtonAliExpress"
+                onclick="editRow()"
+              >
+                Modifica
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="amazon">
+      <header>
+        <h1>GESTIONALE AMAZON</h1>
+        <button type="button" onclick="home('amazon')">
+          TORNA ALLA SCHERMATA HOME
+        </button>
+        <i class="fas fa-home" onclick="home('amazon')">HOME</i>
+      </header>
 
-        <header>
-            <h1>GESTIONALE AMAZON</h1> <button type="button" onclick="home('amazon')">TORNA ALLA SCHERMATA HOME</button>
-            <i class="fas fa-home" onclick="home('amazon')">HOME</i>
-        </header>
+      <button id="newAmazon">Nuovo</button>
+      <button id="btnOrderAmazon" onclick="toggleOrder('orderAmazon')">
+        Ordina per
+      </button>
 
-        <article>
-            <table id="amazonTab">
-                <tr>
-                    <th>ID</th>
-                    <th>Prodotto</th>
-                    <th>Quantità</th>
-                    <th>Prezzo unitario (€)</th>
-                    <th>Descrizione</th>
-                    <th>Data</th>
-                    <th>Modifica/Elimina</th>
-                </tr>
-            </table> 
-        </article>
-        <div class="container-form" id="amazonForm">
+      <div id="orderAmazon">
+        <button id="asc-nameAmazon">Prodotto (A-Z)</button>
+        <button id="desc-nameAmazon">Prodotto (Z-A)</button>
+        <button id="asc-quantityAmazon">Quantità (minore-maggiore)</button>
+        <button id="desc-quantityAmazon">Quantità (maggiore-minore)</button>
+        <button id="asc-priceAmazon">Prezzo (minore-maggiore)</button>
+        <button id="desc-priceAmazon">Prezzo (maggiore-minore)</button>
+        <button id="asc-dateAmazon">Data (minore-maggiore)</button>
+        <button id="desc-dateAmazon">Data (maggiore-minore)</button>
+      </div>
 
+      <article>
+        <table id="amazonTab">
+          <tr>
+            <th>ID</th>
+            <th>Prodotto</th>
+            <th>Quantità</th>
+            <th>Prezzo unitario (€)</th>
+            <th>Descrizione</th>
+            <th>Data di inserimento</th>
+            <th>Modifica/Elimina</th>
+          </tr>
+        </table>
+      </article>
+
+      <div id="myModalAmazon" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="modal-close">&times;</span>
+            <h1 id="h1Amazon"></h1>
+          </div>
+          <div class="modal-body">
+            <form class="modal-form">
+              <label for="productAmazon">Prodotto:*</label>
+              <input type="text" id="productAmazon" name="product" required />
+
+              <label for="quantityAmazon">Quantità:*</label>
+              <input
+                type="number"
+                id="quantityAmazon"
+                name="quantity"
+                required
+              />
+
+              <label for="priceAmazon">Prezzo unitario:*</label>
+              <input
+                type="number"
+                id="priceAmazon"
+                name="price"
+                step="0.01"
+                required
+              />
+
+              <label for="descriptionAmazon">Descrizione:*</label>
+              <input
+                type="text"
+                id="descriptionAmazon"
+                name="description"
+                required
+              />
+
+              <button
+                type="button"
+                id="insertButtonAmazon"
+                onclick="insertNew('amazon')"
+              >
+                Inserisci
+              </button>
+              <button type="button" id="editButtonAmazon" onclick="editRow()">
+                Modifica
+              </button>
+            </form>
+          </div>
         </div>
-        
+      </div>
     </section>
-        
+
     <section id="barilla">
+      <header>
+        <h1>GESTIONALE BARILLA</h1>
+        <button type="button" onclick="home('barilla')">
+          TORNA ALLA SCHERMATA HOME
+        </button>
+        <i class="fas fa-home" onclick="home('barilla')">HOME</i>
+      </header>
 
-        <header>
-            <h1>GESTIONALE BARILLA</h1> <button type="button" onclick="home('barilla')">TORNA ALLA SCHERMATA HOME</button>
-            <i class="fas fa-home" onclick="home('barilla')">HOME</i>
-        </header>
+      <button id="newBarilla">Nuovo</button>
+      <button id="btnOrderBarilla" onclick="toggleOrder('orderBarilla')">
+        Ordina per
+      </button>
 
-        <article>
-            <table id="barillaTab">
-                <tr>
-                    <th>ID</th>
-                    <th>Prodotto</th>
-                    <th>Quantità</th>
-                    <th>Prezzo unitario (€)</th>
-                    <th>Descrizione</th>
-                    <th>Data</th>
-                    <th>Modifica/Elimina</th>
-                </tr>
-            </table>              
-        </article>
-        <div class="container-form" id="barillaForm">
+      <div id="orderBarilla">
+        <button id="asc-nameBarilla">Prodotto (A-Z)</button>
+        <button id="desc-nameBarilla">Prodotto (Z-A)</button>
+        <button id="asc-quantityBarilla">Quantità (minore-maggiore)</button>
+        <button id="desc-quantityBarilla">Quantità (maggiore-minore)</button>
+        <button id="asc-priceBarilla">Prezzo (minore-maggiore)</button>
+        <button id="desc-priceBarilla">Prezzo (maggiore-minore)</button>
+        <button id="asc-dateBarilla">Data (minore-maggiore)</button>
+        <button id="desc-dateBarilla">Data (maggiore-minore)</button>
+      </div>
 
+      <article>
+        <table id="barillaTab">
+          <tr>
+            <th>ID</th>
+            <th>Prodotto</th>
+            <th>Quantità</th>
+            <th>Prezzo unitario (€)</th>
+            <th>Descrizione</th>
+            <th>Data di inserimento</th>
+            <th>Modifica/Elimina</th>
+          </tr>
+        </table>
+      </article>
+
+      <div id="myModalBarilla" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="modal-close">&times;</span>
+            <h1 id="h1Barilla"></h1>
+          </div>
+          <div class="modal-body">
+            <form class="modal-form">
+              <label for="productBarilla">Prodotto:*</label>
+              <input type="text" id="productBarilla" name="product" required />
+
+              <label for="quantityBarilla">Quantità:*</label>
+              <input
+                type="number"
+                id="quantityBarilla"
+                name="quantity"
+                required
+              />
+
+              <label for="priceBarilla">Prezzo unitario:*</label>
+              <input
+                type="number"
+                id="priceBarilla"
+                name="price"
+                step="0.01"
+                required
+              />
+
+              <label for="descriptionBarilla">Descrizione:*</label>
+              <input
+                type="text"
+                id="descriptionBarilla"
+                name="description"
+                required
+              />
+
+              <button
+                type="button"
+                id="insertButtonBarilla"
+                onclick="insertNew('barilla')"
+              >
+                Inserisci
+              </button>
+              <button type="button" id="editButtonBarilla" onclick="editRow()">
+                Modifica
+              </button>
+            </form>
+          </div>
         </div>
-        
+      </div>
     </section>
-    
-</body>
+
+    <script src="./javascript/script.js"></script>
+  </body>
 </html>

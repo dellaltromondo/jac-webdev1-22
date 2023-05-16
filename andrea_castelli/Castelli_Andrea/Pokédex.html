@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Pokédex</title>
+
+        <link rel="stylesheet" href="Pokédex.css"> 
+        <script src="Pokédex.js"></script>
+    </head>
+
+    <body>
+        <header>
+           <h1>Pokédex</h1>
+           
+           <nav>
+                <ul>
+                    <li>
+                        <a href="myPokémon.html">My Pokémons</a>
+                    </li>
+
+                    <li>
+                        <a>New Pokémon</a>
+                    </li>
+
+                    <li>
+                        <a href="https://it.wikipedia.org/wiki/Pok%C3%A9mon">Info</a>
+                    </li>
+                </ul>
+           </nav>
+        </header>
+
+
+
+        <section id="sidebar">
+            <ul id="lista">
+                <li>
+                    <button onclick="search(this.id)" value="Pikachu" id="p1">Pikachu</button>
+                </li>
+                <li>
+                    <button onclick="search(this.id)" value="Charmander" id="p2">Charmander</button>
+                </li>
+                <li>
+                    <button onclick="search(this.id)" value="Squirtle" id="p3">Squirtle</button>
+                </li>
+                <li>
+                    <button onclick="search(this.id)" value="Bulbasaur" id="p4">Bulbasaur</button>
+                </li>
+            </ul>
+
+            <form id="InsertNew">
+                <h2>Insert new</h2>
+
+                <label>Pokémon name:</label>
+                <input type="text" placeholder="Es. Pikachu" id="name">
+                <label>Captured:</label>
+                <input type="checkbox" id="captured">
+                <label>Level: </label>
+                <input type="number" placeholder="1" min="1" max="100" id="level">
+                <label>Image URL: </label>
+                <input type="text" id="url">
+                <label>Description</label>
+                <textarea rows="4" columns="20" placeholder="This Pokémon can be found in the plains while raining" id="description"></textarea>
+
+                <button type="button" onclick="insertPokémon()" id="save">Save</button>
+            </form>
+        </section>
+
+        
+
+        <section id="listaP">
+            <div>
+                <img src="https://th.bing.com/th?id=OSK.1b20366f47864b1343de07e867739e3f&w=148&h=148&c=7&o=6&dpr=1.3&pid=SANGAM" class="immagine">
+                <label class="nome">Pikachu</label>
+                <label class="descrizione">Pikachu is an Electric type Pokémon introduced in Generation 1. It is known as the Mouse Pokémon.</label>
+            </div>
+
+            <div>
+                <img src="https://th.bing.com/th?id=OSK.b8698b476ac9036c8f5b546c6a79d501&w=148&h=148&c=7&o=6&dpr=1.3&pid=SANGAM" class="immagine">
+                <label class="nome">Charmander</label>
+                <label class="descrizione">Charmander is a Fire type Pokémon introduced in Generation 1. It is known as the Lizard Pokémon.</label>
+            </div>
+
+            <div>
+                <img src="https://th.bing.com/th?id=OSK.4003ba6f26c09a8bb4eea41a40f072ba&w=148&h=148&c=7&o=6&dpr=1.3&pid=SANGAM" class="immagine">
+                <label class="nome">Squirtle</label>
+                <label class="descrizione">Squirtle is a Water type Pokémon introduced in Generation 1. It is known as the Tiny Turtle Pokémon.</label>
+            </div>
+
+            <div>
+                <img src="https://th.bing.com/th?id=OSK.b5b61b25843c29c16640918da40f8180&w=148&h=148&c=7&o=6&dpr=1.3&pid=SANGAM" class="immagine">
+                <label class="nome">Bulbasaur</label>
+                <label class="descrizione">Bulbasaur is a Grass / Poison type Pokémon introduced in Generation 1. It is known as the Seed Pokémon.</label>
+            </div>
+        </section>
+    </body>
+</html>

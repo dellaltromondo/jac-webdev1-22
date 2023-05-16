@@ -129,7 +129,6 @@ mostraPost()
     }
 
     function mostraPost(post) {
-        
         paginaPost.style.display = "grid"
 
         postCorrente = post;
