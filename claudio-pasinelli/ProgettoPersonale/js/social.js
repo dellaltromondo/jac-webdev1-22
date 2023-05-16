@@ -553,7 +553,7 @@ function eliminaDefinitivamenteSocial(id)
 
     if(!isSocialTrovato)
     {
-        alert(`La traccia "${id}" non è stata trovata!`);
+        alert(`Il social "${id}" non è stato trovato!`);
     }
 }
 
