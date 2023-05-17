@@ -66,12 +66,19 @@
     flex: 1;
     }
     #right-section {
-    flex: 1;
+        flex: 1;
+      }
+     
+      #total {
+        display: inline-block;
+        text-align: left;
     }
-    #total {
-    text-align: right;
-    margin-bottom: 10px;
+    
+    #ButtonToPay {
+        display: inline-block;
+        margin-left: 20px;
     }
+    
     button {
     margin-top: 20px;
     padding: 10px 20px;
@@ -86,3 +93,5 @@
     button:hover {
     background-color: aliceblue;
     }
+   
+     

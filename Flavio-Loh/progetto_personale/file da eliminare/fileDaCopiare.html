@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,7 +38,6 @@ Foodspring
 <div id="right-section">
 <div id="total">
 <h3>Totale:</h3>
-<span id="cart-total"></span>
 </div>
 <button id="ButtonToPay" onclick="window.location.href='Pagamento.html'">
 Vai al pagamento
@@ -116,10 +116,13 @@ flex: 1;
 #right-section {
 flex: 1;
 }
+
 #total {
-text-align: right;
+text-align: left; /* Modifica la proprietà text-align in "left" */
 margin-bottom: 10px;
+margin-left: 20px; /* Aggiungi un margine sinistro personalizzato */
 }
+
 button {
 margin-top: 20px;
 padding: 10px 20px;
@@ -134,8 +137,18 @@ margin-right: auto;
 button:hover {
 background-color: aliceblue;
 }
-</style>
+#ButtonToPay {
+margin-top: 20px;
+padding: 10px 20px;
+background-color: lightblue;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+display: inline-block; /* Imposta il display su "inline-block" per posizionarlo di fianco al prezzo */
+margin-left: 20px; /* Aggiungi un margine sinistro per spazio tra il prezzo e il pulsante */
+}
 
-<script src="../javascript/Function.js"></script>
+
+</style>
 </body>
 </html>
