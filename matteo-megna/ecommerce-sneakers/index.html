@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+        <link href="style.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li class="limenu"><img class="menu" src="immagini/toggleMenu.png"></li>
+                <li ><button class="buttonLogo" onclick="backHome()"><img class="logo" src="immagini/logo.png"></button></li>
+                <li class="licart"><button class="buttonCart" onclick="showCart()"><img class="cart" src="immagini/shopping-cart.png"></button></li>
+            </ul>
+        </nav>
+
+
+        <section id="collection">
+        
+        </section>
+        <section id="carrello">
+            <table class="headTable">
+                <tr>
+                    <td id="totalText">TOTALE</td>
+                    <td id="totalPrice"></td>
+                </tr>
+            </table>
+            <table id="tableCart">
+                <tr>
+                    <th class="headTableImg">IMG</th>
+                    <th class="headTableProduct">PRODUCT</th>
+                    <th class="headTablePrice">PRICE</th>
+                </tr>
+            </table>
+        </section>
+          
+        
+        <script src="backend.js"></script>
+        <br>
+        <br>
+        <br>
+       
+
+    </body>
+</html>
