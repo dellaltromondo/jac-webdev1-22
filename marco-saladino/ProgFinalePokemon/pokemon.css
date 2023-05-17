@@ -1,0 +1,117 @@
+
+ nav{
+    margin-bottom: 0;
+}
+
+nav ol li{
+    color: white;
+}
+
+nav ol {
+    margin-top: 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(226, 79, 5);
+    height: 5em;
+    margin-bottom: 0;
+}
+
+body{
+    display: flex;
+    flex-direction:row;
+}
+
+img{
+    width: 200px;
+}
+
+#primo{
+    margin-right: 50%;
+    margin-top: 0.7em;
+    font-size: xx-large;
+    text-decoration: none;
+    height: 3px;
+}
+
+a{  
+    margin-top: 0.3em;
+    font-size: x-large;
+    margin-right: 15%;
+    text-decoration: underline;
+    background-color: rgba(221, 229, 236, 0.395);
+    height: min-content;
+    border-radius: 0.2em;
+    color: white;
+}
+
+aside{
+    background-color: rgb(215, 213, 213);
+    width: 30%;
+}
+aside button{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column; 
+}
+
+aside button{
+    border: 0.4px solid black;
+    background-color: white;
+    margin-top: 2em;
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+form{
+    margin-left: 2.5em;
+}
+
+
+#N, #U, #D{
+    width: 90%;
+    height: 30px;
+    display: block;
+    margin-bottom: 2em;
+}
+
+#P{
+    display: block;
+    margin-bottom: 1em;
+}
+
+#D{
+    height: 100px;
+    
+}
+
+
+#L{
+    display: inline-block;
+    margin-left: 1em;
+    margin-bottom: 2em;
+    width: 20%;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    border: 2px black;
+   
+}
+
+.poke{
+    width: 73%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 2px black;
+}
+
+
+
+
+
+

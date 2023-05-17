@@ -1,15 +1,8 @@
 body 
 {
-    background-image: url("./img/bluebg.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed; /* Imposta l'immagine di sfondo come fissata sulla finestra del browser */
-    max-width: 100%;
-    overflow-x: hidden;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #40DC42;
 }
-  
-  
-  
 
 @media (max-width:960px) {
 
@@ -24,7 +17,7 @@ body
     }
 
     #TitleMobile {
-        text-align: center;                                                                                                                                                            
+        text-align: center;                                                                                                                                                       
     }
 
     #Instructions {
@@ -36,6 +29,11 @@ body
     }
 
     #RollIt {
+        text-align: center;
+    }
+
+    #Refresh
+    {
         text-align: center;
     }
 
@@ -142,7 +140,20 @@ body
         border: 0px;
     }
 
+    #Refresh
+    {
+        text-align: center;
+        height: 2rem;
+        width: 4rem;
+        border: 0px;
+    }
+
     #RollIt:hover 
+    {
+        background-color: orangered;
+    }
+    
+    #Refresh:hover
     {
         background-color: orangered;
     }

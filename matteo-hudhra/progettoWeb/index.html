@@ -11,7 +11,7 @@
 			<h1 id="titolo_nav">Diario voti personale</h1>
 			<div>
 				<a>Voti</a>
-            	<a>Info</a>
+            	<a onclick="logOut()">Logout</a>
 			</div>
 			
 	</nav>
@@ -33,5 +33,11 @@
 	</form>
 	<div id="subjects-container"></div>
 	<script type="text/javascript" src="js/index.js"></script>
+	<script>
+		window.addEventListener("load", (event) =>
+        {
+            loadDati();
+        });
+	</script>
 </body>
 </html>

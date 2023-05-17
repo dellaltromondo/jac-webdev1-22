@@ -258,21 +258,6 @@
 
     <div id="AboutUsParagraph">
         <button onclick="showHomeFromAboutUs()">HOME</button>
-        
-        
-        <!--
-            
-            <div>
-                <p>
-                    <br>
-                    Our online store offers a wide selection of high-quality saddles for all your riding needs. 
-                    Whether you're a beginner or an experienced rider, we have the perfect saddle for you.
-                    <br><br>
-                    Our website is designed to make your shopping experience as easy and convenient as possible. 
-                    <br><br>
-                    Thank you for choosing our Saddles Shop for all your riding needs. We look forward to serving you!</p></div>
-                </div>
-            -->
             <div id="centerGrid">
                 <h1 id="h1DescriptionWebsite" style="">Welcome to our Saddles Shop website!</h1>
                 <div id="grid">
@@ -298,6 +283,7 @@
             
         <button type="button" id="buttonHome" onclick="showHome()">HOME</button>
         <div id="ShoppingCartContainer">
+        
         <section id="sectionCart">
             <div>
                 <h2>YOUR SHOPPING CART</h2>
@@ -320,27 +306,47 @@
             <section id="containerFormCostumer">
               <section>
 
-                  <br>
-                  <div>
-                      
-                      <label class="label">Name: <input class="g" id="name" type="text" placeholder="Donald"></label>
-                      <label class="label">Surname: <input class="g" id="surname" type="text" placeholder="Trump" ></label>
-                      <label class="label" style="grid-column: 1/3;">Address: <input class="g" id="address" type="text"placeholder="132, My Street, Kingston" ></label>
-                      <label class="label">E-mail: <input class="g" id="mail" type="email" placeholder="john@example.com" ></label>
-                      <label class="label">Phone number: <input class="g" id="phone" type="tel" placeholder="(555) 555-1234" ></label>
-                    </div>
+                <div id="divGriglia">
+                      <div class="label">
+                          <label for="name">Name: 
+                              <input class="g" id="name" type="text" placeholder="Donald">
+                              <p id="errorName"></p>
+                            </label>
+                      </div>
+                      <div class="label">
+                          <label for="surname">Surname: 
+                              <input class="g" id="surname" type="text" placeholder="Trump" >
+                            </div>
+                      </label>
+                      <div class="label" id="address">
+                          <label for="address" >Address: 
+                              <input class="g" id="addressInput" type="text"placeholder="132, My Street, Kingston" >
+                            </label>
+                      </div>
+
+                      <div class="label">
+                          <label for="mail">E-mail: 
+                              <input class="g" id="mail" placeholder="john@example.com" >
+                            </label>
+                      </div>
+
+                      <div class="label">
+                          <label for="phone">Phone number: 
+                              <input class="g" id="phone" type="tel" placeholder="(555) 555-1234" >
+                          </label>
+                      </div>
+                </div><!--divGriglia-->
                     
-                    <section>
-                        <br>
-                        <label> <input class="label" id="cond" type="checkbox" >I have read and agree to the Terms of Service and
-                            Privacy Policy</label>
+                    <section id="sectioniterms">
                     </section>
-                        <div id="ButtonVerify">
-                            <button type="button" id="shopButton" onclick="checkInfos()">VERIFY</button>
-                        </div>
+                    <nav id="buttonVerifyCenter">
+                        <label> <input id="cond" type="checkbox">I have read and agree to the Terms of Service and Privacy Policy</label>
+                        <button type="button" class="shopButton" onclick="printAndCheckInfos()">VERIFY</button>
+                            <button type="button" class="shopButton" onclick="enableEdit()">EDIT</button>
+                        </nav>
                         
                         <dl id="dl"></dl><!--userInformations-->
-                </section>  
+                    </section>  
             </section><!--containerFormCostumer-->
 
             
@@ -362,33 +368,45 @@
                 
                 <section id="modalForPaymentPaypal">
                     <img src="./images/img-formPayment/paypal.webp" style="height:50px">
-                    <p style="margin:5px; padding: 10px; border-top:1px solid black; border-bottom:1px solid black;background-color:#50bbea29; ">Hi! To continue the order you must choose the payment method</p>
-                    <div style="padding:5px; display:flex; flex-direction:row; align-items: center;">
-                        <label for="account1"><input onclick="decidePayment()" name="mastercard" type="radio" value="paypal" id="mastercard"> </label>
+                    <p style="margin:5px; padding: 10px; border-top:1px solid black; border-bottom:1px solid black;background-color:#50bbea29; ">To continue the order you must choose the payment method</p>
+                    
+                    <div class="hover">
+                      <button type="button" class="containerPaypalPayment" onclick="paymentMastercard()">
                         <img src="./images/img-formPayment/MasterCard_Logo.svg.png" style="width:50px">
                         <div style="padding-left:10px"><p>Mastercard</p><p>Credit ••••7845</p></div>
+                      </button>
                     </div>
-                    <div style="padding:5px; display:flex; flex-direction:row; align-items: center;">
-                        <label for="account2"><input  name="mastercard" type="radio" value="paypal" id="mastercard"> </label>
+                    
+                    <div class="hover">
+                      <button type="button" class="containerPaypalPayment" onclick="paymentBank()">
                         <img src="./images/img-formPayment/partnersandsponsors_bankofamerica.jpg" style="width:50px">
                         <div style="padding-left:10px"><p>Bank of America</p><p>Credit ••••1639</p></div>
+                      </button>
                     </div>
-                    <button id="buttonSendPaypal">SEND</button>
+                    <div style="display:flex; justify-content: center;"><p id="response1" style="display:none;font-weight: bold; ">Paid with Mastercard</p></div>
+                    <div style="display:flex; justify-content: center;"><p id="response2" style="display:none;font-weight: bold;">Paid with Bank of America</p></div>
                 </section>
-
+                
                 <section id="modalForPaymentVisa"  >
-                    <img src="./images/img-formPayment/visa.png"  style="height:50px">
-                    <div style="display: flex; flex-direction: column">
-                        <label>Card number</label>
-                        <input placeholder="1588 5555 9562 7865">
-                        <label >Expiration Date</label>
-                        <input type="date">
-                        <label>CVV</label>
-                        <input placeholder="84">
-                    </div>
-                    <button id="buttonSendVisa">SEND</button>
+                  <img src="./images/img-formPayment/visa.png"  style="height:50px">
+                  <div style="display: flex; flex-direction: column">
+                    <label>Card number</label>
+                    <input id="cardNumber" placeholder="1588 5555 9562 7865">
+                    <label >Expiration Date</label>
+                    <input id="expirationDate" type="date">
+                    <label>CVV</label>
+                    <input id="cvv" placeholder="84">
+                  </div>
+                  <button id="buttonSendVisa" type="button" onclick="getDataVisa()">SEND</button>
+                  <button id="buttonSendVisa" type="button" onclick="changeDataVisa()">EDIT</button>
+                  <dl id="dlPay"></dl>
                 </section>
-            </div>
+              </div>
+              <div style=" display:flex;flex-direction: column; justify-content: center;align-items: center;">
+                  <button style="width:20%; margin:10px" id="lastButtonBye" type="button" onclick="continueLast()">CONTINUE</button>
+                  <h1 id="bye" style="display:none; font-size: 30px;margin: 10px;">ORDERED DELIVERED</h1>
+              </div>
+              
             </section> <!--containerformPayment-->
             </div>
             
