@@ -1,0 +1,66 @@
+html {
+    font-family: 'Roboto', sans-serif;
+    font-size: large;
+}
+
+body {
+    margin: 0;
+}
+
+/*nav*/
+
+nav {
+    background-color: brown;
+}
+nav a {
+    float: right;
+}
+
+/*main section*/
+
+.main{
+    display: flex;
+}
+
+/*sidebar*/
+
+.sidebar{
+    width: 85%;
+    text-align: left;
+    padding-left: 1%;
+}
+
+/*cards*/
+
+.cards{
+    flex-wrap: wrap;
+    display: flex;
+    margin: 3%;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    width: 30%;
+}
+
+.cardImages{
+    width: 45%;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.nomeTesto {
+    padding: 2px 16px;
+}
+
+
+/*footer*/
+
+footer {
+    background-color: brown;
+    text-align: right;
+    padding: 1%;
+}

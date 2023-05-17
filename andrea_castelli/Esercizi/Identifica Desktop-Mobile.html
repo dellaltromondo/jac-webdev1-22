@@ -1,0 +1,101 @@
+<DOCTYPE HTML>
+    <html>
+        <head>
+            <title>Media queries</title>
+
+            <style>
+                .only-mobile
+                {
+                    display: none;
+                }
+
+                .only-desktop
+                {
+                    display: block;
+                }
+
+
+                @media(max-width: 960px)
+                {
+                    .only-mobile
+                    {
+                        display: block;
+                    }
+
+                    .only-desktop
+                    {
+                        display: none;
+                    }
+                }
+
+
+
+                article
+                {
+                    column-count: 3;
+                }
+
+
+
+
+                :root
+                {
+                    --main-color: violet;
+                }
+
+                @media (prefers-color-scheme: dark)
+                {
+                    body
+                    {
+                        background-color: var(--main-color);
+                    }
+                }
+            </style>
+
+
+            <script>
+                function mostraMenu()
+                {
+                    const expMenu=document.getElementById("expanded-menu");
+
+                    if(expMenu.style.display!="block")
+                    {
+                        expMenu.style.display="block";
+                    }
+
+                    else
+                    {
+                        expMenu.style.display="none";
+                    }
+                }
+            </script>
+        </head>
+
+        <body>
+            <header>
+                <nav>
+                    <button class="only-mobile" onclick="mostraMenu()">Pulsante</button>
+                    <ul class="only-desktop" id="expanded-menu">
+                        <li>Voce Menu 1</li>
+                        <li>Voce Menu 2</li>
+                        <li>Voce Menu 3</li>
+                        <li>Voce Menu 4</li>
+                        <li>Voce Menu 5</li>
+                    </ul>
+                </nav>
+            </header>
+
+            <h1 class="only-mobile">Ciao, siamo su Mobile</h1>
+            <h1 class="only-desktop">Ciao, siamo su Desktop</h1>
+
+            <article>
+                <p>
+                    La provincia di Sondrio è composta da un territorio prevalentemente montuoso solcato da valli che si estendono principalmente per via longitudinale; le principali sono la Valtellina e la Valchiavenna.
+                    Racchiude in sé le montagne più elevate della Lombardia appartenenti alle Alpi Retiche ed è una provincia molto estesa, che comprende comuni di alta montagna come ad esempio Livigno, posto a quasi 2000 m di quota.
+                    A nord e a ovest la provincia di Sondrio confina con la Svizzera (Canton Grigioni), a ovest con la provincia di Como e la provincia di Lecco, a sud con la provincia di Bergamo e a est con la provincia di Brescia e con il Trentino-Alto Adige (provincia autonoma di Trento e provincia autonoma di Bolzano).
+                    La provincia di Sondrio ha la distinzione di essere l'unica provincia italiana stante in tre bacini alpini fluviali principali diversi: Val di Lei (comune di Piuro) con il suo Reno di Lei che manda le sue acque nel Mar del Nord in Olanda (pressi di Rotterdam) tramite il Reno Posteriore e poi il Reno vero e proprio; il fiume principale della provincia, l'Adda, che forma la Valtellina, cui acque sfociano nel Mar Adriatico mediante il Po, e il torrente Aqua Granda e altri minori che, mediante il lago artificiale denominato Livigno, si scaricano nel fiume Inn in territorio elvetico per poi unirsi al Danubio nell'Austria settentrionale (le acque della conca di Livigno sono dunque danubiane e pertanto finiscono nel Mar Nero nel nord est della Romania). Dei quattro bacini alpini grandi infatti manca solo quello del fiume Rodano.
+                </p>
+            </article>
+        </body>
+    </html>
+</DOCTYPE>

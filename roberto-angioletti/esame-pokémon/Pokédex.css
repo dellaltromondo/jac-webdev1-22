@@ -46,6 +46,27 @@ header
 }
 
 
+#Pikachu
+{
+    width: 15rem;
+    margin-left: 15%;
+    border: 1px solid black;
+}
+#Charmander
+{
+    width: 15rem;
+    border: 1px solid black;
+}
+#Squirtle
+{
+    width: 15rem;
+    border: 1px solid black;
+}
+#Bulbasaur
+{
+    width: 15rem;
+    border: 1px solid black;
+}
 
 .sidenav 
 {

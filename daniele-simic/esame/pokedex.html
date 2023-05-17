@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <link rel="stylesheet" href="pokedex.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pokèdex</title>
+</head>
+<body>
+    <header>
+        <nav> 
+            <h1>Pokédex</h1>
+            <ul id="bottoni">
+                <li><button>My Pokemons</button></li>
+                <li><button onclick='openInsertNewPokemon()'>New Pokemons</button></li>
+                <li><button>info</button></li>
+            </ul>
+        </nav>
+        
+    </header>
+
+    <div class="container">
+
+        <div class="sidebar">
+            <div id="ricerca-pokemon">
+         <button>charmender</button>
+         <button>pikachu</button>
+         <button>rattata</button>
+            </div>
+
+            <div id="insert-new">
+                <h2>Insert New </h2>
+                <label>Pokémon name<input type="text" placeholder="e.g. Pikachu" id="nome-pokemon"></label>
+                <label id= "level"> Level: <input type="number"></label>
+                <label>Image url<input type="link" id="immagine-pokemon"></label>
+                <label>Description <textarea name="descrizione" id="descrizione-pokemon" cols="30" rows="10"></textarea></label>
+                <button onclick="saveNewPokemon()" id="save-pokemon">Save</button>
+            </div>
+        </div>
+
+
+        <div id="pokedex">
+          <article class="pokemon">
+            <img src="./img/004.png">
+            <h3 class="pokemon-name">charmender</h3>
+            <p>Why do we use it?
+                It is a long established fact that a reader will be
+                 distracted by the readable content of a page when 
+                 looking at its layout. The point of using Lorem Ipsum
+                  </p>
+          </article>
+          <article class="pokemon">
+            <img src="./img/025.png">
+            <h3 class="pokemon-name">pikachu</h3>
+            <p>Why do we use it?
+                It is a long established fact that a reader will be
+                 distracted by the readable content of a page when 
+                 looking at its layout. The point of using Lorem Ipsum
+                  </p>
+          </article>
+          <article class="pokemon">
+            <img src="./img/019.png">
+            <h3 class="pokemon-name">rattata</h3>
+            <p>Why do we use it?
+                It is a long established fact that a reader will be
+                 distracted by the readable content of a page when 
+                 looking at its layout. The point of using Lorem Ipsum
+                </p>
+          </article>
+        </div>
+      </div>
+
+      <script src="pokedex.js"></script>
+    </body>
+</html>
