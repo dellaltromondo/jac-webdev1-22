@@ -113,7 +113,7 @@ function elimina(nomeProdotto){
             while (table.rows.length > 0) {
                 table.deleteRow(0);
             }
-            
+            break;
         }
     }
     const rowHead = document.createElement('tr');
