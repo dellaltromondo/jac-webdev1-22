@@ -4,16 +4,25 @@
 <meta name="keywords " content="parole chiavi "/>  
 <link rel="stylesheet" type="text/css" href="style.css">
 <p class="titolo"> FORM <p>
-    <div id="form "></div> 	
-        
+  <style>
+    input{
+      display: block;
+    }
+    div input{
+      display: inline-block;
+    }
+    
+  </style>
+    <div id="form "></div> 
     <form action="pagina5.php" method="post">
         <label for="name">Nome:</label><br>
-        <input type="text" id="name" name="name" required><br>
+        <input type="text" id="name" name="name" placeholder="ES.Mario i" required ><br>
         <label for="cogn">Cognome:</label><br>
-        <input type="text" id="cogn" name="cogn" required><br>
-        <label for="mail">Email:</label><br>
-        <input type="email" id="email" name="email" required><br>
-        Password:<br> <input type="password" value="" id="myInput"><br><br>
+        <input type="text" id="cogn" name="cogn" placeholder="ES. Rossi" required><br>
+        <label for="mail">Email </label><br>
+        <input type="email" id="email" name="email" placeholder="ES. mariorossi@libero.it" required><br>
+        Password:<br> <input type="password" value="" id="myInput" placeholder="12345"><br><br> 
+        <div>
     <input type="checkbox" onclick="myFunction()">Fai vedere la PASWORD<br><br>
     
     <script>
@@ -41,7 +50,10 @@
     sesso<br>
     <input type="radio" name="sesso" value="M"> Maschio<br>
     <input type="radio" name="sesso" value="F"> Femmina <br>
+  </div>
+
     <input type="range" name= "slot" min="0" max="10">
+    
     <select name="opt">
     <option value="1">opzione 1 </option>
     <option value="2">opzione 2 </option>
@@ -54,9 +66,30 @@
     <option value="3">opzione 3 </option>
     <option value="4">opzione 4 </option>
     <br>
-    <textarea name="" rows="5" cols="30"></textarea><br>
-    <input type="submit" value="Invio"><br>
+  <form>
+    <button type="button" onclick="creaElemento()">Crea nuovo elemento</button>
+  </form>
+  <section id="scheda"> </section>
+</body>
+<script>
+  let cont=1;
+  function creaElemento() {
+      const nuovoElemento = document.createElement('section');
+      nuovoElemento.innerText = "Sono l'elemento numero: " + cont;
+
+      const sectionEsistente = document.getElementById('scheda');
+
+      sectionEsistente.appendChild(nuovoElemento);
+
+      cont++;
+  }
+  </script>
+
+
+   
     <input type="reset" value="Reset" /><br>
     <button type="button" onclick="alert('pulsante di java')">pulsante d'allarem!</button>
-        <p></p>
-      </form>
+    
+     
+    
+    

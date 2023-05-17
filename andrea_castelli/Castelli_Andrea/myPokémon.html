@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>My Pokémon</title>
+
+        <script src="Pokédex.js"></script>
+    </head>
+
+    <body>
+        <section id="sec">
+
+        </section>
+
+        <script>
+            const sec=document.getElementById("sec");
+
+            for(let i=0; i<Captures.length; i++)
+            {
+                let image=document.createElement("img");
+                image.setAttribute("src", Captures[i].URL)
+
+                let name=document.createElement("label");
+                name.innerHTML=Captures[i].Nome;
+
+                let level=document.createElement("label");
+                level.innerHTML=Captures[i].Level;
+
+                let desc=document.createElement("label");
+                desc.innerHTML=Captures[i].Descrizione;
+
+                sec.appendChild(image);
+                sec.appendChild(name);
+                sec.appendChild(level);
+                sec.appendChild(desc);
+            }
+        </script>
+    </body>
+</html>

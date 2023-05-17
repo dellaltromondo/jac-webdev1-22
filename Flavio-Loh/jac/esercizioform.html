@@ -1,0 +1,66 @@
+<html>
+><head>
+    <style>
+    input {
+        display: block;
+     }
+     div input {
+        display: inline-block;
+     }
+
+     input[type= "checkbox"] {
+        display: inline-block;
+     }
+  </style>
+</head>
+
+
+<body>
+   
+     
+
+    <form>
+       
+    
+
+        <label>nome:<input type= "text" placeholder="es.mario"> </label> 
+        <label for  = "cognome"> cognome: </label>
+        <input id="cognome">
+        <label>data di nascita:<input type= "date" > </label> 
+
+         <div>
+            <div> sesso:</div><label>m<input name ="sesso" type= "radio" value="m" ></label> 
+            <label>f<input name ="sesso" type= "radio" value="f" ></label> 
+         </div>
+         
+        <label><input  type= "checkbox" >accetto le condizioni</label> 
+        <button type="button" > invio</button>
+     
+
+        <section id="scheda1">
+                ciao sono un nuovo elemento
+        </section>
+
+        <button onclick=""> cambia Titolo</button>
+     </form>
+
+     <script>
+    
+       
+
+        function aggiungisection(){
+            const nuovoElScheda = document.createElement ("section");
+
+            nuovoElScheda.innerText = "ciao sono un nuovo elemento";
+            const elementoScheda= document.getElementById("Sheda");
+            elementoScheda.appendChild("nuovaElScheda");
+            nuovaElScheda.setAttibute("class" , "scheda1");
+        }
+
+
+     </script>
+   
+</body>
+
+
+</html>

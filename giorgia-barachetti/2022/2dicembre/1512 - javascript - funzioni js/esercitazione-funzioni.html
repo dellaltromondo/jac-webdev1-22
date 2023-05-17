@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            //moltiplica num*1000
+            function moltiplica(num){
+            let risultato = num * 1000
+            return risultato
+            }
+
+            console.log(moltiplica(10));
+            console.log(moltiplica(20));
+            console.log(moltiplica(30));
+
+
+
+
+            //dati nome e cognome, restituisci nome completo          
+            function studente(nome, cognome) {
+                    let anagrafica = (nome + " " + cognome)
+                    return anagrafica
+                }
+                console.log(studente('ALICE', 'LUKKA'));
+                
+
+
+
+
+            //dato anno di nascita restiruisce se è young se minorenne, old se <65, adult se di piu
+                function eta (albi) {
+
+                if (albi > 2004){
+                        return "young";
+
+                    }else if(albi > 1957){
+                        return "old";
+
+                    }else{
+                        return "adult";
+                    }
+            }
+            
+            console.log(eta(1950));
+            console.log(eta(2010));
+            console.log(eta(1800));
+
+
+
+            //dato array di date di nascita restituisce array con tutii i minorenni
+            //let dateBorn = [1950, 2005, 2022, 1987];   ----> non possso  usare queste perchè quello dichiarato al di fuori della function non viene utilizzato
+            function filtraMinorennii(dateBorn) {
+                let risultato = [];
+                for (let int = 0; int < dateBorn.length; int++) {
+                                                                                    /* 
+                                                                                    // oppure   if (eta >= 18) {
+                                                                                                    risultato.push(dateBorn[int]);     }
+                                                                                */
+
+                    if (eta(dateBorn[int]) == 'young') {
+                        risultato.push(dateBorn[int]);
+                    }
+                }
+                return risultato;
+            }
+            console.log("Applico il filtro ai seguenti array [2003,600,2050,1997]: ");
+            console.log(filtraMinorennii([2003,600,2050,1997]));
+
+            console.log("Filtro per [1865,2010,2004,2020]: ");
+            console.log(filtraMinorennii([1865,2010,2004,2020]));
+                    
+
+
+        
+            //dato un array di persone restituisce un array con tutti i minorenni
+            function filtraMinori(dateBorn) {
+                let risultato = [];
+
+                    for (let k = 0; k < dateBorn.length; k++) {
+                        if (eta(dateBorn[k].anno) == 'young') {
+                            risultato.push(dateBorn[k]);
+                        }
+                    }
+                    return risultato;
+                 }
+
+                let persones = [
+                {nome: "A", anno: 1950},
+                {nome: "B", anno: 2010},
+                {nome: "C", anno: 2008},
+                {nome: "D", anno: 1500},
+            ]
+
+            console.log(persones[0].nome); //ti esce il nome A
+            console.log(persones[3].anno);   //ti esce l'anno 1500
+
+            console.log("Applico i filtri agli array " , persones);
+            console.log(filtraMinori(persones));
+
+        </script>
+    </body>
+
+</html>

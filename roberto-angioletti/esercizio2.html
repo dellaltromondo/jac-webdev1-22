@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<body>
+    <h1>ciao</h1>
+    <ul id="ListaAnagrafica">
+        <li>   
+            <label>nome:<input id ="nome"  placeholder="Mario"></label>
+            <label>cognome: <input  id ="cognome" placeholder="Rossi"></label>
+        </li>
+    </ul>
+    <p> clicca per avere un nuovo form</p>
+    <button onclick="CreaNuovaSezione()"type="button">invio</button>
+
+
+    <script>
+        function CreaNuovaSezione() {
+            const element = document.createElement("li");
+            const element1 = document.createElement("P");
+            const element2 = document.createElement("P");
+
+            element.appendChild(element1);
+            element.appendChild(element2);
+
+            const nome = document.getElementById("nome")
+            document.getElementById("ListaAnagrafica").appendChild(element);
+            element1.innerText=nome.value
+            element2.innerText=cognome.value
+
+        }
+    </script>
+</body>
+
+
+
+
+
+
+
+
+
+</html>

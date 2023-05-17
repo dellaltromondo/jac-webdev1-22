@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <body>
+            <script>
+                //variabile numerica
+                let a = 5;
+                console.log("il valore di a è' " + a);     //stampa 
+                
+                //variabile stringa
+                const b = 'pippo';
+                console.log("il suo nome e' " + b);
+                //b = 'pluto';     se scrivo così non viene sovrascritto il codice perchè c'è const che definisce il valore della variabile b
+
+                //variabile array
+                let studenti= ["Agostini", "Bergamelli", 'Martinelli', 'Medo'];
+                console.log(studenti);
+
+                //variabile oggetto
+                let studente = {
+                    nome: "Lauro",
+                    cognome: "Nani",
+                    nascita: 1890,
+                    classe: "ICT",
+                }
+                console.log(studente);
+                
+
+
+                //FUNZIONI
+                //if
+                function massimo (val1, val2) {
+                    if (val1 > val2){
+                        return val1;
+                    }else{
+                        return val2;
+                    }
+               }
+              
+               let x = massimo (3, 42);
+               console.log(x);                          //oppure        console.log(massimo(3,42);)
+               
+               
+               
+               //if alternativo
+               function massimoAlternative (v1, v2) {
+                return (v1 > v2)
+                ? v1    //if
+                : v2    //else
+               }
+
+               let un = massimo (55, 306);
+               console.log(un);  
+               
+
+
+               //if alternativo (operatore ternario)
+                 function massimoAlternativo2 (v1, v2) {
+                      let risultato = (v1 > v2)
+                     ? v1    //if
+                     : v2    //else
+
+                     return risultato;
+               }
+
+               function massimo4Num (n1, n2, n3, n4) {
+                let m1 = massimo(n1, n2);
+                let m2 = massimo(n3, n4);
+
+                return massimo(m1, m2);
+               }
+               console.log(massimo4Num(43,85,73,29));
+            </script>
+        </body>
+    </head>
+</html>

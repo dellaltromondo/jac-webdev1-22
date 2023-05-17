@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pagina di Login</title>
+	<link rel="stylesheet" href="css/login_style.css">
+	<script type="text/javascript" src="js/login.js"></script>
+	<script type="text/javascript" src="js/user.js"></script>
+</head>
+<body>
+	<div class="container">
+		<h1>Effettua il login</h1>
+		<form onsubmit="event.preventDefault(); loginUtente();">
+			<label for="username">Username:</label>
+			<input type="text" id="username" name="username" required>
+			<label for="password">Password:</label>
+			<input type="password" id="password" name="password" required>
+			<input type="submit" value="Login">
+		</form>
+	</div>
+	<script>
+		window.addEventListener("load", (event) =>
+    	{
+      		localStorage.clear();
+    	});
+	</script>
+</body>
+</html>

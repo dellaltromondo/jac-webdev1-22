@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="formDinamicoStyle.css">
+</head>
+<body>
+    <form>
+        
+        <label for="nome">Inserisci il tuo nome:</label> <input type="text" id="nome">
+
+        <label for="cognome">Inserisci il tuo cognome:</label> <input type="text" id="cognome">
+
+        <label for="nascita">Inserisci la tua data di nascita:</label> <input type="date" id="nascita">
+
+        <div> Sesso: <br>
+            <label for="male">M:</label> <input type="radio" name="sesso" id="male" value="m">
+            <label for="female">F:</label> <input type="radio" name="sesso" id="female" value="f">
+        </div>
+
+        <input type="checkbox" id="condizioni"> <label for="condizioni">Accetto le condizioni e i termini di servizio</label>
+
+        <button type="button" onclick="creaSchedaPersona()">Crea scheda personale</button>
+    </form>
+    <section id="scheda"> 
+
+    </section>
+</body>
+<script>
+    let cont=1;
+    function creaElemento() {
+        const nuovoElemento = document.createElement('section');
+        nuovoElemento.innerText = "Sono l'elemento numero: " + cont;
+
+        const sectionEsistente = document.getElementById('scheda');
+
+        sectionEsistente.appendChild(nuovoElemento);
+
+        cont++;
+    }
+
+    function creaSchedaPersona() {
+        const nome = document.getElementById('nome');
+        const cognome = document.getElementById('cognome');
+        const nascita = document.getElementById('nascita');
+
+        const m = document.getElementById('male');
+        const f = document.getElementById('female');
+        let sesso = 'Non specificato';
+        if(m.checked) {
+            sesso = 'M';
+        }
+        else if(f.checked) {
+            sesso = 'F';
+        }
+
+        const condizioni = document.getElementById('condizioni');
+        let cond = 'Non accettati';
+        if(condizioni.checked) {
+            cond = 'Accettati';
+        }
+
+        const nuovoElemento = document.createElement('section');
+        nuovoElemento.innerText = "\n \n Nome: " + nome.value + "\n Cognome: " + cognome.value + "\n Data di nascita: " + nascita.value + "\n Sesso: "+ sesso + "\n Condizioni e termini di servizio: " + cond;
+
+        const sectionEsistente = document.getElementById('scheda');
+
+        sectionEsistente.appendChild(nuovoElemento);
+    }
+
+</script>
+</html>

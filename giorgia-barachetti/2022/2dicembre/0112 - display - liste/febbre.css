@@ -1,0 +1,43 @@
+p {
+    color: red;
+    width: 20%;
+}
+img {
+    margin-right: 2rem;
+    vertical-align: top;
+    float: left;
+    max-width: 20%;
+}
+strong {
+    /*display: inline-block;*/
+    width: 5rem;
+    height: 3rem;
+    vertical-align: middle;
+}
+ul {
+    list-style-type: square;
+}
+ol {
+    display: inline-block;
+    width: 2em;
+}
+
+/**
+position fixed
+bottom 0
+right 20 px
+border radius 1 rem 1 rem 00
+banckground color
+color
+padding 1 rem 2rem 
+
+#contact:hover
+padding bottom 1 rem
+
+#contact:hover img
+display block
+width 2.5 rem
+height 3 rem
+margin auto
+float npne
+**/ 

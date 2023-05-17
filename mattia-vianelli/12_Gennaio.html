@@ -1,0 +1,33 @@
+<html>
+    <body>
+        <h1 id="titolo">Titolo Pagina</h1>
+        <p id="nome">Nome:</p>
+        <p id="cognome">Cognome:</p>
+        <input placeholder="nome">
+        <button onclick="sovrascriviNome()">Aggiungi</button>
+        <br>
+        <input placeholder="cognome">
+        <button onclick="sovrascriviCognome()">Aggiungi</button>
+        <br>
+        <br>
+        <button onclick="resettaTutto()">Reset</button>
+        <script>
+            function sovrascriviNome() {
+                const elementoNome = document.getElementById('nome')
+                const aggiuntaNome = document.getElementsByTagName('input')
+                elementoNome.innerText = elementoNome.innerText + ' ' + aggiuntaNome[0].value
+            }
+            function sovrascriviCognome() {
+                const elementoCognome = document.getElementById('cognome')
+                const aggiuntaCognome = document.getElementsByTagName('input')
+                elementoCognome.innerText = elementoCognome.innerText + ' ' + aggiuntaCognome[1].value
+            }
+            function resettaTutto(){
+                const elementoNome = document.getElementById('nome')
+                const elementoCognome = document.getElementById('cognome')
+                elementoNome.innerText = 'Nome:'
+                elementoCognome.innerText = 'Cognome:'
+            }
+        </script>
+    </body>
+</html>

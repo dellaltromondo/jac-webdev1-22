@@ -1,0 +1,20 @@
+//casella input tag input --> puo essere anche non chiuso --> per gli input va il .value non l'innerText
+//pulsante saluta 
+
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <h1 id="zitto">ciao</h1>
+        <h2 id="yea"></h2>
+        <input id="nome"> 
+        <button onclick="saluta()"> SALUTA </button>
+    </body>
+
+    <script>
+        function saluta() {
+            const scoiattolo = document.getElementById("nome");
+            document.getElementById("yea").innerHTML= scoiattolo;
+        }
+    </script>
+</html>

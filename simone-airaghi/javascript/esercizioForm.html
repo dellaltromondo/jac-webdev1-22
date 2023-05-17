@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        input {display: block;
+        }
+        div input{
+            display: inline-block;
+        }
+        input[type="checkbox"] {  /* con le quadre agisco solo sugli attributi*/
+            display: inline-block;
+        }
+    </style>
+    <form>
+        <label> Nome: <input type="text" placeholder="mario"> </label> 
+        <label for="Cognome">Cognome:</label>     <!--questi sono due modi per creare l stesso tipo di input-->    
+        <input id="Cognome" placeholder="rossi">
+        <label>Data: <input type="date" ></label>
+        <div><div>Sesso:</div> <label> M <input name="sesso" type="radio" value="m"></label>  <!--mettendo l'attributo name="" collego i due input-->
+        <label>F <input name="sesso" type="radio" value="f"></label> </div>  <!--se volessi inviare al server tutti gli input dovrei creare un name="" per ogni input -->
+        <label><input type="checkbox"> accetto le condizioni</label> 
+        <button onclick="AggiungiSchede()" type="button">Invio</button>
+    </form>
+    <section id="schede">
+
+    </section>
+</body>
+<script>
+    function AggiungiSchede (){
+        const nuovoElScheda = document.createElement("section");
+        nuovoElScheda.innerText="Nuovo elemento";
+        const elementoSchede = document.getElementById("schede");
+        elementoSchede.appendChild(nuovoElScheda);
+        //nuovoElScheda.setAttribute("class","schede");
+
+    }
+
+
+</script>
+</html>

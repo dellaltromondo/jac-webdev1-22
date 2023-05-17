@@ -1,0 +1,105 @@
+  <!-- Reservation Start -->
+  <div class="container-xxl py-5 px-0 wow fadeInUp" data-wow-delay="0.5s">
+            
+    <div class="col-md-6 bg-dark d-flex align-items-center">
+        <div class="p-5 wow fadeInUp" data-wow-delay="0.2s">
+            <h5 class="section-title ff-secondary text-start text-primary fw-normal">prenotazione</h5>
+            <h1 class="text-white mb-4">Effettua la tua prenotazione</h1>
+            <form>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <form name="invio-dati" method="post">
+                                <form name="invio-dati" method="post">
+                            <input type="text" class="form-control" id="nome" placeholder="ES.Mario">
+                            <label for="nome">nominativo</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input type="email" class="form-control" id="email" placeholder="Email">
+                            <label for="email">Email</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating date" id="date3" data-target-input="nearest">
+                            <input type="text" class="form-control datetimepicker-input" id="datetime" placeholder="Data & Orario" data-target="#date3" data-toggle="datetimepicker" />
+                            <label for="datetime">Data & Orario</label>
+                        </div>
+                    </div>  
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <select class="form-select" id="select1">
+                              <option value="1">1 Persona </option>
+                              <option value="2">2 Persone </option>
+                              <option value="3">3 Persone </option>
+                              <option value="4">4 Persone </option>
+                              <option value="5">5 Persone </option>
+                              <option value="6">6 Persone </option>
+                              <option value="7">7 Persone </option>
+                              <option value="8">8 Persone </option>
+                              <option value="9">9 Persone </option>
+                              <option value="10">10 Persone </option>
+                           
+
+                            </select>
+                            <label for="select1">Seleeziona il numero di persone</label>
+                          </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <textarea class="form-control" placeholder="Special Request" id="message" style="height: 100px"></textarea>
+                            <label for="message">scrivi per eventualmente iformazioni</label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <button class="btn btn-primary w-100 py-3"  onclick="creaPdf()" type="button">prenota</button>
+                    </form>
+                    
+                
+                     <textarea id="messaggio" name="messaggio" rows="5" cols="50" placeholder="inserisci un messaggio"></textarea></p>
+                        <p><button onclick ="creaPdf()" type = "button">Crea PDF</button>
+                        </p>
+                     </form>
+                     <script type="text/javascript">
+                        function creaPdf() {	
+                        var doc = new jsPDF();
+                        var nome = document.getElementById("nome").value;
+                        var tel = document.getElementById("telefono").value;
+                        var email = document.getElementById("email").value;
+                        
+                        var radioSet = document.getElementsByName('sesso');
+                    
+                        var numeroRadio = radioSet.length;
+                        for( var i = 0; i < numeroRadio; i++ ){
+                            if( radioSet[i].checked ){
+                            var sesso=radioSet[i].value;
+                            break;
+                        }
+                    }
+                    
+                        var messaggio = document.getElementById("messaggio").value;
+                        
+                        var host = "http://"+window.location.hostname;
+                            
+                        doc.text(20, 20, 'Questo file è stato generato da: ' + host);
+                        doc.text(20, 30, 'Utente: ' + nome);
+                        doc.text(20, 40, 'Telefono: ' + tel);
+                        doc.text(20, 50, 'Email: ' + email);
+                        doc.text(20, 60, 'Sesso: ' + sesso);
+                        doc.addPage();
+                        doc.text(20, 20, 'Il messaggio: '+ messaggio);
+                    
+                        // Save the PDF
+                        doc.save('codingcreativo4.pdf');
+                        
+                        }
+                    </script>
+                       
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>

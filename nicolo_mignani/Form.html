@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <style>
+
+     form > input{
+
+        display: block;
+     }
+     
+     div input{
+
+        display: inline-block;
+     }
+
+     input[type="checkbox"]{ /*seleziona tutti gli input che sono di tipo checkbox  */
+
+        display: inline-block;
+     }
+
+    </style>
+
+<form>
+
+     
+    <lable for="nome">Nome:</lable>
+     <input type="text" id="nome" placeholder="mario">
+
+     <lable for="cognome">Cognome:</lable>
+     <input type="text" id="cognome">
+     
+     <label for="Eta">Età:</label>
+     <input type="number" min="0" id="Eta">
+     
+     <label for="data">Data di Nascita:</label>
+     <input type="date" id="data">
+
+     <div>sesso:
+     <input type="radio" id="f" value="F" name="fm">
+     <label for="f">F</label>
+    
+    <input type="radio" id="m" value="M" name="fm">
+     <label for="m">M</label>
+    </div>
+   
+    <button type="button">invio</button>
+
+     <input type="checkbox" id="si" value="Si">
+     <label for="si">Si</label>
+     <input type="checkbox" id="no" value="No">
+     <label for="no">No</label>
+     
+
+     
+
+</form>
+
+
+</html>

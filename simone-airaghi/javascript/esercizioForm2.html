@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        input {
+            display: block;
+        }
+
+        div input {
+            display: inline-block;
+        }
+
+        input[type="checkbox"] {
+            /* con le quadre agisco solo sugli attributi*/
+            display: inline-block;
+        }
+    </style>
+
+    <form>
+        <label> Nome: <input type="text" id="nome" placeholder="mario"> </label>
+        <label for="Cognome">Cognome:</label> <!--questi sono due modi per creare lo stesso tipo di input-->
+        <input id="cognome" placeholder="rossi">
+        <label>Data: <input id="data" type="date"></label>
+        <div>
+            <div>Sesso:</div> 
+            <label> M <input id="m" name="sesso" type="radio" value="M"></label>
+            <!--mettendo l'attributo name="" collego i due input-->
+            <label>F <input id = "f" name="sesso" type="radio" value="F"></label>
+        </div> <!--se volessi inviare al server tutti gli input dovrei creare un name="" per ogni input -->
+        <label><input id="check" type="checkbox"> accetto le condizioni</label>
+        <button onclick="AggiungiSchede()" type="button">Invio</button>
+    </form>
+    <ul id="liste">
+
+    </ul>
+    <script>
+        function AggiungiSchede() {
+            const nuovoElLista = document.createElement("li");
+            const elementoData = document.getElementById ("data");
+            const elementoNome = document.getElementById("nome");
+            const elementoCognome = document.getElementById("cognome");
+            const elementoSessoM = document.getElementById("m");
+            const elementoSessoF = document.getElementById("f");
+            const elementoCondizioni = document.getElementById ("check");
+            
+          
+            const nuovoElP = document.createElement("p");
+            nuovoElP.innerText = "Nome: " + elementoNome.value;
+          
+            const nuovoElP2 = document.createElement("p");
+            nuovoElP2.innerText = "Cognome: " + elementoCognome.value;
+
+            const nuovoElP3 = document.createElement("p");
+            nuovoElP3.innerText = "Data: " + elementoData.value;
+
+            
+            nuovoElLista.appendChild(nuovoElP);
+            nuovoElLista.appendChild(nuovoElP2);
+            nuovoElLista.appendChild(nuovoElP3);
+            
+            
+
+            const elementoUl = document.getElementById("liste");
+            elementoUl.appendChild(nuovoElLista);
+            
+            let sesso = " ";
+            if (!elementoSessoM.checked && !elementoSessoF.checked ) {
+               
+                sesso = "Non definito";
+
+            }  else if (elementoSessoM.checked){
+                sesso = "M";
+            } else{
+                sesso = "F";
+            }
+            const nuovoElP5 = document.createElement("p");
+            nuovoElP5.innerText = "Sesso: " + sesso;
+            nuovoElLista.appendChild(nuovoElP5);
+
+            let condizioni = " ";
+            if (!elementoCondizioni.checked) {
+                condizioni = "Condizioni non accettate";
+            } else {
+                condizioni = "Condizioni accettate";
+            }
+            const nuovoElP6 = document.createElement("p");
+            nuovoElP6.innerText = condizioni;
+            nuovoElLista.appendChild(nuovoElP6);
+
+        }
+
+
+    </script>
+</body>
+
+</html>

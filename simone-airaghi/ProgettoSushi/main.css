@@ -1,0 +1,187 @@
+/* {
+    outline: solid 1px red;
+    
+}
+*/
+
+body {
+    background-color:#292828f1;
+    
+}
+
+
+h1{
+    text-align: center;
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    font-size: 70px;
+    }
+   
+    
+   img {
+        border: 1px #ddd solido;
+        border-radius: 4px;
+        padding: 20px;
+        width:80px;
+        height: 80px;
+        border-radius: 30%;
+        justify-self: center;
+        
+    }
+
+
+
+    .sidenav {
+        height: 100%;
+        width: 150px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        padding-top: 20px;
+        padding-left: 10px;
+        margin-top: 0px;
+        list-style-type: none;
+
+        
+        
+    }
+
+    
+
+    section {
+        margin-left: 160px;
+        font-size: 28px;
+        padding: 0px 10px;
+        border-width: 3px;
+        border-color: black;
+        border-style: double;
+        display: grid;
+        grid-auto-rows: minmax(100px,auto);
+        grid-template-columns: repeat(3,1fr);
+        gap: 5px;
+        margin-top: 10px;
+    }
+
+    header {
+        
+        text-align: center;
+        display: inline-block;
+        width: calc(100% - 160px);
+        padding-left: 160px;
+        
+        
+        
+    }
+    
+    header nav {
+        
+        position: sticky;
+        top: 5px;
+        
+    }
+
+    #UlnavMenu li{
+        
+        display: inline-block;
+        padding: 10px;
+        
+        
+
+    }
+
+    #UlnavMenu  {
+        background-color: rgba(17, 17, 17, 0.922);
+       
+        position: sticky;
+        top: 5px;
+        padding:0px;
+        
+        
+       
+        
+    }
+
+    
+
+    .title{
+        grid-column: 1 / 4;
+        grid-row: 1 / 2;
+        justify-self: center;
+    }
+
+    .price{
+        grid-column: 1 / 4;
+        grid-row: 2 / 3;
+        justify-self: center;
+        
+    }
+
+    
+
+    #riepilogo {
+        display: none;
+    }
+
+    
+
+    #UlnavMenu2 {
+        background-color: rgba(17, 17, 17, 0.922);
+        
+        position: sticky;
+        top: 5px;
+        padding:0px;
+    }
+
+
+    #UlnavMenu2 li{
+        
+        display: inline-block;
+        padding: 10px;
+        
+        
+
+    }
+
+    table {
+        margin: 0 auto;
+        border-collapse: collapse;
+        width: 100%;
+    }
+      
+    th, td {
+        border: 1px solid rgb(211, 211, 211);
+        padding: 8px;
+        text-align: left;
+        width: 10%;
+    }
+      
+    th {
+        background-color: rgb(17, 20, 24);
+        color: white;
+    }
+      
+    tr:nth-child(even) {
+        background-color: rgba(156, 155, 155, 0.379);
+    }
+
+   .sidenav button {
+    padding:1em;
+    margin: 1em;
+    background-color: rgb(65, 65, 49);
+    border-radius: 15%;
+    width: 100px;
+    height: 70px;
+    
+    
+
+    }
+    .sidenav li{
+        text-align: center;
+        
+    }
+
+    

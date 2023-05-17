@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="it">
+
+    <head>
+        <title>Cambio titolo</title>
+        <style>
+            section {
+                margin: 0.5rem 0;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1 id="Titolo">Ciao</h1>
+        <section>
+            <input id="Input1">
+            <button onclick="saluta1()">Saluta</button>
+        </section>
+        <section>
+            <input id="Input2">
+            <button onclick="saluta2()">Saluta</button>
+        </section>
+        <section>
+            <input id="Input3">
+            <button onclick="saluta3()">Saluta</button>
+        </section>
+    </body>
+    <script>
+        function saluta1() {
+            const elementoTitolo = document.getElementById("Titolo");
+            const elementoInput = document.getElementById("Input1");
+            elementoTitolo.innerText = "Ciao " + elementoInput.value;
+        }
+        function saluta2() {
+            const elementoTitolo = document.getElementById("Titolo");
+            const elementoInput = document.getElementById("Input2");
+            elementoTitolo.innerText = "Ciao " + elementoInput.value;
+        }
+        function saluta3() {
+            const elementoTitolo = document.getElementById("Titolo");
+            const elementoInput = document.getElementById("Input3");
+            elementoTitolo.innerText = "Ciao " + elementoInput.value;
+        }
+    </script>
+
+</html>

@@ -1,0 +1,225 @@
+body {
+  background-color: rgb(252, 220, 190);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+#regole {
+  position: absolute;
+  left: 83rem;
+  top: 17rem;
+  font-family: verdana;
+  font-size: 14px;
+  background-color: #dbdb32;
+}
+
+#checkboxgiocatori {
+  background-color: #dbdb32;
+  margin-left: 22%;
+  margin-right: 22%;
+  border-radius: 12px;
+}
+
+#logo {
+  float: left;
+  position: absolute;
+  left: 8rem;
+  top: 9rem;
+}
+
+#titolo {
+  color: rgba(215, 28, 28, 0.395);
+  font-size: 40px;
+  margin: 1%;
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+  padding-left: 20px;
+}
+
+h3 {
+  font-size: 25em;
+}
+
+.colonne {
+  border-radius: 5%;
+  float: left;
+  width: 38%;
+  padding: 10px;
+  height: 300px;
+  margin: 2rem;
+}
+
+.colonna1 {
+  background-color: #FFAE00;
+  width: 25%
+}
+
+.colonna2 {
+  background-color: #FF760D;
+}
+
+#schema {
+  width: auto;
+  height: 500px;
+  max-height: 100%;
+  display: block;
+  margin-left: 27rem;
+  margin-right: auto;
+}
+
+.minititoli {
+  text-align: center;
+  font-family: Verdana;
+}
+
+.switch {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#formnomeeschema {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+#formschemi {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+td,
+th {
+  width: 6rem;
+  text-align: center;
+  padding: 8px;
+  border: 1px solid black;
+}
+
+#checkbox {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 0.5rem;
+}
+
+.checkcampionato {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottonigiocatori {
+  border-radius: 12px;
+  background-color: #dbdb32;
+  color: black;
+  border: 2px solid;
+  margin-bottom: 2px;
+}
+
+.bottoninavigazione:hover {
+  background-color: #9c9c58;
+  transition-duration: 0.3s;
+}
+
+.bottoninavigazione {
+  border-radius: 12px;
+  background-color: #dbdb32;
+  color: black;
+  border: 2px solid;
+  margin-bottom: 2px;
+  width: 9rem;
+  height: 3rem;
+  font-size: 18px;
+}
+
+.bottonigiocatori:hover {
+  background-color: #4caf4f7a;
+  transition-duration: 0.3s;
+}
+
+.giocatori:hover {
+  color: white;
+}
+
+.giocatoriattivi {
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  margin-left: 1rem;
+  width: 15%;
+}
+
+.hidden {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.giocatoriattivi:disabled {
+  opacity: 1.5;
+  color: black;
+}
+
+#listapulsantigiocatori {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  max-height: 150px;
+  overflow-y: scroll;
+  width: auto;
+}
+
+#divtabella {
+  width: 20%;
+  background-color: #E69D00;
+  max-height: 300px;
+  overflow-y: scroll;
+}
+
+#tabella {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.search-box {
+  margin-left: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.contatori {
+  font-size: 18px;
+}
+
+.bottonesalvataggio {
+  max-height: 5rem;
+  margin-left: 2rem;
+}
+
+#myForm3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#tabelle {
+  display: flex;
+  padding-left: 9rem;
+  justify-content: center;
+}
+
+#tabellacampionato {
+  padding-right: 6rem;
+}

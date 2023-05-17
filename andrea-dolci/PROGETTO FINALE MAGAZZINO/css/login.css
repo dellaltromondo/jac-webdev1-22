@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
+#login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12em;
+}
+
+#login header {
+    margin-bottom: 2rem;
+}

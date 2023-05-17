@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAC ESERCIZIO 09-02-2023(d)</title>
+</head>
+
+<body>
+    <section id="fact"></section>
+    <script type="module">
+        /*const factPromise = fetch("https://catfact.ninja/fact");
+        //vecchia sintassi con then
+        factPromise.then(
+            (response) => response.json().then(
+                (value => console.log(value))
+            )
+        );*/
+        const response = await fetch("https://catfact.ninja/fact");//restituisce una promise
+        const date = await response.json();
+        const dailyFact = date.fact;
+        document.getElementById("fact").innerText = dailyFact;
+    </script>
+</body>
+</html>

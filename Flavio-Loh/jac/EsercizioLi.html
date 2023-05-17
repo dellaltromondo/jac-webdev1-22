@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="it">
+
+   
+    <head>
+        <title>ciao</title>
+        
+    </head>
+
+    <body>
+        
+        
+        
+        <form>
+            <label>Nome:<input id = "nome"  placeholder="scrivi il tuo nome"> </label>
+            <label>Cognome: <input id = "cognome"  placeholder="scrivi il tuo cognome"></label>
+            <button onclick ="CreaNuovaSezione()" type="button"> invio</button> 
+        </form>
+        
+
+        <script>
+            function CreaNuovaSezione()
+            {
+            const ul = document.getElementById("ul");
+            const li = document.createElement("li");
+           
+            const p =  document.createElement("p");
+            const p2 = document.createElement("p");
+            
+            ul.appendChild(li);
+            li.appendChild(p);
+            li.appendChild(p2);
+            
+            const nome =  document.getElementById("nome");
+            const cognome = document.getElementById("cognome");
+
+            p.innerText = nome.value;
+            p2.innerText = cognome.value;
+           
+            }
+           
+        </script>
+
+        <ul id = "ul">
+        </ul>
+
+    </body>
+
+
+
+
+</html>

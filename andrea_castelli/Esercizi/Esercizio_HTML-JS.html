@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <h1 id="Titolo">Ciao</h1>
+
+        <input type="text" id="parola" name="parola" value="Parola">
+    </head>
+
+
+    <body>
+        <button onclick="sovrascriviTitolo()">Cambia titolo</button>
+    </body>
+
+
+    <script>
+        function sovrascriviTitolo()
+        {
+            /*const ElementoTitolo=document.getElementById("Titolo"); //Creo una costante che, mediante il metodo .getElementById() dell'interfaccia document, ha come valore
+                                                                      //l'oggetto rappresentato dall'ID specificato tra le parentesi del metodo
+                                                                      
+            ElementoTitolo.innerText='Nuovo titolo'; //Setto e visualizzo il valore della variabile ElementoTitolo*/
+
+            let p=document.getElementById("parola").value;
+            let t=document.getElementById('Titolo').innerHTML;
+;
+
+            document.getElementById("Titolo").innerHTML=t+" "+p;
+        }
+    </script>
+</html>

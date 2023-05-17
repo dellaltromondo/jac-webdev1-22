@@ -1,0 +1,18 @@
+#form-calcolo-bmi {
+    grid-template-columns: 1fr 2fr;
+}
+
+#result-bmi,
+#disclaimer {
+    background-color: var(--blue04);
+    border: var(--border);
+    border-radius: var(--b-radius);
+    padding: 1.5em;
+    margin: 3em;
+}
+
+.bmi-img {
+    width: clamp(250px, 60%, 350px);
+    border-radius: var(--b-radius);
+    display: none;
+}

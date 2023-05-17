@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1 id="titolo">Ciao</h1>
+        <button onclick="sovrascriviTitolo()">Cambia titolo</button>
+        <input type="text" id="testoUtente">
+    </body>
+    <script>
+        function sovrascriviTitolo() {
+            const elementoTitolo = document.getElementById("titolo");
+            const inputUtente = document.getElementById("testoUtente").value;
+            elementoTitolo.innerText= inputUtente;
+        }       
+        </script>
+</html>

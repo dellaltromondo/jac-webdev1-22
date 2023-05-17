@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <h1 id="Titolo">ciao</h1> 
+      <input></input>
+      <button onclick="SovrascriviTitolo()">Aggiungi</button>
+    </head>
+
+      <body>
+
+         <script> 
+
+          function RestitiusciTesto(){
+          const Testo= document.getElementsByTagName("input");
+          
+          if(Testo[0].value==""){
+           
+            return "";
+
+          }else{
+            
+            return Testo[0].value;
+
+          }
+
+          }
+          
+          function SovrascriviTitolo(){
+             const ElementoTitolo= document.getElementById("Titolo");
+              ElementoTitolo.innerText=ElementoTitolo.innerText+" "+RestitiusciTesto();
+          
+          }
+
+          </script>
+
+        </body>
+      </html>

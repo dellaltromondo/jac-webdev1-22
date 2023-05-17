@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clienti</title>
+</head>
+
+<body>
+    <form>
+        <!--Modo 1 per collegare label e input-->
+        <label>
+            Nome:
+            <input type="text" placeholder="Nome" id="nome">
+        </label>
+
+        <!--Modo 2 per collegare label e input-->
+        <label for="cognome">
+            Cognome:
+        </label>
+        <input id="cognome" type="text" placeholder="Cognome" name="cognome">
+
+        <!--Date in input-->
+        <label>
+            Data di nascita:
+            <input type="date" id="data">
+        </label>
+
+        <!--Caselle selezionabili collegate-->
+        <div>
+            <div>
+                Sesso:
+            </div>
+            <label>
+                M:
+                <input name="sesso" type="radio" value="Maschio">
+            </label>
+
+            <label>
+                F:
+                <input name="sesso" type="radio" value="Femmina">
+            </label>
+
+            <label>
+                Altro:
+                <input name="sesso" type="radio" value="Altro">
+            </label>
+        </div>
+
+
+        <label>
+            accetto le condizioni<input type="checkbox">
+        </label>
+
+        <button type="button" onclick="aggiungi()">Invio</button>
+    </form>
+
+    <section>
+        <ul id="schede">
+
+        </ul>
+    </section>
+
+    <script>
+        function aggiungi() 
+        {
+            const nuovoElScheda = document.createElement('li');
+
+            nuovoElScheda.appendChild(creaP('nome', "Nome"));
+
+            nuovoElScheda.appendChild(creaP('cognome',"Cognome"));
+
+            nuovoElScheda.appendChild(creaP('data', "Data di nascita"));
+
+            const nuovoPGender = document.createElement('p');
+            nuovoPGender.innerText = getSesso();
+            nuovoElScheda.appendChild(nuovoPGender);
+
+            const elementoSchede = document.getElementById('schede');
+            nuovoElScheda.setAttribute('class', 'scheda');
+            elementoSchede.appendChild(nuovoElScheda);
+        }
+
+        function getSesso() 
+        {
+            const element = document.getElementsByName('sesso');
+
+            for (i = 0; i < element.length; i++) 
+            {
+                if (element[i].checked) 
+                {
+                    const sesso = "Sesso: " + element[i].value;
+                    return sesso;
+                }
+
+            }
+        }
+
+        function creaP(inputId, nomeStampa)
+        {
+            const elemento = document.getElementById(inputId).value;
+            const nuovoElemento = document.createElement('p');
+            nuovoElemento.innerText = nomeStampa + ": " + elemento;
+            return nuovoElemento;
+        }
+    </script>
+
+</body>
+
+</html>

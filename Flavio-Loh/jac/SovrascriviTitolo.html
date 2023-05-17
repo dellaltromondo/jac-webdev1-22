@@ -1,0 +1,32 @@
+<html>
+    <body>
+    
+        <h1 id = "Titolo"> ciao </h1>
+        
+        <button onclick="SovrascriviTitolo()"> cambia Titolo</button>
+
+        <h2 id = "Titolo2"> ciao </h1>
+        <input id = "InputTitolo">
+        <button onclick="SovrascriviTitolo2()"> cambia Titolo</button>
+   </body>
+
+
+    <script>
+
+function SovrascriviTitolo(){
+    
+    const ElementoTitolo = document.getElementById ("Titolo");
+    
+    ElementoTitolo.innerText = "Ciao";
+}
+      
+function SovrascriviTitolo2(){
+    
+            const ElementoTitolo = document.getElementById("InputTitolo").value;
+            
+            document.getElementById("Titolo2").innerHTML = ElementoTitolo;
+        }
+    
+    </script>
+   
+</html>

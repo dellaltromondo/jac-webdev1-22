@@ -12,6 +12,7 @@ body{
     font-size: 38px;
     margin-left: 5rem;
     margin-right: 5rem;
+    margin-top: 4rem;
     padding-top: 0;
     font-weight: 1000;  
     position: sticky;
@@ -50,6 +51,15 @@ header img {
 header p {
     padding-left: 1rem;
     padding-right: 1rem;
+}
+/* comandi input e button */
+#inputCerca {
+    position: static;
+    margin-left: 20rem;
+}
+#buttonCerca {
+    position: static;
+    margin-left: 21rem;
 }
 /* comandi per i link */
 a:visited {

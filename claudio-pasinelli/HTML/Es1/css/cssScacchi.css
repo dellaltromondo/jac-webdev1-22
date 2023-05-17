@@ -1,0 +1,43 @@
+p
+{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+h2
+{
+    color: rgb(165, 83, 42);
+    font-size: 2em;
+    margin-top: 0px;
+}
+div#primaParte
+{
+    background-color: rgb(246, 217, 173);
+}
+div#primaParte h1#titolo
+{
+    color: rgb(255, 204, 0);
+    font-size: 4em;
+    margin-top: 0px;
+}
+div#secondaParte, div#terzaParte, div#quartaParte
+{
+    background-color: rgb(232, 196, 143);
+}
+a
+{
+    color: rgb(165, 85, 42);
+}
+a::after
+{
+    color: rgb(183, 44, 44);
+}
+img#primaImmagine
+{
+    width: 25%;
+    height: 25%;
+}
+img
+{
+    width: 12%;
+    height: 12%;
+}

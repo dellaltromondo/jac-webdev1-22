@@ -3,7 +3,7 @@ header img {
     width: 100%
 }
 
-* {
+html {
     background-color: rgb(212, 165, 255);
 }
 
@@ -18,9 +18,13 @@ header nav {
 }
 
 nav {
+    display: inline-block;
     text-align: right;
     background-color: yellow;
-    padding: 10px;
+    padding: 3px;
+    width: 100%;
+    position: sticky;
+    top: 5px;
 }
 
 a {
@@ -46,5 +50,17 @@ nav a{
     padding: 4px;
     text-decoration: none;
 }
-
+section{
+    
+    margin: 10px;
+    position: fixed;
+    right: 10px;
+    bottom: 20px;
+    padding: 1rem;
+    background-color: rgba(255, 0, 0, 0.777);
+    border-radius: 1rem;
+}
+li{
+    display: inline-block;
+}
 /*max-widht e min-widht danno largheza massima e minima per le immagini*/

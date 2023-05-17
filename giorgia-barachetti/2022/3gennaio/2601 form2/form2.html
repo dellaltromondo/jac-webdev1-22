@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            div input {
+                display: inline-block;
+            }
+    
+            input{                      /*form > input --> per selezionare i figli diretti*/
+                display: block;
+            }
+        </style>
+    </head>
+
+    <body>
+        <form>
+            <label>Nome: <input id="inpNome" placeholder="Scrivi il nome"> </label>
+            <label>Cognome: <input id="inpCognome" placeholder="Scrivi il cognome"> </label>
+            <button onclick="createSection()" type="button"> CLICCA QUI </button>
+        </form>
+
+            <script>
+                function createSection(){
+                    const li = document.createElement("li");
+                    const p = document.createElement("p");
+                    const p2 = document.createElement("p")
+                    ul.appendChild(li);
+                    li.appendChild(p);
+                    li.appendChild(p2);
+                    
+                    
+                    const nome = document.getElementById("inpNome");
+                    const cognome = document.getElementById("inpCognome");
+                    /*
+                    p.appendChild(nome);
+                    p2.appendChild(cognome);
+                    */
+                    p.innerText = nome.value;
+                    p2.innerText = cognome.value;
+                }
+                </script>
+
+
+            <ul id="ul">
+            </ul>
+        </body>
+</html>

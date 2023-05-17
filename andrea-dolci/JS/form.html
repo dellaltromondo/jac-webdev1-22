@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            display: block;
+        }
+        
+        div input {
+            display: inline-block;
+        }
+        
+        
+        input[type="checkbox"] {
+            display: inline-block;
+        }
+
+
+    </style>
+</head>
+<body>
+    <form>
+        <!--Il placeholder va usato solo per scrivere esempi (non inserisci nome ad esempio)-->
+        <label>Nome: <input type="text" placeholder="Inserisci nome"> </label>
+
+        <label for="cognome">Cognome: </label> <input id="cognome">
+
+        <label>Data di nascita: <input type="date"> </label>
+
+        <div><p>Sesso:</p>
+            <label>m: <input name="sesso" type="radio" value="m"></label>
+            <label>f: <input name="sesso" type="radio" value="f"></label>
+        </div>
+        <label> <input type="checkbox"> Accetto le condizioni e i termini di servizio</label>
+
+        <button>Invio</button>
+
+    </form>
+</body>
+</html>

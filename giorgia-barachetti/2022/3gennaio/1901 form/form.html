@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <!--   ! invio -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Document</title>
+    <style>
+        input{                      /*form > input --> per selezionare i figli diretti*/
+            display: block;
+        }
+
+        div  input{
+            display: inline-block;
+        }
+
+        input[type="checkbox"]{
+            display: inline-block;
+        }
+    </style>
+    <body>
+        <form>
+            <p>
+                <label>Nome: <input type="text"> </label> 
+                <label  for="cognome">Cognome: </label> 
+                <input id="cognome">
+            <!-- qua posso scrivere il br oppure faccio p-->
+            </p> 
+            
+
+            <p>
+                <label> Cognome: </label>
+                <input> 
+            </p>
+
+            <p>
+                <label>Nome: <input type="text" placeholder="scrivi qua"> </label>
+                <label  for="cognome">Cognome: </label>
+                <input placeholder="scrivi qua" id="cognome">
+            </p>
+
+            <p>
+                <label>data nascita: <input type="date"> </label>
+            </p>
+
+            <div>sesso:
+                <div>
+                    <label> m:<input name="sesso" type="radio" value="M"> </label>
+                    <label> f:<input name="sesso" type="radio" value="F"> </label>
+                </div>
+            </div>
+            <!-- cntr alt f e freccette per modificare stesso punto di due frasi vicine-->
+
+            <label> <input type="checkbox"> Accetto le condizioni </label>
+            <button type="button">invio</button>    <!--type button è per tenere i dati scritti-->
+
+
+    
+
+        
+        </form>
+        
+    </body>
+</head>
+</html>

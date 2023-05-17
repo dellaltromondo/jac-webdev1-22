@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Message</title>
+    
+  
+    
+</head>
+
+    <body>
+    <script>
+
+        class Message { 
+
+
+            constructor(timeStamp, sender, receiver) { 
+                this.timeStamp = timeStamp; 
+                this.sender = sender; 
+                this.receiver = receiver; 
+            } 
+
+            getTimeStamp() { 
+                return this.timeStamp;
+            }
+
+            getSender() {
+                return this.sender; 
+            } 
+
+            getReceiver() {
+                return this.receiver;
+            } 
+            
+        }
+
+        class TextMessage extends Message {
+
+
+
+            constructor(timeStamp, sender, receiver, textContent) { 
+            super(timeStamp, sender, receiver); 
+            this.textContent = textContent; 
+            } 
+
+            getContent() { 
+                return this.textContent; 
+            } 
+
+        } 
+
+        class ImgMessage extends Message {
+            constructor(timeStamp, sender, receiver, srcImage) { 
+                super(timeStamp, sender, receiver); 
+                this.srcImage = srcImage; 
+            } 
+
+            getSrcImage() {
+                return this.srcImage; 
+            } 
+        } 
+
+        class AudioMessage extends Message { 
+
+            constructor(timeStamp, sender, receiver, audio) { 
+                super(timeStamp, sender, receiver); 
+                this.audio = audio; 
+            } 
+
+            getAudio() { 
+                return this.audio;
+            } 
+
+        }
+
+        class VideoMessage extends Message {
+
+            constructor(timeStamp, sender, receiver, urlVideo) { 
+            super(timeStamp, sender, receiver);
+                this.urlVideo = urlVideo;
+            }
+
+            getUrlVideo() {
+                return this.urlVideo; 
+            } 
+        }
+
+const newMessage = new Message(new Date(), "me", "you");
+console.log(newMessage);
+
+    </script>
+
+    </body>
+</html>

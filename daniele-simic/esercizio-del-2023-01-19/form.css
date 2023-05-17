@@ -1,0 +1,28 @@
+input{
+   display:block;
+    font-size: 2rem;
+    margin: 2rem;
+}
+
+h2{
+    font-size: 2rem;
+}
+
+.sesso{
+    display: inline-block;
+}
+
+label{
+    font-size: 2rem;
+    margin: 2rem;
+}
+
+input[type="checkbox"] label  {
+    display:inline-block;
+}
+
+button{
+    font-size: 3rem;
+    margin: 2rem;
+    display: block;
+}

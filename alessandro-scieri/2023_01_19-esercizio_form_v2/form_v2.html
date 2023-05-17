@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            input {
+                display: block;
+            }
+            div input {
+                display: inline-block;
+            }
+            input[type="checkbox"] {
+                display: inline-block;
+            }
+        </style>
+    </head>
+    <body>
+        <form>
+            <ul>
+                <li><label>Nome:<input type="text" placeholder="Mario"></label></li>
+                <li><label for="cognome">Cognome:</label>
+                <input id="cognome" placeholder="Rossi"></li>
+            </ul>
+            <label>Data di nascita:<input type="date"></label>
+            <div> 
+                <div>Sesso:</div>
+                <label>M:<input name="sesso" type="radio" value="M"></label>
+                <label>F:<input name="sesso" type="radio" value="F"></label>
+            </div>
+            <label><input type="checkbox">Accetto i termini e condizioni d'uso</label>
+            <button type="button" onclick="creaElemento()">Invio</button>
+        </form>
+        <section id="scheda"></section>
+    </body>
+    <script>
+        function creaElemento() {
+            const nuovoElScheda = document.createElement('section');
+            nuovoElScheda.innerText = "Ciao sono un nuovo elemento";
+            const elementoScheda = document.getElementById('scheda');
+            elementoScheda.appendChild(nuovoElScheda);
+        }
+    </script>
+</html>

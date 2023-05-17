@@ -1,0 +1,12 @@
+<html>
+    <body>
+        <h1 id="Titolo">Titolo iniziale</h1>
+        <button onclick="sovrascriviTitolo()">Cambia Titolo</button>
+    </body>
+    <script>
+        function sovrascriviTitolo() {
+            const elementoTitolo = document.getElementById("Titolo");
+            elementoTitolo.innerText = 'Titolo cambiato tramite script';
+        }
+    </script>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio js con gli id</title>
+</head>
+<body>
+    <h1 id="titolo">Titolo</h1>
+    <input type="text" id="testoCustom">
+    <button onclick="cambiaTitolo()" id="bottoneCambia">Cambia titolo</button>
+</body>
+    <script>
+        // let bottoneToccato=false;
+
+        function cambiaTitolo()
+        {
+            let titolo=document.getElementById("titolo");
+            let testoCustom=document.getElementById("testoCustom").value;
+            titolo.innerText=titolo.innerText+" "+testoCustom;
+            // if(bottoneToccato==false)
+            // {
+            //     const titolo=document.getElementById("titolo");
+            //     const testoCustom=document.getElementById("testoCustom").value;
+            //     titolo.innerText=testoCustom;
+            //     const bottone=document.getElementById("bottoneCambia");
+            //     bottone.innerText="Ripristina titolo";
+            //     bottoneToccato=true;
+            // }
+            // else
+            // {
+            //     const titolo=document.getElementById("titolo");
+            //     titolo.innerText="Titolo";
+            //     const bottone=document.getElementById("bottoneCambia");
+            //     bottone.innerText="Cambia titolo";
+            //     bottoneToccato=false;
+            // }
+        }
+        
+    </script>
+</html>

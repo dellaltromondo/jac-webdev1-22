@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Carrello</title>
+</head>
+<body>
+  <h1>Carrello</h1>
+  <div id="cartItems">
+    <!-- Qui verranno aggiunti dinamicamente gli elementi del carrello -->
+  </div>
+  <p id="total">Totale: $0</p>
+  <button onclick="purchase()">Acquista</button>
+  <button onclick="clearCart()">Svuota carrello</button>
+
+  <script>
+    function updateCart() {
+      var cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+      var cartElement = document.getElementById('cartItems');
+      var totalElement = document.getElementById('total');
+      cartElement.innerHTML = '';
+      var total = 0;
+      for (var i = 0; i < cartItems.length; i++) {
+        var item = cartItems[i];
+        var itemElement = document.createElement('div');
+        itemElement.innerHTML = '<h3>' + item.name + '</h3><p>Prezzo: $' + item.price + '</p>';
+        cartElement.appendChild(itemElement);
+        total += item.price;
+      }
+      totalElement.textContent = 'Totale: $' + total;
+    }
+
+    function purchase() {
+      // Effettua l'acquisto - puoi aggiungere qui la logica specifica che desideri
+      alert('Acquisto effettuato!');
+      clearCart();
+    }
+
+    function clearCart() {
+      localStorage.removeItem('cart');
+      updateCart();
+    }
+
+    window.onload = function() {
+      updateCart();
+    };
+  </script>
+</body>
+</html>

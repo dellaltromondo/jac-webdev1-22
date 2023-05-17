@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>for..in, for..of, forEach, arrows</title>
+    <meta lang="en-US" />
+  </head>
+
+  <body>
+    <script>
+      const giocatori = [
+        "Kevin Durant",
+        "LeBron James",
+        "Jayson Tatum",
+        "Nikola Jokic",
+        "Kawhi Leonard",
+      ];
+
+      /* Ciclo FOR standard */
+      console.log("### Ciclo for standard:");
+      for (let k = 0; k < giocatori.length; k++) {
+        const elementoCorrente = giocatori[k];
+        console.log(elementoCorrente);
+      }
+
+      /* Ciclo for .. in, cicla da solo sugli indici, quindi mi evita di usare length e ++ */
+      console.log("### Ciclo for..in");
+      for (let k in giocatori) {
+        const elementoCorrente = giocatori[k];
+        console.log(elementoCorrente);
+      }
+
+      /* Ciclo for .. of, cicla da solo sugi VALORI, non mi serve piu' l'indice */
+      console.log("### Ciclo for..of");
+      for (let elementoCorrente of giocatori) {
+        console.log(elementoCorrente);
+      }
+
+      /* Ciclo forEach, permette di eseguire una funzione su ogni elemento dell'array */
+      /* ci pensa lui a passare  */
+      console.log("#### Ciclo forEach");
+
+      console.log("...con funzione standard");
+      function stampa(elemento) {
+        console.log(elemento);
+      }
+      giocatori.forEach(stampa); // equivale a chiamare stampa(giocatori[0]), stampa(giocatori[1]) etc.
+
+      console.log("...con funzione anonima");
+      giocatori.forEach(function (elemento) {
+        console.log(elemento);
+      });
+
+      console.log("...con funzione freccia");
+      giocatori.forEach((elemento) => console.log(elemento));
+
+      // Mappe
+      console.log("### Mappe");
+      let puntiPerGiocatore = new Map();
+      puntiPerGiocatore.set("Kevin Durant", 25321);
+      puntiPerGiocatore.set("LeBron James", 38923);
+      puntiPerGiocatore.set("Jayson Tatum", 12903);
+      puntiPerGiocatore.set("Nikola Jokic", 16342);
+      puntiPerGiocatore.set("Kawhi Leonard", 21045);
+
+      puntiPerGiocatore.forEach(
+        /* Il forEach per le mappe passa due parametri alla funzione, valore e chiave */
+        (punti /*valore*/, giocatore /*chiave*/) => {
+          console.log(giocatore + " ha fatto " + punti + " punti in carriera");
+          console.log(`${giocatore} ha fatto ${punti} punti in carriera`);
+        }
+      );
+
+      // Altri usi delle funzioni freccia
+      console.log("Solo i giocatori con piu' di ventimila punti");
+      const piuDiVentimila = giocatori.filter(giocatore => puntiPerGiocatore.get(giocatore) > 20_000);
+      console.log(piuDiVentimila);
+
+      console.log("Estraggo il cognome di ogni giocatore");
+      const soloCognomi = giocatori.map(giocatore => giocatore.substring(giocatore.indexOf(" ") + 1));
+      console.log(soloCognomi);
+
+    </script>
+  </body>
+</html>

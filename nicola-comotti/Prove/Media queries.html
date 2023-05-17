@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Media Queries</title>
+        <style>
+            .only-mobile,
+            .only-tablet {
+                display: none;
+            }
+
+            .only-desktop {
+                display: block;
+            }
+
+            li {
+                display: inline-block;
+                color: bisque;
+                background-color: blue;
+                padding: 0.2em 0.4em;
+                margin-bottom: 0.2em;
+            }
+
+            p {
+                font-size: 20px;
+                color: red;
+            }
+
+            article {
+                column-count: 3;
+            }
+
+            /* TABLET */
+            @media (max-width: 960px) {
+                .only-tablet {
+                    display: block;
+                }
+
+                .only-desktop,
+                .only-mobile {
+                    display: none;
+                }
+
+                p {
+                    color: blue;
+                }
+
+                article {
+                    column-count: 2;
+                }
+            }
+
+            /* MOBILE */
+            @media (max-width: 600px) {
+                .only-mobile {
+                    display: block;
+                }
+
+                .only-desktop,
+                .only-tablet {
+                    display: none;
+                }
+
+                li {
+                    display: block;
+                }
+
+                p {
+                    color: rgb(255, 0, 247);
+                }
+
+                article {
+                    column-count: 1;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <nav>
+                <button class="only-mobile" onclick="toggleMenu()">=</button>
+                <ul class="only-desktop" id="expanded-menu">
+                    <li>Voce Menu1</li>
+                    <li>Voce Menu2</li>
+                    <li>Voce Menu3</li>
+                    <li>Voce Menu4</li>
+                    <li>Voce Menu5</li>
+                    <li>Voce Menu6</li>
+                </ul>
+            </nav>
+        </header>
+        <h1 class="only-mobile">Ciao, testo per mobile</h1>
+        <h1 class="only-tablet">Ciao, testo per tablet</h1>
+        <h1 class="only-desktop">Ciao, testo per desktop</h1>
+        <p>Testo del sito</p>
+        <article>
+            It is a long established fact that a reader will be distracted by the readable content of a page when
+            looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of
+            letters, as opposed to using 'Content here, content here', making it look like readable English. Many
+            desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a
+            search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved
+            over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+            It is a long established fact that a reader will be distracted by the readable content of a page when
+            looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of
+            letters, as opposed to using 'Content here, content here', making it look like readable English. Many
+            desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a
+            search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved
+            over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+            It is a long established fact that a reader will be distracted by the readable content of a page when
+            looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of
+            letters, as opposed to using 'Content here, content here', making it look like readable English. Many
+            desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a
+            search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved
+            over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+            It is a long established fact that a reader will be distracted by the readable content of a page when
+            looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of
+            letters, as opposed to using 'Content here, content here', making it look like readable English. Many
+            desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a
+            search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved
+            over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+            It is a long established fact that a reader will be distracted by the readable content of a page when
+            looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of
+            letters, as opposed to using 'Content here, content here', making it look like readable English. Many
+            desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a
+            search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved
+            over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+            It is a long established fact that a reader will be distracted by the readable content of a page when
+            looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of
+            letters, as opposed to using 'Content here, content here', making it look like readable English. Many
+            desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a
+            search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved
+            over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+            It is a long established fact that a reader will be distracted by the readable content of a page when
+            looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of
+            letters, as opposed to using 'Content here, content here', making it look like readable English. Many
+            desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a
+            search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved
+            over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+            It is a long established fact that a reader will be distracted by the readable content of a page when
+            looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of
+            letters, as opposed to using 'Content here, content here', making it look like readable English. Many
+            desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a
+            search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved
+            over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+            It is a long established fact that a reader will be distracted by the readable content of a page when
+            looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of
+            letters, as opposed to using 'Content here, content here', making it look like readable English. Many
+            desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a
+            search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved
+            over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+        </article>
+        <script>
+            function toggleMenu() {
+                const expMenuElement = document.getElementById('expanded-menu');
+                if (expMenuElement.style.display != "block") {
+                    expMenuElement.style.display = "block";
+                } else {
+                    expMenuElement.style.display = "none"
+                }
+            }
+        </script>
+    </body>
+
+</html>

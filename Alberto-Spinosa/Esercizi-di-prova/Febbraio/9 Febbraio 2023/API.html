@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch</title>
+</head>
+<body>
+    <section id="factSection">
+
+    </section>
+    <!-- senza type module non funzione 'l'await' -->
+    <script type="module">
+/*
+        const factPromise = fetch("https://catfact.ninja/fact");
+        factPromise.then(
+            (response) => {
+                const dataPromise = response.json();
+                dataPromise.then((value => console.log(value.fact)));
+            }
+        );
+*/
+        console.log("");
+        //Altro metodo:
+        const response = await fetch("https://catfact.ninja/fact");
+        const data = await response.json();
+        const factOfTheDay = data.fact;
+
+        document.getElementById("factSection").innerText = factOfTheDay; 
+
+    </script>
+</body>
+</html>
