@@ -52,7 +52,6 @@ RollIt.addEventListener("click", function(buttonRoll)
    CreateNewRollSection(finalResult);
 });
 
-
 //refresh page
 const buttonRefresh = document.getElementById("Refresh");
 buttonRefresh.addEventListener("click",function(e)
