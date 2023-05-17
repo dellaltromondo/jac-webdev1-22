@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+</head>
+<body>
+    <h1>lista prodotti:</h1>
+<ul id="prodotti">
+
+</ul>
+
+    <script type= "module">
+     const response = await fetch("http://localhost:8080/EsercizioAPI/api");
+        //in questo modo il browser aspetta che venga restituito il risultato per eseguire poi il resto
+        const products = await response.json();
+        //io so che otterrò un risultato di tipo json dunque creo l'elemento "products" e gli passo la response.json
+        console.log(products);
+    </script>
+
+</body>
+</html>

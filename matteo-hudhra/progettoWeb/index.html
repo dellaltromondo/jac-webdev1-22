@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Diary</title>
+	<link rel="stylesheet" href="css/index_style.css">
+	<script type="text/javascript" src="js/subjects.js"></script>
+
+</head>
+<body>
+	<nav class="navbar">
+			<h1 id="titolo_nav">Diario voti personale</h1>
+			<div>
+				<a>Voti</a>
+            	<a onclick="logOut()">Logout</a>
+			</div>
+			
+	</nav>
+	<form id="index_form"> 
+		<label for="subject-name">Nome materia:</label>
+		<input type="text" id="subject-name" name="subject-name" required>
+		<label for="teacher-name">Nome professore:</label>
+		<input type="text" id="teacher-name" name="teacher-name" required>
+		<div class="colors" >
+			<div id="1" onclick = "getColore(1)"  class="color" style="background-color: #8c2ad7"></div>
+			<div id="2" onclick = "getColore(2)"  class="color" style="background-color: #25dea7"></div>
+			<div id="3" onclick = "getColore(3)"  class="color" style="background-color: #d32799"></div>
+			<div id="4" onclick = "getColore(4)"  class="color" style="background-color: #661f45"></div>
+			<div id="5" onclick = "getColore(5)"  class="color" style="background-color: #26e7dd"></div>
+			<div id="6" onclick = "getColore(6)"  class="color" style="background-color: #81e524"></div>
+		  </div>
+		<input id="annulla" type="reset" value="Annulla">
+		<input type="submit" value="Aggiungi">
+	</form>
+	<div id="subjects-container"></div>
+	<script type="text/javascript" src="js/index.js"></script>
+	<script>
+		window.addEventListener("load", (event) =>
+        {
+            loadDati();
+        });
+	</script>
+</body>
+</html>

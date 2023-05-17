@@ -1,0 +1,45 @@
+-DECIDERE L'AMBITO: 												REQUISITI:
+
+	(problema -> soluzione)											-file separati
+															-form di inserimento
+															-lista di oggetti
+-ANALISI REQUISITI: 												-reponsive
+															-ampio uso di css	
+	1) funzionalità (casi d'uso) 										-pagina strutturata semanticamente
+	2) entità													-css variables
+															-classi js
+
+-PROGETTAZIONE: 
+
+	1) ipotesi di interfaccia
+	2) ipotesi di classi/ variabili/ funzioni
+
+
+-REALIZZAZIONE
+
+
+
+
+
+PROGETTO GESTIONALE MAGAZZINO
+
+	Ambito: 
+
+		Problema: gestire magazzino
+		Soluzione: creare gestionale per agevolare la gestione di un magazzino
+
+
+	Requisiti: 
+
+		Funzionalità: pagina di login (un'azienda avrà un magazzino diverso da un'altra), lista dove si vedano i prodotti in magazzino, le quantità, 
+		il prezzo, la descrizione e la data di aggiunta del prodotto. Aggiunta di prodotti al magazzino, rimozione di prodotti, filtri per visualizzazione prodotti 
+		(a-z, data (dalla più recente alla meno recente e viceversa), per quantità (da maggiore a minore))
+
+		Entità: prodotto di magazzino con attributi elencati prima 
+
+
+
+
+
+
+	

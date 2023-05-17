@@ -1,0 +1,165 @@
+body 
+{
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #40DC42;
+}
+
+@media (max-width:960px) {
+
+    .only-mobile 
+    {
+        display: block;
+    }
+
+    .only-desktop
+    {
+        display: none;
+    }
+
+    #TitleMobile {
+        text-align: center;                                                                                                                                                       
+    }
+
+    #Instructions {
+        text-align: center;
+    }
+
+    form {
+        text-align: center;
+    }
+
+    #RollIt {
+        text-align: center;
+    }
+
+    #Refresh
+    {
+        text-align: center;
+    }
+
+    li {
+        text-align: center;
+        list-style-type: none;
+        border-bottom: 2px solid #996633;
+    }
+
+    p {
+        text-align: center;
+    }
+
+    #rolls {
+        border-bottom: 2px solid #996633;
+    }
+
+    #DiceRolls {
+        text-align: center;
+        padding: 0px;
+    }
+
+    footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        text-align: center;
+    }
+
+    input 
+    {
+      background-color: white;
+    }
+
+}
+
+@media (min-width:961px) 
+{
+    .only-mobile 
+    {
+        display: none;
+    }
+
+    .only-desktop
+    {
+        display: block;
+    }
+    
+    #TitleDesktop
+    {
+        text-align: center;
+    }
+
+    #Instructions 
+    {
+        text-align: center;
+    }
+
+    #rolls, form 
+    {
+        float: left;
+        width: 35%;
+    }
+
+    form
+    {
+        padding-top: 10px;
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-bottom: 5%;
+        border: 2px solid #996633;
+    }
+
+    #rolls
+    {
+       position: relative;
+       left: 31.5%;
+    }
+
+    #DiceRolls 
+    {
+        float: right;
+        width: 45%;
+    }
+
+    footer
+    {
+        position:fixed;
+        bottom:0;
+        left:0;
+    }
+
+    li {
+        text-align: center;
+        list-style-type: none;
+        border: 2px solid #996633;
+        margin-bottom: 5px;
+    }
+
+    #RollIt
+    {
+        height: 2rem;
+        width: 4rem;
+        border: 0px;
+    }
+
+    #Refresh
+    {
+        text-align: center;
+        height: 2rem;
+        width: 4rem;
+        border: 0px;
+    }
+
+    #RollIt:hover 
+    {
+        background-color: orangered;
+    }
+    
+    #Refresh:hover
+    {
+        background-color: orangered;
+    }
+
+    input 
+    {
+      background-color: white;
+    }
+}

@@ -4,62 +4,257 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <title>Dah Spineess</title>
+    <!-- GRAFICA ICONE SOCIAL -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <!-- NAVBAR -->
+        <nav id="navbar">
+            
+            <ul>
+                <li><a href="#top-burger"><img src="images/burger.png" alt=""></a></li>
+                <li><a href="#top-drink"><img src="images/soda.png" alt=""></a></li>
+                <li><a href="#top-cart"><img src="images/cart.png" alt=""></a></li>
+            </ul>
+        </nav>
+        <h1>Dah Spinees</h1>
+    </header>
     
-    <h1>Dah Spinees</h1>
 
-    <nav>
-        <ul>
-            <li><a href=""><img src="images/burger.png" alt=""></a></li>
-            <li><a href=""><img src="images/soda.png" alt=""></a></li>
-            <li><a href=""><img src="images/cart.png" alt=""></a></li>
-        </ul>
-    </nav>
-
+    <!-- SEZIONE PANINI -->
     <section class="grid-container">
-        <article class="grid-item">
-            <img src="images/Foods/cheese-burger.png" alt="">
-            <div class="container">
-                <h4>Panino 1</h4>
-                <p>Panino del mc</p>
+        <!-- PRIMO PANINO -->
+        <!-- 256 x 256 -->
+        <article class="burger">
+            <div class="d-flex justify-content-center">
+                <div class="card" style="width: 18rem;" id="top-burger">
+                    <img src="images/Foods/crispy.png" class="card-img-top" alt="Crispy Picture">
+                    <div class="card-body">
+                        <h5 class="card-title">Crispy Mcn'tBacon</h5>
+                        <p class="card-text">Carne 100% bovina da allevamenti italiani, croccante bacon 100% da pancetta italiana e formaggio,
+                             accompagnati dall'inconfondibile salsa Crispy.</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Pane</li>
+                        <li class="list-group-item">Carne bovina</li>
+                        <li class="list-group-item">Cheddar</li>
+                        <li class="list-group-item">Bacon</li>
+                        <li class="list-group-item">Salsa Crispy</li>
+                        <li class="list-group-item"><button class="btn btn-primary burgerType" onclick="addBurgerToCart()" value="Crispy">ACQUISTA</button></li>
+                </div>
             </div>
         </article>
-        <article class="grid-item">
-            <img src="images/Foods/cheese-burger.png" alt="">
+        
+    
+        <!-- SECONDO PANINO -->
+        <article class="burger">
+            <div class="d-flex justify-content-center">
+                <div class="card" style="width: 18rem;" id="top-burger">
+                    <img src="images/Foods/filet-o-fish.png" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Filet-O-Fishn't</h5>
+                        <p class="card-text">A volte per sorprendere bastano tre semplici ingredienti: 
+                            merluzzo impanato, formaggio, salsa tartara. Un Grande Classico che 
+                            unisce il sapore del mare al gusto unico di Dah Spinees.</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Pane</li>
+                        <li class="list-group-item">Merluzzo impanato</li>
+                        <li class="list-group-item">Cheddar</li>
+                        <li class="list-group-item">Salsa tartara</li>
+                        <li class="list-group-item empty"></li>
+                        <li class="list-group-item"><button class="btn btn-primary burgerType" onclick="addBurgerToCart()" value="Filet-O-Fishn't"">ACQUISTA</button></li>
+                    </ul>
+                </div>
+            </div>
         </article>
-        <article class="grid-item">
-            <img src="images/Foods/cheese-burger.png" alt="">
-        </article>  
-        <article class="grid-item">
-            <img src="images/Foods/cheese-burger.png" alt="">
+
+        <!-- TERZO PANINO -->
+        <article class="burger">
+            <div class="d-flex justify-content-center">
+                <div class="card" style="width: 18rem;" id="top-burger">
+                    <img src="images/Foods/cheeseburger.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Cheesburgern't</h5>
+                        <p class="card-text">Tutti lo scelgono per il suo gusto semplice e irresistibile, 
+                            per la carne 100% bovina da allevamenti italiani, il formaggio filante, la 
+                            cipolla a dadini, il ketchup e la senape.</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Pane</li>
+                        <li class="list-group-item">Carne bovina</li>
+                        <li class="list-group-item">Cheddar</li>
+                        <li class="list-group-item">Cipolla</li>
+                        <li class="list-group-item">Ketchup & Senape</li>
+                        <li class="list-group-item"><button class="btn btn-primary burgerType" onclick="addBurgerToCart()" value="Cheesburgern't">ACQUISTA</button></li>
+                    </ul>
+                </div>
+            </div>
         </article>
-        <article class="grid-item">
-            <img src="images/Foods/cheese-burger.png" alt="">
+
+        <!-- QUARTO PANINO -->
+        <article class="burger">
+            <div class="d-flex justify-content-center">
+                <div class="card" style="width: 18rem;" id="top-burger">
+                    <img src="images/Foods/mys-bbq.png" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">His Selection BBQ</h5>
+                        <p class="card-text">180G di succosa carne bovina da allevamenti italiani, 
+                            gouda stagionato, bacon croccante, insalata, coleslaw e salsa BBQ con 
+                            Aceto Balsamico di Modena IGP.</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Insalata</li>
+                        <li class="list-group-item">Carne bovina</li>
+                        <li class="list-group-item">Guoda stagionato</li>
+                        <li class="list-group-item">Bacon croccante</li>
+                        <li class="list-group-item">Salsa BBQ</li>
+                        <li class="list-group-item"><button class="btn btn-primary burgerType" onclick="addBurgerToCart()" value="His Selection">ACQUISTA</button></li>
+                    </ul>
+                </div>
+            </div>
         </article>
-        <article class="grid-item">
-            <img src="images/Foods/cheese-burger.png" alt="">
-        </article>  
-        <article class="grid-item">
-            <img src="images/Foods/cheese-burger.png" alt="">
+
+        <!-- QUINTO PANINO -->
+        <article class="burger">
+            <div class="d-flex justify-content-center">
+                <div class="card" style="width: 18rem;" id="top-burger">
+                    <img src="images/Foods/toast.png" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Mcn'tToast</h5>
+                        <p class="card-text">Perché essere quadrati? Quando il profumo del 
+                            prosciutto cotto si unisce alla dolcezza del formaggio fuso e a 
+                            tutto il gusto Dah Spinees, nasce Mcn'tToast: il primo (e l’unico) Toast rotondo.</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item empty"></li>
+                        <li class="list-group-item">Pane</li>
+                        <li class="list-group-item">Prosciutto cotto</li>
+                        <li class="list-group-item">Formaggio fuso</li>
+                        <li class="list-group-item empty"></li>
+                        <li class="list-group-item"><button class="btn btn-primary burgerType" onclick="addBurgerToCart()" value="Mcn't Toast">ACQUISTA</button></li>
+                    </ul>
+                </div>
+            </div>
         </article>
-        <article class="grid-item"><img src="images/Foods/cheese-burger.png" alt=""></article>
-        <article class="grid-item"><img src="images/Foods/cheese-burger.png" alt=""></article>  
+
+        <!-- SESTO PANINO -->
+        <article class="burger">
+            <div class="d-flex justify-content-center">
+                <div class="card" style="width: 18rem;" id="top-burger">
+                    <img src="images/Foods/mcchicken.png" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Bonsin't ChickenBurger</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                            content.</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Pane</li>
+                        <li class="list-group-item">Pollo impanato</li>
+                        <li class="list-group-item">Cheddar</li>
+                        <li class="list-group-item">Lattuga</li>
+                        <li class="list-group-item">Salsa BBQ</li>
+                        <li class="list-group-item"><button class="btn btn-primary burgerType" onclick="addBurgerToCart()" value="Bonsin't ChickenBurger">ACQUISTA</button></li>
+                    </ul>
+                </div>
+            </div>
+        </article>
     </section>
     
+    <!-- SEZIONE BIBITE -->
     <section class="grid-container">
-        <article class="grid-item"><img src="images/Drinks/coke-bottle.png" alt=""></article>
-        <article class="grid-item"><img src="images/Drinks/pepsi.png" alt=""></article>
-        <article class="grid-item"><img src="images/Drinks/peach.png" alt=""></article>
-        <article class="grid-item"><img src="images/Drinks/lemon.png" alt=""></article>
-        <article class="grid-item"><img src="images/Drinks/water.png" alt=""></article>
-        <article class="grid-item"><img src="images/Drinks/sparkling-water.png" alt=""></article>
-        <article class="grid-item"><img src="images/Drinks/orange-juice.png" alt=""></article>
-        <article class="grid-item"><img src="images/Drinks/beer.png" alt=""></article>
-        <article class="grid-item"><img src="images/Drinks/energy-drink.png" alt=""></article>
+        <article class="grid-item" id="top-drink" onclick="addDrinkToCart(this)" data-value="Coca-Cola">
+            <img src="images/Drinks/coke-bottle.png" alt="coke-bottle-icon">
+            <p class="tooltiptext">Coca-Cola</p>
+        </article>
+        <article class="grid-item" onclick="addDrinkToCart(this)" data-value="Pepsi">
+            <img src="images/Drinks/pepsi.png" alt="pepsi-icon">
+            <p>Pepsi</p>
+        </article>
+        <article class="grid-item" onclick="addDrinkToCart(this)" data-value="Tè-Pesca">
+            <img src="images/Drinks/peach.png" alt="peach-icon">
+            <p>Té alla Pesca</p>
+        </article>
+        <article class="grid-item" onclick="addDrinkToCart(this)" data-value="Tè-Limone">
+            <img src="images/Drinks/lemon.png" alt="lemon-icon">
+            <p>Té al Limone</p>
+        </article>
+        <article class="grid-item" onclick="addDrinkToCart(this)" data-value="Acqua-Naturale">
+            <img src="images/Drinks/water.png" alt="water-icon">
+            <p>Acqua Naturale</p>
+        </article>
+        <article class="grid-item" onclick="addDrinkToCart(this)" data-value="Acqua-Frizzante">
+            <img src="images/Drinks/sparkling-water.png" alt="sparkling-water-icon">
+            <p>Acqua Frizzante</p>
+        </article>
+        <article class="grid-item" onclick="addDrinkToCart(this)" data-value="Fanta">
+            <img src="images/Drinks/orange-juice.png" alt="orange-juice-icon">
+            <p>Fanta</p>
+        </article>
+        <article class="grid-item" onclick="addDrinkToCart(this)" data-value="Birra">
+            <img src="images/Drinks/beer.png" alt="beer-icon">
+            <p>Birra</p>
+        </article>
+        <article class="grid-item" onclick="addDrinkToCart(this)" data-value="RedBull">
+            <img src="images/Drinks/energy-drink.png" alt="energy-drink-icon">
+            <p>RedBull</p>
+        </article>
     </section>
 
+    <!-- SEZIONE CARRELLO -->
+    <section class="cart" id="top-cart">
+        <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Panino</th>
+                <th scope="col">Prezzo</th>
+                <th scope="col">Ingredienti/Formato</th>
+                <th scope="col">Azioni</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody">
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td><button>❌</button>
+                <button>✏️</button></td>
+              </tr>
+
+            </tbody>
+          </table>
+    </section>
+
+    <div class="footer-basic">
+        <footer>
+            <div class="social">
+                <!-- 'target' apre una nuova tab (in modo da non perdere i dati cambiando pagina) -->
+                <a href="https://www.instagram.com/mcdonaldsitalia/" target="_blank"><p class="icon ion-social-instagram"></p></a>
+                <a href="https://www.youtube.com/user/mcdonaldsitalia" target="_blank"><p class="icon ion-social-youtube"></p></a>
+                <a href="https://twitter.com/McDonalds" target="_blank"><p class="icon ion-social-twitter"></p></a>
+                <a href="https://www.facebook.com/McDonaldsItalia" target="_blank"><p class="icon ion-social-facebook"></p></a></div>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="#">Home</a></li>
+                <li class="list-inline-item"><a href="#">Services</a></li>
+                <li class="list-inline-item"><a href="#">About</a></li>
+                <li class="list-inline-item"><a href="#">Terms</a></li>
+                <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+            </ul>
+            <p class="copyright">Dah Spineess © 2023</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </body>
 </html>

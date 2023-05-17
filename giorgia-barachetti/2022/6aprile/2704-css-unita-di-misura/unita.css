@@ -1,0 +1,58 @@
+/*
+@media print oppure @media screen{}
+unità di misura assoluta (qualunque sia la dimensione dei componenti della pagina 
+    px, 
+    (questi tre prox usati x la stampa)
+    cm, mm , 
+    in (pollici),
+    pt (punti) 
+
+
+unità di misura relativa (dipendono dalla dimensione degli altri componenti) 
+	FONT RELATIVE 
+		rem --> relativa alla dimensione principale dell'html --> 
+				<h2>glo<h2> font size 16
+				con l'esempio di dopo il border rimarrebbe 1.6 e 1.6
+		em --> relativa alla dimensione del font attuale
+				<h2>hfdn<h2> font size 18 px
+				border-bottom solid 0.1 em solid red =1.8 px
+				<h3>hfdn<h3> font size 15 px
+				border-bottom solid 0.1 em solid red =1.5 px
+		ch --> grandezza carattere 0 --> caratteri
+				
+				
+	CONTAINER RELATIVE    
+		%
+		fr
+		
+	VIEWPORT RELATIVE --> relativa dimensione schermo
+	v=wiewport che è pezzo di browser che contiene sito
+		vh --> v. height  --> 50vw cioe metà altezza sitp
+		vw --> v. width
+				500px                     width 50vh height: 50vh
+		300px  ------------
+			  |           |
+			  |___________|
+			per fare un quadrato qua dentro non posso fare width:50% e height 50% ph esce rettangolo, devo fare quello sopra
+		
+		se girasso schermo al contrario uso:
+			300px
+			--------
+			|       |
+	  500px  |       |
+			|       |
+			|_______|
+		vmin va sulla minore fra altezza e larghezza
+		vmax == maggiore===
+		
+			width 50vmin height 50 vmin
+		
+
+
+FUNZIONI CSS
+width: calc(100%-2rem)--> 100%  genitore - 1rem padding dx e 1rem padding sx
+
+x layout fluidi --> sito si adatta a ogni dimensione
+width: clamp(100px, 30%, 300px)
+	larghezza deve essere il 30% ma non meno di 100 e non piu di 300
+    */

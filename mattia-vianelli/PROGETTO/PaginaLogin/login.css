@@ -1,0 +1,384 @@
+/* variabili CSS */
+:root {
+    /* [1] generali */
+        --color-background: #1A1D2E;
+        --box-shadow-color: rgb(123, 123, 123, 0.3);
+        --color-placeholder: white;
+    
+    /* [2] <button> e <input> */
+        --color-button: #f44479;
+        --color-input-inside: rgb(0, 0, 0, 0.6);
+        --width-input-button: 24rem;
+        --height-input-button: 2.5rem;
+        /* [2.1] bordi */
+            --thickness-border: 0.15rem;
+            --color-border: white;
+            --border-input-select: var(--thickness-border) solid var(--color-border);
+        /* [2.2] effetti */
+            --scale-effect-duration: 0.2s;
+            --opacity-effect-duration: 1s;
+    
+    /* [3] <p> e <a> */
+        --color-text: white;
+        --margin-top-text: 0.9rem;
+        --margin-bottom-text: 0.2rem;
+        --most-size-text: 1rem;
+}
+
+/* ------------------------------------ [1] GENERALE ------------------------------------ */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-image: url("../altreIcone/background.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    padding: 5vh 0 10vh 0;
+}
+#paginaLogin, #paginaSignin, #paginaSignin2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.blur {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.25);    
+    padding: 1rem;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+}
+
+#paginaSignin, #paginaSignin2 {
+    display: none;
+}
+
+/* -------------------------- [2] TESTO <p> -------------------------- */
+.pLoginRegistrazione {
+    margin-top: var(--margin-top-text);
+    margin-bottom: var(--margin-bottom-text);
+    color: var(--color-text);
+}
+
+/* [2.1] <p> "ricordami" e "accetto i termini" */
+.labelCheckbox p {
+    color: var(--color-text);
+}
+
+/* [2.2] <p> "email non valida */
+#testo-email-non-valida {
+    color: red;
+    font-weight: lighter;
+    font-size: var(--most-size-text);
+    margin-bottom: 0;
+}
+.errore-email {
+    transition: all .3s ease;
+    display: block;
+    opacity: 0;
+    margin-top: -10px;
+    height: 10px;
+}
+.errore-email.visible {
+    opacity: 1;
+    margin-top: 0px;
+    height: auto;
+}
+
+
+/* -------------------------- [3] LOGO -------------------------- */
+#logo {
+    border-radius: 50%;
+    width: 4rem;
+    height: 4rem;
+    transition: 3s ease;
+}
+#logo:hover {
+    transform: scale(1.3) rotate(360deg);
+}
+
+/* -------------------------- [4] TITOLO <h1> -------------------------- */
+h1 {
+    margin-top: 1rem;
+    color: var(--color-text);
+    font-size: 1.8rem;
+}
+#paginaSignin2 h1 {
+    margin-bottom: 0;
+}
+
+/* -------------------------- [5] PARTE SOCIAL -------------------------- */
+#loghiSocial {
+    display: flex;
+    justify-content: space-evenly;
+}
+.buttonLoghi {
+    height: 3rem;
+    width: 3rem;
+    border: none;
+    margin: 0.4rem;
+    background-color: white;
+}
+
+/* -------------------------- [6] RIGA -------------------------- */
+#rigaGrigia {
+    margin-top: 1rem;
+    margin-bottom: 0.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    height: 2px;
+    width: var(--width-input-button);
+}
+#rigaGrigia p {
+    text-align: center;
+    width: 2rem;
+}
+
+/* -------------------------- [7] <label> -------------------------- */
+#paginaLogin label, #paginaSignin label, #paginaSignin2 label {
+    font-size: 0.8rem;
+    font-weight: bold;
+    width: var(--width-input-button);
+}
+
+/* -------------------------- [8] <input> -------------------------- */
+input {
+    height: var(--height-input-button);
+    width: var(--width-input-button);
+    background-color: var(--color-input-inside);
+    color: var(--color-text);
+    padding-left: 0.8rem;
+    font-size: var(--most-size-text);
+    border: var(--border-input-select);
+    border-radius: 0.5rem;
+}
+input:hover {
+    box-shadow: 0px 0px 2rem var(--box-shadow-color);
+}
+input:focus {
+    outline: none;
+}
+input::placeholder {
+    color: var(--color-placeholder);
+}
+
+/* [8.1] <input> checkbox "ricordami" e "accetta i termini" */
+.labelCheckbox {
+    display: flex;
+    align-items: center;
+    margin-top: var(--margin-bottom-text);
+    margin-bottom: var(--margin-bottom-text);
+}
+#checkboxRicordami, #checkboxTermini {
+    width: 1.3rem;
+    height: 1.3rem;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+
+/* -------------------------- [9] <button> -------------------------- */
+#paginaLogin button, #paginaSignin button, #paginaSignin2 button {
+    border-radius: 0.5rem;
+    transition: 0.2s ease-in-out;
+}
+
+/* [9.1] <button> disabilitati */
+button:disabled {
+    height: var(--height-input-button);
+    width: var(--width-input-button);
+    background-color: var(--color-button);
+    border: none;
+    color: var(--color-text);
+    font-weight: bold;
+    font-size: var(--most-size-text);
+    opacity: 0.5;
+}
+.button-disabled-effect {
+    animation-name: button-increase-opacity;
+    animation-duration: var(--opacity-effect-duration);
+}
+
+/* [9.2] <button> abilitati */
+button:enabled:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 2rem var(--box-shadow-color);
+    transform: scale(0.95);
+} 
+button:enabled:active {
+    transform: scale(0.95);
+}
+
+/* [9.3] <button> "accedi" e "registrati" */
+.buttonAccediAvantiRegistrati:enabled {
+    height: var(--height-input-button);
+    width: var(--width-input-button);
+    background-color: var(--color-button);
+    border: none;
+    color: var(--color-text);
+    font-weight: bold;
+    font-size: var(--most-size-text);
+    animation-name: button-decrease-opacity;
+    animation-duration: var(--opacity-effect-duration);
+}
+#button-avanti {
+    margin-top: 1rem;
+}
+
+/* [9.4] <button> "crea account" */
+#buttonCreaAccount {
+    height: var(--height-input-button);
+    width: var(--width-input-button);
+    background-color: var(--color-button);
+    border: none;
+    color: var(--color-text);
+    font-weight: bold;
+    font-size: var(--most-size-text);
+}
+
+/* [9.5] <button> "indietro" */
+#divButtonBack {
+    width: var(--width-input-button);
+}
+#buttonBack {
+    height: 1.8rem;
+    width: 5rem;
+    background-color: var(--color-button);
+    border: none;
+    color: var(--color-text);
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+/* -------------------------- [10] <select> -------------------------- */
+#dataDiNascita {
+    display: flex;
+    justify-content: space-between;
+    width: var(--width-input-button);
+    column-gap: 2px;
+}
+select {
+    height: var(--height-input-button);
+    background-color: var(--color-input-inside);
+    width: 33%;
+    color: var(--color-placeholder);
+    padding-left: 0.8rem;
+    font-size: var(--most-size-text);
+    border: var(--border-input-select);
+    border-radius: 0.5rem;
+}
+select:hover {
+    box-shadow: 0px 0px 2rem var(--box-shadow-color);
+    cursor: pointer;
+}
+select:focus {
+    outline: none;
+}
+option:focus {
+    color: var(--color-text);
+}
+
+/* -------------------------- [11] LINK <a> -------------------------- */
+a {
+    text-decoration: none;
+    text-align: center;
+    color: var(--color-button);
+    margin-top: var(--margin-top-text);
+    margin-bottom: var(--margin-top-text);
+    font-weight: bold;
+}
+a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+a:visited {
+    color: var(--color-button);
+}
+
+/* -------------------------- [12] IMMAGINI <img> -------------------------- */
+.spunta-x {
+    height: 0.8rem;
+    margin-left: 0.2rem;
+}
+
+/* -------------------------- [13] BLOCCO PASSWORD -------------------------- */
+#div-caratteristiche-password {
+    background-color: rgb(0, 0, 0, 0.8);
+    width: var(--width-input-button);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+}
+.check-password {
+    transition: all .3s ease;
+    display: block;
+    margin-top: -148px;
+    z-index: -1;
+}
+.check-password.visible {
+    margin-top: 10px;
+    height: auto;
+}
+    #div-caratteristiche-password>p {
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+        color: var(--color-text);
+        font-size: var(--most-size-text);
+    }
+    .div-testi-password {
+        display: flex;
+        align-items: center;
+    }
+    .div-testi-password p {
+        margin: 0.3rem 0.7rem;
+        color: var(--color-text);
+        font-size: 0.9rem;
+    }
+
+/* -------------------------- [14] ANIMAZIONI -------------------------- */
+/* [14.1] <button> abilitati e disabilitati*/
+@keyframes button-decrease-opacity {
+    from {
+        opacity: 0.5;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes button-increase-opacity {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0.5;
+    }
+}
+
+@media screen and (orientation: portrait) {
+    :root {
+        --height-input-button: 4rem;
+        --most-size-text: 1.5rem;
+    }
+    h1 {
+        font-size: 2.3rem;
+    }
+    #paginaLogin label, #paginaSignin label, #paginaSignin2 label {
+        font-size: 1.2rem;
+    }
+    .div-testi-password p {
+        font-size: 1.2rem;
+    }
+    a {
+        font-size: 1.5rem;
+    }
+}
+  
+
+
+
+

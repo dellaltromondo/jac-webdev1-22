@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>FoodSpring</title>
+        <link rel="stylesheet" type="text/css" href="../css/nav.css">
+        <link rel="stylesheet" href="../css/page.css">
+        
+
+</head>
+
+<body class="normal_body">
+    
+
+    <nav id= "nav_primaria">    
+
+        <a href="../ProgettoPersonale.html" id = "Title">
+            <h1 >
+                Foodspring
+            </h1>
+        </a>
+
+    </nav>
+
+    <nav id = "nav_secondaria" >
+
+        <!-- <section class="only-desktop"></section>  -->
+        <button type="button" id="api-button" onclick="window.location.href='../html/api.html'">API</button>
+
+        <button type="button" onclick="window.location.href='../html/login.html'">Login</button>
+        <input type="text" id="search" placeholder="Cerca prodotto...">
+        <a href="../html/carrello.html">
+            <img id="mainImage" src="../images/cestino_spesa.png">
+        </a>
+
+        <!-- <section class="only-mobile"></section>  -->
+    </nav>
+
+    <style>
+#nav_secondaria {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: burlywood;
+  border-bottom: 2px solid black;
+}
+
+
+
+
+#search {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin: 5px 10px;
+  margin-right: 15px;
+}
+
+#api-button {
+  margin-right: 20px;
+}
+
+#mainImage {
+  border: 1px solid white;
+  border-radius: 10px;
+  width: 40px;
+  height: 40px;
+  margin: 5px 10px 5px 0;
+}
+
+
+    </style>
+
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Prenotazione Treno</title>
+        <link rel="stylesheet" href="treno.css">
+    </head>
+    <body>
+        <div class="tab">
+            <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">London</button>
+            <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
+            <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+        </div>
+        
+        <div id="London" class="tabcontent">
+            <div class="form-container">
+                <h1>Prenotazione Treno</h1>
+                <form>
+                    <label for="partenza">Partenza:</label>
+                    <select name="partenza" id="partenza" required>
+                        <option value="">Seleziona partenza</option>
+                        <option value="bergamo">Bergamo</option>
+                    </select>
+    
+                    <label for="arrivo">Arrivo:</label>
+                    <select name="arrivo" id="arrivo" required>
+                        <option value="">Seleziona arrivo</option>
+                        <option value="milano">Milano</option>
+                    </select>
+    
+                    <label for="data">Data:</label>
+                    <input type="date" id="data" name="data" required>
+    
+                    <label for="ora">Ora:</label>
+                    <input type="time" id="ora" name="ora" required>
+                    
+                    <label for="viaggiatori">Viaggiatori</label>
+                    <select name="viaggiatori" id="viaggiatori" required>
+                        <option value="">Numero viaggiatori</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                    
+                    <input type="submit" value="Cerca">
+                </form>
+            </div>
+        </div>
+          
+        <div id="Paris" class="tabcontent">
+            <h3>Paris</h3>
+            <p>Paris is the capital of France.</p>
+        </div>
+          
+        <div id="Tokyo" class="tabcontent">
+            <h3>Tokyo</h3>
+            <p>Tokyo is the capital of Japan.</p>
+        </div>
+        <script src="treno.js"></script>
+    </body>
+</html>

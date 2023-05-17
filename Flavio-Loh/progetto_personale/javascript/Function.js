@@ -1,61 +1,89 @@
-const addToCartButton = document.querySelectorAll(".add-to-cart");
-
-addToCartButton.forEach(button => {
-  button.addEventListener("click", function() {
-    // Recupera i dati dall'elemento button
-    const name = this.dataset.name;
-    const price = this.dataset.price;
-
-    // Crea un oggetto per memorizzare i dati dell'articolo
-    const item = { name, price };
-
-    // Controlla se è già presente un carrello nella session storage
-    let cart = sessionStorage.getItem("cart");
-    if (cart) {
-        // Se è presente, lo converte in un oggetto JavaScript
-        cart = JSON.parse(cart);
-    } else {
-        // Se non è presente, crea un nuovo array
-        cart = [];
-    }
-
-    // Aggiunge l'articolo al carrello
-    cart.push(item);
-
-    // Memorizza il carrello nella session storage
-    sessionStorage.setItem("cart", JSON.stringify(cart));
-  });
-});
-
-
-let cart = sessionStorage.getItem("cart");
-if (cart) {
-    // Se esiste, lo converte in un oggetto JavaScript
+window.addEventListener("load", function() {
+  let cart = sessionStorage.getItem("cart");
+  if (cart) {
     cart = JSON.parse(cart);
-} else {
-    // Se non esiste, lo crea
+  } else {
     cart = [];
-}
+  }
+  const cartTable = document.querySelector("#cart-items");
+  let total = 0;
 
-// Recupera la tabella del carrello dalla pagina
-const cartTable = document.querySelector("#cart-items");
-
-// Itera sul carrello per creare le righe della tabella
-for (const item of cart) {
-    // Crea una riga per l'articolo
+  for (const item of cart) {
     const row = document.createElement("tr");
-
-    // Crea le celle per i dati dell'articolo
     const nameCell = document.createElement("td");
     nameCell.textContent = item.name;
-
+    const quantityCell = document.createElement("td");
+    quantityCell.textContent = item.quantity;
     const priceCell = document.createElement("td");
-    priceCell.textContent = item.price;
-
-    // Aggiunge le celle alla riga
+    priceCell.textContent = "$" + item.price * item.quantity;
+    const removeButtonCell = document.createElement("td");
+    const removeButton = document.createElement("button");
+    removeButton.textContent = "Rimuovi";
+    removeButton.addEventListener("click", function() {
+      const index = cart.indexOf(item);
+      if (item.quantity > 1) {
+        item.quantity--;
+        quantityCell.textContent = item.quantity;
+        priceCell.textContent = "$" + item.price * item.quantity;
+      } else {
+        cart.splice(index, 1);
+        row.remove();
+      }
+      sessionStorage.setItem("cart", JSON.stringify(cart));
+      updateCartTotal();
+    });
+    removeButtonCell.appendChild(removeButton);
     row.appendChild(nameCell);
+    row.appendChild(quantityCell);
     row.appendChild(priceCell);
-
-
+    row.appendChild(removeButtonCell);
     cartTable.appendChild(row);
-}
+
+    total += item.price * item.quantity;
+  }
+  
+  updateCartTotal();
+  
+  function updateCartTotal() {
+    total = 0;
+    for (const item of cart) {
+      total += item.price * item.quantity;
+    }
+    const totalElement = document.querySelector("#total");
+    totalElement.innerHTML = "<h3>Totale: $" + total.toFixed(2) + "</h3>";
+  }
+});
+
+const addToCartButtons = document.querySelectorAll(".add-to-cart");
+addToCartButtons.forEach(button => {
+  button.addEventListener("click", function() {
+    const name = button.dataset.name;
+    const price = parseFloat(button.dataset.price);
+    const quantity = parseInt(button.dataset.quantity);
+    const item = {
+      name: name,
+      price: price,
+      quantity: quantity
+    };
+    let cart = sessionStorage.getItem("cart");
+    if (cart) {
+      cart = JSON.parse(cart);
+    } else {
+      cart = [];
+    }
+    let incrementaQuantita = false;
+    for (const itemCart of cart) {
+      if (itemCart.name === item.name) {
+        incrementaQuantita = true;
+        itemCart.quantity++;
+        break;
+      }
+    }
+    if (!incrementaQuantita) {
+      item.quantity = 1;
+      cart.push(item);
+    }
+    sessionStorage.setItem("cart", JSON.stringify(cart));
+    updateCartTotal();
+  });
+});

@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Media queries</title>
     <style>
+        :root
+        {
+            --main-color:violet;
+            --main-border: 2rem solid var(--main-color);
+        }
         .only-mobile
         {
             display: none;
@@ -35,6 +40,19 @@
             padding: 0.2em 0.4em;
             margin-bottom: 0.2em;
         }
+        nav button
+        {
+            border-color: darkviolet;;
+        }
+
+        @media (prefers-color-theme: dark)
+        {
+            :root
+        {
+            --main-color:rgb(47, 45, 47);
+        }
+        }
+
         @media (max-width:960px) /* se la risoluzione passa i 960px  */
         {
             .only-mobile
@@ -75,10 +93,11 @@
             li 
             {
                 display: block;
+                background-color: var(--main-color);
             }
             p
             {
-                color: darkgoldenrod; /*il p cambierà colore*/
+                color: var(--main-color); /*il p cambierà colore*/
             }
             article
             {
@@ -91,6 +110,10 @@
             .only-tablet
             {
                 display: none; /* e anche per il tablet  */
+            }
+            nav button
+            {
+                border-color: var(--main-color);
             }
         }
     </style>

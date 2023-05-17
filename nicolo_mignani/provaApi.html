@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+ <html>
+   <head>
+
+   </head>    
+      <body>
+
+        <ul id="prodotti">
+
+
+        </ul>
+        <script type="module">
+
+          const response = await fetch("http://localhost:8080/EsercizioAPI/api");
+          const products = await response.json();
+
+          console.log(products);
+
+        </script>
+
+
+      </body>
+
+ </html>

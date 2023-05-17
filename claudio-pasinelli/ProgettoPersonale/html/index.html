@@ -4,88 +4,99 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- mettere il titolo del documento -->
-    <title>Document</title>
-    <link rel="stylesheet" href="../Css/css.css">
-    <script src="../Js/javascript.js"></script>
+    <title>Pagina di iscrizione</title>
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/editorCompositori.css">
+    <script src="../js/login.js"></script>
 </head>
 <body>
-    <!-- cambiare nome id -->
-    <section id="corpo">
-        <header>
-            <h1 id="titolo">Titolo</h1>
-            <nav id="menu">
-                <ul>
-                    <li><button>Home</button></li>
-                    <li><button>altro1</button></li>
-                    <li><button>altro2</button></li>
-                </ul>
-            </nav>
-        </header>
-        <!-- cambiare nome id -->
-        <article id="articolo">
-            <section id="formAggiunta">
-                <h1>Inserisci le tue tracce musicali</h1>
-                <form id="traccia" name="traccia">
-                    <label for="nome">Nome: <input type="text" name="nome" id="nome" required></label>
-                    <label for="mese">Mese:</label>
-                    <select id="mese" name="mese">
-                        <option value="0"></option>
-                        <option value="Gennaio">Gennaio</option>
-                        <option value="Febbraio">Febbraio</option>
-                        <option value="Marzo">Marzo</option>
-                        <option value="Aprile">Aprile</option>
-                        <option value="Maggio">Maggio</option>
-                        <option value="Giugno">Giugno</option>
-                        <option value="Luglio">Luglio</option>
-                        <option value="Agosto">Agosto</option>
-                        <option value="Settembre">Settembre</option>
-                        <option value="Ottobre">Ottobre</option>
-                        <option value="Novembre">Novembre</option>
-                        <option value="Dicembre">Dicembre</option>
-                    </select>
-                    <button type="button" onclick="creaTraccia()">Invia</button>
-                </form>
-            </section>
-            <section id="listaTraccePerMese">
-                <ul id="listaTracce">
-                    <h1>Lista delle tracce</h1>
-                    <ul id="lista1">
-                    </ul>
-                    <ul id="lista2">
-                    </ul>
-                    <ul id="lista3">
-                    </ul>
-                    <ul id="lista4">
-                    </ul>
-                    <ul id="lista5">
-                    </ul>
-                    <ul id="lista6">
-                    </ul>
-                    <ul id="lista7">
-                    </ul>
-                    <ul id="lista8">
-                    </ul>
-                    <ul id="lista9">
-                    </ul>
-                    <ul id="lista10">
-                    </ul>
-                    <ul id="lista11">
-                    </ul>
-                    <ul id="lista12">
-                    </ul>
-                </ul>
-            </section>
-        </article>
-        <article id="articolo2">
-            <section>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores deserunt inventore sequi iusto harum? Praesentium, mollitia! Exercitationem, autem iusto, doloremque suscipit consequuntur laudantium aliquid nam libero molestiae, odit magni nulla!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel odit, vero dolorum rem quod laboriosam aut impedit expedita, harum voluptates repellendus veritatis! Natus sequi eius facere dolore numquam, iure optio.
-            </section>
-        </article>
-        <footer id="piePagina">
-            footer
-        </footer>
+  <section id="loaderWrapper">
+    <span class="loader"><span class="loaderInner"></span></span>
+  </section>
+
+    <section class="form">
+      <h2 class="glow" id="titoloLogin">Login</h2>
+      <form id="logIn">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="cognome">Cognome</label>
+        <input type="text" id="cognome" name="cognome" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+
+        <p>Sei un compositore?</p>
+        <section id="checkboxCompositore">
+          <label for="compositore">Sì</label>
+          <input type="checkbox" name="checkboxCompositore" id="compositore" value="COMPOSITORE" onclick="selectOnlyThis(this)">
+          <label for="non_compositore">No</label>
+          <input type="checkbox" name="checkboxCompositore" id="non_compositore" value="NON_COMPOSITORE" onclick="selectOnlyThis(this)">
+        </section>
+
+        <section>
+            <button id="inviaDati" onclick="inviaDatiForm()" type="button">Accedi</button>
+            <button type="reset" class="annulla" title="Cancella i dati">Annulla</button>
+        </section>
+
+        <p id="messaggioForm"></p>
+
+      </form>
+
+      <section class="social-icons">
+          <p>O accedi con:</p>
+          <section>
+            <a href="#"><img src="../iconeSocial/facebook.png" alt="Facebook" title="Accedi con Facebook"></a>
+            <a href="#"><img src="../iconeSocial/twitter.png" alt="Twitter" title="Accedi con Twitter"></a>
+            <a href="#"><img src="../iconeSocial/google.png" alt="Google" title="Accedi con Google"></a>
+        </section>
+      </section>
     </section>
+  </section>
+
+  <script>
+
+    window.addEventListener("load", (event) =>
+    {
+      localStorage.clear();
+      const loader = document.getElementById("loaderWrapper");
+      loader.style.animation = "fadeOut 1.2s";
+      loader.style.animationIterationCountv = "1";
+
+      setTimeout(() =>
+      {
+          loader.parentNode.removeChild(loader);
+      }, 1200);
+    });
+
+    function onlyOne(checkbox)
+    {
+      let checkboxes = document.getElementsByClassName('checkbox')
+
+      checkboxes.forEach((item) =>
+      {
+          if (item !== checkbox)
+          {
+            item.checked = false;
+          }
+      })
+    }
+
+    function selectOnlyThis(id)
+    {
+      let myCheckbox = document.getElementsByName("checkboxCompositore");
+      Array.prototype.forEach.call(myCheckbox,function(el)
+      {
+        el.checked = false;
+      });
+
+      id.checked = true;
+    }
+
+  </script>
+
 </body>
 </html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/style-login.css">
+</head>
+<body>
+
+
+<div class="container">
+  <form action="">
+    <div class="row">
+      <h2 style="text-align:center">Login</h2>
+      <div class="vl">
+        <span class="vl-innertext">O</span>
+      </div>
+
+      <div class="col">
+        <a href="#" class="fb btn">
+          <i class="fa fa-facebook fa-fw"></i> Login con Facebook
+         </a>
+        <a href="#" class="twitter btn">
+          <i class="fa fa-twitter fa-fw"></i> Login con Twitter
+        </a>
+        <a href="#" class="google btn"><i class="fa fa-google fa-fw">
+          </i> Login con Google+
+        </a>
+      </div>
+
+      <div class="col">
+        <div class="hide-md-lg">
+          
+        </div>
+
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" value="password" id="myInput">
+
+
+        <script>
+          function myFunction() {
+            
+            var copyText = document.getElementById("myInput");
+          
+            
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); 
+          
+           
+            navigator.clipboard.writeText(copyText.value);
+          
+            alert("Copied the text: " + copyText.value);
+            
+          }
+          
+          function validateLogin() {
+            var username = document.getElementsByName("username")[0].value;
+            var password = document.getElementById("myInput").value;
+            
+            
+            if (username === "username" && password === "password") {
+              window.location.href = "index.html";
+            } else {
+              alert("Nome utente o password errati");
+            }
+          }
+          </script>
+          
+
+
+
+
+      </div>
+    </div>
+  </form>
+</div>
+
+<div class="bottom-container">
+  <div class="row">
+    <div class="col">
+      <a href="login2.html" style="color:white" class="btn">cra profilo</a>
+    </div>
+    <div class="col">
+      <a href="#" class="btn"  style="color:white" onclick="validateLogin()">Accedi</a>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

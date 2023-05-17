@@ -1,0 +1,97 @@
+#imageBack {
+    height: 30px;
+    width: 30px;
+    }
+    #nav_primaria {
+    background-color: rgb(244, 244, 244);
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid black;
+    }
+    #Title {
+    border: none;
+    font-size: 25px;
+    color: black;
+    text-align: center;
+    position: relative;
+    left: 45%;
+    text-decoration: none;
+    }
+    #nav_secondaria a {
+    border: 2px solid black;
+    padding: 5px;
+    text-decoration: none;
+    color: black;
+    font-size: 13px;
+    margin: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 65px;
+    display: inline-block;
+    background-color: rgb(255, 255, 255);
+    }
+    #Body_Carrello {
+    margin: 0;
+    background-color: white;
+    }
+    #Carrello {
+    margin-top: 20px;
+    border-collapse: collapse;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 800px;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    }
+    table {
+    margin: 0 auto;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    }
+    th, td {
+    text-align: center;
+    padding: 5px;
+    }
+    #cart-container {
+    display: flex;
+    }
+    #left-section {
+    flex: 1;
+    }
+    #right-section {
+        flex: 1;
+      }
+     
+      #total {
+        display: inline-block;
+        text-align: left;
+    }
+    
+    #ButtonToPay {
+        display: inline-block;
+        margin-left: 20px;
+    }
+    
+    button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color:lightblue;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    }
+    button:hover {
+    background-color: aliceblue;
+    }
+   
+     
