@@ -1,2 +1,4 @@
-per il progetto html non considerare la parte del campionato(i file campionato.php e campionato2.php) ma solo la homepage
+-per il progetto html non considerare la parte del campionato(i file campionato.php e campionato2.php) ma solo la homepage
 creazione squadre ed elenco squadre
+
+-importare il file sql e modificare username e password nel file phpfunctions.php con i propri
