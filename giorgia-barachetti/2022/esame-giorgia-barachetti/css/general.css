@@ -1,3 +1,8 @@
+:root{
+  --background-color: red;
+  --color: white;
+  --box: 0px 2px 2px 0px lightgrey;
+}
 /*
 header{
     background-color: red;
@@ -23,12 +28,11 @@ header{
     display: grid;
     grid-template-columns: 250px 1fr; 
     grid-template-rows: auto; 
-    
   }
 
   header {
     grid-column: 1 / -1; 
-    background-color: red;
+    background-color: var(--background-color);
     color: #fff;
     padding: 20px;
     display: flex;
@@ -54,7 +58,7 @@ header{
     padding: 20px;
     display: flex;
     flex-wrap: wrap;
-    box-shadow: 1px 1px 1px 1px lightgrey;
+    box-shadow: var(--box);
     border-radius: 5px;
     justify-content: center;
     border: 1px solid lightgrey;
@@ -64,7 +68,7 @@ header{
   #divCard{
     display: flex; 
     flex-direction: column;
-    box-shadow: 1px 1px 1px 1px lightgrey;
+    box-shadow: var(--box);
     width: 200px;
     border:1px solid grey;
     border-radius: 5px;
@@ -77,25 +81,48 @@ header{
   }
 
   body{
-    background-color: white;
+    background-color: var(--color);
     margin:0;
   }
 
   form{
     display: grid;
-    padding: 5px;
-    width:100%
+    grid-template-columns: 50% 50% ;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    width: 100%;
   }
-  form div{
-    padding: 2px;
-    margin-top:5px;
-    width:100%
 
+  #name{
+    grid-column: 1 / span 2; /* Occupa due colonne */
   }
+ 
   #checkbox{
-    display: flex;
-
+    grid-row: 2 /span 1; /* Occupa la seconda riga */
+    grid-column: 1 /span 1; 
   }
+
+  #level{
+    grid-row: 2 / span 1; /* Occupa la seconda riga */
+    grid-column: 2 / span 1; /* Occupa solo la seconda colonna */
+  }
+  #url{
+    grid-row: 3 / span 1; /* Occupa la terza riga */
+    grid-column: 1 / span 2; /* Occupa due colonne */
+  } 
+
+#description{
+  grid-row: 4 / span 1; /* Occupa la quarta riga */
+  grid-column: 1 / span 2; /* Occupa due colonne */
+}
+
+#enterButton{
+  background-color: var(--background-color);
+  color:var(--color);
+  border:none;
+  padding:10px;
+  margin-top:10px
+}
+
   #link{
     display: flex;
     flex-direction: column
@@ -103,8 +130,11 @@ header{
 
   #divLink{
     border:1px solid grey;
-    margin: 10px;
+    margin: 5px;
     border-radius: 5px;
-    box-shadow: 1px 1px 1px 1px lightgrey;
+    box-shadow: var(--box);
     text-align: center;
+  }
+  #divLink p{
+    margin:2px
   }

@@ -1,96 +1,202 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>La mia one page application di ecommerce</title>
-
-  <body>
-    <div id="AboutUsParagraph">
-      <button onclick="showHomeFromAboutUs()">HOME</button>
-
-      <div id="centerGrid">
-
-        <div id="grid">
-          
-          <div class="divGrid" id="gridOne">
-            <p>Welcome to our online saddle shop! The first italian saddle shop that uses Italian's products and sell all around the world.</p>
-          </div>
-          <div class="divGrid" id="gridTwo">
-            <img class="static" src="Screenshot (72).png">
-            <img class="active" src="https://media2.giphy.com/media/ByTh8UTOcOXL2/giphy.gif?cid=ecf05e47kyum55a6rljrhdwkapb48c115o3yz9do049m5090&ep=v1_gifs_related&rid=giphy.gif&ct=g">
-          </div>
-          <div class="divGrid" id="gridTree"><img src="john.jpeg" style="max-width:100%"></div>
-          <div class="divGrid" id="gridFour"> <p>We're a family-owned business that's been making high-quality saddles for over 50 years. Our story began when our founder, John Smith, started crafting saddles by hand in his small workshop. He had a passion for horses and wanted to create saddles that were not only comfortable for riders, but also provided the best support for their equine partners.</p></div>
-        
-        </div>
-        
-      </div>
-      
-          <!--
-
-            Over time, our reputation for making durable and comfortable saddles grew, and we expanded our business to include a larger workshop and more skilled craftspeople. Today, we have a team of expert saddle makers who use the latest technology and traditional techniques to create saddles that meet the needs of riders of all levels and disciplines.
-            
-            We take pride in the fact that our saddles are made in the USA and are built to last. Each saddle is crafted with precision and care, using only the finest materials. We work closely with our customers to ensure that their saddles fit perfectly and provide maximum comfort for both rider and horse.
-            
-            In addition to saddles, we also offer a range of accessories, such as stirrups, reins, and saddle pads. We're committed to providing our customers with everything they need to enjoy their riding experience to the fullest.
-            <hr id="hr">
-          -->  
-          </div>
-  </body>
-
+<body>
 <style>
+  #containerFormPayment{
+      background-color: white;
+  }
+  #containerFormPayment > div{
+      margin-left: auto;
+      width: 80%;
+      margin-right: auto;
+  }
+  #formPayment{
+      
+      background-color: white;
+  }
+  #formPayment > div{
+      text-align: center;
+      padding-bottom: 10px;
+  }
+  #formPayment button{
+      background-color: Transparent;
+                              background-repeat:no-repeat;
+                              border: none;
+                              cursor:pointer;
+                              overflow: hidden; 
+  }
+  
+  #modalForPaymentPaypal{
+      display: none;
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+      padding:10px; 
+      background-color:white; 
+      border:1px solid white; 
+      
+  }
+  
+  #modalForPaymentVisa{
+      display: none;
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+      padding:10px; 
+      background-color:white; 
+      border:1px solid white; 
+  
+  }
+  
+  #buttonSendPaypal{
+      color: rgba(0,156,222,255);
+      background-color: rgb(4,16,89);
+      border: none;
+      padding:10px;
+      margin-top:10px;
+      border-radius:5px;
+      margin-left:auto;
+      margin-right:auto;
+  }
+  
+  #buttonSendVisa{
+      background-color:rgb(99,108,155) ;
+      color: rgba(13,26,100,255);
+      border: none;
+      padding:10px;
+      margin-top:10px;
+      border-radius:5px;
+      margin-left:auto;
+      margin-right:auto;
+  }
+  
+  
+  #showPaymentMethod{
+      display: block;
+      width: 90px;
+      margin-top: 20px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      border-radius: 1rem;;
+      border: 1px solid var(--light-color); 
+      background-color: var(--light-color);
+      color: white;
+  }
+  
+  #showPaymentMethod:hover{
+      border: 1px solid var(--light-color); 
+      background-color: white;
+      color: var(--light-color)
+  }
+  </style>
+  <script>
 
-.static {
-  position:absolute;
-  background: white;
-  max-height:49%;
-}
-.static:hover {
-  opacity:0;
-}
-
-  html{
-    background-color: black;
-  }
-  #AboutUsParagraph{
-    color:white;
-  }
-  #centerGrid{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
- /* border: 1px solid red*/
-  }
-  #grid{
-    /*border:1px solid blue;*/
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 25rem 25rem;
-    gap: 30px;
-  }
-
-  @media (max-width: 1400px){
-    #grid{
-    grid-template-rows: 10rem 20rem;
+    function showPaymentMethods(){
+      const payment = document.getElementById('formPayment')
+      payment.style.display= 'block';
     }
+
+    function openPaymentPaypal(){
+  const paypal = document.getElementById("modalForPaymentPaypal");
+  paypal.style.display='block';
+  const visa = document.getElementById("modalForPaymentVisa");
+  visa.style.display='none';
+}
+function openPaymentVisa(){
+  const visa = document.getElementById("modalForPaymentVisa");
+  visa.style.display='block';
+  const paypal = document.getElementById("modalForPaymentPaypal");
+  paypal.style.display='none';
+}
+
+
+
+
+function getDataVisa(){
+  const cardNumber = document.getElementById('cardNumber')
+  const expirationDate = document.getElementById('expirationDate')
+  const cvv = document.getElementById('cvv')
+
+  const cardValue = cardNumber.value;
+  const dateValue = expirationDate.value;
+  const cvvValue = cvv.value;
+
+  if(cardValue == '' && dateValue == '' && cvvValue == '') {
+    return alert('Fill all the inputs')
   }
-  .divGrid{
-    align-self: center;
-    max-height: 100%;
+  if(cardValue == '') {
+    const setErrorCardValue = cardNumber.value = "Insert card number"; cardNumber.style.color = "red";
+    return setErrorCardValue
+  } 
+  if(dateValue == '') {
+    const setErrorDateValue = expirationDate.value = "Insert card number"; expirationDate.style.color = "red";
+    return setErrorDateValue
+  if(cvvValue == '') {
+    const setErrorCvv = cvv.value = "Insert card number"; cvv.style.color = "red";
+    return setErrorCvv
+    
   }
-  #gridOne{
-    grid-column: 1/2;
-    grid-row:1/2;
-  }
-  #gridTwo{
-    grid-column: 2/3;
-    grid-row:1/2;
-  }
-  img{
-    border-radius:5px
-  }
-</style>
+}
+}  
+</script>
+
+
+
+
+
+
+  <section id='containerFormPayment'> 
+    <div>
+      <section id="formPayment">
+        <div>How would you like to pay?
+          <div>
+            <button type='button' onclick="openPaymentPaypal()">Paypal</button>
+            <button type='button' onclick="openPaymentVisa()">Visa</button>
+            <!--CAMBIATO CON BUTTON
+              
+              <label for="paypal">Paypal<input onclick="decidePayment()" name="CpagamentoPaypal" type="radio" value="paypal" id="paypal"></label>
+              <label for="visa">Visa<input onclick="decidePayment()" name="CpagamentoVisa" type="radio" value="visa" id="visa"></label>
+            -->
+          </div>
+        </div>
+      </section> <!-- formPayment-->
+      
+      <section id="modalForPaymentPaypal">
+        <img src="./images/img-formPayment/paypal.webp" style="height:50px">
+        <p style="margin:5px; padding: 10px; border-top:1px solid black; border-bottom:1px solid black;background-color:#50bbea29; ">Hi! To continue the order you must choose the payment method</p>
+        <div style="padding:5px; display:flex; flex-direction:row; align-items: center;">
+          <label for="account1"><input onclick="decidePayment()" name="mastercard" type="radio" value="paypal" id="mastercard"> </label>
+          <img src="./images/img-formPayment/MasterCard_Logo.svg.png" style="width:50px">
+          <div style="padding-left:10px"><p>Mastercard</p><p>Credit ••••7845</p></div>
+        </div>
+        <div style="padding:5px; display:flex; flex-direction:row; align-items: center;">
+          <label for="account2"><input  name="mastercard" type="radio" value="paypal" id="mastercard"> </label>
+          <img src="./images/img-formPayment/partnersandsponsors_bankofamerica.jpg" style="width:50px">
+        <div style="padding-left:10px"><p>Bank of America</p><p>Credit ••••1639</p></div>
+      </div>
+      <button id="buttonSendPaypal">SEND</button>
+    </section>
+    
+    <section id="modalForPaymentVisa"  >
+      <img src="./images/img-formPayment/visa.png"  style="height:50px">
+      <div style="display: flex; flex-direction: column">
+        <label>Card number</label>
+        <input id="cardNumber" placeholder="1588 5555 9562 7865">
+        <label >Expiration Date</label>
+        <input id="expirationDate" type="date">
+        <label>CVV</label>
+        <input id="cvv" placeholder="84">
+      </div>
+      <button id="buttonSendVisa">SEND</button>
+    </section>
+  </div>
+
+
+
+
+</section> <!--containerformPayment-->
 
 
 </body>
+
 </html>

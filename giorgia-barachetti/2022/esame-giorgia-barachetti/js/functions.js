@@ -56,7 +56,7 @@ function newPokemon() {
   arrayPokemon.push(newPokemon);
 
   let outputDiv = document.getElementById('output');
-  outputDiv.innerHTML += `
+  outputDiv.innerHTML= `
     <div>
       <h2>${newPokemon.name}</h2>
       <img src="${newPokemon.img}" alt="${newPokemon.name}" />

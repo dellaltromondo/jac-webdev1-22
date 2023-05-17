@@ -23,26 +23,28 @@
                     
                 </section> 
                 <section>
+                    <h1>Insert New</h1>
                     <form>
-                        <h1>Insert New</h1>
-                        <div>
+                        <div id="name">
                             <label>Pokémon Name:</label>
                             <input placeholder="e.g. Pikachu"/>
                         </div>
                         <div id="checkbox">
                             <input type="checkbox">Captured</input>
-                            <label>Level: <input type="number" min="1" max="10"></label>
                         </div>
-                        <div>
+                        <div id="level">
+                            <label >Level: <input type="number" min="1" max="10"></label>
+                        </div>
+                        <div id="url">
                             <label>Image URL:</label>
                             <input placeholder="Enter image URL"/>
                         </div>
-                        <div>
+                        <div id="description">
                             <label>Description:</label>
                             <textarea placeholder="Enter description"></textarea>
                         </div>
-                        <button type="button" onclick="newPokemon()">ENTER</button>
                     </form>
+                    <button id="enterButton" type="button" onclick="newPokemon()">ENTER</button>
                 </section>
                 
                <section></section> 
