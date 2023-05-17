@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--css-->
+        <link rel="stylesheet" href="css/general.css">
+        <!--js-->
+        <script src="./js/functions.js"></script>
+    </head>
+    <body>
+
+        <section id="container">
+            <header>
+                <h1>Pokédex</h1>
+                <div>
+                    <a>My Pokémons</a>
+                    <a>New Pokémon</a>
+                    <a>Info</a>
+                </div>
+            </header>
+            
+            <section id="sidebar">
+               <section id="link">
+                    
+                </section> 
+                <section>
+                    <h1>Insert New</h1>
+                    <form>
+                        <div id="name">
+                            <label>Pokémon Name:</label>
+                            <input placeholder="e.g. Pikachu"/>
+                        </div>
+                        <div id="checkbox">
+                            <input type="checkbox">Captured</input>
+                        </div>
+                        <div id="level">
+                            <label >Level: <input type="number" min="1" max="10"></label>
+                        </div>
+                        <div id="url">
+                            <label>Image URL:</label>
+                            <input placeholder="Enter image URL"/>
+                        </div>
+                        <div id="description">
+                            <label>Description:</label>
+                            <textarea placeholder="Enter description"></textarea>
+                        </div>
+                    </form>
+                    <button id="enterButton" type="button" onclick="newPokemon()">ENTER</button>
+                </section>
+                
+               <section></section> 
+
+            </section>
+
+
+
+            
+            <section id="main">
+                <div id="output"></div>
+            </section>
+            
+        </section>
+
+    
+    
+
+
+    
+
+
+    </body>
+</html>
