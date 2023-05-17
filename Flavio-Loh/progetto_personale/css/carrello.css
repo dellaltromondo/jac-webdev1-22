@@ -1,232 +1,97 @@
-
-/*css desktop */
-
-@media(min-width:961px){
-
-    .only-mobile {
-        display: none;
+#imageBack {
+    height: 30px;
+    width: 30px;
     }
-
-    .only-desktop {
-        display: block;
+    #nav_primaria {
+    background-color: rgb(244, 244, 244);
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid black;
     }
-
-    #nav_primaria{
-        background-color: rgb(244, 244, 244);
-        height: 50px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 2px solid black;
+    #Title {
+    border: none;
+    font-size: 25px;
+    color: black;
+    text-align: center;
+    position: relative;
+    left: 45%;
+    text-decoration: none;
     }
-    
-    #Title{
-        font-size: 18px;
-        color: black;
-        text-align: left;
-        position: relative;
-        left: 3%;
-        text-decoration: none;    
+    #nav_secondaria a {
+    border: 2px solid black;
+    padding: 5px;
+    text-decoration: none;
+    color: black;
+    font-size: 13px;
+    margin: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 65px;
+    display: inline-block;
+    background-color: rgb(255, 255, 255);
     }
-
-    #nav_secondaria {
-        font-size: 10px;
-        background-color:rgb(255, 255, 255);
-        border-bottom: 2px solid black;
-
+    #Body_Carrello {
+    margin: 0;
+    background-color: white;
     }
-
-    .nav_secondaria_class{
-        font-weight: bold;
-        text-decoration: none;
-        color: black;
-        font-size: 13px;
-        margin: 10px;
-        margin-top: 15px;
-        margin-bottom: 15px;
-        margin-left: 65px;
-        display: inline-block;
-        border: 2px;  
-        background-color:rgb(255, 255, 255);
+    #Carrello {
+    margin-top: 20px;
+    border-collapse: collapse;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 800px;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
     }
-
-    #Body_Carrello{
-        margin: 0;
-        background-color: white;
-    }
-
-
-    #Carrello{
-        margin-top : 10px;
-        border-collapse: collapse;
-        border: 2px solid black; 
-        border-radius: 10px;
-        width: 500px;
-        text-align: center;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;        
-    }
-
     table {
-        margin: 0 auto;
-        text-align: center;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
+    margin: 0 auto;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     }
-    
     th, td {
-        text-align: center;
-        padding: 5px;
+    text-align: center;
+    padding: 5px;
     }
-
-
-    
-    button{
-        position:relative;
-        left:30%; 
-        padding: 10px 20px;
-        background-color: lightblue;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-
+    #cart-container {
+    display: flex;
     }
-
-
-    button:hover {
-        background-color: aliceblue;
+    #left-section {
+    flex: 1;
     }
-
-
-}
-
-
-
-
-
-/* 
-
-
-@media(max-width:960px){
-    .only-mobile {
-        display: block;
-    }
-
-    .only-desktop {
-        display: none;
-    }
-
-    #nav_primaria{
-        background-color: rgb(244, 244, 244);
-        height: 50px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 2px solid black;
-    }
-    
-    #Title{
-        font-size: 18px;
-        color: black;
-        text-align: left;
-        position: relative;
-        left: 3%;
-        text-decoration: none;    
-    }
-
-    #nav_secondaria {
-        font-size: 10px;
-        background-color:rgb(255, 255, 255);
-        border-bottom: 2px solid black;
-
-    }
-
-    .nav_secondaria_class{
-        font-weight: bold;
-        text-decoration: none;
-        color: black;
-        font-size: 13px;
-        margin: 10px;
-        margin-top: 15px;
-        margin-bottom: 15px;
-        margin-left: 65px;
+    #right-section {
+        flex: 1;
+      }
+     
+      #total {
         display: inline-block;
-        border: 2px;  
-        background-color:rgb(255, 255, 255);
-    }
-
-    #Body_Carrello{
-        margin: 0;
-        background-color: white;
-    }
-
-
-    #Carrello{
-        margin-top : 10px;
-        border-collapse: collapse;
-        border: 2px solid black; 
-        border-radius: 10px;
-        width: 500px;
-        text-align: center;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;        
-    }
-
-    table {
-        margin: 0 auto;
-        text-align: center;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
+        text-align: left;
     }
     
-    th, td {
-        text-align: center;
-        padding: 5px;
+    #ButtonToPay {
+        display: inline-block;
+        margin-left: 20px;
     }
-
-
     
-    button{
-        position:relative;
-        left:30%; 
-        padding: 10px 20px;
-        background-color: lightblue;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-
+    button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color:lightblue;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     }
-
-
     button:hover {
-        background-color: aliceblue;
+    background-color: aliceblue;
     }
-
-
-
-} */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+   
+     

@@ -8,16 +8,18 @@
 </head>
 <body>
 	<nav class="navbar">
-			<h1>Diario voti personale</h1>
-			<a>Voti</a>
-            <a>Info sito</a>
+			<h1 id="titolo_nav">Diario voti personale</h1>
+			<div>
+				<a>Voti</a>
+            	<a onclick="logOut()">Logout</a>
+			</div>
+			
 	</nav>
 	<form id="index_form"> 
 		<label for="subject-name">Nome materia:</label>
 		<input type="text" id="subject-name" name="subject-name" required>
 		<label for="teacher-name">Nome professore:</label>
 		<input type="text" id="teacher-name" name="teacher-name" required>
-		<!--<input type="color" id="subject-color">-->
 		<div class="colors" >
 			<div id="1" onclick = "getColore(1)"  class="color" style="background-color: #8c2ad7"></div>
 			<div id="2" onclick = "getColore(2)"  class="color" style="background-color: #25dea7"></div>
@@ -31,5 +33,11 @@
 	</form>
 	<div id="subjects-container"></div>
 	<script type="text/javascript" src="js/index.js"></script>
+	<script>
+		window.addEventListener("load", (event) =>
+        {
+            loadDati();
+        });
+	</script>
 </body>
 </html>

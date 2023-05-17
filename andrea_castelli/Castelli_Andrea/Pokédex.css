@@ -1,0 +1,157 @@
+html, body
+{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    background-color: lightgray;
+}
+
+header
+{
+    background-color: red;
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    height: 96.4px;
+}
+header h1
+{
+    color: white;
+    margin: 0;
+    padding: 10px;
+    font-size: 48px;
+}
+
+nav
+{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    /*margin-top: -75px;*/
+}
+nav ul
+{
+    list-style: none;
+}
+
+nav ul li
+{
+    display: inline;
+    padding: 5px;
+}
+
+nav a
+{
+    border-radius: 5px;
+    padding: 5px;
+    background-color: rgba(211, 211, 211, 0.528);
+    color: white;
+}
+
+
+
+#sidebar
+{
+    margin: 0;
+    width: 200px;
+    height: 100%;
+    background-color: rgb(230, 230, 230);
+    float: left;
+}
+#sidebar ul
+{
+    margin: 0;
+    padding-top:20px;
+    padding-left: 10px;
+}
+#sidebar ul li button
+{
+    width: 180px;
+    text-align: left;
+    font-weight: bold;
+    margin-top: 5px;
+    padding: 2px;
+    background-color: white;
+    border-radius: 5px;
+    border-color: white;
+}
+#sidebar h2
+{
+    padding: 0;
+    margin-top: 10px;
+}
+#sidebar label
+{
+    margin-left: 5px;
+    margin-right: 0px;
+}
+#sidebar input
+{
+    margin: 5px;
+    display: inline-block;
+}
+
+#name
+{
+    width: 180px;
+}
+#level
+{
+    width: 25px;
+}
+#description
+{
+    width: 90%;
+    height: 50px;
+    margin: 5px;
+}
+#save
+{
+    border-radius: 5px;
+    border-color: brown;
+    background-color: red;
+    color: white;
+
+    margin-left: 35%;
+}
+
+
+
+#listaP
+{
+    float: right;
+    background-color: white;
+    margin: 20px;
+    width: 1200px;
+    border-radius: 10px;
+}
+#listaP div
+{
+    display: inline-block;
+    width: 350px;
+    margin: 20px;
+    border: 1px solid rgb(155, 155, 155);
+    border-radius: 10px;
+}
+.nome
+{
+    font-weight: bold;
+    font-size: 20px;
+    display: block;
+    text-align: center;
+    margin-top: 5px;
+}
+.immagine
+{
+    padding: 10px;
+    width: 300px;
+    height: 300px;
+}
+.descrizione
+{
+    inline-size: 150px;
+    writing-mode: horizontal-tb;
+    color: gray;
+    margin: 0px;
+}

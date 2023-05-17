@@ -32,7 +32,7 @@ async function fetchExercises() {
         document.getElementById('exercises-list').replaceChildren();
         const addedExercises = {};
         if (exeJson.length === 0) {
-            errorPopup('No results found. Please check your filters.')
+            errorPopup('Nessun risultato. Prova a modificare i parametri di ricerca.')
         }
         exeJson.forEach(exercise => {
             buildExercise(exercise, addedExercises);

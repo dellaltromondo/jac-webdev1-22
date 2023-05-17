@@ -1,0 +1,120 @@
+<html>
+    <head>
+        <title>Lista ordini</title>
+
+        <link rel="stylesheet" href="Header.css">
+        <link rel="stylesheet" href="Ordine.css">
+
+
+        
+    </head>
+
+
+
+    <body>
+        <header>
+            <h1>ilForno.it</h1>
+
+            <nav>
+                <ol>
+                    <li>
+                        <a href="Home.html"><button>Home</button></a>
+                    </li>
+    
+                    <li>
+                        <a href="Ordine.html"><button>Ordina</button></a>
+                    </li>
+    
+                    <li>
+                        <a href="Menù.html"><button>Menù</button></a>
+                    </li>
+
+                    <li>
+                        <a href="Bevande.html"><button>Bevande</button></a>
+                    </li>
+                </ol>
+            </nav>
+
+            <img src="Sfondo.jpg">
+        </header>
+        <section id="contenitore">
+            <section id="colonna1">
+                <form id="form">
+                    <table id="tab">
+                        <tr>
+                            <th>
+                                <span>Nome cliente: </span>
+                            </th>
+
+                            <th>
+                                <input type="text" id="nome" placeholder="Mario">
+                            </th>
+                        </tr>
+
+                        <tr>
+                            <th>
+                                <span>Pizze:</span>
+                            </th>
+
+                            <th>
+                                <select multiple id="pizza">
+                                    
+                                </select>
+                            </th>
+                        </tr>
+
+                        <tr>
+                            <th>
+                                <span>Bevande</span>
+                            </th>
+
+                            <th>
+                                <select multiple id="bevande">
+
+                                </select>
+                            </th>
+                        </tr>
+                        
+                        <tr>
+                            <th>
+                                <span>Asporto: </span>
+                            </th>
+
+                            <th>
+                                <input type="checkbox" id="asporto" onclick="Asporto()">
+                            </th>
+                        </tr>
+                        
+                        <tr id="tr">
+                            <th id="th11">
+                                <span id="testo1">Numero tavolo: </span>
+                            </th>
+
+                            <th id="th22">
+                                <input type="number" id="nTavolo">
+                            </th>
+                        </tr>
+                    </table>
+
+                    <section id="pulsanti">
+                        <button type="button" id="aggiungi" onclick="Ordine()">Aggiungi all'ordine</button>
+                        <br><br>
+                        <button type="button" id="invia" onclick="SalvaOrdine()">Conferma ordine</button>
+                    </section>
+
+                </form>
+            </section>
+
+
+            <section id="colonna2">
+                
+            </section>
+        </section>
+    </body>
+
+    <script src="Menù.js"></script>
+
+    <footer>
+        <p>Pizzeria "ilForno" - Via Giuseppe Mazzini 3, Cazzano Sant'Andrea, Bergamo (BG) - P. IVA 05037260088 - +39 357 366 5486</p>
+    </footer>
+</html>

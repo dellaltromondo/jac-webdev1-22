@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Queries</title>
+    <style>
+        .only-mobile,
+        .only-tablet {
+            display: none;
+        }
+
+        .only-desktop {
+            display: block;
+        }
+
+        p {
+            font-size: 20px;
+            color: red;
+        }
+
+
+        @media (max-width: 960px) {
+            .only-mobile {
+                display: block;
+            }
+
+            .only-desktop {
+                display: none;
+            }
+
+            p {
+                color: blue;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="only-mobile"> cioa siamo su mobile</h1>
+    <h1 class="only-tablet"> cioa siamo su tablet</h1>
+    <h1 class="only-desktop"> cioa siamo su desktop</h1>
+    <p>ciao sono nel testo</p>
+</body>
+
+</html>
