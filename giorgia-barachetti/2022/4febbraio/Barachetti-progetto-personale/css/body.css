@@ -22,11 +22,14 @@ form{
 }
 
 #dl{
+    display: flex;
     border-bottom: 0.1px solid grey;
     border-top: 0.3px solid grey;
-    
     padding: 20px;
     font-size: 20px;
+    flex-direction: column;
+    align-items: center;
+
 }
 #dl dt dd{
     margin:0;
@@ -167,7 +170,7 @@ form{
     border-radius: 1rem;
     background-color: var(--light-color);
     color: var(--main-color);
-    margin-top: 20px;
+    margin-top: 5px;
     margin-left: 20px;
 }
 
@@ -189,12 +192,12 @@ form{
     margin-right: auto;
 }
 #formPayment{
-    display: none;
+    display:none;
     background-color: white;
 }
 #formPayment > div{
     text-align: center;
-    padding-bottom: 10px;
+    padding-bottom: 30px;
 }
 #formPayment button{
     background-color: Transparent;
@@ -238,8 +241,8 @@ form{
 }
 
 #buttonSendVisa{
-    background-color:rgb(99,108,155) ;
-    color: rgba(13,26,100,255);
+  color: rgba(0,156,222,255);
+    background-color: rgb(4,16,89);
     border: none;
     padding:10px;
     margin-top:10px;
@@ -267,6 +270,37 @@ form{
     color: var(--light-color)
 }
 
+.containerPaypalPayment{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.hover{
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin:20px
+}
+
+
+#lastButtonBye{
+    display: none;
+    margin-top: 10px;
+    color: white;
+    background-color: var(--light-color);
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid var(--light-color);
+}
 
 /*box write*/
 #boxWrite{

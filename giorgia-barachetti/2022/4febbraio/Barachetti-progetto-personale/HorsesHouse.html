@@ -326,7 +326,7 @@
 
                       <div class="label">
                           <label for="mail">E-mail: 
-                              <input class="g" id="mail" type="email" placeholder="john@example.com" >
+                              <input class="g" id="mail" placeholder="john@example.com" >
                             </label>
                       </div>
 
@@ -368,33 +368,45 @@
                 
                 <section id="modalForPaymentPaypal">
                     <img src="./images/img-formPayment/paypal.webp" style="height:50px">
-                    <p style="margin:5px; padding: 10px; border-top:1px solid black; border-bottom:1px solid black;background-color:#50bbea29; ">Hi! To continue the order you must choose the payment method</p>
-                    <div style="padding:5px; display:flex; flex-direction:row; align-items: center;">
-                        <label for="account1"><input onclick="decidePayment()" name="mastercard" type="radio" value="paypal" id="mastercard"> </label>
+                    <p style="margin:5px; padding: 10px; border-top:1px solid black; border-bottom:1px solid black;background-color:#50bbea29; ">To continue the order you must choose the payment method</p>
+                    
+                    <div class="hover">
+                      <button type="button" class="containerPaypalPayment" onclick="paymentMastercard()">
                         <img src="./images/img-formPayment/MasterCard_Logo.svg.png" style="width:50px">
                         <div style="padding-left:10px"><p>Mastercard</p><p>Credit ••••7845</p></div>
+                      </button>
                     </div>
-                    <div style="padding:5px; display:flex; flex-direction:row; align-items: center;">
-                        <label for="account2"><input  name="mastercard" type="radio" value="paypal" id="mastercard"> </label>
+                    
+                    <div class="hover">
+                      <button type="button" class="containerPaypalPayment" onclick="paymentBank()">
                         <img src="./images/img-formPayment/partnersandsponsors_bankofamerica.jpg" style="width:50px">
                         <div style="padding-left:10px"><p>Bank of America</p><p>Credit ••••1639</p></div>
+                      </button>
                     </div>
-                    <button id="buttonSendPaypal">SEND</button>
+                    <div style="display:flex; justify-content: center;"><p id="response1" style="display:none;font-weight: bold; ">Paid with Mastercard</p></div>
+                    <div style="display:flex; justify-content: center;"><p id="response2" style="display:none;font-weight: bold;">Paid with Bank of America</p></div>
                 </section>
-
+                
                 <section id="modalForPaymentVisa"  >
-                    <img src="./images/img-formPayment/visa.png"  style="height:50px">
-                    <div style="display: flex; flex-direction: column">
-                        <label>Card number</label>
-                        <input placeholder="1588 5555 9562 7865">
-                        <label >Expiration Date</label>
-                        <input type="date">
-                        <label>CVV</label>
-                        <input placeholder="84">
-                    </div>
-                    <button id="buttonSendVisa">SEND</button>
+                  <img src="./images/img-formPayment/visa.png"  style="height:50px">
+                  <div style="display: flex; flex-direction: column">
+                    <label>Card number</label>
+                    <input id="cardNumber" placeholder="1588 5555 9562 7865">
+                    <label >Expiration Date</label>
+                    <input id="expirationDate" type="date">
+                    <label>CVV</label>
+                    <input id="cvv" placeholder="84">
+                  </div>
+                  <button id="buttonSendVisa" type="button" onclick="getDataVisa()">SEND</button>
+                  <button id="buttonSendVisa" type="button" onclick="changeDataVisa()">EDIT</button>
+                  <dl id="dlPay"></dl>
                 </section>
-            </div>
+              </div>
+              <div style=" display:flex;flex-direction: column; justify-content: center;align-items: center;">
+                  <button style="width:20%; margin:10px" id="lastButtonBye" type="button" onclick="continueLast()">CONTINUE</button>
+                  <h1 id="bye" style="display:none; font-size: 30px;margin: 10px;">ORDERED DELIVERED</h1>
+              </div>
+              
             </section> <!--containerformPayment-->
             </div>
             

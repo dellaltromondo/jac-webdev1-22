@@ -32,6 +32,8 @@ function showPaymentMethods(){
   const payment = document.getElementById('formPayment')
   payment.style.display= 'block';
 }
+
+
 function printAndCheckInfos() {
   const nameInput = document.getElementById("name");
   const surnameInput = document.getElementById("surname");
@@ -72,14 +74,20 @@ function printAndCheckInfos() {
     const setErrorPhone = phoneInput.value = "Only number accepted";   phoneInput.style.color = "red";
     return setErrorPhone;
   }
+  const validateEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  if(!validateEmail.test(email)){
+    const setErrorEmail = emailInput.value = "Insert valid email ex.test@test.io"; emailInput.style.color = "red";
+    document.email.focus();
+    return setErrorEmail;
+  }
   
   
   const dl = document.getElementById("dl");
-  dl.innerHTML = `<dt>Name: ${name}</dt>
-  <dt>Surname: ${surname}</dt>
-  <dt>Address: ${address}</dt>
-  <dt>Email: ${email}</dt>
-  <dt>Phone number: ${phone}</dt>`;
+  dl.innerHTML = `<dt>NAME: ${name}</dt>
+  <dt>SURNAME: ${surname}</dt>
+  <dt>ADDRESS: ${address}</dt>
+  <dt>EMAIL: ${email}</dt>
+  <dt>PHONE NUMBER: ${phone}</dt>`;
   
   const Ccondiz = document.getElementById("cond");
   let cond = "";
@@ -156,4 +164,103 @@ function enableEdit() {
   email.removeAttribute("readonly");
   phone.removeAttribute("readonly");
 
+}
+
+function getDataVisa(){
+  const cardNumber = document.getElementById('cardNumber')
+  const expirationDate = document.getElementById('expirationDate')
+  const cvv = document.getElementById('cvv')
+
+  const cardValue = cardNumber.value;
+  const dateValue = expirationDate.value;
+  const cvvValue = cvv.value;
+
+  if(cardValue == '' && dateValue == '' && cvvValue == '') {
+    return alert('Fill all the inputs')
+  }
+  if(cardValue == '') {
+    const setErrorCardValue = cardNumber.value = "Insert card number"; cardNumber.style.color = "red";
+    return setErrorCardValue
+  } 
+  if(dateValue == '') {
+    const setErrorDateValue = expirationDate.value = "Insert date of expiration"; expirationDate.style.color = "red";
+    return setErrorDateValue
+  }
+  if(cvvValue == '') {
+    const setErrorCvv = cvv.value = "Insert cvv value"; cvv.style.color = "red";
+    return setErrorCvv
+  }
+  if(cardValue.length<16 || cardValue.length>16) {
+    const setErrorCardValue = cardNumber.value = "Required 16 numbers"; cardNumber.style.color = "red";
+    return setErrorCardValue
+  } 
+  if(cvvValue.length<2 || cvvValue.length>2) {
+    const setErrorCvv = cvv.value = "Required 2 numbers"; cvv.style.color = "red";
+    return setErrorCvv
+  }
+  if(isNaN(cardValue)) {
+    const setErrorCardValue = cardNumber.value = "Required type number"; cardNumber.style.color = "red";
+    return setErrorCardValue
+  } 
+  if(isNaN(cvvValue)) {
+    const setErrorCvv = cvv.value = "Required type number"; cvv.style.color = "red";
+    return setErrorCvv
+  }
+
+
+  const dl = document.getElementById("dlPay");
+  dl.innerHTML=`<dt>CARD NUMBER: ${cardValue}</dt>
+                <dt>EXPIRATION DATE: ${dateValue}</dt>
+                <dt>CVV: ${cvvValue}</dt>`
+  
+  const lastButton = document.getElementById("lastButtonBye")
+  lastButton.style.display='block'
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  cardNumber.addEventListener("input", function () {
+    if (cardNumber.style.color === "red") {
+      cardNumber.value = "";
+      cardNumber.style.color = "";
+    }
+  });
+
+  expirationDate.addEventListener("input", function () {
+    if (expirationDate.style.color === "red") {
+      expirationDate.value = "";
+      expirationDate.style.color = "";
+    }
+  });
+
+  cvv.addEventListener("input", function () {
+    if (cvv.style.color === "red") {
+      cvv.value = "";
+      cvv.style.color = "";
+    }
+  });
+});
+
+function paymentMastercard() {
+    const div = document.getElementById("response1");
+    div.style.display='block'
+    
+    const bank = document.getElementById("response2");
+    bank.style.display='none';
+    const lastButton = document.getElementById("lastButtonBye")
+    lastButton.style.display='block'
+}
+function paymentBank() {
+    const div = document.getElementById("response2");
+    div.style.display='block'
+
+    const master = document.getElementById("response1");
+    master.style.display='none';
+
+    const lastButton = document.getElementById("lastButtonBye")
+    lastButton.style.display='block'
+}
+
+function continueLast(){
+  const h1 = document.getElementById("bye")
+  h1.style.display='block'
 }
