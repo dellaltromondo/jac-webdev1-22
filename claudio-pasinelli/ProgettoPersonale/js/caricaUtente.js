@@ -40,12 +40,12 @@ async function caricaUtente()
 {
     let userNickname = document.getElementById("userNickname");
 
-    if(localStorage.getItem("Nome") === null || localStorage.getItem("Cognome") === null && localStorage.getItem("NomeUser") === null && localStorage.getItem("CognomeUser") === null || localStorage.getItem("Nome") != "undefined" || localStorage.getItem("Cognome") != "undefined" && localStorage.getItem("NomeUser") != "undefined" && localStorage.getItem("CognomeUser") != "undefined")
+    if((localStorage.getItem("Nome") === null || localStorage.getItem("Cognome") === null && localStorage.getItem("NomeUser") === null && localStorage.getItem("CognomeUser") === null) || (localStorage.getItem("Nome") === "undefined" || localStorage.getItem("Cognome") === "undefined" && localStorage.getItem("NomeUser") === "undefined" && localStorage.getItem("CognomeUser") === "undefined"))
     {
         userNickname.innerText = "Impossibile caricare il nome dell'utente";
     }
 
-    if((localStorage.getItem("Nome") != "undefined" && localStorage.getItem("Cognome") != "undefined" || localStorage.getItem("Nome") != null && localStorage.getItem("Cognome") != null) && (localStorage.getItem("NomeUser") === null || localStorage.getItem("CognomeUser") === null) || localStorage.getItem("NomeUser") === "undefined" || localStorage.getItem("CognomeUser") === "undefined")
+    else if((localStorage.getItem("Nome") != "undefined" && localStorage.getItem("Cognome") != "undefined" || localStorage.getItem("Nome") != null && localStorage.getItem("Cognome") != null) && (localStorage.getItem("NomeUser") === null || localStorage.getItem("CognomeUser") === null) || localStorage.getItem("NomeUser") === "undefined" || localStorage.getItem("CognomeUser") === "undefined")
     {
         const nome = localStorage.getItem("Nome");
         const cognome = localStorage.getItem("Cognome");
@@ -59,7 +59,7 @@ async function caricaUtente()
         userNickname.innerText = nome + " " + cognome;
     }
 
-    compositoreSpecifico();
+    await compositoreSpecifico();
 }
 
 async function compositoreSpecifico()
@@ -85,7 +85,7 @@ async function compositoreSpecifico()
     {
         idCompositore = localStorage.getItem("idCompositore");
 
-        caricaTuttiIDati();
+        await caricaTuttiIDati();
 
         return;
     }
@@ -107,8 +107,8 @@ async function caricaDatiProfilo()
         const compositore = await fetch("http://localhost:8080/progettoPersonaleJava/api/v1/compositori/" + idCompositore);
         const compositoreJson = await compositore.json();
         
-        const profiloAutore = new Compositore(compositoreJson.idCompositore, compositoreJson.idUser, compositoreJson.nomeArtista, compositoreJson.descrizione, compositoreJson.urlPic);
-        creaProfiloFromCompositore(profiloAutore);
+        const profiloAutore = new Compositore(compositoreJson.idUser, compositoreJson.nomeArtista, compositoreJson.descrizione, compositoreJson.urlPic, compositoreJson.tema);
+        await creaProfiloFromCompositore(profiloAutore);
     }
     catch(err)
     {
@@ -123,7 +123,7 @@ async function caricaDatiFoto()
         //carico le foto e le creo
         const getFoto = await fetch("http://localhost:8080/progettoPersonaleJava/api/v1/foto/" + idCompositore + "/compositori");
         const getFotoJson = await getFoto.json();
-        trovaMaxIdFoto();
+        await trovaMaxIdFoto();
     
         for(fotoCompositore of getFotoJson)
         {
@@ -133,7 +133,7 @@ async function caricaDatiFoto()
             const eliminata = fotoCompositore.eliminata;
     
             const foto = new Foto(idFoto, idCompositore, urlFoto, eliminata);
-            addImageObj(foto);
+            await addImageObj(foto);
         }
     }
     catch(err)
@@ -149,12 +149,12 @@ async function caricaDatiCarte()
         //carico le carte e le creo
         const getCarte = await fetch("http://localhost:8080/progettoPersonaleJava/api/v1/carte/" + idCompositore + "/compositori");
         const getCarteJson = await getCarte.json();
-        trovaMaxIdCarta();
+        await trovaMaxIdCarta();
 
         for(let i = 0; i < getCarteJson.length; i++)
         {
             const carta = new Carta(getCarteJson[i].idCarta, getCarteJson[i].idCompositore, getCarteJson[i].titolo, getCarteJson[i].prezzo, getCarteJson[i].mese, getCarteJson[i].img, getCarteJson[i].eliminata)
-            creaCartaHTML(carta);
+            await creaCartaHTML(carta);
         }
     }
     catch(err)
@@ -170,7 +170,7 @@ async function caricaDatiSocial()
         //carico i social e li creo
         const getSocials = await fetch("http://localhost:8080/progettoPersonaleJava/api/v1/socials/" + idCompositore + "/compositori");
         const getSocialsJson = await getSocials.json();
-        trovaMaxIdSocial();
+        await trovaMaxIdSocial();
     
         for(socialCompositore of getSocialsJson)
         {
@@ -184,7 +184,7 @@ async function caricaDatiSocial()
     
             const social = new Social(idSocial, idCompositore, dataTooltip, media, link, img, eliminata);
     
-            creaSocial(social);
+            await creaSocial(social);
         }
     }
     catch(err)

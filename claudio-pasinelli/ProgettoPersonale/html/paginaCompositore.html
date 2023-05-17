@@ -30,7 +30,7 @@
         <section class="dropdown">
             <button type="button" id="userNickname">Nome Cognome</button>
             <section class="dropdownContent">
-                <button class="zoom" id="logOut" onclick="logOut()">Esci</button>
+                <button class="zoom" id="logOut" onclick="logOut()">Torna indietro</button>
             </section>
           </section>
     </nav>
@@ -75,7 +75,12 @@
     <script>
         window.addEventListener("load", (event) =>
         {
-            caricaUtente();
+            eseguiCaricaDati();
+        });
+
+        async function eseguiCaricaDati()
+        {
+            await caricaUtente();
 
             const loader = document.getElementById("loaderWrapper");
             loader.style.animation = "fadeOut 1.2s";
@@ -85,7 +90,7 @@
             {
                 loader.parentNode.removeChild(loader);
             }, 1200);
-        });
+        }
 
         let lastScrollTop;
 

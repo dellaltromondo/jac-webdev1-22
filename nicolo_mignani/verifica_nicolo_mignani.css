@@ -1,0 +1,435 @@
+
+     body{
+
+        margin: 0px;
+        background-color: rgb(208, 208, 208);
+        
+     }
+
+     header{
+
+       padding: 10px;
+       background-color: rgb(250, 55, 7); 
+       position: sticky;
+       top:0;
+       z-index: 1000;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+
+     }
+
+     h1{
+
+        display: inline;
+        color: white;
+        flex: 1 200px;
+
+
+     }
+
+     a{
+    
+        text-decoration: none;
+        color: white;
+       
+    }
+
+    .pokemons{
+        background-color: rgba(248, 248, 248, 0.778);
+        margin-left: 50px;
+        padding-bottom: 9px;
+        padding-top: 9px;
+        border-radius: 5px;
+        padding-right: 20px;
+
+
+    }
+    .pokemons a{
+        padding-right: 15px;
+        padding-left: 15px;
+        padding-top: 5;
+        font-weight: bolder;
+      }
+
+      
+    .new{
+
+        padding-right: 20px;
+        background-color: rgba(248, 248, 248, 0.778);
+        margin-left: 50px;
+        padding-bottom: 9px;
+        padding-top: 9px;
+        border-radius: 5px;
+
+    }
+    .new a{
+        padding-right: 15px;
+        padding-left: 15px;
+        padding-top: 5;
+        font-weight: bolder;
+      }
+
+      
+    .info{
+
+        padding-right: 10px;
+        background-color: rgba(248, 248, 248, 0.778);
+        margin-left: 50px;
+        margin-right: 30px;
+        padding-bottom: 9px;
+        padding-top: 9px;
+        border-radius: 5px;
+
+    }
+    .info a{
+        padding-right: 15px;
+         padding-left: 18px;
+         padding-top: 5;
+        font-weight: bolder;
+      }
+      main{
+         
+        height: auto;
+        width: auto;
+      }
+
+    .barra{
+
+      background-color: rgba(241, 238, 238, 0.847);
+      border: 1px solid gainsboro;
+      height: 800px;
+      width: 280px;
+      float:left;
+
+
+    }
+
+    .pi{
+
+      display: grid;
+      margin-left: 20px;
+      margin-top: 20px;
+      background-color: white;
+      border: 1px solid gainsboro;
+      border-radius: 5px;
+      font-size: 16px;
+      padding-right: 130px;
+      width: 200px;
+      cursor: pointer;
+      
+    }
+    .ch{
+
+        display: grid;
+        margin-left: 20px;
+        margin-top: 20px;
+        background-color:  white;
+        border: 1px solid gainsboro;
+        border-radius: 5px;
+        font-size: 16px;
+        padding-right: 100px;
+        width: 200px;
+        cursor: pointer;
+        
+      }
+
+
+      .sq{
+
+       
+        display: grid;
+        margin-left: 20px;
+        margin-top: 20px;
+        background-color: white;
+        border: 1px solid gainsboro;
+        border-radius: 5px;
+        font-size: 16px;
+        padding-right: 150px;
+        width: 200px;
+        cursor: pointer;
+        
+      }
+      .bu{
+
+        display: grid;
+        margin-left: 20px;
+        margin-top: 20px;
+        background-color: white;
+        border: 1px solid gainsboro;
+        border-radius: 5px;
+        font-size: 16px;
+        padding-right: 130px;
+        width: 200px;
+        cursor: pointer;
+        
+      }
+
+    .barra h2{
+      
+      font:bold;
+      margin-top: 50px;
+      margin-left: 20px;
+
+
+    }
+    .barra p{
+
+    margin-left:20px;
+    margin-top:20px;
+
+    }
+    #testo{
+
+        margin-left:20px;
+        border: 1px solid gainsboro;
+        height: 20px;
+        width: 80%;
+        display: grid;
+    
+     }
+     #rad{
+
+        margin-top: 20px;
+        margin-left: 20px;
+        
+
+     }
+     #num{
+
+       margin-left: 30px;
+
+
+     }
+     #number{
+
+     width: 30px;
+    
+      
+     }
+     #immag{
+
+        margin-left: 20px;
+        border: 1px solid gainsboro;
+        height: 20px;
+        width: 80%;
+
+
+     }
+     #desc{
+
+     height: 70px;
+     width: 200px;
+     margin-left: 20px;
+     border: solid white;
+
+     }
+
+     .barra #invia{
+
+        margin-top: 20px;
+        margin-left: 20px;
+        width: 100px;
+        height: 40px;
+        background-color: rgb(250, 55, 7);
+        border: 2px solid rgb(250, 55, 7) ;
+        border-radius: 3px;
+        cursor: pointer;
+  
+  
+    }
+
+    #riqu{
+
+       height: auto;
+       width: 1070px;
+       background-color: rgba(241, 238, 238, 0.847) ;
+       border: 1px solid gainsboro;
+       border-radius: 3px;
+       float: right;
+       margin-right: 100px;
+       margin-top: 30px;
+       
+
+    }
+
+    .pik{
+
+        background-color:white;
+        width: 300px;
+        height: 380px;
+        border: 1px solid gainsboro;
+        border-radius: 5px;
+        margin-left: 20px;
+        display: inline-block;
+        margin-top: 20px;
+
+    }
+    .pik h3{
+
+        text-align: center;
+        font:bold;
+
+    }
+    
+    .pik p{
+
+        text-align: center;
+
+
+    }
+
+    .pik div{
+        background: url(https://assets.pokemon.com/assets/cms2/img/pokedex/detail/025.png);
+        margin-left: 50px;
+        width: 200px;
+        height: 200px;
+
+    }
+
+    .cha{
+
+        background-color:white;
+        width: 300px;
+        height: 380px;
+        border: 1px solid gainsboro;
+        border-radius: 5px;
+        margin-left: 20px;
+        margin-top: 20px;
+        display: inline-block;
+
+    }
+    .cha h3{
+
+        text-align: center;
+        font:bold;
+
+    }
+    
+    .cha p{
+
+        text-align: center;
+
+
+    }
+
+    .cha div{
+        background: url(https://assets.pokemon.com/assets/cms2/img/pokedex/detail/004.png);
+        margin-left: 50px;
+        width: 200px;
+        height: 200px;
+
+    }
+
+    .squ{
+
+        background-color:white;
+        width: 300px;
+        height: 380px;
+        border: 1px solid gainsboro;
+        border-radius: 5px;
+        margin-left: 20px; 
+        margin-top: 20px;
+        display: inline-block;
+
+    }
+    .squ h3{
+
+        text-align: center;
+        font:bold;
+
+    }
+    
+    .squ p{
+
+        text-align: center;
+
+
+    }
+
+    .squ div{
+        background: url(https://assets.pokemon.com/assets/cms2/img/pokedex/detail/007.png);
+        margin-left: 50px;
+        width: 200px;
+        height: 200px;
+
+    }
+
+    .bul{
+
+        background-color:white;
+        width: 300px;
+        height: 380px;
+        border: 1px solid gainsboro;
+        border-radius: 5px;
+        margin-left: 20px;
+        margin-top: 20px;
+        display: inline-block;
+
+    }
+    .bul h3{
+
+        text-align: center;
+        font:bold;
+
+    }
+    
+    .bul p{
+
+        text-align: center;
+
+
+    }
+
+    .bul div{
+        background: url(https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png);
+        margin-left: 50px;
+        width: 200px;
+        height: 200px;
+
+    }
+    
+    .lista{
+ 
+        
+        background-color:white;
+        width: 300px;
+        height: 380px;
+        border: 1px solid gainsboro;
+        border-radius: 5px;
+        margin-left: 20px;
+        margin-top: 20px;
+        display: inline-block;
+
+    }
+    .lista h4{
+
+        text-align: center;
+        font:bold;
+
+    }
+
+    .lista p{
+
+         text-align: center;
+
+
+    }
+    .lista img{
+
+    margin-left: 50px;
+    width: 200px;
+    height: 200px;
+
+    }
+
+    footer{
+
+    clear: both;
+    height: 200px;
+    width: auto;
+    background-color: rgb(208, 208, 208);
+    
+
+    }
+      

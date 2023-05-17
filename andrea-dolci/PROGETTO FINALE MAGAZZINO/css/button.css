@@ -1,4 +1,4 @@
-button{
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');button{
     font-size: 1em;
     display: block;
     margin-bottom: 0.4em;
@@ -12,4 +12,42 @@ button{
 
 button:hover{
     background-color: rgba(156, 155, 155, 0.379);
+}
+
+#newAliExpress, #newAmazon, #newBarilla, 
+#btnOrderAliExpress, #btnOrderAmazon, #btnOrderBarilla,
+
+#asc-nameAliExpress, #desc-nameAliExpress, #asc-quantityAliExpress, #desc-quantityAliExpress, #asc-priceAliExpress, #desc-priceAliExpress, #asc-dateAliExpress, #desc-dateAliExpress, 
+#asc-nameAmazon,  #desc-nameAmazon, #asc-quantityAmazon, #desc-quantityAmazon, #asc-priceAmazon, #desc-priceAmazon, #asc-dateAmazon, #desc-dateAmazon,
+#asc-nameBarilla, #desc-nameBarilla, #asc-quantityBarilla, #desc-quantityBarilla, #asc-priceBarilla, #desc-priceBarilla, #asc-dateBarilla, #desc-dateBarilla,
+
+#insertButtonAliExpress, #insertButtonAmazon, #insertButtonBarilla,
+#editButtonAliExpress, #editButtonAmazon, #editButtonBarilla {
+    background-color: rgb(0, 51, 102);
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: auto;
+    display: inline-block;
+}
+  
+#insertButtonAliExpress, #insertButtonAmazon, #insertButtonBarilla,
+#editButtonAliExpress, #editButtonAmazon, #editButtonBarilla {
+    display: none;
+}
+
+#newAliExpress:hover, #newAmazon:hover, #newBarilla:hover, 
+#btnOrderAliExpress:hover, #btnOrderAmazon:hover, #btnOrderBarilla:hover,
+
+#asc-nameAliExpress:hover, #desc-nameAliExpress:hover, #asc-quantityAliExpress:hover, #desc-quantityAliExpress:hover, #asc-priceAliExpress:hover, #desc-priceAliExpress:hover, #asc-dateAliExpress:hover, #desc-dateAliExpress:hover, 
+#asc-nameAmazon:hover,  #desc-nameAmazon:hover, #asc-quantityAmazon:hover, #desc-quantityAmazon:hover, #asc-priceAmazon:hover, #desc-priceAmazon:hover, #asc-dateAmazon:hover, #desc-dateAmazon:hover,
+#asc-nameBarilla:hover, #desc-nameBarilla:hover, #asc-quantityBarilla:hover, #desc-quantityBarilla:hover, #asc-priceBarilla:hover, #desc-priceBarilla:hover, #asc-dateBarilla:hover, #desc-dateBarilla:hover,
+
+#insertButtonAliExpress:hover, #insertButtonAmazon:hover, #insertButtonBarilla:hover,
+#editButtonAliExpress:hover, #editButtonAmazon:hover, #editButtonBarilla:hover {
+    /* background-color: rgb(2, 60, 119); */
+    opacity: 0.8;
 }

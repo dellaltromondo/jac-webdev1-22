@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    
+    <title>Pokémon</title>
+    <link rel="stylesheet" type="text/css" href="../Esame Html/css/pokemon.css">
+    
+</head>
+<body>
+        <section id="page">
+            <nav>
+                <h1>Pokédex</h1>
+                <section id="button">
+                    <button id="myP">My pokémons</button>
+                    <button id="newP">New Pokémon</button>
+                    <button id="info">Info</button>
+                </section>
+            </nav>
+
+            <aside>
+                    
+                <section id="newPokemon">
+                    <h2>Insert new</h2>
+                    <p>Pokémon Name:</p> 
+                    <input type="text" name="nomePokemon" id="nomePokemon" placeholder="e.g. Pikachu">
+                 
+                    <p>Image Url:</p>  
+                    <input type="text" name="imageUrl" id="imageUrl" placeholder="Enter image URL">
+                   
+                    <p>Description:</p>  
+                    <textarea name="DescrizionePokemon" id="DescrizionePokemon" cols="30" rows="10" placeholder="Enter description"></textarea>
+    
+                    <button type="button" id="addPokemon" onclick="Input()">Add Pokémon</button>
+
+                </section>
+
+            </aside>
+
+            <section id="grid">
+                <section id="Pokemon">
+                </section>
+            </section>  
+
+        </section>
+
+        <script src="../Esame Html/js/pokemon.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

@@ -107,6 +107,7 @@ async function trovaMaxIdSocial()
 async function creaSocialJson()
 {
     const inviaBtn = document.getElementById("inviaSocial");
+    const annullaBtn = document.getElementById("annullaCreazioneSocial");
     let testoMessaggio = document.getElementById("messaggioFetch");
 
     if (document.getElementById("nomeSocial").value === "")
@@ -118,6 +119,7 @@ async function creaSocialJson()
             });
 
         inviaBtn.style.display = "none";
+        annullaBtn.style.display = "none";
         testoMessaggio.style.display = "block";
         testoMessaggio.innerText = "Non hai inserito il nome del social!";
         testoMessaggio.style.color = "red";
@@ -125,8 +127,9 @@ async function creaSocialJson()
         setTimeout(() =>
         {
             testoMessaggio.innerText = "";
-            inviaBtn.style.display = "block";
             testoMessaggio.style.display = "none";
+            inviaBtn.style.display = "flex";
+            annullaBtn.style.display = "flex";
             document.getElementById('link').value = "";
         }, 2500);
 
@@ -142,15 +145,17 @@ async function creaSocialJson()
             });
 
         inviaBtn.style.display = "none";
+        annullaBtn.style.display = "none";
         testoMessaggio.style.display = "block";
         testoMessaggio.innerText = "Non hai inserito il link del social!";
         testoMessaggio.style.color = "red";
 
         setTimeout(() =>
-        {
+        {   
             testoMessaggio.innerText = "";
-            inviaBtn.style.display = "block";
             testoMessaggio.style.display = "none";
+            inviaBtn.style.display = "flex";
+            annullaBtn.style.display = "flex";
             document.getElementById('link').value = "";
         }, 2500);
 
@@ -177,6 +182,7 @@ async function creaSocialJson()
                 });
                 
             inviaBtn.style.display = "none";
+            annullaBtn.style.display = "none";
             testoMessaggio.style.display = "block";
             testoMessaggio.innerText = "Ci dispiace tanto, ma non conosciamo il sito!";
             testoMessaggio.style.color = "red";
@@ -184,8 +190,9 @@ async function creaSocialJson()
             setTimeout(() =>
             {
                 testoMessaggio.innerText = "";
-                inviaBtn.style.display = "block";
                 testoMessaggio.style.display = "none";
+                inviaBtn.style.display = "flex";
+                annullaBtn.style.display = "flex";
                 document.getElementById('link').value = "";
             }, 2500);
     
@@ -198,6 +205,7 @@ async function creaSocialJson()
     if(!isURLValid(document.getElementById("link").value))
     {
         inviaBtn.style.display = "none";
+        annullaBtn.style.display = "none";
         testoMessaggio.style.display = "block";
         testoMessaggio.innerText = "Il link inserito non è valido!";
         testoMessaggio.style.color = "red";
@@ -205,8 +213,9 @@ async function creaSocialJson()
         setTimeout(() =>
         {
             testoMessaggio.innerText = "";
-            inviaBtn.style.display = "block";
             testoMessaggio.style.display = "none";
+            inviaBtn.style.display = "flex";
+            annullaBtn.style.display = "flex";
             document.getElementById('link').value = "";
         }, 2500);
 
@@ -219,14 +228,16 @@ async function creaSocialJson()
     if(!risultatoFetch)
     {
         inviaBtn.style.display = "none";
+        annullaBtn.style.display = "none";
         testoMessaggio.innerText = "Il sito è non raggiungibile!";
         testoMessaggio.style.color = "red";
 
         setTimeout(() =>
         {
             testoMessaggio.innerText = "";
-            inviaBtn.style.display = "block";
             testoMessaggio.style.display = "none";
+            inviaBtn.style.display = "flex";
+            annullaBtn.style.display = "flex";
             document.getElementById('link').value = "";
 
         }, 2500);
@@ -237,14 +248,17 @@ async function creaSocialJson()
     else if(risultatoFetch)
     {
         inviaBtn.style.display = "none";
+        
+        annullaBtn.style.display = "none";
         testoMessaggio.innerText = "Il sito è raggiungibile!";
         testoMessaggio.style.color = "lightgreen";
 
         setTimeout(() =>
         {
             testoMessaggio.innerText = "";
-            inviaBtn.style.display = "block";
             testoMessaggio.style.display = "none";
+            inviaBtn.style.display = "flex";
+            annullaBtn.style.display = "flex";
         }, 2500);
     }
 
@@ -280,7 +294,7 @@ async function creaSocialJson()
             }
             
             mediaLowerCase = mediaSocial;
-            media = everyLetterUpperCase(document.getElementById("nomeSocial").value);
+            media = everyLetterUpperCase(mediaSocial);
             break;
         }
     }
@@ -295,11 +309,11 @@ async function creaSocialJson()
     creaSocial(social);
 }
 
-function creaSocial(social)
+async function creaSocial(social)
 {
     let userIsCompositore = false;
 
-    if(window.location.pathname === "/html/editorCompositori.html")
+    if(localStorage.getItem("Compositore") === "VERO")
     {
         userIsCompositore = true;
     }
@@ -444,9 +458,11 @@ function creaSocial(social)
 async function isLinkValid(link)
 {
     const inviaBtn = document.getElementById("inviaSocial");
+    const annullaBtn = document.getElementById("annullaCreazioneSocial");
     let testoMessaggio = document.getElementById("messaggioFetch");
 
     inviaBtn.style.display = "none";
+    annullaBtn.style.display = "none";
     testoMessaggio.style.color = "white";
     testoMessaggio.style.display = "block";
     testoMessaggio.innerText = "Stiamo verificando se il sito è raggiungibile.";
@@ -537,7 +553,7 @@ function eliminaDefinitivamenteSocial(id)
 
     if(!isSocialTrovato)
     {
-        alert(`La traccia "${id}" non è stata trovata!`);
+        alert(`Il social "${id}" non è stato trovato!`);
     }
 }
 

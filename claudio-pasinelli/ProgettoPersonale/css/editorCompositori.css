@@ -621,6 +621,15 @@ footer#piePagina
     /* grid-column: 2/8; */
 }
 
+#btnsFormSocial
+{
+    display: flex;
+}
+
+#inviaSocial
+{
+    margin-right: 5px;
+}
 /*GALLERIA DI IMMAGINI*/
 
 section#galleriaImmagini
@@ -827,7 +836,6 @@ form#immaginiInput button
     font-size: 16px;
     border-radius: var(--border-radius-default);
     border-color: var(--colore-azzurro);
-
 }
 
 #descrizione:is(:focus, :valid)

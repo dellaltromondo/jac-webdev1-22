@@ -30,6 +30,12 @@ body {
     font-size: 18px;
     margin: 10px;
 }
+.navbar a:hover{
+    cursor: pointer;
+}
+#titolo_nav{
+    font-size: 32px;
+}
 /*//////////////////////FORM E COMPONENTI FORM////////////////////////*/
 #index_form {
     background-color: #ffffff;
@@ -135,6 +141,26 @@ input[type="color"]::-webkit-color-swatch {
     gap: 10px;
     margin: 10px;
 }
+
+@media screen and (max-width: 768px) {
+    #subjects-container {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto;
+      gap: 10px;
+      margin: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #subjects-container {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      gap: 10px;
+      margin: 10px;
+    }
+  }
+  
+  
    /*/////////////////////CONTENITORE MATERIA///////////////////////*/
    /* Stile del contenitore della materia */
    
@@ -157,7 +183,7 @@ input[type="color"]::-webkit-color-swatch {
 		
 /* Stile del nome del professore */
 .teacher-name {
-	font-size: 1.5em;
+	font-size: 1.2em;
     color: rgb(255, 255, 255);
 }
 		

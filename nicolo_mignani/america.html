@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<html>
+
+
+
+   <head> <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>sito</title>
+
+
+     <link rel="stylesheet" href="america.css">
+        
+   </head>
+
+
+   <body>
+      
+      <header>
+
+         <h1>VIAGGIA CON NOI</h1>
+           
+            <div class="home">
+             
+                <a href="Progetto_Nicolo_Mignani.html">HOME</a>
+
+            </div>
+
+           <div class="blog">
+
+                <a href="blog.html">BLOG</a>
+
+            </div>
+            <div class="contatti">
+
+              <a href="contatti.html">CONTATTI</a>
+
+          </div>
+           
+            <div class="prenota">
+
+                 <a href="Prenota.html">PRENOTA</a>
+
+            </div>
+
+      </header>
+
+
+
+      <main>
+
+
+        <section class="bianco">
+
+            <h3>CALIFORNIA</h3>
+            <div></div>
+
+            <P>
+                La California è uno stato affascinante e versatile che offre un'ampia gamma di esperienze ai visitatori di tutto il mondo. 
+                Da San Francisco a Los Angeles, dalle spiagge di Santa Monica alla magnifica Yosemite Valley, 
+                la California è una terra di contrasti, in cui l'arte, la cultura, la storia e la natura si fondono in un'esperienza unica. 
+                Qui potrai passeggiare lungo la famosa strada costiera Pacific Coast Highway, 
+                assaggiare i migliori vini del mondo nella regione della Napa Valley, 
+                divertirti nei parchi divertimenti di Anaheim e ammirare i paesaggi spettacolari del Joshua Tree National Park. 
+                Non importa quale sia la tua passione, la California ha qualcosa di speciale per te. 
+                Venite a scoprire questa terra incantata e lasciatevi conquistare dal suo fascino senza tempo.</P>
+
+        </section>
+
+
+
+        <section class="rosso">
+            
+            <h3>KANSAS</h3>
+
+            <div></div>
+
+            <p>
+                Il Kansas è uno stato incantevole del Midwest americano, 
+                con una vasta gamma di attrazioni per i turisti che cercano una vacanza tranquilla e rilassante. 
+                Qui potrai ammirare paesaggi mozzafiato, come le praterie ondulate e le colline coperte di boschi, 
+                visitare musei che raccontano la storia del Far West e assaggiare la cucina tradizionale del Midwest. 
+                Il Kansas è anche la patria di città piene di vita, come la vivace Kansas City, 
+                con la sua scena musicale e culinaria in continua evoluzione, o la storica Topeka, 
+                dove potrai visitare i luoghi di interesse storico e culturale. 
+                Non perdere l'opportunità di scoprire la bellezza del Kansas, una destinazione perfetta per le famiglie, 
+                gli amanti della natura e gli appassionati di storia.</p>
+
+
+
+        </section>
+
+
+        <section class="blu">
+
+            <h3>FLORIDA</h3>
+
+            <div></div>
+
+            <p>
+                La Florida è una meta di viaggio imperdibile per chi cerca sole, mare e divertimento. 
+                Con le sue lunghe spiagge di sabbia bianca, il clima tropicale e una varietà di attrazioni turistiche, 
+                la Florida è una destinazione ideale per ogni tipo di viaggiatore. 
+                Qui potrai ammirare la bellezza naturale dei parchi nazionali come il Dry Tortugas National Park o 
+                il famoso parco di divertimenti Walt Disney World, divertirti a Miami Beach o rilassarti sulla costa del Golfo.
+                 La Florida è anche famosa per i suoi resort di lusso, 
+                 come l'iconico Fontainebleau Miami Beach, dove potrai goderti un soggiorno indimenticabile in riva al mare. 
+                 Venite a scoprire la Florida, una destinazione imperdibile per i viaggiatori alla ricerca di avventura, relax e divertimento.</p>
+
+
+        </section>
+
+
+      </main>
+
+
+      <footer>
+        
+        <p>©️ Copyright 2023 | Nomadi Moderni di Viaggigiovani.it S.r.l.
+            Via Milano 17, 38122, Trento
+            Nr registro, Partita IVA e CF: 02092650221 - Socio Unico - Cap. Sociale: 10.000€
+            Licenza PAT nr 52 del 12/02/2009 - Polizza RC nr 1/75910/319/100972789 di UnipolSai Assicurazioni S.p.A</p>
+            
+            
+          
+          <section class="recensioni">
+            <button class="bsi" onclick="plusDivs(-1)"><</button>
+          
+            <p class="recensione">ho trovato questo sito a caso e adesso uso solo questo per i miei viaggi</p>
+            <p class="recensione">viaggi spettacolari per prezzi convenienti</p>
+            <p class="recensione">sito molto utile se si vogliono fare delle vacanze organizzate bene</p>
+            <p class="recensione">sono davvero stupito di questo sito ha una varietaa di destinazioni pazzesche</p>
+
+
+            <button class="bdx" onclick="plusDivs(1)">></button>
+
+         </section>
+
+          </footer>
+
+         <script>
+          var slideIndex = 1;
+          showDivs(slideIndex);
+          
+          function plusDivs(n) {
+            showDivs(slideIndex += n);
+          }
+          
+          function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("recensione");
+            if (n > x.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = x.length}
+            for (i = 0; i < x.length; i++) {
+              x[i].style.display = "none";  
+            }
+            x[slideIndex-1].style.display = "block";  
+          }
+          </script>
+          
+
+
+   </body>

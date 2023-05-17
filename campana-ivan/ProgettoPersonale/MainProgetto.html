@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="shortcut icon" href="immagini/th.ico" />
+    <title>Cardmarket</title>
+</head>
+
+<body>
+    <button type="button" onclick="window.location.href='../ProgettoPersonale/carrello.html'">Carrello</button>
+    <div id="products"></div>
+    <div class="row">
+        <div class="column" style="background-color:#aaa;">
+            <h2  class="centered-text">One Piece 01</h2>
+            <p class="centered-text">Prima edizione delle carte del celebre manga e bestseller One piece</p>
+
+            <div class="image-container" id="perona">
+                <nav>
+                    <h1>Perona</h1>
+                    <p class="image-description">
+                        Name: Perona <br>
+                        Card ID: OP01-077 <br>
+                        Type: Thriller Bark Pirates <br>
+                        Card Category: character <br>
+                        Effect: [On Play] Look at the top 5 cards of your deck, rearrange them in any order, then return
+                        them to the top or bottom of the deck. <br>
+                        Product: Romance Dawn [OP-01] <br>
+                        Color: Blue <br>
+                        Rarity: Uncommon <br>
+                        Cost: 1 <br>
+                        Power: 2000 <br>
+                        Counter Power: 1000 <br>
+                        Attribute: Special <br>
+                    </p>
+                </nav>
+                <img src=https://onepiece-cardgame.dev/images/cards/OP01-077_2f4494_jp.jpg width="200" height="auto"
+                    onClick="window.open(this.src)" role="button" tabIndex="0 
+                    " TagName="pr" />
+                <p>Prezzo: $10</p>
+                <button onclick="addToCart('Perona', 10)">Aggiungi al carrello</button>
+            </div>
+
+            <div class=image-container id="zoro">
+                <nav>
+                    <h1>Roronoa Zoro</h1>
+                    <p class="image-description">
+                        Name: Roronoa Zoro <br>
+                        Card ID: OP01-025 <br>
+                        Type: Supernovas / Straw Hat Crew <br>
+                        Card Category: character <br>
+                        Effect: This character gains Rush (This Character can attack the turn it enters play.) <br>
+                        Product: Romance Dawn [OP-01] <br>
+                        Color: Red <br>
+                        Rarity: Super Rare <br>
+                        Cost: 3 <br>
+                        Power: 5000 <br>
+                        Attribute: Slash <br>
+                        Alternate Art: P1 <br>
+                    </p>
+                </nav>
+                <img src=https://static.cardmarket.com/img/5caba79a5f46e976a472138912e1cf1c/items/1621/OP-01/690826.jpg
+                    width="200" height="auto" onClick="window.open(this.src)" role="button" tabIndex="0 "
+                    TagName="zr" />
+                <p>Prezzo: $22</p>
+                <button onclick="addToCart('Roronoa Zoro', 22)">Aggiungi al carrello</button>
+
+            </div>
+
+            <div class="image-container" id="kaido">
+                <nav>
+                    <h1>Kaido</h1>
+                    <p class="image-description">
+                        Name: Kaido<br>
+                        Card ID: P-010<br>
+                        Type: Four Emperors/Animal Kingdom Pirates<br>
+                        Card Category: character <br>
+                        Effect: [End of your turn] Add 1 card from your DON!! deck and set it as active. <br>
+                        Product: Promo [P] <br>
+                        Color: Purple <br>
+                        Rarity: Promo <br>
+                        Cost: 8 <br>
+                        Power: 9000 <br>
+                        Attribute: Special <br>
+                    </p>
+                </nav>
+                <img src=https://static.cardmarket.com/img/48159dc862f9ea6c9e3f9c5fab1535d2/items/1621/P/691241.jpg
+                    width="200" height="auto" onClick="window.open(this.src)" role="button" tabIndex="0 "
+                    TagName="kr" />
+                <p>Prezzo: $30</p>
+                <button onclick="addToCart('Kaido', 10)">Aggiungi al carrello</button>
+            </div>
+
+            <div class="image-container" id="yamato">
+                <nav>
+                    <h1>Yamato</h1>
+                    <p class="image-description">
+                        Name: Yamato<br>
+                        Card ID: op01-121<br>
+                        Type: Wano country<br>
+                        Card Category: character <br>
+                        Effect: This card's name is also treated as (Kozuki Oden); Double Attack; Banish<br>
+                        Product: Romance Dawn [OP-01]<br>
+                        Color: Green <br>
+                        Rarity: Super Rare <br>
+                        Cost: 5 <br>
+                        Power: 5000 <br>
+                        Attribute: Strike <br>
+                    </p>
+
+                </nav>
+                <img src=https://static.cardmarket.com/img/b8dcec8fa015bd254ae89373b45a8db1/items/1621/OP-01/690960.jpg
+                    width="200" height="auto" onClick="window.open(this.src)" role="button" tabIndex="0 "
+                    TagName="yr" />
+                <p>Prezzo: $50</p>
+                <button onclick="addToCart('Yamato', 50)">Aggiungi al carrello</button>
+            </div>
+
+            <div class="image-container" id="bart">
+                <nav>
+                    <h1>Bartolomeo</h1>
+                    <p class="image-description">
+                        Name: Bartolomeo<br>
+                        Card ID: op01-019<br>
+                        Type: Supernovas/Barto club<br>
+                        Card Category: character <br>
+                        Effect: Blocker: (When your opponent attacks, by resting this card you can change the attack
+                        target to this card.)
+                        [DON!! x2] [Opponent's Turn] This Character gains +3000 Power.<br>
+                        Product: Romance Dawn [OP-01]<br>
+                        Color: Red <br>
+                        Rarity: Common <br>
+                        Cost: 2 <br>
+                        Power: 2000 <br>
+                        Attribute: Special <br>
+                    </p>
+
+                </nav>
+                <img src=https://static.cardmarket.com/img/8120023237694e666bf599e9cff41f95/items/1621/OP-01/690818.jpg
+                    width="200" height="auto" onClick="window.open(this.src)" role="button" tabIndex="0 "
+                    TagName="br" />
+                <p>Prezzo: $3</p>
+                <button onclick="addToCart('Bartolomeo', 3)">Aggiungi al carrello</button>
+            </div>
+
+        </div>
+
+
+        <div class="column" style="background-color:#bbb;">
+            <h2  class="centered-text">One Piece 02</h2>
+            <p class="centered-text">Seconda edizione delle carte del celebre manga e bestseller One piece</p>
+
+            <div class="image-container" id="edward">
+                <nav>
+                    <h1>Edward Newgate</h1>
+                    <p class="image-description">
+                        Name: Edward Newgate<br>
+                        Card ID: op02-004<br>
+                        Type: The Four Emperors / Whitebeard Pirates<br>
+                        Card Category: character <br>
+                        Effect: [On Play] Up to 1 of your Leader gains +2000 until the start of your next turn. Then,
+                        you cannot add cards from your Life area to your hand by your effects during this turn.
+                        [When Attacking] [DON!! x2] K.O. up to 1 of your opponent's characters with 3000 or less
+                        Power.<br>
+                        Product: Paramount War [OP-02]<br>
+                        Color: Red <br>
+                        Rarity: Super Rare <br>
+                        Cost: 9 <br>
+                        Power: 10000 <br>
+                        Attribute: Special <br>
+                    </p>
+
+                </nav>
+                <img src=https://onepiece-cardgame.dev/images/cards/OP02-004_0789e6_jp.jpg width="200" height="auto"
+                    onClick="window.open(this.src)" role="button" tabIndex="0 " TagName="ed" />
+                <p>Prezzo: $40</p>
+                <button onclick="addToCart('Edward Newgate', 40)">Aggiungi al carrello</button>
+            </div>
+
+            <div class="image-container" id="ace">
+                <nav>
+                    <h1>Portgas D. Ace (OP02-013)</h1>
+                    <p class="image-description">
+                        Name: Portgas. D. Ace<br>
+                        Card ID: op02-013<br>
+                        Type:Whitebeard Pirates<br>
+                        Card Category: character <br>
+                        Effect: [On Play] Give up to 2 of your opponent's Characters -3000 Power during this turn. Then,
+                        if your Leader has [Whitebeard Pirates] in its types, this Character gains Rush during this
+                        turn.<br>
+                        Product: Paramount War [OP-02]<br>
+                        Color: Red <br>
+                        Rarity: Super Rare <br>
+                        Cost: 7 <br>
+                        Power: 7000 <br>
+                        Attribute: Special <br>
+                    </p>
+                </nav>
+                <img src=https://onepiece-cardgame.dev/images/cards/OP02-013_38a4fe_jp.jpg width="200" height="auto"
+                    onClick="window.open(this.src)" role="button" tabIndex="0 " TagName="ac" />
+                <p>Prezzo: $600</p>
+                <button onclick="addToCart('Portgas D. Ace', 600)">Aggiungi al carrello</button>
+            </div>
+
+            <div class="image-container" id="oden">
+                <nav>
+                    <h1>Kozuki Oden (OP02-030)</h1>
+                    <p class="image-description">
+                        Name: Kozuki Oden<br>
+                        Card ID: op02-030<br>
+                        Type:Wano Country/Kozuki Family<br>
+                        Card Category: character <br>
+                        Effect: [Activate: Main] (Once per turn) (3): Switch this Character to active.
+                        [On K.O.] Play up to 1 {Wano Country} type Character card with a cost of 3 from your deck. Then,
+                        shuffle your deck.<br>
+                        Product: Paramount War [OP-02]<br>
+                        Color: Green <br>
+                        Rarity: Super Rare <br>
+                        Cost: 8 <br>
+                        Power: 8000 <br>
+                        Attribute: Slash<br>
+                    </p>
+
+                </nav>
+                <img src=https://onepiece-cardgame.dev/images/cards/OP02-030_eb4839_jp.jpg width="200" height="auto"
+                    onClick="window.open(this.src)" role="button" tabIndex="0 " TagName="ko" />
+                <p>Prezzo: $15</p>
+                <button onclick="addToCart('Kozuki Oden', 15)">Aggiungi al carrello</button>
+            </div>
+
+            <div class="image-container" id="ivankov">
+                <nav>
+                    <h1>Emporio Ivankov (OP02-051)</h1>
+                    <p class="image-description">
+                        Name: Emporio Ivankov<br>
+                        Card ID: op02-051<br>
+                        Type:Impel Down / Revolutionary Army<br>
+                        Card Category: character <br>
+                        Effect: [On Play] Draw cards until you have 3 cards in your hand, then play up to 1 blue {Impel
+                        Down} type Character card with a cost of 6 or less from your hand.<br>
+                        Product: Paramount War [OP-02]<br>
+                        Color: blue <br>
+                        Rarity: Super Rare <br>
+                        Cost: 7 <br>
+                        Power: 7000 <br>
+                        Attribute: Special<br>
+                    </p>
+                </nav>
+                <img src=https://onepiece-cardgame.dev/images/cards/OP02-051_aa7127_jp.jpg width="200" height="auto"
+                    onClick="window.open(this.src)" role="button" tabIndex="0 " TagName="iv" />
+                <p>Prezzo: $8</p>
+                <button onclick="addToCart('Emporio Ivankov', 8)">Aggiungi al carrello</button>
+            </div>
+
+            <div class="image-container" id="buggy">
+                <nav>
+                    <h1>Buggy</h1>
+                    <p class="image-description">
+                        Name: Buggy<br>
+                        Card ID: op02-058<br>
+                        Type:Impel Down / Buggy Pirates<br>
+                        Card Category: character <br>
+                        Effect:[On Play] Look at the top 5 cards of your deck, reveal up to 1 Blue {Impel Down} type
+                        card other than [Buggy] and add it to your hand. Place the remaining cards at the bottom of your
+                        deck in any order.<br>
+                        Product: Paramount War [OP-02]<br>
+                        Color: Blue <br>
+                        Rarity: Rare <br>
+                        Cost: 1 <br>
+                        Power: 2000 <br>
+                        Attribute: Slash<br>
+                    </p>
+                </nav>
+                <img src=https://onepiece-cardgame.dev/images/cards/OP02-058_04dbfb_jp.jpg width="200" height="auto"
+                    onClick="window.open(this.src)" role="button" tabIndex="0 " TagName="bg" />
+                <p>Prezzo: $20</p>
+                <button onclick="addToCart('Buggy', 20)">Aggiungi al carrello</button>
+            </div>
+
+        </div>
+        <div class="column" style="background-color:#ccc;" id="product-list">
+            <h2  class="centered-text">One Piece 03</h2>
+            <p class="centered-text">Terza edizione delle carte del celebre manga e bestseller One piece</p>
+
+            <div class="image-container" id="usopp">
+                <nav>
+                    <h1>Usopp</h1>
+                    <p class="image-description">
+                        Name: Usopp<br>
+                        Card ID: op03-041<br>
+                        Type:East Blue<br>
+                        Card Category: character <br>
+                        Effect:Rush
+                        [DON!!x1] When your opponent takes damage to their Life through the attack of this
+                        Character, you may trash 7 cards from the top of your deck.<br>
+                        Product: Pillars of Strength [OP-03]<br>
+                        Color: Blue <br>
+                        Rarity: Super Rare <br>
+                        Cost: 4<br>
+                        Power: 5000 <br>
+                        Attribute: Ranged<br>
+                    </p>
+                </nav>
+                <img src=https://onepiece-cardgame.dev/images/cards/OP03-041_940e44_jp.jpg width="200" height="auto"
+                    onClick="window.open(this.src)" role="button" tabIndex="0 " TagName="up" />
+                <p>Prezzo: $13</p>
+                <button onclick="addToCart('Usopp', 13)">Aggiungi al carrello</button>
+            </div>
+
+            <div class="image-container" id="lucci">
+                <nav>
+                    <h1>Rob Lucci </h1>
+                    <p class="image-description">
+                        Name: Rob Lucci<br>
+                        Card ID: op03-092<br>
+                        Type:CP9<br>
+                        Card Category: character <br>
+                        Effect:[On Play] You may return 2 cards with a type including "CP" from your trash to the bottom
+                        of your deck in any order: This Character gains Rush for the turn <br>
+                        Product: Pillars of Strength [OP-03]<br>
+                        Color: Black <br>
+                        Rarity: Super Rare <br>
+                        Cost: 6<br>
+                        Power: 7000 <br>
+                        Attribute: Strike<br>
+                    </p>
+                </nav>
+                <img src=https://onepiece-cardgame.dev/images/cards/OP03-092_c532a4_jp.jpg width="200" height="auto"
+                    onClick="window.open(this.src)" role="button" tabIndex="0 " TagName="lu" />
+                <p>Prezzo: $24</p>
+                <button onclick="addToCart('Rob Lucci', 24)">Aggiungi al carrello</button>
+            </div>
+
+            <div class="image-container" id="big mom">
+                <nav>
+                    <h1>Charlotte Linlin </h1>
+                    <p class="image-description">
+                        Name: Charlotte Linlin<br>
+                        Card ID: op03-114<br>
+                        Type:The Four Emperors / Big Mom Pirates<br>
+                        Card Category: character <br>
+                        Effect:[On Play] If your Leader has the {Big Mom Pirates} type, place up to 1 card from the top
+                        of your deck at the top or bottom of your Life. Then, trash up to 1 card from the top of your
+                        opponent's Life. <br>
+                        Product: Pillars of Strength [OP-03]<br>
+                        Color: Yellow <br>
+                        Rarity: Super Rare <br>
+                        Cost: 10<br>
+                        Power: 12000 <br>
+                        Attribute: Special<br>
+                    </p>
+                </nav>
+                <img src=https://onepiece-cardgame.dev/images/cards/OP03-114_bd90ec_jp.jpg width="200" height="auto"
+                    onClick="window.open(this.src)" role="button" tabIndex="0 " TagName="bm" />
+                <p>Prezzo: $32</p>
+                <button onclick="addToCart('Charlotte LinLin', 32)">Aggiungi al carrello</button>
+            </div>
+
+            <div class="image-container" id="kata">
+                <nav>
+                    <h1>Charlotte Katakuri</h1>
+                    <p class="image-description">
+                        Name: Charlotte Katakuri<br>
+                        Card ID: op03-123<br>
+                        Type: Big Mom Pirates<br>
+                        Card Category: character <br>
+                        Effect:[On Play] Put up to 1 Character that costs 8 or less on the top or bottom of its owner's
+                        Life Area face-up. <br>
+                        Product: Pillars of Strength [OP-03]<br>
+                        Color: Yellow <br>
+                        Rarity: Super Rare <br>
+                        Cost: 8<br>
+                        Power: 8000 <br>
+                        Attribute: Strike<br>
+                    </p>
+                </nav>
+                <img src=https://onepiece-cardgame.dev/images/cards/OP03-123_698ba5_jp.jpg width="200" height="auto"
+                    onClick="window.open(this.src)" role="button" tabIndex="0 " TagName="kt" />
+                <p>Prezzo: $26</p>
+                <button onclick="addToCart('Charlotte Katakuri', 26)">Aggiungi al carrello</button>
+            </div>
+
+            <div class="image-container" id="soge">
+                <nav>
+                    <h1>Sogeking</h1>
+                    <p class="image-description">
+                        Name: Sogeking<br>
+                        Card ID: op03-122<br>
+                        Type: Sniper Island<br>
+                        Card Category: character <br>
+                        Effect:This Character is also called "Usopp"
+                        [On Play] Return a Character that costs 6 or less to their owner's hand. Then, draw 2 cards and
+                        trash 2 cards.<br>
+                        Product: Pillars of Strength [OP-03]<br>
+                        Color: blue <br>
+                        Rarity: Secret Rare <br>
+                        Cost: 7<br>
+                        Power: 6000 <br>
+                        Attribute: Ranged<br>
+                    </p>
+                </nav>
+                <img src=https://onepiece-cardgame.dev/images/cards/OP03-122_9408fa_jp.jpg width="200" height="auto"
+                    onClick="window.open(this.src)" role="button" tabIndex="0 " TagName="kg" />
+                <p>Prezzo: $300</p>
+                <button onclick="addToCart('Sogeking', 300)">Aggiungi al carrello</button>
+            </div>
+
+        </div>
+    </div>
+
+
+</body>
+<link rel="stylesheet" href="Progetto.css">
+<script src="ProgettoPersonale.js">
+</script>
+
+</html>

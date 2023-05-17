@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <link rel="stylesheet" href="../css/css.css">
+    <script src="../javascript/addPokemon.js"></script>
+</head>
+<body>
+        <section id="corpo">
+            <nav>
+                <h1>Pokédex</h1>
+                <ul>
+                    <li><a href="#">My pokémons</a></li>
+                    <li><a href="#">New Pokémon</a></li>
+                    <li><a href="#">Info</a></li>
+                </ul>
+            </nav>
+            <aside>
+                <section id="elencoNomi">
+                </section>
+                <section id="formPokemon">
+                    <h2>Insert new</h2>
+                    <label for="pokemonName">Pokémon Name: <input type="text" name="pokemonName" id="pokemonName" placeholder="e.g. Pikachu"></label>
+                    <section>
+                        <label for="captured">Captured<input type="checkbox" name="captured" id="captured" value="captured"></label>
+                        <label for="level">Level: <input type="number" name="level" id="level"></label>
+                    </section>
+                    <label for="imgUrl">Image Url: <input type="text" name="imgUrl" id="imgUrl" placeholder="Enter image URL"></label>
+                    <label for="pokemonDescription">Description: <textarea name="pokemonDescription" id="pokemonDescription" cols="30" rows="10" placeholder="Enter description"></textarea></label>
+                    <button type="button" id="creaPokemon" onclick="takeFormInputs()">Add Pokémon</button>
+                </section>
+            </aside>
+            <article id="main">
+                <label for="sort" id="sortPokemon">Vedi soltanto i Pokémon catturati<input type="checkbox" name="sort" id="sort" value="sort" onclick="sortCaptured()"></label>
+                <section id="elencoPokemon">
+                </section>
+            </article>
+        </section>
+</body>
+</html>
