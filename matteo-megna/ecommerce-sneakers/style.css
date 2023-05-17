@@ -144,15 +144,70 @@ button { cursor: pointer; }
 
 
 
+
+
+/*--------------------CARRELLO VUOTO--------------------*/
+#emptyCart{
+    display: none;
+    text-align: center;
+    margin-top: 2%;
+}
+
+.emptyCartImg{
+    width: 25%;
+    margin-top: 2%;
+    margin-bottom: 3%;
+}
+
+.buttonHomeEmptyCart{
+    background-color: #FF1616;
+    border-radius: 5px;
+    border: none;
+}
+
+.buttonHomeEmptyCart:hover{
+    background-color: green;
+}
+
+.imgbackHome{
+    margin-top: 4px;
+    margin-right: 1px;
+    width: 20px;
+}
+
+.messageEmptyCart{
+    display: inline;
+    font-family: 'Montserrat';
+    margin-left: 0.5%;
+}
+
+
+
+
+
+
+
+
+
 /*------------------TABELLA CARRELLO------------------*/
 #carrello{
     display: none;
 }
 
-td, th {
-    border: 1px solid #dddddd;
-    padding: 10px;
+#carrello div{
+    margin-top: 2%;
+    width: 70%;
+    margin-left: 15%;
 }
+
+
+table td,table th {
+    border-style: none;
+    padding: 10px;
+    font-family: 'Montserrat';
+}
+
+
 
 .headTableImg, .headTableProduct, .headTablePrice{
     font: bold;
@@ -163,10 +218,55 @@ table{
     margin: auto;
     margin-top: 50px;
     width: 70%;
+    text-align: center;
+    
+}
+
+.headTable{
+    margin-top: 2%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.09);
+}
+
+#totalText, #totalPrice{
+    font-weight: bold;
+}
+
+.tableCart{
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.09);
+}
+
+.tableCart tr:hover{
+    background-color: #dddddd;
+    border-radius: 10px;
+}
+
+.buttonDelete{
+    background-color: green;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    margin-bottom: 7px;
+    border: 0.5px solid green;
+}
+
+.buttonDelete:hover{
+    background-color: #FF1616;
+    border: 2px solid #FF1616;
+}
+
+.deleteImg{
+    margin-top: 4px;
+    margin-right: 1px;
+    width: 25px;
+    
 }
 
 .imgNelTD{
-    width: 200px;
+    width: 150px;
 }
 
 .imgTD{

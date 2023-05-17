@@ -3,6 +3,7 @@
     <head>
         <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
         <link href="style.css" rel="stylesheet" type="text/css">
+        <title>My Sneakers Shop</title>
     </head>
     <body>
         <nav>
@@ -17,20 +18,28 @@
         <section id="collection">
         
         </section>
+
+        <section id="emptyCart"></section>
+
         <section id="carrello">
+            <div>
+                <button class='buttonHomeEmptyCart' onclick='backHome()'><img class='imgbackHome' src='immagini/back-arrow.png'></button>
+                <h1 class='messageEmptyCart'> HOME </h1>
+            </div>
             <table class="headTable">
                 <tr>
                     <td id="totalText">TOTALE</td>
                     <td id="totalPrice"></td>
                 </tr>
             </table>
-            <table id="tableCart">
+
+            <!--<table id="tableCart">
                 <tr>
                     <th class="headTableImg">IMG</th>
                     <th class="headTableProduct">PRODUCT</th>
                     <th class="headTablePrice">PRICE</th>
                 </tr>
-            </table>
+            </table>-->      
         </section>
           
         
@@ -39,6 +48,6 @@
         <br>
         <br>
        
-
+        
     </body>
 </html>
