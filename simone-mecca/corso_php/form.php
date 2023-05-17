@@ -6,7 +6,7 @@ $inputmail = "";
 $inputbodymail = "";
 $inputselect = 1;
 
-$arrayselect = [
+$arrayselect = [ 
     "1" => "UNO",
     "2" => "DUE",
     "3" => "TRE"

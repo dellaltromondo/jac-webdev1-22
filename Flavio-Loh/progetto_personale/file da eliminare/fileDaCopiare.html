@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>carrello</title>
+<link rel="stylesheet" type="text/css" href="../css/carrello.css">
+</head>
+<body id="Body_Carrello">
+<nav id="nav_primaria">
+<a href="../ProgettoPersonale.html" id="Title">
+<h1>
+Foodspring
+</h1>
+</a>
+</nav>
+<nav id="nav_secondaria">
+<a href="../ProgettoPersonale.html">
+<img id="imageBack" src="../images/Freccia_sinistra.png"> Torna indietro
+</a>
+</nav>
+<section id="Carrello">
+<h2>Il tuo carrello</h2>
+<div id="cart-container">
+<div id="left-section">
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Quantità</th>
+<th>Prezzo</th>
+<th>Azione</th>
+</tr>
+</thead>
+<tbody id="cart-items">
+</tbody>
+</table>
+</div>
+<div id="right-section">
+<div id="total">
+<h3>Totale:</h3>
+</div>
+<button id="ButtonToPay" onclick="window.location.href='Pagamento.html'">
+Vai al pagamento
+</button>
+</div>
+</div>
+</section>
+<style>
+#imageBack {
+height: 30px;
+width: 30px;
+}
+#nav_primaria {
+background-color: rgb(244, 244, 244);
+height: 50px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-bottom: 2px solid black;
+}
+#Title {
+border: none;
+font-size: 25px;
+color: black;
+text-align: center;
+position: relative;
+left: 45%;
+text-decoration: none;
+}
+#nav_secondaria a {
+border: 2px solid black;
+padding: 5px;
+text-decoration: none;
+color: black;
+font-size: 13px;
+margin: 10px;
+margin-top: 15px;
+margin-bottom: 15px;
+margin-left: 65px;
+display: inline-block;
+background-color: rgb(255, 255, 255);
+}
+#Body_Carrello {
+margin: 0;
+background-color: white;
+}
+#Carrello {
+margin-top: 20px;
+border-collapse: collapse;
+border: 2px solid black;
+border-radius: 10px;
+width: 800px;
+text-align: center;
+display: block;
+margin-left: auto;
+margin-right: auto;
+padding: 20px;
+}
+table {
+margin: 0 auto;
+text-align: center;
+display: block;
+margin-left: auto;
+margin-right: auto;
+}
+th, td {
+text-align: center;
+padding: 5px;
+}
+#cart-container {
+display: flex;
+}
+#left-section {
+flex: 1;
+}
+#right-section {
+flex: 1;
+}
+
+#total {
+text-align: left; /* Modifica la proprietà text-align in "left" */
+margin-bottom: 10px;
+margin-left: 20px; /* Aggiungi un margine sinistro personalizzato */
+}
+
+button {
+margin-top: 20px;
+padding: 10px 20px;
+background-color:lightblue;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+display: block;
+margin-left: auto;
+margin-right: auto;
+}
+button:hover {
+background-color: aliceblue;
+}
+#ButtonToPay {
+margin-top: 20px;
+padding: 10px 20px;
+background-color: lightblue;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+display: inline-block; /* Imposta il display su "inline-block" per posizionarlo di fianco al prezzo */
+margin-left: 20px; /* Aggiungi un margine sinistro per spazio tra il prezzo e il pulsante */
+}
+
+
+</style>
+</body>
+</html>
