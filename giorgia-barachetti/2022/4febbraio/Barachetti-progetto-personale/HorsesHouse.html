@@ -5,8 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--box-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <!--css-->
     <link rel="stylesheet" href="css/body.css">
     <link rel="stylesheet" href="css/header.css">
@@ -18,7 +16,7 @@
     <!--js-->
     <script src="./js/functions.js"></script>
     <script src="./js/cart.js"></script>
-    <title>SHOP</title>
+    <title>T&G SHOP</title>
 </head>
 
 <body>
@@ -26,8 +24,7 @@
     <div id="mainPage">
     <header>
         <nav>
-            
-            <h2>T&G</h2><!--<div> <img id="logoHeader" src="images/img-header/logo2.jpg"></div>-->
+            <h2>T&G</h2>
             <div class="wrapper">
                 <a href="#contactsFooter"><div class="headerOption">CONTACTS</div></a>
                 <button id="AboutUsButton" type="button" class="headerOption" onclick="showAboutUs()">ABOUT US</button>
@@ -45,22 +42,18 @@
             <p id="chooseSaddleTypeTytle">Chose the saddle type</p>
             <div id="chooseSaddleTypeButton">
                 <div class="divMenu">
-                    <!--<img src="images/img-article/img-menu-choose/jump.jpg">-->
                     <a href="#jumping"><button href="#jumping">JUMPING</button></a>
                 </div>
 
                 <div class="divMenu">
-                    <!--<img src="images/img-article/img-menu-choose/dress.webp">-->
                     <a href="#dressage"><button>DRESSAGE</button></a>
                 </div>
 
                 <div class="divMenu">
-                    <!--<img src="images/img-article/img-menu-choose/B182980_F_3.jpg">-->
                     <a href="#trekking"><button>TREKKING</button></a>
                 </div>
 
                 <div class="divMenu">
-                    <!--<img src="images/img-article/img-menu-choose/west.jpg">  -->
                     <a href="#western"><button>WESTERN</button></a>
                 </div>
             </div>
@@ -211,13 +204,7 @@
             </section>
             
         </article>
-<!--BOT TALKS
-    <section id="boxWrite">
-        <div>
-            <span class="material-symbols-outlined" onclick="showBox()">keyboard</span>
-        </div>
-    </section>
--->
+
 
 
 <!--FOOTER-->
@@ -228,25 +215,25 @@
                     <h2>T&G</h2>
                 </div>
 
-                <div class="x" id="locationFooter"> <!--SEDI-->
+                <div class="x" id="locationFooter">
                     <h1>LOCATION</h1>
                     <p>6100 Old Mayfield Rd, Paducah, KY 42003, USA</p>
                 </div>
 
-                <div class="x" id="contactsFooter"><!--CONTATTI-->
+                <div class="x" id="contactsFooter">
                     <h1>CONTACT US</h1>
                     <p>+1 408 552 6981</p>
                     <p>infohorsehorse@gmail.com</p>
                     <hr>
                 </div>
 
-                <div class="x" id="hourFooter"><!--ORARI-->
+                <div class="x" id="hourFooter">
                     <h1>SCHEDULE</h1>
                     <p>monday - friday</p>
                     <p>from 9:00 to 18:00</p>
                 </div>
 
-                <div class="x" id="socialFooter"><!--SOCIAL-->
+                <div class="x" id="socialFooter">
                     <h1>FOLLOW US ON...</h1>
                     <p><img></p>
                 </div>
@@ -258,21 +245,6 @@
 
     <div id="AboutUsParagraph">
         <button onclick="showHomeFromAboutUs()">HOME</button>
-        
-        
-        <!--
-            
-            <div>
-                <p>
-                    <br>
-                    Our online store offers a wide selection of high-quality saddles for all your riding needs. 
-                    Whether you're a beginner or an experienced rider, we have the perfect saddle for you.
-                    <br><br>
-                    Our website is designed to make your shopping experience as easy and convenient as possible. 
-                    <br><br>
-                    Thank you for choosing our Saddles Shop for all your riding needs. We look forward to serving you!</p></div>
-                </div>
-            -->
             <div id="centerGrid">
                 <h1 id="h1DescriptionWebsite" style="">Welcome to our Saddles Shop website!</h1>
                 <div id="grid">
@@ -286,8 +258,6 @@
                     <div class="divGrid"><img src="images/img-article/img_text/pexels-photo-2123766.jpeg" style="max-width:100%"></div>
                     <div class="divGrid"><img src="images/img-article/img_text/giphy.webp" style="max-width:100%"></div>
                     <div class="divGrid"><p>In addition to saddles, we also offer a range of accessories, such as stirrups, reins, and saddle pads. We're committed to providing our customers with everything they need to enjoy their riding experience to the fullest.</p></div>
-             
-                
                 </div>
             
           </div>
@@ -298,6 +268,7 @@
             
         <button type="button" id="buttonHome" onclick="showHome()">HOME</button>
         <div id="ShoppingCartContainer">
+        
         <section id="sectionCart">
             <div>
                 <h2>YOUR SHOPPING CART</h2>
@@ -320,27 +291,49 @@
             <section id="containerFormCostumer">
               <section>
 
-                  <br>
-                  <div>
-                      
-                      <label class="label">Name: <input class="g" id="name" type="text" placeholder="Donald"></label>
-                      <label class="label">Surname: <input class="g" id="surname" type="text" placeholder="Trump" ></label>
-                      <label class="label" style="grid-column: 1/3;">Address: <input class="g" id="address" type="text"placeholder="132, My Street, Kingston" ></label>
-                      <label class="label">E-mail: <input class="g" id="mail" type="email" placeholder="john@example.com" ></label>
-                      <label class="label">Phone number: <input class="g" id="phone" type="tel" placeholder="(555) 555-1234" ></label>
-                    </div>
+                <div id="divGriglia">
+                      <div class="label">
+                          <label for="name">Name: 
+                              <input class="g" id="name" type="text" placeholder="Donald">
+                              <p id="errorName"></p>
+                            </label>
+                      </div>
+
+                      <div class="label">
+                          <label for="surname">Surname: 
+                              <input class="g" id="surname" type="text" placeholder="Trump" >
+                          </label>
+                      </div>
+
+                      <div class="label" id="address">
+                          <label for="address" >Address: 
+                              <input class="g" id="addressInput" type="text"placeholder="132, My Street, Kingston" >
+                            </label>
+                      </div>
+
+                      <div class="label">
+                          <label for="mail">E-mail: 
+                              <input class="g" id="mail" placeholder="john@example.com" >
+                            </label>
+                      </div>
+
+                      <div class="label">
+                          <label for="phone">Phone number: 
+                              <input class="g" id="phone" type="tel" placeholder="(555) 555-1234" >
+                          </label>
+                      </div>
+                </div><!--divGriglia-->
                     
-                    <section>
-                        <br>
-                        <label> <input class="label" id="cond" type="checkbox" >I have read and agree to the Terms of Service and
-                            Privacy Policy</label>
+                    <section id="sectioniterms">
                     </section>
-                        <div id="ButtonVerify">
-                            <button type="button" id="shopButton" onclick="checkInfos()">VERIFY</button>
-                        </div>
+                    <nav id="buttonVerifyCenter">
+                        <label> <input id="cond" type="checkbox">I have read and agree to the Terms of Service and Privacy Policy</label>
+                        <button type="button" class="shopButton" onclick="printAndCheckInfos()">VERIFY</button>
+                            <button type="button" class="shopButton" onclick="enableEdit()">EDIT</button>
+                    </nav>
                         
                         <dl id="dl"></dl><!--userInformations-->
-                </section>  
+                    </section>  
             </section><!--containerFormCostumer-->
 
             
@@ -362,33 +355,44 @@
                 
                 <section id="modalForPaymentPaypal">
                     <img src="./images/img-formPayment/paypal.webp" style="height:50px">
-                    <p style="margin:5px; padding: 10px; border-top:1px solid black; border-bottom:1px solid black;background-color:#50bbea29; ">Hi! To continue the order you must choose the payment method</p>
-                    <div style="padding:5px; display:flex; flex-direction:row; align-items: center;">
-                        <label for="account1"><input onclick="decidePayment()" name="mastercard" type="radio" value="paypal" id="mastercard"> </label>
+                    <p style="margin:5px; padding: 10px; border-top:1px solid black; border-bottom:1px solid black;background-color:#50bbea29; ">To continue the order you must choose the payment method</p>
+                    
+                    <div class="hover">
+                      <button type="button" class="containerPaypalPayment" onclick="paymentMastercard()">
                         <img src="./images/img-formPayment/MasterCard_Logo.svg.png" style="width:50px">
                         <div style="padding-left:10px"><p>Mastercard</p><p>Credit ••••7845</p></div>
+                      </button>
                     </div>
-                    <div style="padding:5px; display:flex; flex-direction:row; align-items: center;">
-                        <label for="account2"><input  name="mastercard" type="radio" value="paypal" id="mastercard"> </label>
+                    
+                    <div class="hover">
+                      <button type="button" class="containerPaypalPayment" onclick="paymentBank()">
                         <img src="./images/img-formPayment/partnersandsponsors_bankofamerica.jpg" style="width:50px">
                         <div style="padding-left:10px"><p>Bank of America</p><p>Credit ••••1639</p></div>
+                      </button>
                     </div>
-                    <button id="buttonSendPaypal">SEND</button>
+                    <div style="display:flex; justify-content: center;"><p id="response1" style="display:none;font-weight: bold; ">Paid with Mastercard</p></div>
+                    <div style="display:flex; justify-content: center;"><p id="response2" style="display:none;font-weight: bold;">Paid with Bank of America</p></div>
                 </section>
-
+                
                 <section id="modalForPaymentVisa"  >
-                    <img src="./images/img-formPayment/visa.png"  style="height:50px">
-                    <div style="display: flex; flex-direction: column">
-                        <label>Card number</label>
-                        <input placeholder="1588 5555 9562 7865">
-                        <label >Expiration Date</label>
-                        <input type="date">
-                        <label>CVV</label>
-                        <input placeholder="84">
-                    </div>
-                    <button id="buttonSendVisa">SEND</button>
+                  <img src="./images/img-formPayment/visa.png"  style="height:50px">
+                  <div style="display: flex; flex-direction: column">
+                    <label>Card number</label>
+                    <input id="cardNumber" placeholder="1588 5555 9562 7865">
+                    <label >Expiration Date</label>
+                    <input id="expirationDate" type="date">
+                    <label>CVV</label>
+                    <input id="cvv" placeholder="84">
+                  </div>
+                  <button id="buttonSendVisa" type="button" onclick="getDataVisa()">SEND</button>
+                  <button id="buttonSendVisa" type="button" onclick="changeDataVisa()">EDIT</button>
+                  <dl id="dlPay"></dl>
                 </section>
-            </div>
+              </div>
+              <div style=" display:flex;flex-direction: column; justify-content: center;align-items: center;">
+                  <button style="width:20%; margin:10px" id="lastButtonBye" type="button" onclick="continueLast()">CONTINUE</button>
+              </div>
+              
             </section> <!--containerformPayment-->
             </div>
             

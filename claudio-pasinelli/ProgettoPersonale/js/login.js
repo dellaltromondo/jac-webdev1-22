@@ -3,6 +3,7 @@ let utenteEsistente = false;
 
 let compositoreNonEsistente = false;
 let utenteNonEsistente = false;
+
 class User
 {
     idUser
@@ -316,7 +317,6 @@ async function controllaUser(email, nome, cognome, password, tipo)
                             localStorage.setItem("idUser", idUser);
                             compositoreEsistente = true;
                             compositoreNonEsistente = false;
-                            idUser = responseJson[i].idUser;
                             break;
                         }
                         
@@ -326,7 +326,6 @@ async function controllaUser(email, nome, cognome, password, tipo)
                             localStorage.setItem("idUserNonCompositore", idUser);
                             utenteEsistente = true;
                             utenteNonEsistente = false;
-                            idUser = responseJson[i].idUser;
                             break;
                         }
 

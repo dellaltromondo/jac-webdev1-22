@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Pokédex</title>
+</head>
+
+<body>
+
+    <header>
+        <nav id="navbar">
+            <h1>Pokédex</h1>
+            <a href="info">Info</a>
+            <a href="">New Pokémon</a>
+            <a href="">My Pokémons</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section class="sidebar">
+            <ul>
+                <li>
+                    <button>Pickachu</button>
+                </li>
+                <li>
+                    <button>Charmender</button>
+                </li>
+                <li>
+                    <button>Squirtle</button>
+                </li>
+                <li>
+                    <button>Bulbasaur</button>
+                </li>
+            </ul>
+
+            <h2>Insert New</h2>
+            <form>
+                <label for="txt-pokemon">Pokémon Name:</label>
+                <input type="text" name="" id="txtPokemon" class="txt-pokemon" placeholder="e.g. Pikachu">
+
+                <input type="checkbox" id="checkCapture">
+                <label for="checkCapture">Captured</label>
+
+                <label for="numberLevel">Level:</label>
+                <input type="number" id="numberLevel" min="1" max="100">
+
+                <label for="txtImage">Image URL:</label>
+                <input type="text" name="" id="txtImage" class="txt-image" placeholder="Enter image URL">
+
+                <label for="txtDescription">Description:</label>
+                <input type="text" name="" id="txtDescription" class="txt-description" placeholder="Enter description">
+
+                <button id="addPokemon">Add Pokémon</button>
+            </form>
+        </section>
+
+        <section class="main-content">
+            <div class="grid-container" id="contenitore">
+                <article class="grid-item">
+                    <img src="./images/Pikachu.png" alt="Pickachu" class="pokemon-image">
+                    <h3>Pikachu</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam est necessitatibus, vero ab
+                        eos recusandae reiciendis tempora? Nesciunt necessitatibus aliquid id ab, adipisci commodi
+                        mollitia nisi impedit, dolore rerum excepturi.</p>
+                </article>
+                <article class="grid-item">
+                    <img src="./images/Charmander.png" alt="Charmander" class="pokemon-image">
+                    <h3>Charmander</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque, ratione laboriosam neque minus
+                        architecto nobis quidem quod fuga totam quasi, modi voluptatum nulla, reiciendis eligendi hic
+                        quis itaque accusamus labore.</p>
+                </article>
+                <article class="grid-item">
+                    <img src="./images/Squirtle.png" alt="Squirtle" class="pokemon-image">
+                    <h3>Squirtle</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus placeat iusto quod
+                        accusantium eius natus omnis et sunt porro dolor, quaerat officia dicta sed, delectus adipisci
+                        ipsa ut error? Distinctio.</p>
+                </article>
+                <article class="grid-item">
+                    <img src="./images/Bulbasaur.png" alt="Bulbasaur" class="pokemon-image">
+                    <h3>Squirtle</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis deleniti possimus dolores
+                        aspernatur fuga minus voluptates perspiciatis a maiores quos vel natus, unde, facilis et,
+                        aperiam at omnis est aliquam.</p>
+                </article>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <p>Created By Prof. Bonzi</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

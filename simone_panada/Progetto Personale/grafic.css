@@ -1,15 +1,29 @@
 body 
 {
-    background-image: url("./img/bluebg.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed; /* Imposta l'immagine di sfondo come fissata sulla finestra del browser */
-    max-width: 100%;
-    overflow-x: hidden;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #ccffff;
+    margin: 0;
+    padding: 0;
 }
-  
-  
-  
+
+header 
+{
+    background-color: #3399ff;
+    border-bottom: 1px solid #222;
+}
+
+form 
+{
+    background-color: #3399ff;
+    border: 1px solid black;
+    border-radius: 7px;
+}
+
+li 
+{
+    border-radius: 7px;
+    background-color: #3399ff;
+}
 
 @media (max-width:960px) {
 
@@ -24,7 +38,10 @@ body
     }
 
     #TitleMobile {
-        text-align: center;                                                                                                                                                            
+        margin: 0;
+        padding: 0;
+        position: relative;
+        text-align: center;                                                                                                                                                       
     }
 
     #Instructions {
@@ -32,6 +49,7 @@ body
     }
 
     form {
+        margin-top: 5px;
         text-align: center;
     }
 
@@ -39,10 +57,15 @@ body
         text-align: center;
     }
 
+    #Refresh
+    {
+        text-align: center;
+    }
+
     li {
         text-align: center;
         list-style-type: none;
-        border-bottom: 2px solid #996633;
+        border-bottom: 1px solid black;
     }
 
     p {
@@ -50,7 +73,7 @@ body
     }
 
     #rolls {
-        border-bottom: 2px solid #996633;
+        border-bottom: 2px solid #222;
     }
 
     #DiceRolls {
@@ -67,7 +90,9 @@ body
 
     input 
     {
-      background-color: white;
+        border-radius: 7px;
+        background-color: white;
+        border: 0;
     }
 
 }
@@ -86,6 +111,9 @@ body
     
     #TitleDesktop
     {
+        margin: 0;
+        padding: 0;
+        position: relative;
         text-align: center;
     }
 
@@ -96,6 +124,7 @@ body
 
     #rolls, form 
     {
+        margin-top: 16px;
         float: left;
         width: 35%;
     }
@@ -106,7 +135,6 @@ body
         padding-left: 5%;
         padding-right: 5%;
         padding-bottom: 5%;
-        border: 2px solid #996633;
     }
 
     #rolls
@@ -131,7 +159,7 @@ body
     li {
         text-align: center;
         list-style-type: none;
-        border: 2px solid #996633;
+        border: 1px solid black;
         margin-bottom: 5px;
     }
 
@@ -140,15 +168,173 @@ body
         height: 2rem;
         width: 4rem;
         border: 0px;
+        border-radius: 7px;
+    }
+
+    #Refresh
+    {
+        text-align: center;
+        height: 2rem;
+        width: 4rem;
+        border: 0px;
+        border-radius: 7px;
     }
 
     #RollIt:hover 
     {
-        background-color: orangered;
+        background-color:#0033cc;
+    }
+    
+    #Refresh:hover
+    {
+        background-color:#0033cc;
     }
 
     input 
     {
+      border-radius: 7px;
       background-color: white;
+      border: 0;
     }
 }
+
+@keyframes rotatedice {
+    0% { transform: translate(-50%, -70%) rotateX(60deg) rotateZ(0); }
+    100% { transform: translate(-50%, -70%) rotateX(60deg) rotateZ(360deg); }
+  }
+  
+  @keyframes updatecolor {
+    0%, 100% { background-color: #eee; }
+    49.9999% { background-color: #e8e8e8; }
+    50% { background-color: #f8f8f8; }
+  }
+  
+  @keyframes rotatefacea {
+    0%, 24.9999%, 75%, 100% { 
+      transform: rotateX(90deg);
+      transform-origin: 50% 100%;
+      background-image:
+        radial-gradient(circle at 25% 25%, #222 0.5vmin, #0000 0),
+        radial-gradient(circle at 25% 50%, #222 0.5vmin, #0000 0),
+        radial-gradient(circle at 25% 75%, #222 0.5vmin, #0000 0),
+        radial-gradient(circle at 75% 25%, #222 0.5vmin, #0000 0),
+        radial-gradient(circle at 75% 50%, #222 0.5vmin, #0000 0),
+        radial-gradient(circle at 75% 75%, #222 0.5vmin, #0000 0)
+      ;
+    }
+    25%, 74.9999% { 
+      transform: rotateX(-90deg);
+      transform-origin: 50% 0%;
+      background-image:
+        radial-gradient(circle at 50% 50%, #222 0.5vmin, #0000 0)
+      ;
+    }
+  }
+  
+  @keyframes rotatefaceb {
+    0%, 24.9999%, 75%, 100% { 
+      transform: rotateY(90deg);
+      transform-origin: 0% 50%;
+      background-image:
+        radial-gradient(circle at 75% 25%, #222 0.5vmin, #0000 0),
+        radial-gradient(circle at 50% 50%, #222 0.5vmin, #0000 0),
+        radial-gradient(circle at 25% 75%, #222 0.5vmin, #0000 0)
+      ;
+    }
+    25%, 74.9999% { 
+      transform: rotateY(-90deg);
+      transform-origin: 100% 50%;
+      background-image:
+        radial-gradient(circle at 25% 25%, #222 0.5vmin, #0000 0),
+        radial-gradient(circle at 75% 25%, #222 0.5vmin, #0000 0),
+        radial-gradient(circle at 25% 75%, #222 0.5vmin, #0000 0),
+        radial-gradient(circle at 75% 75%, #222 0.5vmin, #0000 0)
+      ;
+    }
+  }
+  
+  .dice {
+    animation: rotatedice 10s linear infinite;
+    width: 5vmin;
+    height: 5vmin;
+    background: #eee;
+    position: absolute;
+    transform: translate(-50%, -70%) rotateX(60deg);
+    background-image:
+      radial-gradient(circle at 25% 25%, #222 0.5vmin, #0000 0),
+      radial-gradient(circle at 25% 75%, #222 0.5vmin, #0000 0),
+      radial-gradient(circle at 75% 25%, #222 0.5vmin, #0000 0),
+      radial-gradient(circle at 75% 75%, #222 0.5vmin, #0000 0),
+      radial-gradient(circle at 50% 50%, #222 0.5vmin, #0000 0)
+      ;
+    background-color: #fff;
+    transform-style: preserve-3d;
+    box-shadow: inset 0 0 5vmin #0001;
+    margin-top: 1rem; 
+  }
+  
+  
+  .dice::before {
+    animation: 
+      rotatefacea 10s linear infinite,
+      updatecolor 5s linear infinite
+    ;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(circle at 25% 25%, #222 0.5vmin, #0000 0),
+        radial-gradient(circle at 25% 50%, #222 0.5vmin, #0000 0),
+        radial-gradient(circle at 25% 75%, #222 0.5vmin, #0000 0),
+        radial-gradient(circle at 75% 25%, #222 0.5vmin, #0000 0),
+        radial-gradient(circle at 75% 50%, #222 0.5vmin, #0000 0),
+        radial-gradient(circle at 75% 75%, #222 0.5vmin, #0000 0)
+      ;
+    background-color: #eee;
+    transform: rotateX(90deg);
+    box-shadow: inset 0 0 5vmin #0001;
+  }
+  
+  .dice::after {
+    animation: 
+      rotatefaceb 10s linear infinite,
+      updatecolor 5s linear infinite
+    ;
+    animation-delay: -2.5s, -2.5s;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(circle at 75% 25%, #222 vmin, #0000 0),
+        radial-gradient(circle at 50% 50%, #222 2vmin, #0000 0),
+        radial-gradient(circle at 25% 75%, #222 2vmin, #0000 0)
+      ;
+    background-color: #eee;
+    transform: rotateX(90deg);
+    box-shadow: inset 0 0 5vmin #0001;
+  }
+  #dice1
+  {
+    top: 5%;
+    left: 35%;
+  }
+
+  #dice2
+  {
+    top: 5%;
+    left: 65%;
+  }
+
+
+
+  
+
+  

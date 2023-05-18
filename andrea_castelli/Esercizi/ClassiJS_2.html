@@ -1,0 +1,101 @@
+<html>
+    <head>
+        <title>Esercizio classi</title>
+    </head>
+
+    <body>
+       <script>
+
+            class Users
+            {
+                #id;
+                #username;
+                #name;
+                #surname;
+                #profilePicture="";
+                #status="";
+
+                constructor(id, u, n, sn, pp, s)
+                {
+                    this.#id=id;
+                    this.#username=u;
+                    this.#name=n;
+                    this.#surname=sn;
+                    this.#profilePicture=pp;
+                    this.#status=s;
+                }
+
+                changeProfilePicture(newProfilePicture)
+                {
+                    this.#profilePicture=newProfilePicture;
+                }
+
+                changeDisplayName(newName)
+                {
+                    if(newName.length<5)
+                    {
+                        throw new Error("Cannot put name shorter than 5 characters");
+                    }
+
+                    else
+                    {
+                        this.#username=newName;
+                    }
+                }
+            }
+
+            class Message
+            {
+                #id;
+                #sender;
+                #receiver;
+                #Timestamp;
+
+                constructor(id, s, r, Ts)
+                {
+                    this.#id=id;
+                    this.#sender=s;
+                    this.#receiver=r;
+                    this.#Timestamp=Ts;
+                }
+
+                getTimeStamp()
+                {
+                    return this.#Timestamp;
+                }
+                getSender()
+                {
+                    return this.#sender;
+                }
+                getReceiver()
+                {
+                    return this.#receiver;
+                }
+            }
+
+            class Chat
+            {
+                #messageList;
+                #user;
+
+                constructor(mL, u)
+                {
+                    this.#messageList=mL;
+                    this.#user=u;
+                }
+            }
+
+
+
+            const newMessage=new Message("Me", "You");
+            console.log(newMessage.getTimeStamp());
+            console.log(newMessage.getSender());
+            console.log(newMessage.getReceiver());
+
+            const me=new Users("12345", "XxxMarioRossi2000xxX", "Mario", "Rossi");
+            console.log(me);
+            me.changeDisplayName("Lebron James");
+            console.log(me);
+       </script>
+    </body>
+</html>

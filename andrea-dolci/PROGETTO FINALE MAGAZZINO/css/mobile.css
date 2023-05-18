@@ -1,21 +1,18 @@
 /*MOBILE*/
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
 @media (max-width : 670px){
     
-    button{
+    .btnLogin{
         width: 28em;
     }
 
-    header h1, #aliExpress header i, #amazon header i, #barilla header i{
-        font-size: medium;
+    header h1, #aliExpress header i, #amazon header i, #barilla header i {
+        font-size: 2.5ch;
     }
-    
-}
 
-/*MOBILE SMALLER, per ridurre le dimensioni del testo e del tasto home*/
-@media (max-width : 584px){
-    
-    header h1, #aliExpress header i, #amazon header i, #barilla header i{
-        font-size: small;
+    #orderAliExpress button, #orderAmazon button, #orderBarilla button {
+        display: block;
+        width: 350px;
     }
     
 }

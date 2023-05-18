@@ -5,11 +5,13 @@
         <link rel="stylesheet" href="grafic.css">
     </head>
     <body>
-        <h1 id="TitleMobile" class="only-mobile">Dice Roller for Mobile!</h1>
-        <h1 id="TitleDesktop" class="only-desktop">Dice Roller for PC!</h1>
-        <h2 id="Instructions">Let's get started! Insert the player's name and 
-            select the amount of dices wanted. Then click "Roll it!" to get your nice random results!
-             Have fun!</h2>
+        <header>
+            <h1 id="TitleMobile" class="only-mobile"><div class="dice" id="dice1"></div>Dice Roller for Mobile!<div class="dice" id="dice2"></div></h1>
+            <h1 id="TitleDesktop" class="only-desktop"><div class="dice" id="dice1"></div>Dice Roller for PC!<div class="dice" id="dice2"></div></h1>
+            <h2 id="Instructions">Let's get started! Insert the player's name and 
+                select the amount of dices wanted. Then click "Roll it!" to get your nice random results!
+                Have fun!</h2>
+        </header>
         <form>
             <label>PLAYER NAME: <input id="inpName" type="text" placeholder="Player n.1" type="text"></label><br><br>
             <label>Choose your dice flavour! Number of sides desired: <input id="inpDice" list="sidenumbers" name="sidenumber">
@@ -24,13 +26,10 @@
                 </datalist>
             </label><br><br>
             <label>Choose how many dices you want to roll: <input id="inpDicesNumber" type="number" min="1" max="25"></label><br><br>
-            <button id="RollIt">Roll it!</button><br><br>
-            <form>
-                <label>Get only the rolls you want! <input id="selectPlayer" type="text" placeholder="Player Name"></label>
-                <button id="GetEmAll">Get The Rolls!</button>
-            </form>
+            <button id="RollIt">Roll it!</button>
+            <span style="visibility: hidden;"></span>
+            <button id="Refresh">Refresh</button>
         </form>
-        <button id="Refresh">Refresh</button>
         <div>
             <ul id="DiceRolls"></ul>
         </div>

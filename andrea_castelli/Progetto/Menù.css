@@ -1,0 +1,51 @@
+div
+{
+    float: left;
+    padding-left: 75px;
+    width: 594px;
+    height: 220px;
+}
+
+img
+{
+    padding-top: 15px;
+    float: left;
+    width: 250px;
+    height: 192px;
+    border-radius: 30px;
+}
+
+h2
+{
+    padding-top: 85px;
+    padding-left: 260px;
+}
+
+#sec
+{
+    padding: 0;
+    margin: 0;
+}
+.ingredienti
+{
+    padding-left: 260px;
+}
+.prezzo
+{
+    padding-left: 550px;
+}
+
+footer
+{
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    position: absolute;
+    width: 100%;
+}
+footer p
+{
+    text-align: center;
+    font-size: 24px;
+    color: white;
+}

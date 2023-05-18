@@ -123,7 +123,7 @@ public class CartaService
 	{
 		List<Carta> result = new ArrayList<>();
 		
-		log.debug("Estrazione lista completa dei Carta");
+		log.debug("Estrazione lista completa delle Carte");
 		
 		result.addAll(this.dao.findAll());
 		

@@ -1,0 +1,42 @@
+body
+{
+    overflow-x: hidden;
+}
+
+#drink div
+{
+    display: inline-block;
+    width: 500px;
+    height: 320px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 200px;
+}
+
+#drink div img
+{
+    float: left;
+    width: auto;
+    max-width: 154px;
+    height: 300px;
+    border-radius: 20px;
+}
+
+#drink section
+{
+    width: 200px;
+    height: auto;
+    float: right;
+    padding-right: 100px;
+}
+
+hr
+{
+    width: 100%;
+}
+
+#drink h2
+{
+    padding-left: 20px;
+    padding-top: 10px;
+}
