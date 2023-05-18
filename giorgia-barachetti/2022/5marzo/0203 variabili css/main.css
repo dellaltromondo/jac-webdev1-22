@@ -1,0 +1,37 @@
+:root{
+  --main-color: violet;
+}
+
+body {
+    padding: 2em;
+}
+
+p {
+  font-size: 20px;
+  color: red;
+}
+
+article {
+  column-count: 3;
+  column-gap: 3em;
+}
+
+/* TABLET */
+@media (max-width: 960px) {
+  p {
+    color: var(--main-color);
+  }
+  article {
+    column-count: 2;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  p {
+    color: pink;
+  }
+  article {
+    column-count: 1;
+  }
+}

@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="post.css">
+        <script src="post.js"></script>
+    </head>
+
+    <body>
+
+        <div id="paginePost">
+            <div style="z-index: 1">
+                <button onclick="mostraPost(post1)">post1</button>
+                <button onclick="mostraPost(post2)">post2</button>
+                <button onclick="mostraPost(post3)">post3</button>
+                <button onclick="mostraPost(post4)">post4</button>
+                <button onclick="mostraPost(post5)">post5</button>
+                <button onclick="mostraPost(post6)">post6</button>
+            </div>
+
+            <div id="grid" style="display: none">
+                <div id="divPost">
+                    <img id="imgPost">
+                </div>
+                <div id="divMiPiace">
+                    <div id="cuore">
+                        <img onclick="mostraCuoreRosa()" id="cuoreNero" src="altreIcone/icons8-cuori-100 (1).png">
+                        <img onclick="mostraCuoreNero()" id="cuoreRosa" src="altreIcone/icons8-cuori-100.png">
+                    </div>
+                    <div id="commenta">
+                        <img id="iconaCommenta1" onclick="mostraAggiungiCommento()"
+                            src="altreIcone/icons8-commenti-100.png">
+                        <img id="iconaCommenta2" onclick="nascondiAggiungiCommento()"
+                            src="altreIcone/icons8-commenti-100.png">
+                    </div>
+                    <div id="condividi">
+                        <img src="altreIcone/icons8-aereo-di-carta-100.png">
+                    </div>
+                    <div id="vuoto"></div>
+                    <div id="salva">
+                        <img onclick="mostraSalvaRosa()" id="salvaNero" src="altreIcone/icons8-aggiungi-100.png">
+                        <img onclick="mostraSalvaNero()" id="salvaRosa" src="altreIcone/icons8-aggiungi-100 (1).png">
+                    </div>
+                </div>
+                <div id="divPiaceA">
+                    <p class="piaceA"> Piace a </p>
+                    <p class="piaceA bold" id="pPrimaMiPiace"></p>
+                    <p class="piaceA bold" id="pDopoMiPiace"></p>
+                    <p class="piaceA bold"> persone </p>
+                </div>
+                <div id="divBioPost">
+                    <p id="nomePiccolo">cristiano</p>
+                    <img src="altreIcone/icons8-verificato (1).svg">
+                    <p id="testoBioVero"></p>
+                </div>
+
+                <div id="divCommentoNuovo">
+                    <div id="divCommentoNuovo_icona">
+                        <img id="iconaEmoticon" src="altreIcone/icons8-emoticon-96.png">
+                    </div>
+                    <div id="divCommentoNuovo_input">
+                        <input id="inputCommentoNuovo" onclick="nascondiBordo()" placeholder=" Aggiungi un commento...">
+                    </div>
+                    <div id="divCommentoNuovo_pubblica">
+                        <button id="buttonPubblica" onclick="creaCommento()">Pubblica</button>
+                    </div>
+                </div>
+                <ul id="divTuttiCommenti">
+                </ul>
+            </div>
+        </div>
+
+    </body>
+
+</html>

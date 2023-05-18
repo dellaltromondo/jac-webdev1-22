@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TETRIS GAMES WITH JAVASCRIPT</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+    <button id="play-btn">Play Music</button>
+    <audio id="music-player" src="miasong.mp3"></audio>
+      <div class="container2">
+        <img class="image" src="foto/image1.png" onclick="changeBackgroundColor_green()">
+        <img class="image" src="foto/image2.png" onclick="changeBackgroundColor_grey()">
+        <img class="image" src="foto/image3.png" onclick="changeBackgroundColor_red()">
+        </div>
+      
+    <div id="tetris">
+      <div id="info">
+        <div id="next_shape"></div>
+        <p id="level">Level: <span></span></p>
+        <p id="lines">Lines: <span></span></p>
+        <p id="score">Score: <span></span></p>
+        <p id="time">Time: <span></span></p>
+        <button id="start">Start</button>
+        <p class="red">Press the Esc button to pause<span></span></p>
+      </div>
+      <div id="canvas"></div>
+    </div>
+
+  
+    <form>
+        <legend>Inserisci i tuoi dati:</legend>
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required><br><br>
+        <label for="Score">Score:</label>
+        <input type="number" id="Score" name="Score" required><br><br>
+        <button type="button" onclick="aggiungiDati()">Aggiungi alla tabella</button>
+        <button type="button" onclick="saveTableAsTxt()" name="salva">Salva Punteggi</button>
+        <button type="button" onclick="caricadatitxt()" name="carica">Carica Punteggi</button>
+      </form>
+    </form>
+    <table id="tabellaDati">
+    
+          <th>Nome</th>
+          <th>score</th>      
+    </table>
+    
+  
+    
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>

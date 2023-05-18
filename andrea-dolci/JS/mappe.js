@@ -26,8 +26,12 @@ list.forEach(function (elementoCorrente) {
 list.forEach(elementoCorrente => console.log(elementoCorrente));
 /*se ho solo un parametro posso non usare le tonde (come si vede nella riga sopra), se la funzione è un'unica istruzione posso togliere le graffe
 se è un return posso anche non scriverlo. ESEMPIO */
-num => num + 10;
 //è come dichiarare una funzione a cui passiamo num num e in cui c'è il return di num+10
+const funzione = num => num + 10;
+
+
+//come scrivere in modo migliore
+console.log(`ciao ${variabile} sono bla bla`);
 
 //nuova tipologia
 const mappa = new Map();
@@ -38,3 +42,12 @@ mappa.set("p.rossi", "paolo.rossi@gmail.com");
 mappa.set("s.manzoni", "saramazzoni2000.sm@gmail.com");
 
 console.log(mappa.get("p.rossi"));
+
+
+
+
+/* API(Application Programming Interface) serve per fare una get con API
+   fetch(indirizzo url api)
+   una promise è una variabile in cui prima o poi arriva un valore 
+
+   */

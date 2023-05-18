@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+    <title>Document</title>
+</head>
+<body>
+    <section id="factSection"></section>
+        <form>
+            <label>name: <input id="name"> </label>
+            <button type="button" onclick="getGender()">see gender</button>
+        </form>
+        <script >
+            async function getGender(){
+                const name = document.getElementById("name").value;
+                const responses = await fetch(`https://api.genderize.io?name=${name}`);
+                const datas = await responses.json();
+                const counting = datas.count;
+                const gendering = datas.gender;
+
+                
+                document.getElementById("factSection").innerText = gendering;
+            }
+            </script>
+
+</body>
+</html>

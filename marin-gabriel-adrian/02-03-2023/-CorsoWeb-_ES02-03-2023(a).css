@@ -1,0 +1,96 @@
+/*Variabili css*/
+:root{
+    --main-color:red;
+}
+
+/*Tag*/
+p {
+    font-size: 15px;
+    color: var(--main-color);
+}
+
+nav{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+li{
+    background-color:indigo;
+    color:white;
+    margin:3px;
+}
+
+nav button{
+    border-color: var(--main-color);
+}
+
+
+/*Classi*/
+.only-mobile {
+    display: none;
+}
+
+.only-desktop {
+    display: block;
+}
+
+.only-tablet {
+    display: none;
+}
+
+.colonne{
+    columns: auto;
+    columns: 3;
+}
+
+
+/*Media Queries*/
+
+@media (prefers-color-scheme: dark){
+    :root{
+        --main-color:darkred;
+    }
+    body{
+        background-color: grey
+    }
+    
+}
+
+@media (max-width:960px) {
+    .only-mobile {
+        display: none;
+    }
+
+    .only-desktop {
+        display: none;
+    }
+
+    .only-tablet {
+        display: block;
+    }
+
+    .colonne{
+        column-gap: 3em;
+        column-count: 2;
+    }
+}
+
+@media (max-width:600px) {
+    .only-mobile {
+        display: block;
+    }
+
+    .only-desktop {
+        display: none;
+    }
+
+    .only-tablet {
+        display: none;
+    }
+
+    .colonne{
+        column-gap: 3em;
+        column-count: 1;
+    }
+}

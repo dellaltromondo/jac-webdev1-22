@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -64,13 +65,15 @@
 
       puntiPerGiocatore.forEach(
         /* Il forEach per le mappe passa due parametri alla funzione, valore e chiave */
-        (punti /*valore*/, giocatore /*chiave*/) =>
-          console.log(giocatore + " ha fatto " + punti + " punti in carriera")
+        (punti /*valore*/, giocatore /*chiave*/) => {
+          console.log(giocatore + " ha fatto " + punti + " punti in carriera");
+          console.log(`${giocatore} ha fatto ${punti} punti in carriera`);
+        }
       );
 
       // Altri usi delle funzioni freccia
       console.log("Solo i giocatori con piu' di ventimila punti");
-      const piuDiVentimila = giocatori.filter(giocatore => puntiPerGiocatore.get(giocatore) > 20000);
+      const piuDiVentimila = giocatori.filter(giocatore => puntiPerGiocatore.get(giocatore) > 20_000);
       console.log(piuDiVentimila);
 
       console.log("Estraggo il cognome di ogni giocatore");

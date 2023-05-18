@@ -1,0 +1,64 @@
+<html>
+<head>
+    <title>Homepage</title>
+    <link rel="stylesheet" href="../css/esame.css">
+    <script src="../javascript/javascript.js"></script>
+    <div id="topbar">
+        <h2 id="titolo">Pokèdex</h2>
+        <div id="bottoninavigazione">
+        <input type="button" class="bottoni1" value="My Pokèmons"/>
+        <input type="button" class="bottoni1"  value="New Pokèmon"/>
+        <input type="button"  class="bottoni1" value="Info"/>
+    </div>
+   
+</div>
+</head>
+
+<body style="background-color: rgb(232, 229, 229); margin:0 ;">
+    <div id="sidebar">
+        <div id="bottonicerca">
+            <div id="listapokemon">
+                <input type="button" class="bottonepokemon" id="bottonebulbasaur" onclick="mostratutti()"  value="Show all"/>
+                <input type="button" class="bottonepokemon" id="bottonepikachu" onclick="mostrapokemon('pikachu')" value="Pikachu"/><br>
+                <input type="button" class="bottonepokemon" id="bottonecharmander" onclick="mostrapokemon('charmander')"  value="Charmander"/><br>
+                <input type="button" class="bottonepokemon" id="bottonesquirtle" onclick="mostrapokemon('squirtle')"  value="Squirtle"/><br>
+                <input type="button" class="bottonepokemon" id="bottonebulbasaur" onclick="mostrapokemon('bulbasaur')"  value="Bulbasaur"/>
+            </div>
+        <p style="font-weight: bold; font-size: 1.5em;">Insert new</p>
+        <p class="textinserimento">Pokemon name</p>
+        <input type="text" id="nome" placeholder="e.g. pikachu"><br>
+        <p class="textinserimento">Captured</p>
+        <input type="checkbox">
+        <p class="textinserimento">Level: </p>
+        <input type="number">
+        <p class="textinserimento">Image URL</p>
+        <input type="text" id="immagine" placeholder="enter image URL">
+        <p class="textinserimento">Descrizione</p>
+        <textarea placeholder="descrizione" placeholder="add description" id="descrizione"> </textarea>
+        <input type="button" onclick="creapokemon()" value="Crea Pokemon"/></div>
+    </div>
+    <div id="immagini" style="background-color:white">
+        <div class="casellapokemon" id="pikachu">
+            <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png" class="immaginepokemon" >
+            <h1>Pikachu</h1>
+            <p id="descrizione">Pikachu è un Pokémon di tipo Elettro introdotto in prima generazione. Si evolve da Pichu quando ha un alto affetto e aumenta di livello e successivamente in Raichu quando esposto ad una Pietratuono. Ad Alola, Pikachu si evolve in Raichu di Alola quando esposto ad una Pietratuono.Pikachu è conosciuto come la mascotte del franchise Pokémon, oltre ad essere una delle mascotte più importanti di Nintendo. </p>
+        </div>
+        <div class="casellapokemon" id="charmander">
+            <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png" class="immaginepokemon">
+            <h1>Charmander</h1>
+            <p id="descrizione">Charmander è un Pokémon di tipo Fuoco introdotto in prima generazione. Si evolve in Charmeleon a partire dal livello 16 e quindi in Charizard a partire dal livello 36.Insieme a Bulbasaur e Squirtle, Charmander è uno dei tre Pokémon iniziali di Kanto disponibili in Pokémon Rosso e Verde, Pokémon Blu, Pokémon Rosso Fuoco e Verde Foglia.</p>
+        </div>
+        <div class="casellapokemon" id="squirtle">
+            <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png" class="immaginepokemon" >
+            <h1>Squirtle</h1>
+            <p id="descrizione">Squirtle è un Pokémon di tipo Acqua introdotto in prima generazione. Si evolve in Wartortle a partire dal livello 16 e quindi in Blastoise a partire dal livello 36.Insieme a Bulbasaur e Charmander, Squirtle è uno dei tre Pokémon iniziali di Kanto disponibili in Pokémon Rosso e Verde, Pokémon Blu, Pokémon Rosso Fuoco e Verde Foglia.</p>
+        </div>
+        <div class="casellapokemon" id="bulbasaur">
+            <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png" class="immaginepokemon">
+            <h1>Bulbasaur</h1>
+            <p id="descrizione">Bulbasaur è un Pokémon di doppio tipo Erba/Veleno introdotto in prima generazione. Si evolve in Ivysaur a partire dal livello 16 e quindi in Venusaur a partire dal livello 32. Insieme a Charmander e Squirtle, Bulbasaur è uno dei tre Pokémon iniziali di Kanto disponibili in Pokémon Rosso e Verde, Pokémon Blu, Pokémon Rosso Fuoco e Verde Foglia.</p>
+        </div>
+    </div>
+</body>
+
+</html>

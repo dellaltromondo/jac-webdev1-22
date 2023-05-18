@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <title>Login</title>
+
+
+        <style>
+            form label
+            {
+                display: block;
+            }
+        </style>
+    </head>
+
+    <body>
+
+
+
+        <h2>LOGIN</h2>
+        <form>
+            <label>E-Mail:<input type="text" id="mail"></label>
+            <label>Password:<input type="password" id="password"></label>
+            <button onclick="provaLogin()">Login</button>
+        </form>
+
+
+
+        <script>
+            async function provaLogin()
+            {
+                const email=document.getElementById("mail").value;
+                const password=document.getElementById("password").value;
+
+                const requestObject={"mail": email, "password": password};
+
+                const loginResponse=await fetch("http://localhost:8080/UtentiAPI/login",{
+                    method: "POST",
+                    body: JSON.stringify(requestObject)
+                });
+
+
+                if(await loginResponse.json()==true)
+                {
+                    console.log("Accesso avvenuto");
+                }
+                else
+                {
+                    credenzialiNo();
+                }
+            }
+
+
+
+            function credenzialiNo()
+            {
+                const pann=document.createElement("div");
+                const testo=docuemtn.createElement("span");
+
+                testo.innerText="Login fallito - Controlla le credenziali";
+
+                document.appendChild(pann);
+                pann.appendChild(testo);
+            }
+        </script>
+    </body>
+</html>

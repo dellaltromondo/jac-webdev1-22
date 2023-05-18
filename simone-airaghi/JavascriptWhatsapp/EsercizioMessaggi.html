@@ -1,0 +1,99 @@
+<script>
+class Message{
+
+    #timeStamp;
+    #sender;
+    #receiver;
+
+
+    constructor (timeStamp, sender, receiver){
+
+        this.#timeStamp = timeStamp; //posso mettere new Date() al posto di = timestamp
+        this.#sender = sender;
+        this.#receiver = receiver
+    }
+
+
+    getTimeStamp(){
+        return this.#timeStamp
+    }
+
+    getSender(){
+        return this.#sender
+    }
+
+    getReceiver(){
+        return this.#receiver
+    }
+
+
+
+}
+
+class TextMessage extends Message{
+
+#textContent
+
+constructor (textContent, sender, receiver,timeStamp ){
+   super(timeStamp, sender, receiver)
+   this.#textContent = textContent
+    
+}
+
+getTextContent(){
+    return this.#textContent
+}
+
+}
+
+class Images extends Message{
+#img
+
+constructor (img, sender, receiver,timeStamp){
+    super(timeStamp,sender,receiver)
+    this.#img = img
+}
+
+getImg(){
+    return this.#img
+}
+}
+
+class Audio extends Message{
+    #audio
+constructor(audio,sender, receiver,timeStamp){
+    super(timeStamp,sender,receiver)
+    this.#audio = audio
+}
+
+getAudio(){
+    return this.#audio
+}
+
+
+}
+class Video extends Message{
+    #video
+constructor(video,sender, receiver,timeStamp){
+    super(sender,receiver,timeStamp)
+    this.#video = video
+}
+
+getVideo(){
+    return this.#video
+}
+}
+
+const txt = new TextMessage("ciaooooooooo","Simone","Andrea", new Date());
+console.log("Ora: "+ txt.getTimeStamp());
+console.log("Sender: "+ txt.getSender());
+console.log("Receiver: "+ txt.getReceiver());
+console.log("Messaggio: "+ txt.getTextContent());
+
+const audio = new Audio("Audio.mp4", "Me", "Federico", "17:19");
+console.log("Ora: "+ audio.getTimeStamp());
+console.log("Sender: "+ audio.getSender());
+console.log("Receiver: "+ audio.getReceiver());
+console.log("Audio: "+ audio.getAudio());
+
+</script>

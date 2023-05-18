@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="it">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MyFitnessHub</title>
+        <link rel="icon" href="Utils/dumbell-favicon.png">
+        <link rel="stylesheet" href="Css/main.css">
+        <link rel="stylesheet" href="Css/header.css">
+        <link rel="stylesheet" href="Css/form.css">
+        <link rel="stylesheet" href="Css/popup.css">
+        <link rel="stylesheet" href="Css/homepage.css">
+    </head>
+
+    <body>
+        <div id="popup-container">
+            <section class="popup" id="errorPopup"></section>
+        </div>
+        <header>
+            <button class="only-mobile" id="menuToggle" onclick="toggleMenu()">
+                <img src="Utils/white-burger-menu.png" alt="Menu">
+            </button>
+            <h1 id="titolo">MyFitnessHub</h1>
+            <button id="logoutButton" onclick="logout()">
+                <img src="Utils/white-logout.png">
+                <p class="only-desktop">Logout</p>
+            </button>
+            <nav class="only-desktop" id="menuDesktop">
+                <a href="user-homepage.html">Homepage</a>
+                <a href="exercise-wiki.html">Exercise Wiki</a>
+                <a href="calcolatore-bmi.html">Calcolatore BMI</a>
+                <a href="contatti.html">Contatti</a>
+            </nav>
+            <nav class="only-mobile" id="menuMobile" style="display: none;">
+                <a href="user-homepage.html">Homepage</a>
+                <a href="exercise-wiki.html">Exercise Wiki</a>
+                <a href="calcolatore-bmi.html">Calcolatore BMI</a>
+                <a href="contatti.html">Contatti</a>
+            </nav>
+        </header>
+        <article class="row">
+            <aside class="column">
+                <form autocomplete="off" id="form-esercizi">
+                    <h2>NUOVO ESERCIZIO</h2>
+                    <label for="sceltaScheda">Scheda: </label>
+                    <select id="sceltaScheda" name="sceltaScheda">
+                        <option value="none" selected disabled>Seleziona scheda</option>
+                    </select>
+                    <label for="nome">Nome esercizio: </label><input id="nome" name="nome" type="text">
+                    <label for="peso">Peso: </label><input id="peso" name="peso" type="number" min="0" placeholder="Kg">
+                    <label for="serie">Serie: </label><input id="serie" name="serie" type="number" min="0">
+                    <label for="rep">Ripetizioni: </label><input id="rep" name="rep" type="number" min="0">
+                    <label for="rest">Recupero: </label><input id="rest" name="rest" type="number" step="30" min="0" placeholder="Sec">
+                    <button type="button" id="addEs" onclick="addExe()">Aggiungi</button>
+                </form>
+            </aside>
+            <section class="column">
+                <h2>LE MIE SCHEDE</h2>
+                <ul id="listaSchede"></ul>
+                <form autocomplete="off" id="form-add-scheda">
+                    <h2>AGGIUNGI SCHEDA</h2>
+                    <label for="nomeScheda">Nome scheda: </label><input type="text" id="nomeScheda" name="nomeScheda">
+                    <button type="button" id="buttonScheda" onclick="addScheda()">Crea Scheda</button>
+                </form>
+            </section>
+        </article>
+        <script src="Js/main.js"></script>
+        <script src="Js/popup.js"></script>
+        <script src="Js/schede-esercizi.js"></script>
+    </body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript classes and inheritance</title>
+    </head>
+    <body>
+        <script>
+            class Message {
+                #timestamp;
+                #sender;
+                #receiver;
+
+                constructor(sender, receiver) {
+                    this.#sender = sender;
+                    this.#receiver = receiver;
+                    this.#timestamp = new Date();
+                }
+
+                getTimestamp() {
+                    return this.#timestamp;
+                }
+
+                getSender() {
+                    return this.#sender;
+                }
+
+                getReceiver() {
+                    return this.#receiver;
+                }
+            }
+
+            class TextMessage extends Message {
+                #textContent;
+
+                constructor(sender, receiver, textContent) {
+                    super(sender, receiver);
+                    this.#textContent = textContent;
+                } 
+
+                getContent() {
+                    return this.#textContent;
+                }
+            }
+
+            const newMessage = new Message("Me", "You")
+            console.log(newMessage.getTimestamp());
+            console.log(newMessage.getSender());
+            console.log(newMessage.getReceiver());
+
+            const newTextMessage = new TextMessage("Pippo", "Pluto", "Contenuto del messaggio");
+            console.log(newTextMessage.getTimestamp());
+            console.log(newTextMessage.getSender());
+            console.log(newTextMessage.getReceiver());
+            console.log(newTextMessage.getContent());
+
+        </script>
+    </body>
+</html>

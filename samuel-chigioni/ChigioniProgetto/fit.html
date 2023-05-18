@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
+    <link rel="stylesheet" href="fit.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <Header>
+
+
+        <!--NAVIGAZIONE INIZIALE-->
+        <nav>
+            <ol>
+
+                <h1>Chigio's</h1>
+
+                <li>
+                    <a href="#clickOn" id=info> NUTRIZIONE SPORTIVA</a>
+                </li>
+                <li>
+                    <a href="#clickOn" id=info>FASHION&CARE</a>
+                </li>
+                <li>
+                    <a href="#clickOn" id=info>HEALTH</a>
+                </li>
+                <li>
+                    <a href="#clickOn" id=info>OFFERTE</a>
+                </li>
+                <li>
+                    <a href="#clickOn" id=info>DONNA</a>
+                </li>
+                <li>
+                    <a href="#clickOn" id=info>UOMO</a>
+                </li>
+                <li>
+                    <button onclick="" style="border-radius: 1cm; background-color:red; width: 50px;height: 50px;"><img
+                            src="immagini/carrello.png"  alt="" style="background-color: red;">
+                    </button>
+                </li>
+                <li>
+                    <select id="productDropdown" style="color: white" onchange="scrollToSection()">
+                      <option value="">Seleziona un prodotto</option>
+                      <option value="amminoacidi">Amminoacidi</option>
+                      <option value="straps">Straps</option>
+                      <option value="shoes">Shoes</option>
+                      <option value="shoes">Proteine</option>
+                      <option value="shoes">Creatina</option>
+                    </select>
+                  </li>
+
+            </ol>
+
+        </nav>
+
+
+    </Header>
+
+
+
+    <!-- SLIDER -->
+
+    <div class="slideshow-container">
+
+
+        <div class="mySlides ">
+            <div class="numberTesto">1 / 3</div>
+            <img src="immagini/foto1.jpeg" style="width:100%">
+            <div class="testo">I nostri integratori:</div>
+        </div>
+
+        <div class="mySlides ">
+            <div class="numberTesto">2 / 3</div>
+            <img src="immagini/attrezzi.jpeg" style="width:100%">
+            <div class="testo">I nostri attrezzi:</div>
+        </div>
+
+        <div class="mySlides ">
+            <div class="numberTesto">3 / 3</div>
+            <img src="immagini/merch.jpeg" style="width:100%">
+            <div class="testo">Il nostro merch:</div>
+        </div>
+
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+
+
+    <div style="text-align:center">
+        <span class="punto" onclick="currentSlide(1)"></span>
+        <span class="punto" onclick="currentSlide(2)"></span>
+        <span class="punto" onclick="currentSlide(3)"></span>
+    </div>
+
+    <!-- FINE SLIDER -->
+
+    <!--INFO SOTTO SLIDER-->
+    <section>
+
+        <ol>
+            <li>
+                <p> SPEDIZIONE GRATUITA <br>
+                    SOPRA I 75$</p>
+            </li>
+            <LI>
+                <p>PIU' DI 500 <br>
+                    PRODOTTI</p>
+            </LI>
+            <li>
+                <p>QUALITA' CERTIFICATA <br>MADE IN ITALY</p>
+            </li>
+            <br>
+            <li>
+                <img src="immagini/delivery.png" alt="">
+            </li>
+            <li><img src="immagini/box.png" alt="">
+            </li>
+            <li>
+                <img src="immagini/check.png" alt="">
+            </li>
+
+        </ol>
+
+    </section>
+
+
+    <h2>SCOPRI IL MONDO DI <b>CHIGIO'S</b></h2>
+
+    <!--SEZIONE VETRINA PRODOTTI-->
+
+    <section id="prodotti">
+
+        <ol>
+            <li>
+                <img src="immagini/creatina.jpeg" id="clickOn"alt="">
+                <button onclick="creaProdotto(this)" data-value="Creatina" id='bu'>
+                    <p id="creatina">Creatina: 19,99$</p>
+                </button>
+            </li>
+            <li>
+                <img src="immagini/proteine.jpeg" alt="">
+                <button onclick="creaProdotto(this)" data-value="Proteine" id='bu'>
+                    <p>Proteine: 24,99$</p>
+                </button>
+            </li>
+            <li>
+                <img src="immagini/ammino.jpeg" alt="">
+                <button onclick="creaProdotto(this)" data-value="Amminoacidi" id='bu'>
+                    <p>Amminoacidi: 12,95$</p>
+                </button>
+            </li>
+            <li>
+                <img src="immagini/ammino.jpeg" alt="">
+                <button onclick="creaProdotto(this)" data-value="Ammino" id='bu'>
+                    <p>Amminoacidi: 15,00$</p>
+                </button>
+            </li>
+            <li>
+                <img src="immagini/t-shirt.jpeg" alt="">
+                <button onclick="creaProdotto(this)" data-value="T-shirt" id='bu'>
+                    <p>T-shirt: 19,99$</p>
+            </li></button>
+            <li>
+                <img src="immagini/straps.jpeg" alt="">
+                <button onclick="creaProdotto(this)" data-value="Straps" id='bu'>
+                    <p>Straps: 9,99$</p>
+                </button>
+            </li>
+            <li>
+                <img src="immagini/short.jpeg" alt="">
+                <button onclick="creaProdotto(this)" data-value="Short" id='bu'>
+                    <p>Short: 29,99$</p>
+            </li> </button>
+            <li>
+                <img src="immagini/shoes.jpeg" alt="">
+                <button onclick="creaProdotto(this)" data-value="Fit-shoes" id='bu'>
+                    <p>Fit shoes: 49,99$</p>
+                </button>
+            </li>
+            <li>
+                <img src="immagini/work.jpeg" alt="">
+                <button onclick="creaProdotto(this)" data-value="Pre-workout" id='bu'>
+                    <p>Pre-workout: 29,99$</p>
+                </button>
+            </li>
+            </li>
+        </ol>
+
+
+
+
+    </section>
+
+    <!--CODICE PROMO-->
+
+    <div id="codice">
+        <h2>HAI UN CODICE PROMOZIONALE?</h2>
+        <p>Inseriscilo qui! <img src="immagini/freccia.png" alt=""> <input type="text" placeholder="Ins. codice promo" id="promoInput"></p>
+        <button onclick="registraCodice()">Registra codice</button>
+    </div>
+    
+
+    <!--CARRELLO-->
+
+    <h4><strong>Your Shopping Cart:</strong></h4>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome prodotto</th>
+                <th>Prezzo</th>
+                <th>Codice PROMO</th>
+                <th>Elimina</th>
+            </tr>
+        </thead>
+        <tbody id="corpo">
+            <tr>
+                <th>1</th>
+                <td>Nessun prodotto è stato aggiunto</td>
+                <td>0.00</td>
+                <td>Non inserito</td>
+                <td><button style="color:white; border-color: white; background-color: white; box-shadow: 3px;"onclick="deleteRow(button)"><img  src="immagini/delete.png" style="width:30px; height:30px" alt=""></button></td>
+            </tr>
+            <tr>
+                <th>2</th>
+                <td>Nessun prodotto è stato aggiunto</td>
+                <td>0.00</td>
+                <td>Non inserito</td>
+                <td><button style="color:white; border-color: white; background-color: white; box-shadow: 3px;"onclick="deleteRow(button)"><img  src="immagini/delete.png" style="width:30px; height:30px" alt=""></button></td>
+
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+    <!--FOOTER-->
+
+    <footer>
+        <div id="contact">
+
+            <a id="imagesfooter" href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-youtube"></a>
+            <a href="#" class="fa fa-instagram"></a>
+
+            <p id="contattaci">CONTATTACI </p>
+            <h3>Copywrigth by CHIGIO'S s.r.l</h3>
+
+        </div>
+
+    </footer>
+
+
+
+    <script src="fit.js"></script>
+
+</body>
+
+
+
+
+</html>

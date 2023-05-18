@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch</title>
+</head>
+<body>
+    <section id="factSection"></section>
+    <script type="module">
+     /*  const factPromise = fetch ("https://catfact.ninja/fact");
+       factPromise.then(
+        (response) => {
+         const dataPromise = response.json();
+         dataPromise.then(
+            (value)=> console.log(value)
+         )
+        }
+       );*/
+
+       //SECONDO MODO 
+        //la promessa è un valore che verra riempito successivamente  
+       const response = await fetch ("https://catfact.ninja/fact");
+       const data = await response.json();
+       const factOfDay = data.fact;
+
+       document.getElementById ("factSection").innerText=factOfDay
+
+       //l'API si puo immaginare come un contratto che si stipola broswer e server dove ci si mette daccoro sul come trattare delle informazioni 
+       //sono delle funzioni che possono chiamare o modificare oggetti 
+       //spesso le API servono a salvare dati 
+
+    </script>
+</body>
+</html>

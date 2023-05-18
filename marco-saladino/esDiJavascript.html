@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let a = 5;
+        console.log('il valore di a è : ' + a /*commento inline*/)
+
+        /* commento multiline*/
+
+        //variabile stringa
+        const b = 'pippo';
+        console.log('il valore di b è:' + b);
+        // b = 'pluto';
+
+        //variabile array
+        let studenti = ["Agostini", "Anzani", "Bergamelli", "Claudi"];
+        console.log(studenti);
+
+        //variabili oggetto
+        let studente = {
+            nome: "Claudio",
+            cognome: "Cresta",
+            nascita: "0",
+        }
+        console.log(studente);
+
+        //funzioni
+        function massimo(v1, v2) {
+            if (v1 > v2) {
+                return v1;
+            } else {
+                return v2;
+            }
+        }
+        let x = massimo(3, 42);
+        console.log(x);
+
+        //funzione che moltiplica un numero x 1000
+        let num;
+        function mille(num) {
+            return num * 1000
+        }
+        console.log(mille(5));
+
+        //funzione che dati nome e cognome restituisce il nome completo
+        let NC = {
+            nome: "Gesu",
+            cognome: "Cristo",
+        }
+        console.log('il nome completo è', NC.nome, NC.cognome);
+
+        //funzione che dato un anno di nascita restituisce young <18 , old >65 alttimenti adult
+        let età;
+        function CalcoloEtà(età) {
+            if (età < 18) {
+                return 'young';
+            } else if (età > 65) {
+                return 'old';
+            } else {
+                return 'adult';
+            }
+
+        }
+        console.log(CalcoloEtà(20));
+
+        //funzione che dato un array di date di nascita restituisce le date <18
+        function minorenni(DateIniz) {
+          let DateMin = []
+
+          DateIniz.forEach( function(data) {
+            if(data > 2004){
+                DateMin.push(data)
+            }
+          })
+          return (DateMin)
+        }
+        console.log(minorenni([2022,2020,2000,1999,1996]));
+
+
+    </script>
+
+</body>
+
+</html>
