@@ -1,5 +1,6 @@
 let carrelloArray = [];
 
+//funzione che calcola la somma del totale nel carrello
 function calcolaSomma() {
   let somma = 0;
   for (prodotto of carrelloArray) {
@@ -10,6 +11,7 @@ function calcolaSomma() {
   totale.innerHTML = "Totale: " + somma + "€";
 }
 
+//funzione che aggiunge un prodotto nel carrello
 function aggiungiprodotto(frase, prezzo) {
   let carrello = document.getElementById("Carrello");
   let riga = carrello.insertRow();
@@ -36,6 +38,7 @@ function aggiungiprodotto(frase, prezzo) {
   console.log(frase);
 }
 
+//funzione che conferma il contenuto del carrello
 function confermacarrello() {
   setTimeout(function () {
     let messaggio = document.createElement("p");
@@ -53,6 +56,7 @@ function confermacarrello() {
   }, 1000);
 }
 
+//funzione che elimina un prodotto dal carrello
 function eliminaProdotto(index) {
   carrelloArray.splice(index, 1); // Rimuovi il prodotto dall'array
 
