@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html>
+
+     <head>
+
+         <link rel="stylesheet" href="verifica_nicolo_mignani.css">
+
+        <body>
+           
+            <header>
+
+                <h1>Pokédex</h1>
+
+                <div class="pokemons">
+
+                    <a href="">My Pokemons</a>
+
+                </div>
+
+                <div class="new">
+
+                    <a href="https://www.pokemon.com/it/pokedex">New Pokemon</a>
+
+
+                </div>
+
+                <div class="info">
+
+                  <a href="">info</a>
+
+                </div>
+
+
+            </header>
+
+
+            <main>
+
+              <section class="barra">
+
+                <button type="button"class="pi" onclick="selezionaPokemon()">Pikachu</button>
+                <button class="ch">Charmander</button>
+                <button class="sq">Squirtle</button>
+                <button class="bu">Bulbasaur</button>
+
+                <h2>Insert new</h2>
+                <p>Pokémon Name:</p>
+                <input type="text" id="testo" placeholder="e.g Pikachu" >
+                
+                
+                <input type="checkbox" id="rad">
+                <label for="rad">Captured</label>
+
+                <label for="Level" id="num">Level</label>
+                <input type="number" id="number">
+
+                <p>Image URL:</p>
+                <input type="text" id="immag" placeholder="Enter image URL" >
+
+                <p>Description:</p>
+                <input type="text" id="desc" placeholder="Enter Description" >
+                <button type="butt" id="invia" onclick="aggiungiPokemon()">Invia</button>
+
+              </section>
+
+              <div id="pokemon">
+
+              </div>
+
+              <section id="riqu">
+
+                <div class="pik">
+                  <div></div>
+                  <h3>Pikachu</h3>
+                  <p>Quando s’arrabbia, libera subito l’energia accumulata nelle sacche sulle guance</p>
+                </div>
+
+                <div class="cha">
+                   <div></div>
+                   <h3>Charmander</h3>
+                   <p>Ama le cose calde. Si dice che quando piove gli esca vapore dalla punta della coda.</p>
+                </div>
+
+                <div class="squ">
+                  <div></div>
+                  <h3>Squirtle</h3>
+                  <p>Quando ritrae il lungo collo dentro la corazza sputa un vigoroso getto d’acqua.</p>
+                </div>
+
+                <div class="bul">
+                  <div></div>
+                  <h3>Bulbasaur</h3>
+                  <p>Fin dalla nascita questo Pokémon ha sulla schiena un seme che cresce lentamente.</p>
+                </div>
+                
+
+
+              </section>
+
+
+              <script>
+
+                   let con=0;
+
+                   function contatore(){
+   
+                       con++
+
+
+                    }
+
+                     const b = document.getElementById("invia");
+
+                     b.addEventListener('click',function(){
+
+                       contatore();
+ 
+
+                    })
+
+            function aggiungiPokemon(){
+
+                const tes = document.getElementById("testo");
+                const rad = document.getElementById("rad");
+                
+                const numb = document.getElementById("number");
+                const imm = document.getElementById("immag");
+                const des = document.getElementById("desc");
+
+
+                 const section= document.createElement("section");
+                 const te= document.createElement("h4");
+                 const ra = document.createElement("p");
+                 
+                 const nu = document.createElement("p");
+                 const p4 = document.createElement("p");
+                 const im = document.createElement("img");
+                 const de = document.createElement("p");
+
+
+                 te.innerText = tes.value;
+                 if(rad.checked){
+
+                    ra.innerText = "Catturato"
+                 }else{
+
+                    ra.innerText="Non Catturato"
+                 }
+                 nu.innerText = "Livello: "+numb.value;
+                 im.src = imm.value;
+                 de.innerText = des.value; 
+
+                 const sec = document.getElementById("riqu");
+
+                 sec.appendChild(section);
+                 section.appendChild(im);
+                 section.appendChild(te);
+                 section.appendChild(ra);
+                 section.appendChild(nu);
+                 section.appendChild(de);
+                 section.setAttribute('id','lista'+con)
+                 section.setAttribute('class','lista')
+
+            }
+
+
+
+
+              </script>
+
+
+            </main>
+
+            <footer>
+ 
+                
+
+
+
+
+
+
+
+            </footer>
+
+
+
+        </body>
+
+
+
+
+
+     </head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

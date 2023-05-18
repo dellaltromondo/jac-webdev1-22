@@ -1,109 +1,59 @@
-
+<!DOCTYPE html>
 <html>
-    <head></head>
-    <body></body>
-    <script>
-class Message 
-{
-    // #rende l'attribute privato
-    #timestamp;
-    #sender;
-    #receiver;
+    <head>
+        <title>Javascript classes and inheritance</title>
+    </head>
+    <body>
+        <script>
+            class Message {
+                //# rende l'attributo private
+                #timestamp;
+                #sender;
+                #receiver;
 
-    constructor (timestamp, sender, receiver) 
-    {
-       this.#timestamp = timestamp;
-       this.#sender = sender;
-       this.#receiver = receiver;
-    }
+                constructor(sender, receiver) {
+                    this.#sender = sender;
+                    this.#receiver = receiver;
+                    this.#timestamp = new Date();
+                }
 
-    getTimeStamp() 
-    {
-        return this.#timestamp;
-    }
+                getTimestamp() {
+                    return this.#timestamp;
+                }
 
-    getSender()
-    {
-        return this.#sender;
-    }
+                getSender() {
+                    return this.#sender;
+                }
 
-    getReceiver()
-    {
-        return this.#receiver;
-    }
+                getReceiver() {
+                    return this.#receiver;
+                }
+            }
 
-}
+            class TextMessage extends Message {
+                #textContent;
 
-class TextMessage extends Message
-{
-    #textcontent;
+                constructor(sender, receiver, textContent) {
+                    super(sender, receiver);
+                    this.#textContent = textContent;
+                } 
 
-    constructor (textcontent, timestamp, sender, receiver) 
-    {
-        super(sender, receiver, timestamp);
-        this.#textcontent = textcontent;
-    }
+                getContent() {
+                    return this.#textContent;
+                }
+            }
 
-    getContent(textcontent)
-    {
-        return this.#textcontent;
-    }
-}
+            const newMessage = new Message("Me", "You")
+            console.log(newMessage.getTimestamp());
+            console.log(newMessage.getSender());
+            console.log(newMessage.getReceiver());
 
-/*
-class ImgMessage extends Message
-{
-    constructor (imageSrc, timeStamp, sender, receiver) 
-    {
-        this.imageSrc = new imageSrc;
-        this.timeStamp = new timeStamp;
-        this.sender = new sender;
-        this.receiver = new receiver; 
-    }
+            const newTextMessage = new TextMessage("Pippo", "Pluto", "Contenuto del messaggio");
+            console.log(newTextMessage.getTimestamp());
+            console.log(newTextMessage.getSender());
+            console.log(newTextMessage.getReceiver());
+            console.log(newTextMessage.getContent());
 
-    getSrc(imageSrc)
-    {
-        return imageSrc;
-    }
-}
-
-class AudioMessage extends Message
-{
-    constructor (audio, timeStamp, sender, receiver) 
-    {
-        this.audio = new audio;
-        this.timeStamp = new timeStamp;
-        this.sender = new sender;
-        this.receiver = new receiver; 
-    }
-
-    getAudio(audio)
-    {
-        return audio;
-    }
-}
-
-class VideoMessage extends Message
-{
-    constructor (video, timeStamp, sender, receiver) 
-    {
-        this.video = new video;
-        this.timeStamp = new timeStamp;
-        this.sender = new sender;
-        this.receiver = new receiver; 
-    }
-
-    getVideo(video)
-    {
-        return video;
-    }
-}
-    */
-    const txt = new TextMessage ("HelloWorld", "me", "you", new Date());
-    console.log(txt.getTimeStamp());
-    console.log(txt.getSender());
-    console.log(txt.getReceiver());
-    console.log(txt.getContent());
-
-    </script>
+        </script>
+    </body>
 </html>

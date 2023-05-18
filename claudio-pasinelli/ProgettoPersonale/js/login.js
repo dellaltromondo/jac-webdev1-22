@@ -1,3 +1,9 @@
+let compositoreEsistente = false;
+let utenteEsistente = false;
+
+let compositoreNonEsistente = false;
+let utenteNonEsistente = false;
+
 class User
 {
     idUser
@@ -7,8 +13,9 @@ class User
     password;
     tipo;
 
-    constructor(email, nome, cognome, password, tipo)
+    constructor(idUser, email, nome, cognome, password, tipo)
     {
+        this.idUser = idUser;
         this.email = email;
         this.nome = nome;
         this.cognome = cognome;
@@ -19,6 +26,11 @@ class User
     getIdUser()
     {
         return this.idUser;
+    }
+
+    setIdUser(idUser)
+    {
+        this.idUser = idUser;
     }
 
     getEmail()
@@ -44,6 +56,11 @@ class User
     getTipo()
     {
         return this.tipo;
+    }
+
+    setIdUser(idUser)
+    {
+        this.idUser = idUser;
     }
 }
 
@@ -197,8 +214,7 @@ async function inviaDatiForm()
         tipo = document.getElementById("non_compositore").value;
     }
 
-    //creo un nuovo utente
-    const user = new User(email, nome, cognome, password, tipo);
+    let idUser = 1;
 
     //resetto i valori del form
     document.getElementById('email').value = '';
@@ -208,11 +224,81 @@ async function inviaDatiForm()
     document.getElementById('compositore').checked = false;
     document.getElementById('non_compositore').checked = false;
 
-    let compositore = false;
-    let utenteTrovato = false;
+    if(tipo === "COMPOSITORE")
+    {
+        compositoreNonEsistente = true;
+    }
 
-    const response = await fetch("http://localhost:8080/progettoPersonaleJava/api/v1/users/");
-    const responseJson = await response.json();
+    else if(tipo === "NON_COMPOSITORE")
+    {
+        utenteNonEsistente = true;
+    }
+
+    let responseJson = await controllaUser(email, nome, cognome, password, tipo);
+
+    if(utenteNonEsistente || compositoreNonEsistente)
+    {
+        let maxId = 1;
+    
+        if(responseJson.length != 0)
+        {
+            for(userResponse of responseJson)
+            {
+                if(userResponse.idUser > maxId)
+                {
+                    maxId = userResponse.idUser;
+                }
+            }
+        
+            if(maxId > 1)
+            {
+                idUser = maxId + 1;
+            }
+        }
+
+        //creo un nuovo utente
+        const user = new User(idUser, email, nome, cognome, password, tipo);
+
+        const body = JSON.stringify(user);
+    
+        const postUser = await fetch("http://localhost:8080/progettoPersonaleJava/api/v1/users/",
+        {
+            method: "POST",
+            headers:
+            {
+                "content-type":'application/json'
+            },
+            body: body
+        });
+        
+        await controllaUser(email, nome, cognome, password, tipo);
+    }
+
+    //riempio il localStoragee e faccio il reindirizzamento dell'utente alla pagina riservata a lui
+    
+    if(compositoreEsistente || compositoreNonEsistente)
+    {
+        localStorage.setItem("Nome", nome);
+        localStorage.setItem("Cognome", cognome);
+        localStorage.setItem("Compositore", "VERO");
+        
+        window.location.href = "editorCompositori.html";
+    }
+    
+    else if(utenteEsistente || utenteNonEsistente)
+    {
+        localStorage.setItem("NomeUser", nome);
+        localStorage.setItem("CognomeUser", cognome);
+        localStorage.setItem("Compositore", "FALSO");
+
+        window.location.href = "tabellaCompositori.html";
+    }
+}
+
+async function controllaUser(email, nome, cognome, password, tipo)
+{
+    let response = await fetch("http://localhost:8080/progettoPersonaleJava/api/v1/users/");
+    let responseJson = await response.json();
 
     for(let i = 0; i < responseJson.length; i++)
     {
@@ -227,14 +313,19 @@ async function inviaDatiForm()
                         if(responseJson[i].tipo === tipo && tipo === "COMPOSITORE")
                         {
                             //prendo l'idUser dell'utente
-                            localStorage.setItem("idUser", responseJson[i].idUser);
-                            compositore = true;
+                            idUser = responseJson[i].idUser;
+                            localStorage.setItem("idUser", idUser);
+                            compositoreEsistente = true;
+                            compositoreNonEsistente = false;
                             break;
                         }
-
+                        
                         else if(responseJson[i].tipo === tipo && tipo === "NON_COMPOSITORE")
                         {
-                            utenteTrovato = true;
+                            idUser = responseJson[i].idUser;
+                            localStorage.setItem("idUserNonCompositore", idUser);
+                            utenteEsistente = true;
+                            utenteNonEsistente = false;
                             break;
                         }
 
@@ -289,36 +380,5 @@ async function inviaDatiForm()
         continue;
     }
 
-    //riempio il localStorage
-    localStorage.setItem("Nome", nome);
-    localStorage.setItem("Cognome", cognome);
-
-    if(compositore)
-    {
-        window.location.href = "editorCompositori.html";
-    }
-
-    if(utenteTrovato)
-    {
-        window.location.href = "tabellaCompositori.html";
-    }
-
-    else if(!utenteTrovato && !compositore)
-    {
-        const body = JSON.stringify(user);
-    
-        console.log("richiamo la users in POST");
-    
-        const postUser = await fetch("http://localhost:8080/progettoPersonaleJava/api/v1/users/",
-        {
-            method: "POST",
-            headers:
-            {
-                "content-type":'application/json'
-            },
-            body: body
-        });
-        
-        window.location.href = "tabellaCompositori.html";
-    }
+    return responseJson;
 }

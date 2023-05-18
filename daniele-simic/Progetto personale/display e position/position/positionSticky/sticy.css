@@ -1,0 +1,13 @@
+img{
+width: 20%;
+background-color:aquamarine;
+padding: 2rem 10rem;
+display: flex;
+margin: 40px auto;
+position: sticky;
+top: 5px;
+}
+
+p{
+    font-size: 2rem;
+}

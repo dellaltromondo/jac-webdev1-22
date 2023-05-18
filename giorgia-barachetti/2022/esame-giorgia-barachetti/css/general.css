@@ -1,0 +1,140 @@
+:root{
+  --background-color: red;
+  --color: white;
+  --box: 0px 2px 2px 0px lightgrey;
+}
+/*
+header{
+    background-color: red;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    padding: 0
+}
+
+#sidebar{
+    background-color: lightgrey;
+    height: 100%; 
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    overflow-x: hidden; 
+    padding-top: 20px;
+  
+}
+*/
+#container {
+    display: grid;
+    grid-template-columns: 250px 1fr; 
+    grid-template-rows: auto; 
+  }
+
+  header {
+    grid-column: 1 / -1; 
+    background-color: var(--background-color);
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  header>div>a{
+   padding:10px;
+   background-color: rgba(255,255,255, 0.55);
+   border-radius: 3px;
+   text-decoration: underline;
+  }
+  
+  
+  #sidebar {
+    background-color: #ffffff57;
+    padding: 20px;
+    height: 100%;
+    border: 1px solid lightgrey;
+    
+  }
+  
+  #main {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: var(--box);
+    border-radius: 5px;
+    justify-content: center;
+    border: 1px solid lightgrey;
+    margin:10px
+  }
+
+  #divCard{
+    display: flex; 
+    flex-direction: column;
+    box-shadow: var(--box);
+    width: 200px;
+    border:1px solid grey;
+    border-radius: 5px;
+    text-align:center;
+    padding:10px;
+    margin:10px
+  }
+  #imgCard{
+    max-width:100%  
+  }
+
+  body{
+    background-color: var(--color);
+    margin:0;
+  }
+
+  form{
+    display: grid;
+    grid-template-columns: 50% 50% ;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    width: 100%;
+  }
+
+  #name{
+    grid-column: 1 / span 2; /* Occupa due colonne */
+  }
+ 
+  #checkbox{
+    grid-row: 2 /span 1; /* Occupa la seconda riga */
+    grid-column: 1 /span 1; 
+  }
+
+  #level{
+    grid-row: 2 / span 1; /* Occupa la seconda riga */
+    grid-column: 2 / span 1; /* Occupa solo la seconda colonna */
+  }
+  #url{
+    grid-row: 3 / span 1; /* Occupa la terza riga */
+    grid-column: 1 / span 2; /* Occupa due colonne */
+  } 
+
+#description{
+  grid-row: 4 / span 1; /* Occupa la quarta riga */
+  grid-column: 1 / span 2; /* Occupa due colonne */
+}
+
+#enterButton{
+  background-color: var(--background-color);
+  color:var(--color);
+  border:none;
+  padding:10px;
+  margin-top:10px
+}
+
+  #link{
+    display: flex;
+    flex-direction: column
+  }
+
+  #divLink{
+    border:1px solid grey;
+    margin: 5px;
+    border-radius: 5px;
+    box-shadow: var(--box);
+    text-align: center;
+  }
+  #divLink p{
+    margin:2px
+  }

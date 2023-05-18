@@ -1,0 +1,387 @@
+
+    
+             body{
+                  
+                margin: 0px;
+                background-color: white;
+    
+              }
+    
+              header{
+             
+               
+                padding: 10px;
+                background-color: royalblue;
+                position: sticky;
+                top: 0px;
+                z-index: 1000;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+           }
+             
+           h1{
+               display: inline;
+               color:black;
+               flex: 1 200px;
+               
+                
+              }
+          
+           a{
+    
+            text-decoration: none;
+            color: black;
+           
+           }
+      
+              
+          .home{
+           
+            
+            padding-right: 50px;
+  
+          }  
+          .home a{
+
+            font-weight: bolder;
+          }
+          
+          .home a:hover{
+    
+            color: orange;
+    
+           }
+  
+          
+          
+          .blog{
+    
+           padding-right: 50px;
+           
+          }
+
+          .blog a{
+
+            font-weight: bolder;
+          }
+          
+          .blog a:hover{
+    
+             color: orange;
+  
+           }
+
+           .contatti a{
+
+
+            font-weight: bolder;
+           }
+         
+        
+          
+          .contatti a:hover{
+    
+             color: orange;
+  
+            }
+    
+         .prenota{
+           
+            background-color: orange;
+            margin-left: 50px;
+            padding-bottom: 9px;
+            padding-top: 9px;
+            border-radius: 5px;
+           
+        
+        } 
+    
+        .prenota a{
+            padding-right: 15px;
+            padding-left: 15px;
+            padding-top: 5;
+            color: black; 
+            font-weight: bolder;
+              
+        }
+        
+        .bianco{
+
+
+            height:500px;
+            width: auto;
+             margin: 0;
+
+        }
+
+        .bianco h3{
+
+
+            margin:0;
+            font-family: Franklin Gothic Medium;
+            padding-left: 20px;
+            padding-top: 20px;
+        }
+
+        .bianco div{
+
+
+            
+            background: url(california.jpg);
+            height: 450px;
+            width: 600px;
+            float:left;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-right: 20px;
+            margin-left: 20px;
+         
+
+        }
+
+        .bianco p{
+
+            margin: 0;
+            padding-top: 150px;
+            margin-left: 30px;
+            font-size: 20px;
+            
+
+        }
+        .rosso{
+            
+            background-color: rgb(221, 6, 6);
+            height:500px;
+            width: auto;
+             margin: 0;
+            
+
+            
+        }
+
+        .rosso h3{
+
+
+            margin:0;
+            font-family: Franklin Gothic Medium;
+            padding-left: 20px;
+            padding-top: 20px;
+
+        }
+
+        .rosso div{
+
+
+            background: url(kansas.jpg);
+            height: 450px;
+            width: 600px;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-left: 20px;
+            float: right;
+            
+
+
+        }
+
+        .rosso p{
+
+            margin: 0;
+            padding-top: 150px;
+            margin-left: 30px;
+            font-size: 20px;
+           
+        }
+
+        
+
+        .blu{
+
+            background-color: rgb(90, 90, 235);
+            height:500px;
+            width: auto;
+             margin: 0;
+            
+
+            
+        }
+        .blu h3{
+
+
+        margin:0;
+        font-family: Franklin Gothic Medium;
+        padding-left: 20px;
+        padding-top: 20px;
+        }
+
+        .blu div{
+
+
+            background: url(florida.jpg);
+            height: 450px;
+            width: 600px;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-left: 20px;
+            float: left;
+            
+
+
+        }
+
+        .blu p{
+
+            margin: 0;
+            padding-top: 150px;
+            margin-right: 40px;
+            font-size: 20px;
+           
+        }
+
+        footer{
+    
+            background-color: royalblue;
+            display: flex;
+            height: 180px;
+            margin-top: 10px;
+            padding-top: 50px;
+            
+          }
+    
+          footer p{
+    
+            flex: 1 300px;
+            
+          
+          }
+    
+          footer h3{
+    
+            position:absolute;
+             left:60rem;
+            
+          }
+          .recensioni {
+    
+          flex: 0 650px;
+          text-align: center;
+    
+           
+          }
+          
+          .recensioni p{
+    
+             
+              padding-top:10px;
+     
+             }
+        
+    
+          
+    
+          .bdx{
+            height: 25px;
+            width: 25px;
+            background-color: #bbb;
+            border-radius: 50%;
+            opacity: .5;
+            position:absolute;
+            
+          }
+          .bsi{
+            height: 25px;
+            width: 25px;
+            background-color: #bbb;
+            border-radius: 50%;
+            opacity: .5;
+            position:absolute;
+            
+          }
+          
+
+        @media (max-width: 767px) {
+
+            .bianco{
+
+
+                height: 750px;
+               
+                
+            }
+
+            .bianco h3{
+
+                text-align: center;
+            }
+
+            .bianco div{
+
+              
+             margin-right: 100px;
+ 
+ 
+             }
+             .bianco p{
+
+                text-align: center;  
+                padding-left: 20px;
+              }
+
+            .rosso{
+
+
+                height: 720px;
+               
+                
+            }
+            .rosso h3{
+
+                text-align: center;
+            }
+
+            .rosso div{
+
+           
+             margin-left: 100px;
+
+
+            }
+           
+            .rosso p{
+
+              text-align: center;  
+              padding-left: 20px;
+            }
+            
+
+            .blu{
+
+
+                height: 760px;
+               
+                
+            }
+
+            .blu h3{
+
+                text-align: center;
+            }
+
+            .blu div{
+
+              
+              margin-left: 70px;
+ 
+ 
+            }
+           
+            .blu p{
+
+              text-align: center;  
+              padding-left: 20px;
+            }
+
+        }
+
+

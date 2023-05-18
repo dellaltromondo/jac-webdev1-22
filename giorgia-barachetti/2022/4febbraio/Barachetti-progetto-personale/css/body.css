@@ -1,0 +1,352 @@
+:root{
+    --main-color: rgb(38,38,38);
+    --light-color: rgb(143, 112, 78);
+}
+
+
+
+body{
+    margin: 0;
+    padding:0;
+    font-size: 15px;
+    text-decoration: none;
+    background-color: var(--main-color);
+   
+}
+
+
+/*FORM*/
+form{
+    padding: 0;
+    margin-bottom: 0;
+}
+
+#dl{
+    display: flex;
+    border-bottom: 0.1px solid grey;
+    border-top: 0.3px solid grey;
+    padding: 20px;
+    font-size: 20px;
+    flex-direction: column;
+    align-items: center;
+
+}
+#dl dt dd{
+    margin:0;
+}
+
+#divPrice{
+    text-align: right;
+    padding: 10px;
+}
+
+#buttonContinueWithPayment{
+    margin-top: 10px;
+    color: white;
+    background-color: var(--light-color);
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid var(--light-color);
+}
+
+#buttonContinueWithPayment:hover{
+    color: var(--light-color);
+    background-color: white;
+    border: 1px solid var(--light-color);
+}
+
+#containerFormCostumer{
+    display:none;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    background-color: white;
+}
+#containerFormCostumer>section{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+}
+
+@media (min-width:950px){
+
+    #containerFormCostumer>section{
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+#divGriglia{
+    width: 100%;
+    display: grid;
+    gap:28px
+}
+
+
+#address{grid-column: 1/3;}
+
+#containerFormCostumer  input{
+    padding:2px;
+}
+
+/*CARRELLO*/
+
+#sectionCart{
+    padding-left: 20px;
+    padding-right: 20px;
+    color: var(--main-color);
+    border: 1px solid white;
+    margin: 10px 0 0 0;
+    background-color: white;
+}
+
+#sectionCart  h2{
+    margin-bottom: 0;
+}
+
+#sectionCart table{
+    width:100%;
+    margin-bottom: 10px;
+}
+
+
+#sectionCart th{
+    text-align: left;
+    color: var(--light-color);
+    border-bottom: solid 1px var(--light-color)
+
+}
+
+#productsInTheCart{
+    display: flex;
+    flex-direction: row;
+    border: 1.5px solid var(--light-color);
+    width: 600px;
+    margin-bottom: 10px;
+}
+
+#productsInTheCart > span{
+    margin: 10px;
+}
+
+
+#shoppingCartMenu{
+    display: none;
+    padding:20px;
+}
+
+#buttonVerifyCenter{
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    padding:10px;
+}
+
+.shopButton{
+    width: 90px;
+    padding-top: 8px;
+    padding-left: 2px;
+    padding-bottom: 8px;
+    border-radius: 1rem;
+    border: 1px solid var(--light-color);
+    background-color: var(--light-color);
+    color: white;
+    margin-left: 14px
+}
+
+#shopButton:hover{
+    background-color: white;
+    color: var(--light-color)
+}
+
+
+#buttonHome{
+    cursor:pointer;
+    text-align: right;
+    padding: 8px 10px;
+    margin-bottom: 10px;
+    border: 1px solid var(--light-color);
+    border-radius: 1rem;
+    background-color: var(--light-color);
+    color: var(--main-color);
+    margin-top: 5px;
+    margin-left: 20px;
+}
+
+#buttonHome:hover{
+    background-color: var(--main-color);
+    color: var(--light-color);
+    border: 1px solid var(--light-color)
+}
+#sectioniterms{padding-top:10px}
+
+/*FORM PAYMENT*/
+
+#containerFormPayment{
+    background-color: white;
+}
+#containerFormPayment > div{
+    margin-left: auto;
+    width: 80%;
+    margin-right: auto;
+}
+#formPayment{
+    display:none;
+    background-color: white;
+}
+#formPayment > div{
+    text-align: center;
+    padding-bottom: 30px;
+}
+#formPayment button{
+    background-color: Transparent;
+                            background-repeat:no-repeat;
+                            border: none;
+                            cursor:pointer;
+                            overflow: hidden; 
+}
+
+#modalForPaymentPaypal{
+    display: none;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding:10px; 
+    background-color:white; 
+    border:1px solid white; 
+    
+}
+
+#modalForPaymentVisa{
+    display: none;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding:10px; 
+    background-color:white; 
+    border:1px solid white; 
+
+}
+
+#buttonSendPaypal{
+    color: rgba(0,156,222,255);
+    background-color: rgb(4,16,89);
+    border: none;
+    padding:10px;
+    margin-top:10px;
+    border-radius:5px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+#buttonSendVisa{
+  color: rgba(0,156,222,255);
+    background-color: rgb(4,16,89);
+    border: none;
+    padding:10px;
+    margin-top:10px;
+    border-radius:5px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+
+#showPaymentMethod{
+    display: block;
+    width: 90px;
+    margin-top: 20px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 1rem;;
+    border: 1px solid var(--light-color); 
+    background-color: var(--light-color);
+    color: white;
+}
+
+#showPaymentMethod:hover{
+    border: 1px solid var(--light-color); 
+    background-color: white;
+    color: var(--light-color)
+}
+
+.containerPaypalPayment{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.hover{
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin:20px
+}
+
+
+#lastButtonBye{
+    display: none;
+    margin-top: 10px;
+    color: white;
+    background-color: var(--light-color);
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid var(--light-color);
+}
+
+/*box write*/
+#boxWrite{
+position: fixed;
+bottom: 0;  /* spazio dal bordo bottom*/
+right: 20px; /* spazio dal bordo dx */
+border-radius: 1rem 1rem 0 0;   /** è angolazione dei bordi**/
+background-color:  var(--main-color);
+font-size: 20px;
+padding: 0.7rem 2rem;    /*margini interni dalla scritta*/
+}
+
+#boxWrite #box {
+    display: none;
+}
+
+#boxWrite:hover {
+    padding-bottom: 1rem;
+    font-size: 15px;
+    color: var(--light-color);
+}
+
+#boxWrite:hover #box {
+    display: block;
+    width: 2.5rem;
+    height: 2rem;
+    margin: auto;
+    float: none;
+    padding-top: 10px;
+}
+
+
+#AboutUsParagraph{
+    display: none;
+    color: white;
+}
+
+
+#hr {
+    display: none;
+    unicode-bidi: isolate;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    overflow: hidden;
+    border-style: inset;
+    border-width: 1px;
+}

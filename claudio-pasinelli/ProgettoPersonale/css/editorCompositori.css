@@ -322,7 +322,7 @@ input[type="url"]
     min-width: fit-content;
 }
 
-section#linkSocial section#listaSocial
+section#listaSocial
 {
     text-align: center;
     margin: auto;
@@ -331,9 +331,9 @@ section#linkSocial section#listaSocial
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
-section#linkSocial section#listaSocial section
+section#listaSocial section
 {
-    margin-bottom: 15%;
+    margin-bottom: 5px;
 }
 
 #listaSocial a
@@ -341,7 +341,7 @@ section#linkSocial section#listaSocial section
     color: var(--colore-oro);
 }
 
-section#linkSocial section#listaSocial img.zoom
+section#listaSocial img.zoom
 {
     display: block;
     margin-left: auto;
@@ -356,7 +356,7 @@ section#linkSocial section#listaSocial img.zoom
     transition: all 0.2s ease-in-out;
 }
 
-section#linkSocial section#listaSocial img.zoom:hover
+section#listaSocial img.zoom:hover
 {
     -ms-transform: scale(1.1) rotate(5deg);
     -webkit-transform: scale(1.1) rotate(5deg);
@@ -418,6 +418,23 @@ section#linkSocial section#listaSocial img.zoom:hover
     border: var(--arrow-size) solid transparent;
     border-top-color: var(--colore-arancio);
     transform-origin: top center;
+}
+
+.eliminaSocial
+{
+    text-align: right;
+}
+
+.eliminaSocial .elimina
+{
+    height: 20px;
+}
+
+.cestinoSocial
+{
+    height: 15px;
+    width: auto;
+    transition: all 0.2s ease-in-out;
 }
 
 /* SECTION SOCIAL  */
@@ -604,6 +621,15 @@ footer#piePagina
     /* grid-column: 2/8; */
 }
 
+#btnsFormSocial
+{
+    display: flex;
+}
+
+#inviaSocial
+{
+    margin-right: 5px;
+}
 /*GALLERIA DI IMMAGINI*/
 
 section#galleriaImmagini
@@ -773,7 +799,7 @@ form#immaginiInput button
     overflow: hidden;
 }
 
-#profilo
+.profilo
 {
     margin: 0px 2.5rem 0rem 2.5rem;
     display: flex;
@@ -810,7 +836,6 @@ form#immaginiInput button
     font-size: 16px;
     border-radius: var(--border-radius-default);
     border-color: var(--colore-azzurro);
-
 }
 
 #descrizione:is(:focus, :valid)
@@ -824,7 +849,7 @@ form#immaginiInput button
     width: 0px;
 }
 
-#profilo
+.profilo
 {
     display: none;
     justify-self: center;
@@ -842,7 +867,7 @@ form#immaginiInput button
     max-width: 500px;
 }
 
-#profilo:hover
+.profilo:hover
 {
     transform: scale(1.0);
     border: 2px solid var(--colore-giallo);
@@ -866,7 +891,7 @@ form#immaginiInput button
     transition: all 0.5s ease;
     justify-self: right;
     border-radius: 100%;
-    grid-row: 1/3;
+    grid-row: 1/auto;
 }
 
 #sectionImmagineProfilo #immagineProfilo
@@ -913,6 +938,7 @@ p.socialContainerDescrizione
 #profiloDescrizione
 {
     display: grid;
+    grid-row: 1/auto;
 }
 
 /*PROFILO*/
@@ -921,24 +947,29 @@ p.socialContainerDescrizione
 
 @media (min-width: 100px) and (max-width: 768px)
 {
-    section#linkSocial section#listaSocial section
+    section#listaSocial section
     {
-        margin-bottom: 8%;
+        margin-bottom: 2.5px;
     }
 
-    section#linkSocial section#listaSocial img.zoom
+    section#listaSocial img.zoom
     {
         width: 3%;
     }
 
     /* profilo */
 
-    #profilo
+    .profilo
     {
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(1, 1fr);
         padding: 5px 15px;
         column-gap: 0px;
+    }
+
+    #profiloDescrizione
+    {
+        grid-row: none;
     }
 
     #nomeArt
@@ -971,13 +1002,18 @@ p.socialContainerDescrizione
 {
     /* profilo */
 
-    #profilo
+    .profilo
     {
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(1, 1fr);
         padding: 5px 15px;
         column-gap: 0px;
         max-width: 500px;
+    }
+
+    #profiloDescrizione
+    {
+        grid-row: none;
     }
 
     #nomeArt
@@ -1013,12 +1049,12 @@ p.socialContainerDescrizione
         width: fit-content;
     }
 
-    section#linkSocial section#listaSocial section
+    section#listaSocial section
     {
-        margin-bottom: 15%;
+        margin-bottom: 5px;
     }
 
-    section#linkSocial section#listaSocial img.zoom
+    section#listaSocial img.zoom
     {
         width: 5%;
     }
@@ -1026,7 +1062,7 @@ p.socialContainerDescrizione
 
 @media (min-width: 992px)
 {
-    #profilo
+    .profilo
     {
         grid-template-columns: 1fr minmax(var(--grandezza-carta));
         grid-template-rows: repeat(1,1fr);

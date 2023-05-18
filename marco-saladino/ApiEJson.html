@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>LISTA PRODOTTI</h1>
+    <ul id="prodotti"></ul>
+
+    <script type="module"> // mettere per fare funzionare la fetch mentre awai serve a dire , ok ce una richiesta aspettiamo la risposta
+
+        const responese = await fetch();// la fetch serve per ottenere la risposta Api
+        const products = await responese.json();// passo alla variabile responese il json
+        console.log(products);
+
+    </script>
+</body>
+
+</html>

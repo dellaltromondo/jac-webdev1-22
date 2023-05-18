@@ -169,6 +169,7 @@
 
 
             padding-top: 10px;
+            font-weight: bolder;
           }
        
     
@@ -209,12 +210,14 @@
 
 
             padding-top: 10px;
+            font-weight: bolder;
           }
 
          
            .italia {
            
-            background: url(italia.jpg);
+            background:url(italia.jpg);
+            
             width: 25rem;
             display: inline-block;
             height: 30rem;
@@ -246,8 +249,9 @@
           }
           .riquadro3 p{
 
-
+            
             padding-top: 10px;
+            font-weight: bolder;
           }
      
     
@@ -256,7 +260,7 @@
     
             background-color: royalblue;
             display: flex;
-            height: 200px;
+            height: 180px;
             margin-top: 20px;
             padding-top: 50px;
             
@@ -265,6 +269,7 @@
           footer p{
     
             flex: 1 300px;
+            
           
           }
     

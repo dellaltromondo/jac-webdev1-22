@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+
+class Message{
+
+    constructor(sender, reciver, timestamp){
+        this.sender = sender;
+        this.reciver = reciver;
+        this.timestamp = timestamp;
+    }
+
+    get getSender(){
+        return this.sender;
+    }
+
+    get getReciver(){
+        return this.reciver;
+    }
+    
+    get getTimestamp(){
+        return this.timestamp;
+    }
+}
+
+class TextMessage extends Message{
+    constructor(sourceText){
+      this.sourceText = sourceText;
+    }
+
+    get TextMessage() {
+        return this.TextMessage;
+    }
+  }
+
+class ImageMessage extends Message{
+  constructor(Image, sourceImage){
+    this.Image = Image;
+    this.sourceImage = sourceImage;
+  }
+
+  get Image() {
+    return this.Image;
+
+  }
+
+  get sourceImage() {
+    return this.sourceImage;
+}
+}
+const newMessage = new Message("Me","You", new Date());
+console.log(newMessage.getTimestamp);
+console.log(newMessage.getSender);
+console.log(newMessage.getReciver);
+    </script>
+
+
+</body>
+</html>

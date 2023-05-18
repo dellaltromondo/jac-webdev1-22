@@ -1,0 +1,369 @@
+ body {
+    background-color: hsl(195, 5%, 50%);
+    display: grid;
+    grid-template-columns:repeat(12, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    gap: 20px;
+}
+
+#titolo{
+    font-size: 2.8rem;
+}
+
+#logout{
+    grid-column: 12/13;
+    text-align: end;
+    grid-row: 1/2;
+    position: relative;
+    bottom: 40px;
+    margin-right: 30px;
+    display: none;
+    font-size: 0.7rem;
+    width: 5.2rem;
+}
+
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+    text-align: right;
+  }
+  
+  .modal-content p {
+    color: #000000;
+    text-align: left;
+  }
+
+.modal-content textarea {
+    width: 80%;
+    display: block;
+    margin: auto;
+    
+}
+
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+
+#login {
+    display: block;
+    align-items: center;
+    grid-column: 1/13;
+    grid-row: 2/3;
+
+}
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(158, 20, 20, 0.502);
+    border: 3px solid black;
+    border-radius: 30px;
+    width: fit-content;
+    padding: 1em 2em 2em 2em;
+    margin: 5em auto;
+}
+
+#login-form>label {
+    padding: 0.9em;
+    font-size: 1.5rem;
+}
+
+input{
+    height: 1.5rem;
+    width: max-content;
+    font-size: 1.3rem;
+}
+
+
+#login-button {
+    padding: 0.5em 1em;
+    margin-top: 0.5em;
+    border-radius: 30px;
+    background-color: white;
+}
+
+#benvenuto{
+    grid-column: 1/13;
+    grid-row: 1/2;
+    display: none;
+    margin-top: -2rem;
+    width: max-content;
+    color:#fff;
+}
+
+#Benvenuto {
+    color:#fff;
+    font-size: 1rem;
+    padding-left: 8px;
+}
+
+h1 {
+    color:azure;
+    text-shadow: -2px 0 #000000, 0 2px #000000, 2px 0 #000000, 0 -2px #000000;
+    font-size: 2.1rem;
+    text-align: center;
+    display: none;
+    grid-column: 1/13;
+    grid-row: 1/2;
+    justify-self: center;
+    display: block;
+    margin-top: 4.5rem;
+    margin: auto;
+}
+
+
+#bottone{
+    display: none;
+    grid-column: 1/13;
+    grid-row: 2/3;
+    align-items: center;
+    background-color:rgba(177, 53, 53, 0.908);
+}
+
+
+button {
+    flex-direction:column;
+    outline: none;
+    cursor: pointer;
+    font: bold 0.2rem Arial, Helvetica, sans-serif;
+    color: #fff;
+    padding: 0.2rem 0.4rem;
+    color:rgb(0, 0, 0);
+    font-size: 1.2rem;
+    margin: auto;
+    display: inline;
+    
+}
+
+nav, a {
+    font-size: 1.8rem;
+    color: rgb(255, 255, 255);
+    padding: 20px;
+    text-align: center;
+}
+
+img {
+    width: stretch;
+}
+
+ul li {
+    font-size:1rem;
+}
+
+#fotoHacker{
+    max-width: 100%;
+     height: auto;
+}
+
+#domande {
+    width: 100%;
+    text-align: right;
+    height: 1px;
+}
+
+#domande button {
+    font-size: 2rem;
+padding: 0.8rem 1rem ;}
+
+#pagineWeb {
+    grid-column: 1/13;
+    grid-row: auto;
+    display: none;
+    width: 90vw;
+    margin: auto;
+    margin-top: 20px;
+    padding: 0.6rem;
+    border-width: 3px;
+    border-color: black;
+    border-style: solid;
+}
+
+#pagineWeb header{
+
+    text-align: center;
+}
+
+#pagineWeb header img {
+    width: 60vw
+}
+
+p{
+    column-rule: 1px solid black;
+    column-count: 2;
+    column-gap: 2.5rem;
+    font-size: 1.8rem;
+    padding: 2rem;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    grid-column: 1/6;
+    margin-bottom: 2rem;
+    color: rgb(225, 225, 225);
+}
+
+.argomento article {
+   display: grid;
+   grid-template-columns: repeat(5, 1fr);
+    
+}
+
+.argomento article img {
+    width: 50vw;
+    display: inline-block;
+    grid-column: 2/5
+    
+}
+
+#boxModel {
+    width: 90vw;
+    color:darkslategray;
+    margin: auto;
+    padding: 0.6rem;
+    border-width: 3px;
+    border-color: black;
+    border-style: solid;
+    grid-row: 3/4;
+    justify-items: end;
+    grid-column: 1/13;
+    grid-row: auto;
+    display: none
+}
+
+
+h2{
+    color:#fff;
+    text-align: center;
+    font-size: 3rem;
+    grid-column: 2/5;
+    margin-top: 3rem;
+}
+
+div{
+    grid-column: 1/13;
+}
+
+#boxModel header {
+    text-align: center;
+    grid-row: 2/3;
+    grid-column: 1/6;
+}
+
+
+#back {
+    outline: none;
+    cursor: pointer;
+    background-color:  rgb(225, 109, 98);
+    border-radius: 10px;
+    border-color:  rgb(160, 69, 69);
+    color: white;
+    margin: 20px;
+    text-align: start;
+    grid-column: 1;
+    grid-row: 1/2;
+    width: max-content;
+    height: max-content;
+    padding: 10px 15px
+
+}
+
+#display {
+    width: 90vw;
+    color:darkslategray;
+    margin: auto;
+    padding: 0.6rem;
+    border-width: 3px;
+    border-color: black;
+    border-style: solid;
+    grid-row: 3/4;
+    justify-items: end;
+    grid-column: 1/13;
+    grid-row: auto;
+    display: none
+}
+
+.tipi {
+    display: inline-block;
+    width: 30%;
+    margin-right: 0rem;
+    margin-top: 5rem;
+    margin-left: 0;
+    padding: 1rem;
+
+}
+
+iframe{
+    height: 40rem;
+    grid-column: 1/5;
+    text-align: center;
+    width: 75vw;
+    margin: auto;
+}
+
+#javascript {
+    width: 90vw;
+    color:darkslategray;
+    margin: auto;
+    padding: 0.6rem;
+    border-width: 3px;
+    border-color: black;
+    border-style: solid;
+    grid-row: 3/4;
+    justify-items: end;
+    grid-column: 1/13;
+    grid-row: auto;
+    display: none;
+}
+
+textarea{
+    width: 35rem ;
+    text-align: left;
+    resize: none;
+    font-size: 1.2rem;
+    
+}
+
+#div-textarea{
+    width: fit-content;
+    margin: 1rem auto;
+
+}
+
+#javascript header {
+    text-align: center;
+
+}
+
+#javascript header img {
+    width: 60vw;
+    
+}

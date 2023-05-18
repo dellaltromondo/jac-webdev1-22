@@ -1,6 +1,8 @@
-  *{
-    background-color:#66ff99;
-   }
+body 
+{
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #40DC42;
+}
 
 @media (max-width:960px) {
 
@@ -15,13 +17,11 @@
     }
 
     #TitleMobile {
-        text-align: center;   
-        background-color: #339933;                                                                                                                                                          
+        text-align: center;                                                                                                                                                       
     }
 
     #Instructions {
         text-align: center;
-        background-color:#1aff66;
     }
 
     form {
@@ -29,7 +29,11 @@
     }
 
     #RollIt {
-        background-color: #009933; 
+        text-align: center;
+    }
+
+    #Refresh
+    {
         text-align: center;
     }
 
@@ -81,12 +85,10 @@
     #TitleDesktop
     {
         text-align: center;
-        background-color: #339933;
     }
 
     #Instructions 
     {
-        background-color:#1aff66;
         text-align: center;
     }
 
@@ -133,7 +135,27 @@
 
     #RollIt
     {
-        background-color: #009933;
+        height: 2rem;
+        width: 4rem;
+        border: 0px;
+    }
+
+    #Refresh
+    {
+        text-align: center;
+        height: 2rem;
+        width: 4rem;
+        border: 0px;
+    }
+
+    #RollIt:hover 
+    {
+        background-color: orangered;
+    }
+    
+    #Refresh:hover
+    {
+        background-color: orangered;
     }
 
     input 

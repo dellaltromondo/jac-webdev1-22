@@ -1,0 +1,127 @@
+#car{
+position: relative;
+right: 10%;
+height: 48px;
+width: 48px;
+float: right;
+padding-top: 6px;
+
+}
+
+nav{
+    background-color: black;
+    position: sticky;
+    top: 0px;
+    border: 3px solid white;
+}
+.NavEl {
+    margin: 0;
+    display: inline-block;
+    margin-left: 40px;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+    line-height: 40px;
+    text-align: center;
+    
+ 
+  }
+ body{
+    margin: 0px;
+    background-color: black;
+ }
+ #Im{
+    height: 500px;
+    width: 1550px;
+ }
+ 
+ form{
+   display: none;
+ }
+ footer{
+   background-color: black;
+}
+.contatti{
+   margin: 0px;
+   display:flex;
+   flex-direction: row;
+   padding: 20px 300px;
+   text-decoration: none;
+   color: white;
+   line-height: 15px;
+   text-align: center;
+   align-items: center;
+   gap: 3rem;
+   border: 3px solid white;
+   
+}
+
+p{
+   color: beige;
+}
+h1,h2,h3,h4{
+   color: beige;
+}
+
+#DivBul{
+   border: 1px solid white;
+   padding: 20px 300px;
+   text-align: center;
+   align-items: center;
+}
+#DivCa{
+   border: 1px solid white;
+   padding: 20px 300px;
+   text-align: center;
+   align-items: center;
+}
+#DivCit{
+   border: 1px solid white;
+   padding: 20px 300px;
+   text-align: center;
+   align-items: center;
+}
+
+#DivRol{
+   border: 1px solid white;
+   padding: 20px 300px;
+   text-align: center;
+   align-items: center;
+}
+#DivZe{
+   border: 1px solid white;
+   padding: 20px 300px;
+   text-align: center;
+   align-items: center;
+}
+#DivPa{
+   border: 1px solid white;
+   padding: 20px 300px;
+   text-align: center;
+   align-items: center;
+}
+
+#DivPan{
+   border: 1px solid white;
+   padding: 20px 300px;
+   text-align: center;
+   align-items: center;
+}
+#DivLo{
+   border: 1px solid white;
+   padding: 20px 300px;
+   text-align: center;
+   align-items: center;
+}
+#DivOm{
+   border: 1px solid white;
+   padding: 20px 300px;
+   text-align: center;
+   align-items: center;
+}
+#Form {
+   border-radius: 2px;
+   justify-content: center; 
+   align-items: center; 
+   height: 50px;
+ }

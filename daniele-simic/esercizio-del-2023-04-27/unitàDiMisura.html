@@ -14,7 +14,33 @@
         -telefoni
         -tablet
         -pc
-        
+        @media query possiamo decidere che tipo di css usare in base al dispositivo che 
+        si sta usando.
+        in base a questo abbiamo due tipi di unità di misura: 
+        -assoluti (pixel, [cm, mm usati per i print], pt ovvero i punti)
+        -relativi che a loro volta si dividono in due parti:
+        _ font relative ( rem, em, ch )
+        _ container relative( %, fr )
+        i problemi con i container relative è che gli fr e le percentuali non tengono conto
+        dei padding dunque potrebbe essere che il contenuto esca dalla scatola dato che 
+        ha preso il 100% della dimensione della scatola ma non tiene conto dei padding
+        dunque per ovviare questo problema si usa "calc (100% -[padding])"
+        un em corrisponde alla dimensione del contenuto sul quale uso l unità di misura
+        dunque se un h2 ha una dimensione di 18px ciò significa che 1em è uguale a 18px
+        dunque vengono usati per gli elementi che devono tenere conto della dimensione del font
+        il rem invece non si basa sull elemento su cui si trova ma sulla dimensione in px dell'html
+        dunque supponendo che la dimensione dei pixel standard dell'html sia 16 ovunque io uso 
+        la rem dunque le dimensioni hanno come riferimento i 16px standard. servono per quando si 
+        vuole zoommare i siti e per renderlo della dimensione giusta.
+        -viewport relative: (vh, vw, vmin, vmax)
+        il problema con la viewport relative è che quando cambia la dimensione della vieport c'è il rischio
+        che le cose siano sbilanciate, per ovviare a questo problema ci sono i vmin e vmax
+        che aiutano a rendere gli elementi proporzionali: come funziona? se la viewport è:
+        500px orrizzontale vw (larghezza viewport), vmax (dimensione maggiore della viewport)
+        300px verticale vh (altezza viewport), vmin (dimensione minore della viewport)
+        FUNZIONI CSS: 
+        calc (dimensione, operazione);
+        clamp (min, attuale, max);
 
 
     -->

@@ -1,0 +1,86 @@
+
+<!--controlla wc-codemirror-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="javascript.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <script src="https://kit.fontawesome.com/266ac2c7ce.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+<h1>JAVASCRIPT</h1>
+
+    
+<a href="../homepage/homepage.html"><i class="fa-solid fa-circle-left"></i></a>
+    <header>
+        <nav>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">MDN</a>
+            <a href="https://www.w3schools.com/js/default.asp">W3School</a>
+        </nav>
+        <img src="imgs/javascript-immagine.jpg" id="imgH"> 
+    </header>
+
+    <section id="teoria">
+        <p>Javascript utilizza un paradigma che è orientato verso l'utilizzo degli oggetti
+            difatto ogni elemento in java può essere considerato un oggetto( prendi in esempio
+            un array che a sua volta può essere un array di oggetti ecc...). Nonostante questa premessa
+            è giusto anche precisare che in javascript si può anche programmare in senso funzionale (dunque
+            utilizzando le funzioni e non gli oggetti). Questo è un linguaggio C-like infatti per indicare un 
+            istruzione la devo definire all'interno delle parentesi {}, i parametri e i flussi all'interno
+            delle parentesi () ed alla fine di ogni istruzione si mette ";" (anche se non è strettamente obbligatorio).
+            Come il suo collega Java in Javascript ci sono i tipi che definiscono le variabili dichiarate,
+            tuttavia queste non sono strettamente vincolanti come in Java, infatti posso dichiarare una variabile di tipo
+            stringa e assegnargli un valore di tipo intero. Questo lo rende un linguaggio non fortemente tipizzato.
+            Ma precisamente allora come si inizializza una variabile? 
+
+            <textarea  id="hello" cols="40" rows="12">
+           In java scriveremmo:
+
+            int numero = 42;
+            system.out.println(numero);
+            
+
+
+            in Javascript invece:
+
+            const numero: 42;
+            console.log(numero);
+        </textarea>
+
+        <p>Come si può notare non utilizziamo l'operatore "new" per inizializzare la variabile
+            infatti usiamo "const" che è uno dei tre operatori usati per inizializzare una variabile
+            infatti i modi che esistono per inizializzare una variabile sono: <br>
+            <br>
+            -const <br>
+            -let <br>
+            -var<br>
+            <br>
+            ma quale è la differenza principale che c'è tra questi metodi e non semplicemente usarne uno che va bene per tutto? <br>
+            Allora, inizialmente si utilizzava solo "var" che faceva da padrone. Per utilizzare var bisogna assicurarsi che lo si utilizzi
+            solamente per definire una variabile univoca nel codice dato che ha bisogno di essere dichiarata globalmente e non all'interno 
+            di una funzione per essere utilizzata da altri elementi del codice. Il vero problema è proprio questo fatto della globalità che da 
+            problemi nel momento in cui andiamo a ridefinire la variabile il risultato che otteniamo potrebbe non essere quello desiderato.
+            Per questo motivo adesso esistono "let" e "const" che ci risolvono i problemi che dava var. Vediamo prima "let". <br>
+            let ha una principale differenza rispetto a var: non può essere ridichiarata all'interno dello stesso campo. dunque non posso 
+            dichiarare due volte all'interno della stessa funzione una variabile "let" con lo stesso nome, l'unico "vincolo" rispetto a a var è
+            che per utilizzare una variabile let bisogna prima inizializzarla e solo poi utilizzarla.<br>
+            E const invece? Const (come suggerisce anche il nome) rappresenta delle variabili costanti e come con let, possono essere utilizzate solo 
+            nel blocco in cui sono dichiarate. a differenza di let e var quest'ultima aggiunge un ulteriore misura di sicurezza delle variabili infatti queste
+            non possono essere ridichiarate ne tantomeno aggiornate. possiamo definire const come "variabile che non cambia mai" ed è spesso utilizzata appunto 
+            con quel purpose: non cambiare mai forma, valore, stringa ecc... (spesso usato per dichiarare un array, sicuro non un iteratore).
+            Nonostante non si posssano aggiornare le variabili const si possono cambiare tramite l'utilizzo di metodi.
+        </p>
+            
+
+        </p>
+
+    </section>
+    
+    
+</body>
+</html>
