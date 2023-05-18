@@ -1,0 +1,64 @@
+h1 {
+    text-align: center;
+}
+
+p {
+    margin: 3rem;
+    line-height: 3rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
+#stock {
+    background-color: aquamarine;
+    margin: 2rem;
+    border-width: 5px;
+    border-color: black;
+    border-style: double;
+    padding: 20px;
+}
+
+img {
+    background-color: antiquewhite;
+    width: 20%;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3.5rem 8rem 3.5rem 8rem;
+    border-color: gray;
+    border-style: double;
+    border-width: 5px;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+#modded{
+    background-color: aquamarine;
+    margin: 2rem;
+    border-width: 5px;
+    border-color: black;
+    border-style: double;
+    padding: 20px;
+}
+
+#modificato{
+    background-color: antiquewhite;
+    position: absolute;
+    top: 66rem;
+    left: 0.5rem;
+    width: 20%;
+    padding: 3.5rem 8rem 3.5rem 8rem;
+    border-color: black;
+    border-style: double;
+    border-width: 5px;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    box-sizing: content-box;
+}
+
+#spiegazione{
+    text-align: right;
+    margin-right: 2rem;
+    font-size: 1.5rem;
+    margin-top: -1rem;
+}

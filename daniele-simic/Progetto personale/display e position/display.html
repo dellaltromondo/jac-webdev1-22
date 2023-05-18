@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <link rel="script" href="../javascript.js">
+    <title>Display e Position</title>
+    <link rel="stylesheet" href="display.css">
+    <link rel="external" href="../../homepage/homepage.html">
+    <script src="https://kit.fontawesome.com/266ac2c7ce.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+<h1>DISPLAY E POSITION</h1>
+
+    <header>
+        <a href="../homepage/homepage.html"><i class="fa-solid fa-circle-left"></i></a>
+    </header>
+
+    <article id="display"> 
+        <h2>DISPLAY</h2>
+        <img src="imgs/rappresentazione flussi.png" id="flussi">
+        Di default il browser da una gerarchia ai tag che usiamo, e questa gerarchia può essere modificata dal tag: "display".<br>
+        Ci sono diversi tipi di display: <ul>
+        <li>"none" : ovvero come se non ci fosse</li>
+        <li>"inline" : dunque che segue il flusso della pagina</li>
+        <li>"inline-block" : che interrompe il flusso della pagina ma non lo riempie</li>
+        <li>"block" : che interrompe il flusso della pagina e lo rimpie</li> 
+        </ul><br>
+    </article>
+     <p>Dobbiamo immaginare la pagina web come un flusso 
+        continuo di spazio, gli elementi che noi posizioniamo hanno un certo "peso"
+        e in base a quest'ultimo si decide l'influenza che hanno sul flusso della pagina. esempio: <br>
+        <br>
+        1) il testo scritto senza i tag "p" non ha alcun peso infatti si adatta al flusso della pagina; 
+        infatti hanno display "inline" ovvero "in linea con il flusso" <br>
+        <br>
+        2) le immagini sono un peso non eccessivo, infatti spezzano il flusso solo nelle dimensioni che occupano 
+        e non del tutto. infatti hanno un display "inline-block" ovvero un blocco che non sta in linea con il flusso 
+        nella sua dimensione. <br>
+        <br>
+        3) i titoli, il tag "p" sono pesanti, infatti spezzano il flusso della pagina nella sua interezza
+         obbligando ogni altro elemento ad andare a capo di un altro flusso. Infatti hanno il display: "block" ovvero 
+         blocca il flusso della pagina interamente. <br>
+    </p>
+    
+    <img src="imgs/rappresentazione inline-blocki.png" class="tipi"> <img src="imgs/rappresentazione block.png" class="tipi"> <img src="imgs/rappresentazione inline.png" class="tipi">
+    
+    <article id="position">
+        <H2>LA POSITION</H2>
+        
+        
+<p>
+La position indica come un elemento sta posizionato all’interno del flusso della pagina. La position static
+è la posizione di default del browser basata su inline o block.  <br>
+La position relative: rispetto alla posizione di default mi sposto di tot. Per spostarla uso: top, bottom, right, 
+left accompagnate dall’unità di misura, attenzione se scrivo “top” non va in alto ma si abbassa dal top per tot 
+unità di misure.  </p>
+<iframe src="../display e position/position/positionRelative/relative.html"></iframe> <br>
+<p>
+La seconda opzione è che la posizione sia fixed ovvero che sia fissato rispetto alla viewport (ovvero la finestra 
+dove si creano le pagine). </p> <br>
+ <iframe src="../display e position/position/fixed/fixed.html"></iframe> <br>
+
+ <p>
+La terza opzione è absolut ovvero che l’elemento sia fissato sul contenitore genitore quindi quando specifico
+le misure intendo dove si deve posizionare all’interno del contenitore. La differenza con static è che con l absolut
+io stacco l'elemento dal flusso e dunque posso sovrapporre le cose. L'absolut è fissato rispetto 
+all’antenato positioned. </p> <br>
+<iframe src="../display e position/position/positionAbsolut/absolut.html"></iframe> <br>
+
+<p>
+La quarta opzione è sticky: rimane static quindi segue la pagina fino ad un certo punto dove poi si ferma 
+e rimane fixed. Anche lo sticky usa top, right, bottom, left. Sticky sta all’interno
+della pagina ma non può andare oltre al suo contenitore. Ci sono due scenari comuni in cui un elemento impostato
+con “position:sticky” non si attacca alla finestra del browser come previsto: il primo è che non abbiamo definito la distanza 
+che deve tenere dal "top" o dal "bottom" se scrolla verticalmente o la distanche che deve tenere dal "right" o dal "left"
+nel caso in cui scrolla in orizzonale. Nel secondo caso a uno degli elementi antenati del nostro elemento
+ con “position:sticky” è stato settato il tag “overflow” con il valore di “hidden”, “scroll” oppure “auto”. </p> <br>
+<iframe src="../display e position/position/positionSticky/sticky.html"></iframe> <br>
+
+<p>
+la quinta opzione è il float che, nonostante non si deve specificare il tag display per poterlo richiamare ma basta scrivere
+"float" e poi specifico tramite gli agenti: top, right, bottom, left dove lo voglio nella pagina. come suggerisce
+il nome il float serve per far "galleggiare" l'elemento all'interno del flusso. di conseguenza gli altri elementi attorno
+lo "ingloberanno" (si usa per fare le scritte attorno alle immagini di solito).</p> <br>
+<iframe src="../display e position/position/float/float.html"></iframe>
+
+</article>
+
+
+</body>
+</html>

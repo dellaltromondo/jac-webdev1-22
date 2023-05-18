@@ -1,6 +1,5 @@
 class Subjects{
     
-
     // I CANCELLETTI DANNO PROBLEMI NEL DB PERCHè NELLO STRINGIFY LI AGGIUNGE AL NOME SUL DB
     nomeMateria;
     nomeDocente;
@@ -26,4 +25,4 @@ class Subjects{
     getCodUtente(){
         return this.codUtente;
     }
-}
+} 
