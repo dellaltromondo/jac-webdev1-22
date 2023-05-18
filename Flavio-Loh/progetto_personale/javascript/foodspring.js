@@ -1,4 +1,6 @@
-window.addEventListener("load", function() {
+
+// js per il carrello
+window.addEventListener("load", function () {
   let cart = sessionStorage.getItem("cart");
   if (cart) {
     cart = JSON.parse(cart);
@@ -19,7 +21,7 @@ window.addEventListener("load", function() {
     const removeButtonCell = document.createElement("td");
     const removeButton = document.createElement("button");
     removeButton.textContent = "Rimuovi";
-    removeButton.addEventListener("click", function() {
+    removeButton.addEventListener("click", function () {
       const index = cart.indexOf(item);
       if (item.quantity > 1) {
         item.quantity--;
@@ -41,9 +43,9 @@ window.addEventListener("load", function() {
 
     total += item.price * item.quantity;
   }
-  
+
   updateCartTotal();
-  
+
   function updateCartTotal() {
     total = 0;
     for (const item of cart) {
@@ -56,7 +58,7 @@ window.addEventListener("load", function() {
 
 const addToCartButtons = document.querySelectorAll(".add-to-cart");
 addToCartButtons.forEach(button => {
-  button.addEventListener("click", function() {
+  button.addEventListener("click", function () {
     const name = button.dataset.name;
     const price = parseFloat(button.dataset.price);
     const quantity = parseInt(button.dataset.quantity);
@@ -87,3 +89,40 @@ addToCartButtons.forEach(button => {
     updateCartTotal();
   });
 });
+
+
+
+
+
+// js per la barra di ricerca 
+
+// recupera tutti gli elementi della lista degli articoli
+const items = document.querySelectorAll('.item');
+
+// funzione per filtrare gli articoli in base alla ricerca
+function filterItems(searchTerm) {
+
+  // converte il testo di ricerca in minuscolo
+  searchTerm = searchTerm.toLowerCase();
+
+  // itera su ogni elemento e nasconde quelli che non corrispondono alla ricerca
+  items.forEach(function (item) {
+
+    const name = item.querySelector('h3').textContent.toLowerCase();
+
+    // controlla se il nome dell'elemento inizia con la lettera o le lettere cercate
+    if (name.startsWith(searchTerm)) {
+      item.style.display = "flex";
+    } else {
+      item.style.display = "none";
+    }
+  });
+}
+
+// gestisce l'evento di modifica dell'input di ricerca
+const searchInput = document.querySelector('#search');
+searchInput.addEventListener('input', function () {
+  filterItems(this.value);
+});
+
+
