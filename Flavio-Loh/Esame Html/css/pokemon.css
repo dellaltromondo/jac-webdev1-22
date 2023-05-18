@@ -3,6 +3,40 @@
 }
 
 
+:root{
+    --scuro: black;
+    --grigio-mezzo-scuro: darkgrey;
+    --padding-value: 5px;
+    --colore-chiaro: white;
+    --grigio-mezzo-scuro: grey;
+    --arancione:orange;
+    --border: 7px;
+    --carta: 230px;
+}
+
+nav{
+    grid-area: nav;
+    background-color: rgb(204, 122, 0);
+    padding: var(--padding-value);
+    position: sticky;
+    top: 0;
+    display: flex;
+    place-content: space-between;
+    z-index: 1000;
+}
+
+nav h1{
+    display: inline-block;
+    font-size: 2rem;
+    margin: 0;
+    color: var(--colore-chiaro);
+    margin-left: 20px;      
+}
+
+nav a{
+    color: var(--colore-chiaro);
+}
+
 
 body{
     margin: 0;
@@ -20,24 +54,6 @@ body{
     grid-template-columns: 200px 1fr 1fr;
 }
 
-nav{
-    grid-area: nav;
-    background-color: rgb(204, 122, 0);
-    padding: var(--padding-default-value);
-    position: sticky;
-    top: 0;
-    display: flex;
-    place-content: space-between;
-    z-index: 1000;
-}
-
-nav h1{
-    display: inline-block;
-    font-size: 2rem;
-    margin: 0;
-    color: var(--colore-chiaro);
-    margin-left: 20px;      
-}
 
 #button{
     list-style: none;
@@ -47,38 +63,35 @@ nav h1{
 }
 
 #myP{
-    margin: 0 var(--padding-default-value) 0 0;
-    padding: var(--padding-default-value);
+    margin: 0 var(--padding-value) 0 0;
+    padding: var(--padding-value);
     background-color: rgb(218 178 178);
-    border-radius: var(--border-radius-default);
+    border-radius: var(--border);
 }
 
 #newP{
-    margin: 0 var(--padding-default-value) 0 0;
-    padding: var(--padding-default-value);
+    margin: 0 var(--padding-value) 0 0;
+    padding: var(--padding-value);
     background-color: rgb(218 178 178);
-    border-radius: var(--border-radius-default);
+    border-radius: var(--border);
 }
 
 #info{
-    margin: 0 var(--padding-default-value) 0 0;
-    padding: var(--padding-default-value);
+    margin: 0 var(--padding-value) 0 0;
+    padding: var(--padding-value);
     background-color: rgb(218 178 178);
-    border-radius: var(--border-radius-default);
+    border-radius: var(--border);
 }
 
-nav a{
-    color: var(--colore-chiaro);
-}
 
 aside
 {
     grid-area: aside;
-    background-color: var(--colore-mezzo-chiaro);
-    padding: var(--border-radius-default);
+    background-color: var(--colore-chiaro);
+    padding: var(--border);
     min-height: 100%;
     height: 100vh;
-    border: solid var(--colore-mezzo-scuro);
+    border: solid var(--grigio-mezzo-scuro);
     border-width: 0 1px 0 0;
     padding-top: 15px;
 }
@@ -87,8 +100,8 @@ aside
 {
     grid-area: grid;
     display: grid;
-    padding: var(--border-radius-default);
-    background-color: var(--grigio-scuro);
+    padding: var(--border);
+    background-color: var(--grigio-mezzo-scuro);
     height: fit-content;
     padding: 15px 25px;
 }
@@ -114,7 +127,7 @@ aside
     outline: none;
     resize: none;
     font-size: 16px;
-    border-radius: var(--border-radius-default);
+    border-radius: var(--border);
     border-color: var(--colore-azzurro);
 }
 
@@ -126,64 +139,54 @@ input[type="text"]{
     text-align: center;
     margin: 10px 0;
     padding: 10px;
-    border-radius: var(--border-radius-default);
-    border: groove var(--colore-mezzo-chiaro);
+    border-radius: var(--border);
+    border: groove var(--colore-chiaro);
     border-width: 2px;
     background-color: var(--colore-chiaro);
     max-width: 200px;
 }
 
 #addPokemon{
-    border-radius: var(--border-radius-default);
-    background-color: var(--rosso);
+    border-radius: var(--border);
+    background-color: var(--arancione);
     color: var(--colore-chiaro);
-    padding: var(--padding-default-value);
+    padding: var(--padding-value);
     border: none;
     cursor: pointer;
 }
 
 .bottonePokemon{
-    border-radius: var(--border-radius-default);
+    border-radius: var(--border);
     background-color: var(--colore-chiaro);
-    padding: var(--padding-default-value);
+    padding: var(--padding-value);
     border: none;
     cursor: pointer;
     width: 100%;
     text-align: left;
     font-weight: bold;
-    margin-bottom: var(--border-radius-default);
+    margin-bottom: var(--border);
 }
 
-:root{
-    --colore-scuro: rgb(50, 54, 67);
-    --colore-mezzo-scuro: rgb(68, 72, 87);
-    --padding-default-value: 5px;
-    --colore-chiaro: rgb(255, 255, 255);
-    --colore-mezzo-chiaro: rgb(242, 242, 242);
-    --grigio-scuro: rgb(223, 223, 223);
-    --rosso: rgb(255, 42, 0);
-    --border-radius-default: 5px;
-    --grandezza-carta: 250px;
-}
+
 
 
 #Pokemon{
-    border-radius: var(--border-radius-default);
+    border-radius: var(--border);
     background-color: var(--colore-chiaro);
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(var(--grandezza-carta), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(var(--carta), 1fr));
     column-gap: 10px;
     row-gap: 12px;
     padding: 10px;
     width: 100%;
     height: fit-content;
-    min-height: var(--grandezza-carta);
+    min-height: var(--carta);
 }
 
 .card{
     min-height: 350px;
     height: fit-content;
-    width: var(--grandezza-carta);
+    width: var(--carta);
     margin: auto;
     margin-bottom: 10px;
     background-color: var(--colore-chiaro);
@@ -194,7 +197,7 @@ input[type="text"]{
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     position: relative;
-    border: groove 1px var(--colore-mezzo-chiaro);
+    border: groove 1px var(--colore-chiaro);
 }
 
 .banner{

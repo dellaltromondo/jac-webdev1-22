@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="pokemon.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="pokemon.js"></script>
+    <title>Pokèdex</title>
+</head>
+
+
+<nav>
+
+<ol>
+    <li id="primo">Pokèdex</li>
+    <li><a href="">My Pokèmons</a> </li>
+    <li><a href="">New Pokèmon</a> </li>
+    <li><a href="">Info</a> </li>
+</ol>
+    
+
+</nav>
+
+<body>
+
+
+
+<aside>
+        <button onclick="MostraPika(pokemon)">Pikachu</button>
+        
+        <button onclick="Mostracharme(pokemon)">Charmender</button>
+        
+        <button onclick="MostraSqui(pokemon)">Squirtle</button>
+     
+        <button onclick="MostraBulba(pokemon)">Bulbasaur</button>
+      
+   </aside>     
+
+   <form action="">
+
+  <h2 id="P">Insert new</h2>
+
+        <p>Pokèmon name:</p>
+        <input id="N" type="text" name="campo" value="e.g. Pikachu">
+        <br>
+        <br>
+        <input type="checkbox" name="" id="">
+        <p>captured</p>
+        <p>level:</p><input id="L" type="number" id="quantity" name="quantity" min="1" max="100" value="1">
+        <h3>Image URL</h3>
+        <input id="U" type="text" name="campo" value="Enter Image URL">
+        <p>Description:</p>
+        <input id="D" type="text" name="campo" value="Enter Description">
+        <br>
+        <button>aggiungi</button>
+</form>
+      
+
+
+
+    <div class="Poke">
+
+        <section id="Pika">
+            <img src="https://media.pokemoncentral.it/wiki/5/5e/Artwork0025_RFVF.png" alt="10px">
+            <p>Pikachu</p>
+            <p>Pikachu è un Pokémon di tipo Elettro introdotto in prima generazione.</p>
+        </section>
+
+        <section id="Charme">
+            <img src="https://media.pokemoncentral.it/wiki/a/ab/Artwork0004_RFVF.png" alt="">
+            <p>Charmender</p>
+            <p>Charmander è un Pokémon di tipo Fuoco introdotto in prima generazione</p>
+
+        </section>
+
+        <section id="Squi">
+            <img src="https://media.pokemoncentral.it/wiki/8/8d/Artwork0007_RFVF.png" alt="">
+            <p>Squirtle</p>
+            <p>Squirtle è un Pokémon di tipo Acqua introdotto in prima generazione.</p>
+        </section>
+
+        <section id="Bulba">
+            <img src="https://media.pokemoncentral.it/wiki/thumb/9/9b/Artwork0001_RFVF.png/1024px-Artwork0001_RFVF.png"
+                alt="">
+            <p>Bulbasaur</p>
+            <p>Bulbasaur è un Pokémon di doppio tipo Erba/Veleno introdotto in prima generazione.</p>
+        </section>
+
+    </div>
+</div>
+    
+
+</body>
+
+</html>

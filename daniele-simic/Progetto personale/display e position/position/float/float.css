@@ -1,0 +1,38 @@
+img{
+    width: 20%;
+    background-color:aquamarine;
+    padding: 2rem 10rem;
+    display: flex;
+    margin: 10px 40px 10px 20px;
+    
+    }
+
+    p{
+        font-size: 2rem;
+        margin-top: 2rem;
+    }
+    #stock{
+        margin: 15px 30px;
+        padding:4rem;
+        border-width: 5px;
+        border-style: double;
+        border-color: black;
+        margin-bottom: 5rem;
+    }
+
+    #spiegazione{
+        margin: 2rem 8rem;
+        text-align: center;
+    }
+
+    #mod{
+        margin-top: 5rem;
+        border-width: 5px;
+        border-style: double;
+        border-color: black;
+    }
+
+    #mod img{
+        float: left;
+        margin: 20px;
+    }

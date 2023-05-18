@@ -1,0 +1,316 @@
+
+           /**
+       * @license
+       * Copyright 2019 Google LLC. All Rights Reserved.
+       * SPDX-License-Identifier: Apache-2.0
+       */
+      /* 
+       * Always set the map height explicitly to define the size of the div element
+       * that contains the map. 
+       */
+       #map {
+        margin-top: 20px;
+       margin-left: 17%;
+        height: 50%;
+        width: 65%;
+      }
+
+      /* 
+       * Optional: Makes the sample page fill the window. 
+       */
+
+      #description {
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+      }
+
+      #infowindow-content .title {
+        font-weight: bold;
+      }
+
+      #infowindow-content {
+        display: none;
+      }
+
+      #map #infowindow-content {
+        display: inline;
+      }
+
+      .pac-card {
+        background-color: #fff;
+        border: 0;
+        border-radius: 2px;
+        box-shadow: 0 1px 4px -1px rgba(0, 0, 0, 0.3);
+        margin: 10px;
+        padding: 0 0.5em;
+        font: 400 18px Roboto, Arial, sans-serif;
+        overflow: hidden;
+        font-family: Roboto;
+        padding: 0;
+      }
+
+      #pac-container {
+        padding-bottom: 12px;
+        margin-right: 12px;
+      }
+
+      .pac-controls {
+        display: inline-block;
+        padding: 5px 11px;
+      }
+
+      .pac-controls label {
+        font-family: Roboto;
+        font-size: 13px;
+        font-weight: 300;
+      }
+
+      #pac-input {
+        background-color: #fff;
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+        margin-left: 12px;
+        padding: 0 11px 0 13px;
+        text-overflow: ellipsis;
+        width: 400px;
+      }
+
+      #pac-input:focus {
+        border-color: #4d90fe;
+      }
+
+      #title {
+        color: #fff;
+        background-color: #4d90fe;
+        font-size: 25px;
+        font-weight: 500;
+        padding: 6px 12px;
+      }
+  
+
+            body{
+              
+              margin: 0px;
+              background-color: white;
+  
+            }
+  
+            header{
+           
+             
+              padding: 10px;
+              background-color: royalblue;
+              position: sticky;
+              top: 0px;
+              z-index: 1000;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+         }
+           
+         h1{
+             display: inline;
+             color:black;
+             flex: 1 200px;
+             
+              
+            }
+        
+         a{
+  
+          text-decoration: none;
+          color: black;
+         
+         }
+    
+            
+        .home{
+         
+          
+          padding-right: 50px;
+
+        }  
+        
+        .home a:hover{
+  
+          color: orange;
+  
+         }
+
+         .home a{
+
+          font-weight: bolder;
+        }
+
+        
+        
+        .blog{
+  
+         padding-right: 50px;
+        }
+        
+        .blog a:hover{
+  
+           color: orange;
+
+         }
+       
+         .blog a{
+
+          font-weight: bolder;
+        }
+      
+        
+        .contatti a:hover{
+  
+           color: orange;
+
+          }
+          .contatti a{
+
+
+              font-weight: bolder;
+             }
+  
+       .prenota{
+         
+          background-color: orange;
+          margin-left: 50px;
+          padding-bottom: 9px;
+          padding-top: 9px;
+          border-radius: 5px;
+         
+      
+      } 
+  
+      .prenota a{
+          padding-right: 15px;
+          padding-left: 15px;
+          padding-top: 5;
+          color: black; 
+          font-weight: bolder;
+           
+          
+      }
+
+      main{
+        width: auto;
+        height: 1000px;
+        
+      }
+
+        main table{
+            
+            width: 90%;
+            height:  30%;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 60px;
+            margin-top: 30px;
+
+        }
+        
+      
+        table, td, tr
+          {
+            border: 5px solid;
+            border-color: black;
+            border-collapse: collapse;
+            font-size: 26px;
+          }
+          
+        main td{
+          
+        background-color: orange;
+
+
+        }
+        .Tabtd{
+
+            text-align: center;
+
+        }
+
+      main select{
+          
+            width: 100%;
+            height: 100%;
+            font-weight: bold;
+            font-size:24px;
+      }
+      
+      main input[type="date"]{
+            width: 98%;
+            height: 100%;  
+            font-weight: bold;
+            font-size:24px;
+
+
+      }
+      main input[type="email"]{
+            width:97%;
+            height: 98%;  
+            font-weight: bold;
+            font-size:24px;
+
+
+
+      }
+      main input[type="text"]{
+            width:97%;
+            height: 98%;  
+            font-weight: bold;
+            font-size:24px;
+
+
+
+      }
+
+      button {
+        background-color: orange;
+        border: none;
+        color: black;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        border-radius: 5px;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+      }
+
+      button {
+        background-color: white; 
+        color: black; 
+        border: 2px solid orange;
+      }
+      
+      button:hover {
+        background-color: orange;
+        color: black;
+      }
+
+      .lista{
+
+        background-color:lightblue;
+        width: 250px;
+        height: 340px;
+        border: 5px solid lightsalmon;
+        border-radius: 5px;
+        margin-left: 20px;
+        display: inline-block;
+        margin-top: 20px;
+
+      }
+      .lista p{
+
+
+        padding-left: 15px;
+        font-weight: bolder;
+
+      }
+     
