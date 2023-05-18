@@ -19,8 +19,6 @@ body {
 
 #checkboxgiocatori {
   background-color: #dbdb32;
-  margin-left: 22%;
-  margin-right: 22%;
   border-radius: 12px;
 }
 
@@ -169,7 +167,7 @@ th {
 .giocatoriattivi:disabled {
   opacity: 1.5;
   color: black;
-}
+} 
 
 #listapulsantigiocatori {
   margin-left: 1rem;
@@ -182,7 +180,7 @@ th {
   width: auto;
 }
 
-#divtabella {
+.divtabella {
   width: 20%;
   background-color: #E69D00;
   max-height: 300px;
@@ -195,7 +193,7 @@ th {
 }
 
 .search-box {
-  margin-left: 2.5rem;
+  margin-left: 27%;
   margin-bottom: 1rem;
 }
 
@@ -204,6 +202,7 @@ th {
 }
 
 .bottonesalvataggio {
+  margin-top: 1rem;
   max-height: 5rem;
   margin-left: 2rem;
 }
@@ -222,4 +221,25 @@ th {
 
 #tabellacampionato {
   padding-right: 6rem;
+}
+
+#contatori{
+  display: flex;
+}
+
+@media screen and (max-width: 1362px)  {
+  #logo{display:none}
+  #schema{margin-left:auto;}
+  #regole{ position: static;text-align: center;}
+  .colonne{margin:1rem;height: 24rem}
+  #listapulsantigiocatori{max-height: 14rem;}
+  .switch{width: 9rem;}
+ }
+
+ @media screen and (max-width: 980px)  {
+  .search-box{width:100%;margin-left: 0;}
+ }
+
+ @media screen and (max-width: 855px)  {
+  .colonne{float:none;width: auto;}
 }
