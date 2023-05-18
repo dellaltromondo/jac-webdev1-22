@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+
+    <title>Programmazione web</title>
+    <link rel="script" src="./script.js">
+    <link rel="stylesheet" href="homepage.css">
+    <link rel="external" href="../i siti web/sitiWeb.html">
+    <link rel="external" href="../display e position/display.html">
+</head>
+
+
+<body>
+
+   <button type="submit" id="logout" onclick="logout()"><i class="fa-sharp fa-solid fa-right-from-bracket"> Logout </i> </button>
+
+   <div id="modalDomande" class="modal">
+
+    <div class="modal-content">
+      <button class="close" onclick="closeModal()">&times;</button>
+
+      <p>Inserisci qui la tua domanda: </p>
+        <textarea name="domanda" id="textArea" cols="30" rows="10"></textarea>
+        <button onclick="saveDomanda()">save</button>
+    </div>
+  
+  </div>
+
+  <div id="modalVisualizzazione" class="modal">
+
+    <div class="modal-content">
+      <button class="close" onclick="closeModal()">&times;</button>
+      <div id="listaDomande">
+
+      </div>
+    </div> 
+  
+  </div>
+
+    <div id="login">
+        <form autocomplete="off" id="login-form">
+            <h2>Login</h2>
+            <label>Username: <input type="text" id="username"></label>
+            <label>Password: <input type="password" id="password"></label>
+            <button type="button" id="login-button" onclick="login()">Login</button>
+        </form>
+    </div>
+    
+    <h1 id="titolo">La programmazione web</h1>
+
+    <div id="benvenuto">
+        <p id="Benvenuto"> Benvenuto/a  </p>
+    </div>
+ 
+    <nav id="bottone">
+     <button type="button" onclick="linguaggi()" >Linguaggi</button>
+    <button type="button" onclick="boxModel()" >Box Model</button>
+     <button type="button" onclick="display()" >Display e Position</button> 
+     <button type="button" onclick="javascript()" >Javascript</button> 
+     <button type="button" onclick="vediDomande()" >Domande</button> 
+
+
+    </nav>
+
+    <section id="pagineWeb">
+        <div class="argomento" id="argomentoPagineWeb">
+            <button type="button" onclick="backWeb()" id="back"> <i class="fa-solid fa-circle-left" ></i></button>
+            <div id="domande">
+            <button type="button" onclick= "openModal()" id= "questions"  > <i class="fa-solid fa-question"></i></button>
+        </div>    
+            <h1>I SITI WEB</h1>
+        
+            <header>
+                <nav>
+                    <a href="https://it.wikipedia.org/wiki/HTML">HTML</a>
+                    <a href="https://it.wikipedia.org/wiki/CSS">CSS</a>
+                    <a href="https://it.wikipedia.org/wiki/JavaScript">JavaScript</a>
+                </nav>
+                <img src="../i siti web/imgs/linguaggiWeb.jpg">
+            </header>
+            <h2>HTML</h2>
+            <article id="HTML">
+                    <p>
+                    L'HTML è un linguaggio di formattazione che descrive le modalità di impaginazione 
+                    (layout) del contenuto, testuale e non, di una pagina web attraverso tag di formattazione. 
+                    Sebbene l'HTML supporti l'inserimento di script e oggetti esterni quali immagini o filmati,
+                    non è un linguaggio di programmazione: non prevedendo alcuna definizione di variabili, strutture dati, 
+                    funzioni o strutture di controllo che possano realizzare programmi, il suo codice è in grado soltanto
+                    di strutturare dati testuali.<br>
+                    Il linguaggio HTML, o la sua variante XHTML, ha come scopo quello di gestire i contenuti associandone 
+                    o specificandone allo stesso tempo il layout all'interno della pagina web
+                    da realizzare grazie all'utilizzo di tag diversi. Ogni tag (ad esempio h1 e p) specifica
+                    un diverso ruolo dei contenuti che esso contrassegna (quindi il tag h1 definirà un'importanza maggiore 
+                    del tag p). La formattazione consiste nell'inserimento nel testo di marcatori o etichette, detti tag,
+                    che descrivono caratteristiche come la funzione, il colore, le dimensioni, 
+                    la posizione relativa all'interno della pagina. I browser che leggono il codice mostrano all'utente 
+                    formattazioni predefinite per ogni tag che incontrano. Tuttavia questa formattazione è completamente 
+                    sotto il controllo dell'utente, che può modificarla nelle Impostazioni del suo browser. 
+                    </p>
+                    <img src="../i siti web/imgs/sta-je-html.jpg">
+        
+                </article>
+            
+                <h2>CSS</h2>
+                <article id="CSS">
+                    <p>
+                        In informatica CSS è utilizzato nella creazione dei siti web,
+                        precisamente il suo ruolo si concentra nella parte grafica della pagina web che si viene a creare. 
+                        Ovviamente per garantire un corretto utilizzo e di seguire un senso logico ci sono delle regole
+                        che vanno rispettate. La prima di queste è anche la più importante: CSS non modifica il layout
+                        della pagina e non decide la struttura di una pagina web, ma, modifica e "decora" gli elementi 
+                        che vi sono già all'interno.<br>
+                        Successivamente ci sono altre piccole regole che il programmatore deve conoscere
+                        per poter utilizzare questo linguaggio nel modo corretto: per prima cosa deve aver bene in mente 
+                        che cosa sono i selettori e come si richiamano. Il selettore per eccellenza è il tag dell'elemento 
+                        che si vuole modificare dunque il programmatore scriverà semplicemente il tag seguito dalle 
+                        parentesti graffe e all'interno delle parentesi scriverà le linee di codice con le variabili 
+                        e le proprietà (per esempio: "p { color:blue }"). Un altro selettore possono essere il simbolo "#id"
+                        che indica un id dunque un elemento che abbiamo contrassegnato con un id specifico nell'HTML; 
+                        un altro ancora è ".classe", questo invece sta ad indicare un insieme comune di id, 
+                        dunque una classe di elementi, e anche questo specifica un insieme di elementi nell'html 
+                        che il programmatore ha deciso di mettere sotto un tetto comune.<br>
+                        
+                    </p>
+                    <img src="../i siti web/imgs/sta-je-css.png">
+                </article>
+
+        </div>
+   </section>
+
+
+<section id="boxModel">
+
+   <!--<link rel="stylesheet" href="../sito box model/boxModel.cs"> -->
+   <script src="https://kit.fontawesome.com/266ac2c7ce.js" crossorigin="anonymous"></script>
+
+  <div class="argomento">
+        <button type="button" onclick="backBox()" id="back"> <i class="fa-solid fa-circle-left" ></i></button>
+        <div id="domande">
+            <button type="button" onclick= "openModal()" id= "questions"  > <i class="fa-solid fa-question"></i></button>
+        </div>   
+
+        <h1>IL BOX MODEL</h1>
+    
+    <header>
+        <nav>
+            <a href="https://www.html.it/pag/14223/il-box-model/">Il Box Model</a>
+            <a href="https://www.html.it/pag/19463/box-sizing/">Il Box-sizing</a>
+        </nav>
+        <img id="fotoHacker" src="../sito box model/imgs/what-is-a-hacker-what-is-hacking-featured.webp"> 
+    </header>
+     <article id="boxing">
+         <h2>Come sono formate le scatole?</h2>
+         <p>Partendo dall'interno abbiamo:<br>
+            <br>
+            L'area del contenuto: è la zona in cui trova spazio il contenuto vero e proprio: testo, immagini,
+            video, etc. Le dimensioni orizzontali dell'area possono essere modificate con la proprietà width. 
+            Quelle verticali con height.<br>
+            <br>
+            <b>Il padding:</b> È uno spazio vuoto che può essere creato tra l'area del contenuto e il bordo dell'elemento.
+            Come si vede nella figura, se si imposta un colore di sfondo per un elemento, esso si estende dall'area
+            del contenuto alla zona di padding. (padding-"lato che voglio modificare")<br>
+            <br id="secondaColonna">
+            Il bordo: È una linea di dimensione, stile e colore variabile che circonda la zona del padding e l'area del contenuto. 
+            (ce ne sono tre: "border-style", "border-width", "border-color")<br>
+            <br>
+            Il margine: È uno spazio di dimensioni variabili che separa un dato elemento da quelli adiacenti.
+            (come per il padding ma anzichè "padding" scrivo "margin")</p>
+         <img src="../sito box model/imgs/boxmodel.png">
+    </article>
+
+    <article id="boxSizing"> 
+        <h2>Regole di base del CSS box model</h2>
+        <p>Il box model è governato da una serie di regole di base concernenti la definizione di un box 
+            e il suo rapporto con gli altri elementi.</p><br>
+
+            <h2>Larghezza del box:</h2> 
+           <p> Bisogna distinguere tra tre concetti: <br>
+            
+            <br> -la larghezza dell'area del contenuto: nonchè l'quivalente di "width". <br>
+            
+            <br> -la larghezza complessiva: margine dx e sx + border dx e sx + padding dx e sx + area contenuto.<br>
+            
+            <br> -la larghezza dell'area visibile: border dx ed sx + padding dx e sx + area contenuto. <br>
+           
+            <br> Quando in un sito voglio creare un box ed adattare la misura del box ad un determinato numero di pixel<br>
+            oppure ad una determinata unità di misura mi devo assicurare che alla fine del codice .css io specifichi<br>
+            che le misure fanno riferimento al box in totale altrimenti lui considera le misure solo del contenuto<br>
+            dunque alla fine del codice .css dell'elemento che sto modificando dovrò scrivere: "box-sizing: border-box"<br>
+            diversamente verrà considerato come se fosse un "content-box".</p>
+             <img src="../sito box model/imgs/boxSizing2.webp">
+
+    </article>
+
+    </div>
+    
+</section>
+
+<section id="display">
+<div class="argomento">
+
+    <button type="button" onclick="backDisplay()" id="back"> <i class="fa-solid fa-circle-left" ></i></button>
+    <div id="domande">
+        <button type="button" onclick= "openModal()" id= "questions"  > <i class="fa-solid fa-question"></i></button>
+    </div>   
+    <h1>DISPLAY E POSITION</h1>
+
+    <article id="display"> 
+        <h2>DISPLAY</h2>
+        Di default il browser da una gerarchia ai tag che usiamo, e questa gerarchia può essere modificata dal tag: "display".<br>
+        Ci sono diversi tipi di display: <ul>
+        <li>"none" : ovvero come se non ci fosse</li>
+        <li>"inline" : dunque che segue il flusso della pagina</li>
+        <li>"inline-block" : che interrompe il flusso della pagina ma non lo riempie</li>
+        <li>"block" : che interrompe il flusso della pagina e lo rimpie</li> 
+        </ul><br>
+    </article>
+        <p>Dobbiamo immaginare la pagina web come un flusso 
+        continuo di spazio, gli elementi che noi posizioniamo hanno un certo "peso"
+        e in base a quest'ultimo si decide l'influenza che hanno sul flusso della pagina. esempio: <br>
+        <br>
+        1) il testo scritto senza i tag "p" non ha alcun peso infatti si adatta al flusso della pagina; 
+        se analizziamo il loro style notiamo che hanno display "inline" ovvero "in linea con il flusso" <br>
+        <br>
+        2) le immagini sono un peso non eccessivo, infatti spezzano il flusso solo nelle dimensioni che occupano 
+        e non del tutto. se andiamo a controllare il loro style vediamo che hanno un display di tipo
+        "inline-block" ovvero un blocco che non sta in linea con il flusso nella sua dimensione. <br>
+        <br>
+        3) i titoli, il tag "p" sono pesanti, infatti spezzano il flusso della pagina nella sua interezza
+            obbligando ogni altro elemento ad andare a capo in un altro flusso. I loro style hanno il display: "block" ovvero 
+            blocca il flusso della pagina interamente. <br>
+    </p>
+    
+    <img src="../display e position/imgs/rappresentazione inline.png" class="tipi">
+    <img src="../display e position/imgs/rappresentazione inline-blocki.png" class="tipi"> 
+    <img src="../display e position/imgs/rappresentazione block.png" class="tipi">
+        
+        <article id="position">
+            <H2>LA POSITION</H2>    
+    <p>
+    La position indica come un elemento sta posizionato all’interno del flusso della pagina. La position static
+    è la posizione di default del browser basata su inline o block.  <br>
+    La position relative: rispetto alla posizione di default mi sposto di tot. Per spostarla uso: top, bottom, right, 
+    left accompagnate dall’unità di misura, attenzione se scrivo “top” non va in alto ma si abbassa dal top per tot 
+    unità di misure.  </p>
+    
+    <div class="iframe">
+    <iframe src="../display e position/position/positionRelative/relative.html"></iframe> <br>
+    </div>
+
+    
+    <p>
+    La seconda opzione è che la posizione sia fixed ovvero che sia fissato rispetto alla viewport (ovvero la finestra 
+    dove si creano le pagine). </p> <br>
+    <div>
+    <iframe src="../display e position/position/fixed/fixed.html"></iframe> <br>
+</div>
+    <p>
+    La terza opzione è absolut ovvero che l’elemento sia fissato sul contenitore genitore quindi quando specifico
+    le misure intendo dove si deve posizionare all’interno del contenitore. La differenza con static è che con l absolut
+    io stacco l'elemento dal flusso e dunque posso sovrapporre le cose. L'absolut è fissato rispetto 
+    all’antenato positioned. </p> <br>
+    
+    <iframe src="../display e position/position/positionAbsolut/absolut.html"></iframe> <br>
+    
+    <p>
+    La quarta opzione è sticky: rimane static quindi segue la pagina fino ad un certo punto dove poi si ferma 
+    e rimane fixed. Anche lo sticky usa top, right, bottom, left. Sticky sta all’interno
+    della pagina ma non può andare oltre al suo contenitore. Ci sono due scenari comuni in cui un elemento impostato
+    con “position:sticky” non si attacca alla finestra del browser come previsto: il primo è che non abbiamo definito la distanza 
+    che deve tenere dal "top" o dal "bottom" se scrolla verticalmente o la distanche che deve tenere dal "right" o dal "left"
+    nel caso in cui scrolla in orizzonale. Nel secondo caso a uno degli elementi antenati del nostro elemento
+        con “position:sticky” è stato settato il tag “overflow” con il valore di “hidden”, “scroll” oppure “auto”. </p> <br>
+    
+        <iframe src="../display e position/position/positionSticky/sticky.html"></iframe> <br>
+    
+    <p>
+    la quinta opzione è il float che, nonostante non si deve specificare il tag display per poterlo richiamare ma basta scrivere
+    "float" e poi specifico tramite gli agenti: top, right, bottom, left dove lo voglio nella pagina. come suggerisce
+    il nome il float serve per far "galleggiare" l'elemento all'interno del flusso. di conseguenza gli altri elementi attorno
+    lo "ingloberanno" (si usa per fare le scritte attorno alle immagini di solito).</p> <br>
+   
+    <iframe src="../display e position/position/float/float.html"></iframe>
+    
+    </article>
+ 
+</div>
+
+</section>
+
+<section id="javascript">
+    <div class="argomento">
+        <button type="button" onclick="backJs()" id="back"> <i class="fa-solid fa-circle-left" ></i></button>
+        <div id="domande">
+            <button type="button" onclick= "openModal()" id= "questions"  > <i class="fa-solid fa-question"></i></button>
+        </div>   
+        <h1>JAVASCRIPT</h1>
+        <header>
+        <nav>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">MDN</a>
+            <a href="https://www.w3schools.com/js/default.asp">W3School</a>
+        </nav>
+        <img src="../javascript/imgs/javascript-immagine.jpg" id="imgH"> 
+    </header>
+
+    <section id="teoria">
+        <p>Javascript utilizza un paradigma che è orientato verso l'utilizzo degli oggetti
+            difatto ogni elemento in java può essere considerato un oggetto( prendi in esempio
+            un array che a sua volta può essere un array di oggetti ecc...). Nonostante questa premessa
+            è giusto anche precisare che in javascript si può anche programmare in senso funzionale (dunque
+            utilizzando le funzioni e non gli oggetti). Questo è un linguaggio C-like infatti per indicare un 
+            istruzione la devo definire all'interno delle parentesi {}, i parametri e i flussi all'interno
+            delle parentesi () ed alla fine di ogni istruzione si mette ";" (anche se non è strettamente obbligatorio).
+            Come il suo collega Java in Javascript ci sono i tipi che definiscono le variabili dichiarate,
+            tuttavia queste non sono strettamente vincolanti come in Java, infatti posso dichiarare una variabile di tipo
+            stringa e assegnargli un valore di tipo intero. Questo lo rende un linguaggio non fortemente tipizzato.
+            Ma precisamente allora come si inizializza una variabile? </p>
+
+            <div id="div-textarea">
+                    <textarea  id="esempio-text-area" cols="40" rows="12">
+                In java scriveremmo:
+
+                    int numero = 42;
+                    system.out.println(numero);
+                    
+
+
+                    in Javascript invece:
+
+                    const numero: 42;
+                    console.log(numero);
+                </textarea>
+           </div>
+        <p>Come si può notare non utilizziamo l'operatore "new" per inizializzare la variabile
+            infatti usiamo "const" che è uno dei tre operatori usati per inizializzare una variabile
+            infatti i modi che esistono per inizializzare una variabile sono: <br>
+            <br>
+            -const <br>
+            -let <br>
+            -var<br>
+            <br>
+            ma quale è la differenza principale che c'è tra questi metodi e non semplicemente usarne uno che va bene per tutto? <br>
+            Allora, inizialmente si utilizzava solo "var" che faceva da padrone. Per utilizzare var bisogna assicurarsi che lo si utilizzi
+            solamente per definire una variabile univoca nel codice dato che ha bisogno di essere dichiarata globalmente e non all'interno 
+            di una funzione per essere utilizzata da altri elementi del codice. Il vero problema è proprio questo fatto della globalità che da 
+            problemi nel momento in cui andiamo a ridefinire la variabile il risultato che otteniamo potrebbe non essere quello desiderato.
+            Per questo motivo adesso esistono "let" e "const" che ci risolvono i problemi che dava var. Vediamo prima "let". <br>
+            let ha una principale differenza rispetto a var: non può essere ridichiarata all'interno dello stesso campo. dunque non posso 
+            dichiarare due volte all'interno della stessa funzione una variabile "let" con lo stesso nome, l'unico "vincolo" rispetto a var è
+            che per utilizzare una variabile let bisogna prima inizializzarla e solo poi utilizzarla.<br>
+            E const invece? Const (come suggerisce anche il nome) rappresenta delle variabili costanti e come con let, possono essere utilizzate solo 
+            nel blocco in cui sono dichiarate. a differenza di let e var quest'ultima aggiunge un ulteriore misura di sicurezza delle variabili infatti queste
+            non possono essere ridichiarate ne tantomeno aggiornate. possiamo definire const come "variabile che non cambia mai" ed è spesso utilizzata appunto 
+            con quel purpose: non cambiare mai forma, valore, stringa ecc... (spesso usato per dichiarare un array, sicuro non un iteratore).
+            Nonostante non si posssano aggiornare le variabili const si possono cambiare tramite l'utilizzo di metodi.
+        </p>
+            
+
+        </p>
+
+    </section>
+
+    </div>
+
+
+</section>
+
+<script type="text/javascript" src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>POKEMON</title>
+        <link href="Style.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <nav class="navbar">
+            <h2 class="nav-title">Pokédex</h2>
+            <ul class="link">
+                <li class="nav-links"><a href="">My Pokémons</a></li>
+                <li class="nav-links"><a href="">New Pokémons</a></li>
+                <li class="nav-links" id="lastRight"><a href="">info</a></li>
+            </ul>
+        </nav>
+
+        <div class="grid-container">
+
+            <section class="sidebar">
+                <section id="PokemonSidebar">
+
+                </section>
+                <h2>Insert new</h2>
+                <form id="my-form">
+                    <label for="Pokémon name">Pokémon name:</label><br>
+                    <input type="text" id="PokemonName" name="PokemonName"><br>
+                    <label for="name">Url img:</label><br>
+                    <input type="text" id="imgUrl" name="imgUrl"><br>
+                    <label for="Descriptio">Description:</label><br>
+                    <textarea id="descriptionUrl" name="descriptionUrl"></textarea><br>
+                    
+                    <button type="submit">Invia</button>
+                  </form>
+            </section>
+
+            <section class="main">
+                <section id="collection"></section>
+            </section> 
+                
+        </div>
+
+        <script src="Script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,75 @@
+<html>
+    <title>Esercizio classi JS</title>
+
+    <body>
+        <script>
+            class Message
+            {
+                #timeStamp;
+                #sender;
+                #receiver;
+
+                constructor(tS, s, r)
+                {
+                    this.#timeStamp=tS;
+                    this.#sender=s;
+                    this.#receiver=r;
+                }
+
+                getTimeStamp()
+                {
+                    return this.#timeStamp;
+                }
+                getSender()
+                {
+                    return this.#sender;
+                }
+                getReceiver()
+                {
+                    return this.#receiver;
+                }
+
+            }
+
+
+            class TextMessage extends Message
+            {
+                #textContent;
+
+                constructor(timeStamp, sender, receiver, t)
+                {
+                    super(timeStamp, sender, receiver)
+                    this.#textContent=t;
+                }
+
+                getTextContent()
+                {
+                    return this.#textContent;
+                }
+            }
+
+
+            class ImgMessage
+            {  
+                #srcImage;
+
+                constructor(src)
+                {
+                    this.#srcImage=src;
+                }
+
+                getSrcImage()
+                {
+                    return this.#srcImage;
+                }
+            }
+
+            
+            const msg=new Message(new Date(), "Mario", "Anna");
+            const txt=new TextMessage(msg.getTimeStamp(), msg.getSender(), msg.getReceiver(), "Ciao");
+
+            console.log(txt.getTextContent());
+            console.log(msg.getSender()+" - "+msg.getReceiver()+" - "+msg.getTimeStamp());
+        </script>
+    </body>
+</html>

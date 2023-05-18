@@ -3,7 +3,7 @@
 body {
     margin: 0;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-image: url("https://wallpapercave.com/wp/wp5230816.jpg");
+    background-image: url("altreIcone/background.jpg");
     background-attachment: fixed;
     background-size: cover;
     overflow-y: auto;
@@ -18,35 +18,29 @@ body {
     display: grid;
     grid-template-rows: 1fr 1.6rem 1fr 1.6rem 1.6rem 1.6rem 1.6rem 1.6rem 1.6rem 1.6rem 1.6rem 1fr 1.6rem 1fr;
     gap: 1.5rem;
-    background-color: rgb(255, 255, 255, 0.5);
+    background-color: rgb(255, 255, 255, 0.7);
     backdrop-filter: blur(10px);    
     border-right: 1px solid grey;
 }
+#menu-principale img {
+    transition: .5s ease;
+}
 #menu-principale img:hover {
     cursor: pointer;
-    transform: scale(1.2);
+    transform: scale(1.3);
 }
 
     /* [2.1] icona instagram */
-    #icona-insta {
+    #menu-principale #icona-insta {
         grid-row: 2 / 3;
         align-self: stretch;
         justify-self: center;
+        transition: 2s ease;
     }
-    #icona-insta:hover {
-        animation-name: App-logo-spin;
-        animation-duration: 2s;
-        animation-iteration-count: 1;
-        animation-fill-mode: forwards;
+    #menu-principale #icona-insta:hover {
+        transform: scale(1.3) rotate(360deg);
     }
-    @keyframes App-logo-spin {
-        from {
-        transform: rotate(0deg);
-        }
-        to {
-        transform: rotate(360deg);
-        }
-    }
+
 
     /* [2.2] altre icone */
     #icona-home {
@@ -101,7 +95,7 @@ body {
     #suggerimenti-icone {
         position: fixed;
         left: 4rem;
-        background-color: white;
+        background-color: rgb(255, 255, 255, 0.8);
         color: black;
         padding: 0.5rem;
         border-radius: 15%;
@@ -156,14 +150,14 @@ body {
 #grid {
     display: grid;
     grid-template-columns: 2rem 1fr 25% 25% 25% 1fr;
-    grid-template-rows: 0 auto 2rem auto 2rem;
+    grid-template-rows: 0 auto 0 auto 2rem;
     gap: 1rem;
 }
     /* [4.2] biografia */
     #biografia {
         grid-column: 3 / 6;
         grid-row: 2 / 3;
-        background-color: rgb(255, 255, 255, 0.8);
+        background-color: rgb(255, 255, 255, 0.7);
         backdrop-filter: blur(5px);
         display: grid;
         grid-template-columns: 28% 35% 1fr 16% 16% 1fr;
@@ -226,6 +220,7 @@ body {
             justify-self: center;
             border: none;
             border-radius: 0.5rem;
+            transition: .3s ease;
         }
         #button-segui {
             grid-column: 4 / 5;
@@ -238,15 +233,9 @@ body {
             grid-row: 1 / 2;
             background-color: #ebeaea;
         }
-        #button-segui:hover {
-            background-color: #d72c5f;
-            color: white;
+        #button-segui:hover, #button-messaggio:hover {
             cursor: pointer;
-        }
-        #button-messaggio:hover {
-            background-color: #c8c6c6;
-            color: white;
-            cursor: pointer;
+            transform: scale(0.9);
         }
         #div-numero-post {
             grid-column: 4 / 5;
@@ -260,30 +249,8 @@ body {
             text-align: center;
             align-self: center;
         }
-    
-    /* [4.3] change page */
-    #change-page {
-        grid-column: 3 / 6;
-        grid-row: 3 / 4;
 
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 45px;
-        border-top: 1.5px solid black;
-    }
-    #change-page div {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 3px;
-        font-size: 0.8rem;
-    }
-    #change-page div img {
-        height: 1rem;
-    }
-
-    /* [4.4] post */
+    /* [4.3] post */
     #div-post {
         grid-column: 3 / 6;
         grid-row: 4 / 5;
@@ -295,11 +262,4 @@ body {
     }
     .immagini-post {
         width: calc((100% - 2rem) / 3);
-    }
-
-    /* [4.5] footer */
-    footer {
-        grid-column: 3 / 6;
-        grid-row: 5 / 6;
-        background-color: green; 
     }

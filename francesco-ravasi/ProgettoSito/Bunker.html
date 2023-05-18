@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+   
+<head>
+    <link rel="stylesheet" type="text/css" href="bunker.css">
+    <script src="bunker.js"></script>
+</head>
+
+<body>
+
+    <nav id="Logo">
+        <img id="MainTitle" src="Immagini/Logonero.jpg">
+    </nav>
+   
+    <nav id="Menu">
+
+        <ul>
+            <li><a href="#Logo">Menu</a> </li>
+            <li><a href="#">Prodotti</a> </li>
+            <li><a href="#contatti">Chi siamo</a> </li>
+            <li><a href="#Carrello">Carrello</a> </li>
+
+        </ul>
+    </nav>
+
+    <h1>Prodotti</h1>
+    <div>
+    <section>
+        <img class=Prodotti src="Immagini/Maglia1.jpg">
+        <p>Built for the urban culture</p>
+        <p>20€</p>
+        <button onclick="aggiungiprodotto('Built for the urban culture', 20)">Add</button>
+    </section>
+    <section>
+        <img class=Prodotti src="Immagini/Maglia2.jpg">
+        <p>Spray the sheriff </p>
+        <p>20€</p>
+        <button onclick="aggiungiprodotto('Spray the sheriff', 20)">Add</button>
+    </section>
+    <section>
+        <img class=Prodotti src="Immagini/Maglia3.jpg">
+        <p>Bunker box logo </p>
+        <p>20€</p>
+        <button onclick="aggiungiprodotto('Bunker box logo', 20)">Add</button>
+    </section>
+    <section>
+        <img class=Prodotti src="Immagini/Maglia4.jpg">
+        <p>Bunker mini box logo </p>
+        <p>20€</p>
+        <button onclick="aggiungiprodotto('Bunker mini box logo', 20)">Add</button>
+    </section>
+    <section>
+        <img class=Prodotti src="Immagini/Maglia5.jpg">
+        <p>Graffiti logo </p>
+        <p>20€</p>
+        <button onclick="aggiungiprodotto('Graffiti logo', 20)">Add</button>
+    </section>
+    <section>
+        <img class=Prodotti src="Immagini/Maglia6.jpg">
+        <p>Pollo logo </p>
+        <p>20€</p>
+        <button onclick="aggiungiprodotto('Pollo logo', 20)">
+            Add</button>
+    </section>
+    </div>
+    
+    <h1>Carrello</h1>
+    <table id="Carrello">
+        <tr>
+          <th>Nome prodotto</th>
+          <th>Prezzo</th>
+          <th>Elimina</th>
+          <th id="Totale">Totale</th>
+
+        </tr>       
+    </table>
+    <button id="Confermacarrello"  onclick ="confermacarrello()">Invia</button>
+
+    <footer>
+        <p id="contatti">Contatti</p>
+        <p id="contatti">Instagram: @Bunkerclothing</p>
+    </footer>
+</body>
+
+
+
+</html>

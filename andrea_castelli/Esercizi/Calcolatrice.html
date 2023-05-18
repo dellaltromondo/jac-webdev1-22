@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <title>Calcolatrice Javascript</title>
+
+
+
+        <script>
+            function addizione()
+            {
+                const n1=document.getElementById("numero1").value;
+                const n2=document.getElementById("numero2").value;
+
+                const ris=parseFloat(n1)+parseFloat(n2);
+                
+                const risultato=document.createElement("span");
+                document.body.appendChild(risultato);
+                risultato.innerText=n1+"+"+n2+"="+ris;
+                const br=document.createElement("br");
+                document.body.appendChild(br);
+            }
+
+            function sottrazione()
+            {
+                const n1=document.getElementById("numero1").value;
+                const n2=document.getElementById("numero2").value;
+
+
+                const ris=parseFloat(n1)-parseFloat(n2);
+                
+                const risultato=document.createElement("span");
+                document.body.appendChild(risultato);
+                risultato.innerText=n1+"-"+n2+"="+ris;
+                const br=document.createElement("br");
+                document.body.appendChild(br);
+            }
+
+            function moltiplicazione()
+            {
+                const n1=document.getElementById("numero1").value;
+                const n2=document.getElementById("numero2").value;
+
+
+                const ris=parseFloat(n1)*parseFloat(n2);
+                
+                const risultato=document.createElement("span");
+                document.body.appendChild(risultato);
+                risultato.innerText=n1+"*"+n2+"="+ris;
+                const br=document.createElement("br");
+                document.body.appendChild(br);
+            }
+
+            function divisione()
+            {
+                const n1=document.getElementById("numero1").value;
+                const n2=document.getElementById("numero2").value;
+
+
+                const ris=parseFloat(n1)/parseFloat(n2);
+                
+                const risultato=document.createElement("span");
+                document.body.appendChild(risultato);
+                risultato.innerText=n1+":"+n2+"="+ris;
+                const br=document.createElement("br");
+                document.body.appendChild(br);
+            }
+        </script>
+    </head>
+
+
+
+    <body>
+        <h1>Calcolatrice</h1>
+
+        <br><br>
+
+        <section="calcolatrice">
+            <label>Numero 1: <input type="number" id="numero1"></label>
+            <label>Numero 2: <input type="number" id="numero2"></label>
+
+            <br><br>
+
+            <button onclick="addizione()">+</button>
+            <button onclick="sottrazione()">-</button>
+            <button onclick="moltiplicazione()">*</button>
+            <button onclick="divisione()">:</button>
+        </section>
+        <br><br>
+    </body>
+</html>
