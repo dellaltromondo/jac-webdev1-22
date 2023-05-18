@@ -140,6 +140,7 @@
 
         .apri {
             position: relative;
+            width: 80%;
             bottom: 0;
             justify-self: center;
             background-color: white;
@@ -158,6 +159,9 @@
             width: 100%;
             height: 200px;
             object-fit: cover;
+            position: relative;
+            top: 2px;
+            border-radius: 5px;
         }
 
         .wrapper {
@@ -206,11 +210,6 @@
 </head>
 
 <body>
-    <header>
-        <nav>
-            <button class="filtri" id="bottoneMenoDi15" type="button">durata 15</button>
-        </nav>
-    </header>
     <section>
         <button class="btnAgg" type="button">
             <img src="Images/plusSign.png" alt="Aggiungi una ricetta">
@@ -225,23 +224,23 @@
                     <div id="headerAgg">
                         <h2>Condividi la tua ricetta!</h2>
                         <label for="immagine">Inserisci un'immagine rappresentativa del piatto
-                            <input class="inputs" type="url" id="immagine" placeholder="Inserisci URL immagine">
+                            <input class="inputs" type="url" id="immagine" placeholder="Inserisci URL immagine" required>
                         </label>
                         <label for="nomeRicetta">Inserisci il nome della tua ricetta
-                            <input class="inputs" type="text" id="nomeRicetta" placeholder="Lasagne alla bolognese">
+                            <input class="inputs" type="text" id="nomeRicetta" placeholder="Lasagne alla bolognese" required>
                         </label>
                         <label for="breveDesc">Inserisci una breve descrizione
                             <input class="inputs" type="text" id="breveDesc"
-                                placeholder="Un simbolo dello spirito italiano">
+                                placeholder="Un simbolo dello spirito italiano" required>
                         </label>
                         <label for="tempo">Indica il tempo di preparazione in minuti
                             <input class="inputs" type="text" maxlength="3" id="tempo"
-                                onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))">
+                                onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))" required>
                         </label>
                     </div>
                     <div id="bodyAgg">
                         <textarea oninput="auto_grow(this)" class="inputUtente"
-                            placeholder="Inserisci il nuovo passaggio della tua tua ricetta"></textarea>
+                            placeholder="Inserisci il nuovo passaggio della tua tua ricetta" required></textarea>
                     </div>
                 </form>
                 <div id="footerAgg">

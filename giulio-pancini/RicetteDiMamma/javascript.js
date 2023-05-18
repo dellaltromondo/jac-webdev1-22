@@ -46,7 +46,7 @@ const arrayRicette = [];
 const pastaAlPesto = new Ricetta(
     "http://milrecetas.net/wp-content/uploads/2017/08/pasta-al-pesto-3.jpg",
     "Pasta al Pesto",
-    "Classico piatto della tradizione genovese",
+    "Classic plate of the Genoese's tradition",
     15,
     [`Fill a large pot with lightly salted water and bring to a rolling boil. Stir in pasta and return to a boil. Cook pasta uncovered, stirring occasionally, until tender yet firm to the bite, about 8 to 10 minutes. Drain and transfer into a large bowl.`, `Meanwhile, heat oil in a frying pan over medium-low heat. Add onion; cook and stir until softened, about 3 minutes. Stir in pesto, salt, and pepper until warmed through.`, `Add pesto mixture to hot pasta; stir in grated cheese and toss well to coat.`]
 );
@@ -59,26 +59,23 @@ const macaroniSalad = new Ricetta(
     [`Bring a large pot of lightly salted water to a boil. Cook macaroni in the boiling water, stirring occasionally until cooked through but firm to the bite, about 8 minutes. Drain.`, `Rinse macaroni in cold water until cool; drain.`, `Stir mayonnaise, onion, parsley, mustard, rice vinegar, sugar, celery seed, and salt together in a bowl. Add macaroni and eggs and stir to coat.`, `Chill in the refrigerator for 30 minutes before serving.`]
 );
 
+const pancakes = new Ricetta(
+    "https://www.allrecipes.com/thmb/SsL-e_0gTwoUa3ek_AVASUXritc=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/21014-Good-old-Fashioned-Pancakes-mfs_002-0e249c95678f446291ebc9408ae64c05.jpg",
+    "Pancakes",
+    "I found this pancake recipe in my Grandma's recipe book.",
+    15,
+    ["Sift flour, baking powder, sugar, and salt together in a large bowl. Make a well in the center and add milk, melted butter, and egg; mix until smooth.", "Heat a lightly oiled griddle or pan over medium-high heat. Pour or scoop the batter onto the griddle, using approximately 1/4 cup for each pancake; cook until bubbles form and the edges are dry, about 2 to 3 minutes. Flip and cook until browned on the other side. Repeat with remaining batter."]
+)
+
 arrayRicette.push(pastaAlPesto);
 arrayRicette.push(macaroniSalad);
+arrayRicette.push(pancakes);
 
 function mostraRicette() {
 
     bottone.forEach(element => {
         element.style.display = 'block';
     });
-}
-
-function durata15() {
-
-    arrayRicette.forEach(element => {
-        let durata = parseInt(element.getDurata());
-        if (durata <= 15) {
-
-            
-        }
-    });
-    return durata > 15;
 }
 
 function recuperaDatiDaForm() {
@@ -91,11 +88,18 @@ function recuperaDatiDaForm() {
     const elements = Array.from(document.getElementsByClassName("inputUtente"));
     const listaPassaggi = Array.from(elements).map(element => element.value);
 
-    const ricetta = new Ricetta(immagine, titolo, descrizione, durata, listaPassaggi);
+    if (immagine == '' || titolo == '' || descrizione == '' || descrizione == '' || elements == '') {
 
-    arrayRicette.push(ricetta);
+        return alert("Tutti gli input sono obbligatori");
+    }
+    else {
 
-    return ricetta;
+        const ricetta = new Ricetta(immagine, titolo, descrizione, durata, listaPassaggi);
+
+        arrayRicette.push(ricetta);
+
+        return ricetta;
+    }
 }
 
 /////////////////SALVA CONTENUTO///////////////////////
@@ -104,7 +108,6 @@ function caricaArrayRicetta(array) {
 
     array.forEach(element => {
         const buttons = Array.from(document.getElementsByClassName("apri"));
-        console.log("kasgdaejgdjhab " + buttons.length);
         let y = -1;
         for (i = 0; i < buttons.length; i++) {
 
