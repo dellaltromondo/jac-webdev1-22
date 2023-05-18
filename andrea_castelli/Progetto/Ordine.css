@@ -1,0 +1,135 @@
+body
+{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#contenitore
+{
+    width: auto;
+    height: auto;
+    padding-top: 10px;
+}
+
+
+#colonna1
+{
+    width: 45%;
+    float: left;
+}
+#pulsanti
+{
+    float: right;
+    padding-top: 75px;
+}
+#aggiungi
+{
+    background-color: aqua;
+    border-width: 5px;
+    border-radius: 15px;
+    border-color: rgb(44, 44, 255);
+}
+#aggiungi:hover
+{
+    background-color: rgb(0, 155, 255);
+    border-width: 5px;
+    border-radius: 15px;
+    border-color: rgb(44, 0, 255);
+}
+
+#invia
+{
+    background-color: lightgreen;
+    border-width: 5px;
+    border-radius: 15px;
+    border-color: green;
+}
+#invia:hover
+{
+    background-color: rgb(144,188,144);
+    border-width: 5px;
+    border-radius: 15px;
+    border-color: rgb(0, 78, 0);
+}
+
+
+
+#colonna2
+{
+    padding-top: 15px;
+    float: right;
+}
+
+#sectionOrdine
+{
+    background-color: lightcoral;
+    width: max-content;
+    color: black;
+    font-weight: bold;
+    border-style: solid;
+    border-width: 5px;
+    border-color: darkred;
+    border-radius: 15px;
+    float: right;
+    margin: 5px;
+    padding: 8px;
+}
+
+
+form
+{
+    padding-left: 20px;
+    padding-top: 15px;
+}
+
+table
+{
+    float: left;
+}
+table, tr, th
+{
+    border: 2px solid;
+    border-collapse: collapse;
+    margin: 5px;
+}
+table span
+{
+    font-weight: bold;
+    font-size: 20px;
+}
+table input
+{
+    font-weight: bold;
+    font-size: 15px;
+}
+table select
+{
+    font-weight: bold;
+    font-size: 15px;
+    width: 100%;
+}
+form button
+{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
+footer
+{
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 10px;
+    padding: 0;
+    background-color: black;
+    margin-top: auto;
+    width: 100%;
+}
+footer p
+{
+    text-align: center;
+    font-size: 24px;
+    color: white;
+}

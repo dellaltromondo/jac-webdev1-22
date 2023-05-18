@@ -3,58 +3,53 @@
 
 <head>
     <title>carrello</title>
-    <link rel="stylesheet" type="text/css" href="../css/nav.css">
-    <link rel="stylesheet" type="text/css" href="../css/carrello.css">
-    
-   
+    <link rel="stylesheet" type="text/css" href="../css/foodspring.css">
 </head>
 
 <body id="Body_Carrello">
-    <nav id= "nav_primaria">
-
-        <a href="../ProgettoPersonale.html" id = "Title">
-            <h1 >
+    <nav id="nav_primaria_carrello">
+        <a href="../ProgettoPersonale.html" id="Title">
+            <h1>
                 Foodspring
             </h1>
         </a>
-
-
     </nav>
+    <nav id="nav_secondaria_carrello">
+        <a href="../ProgettoPersonale.html">
+            <img id="imageBack" src="../images/Freccia_sinistra.png"> Torna indietro
+        </a>
+    </nav>
+    <section id="Carrello">
+        <h2>Il tuo carrello</h2>
+        <section id="cart-container">
+            <article id="left-section">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Quantità</th>
+                            <th>Prezzo</th>
+                            <th>Azione</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cart-items">
+                    </tbody>
+                </table>
+            </article>
 
+            <article id="right-section">
+                <div id="total">
+                    <h3>Totale:</h3>
+                    <span id="cart-total"></span>
+                </div>
+                <button id="ButtonToPay" onclick="window.location.href='Pagamento.html'">
+                    Vai al pagamento
+                </button>
+            </article>
+        </section>
+    </section>
 
-
-   
-
-
-
-    <section id = "Carrello">
-        <h2>Il tuo carrello</h2> 
-       
-            <table>
-                <thead>
-                    <tr>
-                        
-                        <th>Nome</th>
-                        <th>Prezzo</th>
-                        <th>Azione</th>
-                        
-                    </tr>
-                </thead>
-
-                <tbody id="cart-items">
-                </tbody>
-
-            </table>
-            <button id="ButtonToPay" onclick="window.location.href='Pagamento.html'">
-                Vai al pagamento</button>
-         
-   </section>
-
-
-   <script src="../javascript/Function.js"></script>
-   <script src="../javascript/Menu.js"></script>
+    <script src="../javascript/foodspring.js"></script>
 </body>
 
-
 </html>
-

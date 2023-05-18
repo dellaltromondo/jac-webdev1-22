@@ -79,7 +79,7 @@ function showImage(index)
     const successivo = document.getElementById("nextImage");
     let cancella;
 
-    if(window.location.pathname === "/html/editorCompositori.html")
+    if(localStorage.getItem("Compositore") === "VERO")
     {
         cancella = document.getElementById("deleteImage");
         userIsCompositore = true;

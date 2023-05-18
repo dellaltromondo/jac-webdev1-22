@@ -34,20 +34,26 @@
                     </li>
                 </ul>
             </nav>
+
             <h2 id="titolo-form">Insert new</h2>
             <form>
                 <label for="nome">Pokémon Name:</label>
                 <input type="text" name="nome" id="nome" placeholder="e.g. Pikachu">
-                <label id="label-catturato" for="catturato"><input type="checkbox" name="catturato"
-                        id="catturato">Captured</label>
+
+                <label id="label-catturato" for="catturato"><input type="checkbox" name="catturato" id="catturato">Captured</label>
+
                 <label id="label-livello" for="livello">Level: <input type="number" name="livello" id="livello"></label>
+
                 <label for="url-img">Image URL: </label>
                 <input type="text" name="url-img" id="url-img" placeholder="Enter image URL">
+
                 <label for="descrizione">Description: </label>
                 <textarea name="descrizione" id="descrizione" rows="5" placeholder="Enter description"></textarea>
+
                 <button type="button" id="insert-button" onclick="newPokémon()">Insert</button>
             </form>
         </aside>
+
         <article>
             <ul id="lista-pokémon">
                 <li class="pokémon-card" id="pikachu-card" tabindex="0">
@@ -74,6 +80,7 @@
         <footer>
             Esame di Programmazione Web I - Comotti Nicola ICT1 - 11/05/2023
         </footer>
+
         <script src="app.js"></script>
     </body>
 

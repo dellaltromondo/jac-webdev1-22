@@ -1,87 +1,81 @@
-// Array delle materie
-var subjects = [];
 let colore = "";
-let voti = [];
+function logOut()
+{
+  window.location.href = "login.html";
+}
 
-function getColore(id) {
+async function loadDati()
+{
+    const materie = await fetch('http://localhost:8080/mydiary/api/v1/materia/'+localStorage.getItem("idUtente")+'/materia');
+    const materieJson = await materie.json();
+    for(let i = 0; i < materieJson.length; i++)
+        {
+            const subject = new Subjects(materieJson[i].nomeMateria, materieJson[i].nomeDocente, materieJson[i].coloreMateria, materieJson[i].codUtente);
+            let container = createSubjectContainer(subject);
+            let subjectsContainer = document.getElementById("subjects-container");
+            subjectsContainer.appendChild(container);
+        }
+}
 
+function getColore(id) 
+{
     colore=document.getElementById(id).style.backgroundColor;
 }
 
-// Funzione per creare il contenitore di una materia
-function createSubjectContainer(subject) {
-    // Creazione del contenitore
-    var container = document.createElement("div");
+function createSubjectContainer(subject) 
+{
+
+    let container = document.createElement("div");
     container.className = "subject-container";
 
-    if(colore === "")
+    if(colore === "" && subject.getColore() === "")
     {
         alert("Non hai selezionato un colore!");
         return;
     }
 
-    container.style.backgroundColor = colore;
+    container.style.backgroundColor = subject.getColore();
 
-    // Aggiunta del titolo della materia
-    var title = document.createElement("p");
+    let title = document.createElement("p");
     title.className = "subject-title";
     title.textContent = subject.getMateria();
     container.appendChild(title);
     
-    // Aggiunta del nome del professore
-    var teacherName = document.createElement("p");
+    let teacherName = document.createElement("p");
     teacherName.className = "teacher-name";
     teacherName.textContent = subject.getDocente();
     container.appendChild(teacherName);
-    
-    // Calcolo della media dei voti
-    /*
-    var sum = 0;
-    for (var i = 0; i < subject.voti.length; i++) {
-        sum += subject.voti[i];
-    }
-    var average = sum / subject.voti.length;
-    
-    // Aggiunta della media dei voti
-    var averageGrade = document.createElement("p");
-    averageGrade.className = "average-grade";
-    averageGrade.textContent = "Media voti: " + average.toFixed(2);
-    container.appendChild(averageGrade);*/
-    
-    
+
     colore = "";
     return container;
 }
 
-// Gestore di eventi per l'aggiunta di una nuova materia
-var form = document.querySelector("form");
+let form = document.querySelector("form");
 form.addEventListener("submit", function(event) {
     event.preventDefault();
     
-    // Lettura dei dati del form
-    var subjectName = document.getElementById("subject-name").value;
-    var teacherName = document.getElementById("teacher-name").value;
-    // Creazione dell'oggetto materia
-    const subject = new Subjects(subjectName,teacherName,voti, colore)
-    
+    let subjectName = document.getElementById("subject-name").value;
+    let teacherName = document.getElementById("teacher-name").value;
 
-/*var Subjects subjects = {
-    name: subjectName,
-    teacher: teacherName,
-    votes: []
-};*/
-
-
-// Aggiunta della materia all'array
-subjects.push(subject);
-
-// Creazione del contenitore della materia
-var container = createSubjectContainer(subject);
-
-// Aggiunta del contenitore alla pagina
-var subjectsContainer = document.getElementById("subjects-container");
-subjectsContainer.appendChild(container);
-
-// Reset del form
-form.reset();
+    const subject = new Subjects(subjectName,teacherName, colore, localStorage.getItem("idUtente"));
+    fetch('http://localhost:8080/mydiary/api/v1/materia/', {
+    method: 'POST',
+    headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(subject)
+})
+.then(response => {
+    if (!response.ok) {
+      throw new Error('Errore del server');
+    }
+    let container = createSubjectContainer(subject);
+    let subjectsContainer = document.getElementById("subjects-container");
+    subjectsContainer.appendChild(container);
+    form.reset();
+  })
+  .catch(error => {
+    alert("Errore di comunicazione colserver");
+    console.error('There was a problem with the fetch operation:', error);
+  });
 });

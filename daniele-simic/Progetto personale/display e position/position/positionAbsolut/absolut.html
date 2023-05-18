@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="absolut.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>la position absolute</title>
+</head>
+<body>
+    <h1>LA POSITION ABSOLUTE</h1> 
+    <p>consideriamo quest'immagine, perfettamente al centro della sua scatola
+         (il background celeste indica l area della sua scatola).</p>
+    <article id="stock">
+    <img src="imgs/scatola esempi.jpg">
+</article>
+
+<p>se do il comando: 
+    "img { <br>
+        position: absolute; <br>
+        top: 66rem; <br>
+        left: 0.5rem;  } <br>
+        il risultato sarà questo:
+        <article id="modded"> 
+        <img src="imgs/scatola esempi.jpg" id="modificato"> </p>
+    </article>
+    <p id="spiegazione">come si può notare <br> 
+        il contenuto della scatola è stato estratto <br>
+         dal flusso e si è sovrapposto 
+          al suo genitore. <br>
+        se non avessi messo gli indicatori <br>
+         di posizione l'immagine sarebbe <br>
+        in alto a sinistra della pagina <br>
+         dato che non è ancorato a nessun genitore.</p>
+</body>
+</html>
