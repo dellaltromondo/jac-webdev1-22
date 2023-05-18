@@ -1,0 +1,39 @@
+body{
+    margin: 0%;
+
+}
+
+nav{
+    background-color: black;
+    /*display: flex;*/
+}
+
+nav ul{
+    margin-top: 0%;
+    text-align: center;
+}
+
+nav ul li{
+    display: inline-block;
+}
+
+.menu{
+    margin-top: 45px;
+    margin-left: 100px;
+    width: 50px;
+}
+
+.cart{
+    margin-top: 45px;
+    margin-left: 480px;
+    width: 50px;
+}
+
+.logo{
+    margin-left: 430px;
+    width: 320px;
+}
+
+.licart{
+    width: 60px;
+}

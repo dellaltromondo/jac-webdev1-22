@@ -95,6 +95,7 @@ h3 {
 
 td,
 th {
+  width: 6rem;
   text-align: center;
   padding: 8px;
   border: 1px solid black;
