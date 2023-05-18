@@ -1,3 +1,10 @@
+/* la loginUtente una volta letti i dati del form, manda una richiesta al server che risponde con una lista
+   di tutti gli utenti salvati nel database. poi ho fatto un ciclo sulla lista finche i dati del form non combaciano:
+   se combaciano con un utente allora l'utente esiste e si logga, e salvo in localStorage il suo id (anche username e password)
+  che serviranno nelle altre pagine per chiedere al server di ritornare gli elementi legati a quell'utente nel database.
+   se non esiste lo creo e faccio la stessa cosa in localStorage dopo aver richiamato con la fetch la lista degli user e preso
+   l'ultimo inserito, e si logga.  */
+
 async function loginUtente() {
   const username = document.getElementById("username").value;
   const password = document.getElementById("password").value;

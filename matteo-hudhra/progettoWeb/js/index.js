@@ -1,8 +1,14 @@
 let colore = "";
+/* la logiut riporta alla pagina di login, che quando viene caricata cancella i dati dell'utente salvati in localStorage */
 function logOut()
 {
   window.location.href = "login.html";
 }
+
+/* la loadDati al carcamento della pagina viene richiamata e con la fetch riceve dal server una lista completa delle materie
+   che l'utente loggato ha salvato nel database (l'id dell'utente loggato l'hosalvato nel localStorage in fase di login, in
+   modo tale da averlo disponibile dutante tutta la sessione) */
+
 async function loadDati()
 {
     const materie = await fetch('http://localhost:8080/mydiary/api/v1/materia/'+localStorage.getItem("idUtente")+'/materia');
@@ -10,22 +16,27 @@ async function loadDati()
     for(let i = 0; i < materieJson.length; i++)
         {
             const subject = new Subjects(materieJson[i].nomeMateria, materieJson[i].nomeDocente, materieJson[i].coloreMateria, materieJson[i].codUtente);
-            var container = createSubjectContainer(subject);
-            // Aggiunta del contenitore alla pagina
-            var subjectsContainer = document.getElementById("subjects-container");
+            let container = createSubjectContainer(subject);
+            let subjectsContainer = document.getElementById("subjects-container");
             subjectsContainer.appendChild(container);
         }
 }
+
+/* la getColore semplicemente legge il colore selezionato nel form ricevendo come arametro l'id del div 
+   che rappresenta il colore scelto e lo ritorna */
 
 function getColore(id) 
 {
     colore=document.getElementById(id).style.backgroundColor;
 }
 
+/*La createSubjectContainer riceve come parametro un oggetto Materia che viene creato dopo aver letto i valori inseriti nel form
+  in seguito crea il container che conterrà il nome della materia e del docente, sotto la media dei voti della materia (funzione non implementata)*/
+
 function createSubjectContainer(subject) 
 {
-    // Creazione del contenitore
-    var container = document.createElement("div");
+
+    let container = document.createElement("div");
     container.className = "subject-container";
 
     if(colore === "" && subject.getColore() === "")
@@ -36,14 +47,12 @@ function createSubjectContainer(subject)
 
     container.style.backgroundColor = subject.getColore();
 
-    // Aggiunta del titolo della materia
-    var title = document.createElement("p");
+    let title = document.createElement("p");
     title.className = "subject-title";
     title.textContent = subject.getMateria();
     container.appendChild(title);
     
-    // Aggiunta del nome del professore
-    var teacherName = document.createElement("p");
+    let teacherName = document.createElement("p");
     teacherName.className = "teacher-name";
     teacherName.textContent = subject.getDocente();
     container.appendChild(teacherName);
@@ -51,19 +60,18 @@ function createSubjectContainer(subject)
     colore = "";
     return container;
 }
-
-var form = document.querySelector("form");
+/* questo event listener quando il form viene submittato legge i dati del form e crea l'oggetto Materia,
+   tramite la fetch e manda il json dell'oggetto al server che a sua volta lo salva nel database. solo dopo 
+   aver ricevuto una risposta positiva dal server richiamo la createSubjectContainer che mi crea il container
+   e lo appende alla section che contiene tutte le materie*/
+let form = document.querySelector("form");
 form.addEventListener("submit", function(event) {
     event.preventDefault();
     
-    // Leggo i dati del form
-    var subjectName = document.getElementById("subject-name").value;
-    var teacherName = document.getElementById("teacher-name").value;
-    
-    // Creo l'oggetto materia
-    const subject = new Subjects(subjectName,teacherName, colore, localStorage.getItem("idUtente"));
+    let subjectName = document.getElementById("subject-name").value;
+    let teacherName = document.getElementById("teacher-name").value;
 
-    //funzione fetch per collegarsi al server e salvare l'oggetto materia in caso di connessione riuscita
+    const subject = new Subjects(subjectName,teacherName, colore, localStorage.getItem("idUtente"));
     fetch('http://localhost:8080/mydiary/api/v1/materia/', {
     method: 'POST',
     headers: {
@@ -75,12 +83,9 @@ form.addEventListener("submit", function(event) {
     if (!response.ok) {
       throw new Error('Errore del server');
     }
-    // Se la risposta è positiva, aggiungi la materia all'array e crea il contenitore
-    var container = createSubjectContainer(subject);
-    // Aggiunta del contenitore alla pagina
-    var subjectsContainer = document.getElementById("subjects-container");
+    let container = createSubjectContainer(subject);
+    let subjectsContainer = document.getElementById("subjects-container");
     subjectsContainer.appendChild(container);
-    // Reset del form
     form.reset();
   })
   .catch(error => {

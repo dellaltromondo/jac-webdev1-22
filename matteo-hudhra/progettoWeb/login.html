@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+	<!-- nella pagina di login, una volta letti i dati del form, se l'utente esiste nel database
+		 si logga e potrà visualizzare tutti i suoi dati salvati. se l'utente non esiste nel database,
+		 viene creato un altro utente nella tabella utente. (più dettagliato nel file login.js) -->	
 <head>
 	<title>Pagina di Login</title>
 	<link rel="stylesheet" href="css/login_style.css">
@@ -18,6 +21,7 @@
 		</form>
 	</div>
 	<script>
+		/* lal load della pagina, il contenuto del localStorage viene cancellato in modo tale da liberarlo er un altro login */
 		window.addEventListener("load", (event) =>
     	{
       		localStorage.clear();
