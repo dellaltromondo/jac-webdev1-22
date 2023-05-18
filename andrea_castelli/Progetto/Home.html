@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            ilForno.it
+        </title>
+
+
+        <link rel="stylesheet" href="Header.css">
+        <link rel="stylesheet" href="Home.css">
+
+
+
+        <script type="module">
+            /*import {Menu} from "./Menù.html";
+            console.log(Menu[1].Nome);*/
+
+            var slides=["4Formaggi.jpg", "4Stagioni.jpg", "Acciughe.jpg", "Amatriciana.jpg", "Americana.jpg", "Asparagi.jpg", "Bismark.jpg", "BresaolaRucola.jpg",
+                        "BresaolaTaleggio.jpg", "Bufalina.jpg", "CalzoneLiscio.jpg", "CalzoneFarcito.jpg", "Caprese.jpg", "Capricciosa.jpg", "Carbonara.jpg",
+                        "Crudo.jpg", "Delicata.jpg", "Fantasia.jpg", "Focaccia.jpeg", "Funghi.jpg", "GamberettiRucola.jpg", "Gustosa.jpg", "Margherita.jpg",
+                        "MariMonti.jpg", "Marinara.jpg", "PannaProsciutto.jpg", "Patatine.jpg", "Porcini.jpg", "PorciniCrudo.jpg", "PorciniGrana.jpg",
+                        "Prosciutto.jpg", "ProsciuttoFunghi.jpg", "Pugliese.jpg", "Romana.jpg", "Salame.jpg", "Salamino.jpg", "ScamorzaRucola.jpg", "SpeckGorgonzola.jpg",
+                        "TonnoCipolle.jpg", "VerdureGrigliate.jpg", "GorgonzolaNoci.jpg", "GorgonzolaPorcini.jpg"];
+            var Start=0;
+
+            function slider()
+            {
+                if(Start < slides.length - 1)
+                {
+                    Start=Start+1;
+                }
+                else
+                {
+                    Start=0;
+                }
+
+                var img = document.getElementById("galleria3");
+                if(img===null)
+                {
+                    var img=document.createElement("img");
+                    img.setAttribute("src", "PizzeMenù/"+slides[start]);
+                    img.setAttribute("id", "galleria3");
+
+                    var div=document.getElementById("sezione3");
+                    div.appendChild(img);
+                }
+                else
+                {
+                    img.src = "PizzeMenù/"+slides[Start];
+                }
+            }
+
+            setInterval(slider, 3000);
+
+        </script>
+    </head>
+
+    <body>
+        <header>
+            <h1>ilForno.it</h1>
+    
+            <nav>
+                <ol>
+                    <li>
+                        <a href="Home.html"><button>Home</button></a>
+                    </li>
+    
+                    <li>
+                        <a href="Ordine.html"><button>Ordina</button></a>
+                    </li>
+    
+                    <li>
+                        <a href="Menù.html"><button>Menù</button></a>
+                    </li>
+
+                    <li>
+                        <a href="Bevande.html"><button>Bevande</button></a>
+                    </li>
+                </ol>
+            </nav>
+        </header>
+
+
+        <section id="section1">
+            <div id="ombra">
+                <h1>Il Forno</h1>
+                <h2>Pizze cotte a legna</h2>
+
+                <p>Consegne a domicilio da Lunedì a Sabato in tutta la Val Seriana!</p>
+                <br>
+                <div id="tabOrari">
+                    <p>
+                        Orari di apertura
+                        <br>
+                        ----------------------------------------
+                    </p>
+
+                    <ul>
+                        <li><b>Lunedì</b>  -  (11.00 | 14:30)  (17:30 | 22:00)</li>
+                        <li><b>Martedì</b> - (11.00 | 14:30)  (17:30 | 22:00)</li>
+                        <li><b>Mercoledì</b> - (11.00 | 14:30)</li>
+                        <li><b>Giovedì</b> - (11.00 | 14:30)  (17:30 | 22:00)</li>
+                        <li><b>Venerdì</b> - (11.00 | 14:30)  (17:30 | 22:00)</li>
+                        <li><b>Sabato</b> - (11.00 | 14:30)  (17:30 | 22:00)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="trovaci">
+            <div id="intestazione1">
+                <h2>Il ristorante</h2>
+
+                <p>
+                    Nuova pizzeria appena inaugurata a Cazzano Sant'Andrea, nel cuore della Val Gandino, la struttura ha un ingresso con scalini ma anche rampa per le persone
+                    con disabilità, all'interno vi è salone con 20 posti massimo, bagni, cucine e accesso al portico sul quale vi sono altri 2 tavoli da 4 posti l'uno.
+                    L'ambiente è dotato di un impianto di filodiffusione musicale, 2 televisori, stufa e climatizzatori.
+                </p>
+            </div>
+
+            <div id="galleria">
+                <img src="https://media-cdn.tripadvisor.com/media/photo-s/03/58/4b/1a/ristorante-salone-dei.jpg" id="salone">
+                <img src="https://www.scaminox.it/wp-content/uploads/linea-pizzeria_s.jpg" id="cucina">
+            </div>
+        </section>
+
+
+        <section id="section2">
+            <div id="intestazione2">
+                <h2>La cucina</h2>
+                
+                <p>
+                    Le nostre pizze hanno come priorità la qualità, siamo sempre alla ricerca di ingredienti di qualità superiore e i nostri chef trattano gli ingredienti
+                    in modo che diano il miglior rendimento nel vostro palato, la pasta per esempio viene lasciata riposare ore prima di essere lavorata e le verdure
+                    rimangono in ammollo a lungo per garantire sanità e freschezza, per poi essere tutto infornato nei nostri forni a legna.
+                </p>
+            </div>
+
+            <div id="galleria2">
+                <img src="https://www.consultapizza.com/wp-content/uploads/2019/03/2-1024x683.jpg" id="forno">
+                <img src="https://www.lamiabuonaforchetta.it/wp-content/uploads/2019/02/collagePIZZAbolle-1.jpg" id="pasta">
+            </div>
+        </section>
+
+
+        <section id="section3">
+            <h2>Vuoi scoprire le nostre pietanze?</h2>
+            <img id="galleria3" src="PizzeMenù/4Formaggi.jpg"/>
+            <a href="Menù.html"><button id="pulsanteMenu">Scopri il Menù</button></a>
+        </section>
+    </body>
+
+    <footer>
+        <p>Pizzeria "ilForno" - Via Giuseppe Mazzini 3, Cazzano Sant'Andrea, Bergamo (BG) - P. IVA 05037260088 - +39 357 366 5486</p>
+    </footer>
+</html>

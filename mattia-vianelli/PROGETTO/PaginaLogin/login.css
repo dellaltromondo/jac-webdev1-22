@@ -2,12 +2,12 @@
 :root {
     /* [1] generali */
         --color-background: #1A1D2E;
-        --box-shadow-color: rgb(255, 217, 223);
-        --color-placeholder: #f15785;
+        --box-shadow-color: rgb(123, 123, 123, 0.3);
+        --color-placeholder: white;
     
     /* [2] <button> e <input> */
         --color-button: #f44479;
-        --color-input-inside: rgba(255, 192, 203, 0.8);
+        --color-input-inside: rgb(0, 0, 0, 0.6);
         --width-input-button: 24rem;
         --height-input-button: 2.5rem;
         /* [2.1] bordi */
@@ -32,9 +32,10 @@
 
 body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-image: url("https://wallpapercave.com/wp/wp5230816.jpg");
+    background-image: url("../altreIcone/background.jpg");
     background-attachment: fixed;
     background-size: cover;
+    padding: 5vh 0 10vh 0;
 }
 #paginaLogin, #paginaSignin, #paginaSignin2 {
     display: flex;
@@ -94,12 +95,10 @@ body {
     border-radius: 50%;
     width: 4rem;
     height: 4rem;
-    animation-name: logo-spin;
-    animation-duration: 3s;
-    animation-iteration-count: 1;
+    transition: 3s ease;
 }
 #logo:hover {
-    transform: scale(1.02);
+    transform: scale(1.3) rotate(360deg);
 }
 
 /* -------------------------- [4] TITOLO <h1> -------------------------- */
@@ -187,7 +186,7 @@ input::placeholder {
 /* -------------------------- [9] <button> -------------------------- */
 #paginaLogin button, #paginaSignin button, #paginaSignin2 button {
     border-radius: 0.5rem;
-    transition: transform 0.2s ease-in-out;     /* applica una transizione quando viene fatta una trasformazione */
+    transition: 0.2s ease-in-out;
 }
 
 /* [9.1] <button> disabilitati */
@@ -210,14 +209,10 @@ button:disabled {
 button:enabled:hover {
     cursor: pointer;
     box-shadow: 0px 0px 2rem var(--box-shadow-color);
-    animation-name: button-hover;
-    animation-duration: var(--scale-effect-duration);
     transform: scale(0.95);
 } 
 button:enabled:active {
-    animation-name: button-hover;
-    animation-duration: var(--scale-effect-duration);
-    animation-direction: reverse;
+    transform: scale(0.95);
 }
 
 /* [9.3] <button> "accedi" e "registrati" */
@@ -240,8 +235,8 @@ button:enabled:active {
 #buttonCreaAccount {
     height: var(--height-input-button);
     width: var(--width-input-button);
-    background-color: var(--color-input-inside);
-    border: var(--thickness-border) solid var(--color-input-inside);
+    background-color: var(--color-button);
+    border: none;
     color: var(--color-text);
     font-weight: bold;
     font-size: var(--most-size-text);
@@ -296,6 +291,7 @@ a {
     color: var(--color-button);
     margin-top: var(--margin-top-text);
     margin-bottom: var(--margin-top-text);
+    font-weight: bold;
 }
 a:hover {
     text-decoration: underline;
@@ -313,7 +309,7 @@ a:visited {
 
 /* -------------------------- [13] BLOCCO PASSWORD -------------------------- */
 #div-caratteristiche-password {
-    background-color: rgb(255, 159, 175);
+    background-color: rgb(0, 0, 0, 0.8);
     width: var(--width-input-button);
     border-radius: 0.5rem;
     padding: 0.5rem;
@@ -327,7 +323,6 @@ a:visited {
 .check-password.visible {
     margin-top: 10px;
     height: auto;
-    /*    opacity: 1;   */
 }
     #div-caratteristiche-password>p {
         margin-top: 0;
@@ -346,25 +341,7 @@ a:visited {
     }
 
 /* -------------------------- [14] ANIMAZIONI -------------------------- */
-/* [14.1] logo che gira */
-@keyframes logo-spin {
-    from { 
-        transform: rotate(0deg); 
-    }
-    to { 
-        transform: rotate(360deg); 
-    }
-}
-
-/* [14.2] <button> hover, abilitati e disabilitati*/
-@keyframes button-hover {
-    from {
-        transform: scale(1.00);
-    }
-    to {
-        transform: scale(0.95);
-    }
-}
+/* [14.1] <button> abilitati e disabilitati*/
 @keyframes button-decrease-opacity {
     from {
         opacity: 0.5;
@@ -381,20 +358,6 @@ a:visited {
         opacity: 0.5;
     }
 }
-
-/* -------------------------- [15] SCROLLBAR -------------------------- */
-::-webkit-scrollbar {
-    width: 0.5rem;
-    background-color: pink;
-}
-::-webkit-scrollbar-thumb {
-    background-color: var(--color-button);
-    border-radius: 10rem;
-}
-::-webkit-scrollbar-track {
-    background-color: pink;
-}
-
 
 @media screen and (orientation: portrait) {
     :root {

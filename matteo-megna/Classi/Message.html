@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+            class Message{
+                #timetamp;
+                #sender;
+                #receiver;
+
+                constructor(sender, receiver, timestamp){
+                    this.#sender = sender;
+                    this.#receiver = receiver;
+                    this.#timetamp = timestamp;
+                }
+
+                getTimestamp(){
+                    return this.#timetamp;
+                }
+
+                getSender(){
+                    return this.#sender;
+                }
+
+                getReceiver(){
+                    return this.#receiver;
+                }
+            }
+
+
+            class TextMessage extends Message{
+                #textcontent;
+
+                constructor(sender, receiver, timestamp, textContent){
+                    super(sender, receiver, timestamp);
+                    this.#textcontent = textContent;
+                }
+
+                getContent(){
+                    return this.#textcontent;
+                }
+            }
+
+
+            const newMessage = new Message("ME", "you", new Date());
+            console.log(newMessage.getTimestamp());
+            console.log(newMessage.getReceiver());
+            console.log(newMessage.getSender());
+
+            const newTextMessage = new TextMessage("pippo", "pluto", new Date(), "text content di prova");
+            console.log(newTextMessage.getTimestamp());
+            console.log(newTextMessage.getReceiver());
+            console.log(newTextMessage.getSender());
+            console.log(newTextMessage.getContent());
+
+        </script>
+    </body>
+</html>

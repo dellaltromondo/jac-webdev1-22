@@ -72,7 +72,8 @@ public class UserService
 		entity.setDataIns(LocalDateTime.now());
 		
 		this.dao.create(entity);
-
+		
+		//mettere altro al posto dell'id, dal momento che viene messo dal db
 		log.info("Nuovo user [id={}]", entity.getIdUser());
 		
 		return entity;

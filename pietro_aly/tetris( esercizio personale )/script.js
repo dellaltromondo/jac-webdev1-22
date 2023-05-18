@@ -650,47 +650,19 @@ if (!Array.prototype.remDup) {
   };
 }
 function aggiungiDati() {
-  // Ottenere i valori inseriti nei campi del form
-  var nome = document.getElementById('nome').value;
-  var score = document.getElementById('Score').value;
- 
-  
-  // Creare una nuova riga nella tabella
-  var tabella = document.getElementById('tabellaDati');
-  var nuovaRiga = tabella.insertRow();
+  var nomeInput = document.getElementById('nome');
+  var scoreInput = document.getElementById('Score');
 
-  // Inserire i dati nelle celle della nuova riga
-  var cellaNome = nuovaRiga.insertCell(0);
-  var cellaScore = nuovaRiga.insertCell(1);
-
-
-  cellaNome.innerHTML = nome;
-  cellaScore.innerHTML = score;
-  
-
-  // Pulire i campi del form
-  document.getElementById('nome').value = '';
-  document.getElementById('Score').value = '';
-
-}
-document.querySelector('button[name="salva"]').addEventListener('click', function() {
-  var table = document.getElementById('myTable'); // Sostituisci 'myTable' con l'id della tua tabella
-  var rows = table.getElementsByTagName('tr');
-  var txtContent = '';
-
-  for (var i = 0; i < rows.length; i++) {
-    var cells = rows[i].getElementsByTagName('td');
-    for (var j = 0; j < cells.length; j++) {
-      txtContent += cells[j].innerText + '\t'; // Aggiungi il contenuto della cella separato da una tabulazione
-    }
-    txtContent += '\n'; // Aggiungi un carattere di nuova riga alla fine di ogni riga
+  // Check if the input fields are empty
+  if (nomeInput.value === '' || scoreInput.value === '') {
+    alert('Please add data.');
+    return;
   }
-});
-function aggiungiDati() {
-  var nome = document.getElementById("nome").value;
-  var score = document.getElementById("Score").value;
 
-  var table = document.getElementById("tabellaDati");
+  var nome = nomeInput.value;
+  var score = scoreInput.value;
+
+  var table = document.getElementById('tabellaDati');
   var row = table.insertRow();
 
   var nomeCell = row.insertCell(0);
@@ -698,70 +670,65 @@ function aggiungiDati() {
 
   nomeCell.innerHTML = nome;
   scoreCell.innerHTML = score;
+
+  // Clear the input fields
+  nomeInput.value = '';
+  scoreInput.value = '';
 }
 
 function saveTableAsTxt() {
-  var table = document.getElementById("tabellaDati");
-  var rows = table.getElementsByTagName("tr");
-  var data = "";
+  var table = document.getElementById('tabellaDati');
+  var rows = table.getElementsByTagName('tr');
+  var data = '';
 
   for (var i = 0; i < rows.length; i++) {
-    var cells = rows[i].getElementsByTagName("td");
+    var cells = rows[i].getElementsByTagName('td');
     for (var j = 0; j < cells.length; j++) {
-      data += cells[j].innerHTML + "\t";
+      data += cells[j].innerHTML + '\t';
     }
-    data += "\n";
+    data += '\n';
   }
 
-  var blob = new Blob([data], { type: "text/plain" });
+  var blob = new Blob([data], { type: 'text/plain' });
   var url = URL.createObjectURL(blob);
 
-  var link = document.createElement("a");
+  var link = document.createElement('a');
   link.href = url;
-  link.download = "dati.txt";
+  link.download = 'dati.txt';
   link.click();
 
   URL.revokeObjectURL(url);
 }
+
 function caricadatitxt() {
   var input = document.createElement('input');
   input.type = 'file';
-  
+
   input.onchange = function(event) {
     var file = event.target.files[0];
     var reader = new FileReader();
-    
+
     reader.onload = function(e) {
       var contents = e.target.result;
       var rows = contents.split('\n');
-      
-      var table = document.getElementById("tabellaDati");
-      
+
+      var table = document.getElementById('tabellaDati');
+
       for (var i = 0; i < rows.length; i++) {
         var cells = rows[i].split('\t');
-        
+
         var row = table.insertRow();
-        
+
         for (var j = 0; j < cells.length; j++) {
           var cell = row.insertCell();
           cell.innerHTML = cells[j];
         }
       }
     };
-    
+
     reader.readAsText(file);
   };
-  
-  input.click();
-}
-function aggiungiDati() {
-  var nomeInput = document.getElementById('nome');
-  var scoreInput = document.getElementById('Score');
 
-  // Check if the input fields are empty
-  if (nomeInput.value === '' || scoreInput.value === '') {
-    alert('Please Aggiungi dati .');
-    return;
-  }
+  input.click();
 }
 
