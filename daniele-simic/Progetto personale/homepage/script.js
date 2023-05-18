@@ -1,5 +1,7 @@
 
 const questions = [{'domanda' : String, "utente" : String}];
+usernameAccesso = "";
+eliminaDomande = false;
 
 function linguaggi() {
     const sezione = document.getElementById('pagineWeb');
@@ -93,9 +95,11 @@ function backJs() {
 
 }
 
+
 function login(){
     const logout = document.getElementById("logout");
     
+    const domande = document.getElementById("listaDomande");
     const login = document.getElementById("login");
     const username = document.getElementById("username").value
     const password = document.getElementById("password").value
@@ -118,6 +122,7 @@ if(username == "" || password == "") {
     Username.value = "";
     Password.value = "";
 }
+
 }
 
 function closeModal() {
@@ -140,7 +145,6 @@ function logout() {
     document.getElementById("pagineWeb").style.display = "none";
     document.getElementById("javascript").style.display = "none";
 
-    
     domande.innerHTML = "";
     login.style.display = "block";
     bottoni.style.display = "none";
@@ -164,6 +168,7 @@ function saveDomanda() {
     const formato = document.createElement("article");
     const domanda = document.createElement("p");
 
+    domanda.setAttribute("class", "domandaVisulizzata");
     posizioneDomanda.appendChild(formato);
     formato.appendChild(domanda);
     domanda.innerText = textarea;

@@ -1,12 +1,3 @@
-//quantità -> cartItem o Product
-
-class CartItem {
-    constructor(id, product) {
-        this.id = id;
-        this.product = product;
-    }
-}
-
 class Product {
     constructor(id, name, price,){
         this.id = id;
@@ -43,7 +34,6 @@ class Drink extends Product {
 
 var cart = [];
 let counter = 1;
-let cartCounter = 1;
 
 function addBurgerToCart() {
 
@@ -81,11 +71,9 @@ function addBurgerToCart() {
 
     }
     
-    counter++;
     cart.push(burger);
     addProductToTable(burger);
     console.log(cart);
-
 }
 
 function removeBurgerFromCart(){
@@ -123,7 +111,6 @@ function addDrinkToCart(element) {
         drink = new Drink(counter, "RedBull", 3.00, "Standard");
     }
 
-    counter++;
     cart.push(drink);
     addProductToTable(drink);
     console.log(cart);
@@ -135,29 +122,17 @@ function removeDrinkFromCart() {
 
 function addProductToTable(product) {
 
-    // APPEND CHILD SCHEME:
-
-    // TABLE
-    //     THEAD
-    //     TBODY
-    //         TR
-    //             TH
-    //                 ID
-    //             TD
-
-    const item = new CartItem(cartCounter++, product);
-
     const newElementTr = document.createElement('tr');
     const newElementTh = document.createElement('th');
 
     const newElementTd = document.createElement('td');
-    const txtBurger = document.createTextNode(item.product.name);
+    const txtBurger = document.createTextNode(product.name);
 
     const newElemntTdPrice = document.createElement('td');
-    const txtPrice = document.createTextNode(item.product.price);
+    const txtPrice = document.createTextNode(product.price);
 
     const newElementTdDetails = document.createElement('td');
-    const txtDetails = document.createTextNode(item.product.getDetails());
+    const txtDetails = document.createTextNode(product.getDetails());
 
     const newElementTdAct = document.createElement('td');
     const newButtonDelete = document.createElement('button');
@@ -165,11 +140,12 @@ function addProductToTable(product) {
     const txtDelete = document.createTextNode("❌");
     const txtEdit = document.createTextNode("✏️");
         
-    const txt = document.createTextNode(item.product.id);
+    const txt = document.createTextNode(product.id);
 
     newElementTh.setAttribute('class', 'scope="row"');
-    newButtonDelete.setAttribute('onClick', 'removeBurgerFromCart()');
-    newButtonDelete.setAttribute('value', item.product.id);
+    newElementTr.setAttribute('id', 'row' + counter);
+    newButtonDelete.setAttribute('onClick', "removeProductFromTable('row" + counter +"')");
+    newButtonDelete.setAttribute('value', product.id);
 
     // Append id
     newElementTr.appendChild(newElementTh);
@@ -196,8 +172,14 @@ function addProductToTable(product) {
 
     document.getElementById('tableBody').appendChild(newElementTr);
 
+    counter++;
 }
 
-function removeProductFromTable(product) {
-    
+function removeProductFromTable(id) {
+    var elemento = document.getElementById(id);
+    if (elemento) {
+      elemento.remove();
+    }
+
+    removeBurgerFromCart();
 }

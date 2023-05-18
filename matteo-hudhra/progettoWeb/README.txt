@@ -1,0 +1,1 @@
+la cartella "mydiary" è la cartella del server. ho committato anche l'export del database di mysql  (dbmydiary.sql)

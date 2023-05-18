@@ -19,30 +19,38 @@
                 <h1>Chigio's</h1>
 
                 <li>
-                    <a href="" id=info> NUTRIZIONE SPORTIVA</a>
+                    <a href="#clickOn" id=info> NUTRIZIONE SPORTIVA</a>
                 </li>
                 <li>
-                    <a href="" id=info>FASHION&CARE</a>
+                    <a href="#clickOn" id=info>FASHION&CARE</a>
                 </li>
                 <li>
-                    <a href="" id=info>HEALTH</a>
+                    <a href="#clickOn" id=info>HEALTH</a>
                 </li>
                 <li>
-                    <a href="" id=info>OFFERTE</a>
+                    <a href="#clickOn" id=info>OFFERTE</a>
                 </li>
                 <li>
-                    <a href="" id=info>DONNA</a>
+                    <a href="#clickOn" id=info>DONNA</a>
                 </li>
                 <li>
-                    <a href="" id=info>UOMO</a>
+                    <a href="#clickOn" id=info>UOMO</a>
                 </li>
                 <li>
-                    <button  id="cart" style="border-radius: 1cm; background-color:red; width: 50px;height: 50px;"><img
-                            src="immagini/carrello.png" alt="" style="background-color: red;">
+                    <button onclick="" style="border-radius: 1cm; background-color:red; width: 50px;height: 50px;"><img
+                            src="immagini/carrello.png"  alt="" style="background-color: red;">
                     </button>
                 </li>
-                <li><input type="text" style="color: white">
-                </li>
+                <li>
+                    <select id="productDropdown" style="color: white" onchange="scrollToSection()">
+                      <option value="">Seleziona un prodotto</option>
+                      <option value="amminoacidi">Amminoacidi</option>
+                      <option value="straps">Straps</option>
+                      <option value="shoes">Shoes</option>
+                      <option value="shoes">Proteine</option>
+                      <option value="shoes">Creatina</option>
+                    </select>
+                  </li>
 
             </ol>
 
@@ -129,7 +137,7 @@
 
         <ol>
             <li>
-                <img src="immagini/creatina.jpeg" alt="">
+                <img src="immagini/creatina.jpeg" id="clickOn"alt="">
                 <button onclick="creaProdotto(this)" data-value="Creatina" id='bu'>
                     <p id="creatina">Creatina: 19,99$</p>
                 </button>
@@ -191,13 +199,11 @@
     <!--CODICE PROMO-->
 
     <div id="codice">
-
         <h2>HAI UN CODICE PROMOZIONALE?</h2>
-        <p>Inseriscilo qui! <img src="immagini/freccia.png" alt=""> <input type="text" placeholder="Ins. codice promo"
-                name="name"></p>
-        <button>Registra codice</button>
-
+        <p>Inseriscilo qui! <img src="immagini/freccia.png" alt=""> <input type="text" placeholder="Ins. codice promo" id="promoInput"></p>
+        <button onclick="registraCodice()">Registra codice</button>
     </div>
+    
 
     <!--CARRELLO-->
 
@@ -210,6 +216,8 @@
                 <th>ID</th>
                 <th>Nome prodotto</th>
                 <th>Prezzo</th>
+                <th>Codice PROMO</th>
+                <th>Elimina</th>
             </tr>
         </thead>
         <tbody id="corpo">
@@ -217,12 +225,15 @@
                 <th>1</th>
                 <td>Nessun prodotto è stato aggiunto</td>
                 <td>0.00</td>
-
+                <td>Non inserito</td>
+                <td><button style="color:white; border-color: white; background-color: white; box-shadow: 3px;"onclick="deleteRow(button)"><img  src="immagini/delete.png" style="width:30px; height:30px" alt=""></button></td>
             </tr>
             <tr>
                 <th>2</th>
                 <td>Nessun prodotto è stato aggiunto</td>
                 <td>0.00</td>
+                <td>Non inserito</td>
+                <td><button style="color:white; border-color: white; background-color: white; box-shadow: 3px;"onclick="deleteRow(button)"><img  src="immagini/delete.png" style="width:30px; height:30px" alt=""></button></td>
 
             </tr>
         </tbody>
