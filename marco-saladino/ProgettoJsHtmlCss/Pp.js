@@ -146,7 +146,7 @@ function MostraQuartz(Orologio) {
     prezzoCI.innerText = Orologio.Citizen.prezzo;
     descrizioneCI.innerText = Orologio.Citizen.descrizione;
 
-    DivQuartz.innerText='';
+    DivQuartz.innerText=''; // svuota per non fare aggiungere le cose più volte
 
     DivQuartz.appendChild(DivBulova);
     DivBulova.appendChild(imgB);
