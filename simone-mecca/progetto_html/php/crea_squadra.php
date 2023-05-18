@@ -61,7 +61,7 @@ $result2 = mysqli_query($conn, $giocatoriesalari);
     </form>
   </div>
   <!-- CREAZIONE DELLA TABELLA CON NOMI E STIPENDI -->
-  <div class="colonne" id="divtabella">
+  <div class="colonne divtabella" id="divtabella" >
     <table id="tabella">
       <thead>
         <tr>
@@ -110,12 +110,14 @@ $result2 = mysqli_query($conn, $giocatoriesalari);
           <input readonly type="text" id="giocatore9" name="giocatore9" class="giocatoriattivi" placeholder="Giocatore9">
           <input readonly type="text" id="giocatore10" name="giocatore10" class="giocatoriattivi" placeholder="Giocatore10">
         </div>
-        <pre class="contatori">PG: <p id="contatoreruolopg" class="contatori">0</p></pre>
-        <pre class="contatori">SG: <p id="contatoreruolosg" class="contatori">0</p></pre>
-        <pre class="contatori">SF: <p id="contatoreruolosf" class="contatori">0</p></pre>
-        <pre class="contatori">PF: <p id="contatoreruolopf" class="contatori">0</p></pre>
-        <pre class="contatori">C: <p id="contatoreruoloc" class="contatori">0</p></pre>
-        <input type="submit" name="submit" class="bottoninavigazione bottonesalvataggio" id="submit" value="Salva squadra">
+        <div id="contatori">
+          <pre class="contatori">PG: <p id="contatoreruolopg" class="contatori">0</p></pre>
+          <pre class="contatori">SG: <p id="contatoreruolosg" class="contatori">0</p></pre>
+          <pre class="contatori">SF: <p id="contatoreruolosf" class="contatori">0</p></pre>
+          <pre class="contatori">PF: <p id="contatoreruolopf" class="contatori">0</p></pre>
+          <pre class="contatori">C: <p id="contatoreruoloc" class="contatori">0</p></pre>
+          <input type="submit" name="submit" class="bottoninavigazione bottonesalvataggio" id="submit" value="Salva squadra">
+        </div>
       </form>
       <?php
       if (array_key_exists('submit', $_POST)) {
@@ -158,7 +160,7 @@ $result2 = mysqli_query($conn, $giocatoriesalari);
       }
 
       //FUNZIONE CHE CONTROLLA SE E' PRESENTE UNA SQUADRA CON LO STESSO NOME, SE UNO SCHEMA E' SELEZIONATO, SE QUALCHE GIOCATORE NON E' STATO INSERITO, SE E' DUPLICE E SE I RUOLI SONO GIUSTI
-      function controlloSquadra($listagiocatori, $risultato, $formazione, $spesa, $con) 
+      function controlloSquadra($listagiocatori, $risultato, $formazione, $spesa, $con)
       {
         if ($formazione == 1) {
           echo "Formazione sbagliata!";

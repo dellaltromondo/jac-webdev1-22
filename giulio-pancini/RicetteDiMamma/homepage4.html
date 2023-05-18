@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova-Ricette di Nonna</title>
+    <style>
+        @-webkit-keyframes animatetop {
+            from {
+                top: -300px;
+                opacity: 0
+            }
+
+            to {
+                top: 0;
+                opacity: 1
+            }
+        }
+
+        @keyframes animatetop {
+            from {
+                top: -300px;
+                opacity: 0
+            }
+
+            to {
+                top: 0;
+                opacity: 1
+            }
+        }
+
+        @font-face {
+            /*Prende l'ultimo ordine disponibile*/
+            font-family: ubuntu-medium;
+            src: url(Font_Ubuntu/Ubuntu-Medium.ttf);
+        }
+
+        @font-face {
+            /*Prende l'ultimo ordine disponibile*/
+            font-family: ubuntu-regular;
+            src: url(Font_Ubuntu/Ubuntu-Regular.ttf);
+        }
+
+        * {
+            font-family: ubuntu-regular;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: cornsilk;
+        }
+
+        body>section {
+            margin: 20px 0;
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+
+        .btnAgg {
+            justify-self: center;
+        }
+
+        .btnAgg>img {
+            width: 50%;
+            height: 200px;
+            object-fit: contain;
+        }
+
+        .wrapperAgg {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            /*sta sopra*/
+            padding-top: 100px;
+            padding-bottom: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            /*scroll se e quando necessario*/
+            background-color: rgba(0, 0, 0, 0.4);
+            /*ultimo numero è opacità*/
+        }
+
+        label {
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        input {
+            display: block;
+            margin: 0 auto;
+        }
+
+        .contenutoAgg {
+            position: relative;
+            background-color: floralwhite;
+            margin: auto;
+            padding: 0;
+            border: 1px solid #888;
+            width: 80%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            -webkit-animation-name: animatetop;
+            -webkit-animation-duration: 0.4s;
+            animation-name: animatetop;
+            animation-duration: 0.4s;
+        }
+
+        .inputUtente {
+            width: 90%;
+            height: 5rem;
+            display: block;
+            margin: 20px auto;
+        }
+
+        #footerAgg {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            margin: 20px 0;
+        }
+
+        .btnFooter {
+            justify-self: center;
+        }
+
+        .totalePassaggi {
+            justify-self: center;
+            display: block;
+        }
+
+        main {
+            margin: 20px 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .apri {
+            position: relative;
+            bottom: 0;
+            justify-self: center;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .apri:hover {
+            position: relative;
+            bottom: 5px;
+        }
+
+        .apri img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .wrapper {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            /*sta sopra*/
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            /*scroll se e quando necessario*/
+            background-color: rgba(0, 0, 0, 0.4);
+            /*ultimo numero è opacità*/
+        }
+
+        .contenuto {
+            position: relative;
+            background-color: floralwhite;
+            margin: auto;
+            padding: 0;
+            border: 1px solid #888;
+            width: 80%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            -webkit-animation-name: animatetop;
+            -webkit-animation-duration: 0.4s;
+            animation-name: animatetop;
+            animation-duration: 0.4s;
+        }
+
+        .contenutoFooter {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .passaggi {
+            text-align: center;
+        }
+
+        .btnRicetta {
+            justify-self: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <button class="filtri" id="bottoneMenoDi15" type="button">durata 15</button>
+        </nav>
+    </header>
+    <section>
+        <button class="btnAgg" type="button">
+            <img src="Images/plusSign.png" alt="Aggiungi una ricetta">
+            <div class="infoRicetta">
+                <h3>Aggiungi una ricetta</h3>
+            </div>
+        </button>
+
+        <div class="wrapperAgg">
+            <div class="contenutoAgg">
+                <form id="form">
+                    <div id="headerAgg">
+                        <h2>Condividi la tua ricetta!</h2>
+                        <label for="immagine">Inserisci un'immagine rappresentativa del piatto
+                            <input class="inputs" type="url" id="immagine" placeholder="Inserisci URL immagine">
+                        </label>
+                        <label for="nomeRicetta">Inserisci il nome della tua ricetta
+                            <input class="inputs" type="text" id="nomeRicetta" placeholder="Lasagne alla bolognese">
+                        </label>
+                        <label for="breveDesc">Inserisci una breve descrizione
+                            <input class="inputs" type="text" id="breveDesc"
+                                placeholder="Un simbolo dello spirito italiano">
+                        </label>
+                        <label for="tempo">Indica il tempo di preparazione in minuti
+                            <input class="inputs" type="text" maxlength="3" id="tempo"
+                                onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))">
+                        </label>
+                    </div>
+                    <div id="bodyAgg">
+                        <textarea oninput="auto_grow(this)" class="inputUtente"
+                            placeholder="Inserisci il nuovo passaggio della tua tua ricetta"></textarea>
+                    </div>
+                </form>
+                <div id="footerAgg">
+                    <button onclick="aggiungiTextarea()" class="btnFooter" type="button">Aggiungi una
+                        nuova
+                        sezione</button>
+                    <button onclick="rimuoviTextarea()" class=" btnFooter" type="button">Rimuovi una
+                        sezione</button>
+                    <button onclick="salvaRicetta()" class="btnFooter" type="submit">Carica la tua
+                        ricetta</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <main>
+    </main>
+</body>
+
+<script src="javascript.js"></script>
+</body>
+
+</html>
