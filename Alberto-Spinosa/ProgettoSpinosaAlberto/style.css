@@ -62,11 +62,27 @@ nav ul li {
 
 /** ---GRID--- **/
 
+
 .grid-container {
     margin-top: 4rem;
     display: grid;
-    grid-template-columns: auto auto auto;
     padding: 10px;
+}
+
+@media (max-width: 900px) {
+    .grid-container {
+      grid-template-columns: auto auto;
+    }
+}
+
+@media (max-width: 700px) {
+    .grid-container {
+      grid-template-columns: auto;
+    }
+
+    nav {
+        font-size: 10px;
+    }
 }
 
         /* BEVANDE */
@@ -96,7 +112,6 @@ nav ul li {
 }
 
 
-        /* BEVANDE */
 
 
 
@@ -148,6 +163,7 @@ nav ul li {
 /** ---FOOTER--- **/
 
 .footer-basic {
+    width: 100%;
     padding: 40px 0;
     background-color: #ff0000;
     color: #000000;
