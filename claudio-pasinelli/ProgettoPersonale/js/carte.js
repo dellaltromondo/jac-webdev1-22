@@ -253,7 +253,7 @@ async function creaCartaHTML(carta)
     const card = document.createElement("section");
     card.setAttribute("class","card");
 
-    if(carta.getIdCarta() > idCarta)
+    if(carta.getIdCarta() < idCarta)
     {
         card.setAttribute("id","carta" + carta.getIdCarta());
     }

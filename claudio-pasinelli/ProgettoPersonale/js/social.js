@@ -348,7 +348,7 @@ async function creaSocial(social)
 
     const figureSocial = document.createElement("figure");
 
-    if(social.getIdSocial() > idSocial)
+    if(social.getIdSocial() < idSocial)
     {
         figureSocial.setAttribute("id","social" + social.getIdSocial());
     }
