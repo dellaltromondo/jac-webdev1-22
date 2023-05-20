@@ -84,17 +84,43 @@ class Social
 
 async function trovaMaxIdSocial()
 {
+    let haSocial = true;
+
     const idCompositore = localStorage.getItem("idCompositore");
     const getSocials = await fetch("http://localhost:8080/progettoPersonaleJava/api/v1/socials/" + idCompositore + "/compositori");
     const getSocialsJson = await getSocials.json();
 
+    let getSocialsTutte;
+    let getSocialsTutteJson;
+
+    if(getSocialsJson.length === 0)
+    {
+        haSocial = false;
+        getSocialsTutte = await fetch("http://localhost:8080/progettoPersonaleJava/api/v1/socials/");
+        getSocialsTutteJson = await getSocialsTutte.json();
+    }
+
     let maxId = 1;
 
-    for(socialCompositore of getSocialsJson)
+    if(haSocial)
     {
-        if(socialCompositore.idSocial > maxId)
+        for(socialCompositore of getSocialsJson)
         {
-            maxId = socialCompositore.idSocial;
+            if(socialCompositore.idSocial > maxId)
+            {
+                maxId = socialCompositore.idSocial;
+            }
+        }
+    }
+
+    else
+    {
+        for(socialCompositore of getSocialsTutteJson)
+        {
+            if(socialCompositore.idSocial > maxId)
+            {
+                maxId = socialCompositore.idSocial;
+            }
         }
     }
 
@@ -446,7 +472,11 @@ async function creaSocial(social)
         });
         
     arraySocial.push(social);
-    idSocial++;
+
+    if(!isDatiInCaricamento())
+    {
+        idSocial++;
+    }
 
     if(arraySocial.length !== 0)
     {

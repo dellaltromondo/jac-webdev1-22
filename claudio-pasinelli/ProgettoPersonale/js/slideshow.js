@@ -51,17 +51,43 @@ class Foto
 
 async function trovaMaxIdFoto()
 {
+    let haFoto = true;
+
     const idCompositore = localStorage.getItem("idCompositore");
     const getFoto = await fetch("http://localhost:8080/progettoPersonaleJava/api/v1/foto/" + idCompositore + "/compositori");
     const getFotoJson = await getFoto.json();
 
+    let getFotoTutte;
+    let getFotoTutteJson;
+
+    if(getFotoJson.length === 0)
+    {
+        haFoto = false;
+        getFotoTutte = await fetch("http://localhost:8080/progettoPersonaleJava/api/v1/foto/");
+        getFotoTutteJson = await getFotoTutte.json();
+    }
+
     let maxId = 1;
 
-    for(FotoCompositore of getFotoJson)
+    if(haFoto)
     {
-        if(FotoCompositore.idFoto > maxId)
+        for(FotoCompositore of getFotoJson)
         {
-            maxId = FotoCompositore.idFoto;
+            if(FotoCompositore.idFoto > maxId)
+            {
+                maxId = FotoCompositore.idFoto;
+            }
+        }
+    }
+
+    else
+    {
+        for(FotoCompositore of getFotoTutteJson)
+        {
+            if(FotoCompositore.idFoto > maxId)
+            {
+                maxId = FotoCompositore.idFoto;
+            }
         }
     }
 
