@@ -1,3 +1,27 @@
+function sendMessage(e) {
+
+    // Previene il comportamento del browser al browser. In questo caso ev
+    e.preventDefault();
+
+    myChat.push(new TextMessage(me, you, message))
+}
+
+
+function renderChat(chatToBeRendered) {
+    const messageList = document.getElementById("message-list");
+    if (!messageList) {
+        console.log("Element with id 'message-list' not found.");
+    }
+    messageList.innerText = "";
+
+    chatToBeRendered.forEach(message => {
+        const liElement = document.createElement("li");
+        liElement.innerText = message.getTextContent;
+        liElement.className = message.getSender() == me ? "sent-by-me" : "sent-by-them";
+        messageList.appendChild(liElement);
+    });
+}
+
 class Message {
 
     #sender;
@@ -86,7 +110,6 @@ class ImageMessage extends Message {
     }
 }
 
-const me = new User(1, "Matteo", "Bonzi");
 console.log(me);
 try {
     me.changeDisplayName("LeBron James");
@@ -97,15 +120,10 @@ try {
     console.log("!!! ERROR !!! " + e.message);
 }
 
-const you = new User(2, "Elena", "diSanDonato");
+const me = new User(1, "Elena", "diSanDonato");
+const you = new User(2, "AleMonz", "diSanDonato");
 
-const newMessage = new Message(me, you, new Date());
+const newMessage = new Message(me, you, "Ciao");
 console.log(newMessage);
 
-//deep copy
-newYou = JSON.parse(JSON.stringify(you));
-
-const newTextMessage = new TextMessage(me, you, "Contenuto del messaggio");
-console.log(newTextMessage);
-
-me.changeDisplayName("Paperino");
+renderChat();
