@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* .backgroundModuloUtente {
+            display: none;
+            position: fixed;
+            padding-top: 100px;
+            padding-bottom: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        } */
+
+        .moduloUtente {
+            position: relative;
+            margin: auto;
+            margin-top: 100px;
+            width: 350px;
+            height: 500px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 5px 20px 50px #000;
+        }
+
+        #check {
+            display: none;
+        }
+
+        .signup {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .signup label {
+            color: darkred;
+            font-size: 2.3em;
+            justify-content: center;
+            display: flex;
+            margin: 60px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: .5s ease-in-out;
+        }
+
+        .inputIscrizione {
+            width: 60%;
+            height: 20px;
+            background: #e0dede;
+            justify-content: center;
+            display: flex;
+            margin: 20px auto;
+            padding: 10px;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+        }
+
+        .sl {
+            width: 60%;
+            height: 40px;
+            margin: 10px auto;
+            justify-content: center;
+            display: block;
+            color: #fff;
+            background: rgb(150, 50, 50);
+            font-size: 1em;
+            font-weight: bold;
+            margin-top: 20px;
+            outline: none;
+            border: none;
+            border-radius: 5px;
+            transition: .2s ease-in;
+            cursor: pointer;
+        }
+
+        .sl:hover {
+            background: darkred;
+        }
+
+        .login {
+            height: 460px;
+            background: #eee;
+            border-radius: 60% / 10%;
+            transform: translateY(-120px);
+            transition: .8s ease-in-out;
+        }
+
+        .login form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .login label {
+            color: darkred;
+            transform: scale(.6);
+            margin-top: 10px;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        #check:checked~.login {
+            transform: translateY(-500px);
+        }
+
+        #check:checked~.login label {
+            transform: scale(1);
+        }
+
+        #check:checked~.signup label {
+            transform: scale(.6);
+        }
+
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="backgroundModuloUtente">
+        <div class="moduloUtente">
+            <input type="checkbox" id="check">
+
+            <div class="signup">
+                <form id="signupForm">
+                    <label for="check">Sign up</label>
+                    <input class="inputIscrizione" type="text" name="username" placeholder="Username" required="">
+                    <span id="name-error" class="error-message"></span>
+                    <input class="inputIscrizione" type="email" name="email" placeholder="Email" required="">
+                    <span id="email-error" class="error-message"></span>
+                    <input class="inputIscrizione" type="password" name="password" placeholder="Password" required="">
+                    <span id="password-error" class="error-message"></span>
+                    <button class="sl bottoneSignUp" type="button" onclick="creaUser()">Sign up</button>
+                </form>
+            </div>
+
+            <div class="login">
+                <form id="loginForm">
+                    <label for="check">Login</label>
+                    <input class="inputIscrizione" type="email" name="username" placeholder="Username" required="">
+                    <input class="inputIscrizione" type="password" name="password" placeholder="Password" required="">
+                    <button class="sl bottoneLogin" onclick="validaLogin()" type="button">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+
+    class User {
+
+        #username
+        #email;
+        #password;
+
+        constructor(username, email, password) {
+
+            this.#username = username;
+            this.#email = email;
+            this.#password = password;
+        }
+
+        getUsername() {
+
+            return this.#username;
+        }
+        getEmail() {
+
+            return this.#email;
+        }
+        getPassword() {
+
+            return this.#password;
+        }
+    }
+
+    const arrayUser = [];
+
+    function creaUser() {
+
+        clearErrorMessages();
+
+        const name = document.getElementById('username').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const password = document.getElementById('password').value;
+
+        var isValid = true;
+
+        if (name === '') {
+            displayErrorMessage('name-error', 'Name is required');
+            isValid = false;
+        }
+
+        if (email === '') {
+            displayErrorMessage('email-error', 'Email is required');
+            isValid = false;
+        } else if (!isValidEmail(email)) {
+            displayErrorMessage('email-error', 'Invalid email');
+            isValid = false;
+        }
+
+        if (password === '') {
+            displayErrorMessage('password-error', 'Password is required');
+            isValid = false;
+        } else if (password.length < 6) {
+            displayErrorMessage('password-error', 'Password should be at least 6 characters');
+            isValid = false;
+        }
+
+        if (isValid) {
+            const un = document.forms['signupForm'].elements['username'].value;
+            const pw = document.forms['signupForm'].elements['password'].value;
+            const mail = document.forms['signupForm'].elements['email'].value;
+
+            const nuovoUser = new User(un, mail, pw);
+
+            arrayUser.push(nuovoUser);
+        }
+    };
+
+    function displayErrorMessage(elementId, message) {
+        var errorElement = document.getElementById(elementId);
+        errorElement.textContent = message;
+    }
+
+    function clearErrorMessages() {
+        var errorMessages = document.getElementsByClassName('error-message');
+        for (var i = 0; i < errorMessages.length; i++) {
+            errorMessages[i].textContent = '';
+        }
+    }
+
+    function isValidEmail(email) {
+        var emailRegex = /^\S+@\S+\.\S+$/;
+        return emailRegex.test(email);
+    }
+
+    function validaLogin() {
+        const un = document.forms['loginForm'].elements['username'].value;
+        const pw = document.forms['loginForm'].elements['password'].value;
+        const username = "SergioMattarella";
+        const password = "presidenterepubblica";
+        if ((un == username) && (pw == password)) {
+            const bentornato = document.createElement("h3");
+            bentornato.innerText = "Bentornato";
+            bentornato.style.color = "darkred";
+
+            const bottoneLogin = Array.from(document.getElementsByClassName("bottoneLogin"))[0];
+            bottoneLogin.style.display = "none";
+
+            const loginForm = (document.getElementById("loginForm"));
+
+            loginForm.appendChild(bentornato);
+
+            const backgroundModuloUtente = Array.from(document.getElementsByClassName("backgroundModuloUtente"))[0];
+
+            setTimeout(function () {
+                backgroundModuloUtente.style.display = "none";
+            }, 1000);
+
+            return false;
+        }
+        else {
+            alert("Credenziali errate, controlla username e password");
+        }
+    }
+
+</script>
+
+</html>

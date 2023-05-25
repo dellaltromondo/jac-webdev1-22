@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <title>Martina Arteconi | Psicologa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Rubik:wght@700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" href="immagini/favicon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body id="home">
+    <header>
+        <nav>
+            <img src="immagini/logo.jpg" id="logo">
+            <div class="no-desktop">
+                <i class="material-icons" class="no-desktop" style="font-size: 48px;" onclick="toggleMenu()">menu</i>
+            </div>
+            <div class="only-desktop" id="expanded-menu"><!--come fosse ul-->
+                <a href="#home">HOME</a>
+                <a href="#chiSono">CHI SONO</a>
+                <a href="#cosaOccup">DI COSA MI OCCUPO</a>
+                <a href="#prenApp">PRENOTA UN APPUNTAMENTO</a>
+                <a href="#contatti">CONTATTI</a>
+            </div>
+        </nav>
+    </header>
+
+
+
+    <div class="containerSfondo">
+        <img id="sfondo" src="immagini/wallpaper.jpg">
+        <div class="scritta">"Ogni viaggio comincia sempre dal primo passo."</div>
+    </div>
+
+    <section id="chiSono">
+        <h1>Dott.ssa Martina Arteconi</h1>
+        <h2>CHI SONO</h2>
+
+        <div class="chiSono">
+            <img class="imgChiSono" src="immagini/chisonoPM.jpg">
+            <p class="p">Sono la Dott.ssa Martina Arteconi, psicologa clinica e psicoterapeuta in formazione cognitivo-
+                comportamentale. <br>
+                Ho svolto i miei studi universitari presso l’Università Vita-Salute San Raffaele di Milano. Ho
+                conseguito a pieni voti la laurea magistrale in Psicologia Clinica e della Salute e svolto il tirocinio
+                post-lauream presso l’IRCSS Ospedale San Raffaele Turro nel reparto dei Disturbi del
+                Comportamento Alimentare e Disturbi D’Ansia. <br>
+                In seguito, ho conseguito l’abilitazione e ottenuto l’iscrizione all’Albo degli Psicologi della
+                Lombardia. <br>
+                Attualmente lavoro privatamente come psicologa clinica e sto completando il percorso di
+                formazione presso la scuola di specializzazione in Psicoterapia cognitivo-comportamentale “Studi
+                Cognitivi” di Milano. Nel corso della specializzazione ho svolto tirocinio presso l’Ospedale
+                Macedonio Melloni e l’Ospedale dei Bambini Vittore Buzzi di Milano occupandomi principalmente
+                di donne con Disturbi D’Ansia e Disturbi Depressivi nel periodo perinatale e nel post-partum; ad
+                oggi svolgo il tirocinio presso il Centro Psicosociale di Seregno ASST Brianza.
+            </p>
+        </div>
+    </section>
+
+    <section id="cosaOccup">
+        <h2>DI COSA MI OCCUPO</h2>
+        <p>Il mio obiettivo professionale è da sempre quello di aiutare le persone a stare meglio con sé
+            stesse e nella relazione con gli altri, lavorando sulla consapevolezza di sé e delle proprie risorse
+            interne. Il fine dei colloqui psicologici è infatti quello di rendere la persona protagonista attiva del
+            suo cammino di vita, capace di utilizzare in autonomia gli strumenti e le risorse apprese durante il
+            percorso. <br>
+            Mi occupo in ambito clinico del disagio psichico di giovani e adulti. Offro un servizio di sostegno
+            psicologico, valutazione e psicoterapia individuale per le seguenti aree: ansia, attacchi di panico,
+            fobie, depressione, disagio nelle relazioni sociali, difficoltà relazionali e di comunicazione, difficoltà
+            nella sfera del comportamento alimentare, supporto al lutto, difficoltà nell’accettazione di parti di
+            sé, problemi comportamentali, regolazione e gestione delle emozioni, gestione del conflitto, stress.
+        </p>
+    </section>
+
+    <section id="prenApp">
+        <h2>PRENOTA UN APPUNTAMENTO</h2>
+        <p>Accolgo le richieste di chiunque senta la sua vita appesantita da fatiche, fragilità o sofferenze
+            personali e che senta il bisogno di affrontarle al fianco di un professionista per raggiungere uno
+            stato di benessere psicofisico.
+        </p>
+
+        <button id="prenApp-button">Prenota un appuntamento</button>
+
+        <div id="form">
+            <form>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="name" required><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br>
+
+                <label for="tel">Numero di telefono:</label>
+                <input type="tel" id="tel" name="phone" required><br>
+
+                <label for="dove">Dove:</label>
+                <select id="dove" name="service" required>
+                    <option value="">Seleziona il servizio</option>
+                    <option>Milano</option>
+                    <option>Vimodrone</option>
+                    <option>Video-consulto</option>
+                </select><br>
+
+                <label for="date">Data e ora:</label>
+                <input type="datetime-local" id="date" name="date" required><br>
+
+                <div class="separatore"></div>
+
+                <label for="message" class="messaggio">Messaggio:</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+                <div class="separate-button"> 
+                    <button class="prenota" type="submit" value="Prenota">Prenota</button>
+                    <button class="close" id="close-button" type="submit" value="Chiudi">Chiudi</button>
+                </div>
+            </form>
+            <div id="riepilogo">
+                <h1>RIEPILOGO APPUNTAMENTO</h1>
+            </div>
+        </div>
+    </section>
+
+    <section id="contatti">
+        <h2>CONTATTI</h2>
+        <p>Ricevo previo appuntamento presso gli studi di Via Alberto Caroncini, 5, Milano e Vicolo Farinelli,
+            1, Vimodrone oppure in video-consulto.<br>
+            Cellulare: 347.3945842 <br>
+            Email: martinaarteconipsicologa@gmail.com<br>
+            Skype: Martina Arteconi
+        </p>
+    </section>
+
+    <footer>
+        <div>
+            <img src="immagini/img_footer.jpeg" class="footerImg">
+        </div>
+
+        <div>
+            <h2>INDIRIZZI</h2>
+            <p>Via Alberto Caroncini 5, Milano (MI)</p>
+            <p>Via Giuseppe Mazzini, 6, Vimodrone (MI)</p>
+            <br>
+            <p>P.IVA 12477380963</p>
+        </div>
+        <div>
+            <h2>CONTATTI</h2>
+            <p>Tel: +39 347 3945842</p>
+            <p>E-mail: martinaarteconipsicologa@gmail.com</p>
+        </div>
+    </footer>
+
+    <p class="footerRealizedBy">Realizzato da Matteo Arteconi</p>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

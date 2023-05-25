@@ -1,8 +1,13 @@
 let colore = "";
+/* la logiut riporta alla pagina di login, che quando viene caricata cancella i dati dell'utente salvati in localStorage */
 function logOut()
 {
   window.location.href = "login.html";
 }
+
+/* la loadDati al carcamento della pagina viene richiamata e con la fetch riceve dal server una lista completa delle materie
+   che l'utente loggato ha salvato nel database (l'id dell'utente loggato l'hosalvato nel localStorage in fase di login, in
+   modo tale da averlo disponibile dutante tutta la sessione) */
 
 async function loadDati()
 {
@@ -17,10 +22,16 @@ async function loadDati()
         }
 }
 
+/* la getColore semplicemente legge il colore selezionato nel form ricevendo come arametro l'id del div 
+   che rappresenta il colore scelto e lo ritorna */
+
 function getColore(id) 
 {
     colore=document.getElementById(id).style.backgroundColor;
 }
+
+/*La createSubjectContainer riceve come parametro un oggetto Materia che viene creato dopo aver letto i valori inseriti nel form
+  in seguito crea il container che conterrà il nome della materia e del docente, sotto la media dei voti della materia (funzione non implementata)*/
 
 function createSubjectContainer(subject) 
 {
@@ -49,7 +60,10 @@ function createSubjectContainer(subject)
     colore = "";
     return container;
 }
-
+/* questo event listener quando il form viene submittato legge i dati del form e crea l'oggetto Materia,
+   tramite la fetch e manda il json dell'oggetto al server che a sua volta lo salva nel database. solo dopo 
+   aver ricevuto una risposta positiva dal server richiamo la createSubjectContainer che mi crea il container
+   e lo appende alla section che contiene tutte le materie*/
 let form = document.querySelector("form");
 form.addEventListener("submit", function(event) {
     event.preventDefault();

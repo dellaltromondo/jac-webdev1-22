@@ -1,4 +1,5 @@
 let idCompositore;
+let datiInCaricamento = false;
 
 async function impostaIdCompositore()
 {
@@ -91,12 +92,21 @@ async function compositoreSpecifico()
     }
 }
 
+async function isDatiInCaricamento()
+{
+    return datiInCaricamento;
+}
+
 async function caricaTuttiIDati()
 {
+    datiInCaricamento = true;
+
     await caricaDatiProfilo();
     await caricaDatiFoto();
     await caricaDatiCarte();
     await caricaDatiSocial();
+
+    datiInCaricamento = false;
 }
 
 async function caricaDatiProfilo()
