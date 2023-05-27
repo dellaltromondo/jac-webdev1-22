@@ -4,9 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Classi</title>
 </head>
 <body>
+    <!-- aside => barra laterale -->
+    <aside id="chat-list">
+        <h2>Lista chat</h2>
+        <ul>
+            <li>Pippo</li>
+            <li>Pluto</li>
+            <li>Paperino</li>
+        </ul>
+    </aside>
+
+    <!-- Schermata messaggi -->
+    <main>
+        <h1> <img src="https://biografieonline.it/img/bio/k/Kanye_West.jpg" alt="PFP di Pluto" class="profile-image"> Chat con: Pluto</h1>
+        <ol id="message-list">
+            <li class="sent-by-me">Ciao</li>
+            <li class="sent-by-them">Giulia?</li>
+            <li class="sent-by-me">Bonzi!</li>
+        </ol>
+
+        <form id="send-message" onsubmit="sendMessage()">
+            <input type="text" placeholder="Scrivi un messaggio">
+            <button>
+                <img src="https://www.svgrepo.com/show/230979/send.svg" alt="Send Icon">
+            </button>
+        </form>
+    </main>
+
     <script src="script.js"></script>
 </body>
 </html>

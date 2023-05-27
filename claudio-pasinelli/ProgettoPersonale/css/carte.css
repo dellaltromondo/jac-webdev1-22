@@ -276,7 +276,7 @@ form#formCard button#btnCard
 {
     margin-top: auto;
     border: solid var(--colore-oro);
-    border-width: 3px 0px 0px 0px;
+    border-width: 3px;
     border-radius: var(--border-radius-default);
     padding: 5px;
 }
