@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Our vanilla chat</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <aside id="chat-list">
+            <h2>Lista chat</h2>
+            <ul>
+                <!-- TODO: questa lista andrebbe creata dinamicamente -->
+                <li onclick="switchToChat(myChatWithPippo)">Pippo</li>
+                <li onclick="switchToChat(myChatWithPluto)">Pluto</li>
+                <li>Paperino</li>
+            </ul>
+            <!-- TODO: pulsante per creare una nuova chat -->
+        </aside>
+
+        <main>
+            <h1>
+                <img id="chat-profile-image" class="profile-image" src="http://placeholder"><!-- qui viene inserita l'immagine di profilo del contatto -->
+                Chat con: <span id="chat-name-receiver"><!-- qui viene inserito il nome del contatto --></span>
+            </h1>
+            <ol id="message-list">
+                <!-- qui vengono inseriti i messaggi-->
+            </ol>
+            <form id="send-message" onsubmit="sendMessage(window.event)">
+                <input>
+                <!-- TODO: form con possibilita' di inserire messaggi di tipo Image -->
+                <button>
+                    <img src="https://www.svgrepo.com/show/230979/send.svg">
+                </button>
+            </form>
+        </main>
+
+        <script src="script.js"></script>
+    </body>
+</html>
