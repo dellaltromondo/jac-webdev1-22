@@ -1,4 +1,5 @@
 
+
 class User {
     #id;
     #displayName;
@@ -147,3 +148,43 @@ class Chat{
     
     
     }
+
+    function renderChat(chatToBeRendered) {
+        chatToBeRendered.forEach((Messaggio) => {
+        const liElement = document.createElement("li");
+        liElement.innerText = Messaggio.getContent();
+            liElement.className = Messaggio.getSender() == me ? "sent-by-them" : "sent-by-me";
+        document.getElementById("messagge-list").appendChild(liElement);
+        });
+        
+    }
+
+    function sendMessagge(e){
+        const input = document.querySelector("#send-message input");
+        if(!input) {
+            console.log("senza testo")
+            return;
+        }
+        myChat.push(new Testo(input.value, pluto, me))
+        renderChat(myChat)
+
+        e.preventDefault()
+    }
+
+    
+
+
+    const me = new User(1, "dann", "daniele", "simic");
+    const pluto = new User(2, "Pluto", "Pluto", "Pluto");
+
+    const textMessagge = new Testo("wooof", me, pluto);
+    const textMessagge2 = new Testo("bark", pluto, me);
+    const textMessagge3 = new Testo("wooof", me, pluto);
+
+    const myChat = [
+        textMessagge,
+        
+    ];
+
+    renderChat(myChat)
+   
