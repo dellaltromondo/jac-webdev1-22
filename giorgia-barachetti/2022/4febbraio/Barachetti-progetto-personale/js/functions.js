@@ -261,6 +261,5 @@ function paymentBank() {
 }
 
 function continueLast(){
-  const h1 = document.getElementById("bye")
-  h1.style.display='block'
+  alert('ORDINE INVIATO')
 }

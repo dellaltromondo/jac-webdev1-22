@@ -69,19 +69,46 @@ class Carta
 
 async function trovaMaxIdCarta()
 {
+    let haCarte = true;
+
     const idCompositore = localStorage.getItem("idCompositore");
     const getCarte = await fetch("http://localhost:8080/progettoPersonaleJava/api/v1/carte/" + idCompositore + "/compositori");
     const getCarteJson = await getCarte.json();
 
+    let getCarteTutte;
+    let getCarteTutteJson;
+
+    if(getCarteJson.length === 0)
+    {
+        haCarte = false;
+        getCarteTutte = await fetch("http://localhost:8080/progettoPersonaleJava/api/v1/carte/");
+        getCarteTutteJson = await getCarteTutte.json();
+    }
+
     let maxId = 1;
 
-    for(cartaCompositore of getCarteJson)
+    if(haCarte)
     {
-        if(cartaCompositore.idCarta > maxId)
+        for(cartaCompositore of getCarteJson)
         {
-            maxId = cartaCompositore.idCarta;
+            if(cartaCompositore.idCarta > maxId)
+            {
+                maxId = cartaCompositore.idCarta;
+            }
         }
     }
+
+    else
+    {
+        for(cartaCompositore of getCarteTutteJson)
+        {
+            if(cartaCompositore.idCarta > maxId)
+            {
+                maxId = cartaCompositore.idCarta;
+            }
+        }
+    }
+
 
     if(maxId != 1)
     {
@@ -253,7 +280,7 @@ async function creaCartaHTML(carta)
     const card = document.createElement("section");
     card.setAttribute("class","card");
 
-    if(carta.getIdCarta() > idCarta)
+    if(carta.getIdCarta() < idCarta)
     {
         card.setAttribute("id","carta" + carta.getIdCarta());
     }
@@ -334,7 +361,11 @@ async function creaCartaHTML(carta)
     card.style.animationIterationCount = "1";
     
     arrayCarte.push(carta);
-    idCarta++;
+
+    if(!isDatiInCaricamento())
+    {
+        idCarta++;
+    }
     
     if(arrayCarte.length != 0)
     {

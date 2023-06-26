@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pokédex</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ECECEC;
+      margin: 0;
+      padding: 0;
+
+      display: grid;
+      grid-template-columns: 15rem 1fr;
+      grid-template-rows: 6rem 1fr 10rem;
+
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #E3350D;
+      padding: 10px;
+      color: #FFFFFF;
+      text-align: center;
+
+      display: flex;
+      justify-content: space-between;
+
+      padding: 1rem;
+
+      grid-column: 1/3;
+    }
+
+    a, a:hover, a:visited {
+      color: white;
+    }
+
+    nav a {
+      background-color: rgba(255,255,255,0.5);
+      padding: 0.4rem 0.6rem;
+      margin-left: 0.3rem;
+      border-radius: 0.2rem;
+    }
+
+    nav a:hover {
+      background-color: rgba(255,255,255,0.8);
+    }
+
+
+    h1 {
+      margin: 0;
+      font-size: 3rem;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 20px auto;
+      background-color: #FFFFFF;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+
+    footer {
+      background-color: #1F1F1F;
+      padding: 10px;
+      color: #FFFFFF;
+      text-align: center;
+      font-size: 14px;
+
+      grid-column: 1/3;
+    }
+
+    .pokemon-list {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-gap: 20px;
+    }
+
+    .pokemon-list li {
+      border: 1px solid #ECECEC;
+      border-radius: 5px;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .pokemon-list li img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .pokemon-list li h3 {
+      margin: 10px 0;
+    }
+
+    .pokemon-list li p {
+      font-size: 14px;
+      color: #777777;
+      margin: 5px 0;
+    }
+
+    aside {
+      background-color: #F4F4F4;
+      padding: 20px;
+      width: 250px;
+      border-right: 1px solid #CCCCCC;
+    }
+
+    .pokemon-list {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .pokemon-list li {
+      margin-bottom: 10px;
+    }
+
+    .pokemon-list li a {
+      display: block;
+      color: #333333;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 10px;
+      border-radius: 5px;
+      background-color: #FFFFFF;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease;
+    }
+
+    .pokemon-list li a:hover {
+      background-color: #F2F2F2;
+    }
+
+    aside {
+      background-color: #F4F4F4;
+      padding: 20px;
+      width: 250px;
+      border-right: 1px solid #CCCCCC;
+    }
+
+    .aside-pokemon-list {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .aside-pokemon-list li {
+      margin-bottom: 10px;
+    }
+
+    .aside-pokemon-list li a {
+      display: block;
+      color: #333333;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 10px;
+      border-radius: 5px;
+      background-color: #FFFFFF;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease;
+    }
+
+    .aside-pokemon-list li a:hover {
+      background-color: #F2F2F2;
+    }
+
+
+    #pokemon-form {
+      margin-top: 3rem;
+    }
+
+    #pokemon-form label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    #pokemon-form div {
+      display: flex;
+      justify-content: space-between;
+      align-items: bottom;
+    }
+
+    #pokemon-form input[type="text"],
+    #pokemon-form input[type="number"],
+    #pokemon-form textarea {
+      padding: 10px;
+      border: 1px solid #CCCCCC;
+      border-radius: 5px;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    #pokemon-form input[type="text"],
+    #pokemon-form textarea {
+      width: calc(100% - 1.4rem);
+    }
+    
+    #pokemon-form input[type="number"] {
+      width: 3rem;
+    }
+
+
+    #pokemon-form input[type="submit"] {
+      background-color: #E3350D;
+      color: #FFFFFF;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    #pokemon-form input[type="submit"]:hover {
+      background-color: #C2250A;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+    }
+
+    #pokemon-is-captured {
+      margin: 1rem 0.4rem 1rem 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Pokédex</h1>
+
+    <nav>
+      <a href="#">My Pokémons</a>
+      <a href="#">New Pokémon</a>
+      <a href="#">Info</a>
+    </nav>
+  </header>
+
+  <aside>
+    <ul class="aside-pokemon-list" id="aside-pokemon-list">
+        <li><a href="#">Pikachu</a></li>
+        <li><a href="#">Charmander</a></li>
+        <li><a href="#">Squirtle</a></li>
+        <li><a href="#">Bulbasaur</a></li>
+    </ul>
+
+    <form id="pokemon-form">
+      <h2>Insert new</h2>
+
+      <label for="pokemon-name">Pokémon Name:</label>
+      <input type="text" id="pokemon-name" name="pokemon-name" placeholder="e.g. Pikachu">
+
+      <div>
+        <label class="inline" for="pokemon-is-captured"><input id="pokemon-is-captured" name="pokemon-is-captured" type="checkbox">Captured</label>
+        <label class="inline" for="pokemon-level">Level: <input id="pokemon-level" name="pokemon-level" type="number"></label>
+      </div>
+
+      <label for="pokemon-image">Image URL:</label>
+      <input type="text" id="pokemon-image" name="pokemon-image" placeholder="Enter image URL">
+
+      <label for="pokemon-description">Description:</label>
+      <textarea id="pokemon-description" name="pokemon-description" rows="4" placeholder="Enter description"></textarea>
+
+      <input type="submit" value="Add Pokémon">
+    </form>
+   </aside>
+
+  <main>
+    <ul class="pokemon-list" id="pokemon-list"></ul>
+  </main>
+
+  <footer>
+    <p>Copyright 2023 by Prof. Oak</p>
+  </footer>
+
+  <script>
+    // Array to hold the list of Pokémon
+    var pokemonList = [
+      { name: 'Pikachu', imageUrl: 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png', details: 'Pikachu is an Electric-type Pokémon known for its electrical abilities. It evolves from Pichu when leveled up with high friendship.' },
+      { name: 'Charmander', imageUrl: 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png', details: 'Charmander is a Fire-type Pokémon known for its fiery tail. It evolves into Charmeleon and then into Charizard.' },
+      { name: 'Squirtle', imageUrl: 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png', details: 'Squirtle is a Water-type Pokémon known for its ability to shoot water from its mouth. It evolves into Wartortle and then into Blastoise.' },
+      { name: 'Bulbasaur', imageUrl: 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png', details: 'Bulbasaur is a Grass/Poison-type Pokémon known for the plant bulb on its back. It evolves into Ivysaur and then into Venusaur.' }
+    ];
+
+    // Function to render the Pokémon list
+    function renderPokemonList() {
+      var pokemonListElement = document.getElementById('pokemon-list');
+      pokemonListElement.innerHTML = '';
+
+      for (var i = 0; i < pokemonList.length; i++) {
+        var pokemonItem = document.createElement('li');
+        pokemonItem.innerHTML = `
+          <img src="${pokemonList[i].imageUrl}" alt="${pokemonList[i].name}">
+          <h3>${pokemonList[i].name}</h3>
+          <p>${pokemonList[i].details}</p>
+        `;
+        pokemonListElement.appendChild(pokemonItem);
+      }
+    }
+
+    // Function to handle form submission
+    function addPokemon(event) {
+      event.preventDefault(); // Prevent form submission
+
+      var pokemonNameInput = document.getElementById('pokemon-name');
+      var pokemonName = pokemonNameInput.value;
+
+      var pokemonDescriptionInput = document.getElementById('pokemon-description');
+      var pokemonDescription = pokemonDescriptionInput.value;
+
+      var pokemonImageInput = document.getElementById('pokemon-image');
+      var pokemonImage = pokemonImageInput.value;
+
+      if (pokemonName) {
+        // Generate a random color for the Pokémon card
+        var randomColor = getRandomColor();
+
+        // Add the Pokémon to the list
+        pokemonList.push({ name: pokemonName, imageUrl: pokemonImage ?? '', details: pokemonDescription ?? 'No details available.' });
+        renderPokemonList();
+        pokemonNameInput.value = '';
+        pokemonDescriptionInput.value = '';
+        pokemonImageInput.value = '';
+      }
+    }
+
+    // Helper function to generate a random color
+    function getRandomColor() {
+      var letters = '0123456789ABCDEF';
+      var color = '#';
+      for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+
+    // Attach event listener to the form
+    var pokemonForm = document.getElementById('pokemon-form');
+    pokemonForm.addEventListener('submit', addPokemon);
+
+    // Initial rendering of the Pokémon list
+    renderPokemonList();
+  </script>
+</body>
+</html>

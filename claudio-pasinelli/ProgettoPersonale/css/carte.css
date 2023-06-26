@@ -134,7 +134,7 @@ form#formCard button#btnCard
 {
     margin-top: auto;
     border: solid var(--colore-giallo);
-    border-width: 3px 0px 0px 0px;
+    border-width: 3px;
 }
 /*  */
 
@@ -270,13 +270,14 @@ form#formCard button#btnCard
     display: grid;
     height: 100%;
     margin: 10px;
+    border-radius: var(--border-radius-default);
 }
 
 .description footer
 {
     margin-top: auto;
     border: solid var(--colore-oro);
-    border-width: 3px 0px 0px 0px;
+    border-width: 3px;
     border-radius: var(--border-radius-default);
     padding: 5px;
 }

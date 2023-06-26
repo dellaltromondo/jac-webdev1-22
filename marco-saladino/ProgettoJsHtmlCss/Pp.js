@@ -146,6 +146,7 @@ function MostraQuartz(Orologio) {
     prezzoCI.innerText = Orologio.Citizen.prezzo;
     descrizioneCI.innerText = Orologio.Citizen.descrizione;
 
+    DivQuartz.innerText=''; // svuota per non fare aggiungere le cose più volte
 
     DivQuartz.appendChild(DivBulova);
     DivBulova.appendChild(imgB);
@@ -218,6 +219,7 @@ function MostraAutomatici(Orologio) {
     prezzoP.innerText = Orologio.Patek.prezzo;
     descrizioneP.innerText = Orologio.Patek.descrizione;
 
+    DivAuto.innerText='';
 
     DivAuto.appendChild(DivRolex);
     DivRolex.appendChild(imgR);
@@ -288,7 +290,7 @@ function MostraCarica(Orologio) {
     prezzoO.innerText = Orologio.Omega.prezzo;
     descrizioneO.innerText = Orologio.Omega.descrizione;
 
-
+    DivCarica.innerText='';
     DivCarica.appendChild(DivPanerai);
     DivPanerai.appendChild(imgPA);
     DivPanerai.appendChild(nomePA);
